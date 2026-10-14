@@ -15,7 +15,11 @@ do not.
 | **Total** | | **about 10 000 to 11 000 CHF** |
 
 The laboratory figure is the entrant's stated running cost of the laboratory as a whole; it is not itemised
-here. Cloud compute was used only on free notebook tiers.
+here.
+
+Outside the laboratory, the entry used Kaggle notebooks on the free tier: two NVIDIA Tesla T4 cards or CPU cores
+per session, for part of the network fits and for the tree heads. They cost the entry nothing. At typical cloud
+prices for a T4, the 30 to 60 GPU-hours estimated below would come to a few tens of francs.
 
 The entrant's hours are the smaller part of the human-equivalent effort. Nearly all of the code, experiments,
 analysis and writing was done by the agents of Arcane Sapience under his direction; that work is counted here
@@ -36,11 +40,11 @@ gives the detail and the caveats.
 
 | Component | Fits | Summed fit time | Hardware |
 |---|---|---|---|
-| Map networks fitted on GPU | 32 | 2.3 h | NVIDIA Tesla T4 (free notebook tier) |
-| Map networks fitted on CPU | 37 | 49.9 h | notebook-tier and Xeon E5-2640 CPUs |
+| Map networks fitted on GPU | 32 | 2.3 h | NVIDIA Tesla T4, Kaggle free tier |
+| Map networks fitted on CPU | 37 | 49.9 h | Kaggle free-tier CPUs and the laboratory's Xeon E5-2640 server |
 | q95 and βN networks | 8 | 0.43 h | AMD RX 6600 XT |
 | X-point networks | 8 | 0.36 h | AMD RX 6600 XT |
-| Tree heads | 4 | 0.53 h | NVIDIA Tesla T4 |
+| Tree heads | 4 | 0.53 h | NVIDIA Tesla T4, Kaggle free tier |
 
 With the full recipe, one network of each family fits in 4.7 to 5.4 minutes on a single NVIDIA GTX 1060 (6 GiB).
 All 85 networks would therefore take about seven hours on that one card.
@@ -58,7 +62,7 @@ magnitude, not a measurement.
 | Full-fold builds of candidate archives | 1 500 CPU-hours | about 30 DIII-D builds at up to 50 CPU-hours and about 15 MAST builds at 15 to 18 |
 | Studies of the map-finishing step and other CPU experiments | 1 500 to 3 000 CPU-hours | 1.3 CPU-seconds per frame and setting in the finishing studies; feature extraction; tree fits |
 | Network fits on local GPUs | 100 to 200 GPU-hours | AMD RX 6600 XT cards, several hundred fits of 2 to 10 minutes and the September campaigns |
-| Network and tree fits on free notebook GPUs | 30 to 60 GPU-hours | NVIDIA Tesla T4 |
+| Network and tree fits on Kaggle's free tier | 30 to 60 GPU-hours | NVIDIA Tesla T4 |
 
 ## Energy (estimate)
 
@@ -66,7 +70,7 @@ magnitude, not a measurement.
 |---|---|---|
 | CPU work | 3 000 to 4 500 CPU-hours at about 12.5 W per thread (a two-socket Xeon E5-2640 server drawing 300 W on 24 threads) | 40 to 55 kWh |
 | Local GPU work | 100 to 200 GPU-hours at 160 W | 15 to 30 kWh |
-| Notebook GPU work | 30 to 60 GPU-hours at 70 W | 2 to 4 kWh |
+| Kaggle GPU work | 30 to 60 GPU-hours at 70 W | 2 to 4 kWh |
 | **Total attributable to the entry** | | **roughly 60 to 90 kWh** |
 
 This counts the load of the runs, not the idle draw of machines that were on for other work as well. At
