@@ -65,7 +65,8 @@ What has been checked:
 | 22 worker processes against one | bit-identical |
 
 Measured on a host with two Intel Xeon E5-2640 (24 threads) and 8 workers: 6 h 14 min for the DIII-D fold and
-1 h 52 min for the MAST fold. Up to 22 workers are supported; 22 workers need about 42 GiB of memory.
+1 h 52 min for the MAST fold. With 22 workers the DIII-D fold took 3 h 15 min, again bit-identical; 22 workers need
+about 42 GiB of memory.
 
 For MAST, a shot in which no frame can be solved takes the mean current pattern of the solved frames of the
 supplied fold, and missing scalars take the fold's median. Both come from inputs only; the answer for such a shot

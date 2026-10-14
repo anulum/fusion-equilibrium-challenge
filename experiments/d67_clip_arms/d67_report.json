@@ -1,0 +1,40 @@
+{
+ "members_paired": [
+  "discharge_hc_seed0_tc_all",
+  "discharge_hc_seed1_tc_all",
+  "discharge_hc_seed2_tc_all",
+  "discharge_hc_seed3_tc_all"
+ ],
+ "shots": 358,
+ "frames": 78875,
+ "squared_error_ratio_50_over_8": {
+  "r_axis": 1.0192531375567795,
+  "z_axis": 0.9152221326777393,
+  "li_scored": 0.9670368289313049,
+  "kappa": 0.9797176300651116,
+  "volume": 1.0408664067683455,
+  "tri_top": 0.9687611219410707,
+  "tri_bot": 1.0236046447072038,
+  "q95": 1.0066559531945476,
+  "beta_n": 1.0625416640940895
+ },
+ "flux_coordinate_squared_error_ratio": 1.0488685002955842,
+ "predicted_change": 3.246272046489246e-05,
+ "predicted_parts": {
+  "r_axis": -1.0538741532101325e-05,
+  "z_axis": 4.7660330244999025e-05,
+  "li_scored": 1.761687418338635e-05,
+  "kappa": 4.9946361341626214e-06,
+  "volume": -4.248007081708998e-06,
+  "tri_top": 1.731770239432865e-06,
+  "tri_bot": -1.2906833520091367e-06,
+  "q95": -1.0636717597364395e-06,
+  "beta_n": -2.2399786611532503e-05
+ },
+ "bootstrap_95": [
+  -7.098077241909247e-05,
+  0.00013323608349531896
+ ],
+ "P_positive": 0.65785,
+ "candidate": false
+}
