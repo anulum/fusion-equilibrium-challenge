@@ -1,0 +1,29 @@
+--- a/src/scpn_fusion/core/jax_predictive_forward_compiled.py	2026-09-20 19:49:02.917856628 +0200
++++ b/src/scpn_fusion/core/jax_predictive_forward_compiled.py	2026-09-20 19:49:02.937288355 +0200
+@@ -131,7 +131,7 @@
+     inner_cycles: int,
+     use_separatrix_continuation: bool,
+     use_fixed_support: bool,
+-    anderson_solver: str = "lstsq",
++    anderson_solver: str = "normal_eq",
+     trace_iteration_indices: tuple[int, ...] = (),
+     separatrix_start: int = DEFAULT_SEPARATRIX_START,
+     separatrix_ramp: int = DEFAULT_SEPARATRIX_RAMP,
+@@ -359,7 +359,7 @@
+     use_mg_preconditioner: bool = True,
+     inner_solver: str = "bicgstab",
+     inner_cycles: int = 3,
+-    anderson_solver: str = "lstsq",
++    anderson_solver: str = "normal_eq",
+     return_iterations: bool = False,
+     trace_iteration_indices: tuple[int, ...] = (),
+     return_trace: bool = False,
+@@ -620,7 +620,7 @@
+     use_mg_preconditioner: bool = True,
+     inner_solver: str = "mg_richardson",
+     inner_cycles: int = 2,
+-    anderson_solver: str = "lstsq",
++    anderson_solver: str = "normal_eq",
+     fixed_support_weights: jnp.ndarray | None = None,
+ ) -> jnp.ndarray:
+     """Batched compiled solve — ``vmap`` over (coil currents, p′, FF′) samples.

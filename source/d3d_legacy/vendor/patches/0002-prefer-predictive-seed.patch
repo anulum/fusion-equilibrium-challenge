@@ -1,0 +1,23 @@
+--- a/src/scpn_fusion/core/jax_free_boundary_predictive.py	2026-09-20 19:49:02.919031518 +0200
++++ b/src/scpn_fusion/core/jax_free_boundary_predictive.py	2026-09-20 19:49:02.937598540 +0200
+@@ -879,7 +879,19 @@
+             raise RuntimeError(
+                 "predictive Newton seed selection found no finite central-axis field"
+             )
+-        use_finite_difference = fixed_boundary_score <= total_field_score
++        # The two candidates are not equals, so they are not compared on residual
++        # alone. The fixed-boundary seed imposes the computational-wall flux from
++        # the coils only; this module's own opening paragraph records that on the
++        # DIII-D reference the plasma self-field at the wall is about 2.7 times
++        # the coil field, which makes that wall condition roughly 70 % wrong and
++        # the seed not predictive from coils alone. Its residual can still come
++        # out lower, because it is the residual of a different problem.
++        #
++        # Measured on real DIII-D shots: letting the residual decide sent the
++        # solve to the coil-only seed and the magnetic axis to the chamber wall.
++        # The predictive seed is therefore taken whenever it is admissible at
++        # all, and the coil-only one is kept only as the fallback it is.
++        use_finite_difference = not np.isfinite(total_field_score)
+         seed = seed if use_finite_difference else total_field_seed
+         seed_source = (
+             "fixed_boundary_implicit" if use_finite_difference else "total_field_predictive"

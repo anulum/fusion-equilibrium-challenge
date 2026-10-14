@@ -1,0 +1,9 @@
+# Python 3.12.3; versions from the independent ML350 runtime.
+numpy==2.5.3
+scipy==1.18.1
+pyarrow==25.0.1
+scikit-image==0.26.0
+scikit-learn==1.9.1
+jax==0.8.2
+jaxlib==0.8.2
+xgboost==3.4.1

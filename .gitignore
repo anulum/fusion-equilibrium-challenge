@@ -1,0 +1,31 @@
+# Allow-list: nothing is tracked unless it is named here after review.
+# Everything made for the challenge lives in this directory; the public mirror gets only the reviewed paths below.
+/*
+!/.gitignore
+!/README.md
+!/LICENSE
+!/NOTICE.md
+!/CITATION.cff
+!/DATA_PROVENANCE.md
+!/TRAINING.md
+!/COMPUTE.md
+!/infer.py
+!/train.py
+!/tree_replica.py
+!/fetch_weights.py
+!/deployment.json
+!/training_recipe.json
+!/WEIGHTS.json
+!/WEIGHTS.sha256
+!/requirements-inference-cpu.txt
+!/requirements-training-cpu.txt
+!/requirements-training-cuda.txt
+!/source/
+!/training_adapter/
+!/docs/
+/docs/*
+!/docs/METHODS_REPORT.md
+# models/ holds the trained weights: fetched by fetch_weights.py, never committed here
+# private/ and experiments/ stay untracked until their content has passed the pre-publication scan
+__pycache__/
+*.pyc

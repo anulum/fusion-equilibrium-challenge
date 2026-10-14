@@ -1,0 +1,16 @@
+# Python 3.12.3; CUDA port specification, not yet executed as a whole recipe.
+# Historical CUDA field fits used JAX 0.8.2. Static production fits used
+# jaxlib 0.8.2+rocm7.2.4; the corresponding CUDA training needs qualification.
+numpy==2.5.3
+scipy==1.18.1
+pyarrow==25.0.1
+scikit-image==0.26.0
+scikit-learn==1.9.1
+jax[cuda12]==0.8.2
+jaxlib==0.8.2
+xgboost==3.4.1
+
+# fit_network imports CPU PyTorch even for the JAX accelerator trainer.
+# CUDA training environment remains unexecuted; this dependency is not a training qualification.
+--extra-index-url https://download.pytorch.org/whl/cpu
+torch==2.14.0+cpu

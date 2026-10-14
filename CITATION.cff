@@ -1,0 +1,35 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge entry — CITATION.cff
+
+cff-version: 1.2.0
+title: "Fusion Equilibrium Challenge: the Anulum entry"
+message: "If you use this code, the trained model or the experiment record, please cite this repository."
+type: software
+authors:
+  - family-names: "Šotek"
+    given-names: "Miroslav"
+    orcid: "https://orcid.org/0009-0009-3560-0851"
+    email: "protoscience@anulum.li"
+    affiliation: "ANULUM / Fortis Studio"
+abstract: >-
+  Reproduction package and experiment record of an entry to the Fusion Equilibrium Challenge (NeurIPS 2026
+  competition): reconstruction of tokamak flux maps, q95 and normalised beta from coil currents and
+  Thomson-scattering profiles without magnetic measurements. An ensemble of multilayer perceptrons with
+  tree-based and specialist heads and a map-finishing step for DIII-D, and an equal-temperature free-boundary
+  reconstruction for MAST without any MAST training data. Developed with Arcane Sapience, the entrant's
+  research system built on large language models.
+keywords:
+  - tokamak
+  - plasma equilibrium
+  - Grad-Shafranov
+  - DIII-D
+  - MAST
+  - machine learning
+license: AGPL-3.0-or-later
+repository-code: "https://github.com/anulum/fusion-equilibrium-challenge"
+date-released: "2026-10-14"

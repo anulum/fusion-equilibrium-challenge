@@ -1,0 +1,614 @@
+{
+  "status": "D61_first3_scalar_and_map_bit_parity_PASS_full_scalar_check_pending",
+  "submission": 986068,
+  "maps": [
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed3_tc_all/network.npz",
+      "sha256": "340b05e310be43dcfe65008b5de3a23bcb040b69d2106bfbd8cd446ff529ab52"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed4_tc_all/network.npz",
+      "sha256": "6ba6c6c2fb765916e1de5f2265595b7df6a27d22f964d5ad79e1280d02e08817"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed5_all/network.npz",
+      "sha256": "ce215624b81f067c65850d026b64e9404ac724b998b279332be83a922e5bec41"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed6_tc_all/network.npz",
+      "sha256": "07146286be10440301a0dc94305f7d073671821060eb65ab020da6f1227b2fb6"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed7_tc_all/network.npz",
+      "sha256": "dddc32380c6957076ccbb7b5781f59325259b5a83f479d4a992e392a239128d1"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed8_tc_all/network.npz",
+      "sha256": "9ecf20756c8ace3aa8990efc09e83d6ef9678b43ae0e2bc37f934bfeb793fc1d"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed9_tc_all/network.npz",
+      "sha256": "e3008f1b7d519fba51d0f95c8fb227bfb34ec8a75e1630bb60ec9c192c4f76e3"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed10_tc_all/network.npz",
+      "sha256": "a491580234e0c3081f56216182b791e2b1d031d76b7b79d77e128d737d3aec17"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed0_tc_all/network.npz",
+      "sha256": "28924d818d49e970b82c8db27d7019478b3f90b7ae381aa94dd588c19e305354"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed1_tc_all/network.npz",
+      "sha256": "b98648af3aec322eb87a1a100df2d6d788a12f25830219e5b81b68bfcaa38aae"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed2_tc_all/network.npz",
+      "sha256": "8e2fabc30cfccd43c52fb0f8dcaf50330828b945dd903d20cd4a467009845695"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed3_tc_all/network.npz",
+      "sha256": "5ad4d3034119da51b6971992e6db8286533f59b5273e76d5d842c24dfd9000eb"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed4_tc_all/network.npz",
+      "sha256": "781ff5448e5e8e815878031f8afa6638a7d3ef54c7c3b934e93592ceafe760d7"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed5_tc_all/network.npz",
+      "sha256": "a82747903544170c6c599acc162253bfecec8837c752d7ea469fd6d7055cc110"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed6_tc_all/network.npz",
+      "sha256": "10c9590c8bece5d244659b1a93ae99bd2dc7fe066bfd0082535ee7c6180a15c1"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed7_tc_all/network.npz",
+      "sha256": "1d109ab544d91e33a4b3bceee2a4481a2f2283274dea111af3cc391070551ca3"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed8_tc_all/network.npz",
+      "sha256": "f5b3af9a225044a714d553d666f61b5ba14554c6c4ab81ea84542ce9599193f1"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed9_tc_all/network.npz",
+      "sha256": "8b07072f79f3b368d632b7926e2dca725832c412213b6dbf4735ad996659d9e3"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed10_tc_all/network.npz",
+      "sha256": "6ba8b4f1e2c7c69bd25ad6b67f9384e986924741988388450f216f3f47c58b56"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed11_tc_all/network.npz",
+      "sha256": "4ec208c245aeb49e445c199863818944cf8749ec2de38ef18a769995e36f59b8"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed12_tc_all/network.npz",
+      "sha256": "39b2f3eab55d829850522049ab790b930d2ecce14dd4c15935a559012191eaf3"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed13_tc_all/network.npz",
+      "sha256": "55874ee5230cb84b9d169949be72bdfa13d550ddef93a6b2fdbaf6014f7814c5"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed14_tc_all/network.npz",
+      "sha256": "eb2964e29c62555e8e1c36a8c906936d39f12e19d1b19e49e87022c086ff8d10"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed15_tc_all/network.npz",
+      "sha256": "e696524c3124874ab11b944955ef380bae8f2e54a131d3e3c5ed29a09adc9202"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed16_tc_all/network.npz",
+      "sha256": "040139f694285b10c5265b7e38efae01ddae8078fc24f05270613edd5383dace"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed17_tc_all/network.npz",
+      "sha256": "0d087204560201c7cffce4999c79a5bfe08382337d15af0add4781f34b37baa5"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed18_tc_all/network.npz",
+      "sha256": "01af95cd3e509be0aba18bb46a36e1fea97bcda83cf7916cdc8bccead77e80ae"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed19_tc_all/network.npz",
+      "sha256": "386d36f1f9bc15ec44311bd726b01d6bf5fc6efe6f7d53c9cbeee67c358a11a1"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed20_tc_all/network.npz",
+      "sha256": "f5a86e8a9ca824122137ef6c0f5ae8cc1e7b53b16812b7d4c92e1fd1c0d2b6b6"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed21_tc_all/network.npz",
+      "sha256": "ce0e08e9b6e6f1e9af279b8c7cdf41fc9cd819903fe61127b7cfcd5c1947569c"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed22_tc_all/network.npz",
+      "sha256": "12761a87eec25000ece33930661a99c7e24cbdbdc25b2249bbef58f0edcec965"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hc_seed23_tc_all/network.npz",
+      "sha256": "8d1b871af6287f8eab11d5e699b8bd2892400a0c3745f7b699ff21cac30d4471"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed0_tc_all/network.npz",
+      "sha256": "bfbd74196c455d9aa7f94fce9168c6e63c17bedd97aa80018daa1952ad42ee31"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed1_all/network.npz",
+      "sha256": "55f55bd0c3084dce5b74af74323137c0d5d8368671198359724a8613cc36855a"
+    },
+    {
+      "path": "models/H69/v29_readout/discharge_hx_seed2_all/network.npz",
+      "sha256": "4fded04fd48f02672033781552315478b84efe41e6b0a564d49cd6507f085970"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed0_tc_all/network.npz",
+      "sha256": "3a3a2c70841bc94c1fd1153cee188ad8c1724798b7bada1dcb60fc86213271ea"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed10_tc_all/network.npz",
+      "sha256": "c3f7a5cc48ba422078d0f23a2abf03f45ae574f41a42b8139122afe0292a1488"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed11_tc_all/network.npz",
+      "sha256": "aa1da82f7e6233be468e61bf9f07bba5e465bd530e8b78609b721dc8acee3705"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed12_tc_all/network.npz",
+      "sha256": "fb9d311ca83853a18d6e880edfc355e982f69e0a9ea24839d6f32b65491f2a94"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed13_tc_all/network.npz",
+      "sha256": "344fb3cb485c2b3d427cadefb04e2683e425d7058c640cc67c06aa099da3c57b"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed14_tc_all/network.npz",
+      "sha256": "fbd6279c4e37ba675d758f9f1c0dfce7f4f1e7a1e73ea7c3a1f70de85349bdbb"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed15_tc_all/network.npz",
+      "sha256": "23b259b40b8e8314b34c3a98812a0bd37af03b749cd51c71705bb547cac9c929"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed16_tc_all/network.npz",
+      "sha256": "59166cad1d29a29e9889c250667d686920705b0a33297c1cde731b10971f9634"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed17_tc_all/network.npz",
+      "sha256": "fe58beae4b473d8fbd52349ea7f844070707f046b74fae0b4f059160bf4058b6"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed18_tc_all/network.npz",
+      "sha256": "cb740d360fbd4b7b66f3c9f4fa27e3a82cddcaf8806f57d5ba29405aad3d46ea"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed19_tc_all/network.npz",
+      "sha256": "48514ef9ec15f8cf2c94ffdf7accb759470dc665bc8bc6d1033e1a8c34d2d8f8"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed1_tc_all/network.npz",
+      "sha256": "5b06f8952440be2b61314b18fbfea99f9999bd427efa497b98cb79832b7409e8"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed20_tc_all/network.npz",
+      "sha256": "356fa6dc618e63228957e743b365382bbe61b1f66868598eef509d433fcbdc51"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed21_tc_all/network.npz",
+      "sha256": "f3289291d41221e23f603794f3a292a83563f926d49d9e694b7edafb74754351"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed22_tc_all/network.npz",
+      "sha256": "65ff4727ac133ad60bd86d4e5a33a156f9bff2f847c3d98d886162c71c64832e"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed23_tc_all/network.npz",
+      "sha256": "2524853e8c9c2703c86b70c2d6da77e8f554055edc768ffc8e1523f5cbeb43ff"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed2_tc_all/network.npz",
+      "sha256": "9d9ce20e9f44e670c56cc07af01eddede8d8248d10402abb5fe1b1dc79980f6f"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed3_tc_all/network.npz",
+      "sha256": "f861088b68814a7a3b58d39ed5249511a0065ce3dae4378004fb76ca9b5d3be5"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed4_tc_all/network.npz",
+      "sha256": "7653c4d3ac0b39c6306ed2936ca63679c769c7af8c658deaf06ce66324e472db"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed5_tc_all/network.npz",
+      "sha256": "ef9283f6acec4151addebf0f771d94e8e585c376016def4c7db831b173dcd6bc"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed6_tc_all/network.npz",
+      "sha256": "cdee71b34161aaff7abf97f0ed6e79dae30dc06f5d1ac15c3578737230229f2c"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed7_tc_all/network.npz",
+      "sha256": "b9dfcea5bee4cb41246d6623bf503458a440b2f82a6827603ef36ea22576a01a"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed8_tc_all/network.npz",
+      "sha256": "16ca97e7ea9878f49632ca03fff8cacda4186212e434bd7682858d238455f253"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hc_seed9_tc_all/network.npz",
+      "sha256": "176f447d4d8da6532fbdfcf6fb983f3f42cdc01fcb81d9ff8d4ff7e8b42aa4fe"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed0_tc_all/network.npz",
+      "sha256": "bfc99bfc982e090c057545c30bddc8febe9d5c065a2fe97134efc691abf435ec"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed10_tc_all/network.npz",
+      "sha256": "796bd59c67f293d011e9a624b8992b763b1b37561d85fa006c11fe0fdbd5a4eb"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed1_all/network.npz",
+      "sha256": "91b6909ef06dec31b95f25e9828e27bca3419e2e014fd84387f3016a54c78a7d"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed3_tc_all/network.npz",
+      "sha256": "43c3811c35ee862df8d8a091f778f232407d72419382c3899c7884ac6ad156d0"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed4_tc_all/network.npz",
+      "sha256": "396e25d7bda185c72a50adfdb190009572ab285f984b71dc7355a4ab86bc5e10"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed5_all/network.npz",
+      "sha256": "68e4daa1fdadb58893d35d07b2d35025b264a303c654082e24e98211d24549d8"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed6_tc_all/network.npz",
+      "sha256": "b9fd564e835b7ef25d8864e290c5ca94b7ff11dda98de62d80e81fd88ff3261a"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed7_tc_all/network.npz",
+      "sha256": "a1822c15c819eb81819f248aa07734b04eb03943a8300c0325440621fbf5d03f"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed8_tc_all/network.npz",
+      "sha256": "17f147ee047aa4b87717c52377e2698d840605b6c204f3e4e74b9be3a1eccd9e"
+    },
+    {
+      "path": "models/H69/v29_readout_s2/discharge_hx_seed9_tc_all/network.npz",
+      "sha256": "e22db7cfed57e8dcbe758848d25ffd7baa38f1696145b63f436956096294cbfe"
+    }
+  ],
+  "joint": [
+    {
+      "path": "models/joint8/joint_seed200/network.npz",
+      "sha256": "4cf839c9c84fc491a7cf61e62e4556b086eebfdd44eb6753a0f6710a2c2303ac"
+    },
+    {
+      "path": "models/joint8/joint_seed201/network.npz",
+      "sha256": "666f2a650eb4dd58a829fd01ab76139b7b476899ed7c0ca2528eab28ad6c9040"
+    },
+    {
+      "path": "models/joint8/joint_seed202/network.npz",
+      "sha256": "7dac05f92a8f45482a8e5cd01ca1f78fc61263f7681205f76d9775c998e7561e"
+    },
+    {
+      "path": "models/joint8/joint_seed203/network.npz",
+      "sha256": "509e4c2701c32e11a5a50b846d0b34856b1deec1ccf0f09a47a55d62e5f026c7"
+    },
+    {
+      "path": "models/joint8/joint_seed204/network.npz",
+      "sha256": "6b79f53364594e99e6c1f47807aa46f648704b7b0ae33c76bb232e1186939c20"
+    },
+    {
+      "path": "models/joint8/joint_seed205/network.npz",
+      "sha256": "ed0bfe7628287f17476ad36f7e123167ecbb2ce9500fd2df8dd0d32da450e7db"
+    },
+    {
+      "path": "models/joint8/joint_seed206/network.npz",
+      "sha256": "96cec641fa314c53121b95afc6e754f59f80de0286bb8127f83e1bd892fe7fa9"
+    },
+    {
+      "path": "models/joint8/joint_seed207/network.npz",
+      "sha256": "111a20ffef9a5a714f527e86a8fbcd9fa2f8a3dbd1daa35f8dacf6c9c3768452"
+    }
+  ],
+  "static": [
+    {
+      "path": "models/static8/static_500/network.npz",
+      "sha256": "b6b2abdb0bcc615f67f8bc1e65a6d8c0a732c508e3ccabb8b47f19ee30795aa9"
+    },
+    {
+      "path": "models/static8/static_501/network.npz",
+      "sha256": "2387534ddfe2d14d50a2da3dc3fae00b556b241c3d39aaa92be076fcbc7890b5"
+    },
+    {
+      "path": "models/static8/static_502/network.npz",
+      "sha256": "65e4174353cfefa8d8612415d962002821fe47a77440d41993581c2f4fd052d2"
+    },
+    {
+      "path": "models/static8/static_503/network.npz",
+      "sha256": "afc926d107f77ff9566c5a7d54567af7299f2ba1469b96a178110afb977f0145"
+    },
+    {
+      "path": "models/static8/static_504/network.npz",
+      "sha256": "7faa4e011bdb3c5197613054703172eac58a5496d6a8af31ca952e7f23d61ada"
+    },
+    {
+      "path": "models/static8/static_505/network.npz",
+      "sha256": "6dc193a1fa50c33c14bb77a2aa3dfbcc3937f00be368656d17fd6371f22239a0"
+    },
+    {
+      "path": "models/static8/static_506/network.npz",
+      "sha256": "7bd1f918531479bde94e2738990fde8308b4118538d1fe8e4f992b260af4807b"
+    },
+    {
+      "path": "models/static8/static_507/network.npz",
+      "sha256": "9edb173d82be42c78961be2b6ee8697e82386da2b9f21c2d500c284528102bab"
+    }
+  ],
+  "basis": {
+    "path": "models/flux_basis.npz",
+    "sha256": "ed0864c3250850e320ed950632751934d91bfdb27a722d5a06f1c6d173869e8a"
+  },
+  "trees": [
+    {
+      "target": "li_scored",
+      "path": "models/trees/tree_li_scored.ubj",
+      "sha256": "12c7f83a534f79f4c9a875fe95c42d3944fa99555305d1c9246daeb79e8d61a5",
+      "best_iteration": 5954,
+      "share": 0.26,
+      "lookup_path": "models/trees/tree_lookups/li_scored.npz",
+      "lookup_sha256": "0505b83d039780a816ea5caabb7e4825c9550f83da7c1837c5e2d4d7300f999c"
+    },
+    {
+      "target": "r_axis",
+      "path": "models/trees/tree_r_axis.ubj",
+      "sha256": "dd6ac0d24c67527570ef364f33c1b83272e67d098581f1394d7a86e04c02155b",
+      "best_iteration": 5988,
+      "share": 0.14,
+      "lookup_path": "models/trees/tree_lookups/r_axis.npz",
+      "lookup_sha256": "0f5d708b80f627aaae78fff3c7794a7e25316f42960dc9baa38c3c13825c7077"
+    },
+    {
+      "target": "kappa",
+      "path": "models/trees/tree_kappa.ubj",
+      "sha256": "2d13ff0156b6d8641280f9e49eb100a367513e15abbb988ff46f7227370d13a3",
+      "best_iteration": 5432,
+      "share": 0.09,
+      "lookup_path": "models/trees/tree_lookups/kappa.npz",
+      "lookup_sha256": "ceb31c57056b5c926e3f31d860edc21d2a95c87d0445ff4322d14cf63a699b2d"
+    },
+    {
+      "target": "x_lower_r",
+      "path": "models/trees/tree_x_lower_r.ubj",
+      "sha256": "0989c419b6c9a9fb0553e1491d0a5d38f8c2804ea9551e1926ff2196a4ea816e",
+      "best_iteration": 2998,
+      "share": 0.16,
+      "lookup_path": "models/trees/tree_lookups/x_lower_r.npz",
+      "lookup_sha256": "f29ab6acc21d0b1de26dd87dc8a86862f403a6e33b8b9d80b182f07032213a86"
+    }
+  ],
+  "finish_flags": [
+    "--kept-coordinates",
+    "45",
+    "--smooth-from",
+    "30",
+    "--smooth-axis",
+    "0",
+    "--shape",
+    "kappa",
+    "tri_top",
+    "tri_bot",
+    "volume",
+    "li",
+    "--x-points",
+    "--reshape-after-x-points",
+    "--geometric-share",
+    "0.5",
+    "--li-share",
+    "0.6",
+    "--edit-margin",
+    "1",
+    "--contour",
+    "--contour-first",
+    "--contour-share",
+    "0.5",
+    "--contour-rounds",
+    "1",
+    "--scalar-share",
+    "kappa=0.5",
+    "volume=0.5",
+    "tri_top=0.25",
+    "tri_bot=0.25"
+  ],
+  "static_share": 0.5,
+  "joint_share": {
+    "q95": 0.46,
+    "beta_n": 0.87
+  },
+  "d3d_source": "source/d3d_legacy",
+  "d3d_entrypoints": "source/d3d_entrypoints",
+  "mast_source": "source/mast_legacy",
+  "mast_entrypoints": "source/mast_entrypoints",
+  "scalar_arithmetic": "float32 map-head mean promoted to float64; separate .46 q95 and .87 beta_n joint shares; final float32",
+  "source_files": {
+    "source/d3d_entrypoints/geometry_readout_streaming.py": "63e0a430d8a4a08e03e41c3e5071fab125ac6ddea028c46c5770ff9256001b49",
+    "source/d3d_entrypoints/li_readout_ridge.py": "2dc821b6b3c9196de7b1f0aa2faffe7c3c5124035667653abc2b6b9fe1b1c69f",
+    "source/d3d_entrypoints/predict_diii_d.py": "1cfd6ba11f8c9c716c49ada5c70e4f71a003099dbbb26c5f31344edcba8f4eb9",
+    "source/d3d_entrypoints/predict_mast.py": "49c0f62c19c87fba96b5d19ecbba4f7b6c3c278a48254ab7b467aea9ae07316a",
+    "source/d3d_entrypoints/refit_geometry.py": "ac59496664a619dfd9b37f21cd0c7c2096dc90cb4324c3bade5bfd29a52627f6",
+    "source/d3d_entrypoints/shape_edit_fixed_axis_volume.py": "79c7b8c1ac52fdfeb1da4a698d88e51aeaf86bf3e8c3123e7f77efac361894d2",
+    "source/d3d_entrypoints/subframe_features.py": "bea1c161abcce231b5a66ff2f9afcc3a245f6ede010c5b4b19feca1a043a3fe3",
+    "source/d3d_entrypoints/thomson_isoflux.py": "6588971a66bdf2de07eb44c09869e78637946fb944e174b7a09e75e3572a37f2",
+    "source/d3d_legacy/fec_adapter/__init__.py": "3d671954b43a59eedb7f75d14b60d5f664694fa33ac4b5063d676bf5d330bbcf",
+    "source/d3d_legacy/fec_adapter/archive.py": "d80fcdbd6919a88beb6f762b0d060c088904980113065f9e24ce7e99089e51e7",
+    "source/d3d_legacy/fec_adapter/batched_equilibrium.py": "533de4cfe02e3a31e35854f87a9f283e730c0d590f49636e943e411c3a079bdb",
+    "source/d3d_legacy/fec_adapter/boosted.py": "5babf5c621bd772b803f6948c0f905f998633a49dc0916648395b1611032bfdd",
+    "source/d3d_legacy/fec_adapter/branch_check.py": "6f209fe3f5ccec12a71a45debfed5ea8b5245e3bbf6905a2ea63c92cf7dcbe54",
+    "source/d3d_legacy/fec_adapter/closed_surface.py": "6509223a50bb65b8400c006ab37ca27cd571ac57382a11e72e3bcaf9b391f436",
+    "source/d3d_legacy/fec_adapter/cross_machine/__init__.py": "18539f974bc558f72e457fd31e3cb5aa131dd2bb2173c79a0c68f53acddf1d74",
+    "source/d3d_legacy/fec_adapter/cross_machine/build.py": "709e87b5b0d881cb54e2bd5bc831311eda5527d4a9a6b3d6e476e0ef4f282e25",
+    "source/d3d_legacy/fec_adapter/cross_machine/correction.py": "22246869bc8bcdea173ba849010add761140361f27e120e6b3f8bff32c7cb238",
+    "source/d3d_legacy/fec_adapter/cross_machine/fit_correction.py": "65b9de23915dd4b5c7649e413436da3916ac68d87c6c4dac90a39f349280a0e5",
+    "source/d3d_legacy/fec_adapter/cross_machine/hybrid.py": "6ee3153d4759fb7b9b5423282fefd79d3b7a089485e2ffd8d6ff257f3481f6be",
+    "source/d3d_legacy/fec_adapter/cross_machine/isoflux_build.py": "98d5b92422b93912c3bcc1053b536c78c367e57b555b0ef14e6725a5e2d3bd57",
+    "source/d3d_legacy/fec_adapter/cross_machine/map_scalars.py": "be58876ff33c59a70d477e58cc42dfc1b155eccb10452a1f5e3214b029c2d8d4",
+    "source/d3d_legacy/fec_adapter/cross_machine/residual_features.py": "7235ac5bb8f30fbeca421077e99d1adcaebd9b5e38fa652ce856e39cec2d35c5",
+    "source/d3d_legacy/fec_adapter/cross_machine/thomson_isoflux.py": "4728c51de5e4dcac4ffc105b8dea2c6e58784fb7ea391840d83199c2bb1aba33",
+    "source/d3d_legacy/fec_adapter/derived.py": "87ea17b2fb0524dea3e6e6262dc33ee03d9f3095e16970348a3066c0002c032a",
+    "source/d3d_legacy/fec_adapter/device_batches.py": "58e6c05870def95a617913101a0c424b81cb6a2d0a7fe2ebaddf7062cbb4a805",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/__init__.py": "fd049272780007527a5eb769558ef088f0804c8893490264ac5839c618a0d612",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/axis.py": "67d4feb9335446605a69ffc416840724cafc1b9b0cd6b5fa4afab9d9a43a258e",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/build.py": "8113cd8c95249e11091d2972140de6601d7851a8451b0697e56f46c5cf3ffe70",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/contour_edit.py": "1d92b176c650c9a9c57c319f59a69b35fa0f10b42c35cbe575b21a5e780a84e7",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/edge_band.py": "48e938e336fb33eee3d66c7f6ca5c5c4c2923292fca34886afe14871ff09d7f6",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/extract.py": "bc2a58236590656a25d77adf7669c9863fd5d33417027b4b541408956c79a740",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/features.py": "4a5b305d0e3b8e4bb464e38c70911f28a324bbefb58b315741831479e245c933",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/fit_network.py": "d8db7d9de7c7865133d994f9d4d04e574c8f4af604ac2af049128127f8fe0a4d",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/fit_on_accelerators.py": "9b9d451c725ea26b7d47510db28ec73ccb17fd38ad5e4ec33bf69fd34ec1697b",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/flux_basis.py": "0631dd92f45a2deaa6c6542571624d7a96c98e160c575f04b7d3b5f37a968b52",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/gains.py": "5b3f0f6556690dafea096f72a505ad132f8f8b68beffad910f320cb612eff953",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/history.py": "6a01bd3f29dcd3cd4efd605640c0cd5b31a141273e3a79d535f21a397582aea8",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/layout.py": "4701735551b50cb73ae8f70c630c335745c86190f4655a9fac5be8d2d10b47c4",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/network.py": "8de1cb51444991b2121869ca8b31d99944d43a37f8702dd7e5cc79b7613d1800",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/shape_edit.py": "b9cd3f22615d59fb565a7aa2761c2f549c5bc7e4767b3c381de0e12dc25ed66d",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/shape_labels.py": "44203117bce403cb11bbe39d50ec121717ebf5faec741a601581e8d2d39531fe",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/table.py": "e574f354bb85e8e9e91243656c4b3f4ca166e2cc70af79a3a0517c3b6861ddcd",
+    "source/d3d_legacy/fec_adapter/diii_d_accuracy/x_point.py": "088ed9c2ff7011a480ab9f0d8a5ecf80e1ba4e869e8e965bb52a53a4e7487a1a",
+    "source/d3d_legacy/fec_adapter/discharge.py": "8d536db45c265e9cd5ba49010c8ab3b98e203eec2db5f8e75e01fb5cad59a9d5",
+    "source/d3d_legacy/fec_adapter/equilibrium.py": "630f2a585222cad95a5b5ee66430c5de17d36baeb0ab52604196e7ad3a14f7ec",
+    "source/d3d_legacy/fec_adapter/input_features.py": "17f306d6588afdb5af23f19369932eb6f5e20d1a35bbb0110b7f1a805550b2af",
+    "source/d3d_legacy/fec_adapter/machine.py": "12e84a451d97ba21949eac889dd27889db77fc476744e1b2dfaee149f6e7853a",
+    "source/d3d_legacy/fec_adapter/orientation.py": "d5c2d166629338d34791ec9f01341abb98bc7756192a4f9ddb354fa41c6116b1",
+    "source/d3d_legacy/fec_adapter/physics_base.py": "0191e9c56ec2b46970136a31063125829c751abbcd4f0e9522367c26220b24d7",
+    "source/d3d_legacy/fec_adapter/predict.py": "45113b7e774082a2bbd373b9310ef1a286dee55b516a0206890beff9c3bec205",
+    "source/d3d_legacy/fec_adapter/profiles.py": "4ab7e4fb72a6ecb617c3cddd3887bdd39fa758af6027426dc63cf3518d540881",
+    "source/d3d_legacy/fec_adapter/residual.py": "c6fdd3f15d4a68a7ccd36b0d9cb94d995f828d26869f0bed68ce97c5ff130016",
+    "source/d3d_legacy/fec_adapter/scoring_kit/LICENSE": "fd6ad446d0e379b419f604e6d0009f9774c33c03eedd4a223515381c2c1e1629",
+    "source/d3d_legacy/fec_adapter/scoring_kit/__init__.py": "cb73893b01a64fbd79b45f6152077ba4c21e7b351714381a07f8b86ea8e971f7",
+    "source/d3d_legacy/fec_adapter/scoring_kit/__init__.pyi": "6596d8ed2d364172336a9d759cbff631c5c58e3143a1d284e384edd5831426e1",
+    "source/d3d_legacy/fec_adapter/scoring_kit/common.py": "4c9618aa8bc42bc5e4f9cfb64d20d1e0644c7cfa28f06b7271d94041fbb4ff56",
+    "source/d3d_legacy/fec_adapter/scoring_kit/contour.py": "20bebb7546cd665c1993bbb47c653f697f39c31414175126e551756f05001efc",
+    "source/d3d_legacy/fec_adapter/scoring_kit/derive.py": "11856266015ebec9e8fd96a82d110107cceedcce5085cd4b0ba9dd437b00df9c",
+    "source/d3d_legacy/fec_adapter/scoring_kit/lcfs.py": "bd34c6a0bdb84a96aa06f917a5efda17900fa1854c0477e02c01f2946bfabecd",
+    "source/d3d_legacy/fec_adapter/scoring_kit/o_point.py": "531f8dc24f54e7cd1516fa365fd412e4421d1c086d170682c00ba964304315e4",
+    "source/d3d_legacy/fec_adapter/shot_reader.py": "4bf8b25deff20f5d1f69ddececc3859bc7a9f2a2423922a896ded7e63340f9a6",
+    "source/d3d_legacy/fec_adapter/split.py": "a08aec2b15fc944b78ca3249bd1a14d4b53b41e6096a1ebd723c2f83336fffb5",
+    "source/d3d_legacy/fec_adapter/stall_watchdog.py": "390a31686f90bf07670635bfc462672fe2050267073311696aafbf5b8ee3c69d",
+    "source/d3d_legacy/fec_adapter/temporal.py": "961132ca594af1296fc39a9773aadbf52a0aaf0acbd9de6813d8cad4fa864569",
+    "source/d3d_legacy/fec_adapter/vessel.py": "b5c6a50ac1a5cec03323864ee7ba75a8dd197b95b986d9bad9fafd4da21782db",
+    "source/d3d_legacy/reserved_for_evaluation.json": "ce26daacb167df300bc2ef7f4f9399f54c534fbbad574266914aac955359df8d",
+    "source/d3d_legacy/splits.json": "1e11fea0553fc5b7d5a79f388b46333d208457e2cce2cc622e910ca2bf21dfb5",
+    "source/d3d_legacy/vendor/PROVENANCE.md": "890c7cc562f2d4f53f211d2f05a636ed927a63fd4bfe4030af7ebdaf0d8a6570",
+    "source/d3d_legacy/vendor/challenge_masks/LICENSE": "fd6ad446d0e379b419f604e6d0009f9774c33c03eedd4a223515381c2c1e1629",
+    "source/d3d_legacy/vendor/challenge_masks/d3d_envelope.npz": "5fc7f52a8b253db94020b46f20bd299560a799bc0135a1eda0c611b8001a07f1",
+    "source/d3d_legacy/vendor/patches/0001-anderson-normal-equations-default.patch": "e664357fca79cbed3e045a301f3228a94328b5baffba34649723fb14e81efaaf",
+    "source/d3d_legacy/vendor/patches/0002-prefer-predictive-seed.patch": "a46fb43bda8c1498c716e5c5066afa1e5298578246660255dd77250a0d6dab9a",
+    "source/d3d_legacy/vendor/patches/0003-batched-per-sample-current-start-field-and-iteration-count.patch": "8061512c4ea15b4216e2625714c44b9b91843ef712f5e7bb9e1432fa42b85512",
+    "source/d3d_legacy/vendor/scpn_fusion/__init__.py": "913ea0c6135821e9ba2b69112cdd228abcd2703608d756cad1b7096ca10485e5",
+    "source/d3d_legacy/vendor/scpn_fusion/core/__init__.py": "240efb2c2e86606195aa402d9ff070e23e93b0704a5f692fb44f4be17b181a87",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_continuation_history.py": "5523093a374d4ba3093d8ddca005b43dadd66ae90fd8cab3b57bdbe1eeaa4e0e",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_equilibrium_solver.py": "ba1576d406e52f63a44c677a1eabba2440713bfb4df917b87abb503d2d4e9b99",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_free_boundary_gs.py": "2d877ed057afe9b8709903a174e18166d17c0aea1a64ae5f03481bea88eedada",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_free_boundary_gs_implicit.py": "4a112778cf9f6c9617d1270e12a3cefbc84b1b2b39eec85d36a6e571ed6bb8ac",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_free_boundary_predictive.py": "29e32c3a67e32e92a31ccff0b7dac1f503ef83467ff1588ad6e97ff4259e0f3b",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_multigrid_precond.py": "59e5a2e0b9777d55c1c43dd1c49b3f88db8d21bb7490ed7d3b5b9698426727da",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_o_point.py": "e5c5d6bc85e116137527ec9cb2ed177c10e23bac5d64a484f04ae66d7929c214",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_plasma_support.py": "5838a285a02e3f433c42e672c1cd98263e2439c63bd48bf82ff50f8d96225eb9",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_predictive_checkpoint_trace.py": "a0cfa87e519ce1ddc5f38d1d3c04e3a7732bceaa7c2e9e26ddda2f4292ae6199",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_predictive_forward_compiled.py": "664f16652312d94c66619f650e36040d15c80050c6d64120638af48dfcb31138",
+    "source/d3d_legacy/vendor/scpn_fusion/core/jax_x_point.py": "853816efe6b1b73a211f093764d844c6ca54967a2f98537d9a32131123786f24",
+    "source/d3d_legacy/vendor/scpn_fusion/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "source/mast_entrypoints/predict_mast.py": "49c0f62c19c87fba96b5d19ecbba4f7b6c3c278a48254ab7b467aea9ae07316a",
+    "source/mast_entrypoints/thomson_isoflux.py": "9eb026e1ba439c2f1c8e237867b8d3cb8cc50b6e7e19e887b9ae613e5aebcce7",
+    "source/mast_legacy/fec_adapter/__init__.py": "3d671954b43a59eedb7f75d14b60d5f664694fa33ac4b5063d676bf5d330bbcf",
+    "source/mast_legacy/fec_adapter/archive.py": "d80fcdbd6919a88beb6f762b0d060c088904980113065f9e24ce7e99089e51e7",
+    "source/mast_legacy/fec_adapter/batched_equilibrium.py": "533de4cfe02e3a31e35854f87a9f283e730c0d590f49636e943e411c3a079bdb",
+    "source/mast_legacy/fec_adapter/boosted.py": "5babf5c621bd772b803f6948c0f905f998633a49dc0916648395b1611032bfdd",
+    "source/mast_legacy/fec_adapter/branch_check.py": "6f209fe3f5ccec12a71a45debfed5ea8b5245e3bbf6905a2ea63c92cf7dcbe54",
+    "source/mast_legacy/fec_adapter/closed_surface.py": "6509223a50bb65b8400c006ab37ca27cd571ac57382a11e72e3bcaf9b391f436",
+    "source/mast_legacy/fec_adapter/cross_machine/__init__.py": "18539f974bc558f72e457fd31e3cb5aa131dd2bb2173c79a0c68f53acddf1d74",
+    "source/mast_legacy/fec_adapter/cross_machine/build.py": "709e87b5b0d881cb54e2bd5bc831311eda5527d4a9a6b3d6e476e0ef4f282e25",
+    "source/mast_legacy/fec_adapter/cross_machine/correction.py": "22246869bc8bcdea173ba849010add761140361f27e120e6b3f8bff32c7cb238",
+    "source/mast_legacy/fec_adapter/cross_machine/fit_correction.py": "65b9de23915dd4b5c7649e413436da3916ac68d87c6c4dac90a39f349280a0e5",
+    "source/mast_legacy/fec_adapter/cross_machine/hybrid.py": "6ee3153d4759fb7b9b5423282fefd79d3b7a089485e2ffd8d6ff257f3481f6be",
+    "source/mast_legacy/fec_adapter/cross_machine/isoflux_build.py": "98d5b92422b93912c3bcc1053b536c78c367e57b555b0ef14e6725a5e2d3bd57",
+    "source/mast_legacy/fec_adapter/cross_machine/map_scalars.py": "be58876ff33c59a70d477e58cc42dfc1b155eccb10452a1f5e3214b029c2d8d4",
+    "source/mast_legacy/fec_adapter/cross_machine/residual_features.py": "7235ac5bb8f30fbeca421077e99d1adcaebd9b5e38fa652ce856e39cec2d35c5",
+    "source/mast_legacy/fec_adapter/cross_machine/thomson_isoflux.py": "4728c51de5e4dcac4ffc105b8dea2c6e58784fb7ea391840d83199c2bb1aba33",
+    "source/mast_legacy/fec_adapter/derived.py": "87ea17b2fb0524dea3e6e6262dc33ee03d9f3095e16970348a3066c0002c032a",
+    "source/mast_legacy/fec_adapter/device_batches.py": "58e6c05870def95a617913101a0c424b81cb6a2d0a7fe2ebaddf7062cbb4a805",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/__init__.py": "fd049272780007527a5eb769558ef088f0804c8893490264ac5839c618a0d612",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/axis.py": "67d4feb9335446605a69ffc416840724cafc1b9b0cd6b5fa4afab9d9a43a258e",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/build.py": "8113cd8c95249e11091d2972140de6601d7851a8451b0697e56f46c5cf3ffe70",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/contour_edit.py": "1d92b176c650c9a9c57c319f59a69b35fa0f10b42c35cbe575b21a5e780a84e7",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/edge_band.py": "48e938e336fb33eee3d66c7f6ca5c5c4c2923292fca34886afe14871ff09d7f6",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/extract.py": "bc2a58236590656a25d77adf7669c9863fd5d33417027b4b541408956c79a740",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/features.py": "4a5b305d0e3b8e4bb464e38c70911f28a324bbefb58b315741831479e245c933",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/fit_network.py": "f104ec2f6a3f3096f7b0ddbf993dd39419caebd821e19742dfc9f55f843d74ca",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/fit_on_accelerators.py": "1aec878edc089178259c0c06a78e52a6c057f5379f8bc0d065d4aa4e8d3d7ddd",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/flux_basis.py": "0631dd92f45a2deaa6c6542571624d7a96c98e160c575f04b7d3b5f37a968b52",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/gains.py": "5b3f0f6556690dafea096f72a505ad132f8f8b68beffad910f320cb612eff953",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/history.py": "6a01bd3f29dcd3cd4efd605640c0cd5b31a141273e3a79d535f21a397582aea8",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/layout.py": "4701735551b50cb73ae8f70c630c335745c86190f4655a9fac5be8d2d10b47c4",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/network.py": "8de1cb51444991b2121869ca8b31d99944d43a37f8702dd7e5cc79b7613d1800",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/shape_edit.py": "b9cd3f22615d59fb565a7aa2761c2f549c5bc7e4767b3c381de0e12dc25ed66d",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/shape_labels.py": "44203117bce403cb11bbe39d50ec121717ebf5faec741a601581e8d2d39531fe",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/table.py": "e574f354bb85e8e9e91243656c4b3f4ca166e2cc70af79a3a0517c3b6861ddcd",
+    "source/mast_legacy/fec_adapter/diii_d_accuracy/x_point.py": "088ed9c2ff7011a480ab9f0d8a5ecf80e1ba4e869e8e965bb52a53a4e7487a1a",
+    "source/mast_legacy/fec_adapter/discharge.py": "8d536db45c265e9cd5ba49010c8ab3b98e203eec2db5f8e75e01fb5cad59a9d5",
+    "source/mast_legacy/fec_adapter/equilibrium.py": "630f2a585222cad95a5b5ee66430c5de17d36baeb0ab52604196e7ad3a14f7ec",
+    "source/mast_legacy/fec_adapter/input_features.py": "17f306d6588afdb5af23f19369932eb6f5e20d1a35bbb0110b7f1a805550b2af",
+    "source/mast_legacy/fec_adapter/machine.py": "12e84a451d97ba21949eac889dd27889db77fc476744e1b2dfaee149f6e7853a",
+    "source/mast_legacy/fec_adapter/orientation.py": "d5c2d166629338d34791ec9f01341abb98bc7756192a4f9ddb354fa41c6116b1",
+    "source/mast_legacy/fec_adapter/physics_base.py": "0191e9c56ec2b46970136a31063125829c751abbcd4f0e9522367c26220b24d7",
+    "source/mast_legacy/fec_adapter/predict.py": "45113b7e774082a2bbd373b9310ef1a286dee55b516a0206890beff9c3bec205",
+    "source/mast_legacy/fec_adapter/profiles.py": "4ab7e4fb72a6ecb617c3cddd3887bdd39fa758af6027426dc63cf3518d540881",
+    "source/mast_legacy/fec_adapter/residual.py": "c6fdd3f15d4a68a7ccd36b0d9cb94d995f828d26869f0bed68ce97c5ff130016",
+    "source/mast_legacy/fec_adapter/scoring_kit/LICENSE": "fd6ad446d0e379b419f604e6d0009f9774c33c03eedd4a223515381c2c1e1629",
+    "source/mast_legacy/fec_adapter/scoring_kit/__init__.py": "cb73893b01a64fbd79b45f6152077ba4c21e7b351714381a07f8b86ea8e971f7",
+    "source/mast_legacy/fec_adapter/scoring_kit/__init__.pyi": "6596d8ed2d364172336a9d759cbff631c5c58e3143a1d284e384edd5831426e1",
+    "source/mast_legacy/fec_adapter/scoring_kit/common.py": "4c9618aa8bc42bc5e4f9cfb64d20d1e0644c7cfa28f06b7271d94041fbb4ff56",
+    "source/mast_legacy/fec_adapter/scoring_kit/contour.py": "20bebb7546cd665c1993bbb47c653f697f39c31414175126e551756f05001efc",
+    "source/mast_legacy/fec_adapter/scoring_kit/derive.py": "11856266015ebec9e8fd96a82d110107cceedcce5085cd4b0ba9dd437b00df9c",
+    "source/mast_legacy/fec_adapter/scoring_kit/lcfs.py": "bd34c6a0bdb84a96aa06f917a5efda17900fa1854c0477e02c01f2946bfabecd",
+    "source/mast_legacy/fec_adapter/scoring_kit/o_point.py": "531f8dc24f54e7cd1516fa365fd412e4421d1c086d170682c00ba964304315e4",
+    "source/mast_legacy/fec_adapter/shot_reader.py": "4bf8b25deff20f5d1f69ddececc3859bc7a9f2a2423922a896ded7e63340f9a6",
+    "source/mast_legacy/fec_adapter/split.py": "a08aec2b15fc944b78ca3249bd1a14d4b53b41e6096a1ebd723c2f83336fffb5",
+    "source/mast_legacy/fec_adapter/stall_watchdog.py": "390a31686f90bf07670635bfc462672fe2050267073311696aafbf5b8ee3c69d",
+    "source/mast_legacy/fec_adapter/temporal.py": "961132ca594af1296fc39a9773aadbf52a0aaf0acbd9de6813d8cad4fa864569",
+    "source/mast_legacy/fec_adapter/vessel.py": "b5c6a50ac1a5cec03323864ee7ba75a8dd197b95b986d9bad9fafd4da21782db",
+    "source/mast_legacy/reserved_for_evaluation.json": "ce26daacb167df300bc2ef7f4f9399f54c534fbbad574266914aac955359df8d",
+    "source/mast_legacy/splits.json": "1e11fea0553fc5b7d5a79f388b46333d208457e2cce2cc622e910ca2bf21dfb5",
+    "source/mast_legacy/vendor/PROVENANCE.md": "890c7cc562f2d4f53f211d2f05a636ed927a63fd4bfe4030af7ebdaf0d8a6570",
+    "source/mast_legacy/vendor/challenge_masks/LICENSE": "fd6ad446d0e379b419f604e6d0009f9774c33c03eedd4a223515381c2c1e1629",
+    "source/mast_legacy/vendor/challenge_masks/d3d_envelope.npz": "5fc7f52a8b253db94020b46f20bd299560a799bc0135a1eda0c611b8001a07f1",
+    "source/mast_legacy/vendor/patches/0001-anderson-normal-equations-default.patch": "e664357fca79cbed3e045a301f3228a94328b5baffba34649723fb14e81efaaf",
+    "source/mast_legacy/vendor/patches/0002-prefer-predictive-seed.patch": "a46fb43bda8c1498c716e5c5066afa1e5298578246660255dd77250a0d6dab9a",
+    "source/mast_legacy/vendor/patches/0003-batched-per-sample-current-start-field-and-iteration-count.patch": "8061512c4ea15b4216e2625714c44b9b91843ef712f5e7bb9e1432fa42b85512",
+    "source/mast_legacy/vendor/scpn_fusion/__init__.py": "913ea0c6135821e9ba2b69112cdd228abcd2703608d756cad1b7096ca10485e5",
+    "source/mast_legacy/vendor/scpn_fusion/core/__init__.py": "240efb2c2e86606195aa402d9ff070e23e93b0704a5f692fb44f4be17b181a87",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_continuation_history.py": "5523093a374d4ba3093d8ddca005b43dadd66ae90fd8cab3b57bdbe1eeaa4e0e",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_equilibrium_solver.py": "ba1576d406e52f63a44c677a1eabba2440713bfb4df917b87abb503d2d4e9b99",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_free_boundary_gs.py": "2d877ed057afe9b8709903a174e18166d17c0aea1a64ae5f03481bea88eedada",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_free_boundary_gs_implicit.py": "4a112778cf9f6c9617d1270e12a3cefbc84b1b2b39eec85d36a6e571ed6bb8ac",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_free_boundary_predictive.py": "29e32c3a67e32e92a31ccff0b7dac1f503ef83467ff1588ad6e97ff4259e0f3b",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_multigrid_precond.py": "59e5a2e0b9777d55c1c43dd1c49b3f88db8d21bb7490ed7d3b5b9698426727da",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_o_point.py": "e5c5d6bc85e116137527ec9cb2ed177c10e23bac5d64a484f04ae66d7929c214",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_plasma_support.py": "5838a285a02e3f433c42e672c1cd98263e2439c63bd48bf82ff50f8d96225eb9",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_predictive_checkpoint_trace.py": "a0cfa87e519ce1ddc5f38d1d3c04e3a7732bceaa7c2e9e26ddda2f4292ae6199",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_predictive_forward_compiled.py": "664f16652312d94c66619f650e36040d15c80050c6d64120638af48dfcb31138",
+    "source/mast_legacy/vendor/scpn_fusion/core/jax_x_point.py": "853816efe6b1b73a211f093764d844c6ca54967a2f98537d9a32131123786f24",
+    "source/mast_legacy/vendor/scpn_fusion/py.typed": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855"
+  },
+  "training_reproduction_complete": false,
+  "published": false,
+  "runtime_source_files": {
+    "tree_replica.py": "ef20a7c6e9dd12714789bf715a94f74e00bba07947d9be349e78fa1fa8a9a5e7"
+  },
+  "tree_arithmetic": "D32 native leaf routing; sequential float32 leaf accumulation from zero, base added last",
+  "prior_deployment_manifest_sha256": "4585703119a955e3c76b9150c2840292d3c951c128cef2c65e31d5b4defa0691",
+  "inference_entrypoint_sha256": "caf77861ccc07c81ddaf722ac4cd8810e82b0075b1eb2dbc8d5192e632cfa57d",
+  "maximum_workers": 22
+}

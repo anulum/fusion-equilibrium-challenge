@@ -1,0 +1,144 @@
+--- a/src/scpn_fusion/core/jax_predictive_forward_compiled.py
++++ b/src/scpn_fusion/core/jax_predictive_forward_compiled.py
+@@ -523,7 +523,7 @@
+     anderson_solver: str,
+     shared_init: bool,
+     use_fixed_support: bool,
+-) -> Callable[..., jnp.ndarray]:
++) -> Callable[..., tuple[jnp.ndarray, jnp.ndarray]]:
+     """Build and jit the vmapped batch runner for one (geometry, settings) combination.
+ 
+     The cache is the whole point: re-jitting ``jax.vmap`` per call recompiles the batched
+@@ -568,13 +568,13 @@
+         response_matrix: jnp.ndarray,
+         wall_idx: jnp.ndarray,
+         source_idx: jnp.ndarray,
+-        x0_shared: jnp.ndarray,
++        x0_sample: jnp.ndarray,
+         fixed_support_weights: jnp.ndarray,
+-    ) -> jnp.ndarray:
++    ) -> tuple[jnp.ndarray, jnp.ndarray]:
+         psi_coil = vacuum_field_si(R_grid, Z_grid, coil_R, coil_Z, ci, mu0)
+         coil_wall = psi_coil.reshape(-1)[wall_idx]
+-        x0 = x0_shared if shared_init else psi_coil.reshape(-1)
+-        psi, _k = runner(
++        x0 = x0_sample if shared_init else psi_coil.reshape(-1)
++        psi, k = runner(
+             ci,
+             pp,
+             ff,
+@@ -589,10 +589,15 @@
+             fixed_support_weights,
+             x0,
+         )
+-        return cast(jnp.ndarray, psi)
++        return cast(jnp.ndarray, psi), cast(jnp.ndarray, k)
+ 
+-    in_axes = (0, 0, 0) + (None,) * 11
+-    return cast(Callable[..., jnp.ndarray], jax.jit(jax.vmap(one, in_axes=in_axes)))
++    # Per-sample axes: coil currents, p′, FF′, the plasma current and the start field.
++    # Geometry and machine arrays stay broadcast.
++    in_axes = (0, 0, 0, None, None, None, None, None, 0, None, None, None, 0, None)
++    return cast(
++        Callable[..., tuple[jnp.ndarray, jnp.ndarray]],
++        jax.jit(jax.vmap(one, in_axes=in_axes)),
++    )
+ 
+ 
+ def solve_predictive_equilibrium_batched(
+@@ -604,7 +609,7 @@
+     coil_R: jnp.ndarray,
+     coil_Z: jnp.ndarray,
+     psin_knots: jnp.ndarray,
+-    ip_target: float,
++    ip_target: float | jnp.ndarray,
+     response_matrix: jnp.ndarray,
+     wall_idx: jnp.ndarray,
+     source_idx: jnp.ndarray,
+@@ -622,8 +627,9 @@
+     inner_cycles: int = 2,
+     anderson_solver: str = "normal_eq",
+     fixed_support_weights: jnp.ndarray | None = None,
+-) -> jnp.ndarray:
+-    """Batched compiled solve — ``vmap`` over (coil currents, p′, FF′) samples.
++    return_iterations: bool = False,
++) -> jnp.ndarray | tuple[jnp.ndarray, jnp.ndarray]:
++    """Batched compiled solve — ``vmap`` over (coil currents, p′, FF′, Ip, ψ₀) samples.
+ 
+     The MCMC/ensemble pattern of the IDA loop: many parameter samples of the SAME machine
+     geometry solved simultaneously. Kernel-launch latency (the measured wall-clock driver at
+@@ -642,6 +648,19 @@
+ 
+     ``fixed_support_weights`` has the same static machine-support semantics as
+     the single compiled solve and is shared by the batch.
++
++    ``ip_target`` is a scalar shared by the batch or one value per sample, shape ``(B,)``.
++    A time series of one discharge is the per-sample case: the plasma current moves from
++    frame to frame, and holding the whole batch to one value solves every frame but one
++    for the wrong current.
++
++    ``psi_init`` is one field shared by the batch, shape ``(NZ, NR)``, or one field per
++    sample, shape ``(B, NZ, NR)`` — the warm start of each frame from its own neighbour.
++
++    ``return_iterations=True`` returns ``(ψ, k)`` with ``k`` of shape ``(B,)``: the outer
++    iteration count of each sample. ``k < n_iter`` proves that sample met the tolerance;
++    ``k == n_iter`` does not distinguish a stall from convergence on the last permitted
++    iteration and must be read as not converged.
+     """
+     r_np = np.asarray(R_grid, dtype=np.float64)
+     z_np = np.asarray(Z_grid, dtype=np.float64)
+@@ -664,8 +683,16 @@
+     if anderson_solver not in ("lstsq", "normal_eq"):
+         raise ValueError(f"unknown anderson_solver {anderson_solver!r}")
+     nz, nr = z_np.size, r_np.size
+-    if psi_init is not None and tuple(np.shape(psi_init)) != (nz, nr):
+-        raise ValueError(f"psi_init shape {np.shape(psi_init)} does not match grid ({nz}, {nr})")
++    n_batch = int(coil_I_batch.shape[0])
++    if psi_init is not None and tuple(np.shape(psi_init)) not in ((nz, nr), (n_batch, nz, nr)):
++        raise ValueError(
++            f"psi_init shape {np.shape(psi_init)} matches neither the grid ({nz}, {nr}) "
++            f"nor the batch ({n_batch}, {nz}, {nr})"
++        )
++    if np.shape(ip_target) not in ((), (n_batch,)):
++        raise ValueError(
++            f"ip_target shape {np.shape(ip_target)} is neither a scalar nor the batch ({n_batch},)"
++        )
+     if fixed_support_weights is not None and tuple(np.shape(fixed_support_weights)) != (nz, nr):
+         raise ValueError(
+             "fixed_support_weights shape "
+@@ -691,13 +718,15 @@
+         psi_init is not None,
+         fixed_support_weights is not None,
+     )
+-    ip_arr = jnp.asarray(float(ip_target))
+-    x0_shared = (
+-        jnp.zeros(nz * nr, dtype=jnp.result_type(float))
++    ip_arr = jnp.broadcast_to(jnp.asarray(ip_target, dtype=jnp.result_type(float)), (n_batch,))
++    x0_batch = (
++        jnp.zeros((n_batch, nz * nr), dtype=jnp.result_type(float))
+         if psi_init is None
+-        else jnp.asarray(psi_init).reshape(-1)
++        else jnp.broadcast_to(
++            jnp.asarray(psi_init).reshape(-1, nz * nr), (n_batch, nz * nr)
++        )
+     )
+-    return batched(
++    psi_batch, iterations = batched(
+         coil_I_batch,
+         pprime_batch,
+         ffprime_batch,
+@@ -710,10 +739,13 @@
+         response_matrix,
+         wall_idx,
+         source_idx,
+-        x0_shared,
++        x0_batch,
+         (
+             jnp.ones((nz, nr), dtype=jnp.result_type(float))
+             if fixed_support_weights is None
+             else jnp.asarray(fixed_support_weights)
+         ),
+     )
++    if return_iterations:
++        return psi_batch, iterations
++    return psi_batch
