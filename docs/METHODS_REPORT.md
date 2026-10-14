@@ -66,8 +66,9 @@ equal weights for the network families; refitting the scalar output rows of all 
 shot's error from similar shots; a network attending over all frames of a shot against a matched per-frame
 control; and exponentially weighted discharge history over 0.3 s to 10 s. An analysis of the map that remains
 after the model's answer shows that it is low-dimensional (three directions hold 83 % of its energy), persistent
-within a shot, and not a function of the released inputs. We read this as the part of the equilibrium that only
-the magnetic measurements carry.
+within a shot, and not recovered from the released inputs by any model we fitted (linear, boosted trees, slow
+discharge memory). One reading is that it is the part of the equilibrium only the magnetic measurements carry;
+the tests do not separate that from what our models fail to extract, so it stays a hypothesis.
 
 ## 3. MAST (Challenge 2, zero-shot)
 
