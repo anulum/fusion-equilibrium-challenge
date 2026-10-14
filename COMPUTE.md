@@ -35,7 +35,45 @@ transfer, compilation and fitting. A fixed set of 358 development shots /
 already exposed development set measures backend differences, not fresh
 scientific generalization. GPU allocator fraction 0.95 was needed after the
 default allocation limit failed; no data, batch or epoch reductions were
-made. The matched ROCm accuracy comparison remains pending.
+made. The matched ROCm run completed the same four recipes on one AMD
+RX 6600 XT with 8 GiB VRAM, using allocator fraction 0.75. Both static
+models passed the original final-ten-epoch quality check.
+
+| Family | CUDA fit seconds | ROCm fit seconds | Selected epoch on both |
+|---|---:|---:|---:|
+| maps14 | 279.410 | 277.337 | 60 |
+| maps78 | 325.591 | 395.988 | 60 |
+| joint | 289.519 | 265.184 | 60 |
+| static | 283.103 | 402.799 | 60 |
+
+Summed ROCm fitting time was 1341.308 seconds
+(0.3726 hours). These are observations on a shared workstation,
+not a controlled hardware throughput ranking. The CUDA job had a two-core
+CPU ceiling and the ROCm job a four-core ceiling; ROCm also included per-epoch
+diagnostic tracing. Both environments used JAX 0.8.2 with their respective
+CUDA or ROCm backend libraries. Numerical fitting source was identical.
+
+Held-set R² differences below are **CUDA minus ROCm**, for raw network
+outputs before geometry readouts or the deployed map-finishing step. Map
+coordinate R² covers 64 basis directions, rather than the full finished ψ map.
+The held cohort and finite-label row masks matched across both runs.
+
+| Family | Coordinate R² difference | q95 R² difference | betaN R² difference |
+|---|---:|---:|---:|
+| maps14 | +0.000058097 | +0.001263795 | +0.001571548 |
+| maps78 | -0.000006525 | -0.000141170 | -0.000033975 |
+| joint | — | +0.000228724 | -0.000060169 |
+
+| Static X target | CUDA RMSE (metres) | ROCm RMSE (metres) |
+|---|---:|---:|
+| x_lower_r | 0.005220916 | 0.005103960 |
+| x_lower_z | 0.006898470 | 0.007278232 |
+| x_upper_r | 0.005896103 | 0.005896769 |
+| x_upper_z | 0.009304474 | 0.009517686 |
+
+Neither backend was uniformly more accurate in this comparison. One seed per
+family on an already exposed development cohort does not establish which
+backend improves the full ensemble or competition score. The fitted network arrays differed between backends.
 
 CPU hardware observed for current runs was an Intel Core i5-11600K,
 6 physical / 12 logical cores, on the workstation, and two Intel Xeon
