@@ -215,7 +215,8 @@ asked a cheaper question on the 400 out-of-fold shots: do the inputs and our own
 (±1 to ±8 frames, the shot's means, running means, the position in the shot) predict the error of our maps better
 than the same frame alone? Boosted trees, nested by fold, nine targets (the seven shape scalars, q95, βN). The
 history made every target worse (−0.015 to −0.10 in residual R²), and even the same-frame corrector mostly added
-error. The ensemble's remaining error is not predictable from what it is given; we did not build the sequence model then. It was built in the last week (§4.24).
+error. These correctors could not predict the ensemble's remaining error from what they were given; we did not build
+the sequence model then. It was built in the last week (§4.24).
 
 ### 4.11 A boundary-label weight that did not transfer
 The second agent found that cutting the loss weight of the 64 boundary-radius labels tenfold (0.05 to
@@ -589,7 +590,8 @@ targets it does not.
 Training the X-point networks three times longer, or twice as wide and three times longer, lowered their
 training loss by up to a third and left the held-out X-point error where it was (predicted gain over the deployed
 eight: +0.2 and 0.0 × 10⁻⁵). Sixteen or twenty-four members instead of eight predicted +0.6 and +0.7 × 10⁻⁵. The
-specialists are limited by what the inputs say, not by length of training, width or number.
+specialists are not limited by length of training, width or number; what limits them, the inputs as we encode them or
+the model class, these tests do not separate.
 
 One hypothesis about the representation was also tested and set aside. The data ship the coil geometry, so the
 coils' own flux can be computed and subtracted, leaving a plasma part that might need fewer coordinates. With a
@@ -663,8 +665,8 @@ look at what remains, on 358 shots the networks had not seen.
   coordinates beyond them are 0.2 %.
 - Its leading direction, 47 % of it, has one sign over the whole map and peaks in the plasma core: the amount of
   flux enclosed in the plasma, the quantity behind the internal inductance.
-- It is not a function of the inputs. Fitted on four fifths of the shots and tested on the fifth, neither a
-  linear model nor boosted trees on the 582 features and the model's own answer explain any of the three leading
+- The models we tried do not find it in the inputs. Fitted on four fifths of the shots and tested on the fifth,
+  neither a linear model nor boosted trees on the 582 features and the model's own answer explain any of the three leading
   directions (between −22 % and +6 %); no single input signal explains more than a fifth of a direction's variation
   inside a shot.
 
@@ -674,10 +676,13 @@ memory: the plasma current weighted exponentially over 0.3 to 10 seconds, the ti
 duration, the change of the solenoid current since the start, the same memory for the core temperature, and a
 resistive clock. They explained nothing more (leading direction +2.6 %, P 0.73; inductance +1.5 %, P 0.84).
 
-Each shot thus carries a few numbers of its own that are nearly constant through it, account for most of what the
-model gets wrong, and are visible neither in the inputs of a frame nor in how the discharge evolved. That is what
-one would expect if they are set by things the released signals do not contain, such as the heating and the
-composition of the plasma, and it is the part of an equilibrium that the magnetic measurements see directly.
+Each shot thus carries a few numbers of its own that are nearly constant through it and account for most of what
+the model gets wrong, and none of the models we fitted on the inputs of a frame or on the history of the discharge
+recovers them. One explanation is that they are set by things the released signals do not contain, such as the
+heating and the composition of the plasma; that is the part of an equilibrium the magnetic measurements see
+directly. It is a hypothesis, not a result. These tests measure the sum of what the inputs cannot determine and
+what our models fail to extract, and do not separate the two. §4.16 is the warning: an information limit we
+claimed for the table of September was a limit of the table, not of the data.
 
 ## 5. MAST without MAST equilibrium data
 
@@ -985,8 +990,8 @@ written at the end of September; where the later work tried an item, the outcome
   rather than per-frame features with trailing means). Internal inductance is a history quantity, and such a
   model is the natural next architecture. Not chosen: two tests of history information (whole-shot context,
   current diffusion with the corrected clock) found nothing the per-frame model lacks; training it on our cards
-  would have taken weeks we did not have; and §4.7 suggests the remaining error is largely not predictable from
-  these inputs at all. *Later:* it was built and compared with an identical network without context; the context
+  would have taken weeks we did not have; and the correctors of §4.7 could not predict the remaining error from
+  these inputs. *Later:* it was built and compared with an identical network without context; the context
   was worth nothing measurable (§4.24).
 - *Training on the scored quantities end to end.* Consistency and the boundary distance are computed by a
   contour extraction that is not differentiable. A differentiable surrogate of the organisers' reading would let
