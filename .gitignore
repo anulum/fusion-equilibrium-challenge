@@ -25,6 +25,7 @@
 !/docs/
 /docs/*
 !/docs/METHODS_REPORT.md
+!/docs/COSTS.md
 # models/ holds the trained weights: fetched by fetch_weights.py, never committed here
 # private/ and experiments/ stay untracked until their content has passed the pre-publication scan
 __pycache__/

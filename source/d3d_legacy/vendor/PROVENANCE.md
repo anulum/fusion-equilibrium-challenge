@@ -132,20 +132,18 @@ iterations, scaled residuals 1.511e-09 and 5.843e-11, axis at
 This also removes the version ceiling that blocked the AMD GPUs: the ROCm 7.2
 wheels ship jaxlib 0.8.x, which the solver now runs on.
 
-## Vessel envelope masks — third-party, MIT
+## Vessel envelope mask — third-party, MIT
 
-`challenge_masks/d3d_envelope.npz` and `challenge_masks/mast_envelope.npz` are
-byte-identical copies of `fusion_scoring/masks/` in the organisers' starter kit
+`challenge_masks/d3d_envelope.npz` is a byte-identical copy of the DIII-D
+vessel mask from `fusion_scoring/masks/` in the organisers' starter kit
 (`github.com/Sophelio/fusion-equilibrium-challenge-starter`, MIT, © 2026 Sophelio
 and the Fusion Equilibrium Challenge authors; licence text in
-`challenge_masks/LICENSE`). They are machine geometry — the region of the grid
-inside each vessel — and are the same files the scorer uses to find the last
-closed surface, which is why they are copied and not redrawn.
+`challenge_masks/LICENSE`). It identifies the grid region inside the DIII-D
+vessel for last-closed-surface derivation.
 
 | File | SHA-256 |
 |---|---|
 | `d3d_envelope.npz` | `5fc7f52a8b253db94020b46f20bd299560a799bc0135a1eda0c611b8001a07f1` |
-| `mast_envelope.npz` | `50ab5a3e99205978db235ec3b85baa084f87308e7f8bdda6f3c57c7d5ff03616` |
 
-`tests/test_vessel.py` pins both digests; `FEC_MASK_DIR` points the package at
-another directory.
+The MAST target envelope is excluded from this distribution and is not
+available to inference. `FEC_MASK_DIR` can select another mask directory.
