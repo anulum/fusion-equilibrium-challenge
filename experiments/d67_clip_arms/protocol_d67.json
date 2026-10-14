@@ -1,0 +1,11 @@
+{
+ "experiment": "D67 (TODO FEC-R07): does the input clip at 8 cost the heads anything? matched fits, clip 8 against clip 50",
+ "origin": "D65 rule fired (frames clipped for >= half the networks hold 36-67 % of the q95, betaN, li, z_axis error); split agreed with the second agent (handover 2026-10-14T042115Z); entrant 2026-10-14: research reopened, #986068 is the fallback",
+ "arms": "identical fits of the first four 78-label recipe members (hc, seeds 200-203, recipe settings, 60 epochs, train_on_calibration as in the recipe) on the second agent's prepared fit-excluded tables (matched_data_full_v1: 6311 training + 372 calibration shots; the 358 development shots held out of every fit); arm A clip 8 (incumbent code path), arm B clip 50 in fitting, calibration selection and inference; nothing else differs; members interleaved",
+ "code": "train_clip.py = package_v4_training/train.py with two lines changed (HERE from FEC_PACKAGE; the clip from a module constant); network.INPUT_CLIP and fit_network.INPUT_CLIP set per arm",
+ "hardware": "workstation NVIDIA GTX 1060 6 GiB, CUDA venv of the qualification, XLA mem fraction 0.95; systemd user unit, MemoryMax 9G, MemorySwapMax 0, Nice 19",
+ "cohort": "358 development shots, EXPOSED (D38/D39/D43/D49/D65), not confirmation data",
+ "measure": "per arm the mean of its four networks' raw heads; per head the squared-error ratio B/A; paired whole-shot bootstrap (20 000, seed 0) of the predicted score change: axis R and Z 11.0, li 10.6, kappa 4.9, volume 2.1, triangularities 1.1 micro-S per percent of rms error (D45), q95 and betaN 0.075 x change of R2 each; flux coordinate squared-error ratio reported",
+ "decision_rule": "Arm B is a candidate for a deployment-capacity test only if the predicted change is >= +1.0e-5 with bootstrap P(>0) >= 0.95 AND the flux coordinate squared-error ratio B/A <= 1.02. Otherwise the clip is closed at this resolution; a negative result says nothing about the hard frames beyond the clip.",
+ "parity": "arm A runs the incumbent arithmetic (constant 8 as before); its held metrics are compared with the second agent's CUDA qualification of the same first member (full_CUDA_v2/maps78) as a sanity check, not as an admission criterion"
+}

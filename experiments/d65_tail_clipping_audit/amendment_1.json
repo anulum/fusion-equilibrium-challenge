@@ -1,0 +1,3 @@
+{"experiment": "D65", "amendment": 1, "before_any_result": true,
+ "reason": "the first run stopped at the normaliser agreement check: some deployed networks have 765-entry normalisers, i.e. read a wider input than the cached 582-feature table; no frame was evaluated",
+ "change": "clipping is measured for the networks whose normaliser has 582 entries; the excluded networks and their input widths are listed in the report; the decision rule and tables are unchanged, with 'the 85 networks' read as 'the networks that read the 582-feature table'"}

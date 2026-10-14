@@ -684,6 +684,37 @@ directly. It is a hypothesis, not a result. These tests measure the sum of what 
 what our models fail to extract, and do not separate the two. §4.16 is the warning: an information limit we
 claimed for the table of September was a limit of the table, not of the data.
 
+### 4.26 After an external review: where the hard frames are, and three tries at them
+On 14 October, with the model submitted, the entrant had the repository reviewed by an outside language model and
+reopened the research for the remaining days, keeping #986068 as the fallback. Two of the review's points held up.
+The study had claimed more than its tests showed about an information limit (§4.25 is now worded as a hypothesis),
+and the hard frames had never been examined input by input. One point did not: checkpoints are chosen by a trimmed
+flux error, but in 925 of 944 recorded fits trimmed and untrimmed selection pick the same epoch, and in 828 that
+epoch is the last.
+
+**Where the error sits.** On the 358 development shots, 5.2 % of the frames have at least one input beyond the eight
+standard deviations at which inputs are clipped. Those frames hold 67 % of the squared error of βN, 41 % of li, 39 %
+of the axis height and 36 % of q95. The clipped columns are almost all Thomson availability flags (whether a bin
+holds any finite positive value; usually 1, and a 0 is 10 to 13 standard deviations out) and their window means.
+Clipping a two-valued flag loses nothing, so the clip marks the frames rather than explaining them: frames in which
+channels that normally report have nothing, at the end of a discharge or when the plasma no longer reaches them.
+
+**Three tries, each frozen before it ran and recomputed independently by the other agent.**
+
+| Experiment | What changed | Result on the 358 | Decision |
+|---|---|---|---|
+| Clip at 50 instead of 8 (four networks per arm) | availability means keep their gradation | predicted +3.2 × 10⁻⁵ (95 % −7.1 to +13.3 × 10⁻⁵), flux error ×1.05 | rejected |
+| A small branch on the full incumbent reading the raw Thomson channels, against the same branch on coarse bins | a learned correction of the 13 heads | −198 µS and −157 µS through the finisher (99 % intervals entirely below zero) | rejected; the 357 not opened |
+| Context means over available values only, availability kept separately | the table itself, rebuilt for 7041 shots | heads −1.3 × 10⁻⁴ (95 % up to −1.8 × 10⁻⁵) | rejected |
+
+Each attempt helped some heads (the axis height or q95 and li) and cost others more. The hard frames are located;
+none of these representations makes them easier for the networks.
+
+A fourth idea, refitting the deployed networks on the cohort shots, was not needed: 64 of the 69 deployed map
+networks already train on all 7041 labelled shots and five on all but the calibration part. The cohort exclusions
+apply only to the copies fitted for evaluation, a distinction we briefly got wrong ourselves before checking the
+fit records.
+
 ## 5. MAST without MAST equilibrium data
 
 ### 5.1 The rule and our reading of it
@@ -947,6 +978,9 @@ the Development score, with the submission number.
 | A network attending over all frames of a shot, against an identical network without context | −0.7 × 10⁻⁵ (95 % interval −6.3 to +6.2 × 10⁻⁵) | — | no |
 | What is left of the map after the model's answer (358 shots) | three directions hold 83 %; 38 % is an offset per shot; not explained by the inputs | — | measurement |
 | Slow memory of the discharge (21 measures over 0.3 to 10 s) for that remainder | leading direction +2.6 % (P 0.73) | — | no |
+| Input clip at 50 instead of 8, four matched networks per arm (358 exposed shots) | heads +3.2 × 10⁻⁵ (95 % −7.1 to +13.3 × 10⁻⁵); flux error ×1.05 | — | no |
+| Zero-initialised branch on the full incumbent, raw Thomson channels against coarse bins, through the finisher | −198 µS (99 % −300 to −118) and −157 µS (−241 to −93) | — | no; the 357 not opened |
+| Thomson context over available values only, availability kept separately (table rebuilt) | heads −1.3 × 10⁻⁴ (95 % −2.0 to −0.2 × 10⁻⁴) | — | no |
 
 ## 7. Integrity and limits
 - **The September holdout.** It was opened for training by the entrant's decision after its one honest
@@ -1065,7 +1099,9 @@ package: the tree heads are summed in the order and precision of the accelerator
 answers, and the MAST fallbacks are computed from the supplied fold instead of a stored table.
 
 Measured wall time on a host with two Xeon E5-2640 (24 threads) and 8 worker processes: 6 h 14 min for the DIII-D fold and
-1 h 52 min for the MAST fold.
+1 h 52 min for the MAST fold. The published package, unmodified, answered the whole DIII-D fold again with 22 workers in
+3 h 15 min, bit-identical, and the committed repository tree, installed in a fresh environment, reproduced the first
+shots exactly.
 
 ## Appendix: sources
 - [EXPERIMENT_LEDGER.md](EXPERIMENT_LEDGER.md): one row per experiment, with the protocol checksum, the run,

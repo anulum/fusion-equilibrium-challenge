@@ -1,0 +1,13 @@
+{
+ "experiment": "D65 (TODO FEC-R06): score-weighted tail table and input clipping audit of the deployed heads",
+ "kind": "measurement only; nothing fitted, nothing selected, no candidate",
+ "entrant_word": "2026-10-14 'dohodnite sa s second_agentom a skúsme čo sa dá, nemáme čo stratiť' (research reopened; #986068 preserved)",
+ "cohort": "the 358 D38 development shots (120 screening + 238 used by D43); EXPOSED many times, not confirmation data",
+ "answers": "D39 cache: held-out raw answers of the deployed 69 map networks, 4 tree heads, 8 joint scalar networks (no network fitted on these shots)",
+ "deployed_heads": "labels + tree blend at li .26, r_axis .14, kappa .09, x_lower_r .16; q95 = .54 map + .46 joint; betaN = .13 map + .87 joint (D61 shares)",
+ "truth": "q95, betaN from the shot file (efit_q95, efit_beta_n); r_axis, z_axis, kappa, tri_top, tri_bot, volume, li from the organisers' derivation on the true map (D32 references)",
+ "clipping": "standardised input z = (feature - feature_mean) / feature_scale for every deployed network (69 map, 8 joint, 8 X); a frame is clipped for a network when any |z| > 8; per frame: share of the 85 networks for which it is clipped, and the clipped feature indices",
+ "tables": ["per target: SSE share and frame share of clipped frames (any network) and of frames clipped for >= half the networks", "per target: worst 0.1 %, 1 %, 5 % frames and worst 10 shots with their clipping, Ip, position in record, time to record end", "per target: SSE share of the last 3 frames and last 0.5 s of each record", "feature indices most often clipped, overall and in the worst 1 % frames of each target", "normaliser agreement across the 85 networks"],
+ "decision_rule": "Clipping is named a candidate mechanism for target T (and an R07 matched test of wider or no clipping is proposed for T) only if frames clipped for >= half the networks hold >= 10 % of T's SSE AND their SSE share is >= 3 x their frame share. Otherwise the clipping hypothesis is closed for T at this resolution (358 exposed shots). The tail table is reported either way.",
+ "compute": "ML350, systemd-run user unit, MemoryMax 16G, MemorySwapMax 0, 2 worker processes (D63 holds 22 threads)"
+}
