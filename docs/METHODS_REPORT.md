@@ -1,12 +1,13 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # Methods report: SCPN Reactor Systems entry, Fusion Equilibrium Challenge
 
-*Version of 2026-10-14, for the entry displayed as Codabench submission 986068 (Development phase). Items
-marked ⟨at submission⟩ are filled in when the Final submission is made.*
+*Version of 2026-10-14, for the entry displayed as Codabench submission 986068 (Development phase).*
 
 **Entrant:** Anulum (Miroslav Šotek), protoscience@anulum.li.
-**Code and weights:** ⟨public repository URL at pinned commit SHA⟩, AGPL-3.0-or-later; the organisers' scoring
-functions vendored inside it keep their MIT notice.
+**Code:** https://github.com/anulum/fusion-equilibrium-challenge; the commit of each Final submission is named
+with it. **Weights:** https://huggingface.co/anulum/fusion-equilibrium-challenge at revision
+398d05cc14b5b0a67b77d9ddfd900e899a94b2da, pinned in the repository's `WEIGHTS.json`. Licence AGPL-3.0-or-later;
+the organisers' scoring functions vendored in the code keep their MIT notice.
 
 ## 1. How the work was done
 
@@ -100,7 +101,10 @@ scikit-learn, JAX and XGBoost at the versions pinned in the package.
   public folds, it reproduces the submitted archives exactly: 874 DIII-D shots (193 359 frames) and 1 206 MAST
   shots (69 075 frames), every map and scalar bit-identical. Measured on a 24-thread CPU host with 8 worker
   processes: 6 h 14 min for DIII-D and 1 h 52 min for MAST.
-- **Training.** ⟨at submission: the training entrypoint, the measured GPU time per family and card, and the
-  estimate for a single A100 with its basis⟩. CPU-only stages are declared with hardware and wall time.
+- **Training.** `train.py` rebuilds the model from the raw training files and loads no existing weight. One
+  network of each of the four families, with the full recipe, took 279 to 326 s on one NVIDIA GTX 1060 (6 GiB) and
+  265 to 403 s on one AMD RX 6600 XT; all 85 networks take about seven hours on the GTX 1060. For a single A100
+  the dense training arithmetic (5.7 × 10¹⁶ FLOPs) gives 0.8 h at peak and 1.6 to 3.3 h at 25 to 50 % of peak;
+  this is an estimate, not a measurement. `COMPUTE.md` gives the basis and declares the CPU stages.
 - **Weights.** All 85 networks, the four tree models with their leaf tables, and the flux basis are in the package
   with SHA-256 checksums.
