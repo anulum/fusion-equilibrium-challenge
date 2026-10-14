@@ -1,0 +1,31 @@
+{
+  "name": "spatial_407",
+  "family": "spatial",
+  "status": "fit_complete",
+  "epochs": 60,
+  "resumed_from_epoch": 0,
+  "training_frames": 1404214,
+  "selection": "fixed_final_epoch",
+  "network_sha256": "83601fee2e128a8e110fa0dc31988a8172002ab67194bf5ad0f89bde0d575946",
+  "seconds": 523.8695916960714,
+  "held_out_metrics_computed": false,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 407,
+    "threads": 12
+  },
+  "decoder_sha256": "bd188edf2abf2ffbcfe476ea55f5146668a002cde8574b11e802b360a675b1af"
+}

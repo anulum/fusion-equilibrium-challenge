@@ -1,0 +1,6 @@
+{"id": "M3c-1b step 4c", "name": "confirm_P45_s0.03_on_fresh_frames", "status": "frozen_before_any_step4c_solve", "frozen_utc": "2026-10-01T02:20:25Z",
+ "author": "first_agent", "evidence": "ledger 5.24: P45_s0.03 chosen on TUNE, TEST −15.5 % with P .895 (rule .9).",
+ "frames": "fresh public MAST shots 3, 9, 15, ..., 1203 (201 shots, none used in steps 3/4/4b), frames at 33 % and 66 % of the live window; generator, priors, inclusion filter and synthetic Thomson exactly as step 3 (same scripts, frame list only changed).",
+ "arms": "v7 vs entrypoints_v7_coilfree with FREE_CIRCUITS = P4 pair + P5 pair, FREE_SCALE 0.03, FREE_FLOOR_SHARE 0.1, FREE_BOUND 0.10. One arm, no selection.",
+ "decision_rule": "confirmed if on all included frames: measured mean D lower by >= 10 % relative with P >= 0.9 (paired shot bootstrap, 20000, seed 935), |kappa bias| not larger; exact mean D not worse by > 5 %, Consistency not lower by > 0.02; and >= 100 frames included. Confirmed -> candidate for a frozen real-MAST label-free check + entrant. Not confirmed -> recorded; the coil-freedom line stops.",
+ "rule_3": "synthetic data and MAST inputs only."}

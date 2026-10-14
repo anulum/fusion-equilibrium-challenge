@@ -1,0 +1,41 @@
+{
+ "id": "D20-0 gate: networks that also read the raw 0.5 ms input windows, against the same networks with the sub-frame features only",
+ "frozen_utc": "2026-10-06T21:45:55Z",
+ "author": "first_agent (group manager)",
+ "why": "D18-0 (ledger 2.40) and H0 (2.41): 215 hand-made summaries of the 0.5 ms input signals (currents at fixed offsets, changes and means over +-5 and +-10 ms) gave the largest gain of the project. Entrant, 2026-10-06: if the signals are recorded every half millisecond, the networks should be able to read them every half millisecond. This asks whether the sequence itself carries anything the summaries left out.",
+ "design": "Four S16 members (recipe 16 and 24 = h, 30 and 31 = hx; original settings and seeds; training part only; no readout-bank refit), five folds, folds and reserved stems as protocol_kfold_oof_maps_20260929. Arm W reads the 367 table features, the 215 sub-frame features (subframe_features.py bea1c161) and 840 raw-window columns (raw_window_features.py: 40 instants from -10 to +10 ms, 0.5 ms apart, the frame instant left out, for the plasma current, one filament of each of the 19 coil circuits and the TF current; each as the difference from the frame value). Arm S is arm S of D18-0 as fitted then (out-of-fold answers kept in d18_subframe_nets/kaggle_out_*). fit_on_accelerators unchanged.",
+ "machine_difference_and_control": "The accelerator quota is exhausted until 2026-10-10, so arm W is fitted on the host processor (--allow-host), while arm S of D18-0 was fitted on an accelerator. The pairing is therefore by seed, settings, rows and code but not by machine. Control: arm S is fitted again on the host for fold 0 (arm C, kernel c0). The difference C against S on fold 0 measures what the machine alone does to the result; W against C on fold 0 is the like-for-like comparison on one fold.",
+ "inputs": {
+  "raw_window_features.py": "4d638353d7397904a856cb8f0c29e99dbe1a7e82cd3f3a8e2960927b7a0e1c8c",
+  "kaggle_ds/rawwindow_calibration.npz": "67f7739a130df8f170fdfd38dd5076e5b3671946986d7a1d8a20857e4b69a647",
+  "kaggle_ds/rawwindow_training.npz": "f98e6e0e5c86999496b128db652e3e6de7d9c0df2c79559b2bf6be21436a461b",
+  "kaggle_ds/rawwindow_validation.npz": "158534a5d94a7345191ef2ee8b59fe937cbcdcd06b8090ce573e2ac48612e60b",
+  "kaggle_dataset": "anulum/fec-d20-rawwindow (private)"
+ },
+ "kernels": {
+  "kaggle_d20_c0": "6f16fd564c82e01fee0a5cf185a775aeb923967b9cdd35fc64962b135e95e22e",
+  "kaggle_d20_w0": "fe061e9b9a91c51216b93069ba7208677a4beb3c5dfc36a9f8714214129f1740",
+  "kaggle_d20_w1": "0fd1156ce10dd89b10c60c930e13dee8dd01b9e861d179cae0433ce8154fc649",
+  "kaggle_d20_w2": "e2e2dba48255b44760700f8803ccabf65a358cd5bc6130711d52d4856c26cd2e",
+  "kaggle_d20_w3": "42199aa1f742cefa2b23a7d0c6cb56ac08cd54781bded741c4155588a5ef933b",
+  "kaggle_d20_w4": "461495a98de842d8feba9c22ca9370113f77640e54ecae15988335e53d532ece",
+  "template": "61dc2461a7f2b5a09f8d44acf518acb9fbb75ec25c0737e9298af4f3c49ce297",
+  "kaggle_ids": [
+   "anulum/fec-d20-rawwindow-w0",
+   "anulum/fec-d20-rawwindow-w1",
+   "anulum/fec-d20-rawwindow-w2",
+   "anulum/fec-d20-rawwindow-w3",
+   "anulum/fec-d20-rawwindow-w4",
+   "anulum/fec-d20-rawwindow-c0"
+  ]
+ },
+ "measure": {
+  "file": "d20_eval.py",
+  "sha256": "c798b968c0ccba9ea6f2db84b268aa068b375cb4d898903868113975a0224003",
+  "text": "on every held-out frame the mean heads of the four networks of each arm and the squared error of their 64 mean flux coordinates; per head the pooled squared-error ratio with a shot bootstrap (2000, seed 990); the same ratio for the flux coordinates; the D9 head proxy dS of the difference (0.15 mean dR2 of q95 and beta_n + 0.20/7 sum of share x dR2). Checked before freeze on the D18 files: with arm P put in place of W it returns the D18-0 result with the sign reversed (-1.353e-4), and an arm equal to S returns exactly zero."
+ },
+ "rule": "PASS if all hold: (1) dS proxy of W minus S over the five folds is positive with P >= .95; (2) the flux-coordinate squared-error ratio W/S is <= 1.0; (3) that dS is at least twice the absolute dS of C minus S on fold 0 (the machine alone); (4) dS of W minus C on fold 0 is positive. PASS -> a refit of the recipe with the raw windows is worth proposing; it is a large job (65 all-data members at 1422 inputs, readout bank, build) and goes to the entrant with this result before anything is started. FAIL -> closed: the 215 summaries already carry what the fast signals have for these networks; a convolutional reader of the windows would be a separate, newly frozen experiment.",
+ "failed_fit_note": "A member whose calibration flux R2 is below 0.999 is reported; the comparison is still evaluated as fitted, no retry before the first evaluation. A kernel that dies on memory or the 12 h limit is a technical failure, not a result: it is re-run unchanged (or with FOLDS split) and that is recorded.",
+ "exposure": "D18-0, H0 public result (.996223) known. No network with the raw windows exists at freeze. Development scores are not used by this gate.",
+ "rule_3": "DIII-D training data only; inputs only."
+}

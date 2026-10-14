@@ -1,0 +1,15 @@
+{
+ "id": "D51: share of the 8 joint scalar networks in the submitted q95 and betaN, by nested least squares",
+ "frozen_utc": "2026-10-13T08:25:27Z",
+ "author": "first_agent",
+ "background": "Deployed answer: .75 x mean of the 69 map networks' heads + .25 x mean of the 8 joint scalar networks (D35, the second agent: weight fixed at 25 % before its fits; gate +1e-5 passed with +2.0e-5; its record says not to learn weights from that confirmation). D34 (5936 out-of-fold shots, another cohort, single networks): joint networks alone are better than the map-type controls on both scalars (betaN .997012 against .996824).",
+ "exposure": "D49 printed, on all 358 shots, R2 for joint shares 0, .25, .4, .5, .6, .75, 1 (betaN rises to +1.98e-4 at .75; q95 peaks +3.5e-5 at .4-.5; both cohort parts agree). This protocol is written after that grid was seen. The 358 shots are D35's confirmation cohort and were used many times (120) or once (238, by D43). There is no untouched cohort.",
+ "hypothesis": "A share fitted by least squares (one number per scalar, clipped to [0,1]) on whole shots and applied to other shots gives a positive score change over the fixed .25.",
+ "measure": "nested_share.py on reports/d49_qb_frames_358.npz: 5 groups of whole shots (listing index mod 5), weight from the other four; dS = 0.15 x mean dR2 (maps unchanged, so the other terms do not move); paired bootstrap over shots, 10000 resamples, seed 5101.",
+ "rule": "PASS if nested dS >= +1e-5, the 99 % interval's lower bound is above zero, and dS is positive in both cohort parts (120, 238). PASS -> the weights fitted on all 358 shots (reported as weight_all_358, rounded to two decimals) replace .25 in the submitted scalars; maps, finisher and MAST unchanged; public submission named as a candidate chosen on a reused cohort. FAIL -> .25 stays.",
+ "limits": "One free number per scalar on 78875 frames; the nested estimate covers the fitting procedure but not the fact that the idea came from looking at this cohort. The 8 deployed joint networks are all-data refits, the evaluated ones are their fit-disjoint twins.",
+ "rule_3": "DIII-D only.",
+ "sha256": {
+  "nested_share.py": "b30b84dd3fafe57e94591bc25626106b13dea1da9a73f85174c15256f48da9b8"
+ }
+}

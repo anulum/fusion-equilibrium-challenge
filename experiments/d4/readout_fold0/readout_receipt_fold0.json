@@ -1,0 +1,18 @@
+{
+ "fold": 0,
+ "members": [
+  "discharge_h_seed0_tc_lw02",
+  "discharge_h_seed1_tc_lw02",
+  "discharge_h_labels02_s76_lw02",
+  "discharge_h_seed8_lw02",
+  "discharge_hx_seed0_tc_lw02",
+  "discharge_hx_seed1_lw02",
+  "discharge_hx_seed3_tc_lw02",
+  "discharge_hc_seed0_tc_lw02",
+  "discharge_hc_seed1_tc_lw02",
+  "discharge_hc_seed2_tc_lw02",
+  "discharge_hc_seed3_tc_lw02",
+  "discharge_hc_seed4_tc_lw02"
+ ],
+ "target_receipt_sha256": "08937274a1d52b56cac14f9ef222234123734af24504942be339ac2c32d302d4"
+}

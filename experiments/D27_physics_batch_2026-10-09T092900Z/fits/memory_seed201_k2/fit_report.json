@@ -1,0 +1,29 @@
+{
+  "status": "fixed_final_epoch_fit_complete",
+  "name": "memory_seed201_k2",
+  "training_frames": 1133096,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 201,
+    "threads": 12
+  },
+  "device": "rocm:2",
+  "epochs_completed": 60,
+  "network_sha256": "001e4d8784886fd26df5d341c6ca2dd8d045110122e065d7708620625a7d9062",
+  "seconds": 118.2888068780303,
+  "calibration_selection": false,
+  "validation_metrics_computed": false
+}

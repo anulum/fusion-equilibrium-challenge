@@ -1,0 +1,9 @@
+{
+ "amends": "protocol_d19_v29.json (161bc746…)",
+ "utc": "2026-10-06T11:24:20Z",
+ "reason": "The Kaggle GPU allowance ran out after the second half of v29 (members 33-64) was fitted; members 0-32 are being fitted on the workstation's ROCm cards (entrant freed them) and, as a fallback, on Kaggle CPU. That takes hours. The 32 finished members (hx and hc families, readout bank refitted on the extended tables) can already be scored.",
+ "added_candidate": "H0 = the 32 v29 members 33-64 alone, deployed finisher, no tree blend, sub-frame features appended to the test feature matrix; with MAST v11; one Development submission. It is an early look at whether the out-of-fold gain (D18-0) appears on the public score, not the planned H1. It has no c and h members (so fewer networks for q95, betaN, li, the axis) and 32 networks instead of 195; both work against it.",
+ "rule_for_H0": "Reported whatever it scores. It is deployed only if it exceeds the deployed .996025 by at least 1e-5; otherwise the display is restored with the G1 pointer and the decision waits for H1/H2.",
+ "platform_note": "Members 0-32 of v29 are fitted on ROCm (or Kaggle CPU) instead of Kaggle CUDA; same code, settings and seeds; the source of each member is recorded in the ledger. The ROCm run uses a wrapper (fit_rocm_inplace.py) that changes only how the table is copied to the card.",
+ "unchanged": "H1, H2 and the decision rule of the protocol."
+}

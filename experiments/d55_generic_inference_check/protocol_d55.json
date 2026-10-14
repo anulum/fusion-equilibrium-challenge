@@ -1,0 +1,15 @@
+{
+ "id": "D55: independent check of the second agent's split-agnostic inference entrypoint for the deployed model (#981856)",
+ "frozen_utc": "2026-10-13T10:38:28Z",
+ "author": "first_agent (checker; the entrypoint is the second agent's, run unmodified)",
+ "entrypoint": {"infer.py": "a7b89ffef0f5814a7fca96640e69737eabb212f00719c1bc6d24f4df5be20a68", "deployment.json": "b825c378c1f671160bee1fe2e8ca23dde3277c0f0671f17a9f510090f03b4def", "root": "$FEC_RUNS/ml350/runs/second_agent_D43_generic_20261013"},
+ "reference": "candidate_all7041_static8_v1/diii_d_public_test.npz (the archive of #981856); MAST: 2febdf3e…",
+ "known_before_the_run": "the second agent's first-shot receipt: q95 and betaN bit-exact; map max difference 1.58e-3, RMSE 3.1e-5; with the original cached tree heads substituted the map difference falls to 7.5e-9, so the CPU tree predictor explains the drift. D32's tree_replica.py (leaf routing + sequential float32 accumulation, base added last) reproduced the GPU tree heads bit for bit and is not used in infer.py.",
+ "criteria": {
+  "A": "same keys, shapes and dtypes as the reference for all 874 shots / 193359 frames; all values finite; q95 and betaN bit-identical",
+  "B": "maps: maximum absolute difference to the reference <= 1e-6 on every shot (float32 rounding level at the scale of the maps)",
+  "verdict": "QUALIFIED only if A and B hold. If B fails with the present tree arithmetic the entrypoint is NOT qualified as a reproduction of the submitted predictions; the per-shot drift is reported, and the check is repeated after the tree arithmetic is made identical. No score-based tolerance is introduced after seeing the drift."
+ },
+ "also_reported": "wall time and CPU time for 874 shots on 8 workers; per-shot maximum and RMS map difference; number of shots within 1e-6",
+ "rule_3": "inputs only; no label column is read by the comparison"
+}

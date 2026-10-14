@@ -1,0 +1,10 @@
+{
+  "created_utc": "2026-10-09T13:53:29.963039+00:00",
+  "status": "implementation_repair_before_any_comparative_evaluation",
+  "reason": "All 1480465 beta_e_truth values NaN: bilinear flux at off-grid axis excludes nearest axis grid cell from depth>=0 connected component. Confirmed 9 calibration frames in 3 shots with closed boundary and 34-49 eligible channels; nearest axis depths -0.00123 to -0.00014.",
+  "correction": "Use nearest axis grid cell flux, consistent with normalised_beta component seed and existing thomson_isoflux grid-axis convention. Identical corrected helper for teacher targets and input-only held-out pressure prediction.",
+  "preserved": "All 50 successful fixed-epoch models, all predictor blocks, original sources, frozen protocol and original failed controller state/logs unchanged. Only pressure supervision rebuilt.",
+  "scheduling": "Geometry readouts independent of pressure-factor training; remove unnecessary dependency and run while regenerating pressure targets. Common evaluation starts only after all fits, MAST development predictions and geometry readouts finish.",
+  "design_changes": false,
+  "comparative_metrics_inspected": false
+}

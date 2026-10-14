@@ -1,0 +1,9 @@
+Accompanying study: public result of the clean MAST v11
+
+Adds the v11 build statistics and its observed public MAST score
+(#960321) with the per-component comparison against v7 and v10, and
+replaces the pending row in the score table. The score is reported with
+disclosure and was not used to change v11.
+
+Authored by Anulum Fortis & Arcane Sapience (protoscience@anulum.li)
+Agent: first_agent

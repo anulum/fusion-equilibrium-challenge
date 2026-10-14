@@ -1,0 +1,18 @@
+{
+  "id": "joint-peer-amendment4-audit",
+  "UTC": "2026-10-11T08:45:52.204440+00:00",
+  "peer_chat_seq": 138425,
+  "peer_accepts_joint_protocol": true,
+  "peer_source_manifest_all7_entries_verified": true,
+  "revision_diff_ee53_29a3_only_diagnostic_oracle_x": true,
+  "actual_a2_variant_count": 32,
+  "prose_declared_28_incorrect": true,
+  "selector_group_rule_accepted": true,
+  "complete_matrix_guard_needs_restricted_names_protection": true,
+  "reply_chat_seq": 138455,
+  "reply_delivered_receipt_seq": 138457,
+  "D38_aggregate_not_opened": true,
+  "357_candidate_scores_not_opened": true,
+  "peer_357_metadata_only_exposure_preserved_in_verbatim": true,
+  "final_selection_ready": false
+}

@@ -1,0 +1,17 @@
+{
+ "id": "D17: triangularity and elongation shares of the finisher, out of fold",
+ "frozen_utc": "2026-10-06T01:14:49Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-05/06: analyse every shot along its sequence; further variants",
+ "finding_that_motivates": "D13b (d13_shot_anatomy/map_anatomy.py; R8 V0 rows of the 400 OOF shots, every 2nd frame, 44888 frames; heads from nn_oof.npz): the scalars READ FROM OUR FINISHED MAPS are no better than the heads for the triangularities and elongation \u2014 squared error head/map 0.78-0.89 (tri_top, tri_bot), 0.96-0.97 (kappa) \u2014 and the least-squares weight of 'map reading + w (head - map reading)' is +0.6 to +0.7 for all three, in the termination regime and outside it alike, with a predicted error ratio of 0.73-0.82 (triangularities) and 0.92 (kappa). For r_axis, z_axis, volume and li the map reading already equals the head (ratio 0.99-1.00). The deployed finisher goes only 0.25 of the way to the triangularity heads and 0.5 to the elongation head; R8 (ledger 2.15) varied the li, kappa/volume, contour shares and the coordinate count but never the triangularity share, and D8 (F1, F2) left it at 0.25.",
+ "caution": "The estimate is linear in the scalar; the finisher bends the map, which also moves the boundary (D_LCFS), the flux and the other scalars. Hence a build, not a formula.",
+ "variants": {
+  "T1": "--scalar-share kappa=0.5 volume=0.5 tri_top=0.7 tri_bot=0.7 (triangularity only)",
+  "T2": "--scalar-share kappa=0.75 volume=0.5 tri_top=0.7 tri_bot=0.7 (triangularity and elongation)"
+ },
+ "shares_from": "0.7 = 1 - 0.75 * (1 - 0.65): the deployed 0.25 plus about 0.65 of the remaining way (the in-regime weights were 0.62-0.72); 0.75 for kappa = 1 - 0.5 * (1 - 0.57) rounded. Fixed here, not searched.",
+ "build_and_score": "d17_tri_share.py (sha 6d3a523dca35\u2026): R8 machinery unchanged (kfold_build.vbuild.predicted_archive with each fold's own 16 networks, v25 finisher with only scalar_shares changed; reeval/r2_stage_attribution.score_shot on every 2nd frame); paired shot bootstrap against the R8 V0 rows, 20000 resamples, seed 970. Workstation, 3 workers, as R8.",
+ "rule": "Single stage on all 400 shots (ledger 2.24). A variant PASSES with dS >= +2e-5 and P >= 0.9. If both pass, the one with the higher S is the candidate. PASS -> public test on the deployed configuration (195-net + G1 tree blend, only the scalar shares changed), deploy if public d3d_S >= .996025 + 1e-5. FAIL -> triangularity/elongation shares closed.",
+ "exposure": "The D13b weights were computed on these same 400 shots (in-sample for the choice of direction and size); the build is the test of whether the finisher realises them. F1/F2 public results known (they changed li, contour, kappa, volume; not the triangularities).",
+ "rule_3": "DIII-D training data only."
+}

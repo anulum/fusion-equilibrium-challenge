@@ -1,0 +1,41 @@
+{
+  "S": 0.995268,
+  "r2_psi": 0.999865,
+  "r2_qb": 0.99794,
+  "dlcfs": 0.01011,
+  "consistency": 0.983315,
+  "psi_sign": 1,
+  "psi_sign_flipped": false,
+  "psi_sign_probe_disagrees": false,
+  "r2_psi_unflipped": 0.999865,
+  "r2_psi_per_shot_mean": 0.99978,
+  "lcfs_fail_frac": 0.0,
+  "ref_lcfs_dropped": 0,
+  "psi_nonfinite_frac": 0.0,
+  "cons_fail_frac": 2e-06,
+  "n_shots": 400,
+  "n_shots_missing": 0,
+  "r2_each": {
+    "q95": 0.997831,
+    "betaN": 0.998049
+  },
+  "r2_cons_each": {
+    "R_axis": 0.983559,
+    "Z_axis": 0.993278,
+    "kappa": 0.969034,
+    "tri_top": 0.990427,
+    "tri_bot": 0.987529,
+    "volume": 0.989654,
+    "li": 0.969719
+  },
+  "cons_fail_each": {
+    "R_axis": 0.0,
+    "Z_axis": 0.0,
+    "kappa": 0.0,
+    "tri_top": 0.0,
+    "tri_bot": 0.0,
+    "volume": 0.0,
+    "li": 1.1e-05
+  },
+  "S_unrounded": 0.995268492613373
+}

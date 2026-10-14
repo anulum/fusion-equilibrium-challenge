@@ -1,0 +1,8 @@
+{"id": "D4c-confirm", "frozen_utc": "2026-10-04T11:52:21Z", "author": "first_agent",
+ "status": "frozen_before_any_fold_2_3_4_readout_build_or_score_result",
+ "context": "D4c screen on folds 0+1 (160 shots) FAILED by its frozen rule: dS +2.15e-5 (size met), CI95 [-4.3e-5, +9.1e-5], P .737 < .8; every score term moved the right way (flux, qb, D_LCFS, Consistency). Recorded as screen-failed (ledger). Folds 2-4 hc fits had been started speculatively on Kaggle before that result; fold 2 fits are done and its hc readouts are running; NO fold 2-4 build or score exists.",
+ "question": "Independent confirmation on folds 2, 3, 4 (240 shots never used to decide anything about D4c): does the lcfs_r label weight 0.005 in the hc members improve the OOF score?",
+ "design": "as D4c (protocol d320aaf8 + amendment 1): hc refits on Kaggle CUDA, c/h/hx reused from the baseline, hc readout (ML350), v25 finisher build, R8 scoring vs reeval/r8/results/rows_V0_fold{k}.json.",
+ "decision_rule": "CONFIRMED only if on folds 2+3+4 pooled: dS >= +2e-5 and P >= 0.9 (paired shot bootstrap 20000, seed 944 as d4c_score.py). Then adoption also requires the 5-fold pooled result dS >= +2e-5 and P >= 0.9 (reported). Confirmed -> all-data refit of the hc members of v25/v27/v28 with this weighting on local ROCm, public build, format QA, submission (entrant authorised). Otherwise rejected for good.",
+ "disclosure": "this second test exists because the first screen narrowly missed; it is stricter (P >= .9) and uses only folds whose results were unseen when it was frozen.",
+ "rule_3": "DIII-D only."}

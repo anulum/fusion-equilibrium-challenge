@@ -1,0 +1,4 @@
+{"amends": "protocol_v8_pilot_20260930.json + amendment 1", "frozen_at_utc": "2026-09-30T07:46:08Z", "status": "frozen_before_any_pilot_metric",
+ "finding": "convergence-only smoke (shots 0/300/600, no pilot metric read): with the field relaxed like the current (0.3 from iteration 0) frames with an edge pair stopped converging (change 0.007-0.039 > 0.002) and were refused by the v7 trust rule",
+ "change": "field updated only from iteration 10 (FIELD_START) with relaxation 0.1 (FIELD_RELAXATION); everything else unchanged",
+ "acceptance": "unchanged (P1, P2, P3); P2 (solved share) judges whether the stability is adequate"}

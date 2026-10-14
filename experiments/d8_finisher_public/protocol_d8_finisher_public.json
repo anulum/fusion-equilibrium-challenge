@@ -1,0 +1,17 @@
+{
+ "id": "D8-public (finisher shares on the deployed 195-net)",
+ "frozen_utc": "2026-10-05T07:48:13Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-04/05: DIII-D back into the top 5 is the priority",
+ "question": "The finisher bends the maps a fixed share of the way to the network heads. The shares (li .6, contour .5, kappa/volume .5) were chosen for the 65-net v25 on validation. Do larger shares help the deployed 195-net ensemble, whose averaged heads are more accurate?",
+ "a_priori": "R8 (ledger 2.15, protocol 3d11add8, 400 OOF shots, S16 heads): monotone in the direction of more trust — contour_share .35 −1.66e-5 / .65 +1.46e-5; li_share .4 −3.8e-5 / .8 +9.7e-6; kappa,volume shares .35 −3.2e-6 / .65 +2e-6. Those were 16-net heads; the deployed heads average 195 networks, so the optimum share is expected to be at least as large. Lesson of ledger 2.25: test the deployed configuration itself — these builds change only finisher flags of the deployed 195-net archive, nothing else.",
+ "candidates": {
+  "F1": "--li-share 0.8 --contour-share 0.65 --scalar-share kappa=0.65 volume=0.65 tri_top=0.25 tri_bot=0.25 (the three R8 winners together)",
+  "F2": "--li-share 1.0 --contour-share 0.8 --scalar-share kappa=0.8 volume=0.8 tri_top=0.25 tri_bot=0.25 (one step further in the same direction)"
+ },
+ "build": "d6/deploy/deploy_build_portable.py without specialists, --override for li-share and contour-share and a replaced --scalar-share list; F1 on the workstation (3 workers), F2 on ML350 (20 workers). Builder parity: workstation no-swap bit-identical to the deployed archive (3 shots); ML350 psi within 1.5e-8, scalars identical.",
+ "submission": "each DIII-D archive + MAST v11 (e78b1a9f…); QA, HF, one Development submission each; disclosed.",
+ "decision_rule": "deploy the best of {195-net baseline .995990, F1, F2} only if its public d3d_S >= .996010. If F2 > F1 > baseline by more than 1e-5 each, one further step (F3) may be frozen in a new protocol; otherwise no further share is tried.",
+ "exposure": "public D6 result known (−8.2e-5, cause understood); no F1/F2 result exists at freeze.",
+ "rule_3": "DIII-D only; MAST unchanged v11."
+}

@@ -1,0 +1,23 @@
+{
+  "status": "runtime_reclaim_threshold_only_raised_with_unchanged6GiB_hard_limit",
+  "UTC": "2026-10-11T045243Z",
+  "unit": "fec-d37-h69-anatomy-v1.service",
+  "before": {
+    "memory.events": "low 0\nhigh 2870138\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+    "memory.pressure": "some avg10=52.87 avg60=52.74 avg300=42.93 total=472842707\nfull avg10=52.76 avg60=52.67 avg300=42.86 total=466018732",
+    "memory.current": "4471574528",
+    "memory.high": "4294967296",
+    "memory.max": "6442450944"
+  },
+  "after": {
+    "memory.events": "low 0\nhigh 2870138\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0",
+    "memory.pressure": "some avg10=52.87 avg60=52.74 avg300=42.93 total=472850398\nfull avg10=52.76 avg60=52.67 avg300=42.86 total=466026422",
+    "memory.current": "4471574528",
+    "memory.high": "5368709120",
+    "memory.max": "6442450944"
+  },
+  "reason": "Approximately 53 percent memory pressure and 2.84 million high events at 4.47 GB current usage, zero OOM. Host MemAvailable approximately 6 GB. Raising soft reclaim threshold by 1 GiB preserves existing hard cap, CPU quota, scientific sources, model ordering, dtype, all stages and case selection.",
+  "scientific_sources_changed": false,
+  "rerun_or_result_selection": false,
+  "max_unchanged": true
+}

@@ -1,0 +1,65 @@
+{
+  "status": "full_real_ROCm_wide_learning_rate_path_qualified",
+  "training_rows": 1127530,
+  "GPU_table_bytes": 4090678840,
+  "architecture_width": 1024,
+  "epochs": 1,
+  "checkpoint_restore_exact": true,
+  "declared_schedules": {
+    "lr1000": {
+      "peak": 0.001,
+      "start_peak_end": [
+        4.000007174909115e-05,
+        0.0010000000474974513,
+        3.999999886872274e-09
+      ]
+    },
+    "lr0500": {
+      "peak": 0.0005,
+      "start_peak_end": [
+        2.0000035874545574e-05,
+        0.0005000000237487257,
+        1.999999943436137e-09
+      ]
+    },
+    "lr0250": {
+      "peak": 0.00025,
+      "start_peak_end": [
+        1.0000017937272787e-05,
+        0.0002500000118743628,
+        9.999999717180685e-10
+      ]
+    }
+  },
+  "CPU_GPU_double_max_abs": 3.197442310920451e-14,
+  "fit": {
+    "name": "qualification_lr1000",
+    "status": "fixed_final_epoch_fit_complete",
+    "training_frames": 1127530,
+    "settings": {
+      "coordinates": 64,
+      "width": 1024,
+      "depth": 4,
+      "epochs": 1,
+      "batch": 4096,
+      "learning_rate": 0.001,
+      "weight_decay": 1e-05,
+      "label_weight": 0.05,
+      "label_weights": [],
+      "fine_emphasis": 0.0,
+      "dropout": 0.0,
+      "gradient_limit": 1.0,
+      "edge_emphasis": 0.0,
+      "shot_balance": 0.0,
+      "seed": 200,
+      "threads": 12
+    },
+    "epochs_completed": 1,
+    "resumed_from_epoch": 0,
+    "network_sha256": "2ca4c69c673776fe539e9b486fb783a3e932330fded55db1968c22f323ce9f39",
+    "seconds_this_attempt": 111.87372208398301,
+    "validation_metrics_computed": false
+  },
+  "campaign_candidate": false,
+  "comparative_metrics_processed": false
+}

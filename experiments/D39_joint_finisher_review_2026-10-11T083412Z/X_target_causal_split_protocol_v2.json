@@ -1,0 +1,39 @@
+{
+  "status": "four_diagnostic_only_local_factorial_arms_frozen_before_new_oracle_aggregate",
+  "UTC_seconds": 1791721287.8818667,
+  "reason_for_local_execution": "Two exact peer replies dead-lettered; entrant authorizes scientific experiments through results. Separate root diagnostic lane, no peer sources or32-grid changed.",
+  "reason_for_v2_intervention_location": "Native target smoothing propagates NaN to neighboring frames. Earlier unsent2-arm proposal before finishing would mix reference-validity masking with smoothing-induced skips. Hook edited_x_points after native target smoothing for exact per-frame factorial separation. Preserve original proposal.",
+  "arms": [
+    "baseline",
+    "positions_only",
+    "validity_only",
+    "positions_and_validity"
+  ],
+  "positions_only": "At actual X correction call, replace both target coordinates with unsmoothed reference-extracted coordinates only where both are finite; otherwise retain native baseline smoothed targets.",
+  "validity_only": "At same call retain native baseline smoothed coordinates on reference-defined ends; set both toNaN only on reference-undefined current-frame ends.",
+  "positions_and_validity": "Both actions at same call; per-frame target positions and reference validity, no oracle-target temporal NaN spread.",
+  "unchanged": "Native map-side missing-saddle skip, all coordinates/networks/geometry heads/trees/axis/shape/contour/smoothing/weights/scalars otherwise baseline.",
+  "baseline": "Qualified D38 full69 matched map models plus scalar8, all358/357 excluded; same native finish/source/cache.",
+  "sample": "All120 original D39 screening cases index%3==0, every frame; original14-stage in-sample D37 separate.",
+  "required_qualification": "Native baseline exact original D38 whole213 hash, noop hook exactbaseline, real inherited-fork all4 hashes, every-shot baseline part parity against completed D38 and scalar hashes equal in all4arms.",
+  "all4x120_before_comparisons": true,
+  "replicates": 10000,
+  "bootstrap_seed": 3942,
+  "CI_quantiles": [
+    0.005,
+    0.995
+  ],
+  "paired_whole_shot": "Recompute pooled truth denominators and equal-shot LCFS every replicate.",
+  "contrasts": [
+    "positions_only-baseline",
+    "validity_only-baseline",
+    "positions_and_validity-baseline",
+    "joint-minus-positions-minus-validity-plus-baseline interaction"
+  ],
+  "not_bit_equivalent_to_peer_pre_smoothing_orx": true,
+  "extractor_defined_validity_not_physical_absence": true,
+  "deployable_or_selectable": false,
+  "no_current_study_selection_change": true,
+  "no357_targets_or_second_candidate_choice": true,
+  "publication": false
+}

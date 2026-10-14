@@ -1,0 +1,13 @@
+{
+ "id": "D4c",
+ "frozen_utc": "2026-10-04T10:40:42Z",
+ "author": "first_agent",
+ "entrant": "2026-10-04: 'za\u010dni s D4c, s\u00fahlas\u00edm, treba posklada\u0165 a odosla\u0165 len to najlep\u0161ie \u010do m\u00e1me'",
+ "question": "Does lowering the loss weight of the 64 boundary-radius labels (lcfs_r, 0.05 -> 0.005) in the hc members of our deployed recipe improve the out-of-fold score?",
+ "prior_exposure": "the second agent agent another agent found this weighting gives +.000212 (P .997) on its own fixed-60 four-model recipe against a matched control (HANDOVER_2026-10-03T092341Z); that archive is .0026 below the deployed 195-net one, so the effect on our recipe is unknown. Our D4/D4b tested RAISED weights (ledger 2.14, 2.16, rejected). Folds 0 and 1 were used to screen D4/D4b in the other direction.",
+ "design": "K-fold OOF framework, S16; only the 5 hc members are refitted (Kaggle CUDA, original seeds, package 244c4cd, FitSettings.label_weights); c/h/hx fits and h/hx readouts are the baseline K-fold ones (identical to V0); hc readout refit with the fold excluded; v25 finisher (kfold_build); amendments 1/2 of the K-fold protocol for failed fits.",
+ "baseline": "reeval/r8/results/rows_V0_fold{k}.json",
+ "metric": "pooled S every 2nd frame, paired shot bootstrap 20000 seed 944 (as R8/D4).",
+ "decision_rule": "screen on folds 0 and 1 pooled (160 shots): extend to folds 2, 3, 4 only if dS >= +2e-5 and P >= 0.8. Adoption: 5-fold pooled dS >= +2e-5 and P >= 0.9 -> all-data refit of the hc members of v25/v27/v28 with this weighting, public build with the unchanged finisher, format QA, submission (entrant authorised). Otherwise rejected and recorded.",
+ "rule_3": "DIII-D only."
+}

@@ -1,0 +1,39 @@
+{
+  "status": "pending",
+  "errors": [],
+  "missing": [
+    "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f0b/gbm_sub_oof_fold0b.npz",
+    "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f1b/gbm_sub_oof_fold1b.npz",
+    "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f2b/gbm_sub_oof_fold2b.npz",
+    "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f3b/gbm_sub_oof_fold3b.npz",
+    "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f4b/gbm_sub_oof_fold4b.npz"
+  ],
+  "checked": [
+    {
+      "path": "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f0a/gbm_sub_oof_fold0a.npz",
+      "sha256": "881e67e82c61484e7168a07e81fbe7e2a9b8305502cfa7066d5b4e411e2d1bc3",
+      "rows": 272971
+    },
+    {
+      "path": "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f1a/gbm_sub_oof_fold1a.npz",
+      "sha256": "5db8e9577e576935a95b9979117070bcc04743401fa375e6a9bc69454c12b4d2",
+      "rows": 259616
+    },
+    {
+      "path": "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f2a/gbm_sub_oof_fold2a.npz",
+      "sha256": "e27201cd51f4e582d715632512377e5e123a3901d86190fefeeb0f29a0e7fdcb",
+      "rows": 267405
+    },
+    {
+      "path": "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f3a/gbm_sub_oof_fold3a.npz",
+      "sha256": "4cecfaa8c195f6345a9ce8afc9b7825f01b80dd57089d799d21ccf3f37748c23",
+      "rows": 253433
+    },
+    {
+      "path": "$FEC_WORK/first_agent/d24_subframe_trees/kaggle_out_f4a/gbm_sub_oof_fold4a.npz",
+      "sha256": "a8043aec194b33d1a3b5247e5c003a038389f181954453cc457065318e85250e",
+      "rows": 264279
+    }
+  ],
+  "note": "Independent structure/hash gate only. No protocol threshold changes; fresh evaluator success and exact result required separately."
+}

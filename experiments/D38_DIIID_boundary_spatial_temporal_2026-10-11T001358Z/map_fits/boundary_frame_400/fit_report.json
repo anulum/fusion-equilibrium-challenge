@@ -1,0 +1,30 @@
+{
+  "name": "boundary_frame_400",
+  "family": "boundary_frame",
+  "status": "fit_complete",
+  "epochs": 60,
+  "resumed_from_epoch": 0,
+  "training_frames": 1404214,
+  "selection": "fixed_final_epoch",
+  "network_sha256": "e3619a714e8909054d6934ca62800717fedb2df5cc626ebd9068123f571685f8",
+  "seconds": 383.4859469460789,
+  "held_out_metrics_computed": false,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 400,
+    "threads": 12
+  }
+}

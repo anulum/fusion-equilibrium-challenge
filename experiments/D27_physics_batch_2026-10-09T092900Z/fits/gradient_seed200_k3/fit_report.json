@@ -1,0 +1,29 @@
+{
+  "status": "fixed_final_epoch_fit_complete",
+  "name": "gradient_seed200_k3",
+  "training_frames": 1147068,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 200,
+    "threads": 12
+  },
+  "device": "rocm:0",
+  "epochs_completed": 60,
+  "network_sha256": "24a43adea6a4cc88edb6a5a9d5b3d4226a484c531462caafd45bb0333765527f",
+  "seconds": 105.7821480500279,
+  "calibration_selection": false,
+  "validation_metrics_computed": false
+}

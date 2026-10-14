@@ -1,0 +1,19 @@
+{
+  "status": "frozen_before_replay",
+  "cases": [
+    "d3d_shot_278521968a",
+    "d3d_shot_cbaaa0c1be",
+    "d3d_shot_10c92f8736",
+    "d3d_shot_b494392793"
+  ],
+  "selection": "same4previously_frozen_largest_metric_discrepancy_cases",
+  "arms": [
+    "root_raw",
+    "peer_raw"
+  ],
+  "same_host_native_finisher_flags": {},
+  "fixed_root_features_trees_truth_reference_in_both_arms": true,
+  "original_root_baseline_parts_must_reproduce_exactly": true,
+  "scope": "diagnostic_only_no_candidate_gate_tolerance_change",
+  "no357_read": true
+}

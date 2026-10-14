@@ -1,0 +1,14 @@
+{
+  "id": "D26 amendment3: code-version repair before any numerical fit",
+  "failure": "Legacy fec-kfold-code FitSettings lacks label_weights. v1failed beforeepoch1; no scientific metric observed.",
+  "repair": "Both arms now use exact canonical package snapshot containing per-label weights; all seeds/settings/data/gate unchanged. Package loader explicitly selects fec-d26-training-code and verifies accelerator module SHA256. Kernel metadata corrected to actual service-assigned slug; no duplicate kernels.",
+  "package_manifest": "$FEC_EXPERIMENTS/D26_topology_aux_2026-10-08T213532Z/kaggle_training_code/SHA256SUMS",
+  "package_files": 55,
+  "scripts": {
+    "kaggle_f4/run_d26.py": "c5c929e5d13967468ed6702517a6dc35455d73cc5cdfff37e3867d955fb0eaf0",
+    "kaggle_f2/run_d26.py": "2d99eef7876685226c696b9cfbbdb209b81fffd5c98b16487c08ad7d0869bd37",
+    "kaggle_f1/run_d26.py": "839f1533d658143d16a56eba3eb9fe98d6e1a590324277bcea27eb2cff2c7dc5",
+    "kaggle_f3/run_d26.py": "4409bf6c709adaf7e3e0a0704ed4ea201ae5de61f728eef757f409ff00ded24e",
+    "kaggle_f0/run_d26.py": "558746ee6c829fc0cd0ea0f01b1317a8ea0df103020a4f79fcde655fec85dc22"
+  }
+}

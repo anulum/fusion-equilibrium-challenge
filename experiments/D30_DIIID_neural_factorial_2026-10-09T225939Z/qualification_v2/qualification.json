@@ -1,0 +1,51 @@
+{
+  "status": "full_real_ROCm_wide_geometry_path_qualified",
+  "training_rows": 1127530,
+  "GPU_table_bytes": 4090678840,
+  "architecture_width": 1024,
+  "epochs": 1,
+  "CPU_GPU_double_max_abs": 3.552713678800501e-14,
+  "fit": {
+    "name": "qualification_combined",
+    "status": "fixed_final_epoch_fit_complete",
+    "training_frames": 1127530,
+    "settings": {
+      "coordinates": 64,
+      "width": 1024,
+      "depth": 4,
+      "epochs": 1,
+      "batch": 4096,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "label_weight": 0.05,
+      "label_weights": [
+        [
+          "kappa",
+          0.2
+        ],
+        [
+          "li_scored",
+          0.2
+        ],
+        [
+          "r_axis",
+          0.1
+        ]
+      ],
+      "fine_emphasis": 0.0,
+      "dropout": 0.0,
+      "gradient_limit": 1.0,
+      "edge_emphasis": 0.0,
+      "shot_balance": 0.0,
+      "seed": 200,
+      "threads": 12
+    },
+    "epochs_completed": 1,
+    "resumed_from_epoch": 0,
+    "network_sha256": "0267a4fa08a650555d01c55bec8ea61b154f44aaeebb3246ebe343d7eec7732d",
+    "seconds_this_attempt": 114.69911681301892,
+    "validation_metrics_computed": false
+  },
+  "campaign_candidate": false,
+  "comparative_metrics_processed": false
+}

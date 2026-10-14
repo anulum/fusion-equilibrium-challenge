@@ -1,0 +1,13 @@
+{
+ "id": "D4b",
+ "frozen_utc": "2026-09-30T19:43:51Z",
+ "author": "first_agent",
+ "entrant": "2026-09-30: \"kaggle a v\u0161etko potrebn\u00e9 je povolen\u00e9, potrebujeme n\u00e1js\u0165 rie\u0161enie\"",
+ "question": "Does raising the loss weight of only li, li_scored, kappa, r_axis and volume (0.05 -> 0.2) keep D4's head gains without its triangularity/boundary losses, out of fold?",
+ "selection_disclosure": "the label set was chosen from D4's fold-0 per-scalar deltas (ledger 2.14); fold 0 is therefore NOT used here \u2014 evaluation is on fold 1 (80 held shots, never used to choose anything in D4/D4b).",
+ "design": "fold 1 of the K-fold OOF framework; S16 refit on Kaggle CUDA with original seeds; package fec_adapter at 244c4cd (FitSettings.label_weights); amendments 1/2 as in D4; bank readout with fold 1 excluded; v25 finisher (kfold_build) as V0.",
+ "baseline": "reeval/r8/results/rows_V0_fold1.json",
+ "metric": "pooled S every 2nd frame, paired shot bootstrap 20000 seed 930 (as R8/D4).",
+ "decision_rule": "extend to folds 0,2,3,4 (and then build a public candidate) only if fold-1 dS >= +2e-5 and P >= 0.8; otherwise reject. Adoption needs pooled 5-fold dS >= +2e-5, P >= 0.9.",
+ "rule_3": "DIII-D only."
+}

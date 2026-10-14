@@ -1,0 +1,109 @@
+{
+ "member": "discharge_hx_seed0_tc",
+ "fold": 0,
+ "geometry_labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "fold_training_shots_excluded": true,
+ "reserved_excluded": true,
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1127528,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.001052922745150903
+   ],
+   "residual_MSE_before": [
+    0.00012282436931934868
+   ],
+   "normal_equation_gradient_max_abs": 9.125191819888984e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1127530,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00036138401784888147,
+    0.0008212528183926133,
+    0.00017541237284631917
+   ],
+   "residual_MSE_before": [
+    0.00022107913161691282,
+    0.00021954996273765604,
+    0.005788561269202867
+   ],
+   "normal_equation_gradient_max_abs": 2.161025893907036e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1127398,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00010233612939376705
+   ],
+   "residual_MSE_before": [
+    0.00035576925308739135
+   ],
+   "normal_equation_gradient_max_abs": 8.965579048890752e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 761072,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017455328292317746,
+    -0.0006704845699537948
+   ],
+   "residual_MSE_before": [
+    1.499690383772779e-05,
+    2.50747631758338e-05
+   ],
+   "normal_equation_gradient_max_abs": 8.286099806515193e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 478644,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00016963535839605907,
+    0.00046216455412995377
+   ],
+   "residual_MSE_before": [
+    1.4868623882931188e-05,
+    4.099832820939157e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.1571925897371836e-18
+  }
+ ],
+ "initial_sha256": "313b65b764c847d85091e510b7b04c314296e3aa77dfb49cce84b04790f14121",
+ "network_sha256": "ed49ba6c59f755a543c1bfeb8e9194509390b6452f5d12d80cf75d2ad1370c1c",
+ "seconds": 234.49706864356995
+}

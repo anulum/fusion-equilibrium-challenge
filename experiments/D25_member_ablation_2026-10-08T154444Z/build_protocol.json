@@ -1,0 +1,21 @@
+{
+  "id": "D25-1 H69 candidate build",
+  "created_utc": "2026-10-08T15:58:45.857578+00:00",
+  "basis": "D25-0 raw diagnostic supports one-member ablation. Build candidate only; no measured public-score gain.",
+  "candidate": "Exact H3 minus v29_readout_s2/discharge_hx_seed2_all; remaining69 hashes verified against H3 list; exact original tree predictions/weights, subframe inputs and full finisher flags unchanged.",
+  "precondition": "One-thread baseline reproduction must match existing H3 first public shot bit-for-bit for float32 flux/q95/betaN before launch.",
+  "population": "All874 public DIII-D shots,193359frames in same sorted order.",
+  "resources": {
+    "host": "ML350",
+    "workers": 16,
+    "BLAS_threads_per_worker": 1,
+    "CPUQuota": "1600%",
+    "MemoryMax": "48G",
+    "MemorySwapMax": 0,
+    "RuntimeMaxSec": 21600,
+    "restarts": 0
+  },
+  "storage": "All inputs read existing retained sources. Python bytecode disabled; archive streamed via SSH to Samsung coordination experiment output. No new remote data files. Local wrapper has21660s deadline and512M memory.",
+  "admission": "No automatic upload/submission. Require successful producer exit, exact archive key/frame/dtype/finiteness validation and SHA256; MAST eligibility must be resolved separately.",
+  "script_sha256": "6c6d4ffb9956305ed732fab7d746bc3331f56f275d279dcd029082beae2e69c6"
+}

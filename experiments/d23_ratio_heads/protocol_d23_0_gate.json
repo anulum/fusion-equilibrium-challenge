@@ -1,0 +1,33 @@
+{
+ "id": "D23-0 gate: q95 and betaN heads on a physics-normalised target, in the networks",
+ "frozen_utc": "2026-10-07T14:30:54Z",
+ "author": "first_agent (group manager)",
+ "why": "Leaderboard by term, 7 Oct: our Consistency equals the best, our q95/betaN term is the lowest of the top seven (.99767 against .9980-.9982; 5e-5 to 8e-5 in S). Anatomy of the sub-frame networks' out-of-fold error (session log 7 Oct): the worst 0.1 % of frames hold 34-37 % of the squared error, the worst 1 % of shots 33-39 %; for betaN they are runs of frames with betaN of 8-16 that the head under-predicts by 20-35 %; the heads are calibrated on average, and a cross-fitted recalibration makes q95 and betaN worse. Both quantities carry the factor B_t/I_p, which is where the extremes come from; a fully connected network has to build that product itself. D12 tried the normalised target with trees only (fail: trees are weak on q95 either way).",
+ "design": "Four S16 members (recipe 16, 24 = h; 30, 31 = hx; original settings and seeds; training part only; no readout-bank refit), five folds, folds and reserved stems as protocol_kfold_oof_maps_20260929, tables = 367 table features + 215 sub-frame features (as arm S of D18-0). Two labels are added to every family's label list: q95_s = q95 / ratio and beta_n_s = beta_n / ratio, ratio = table feature 60 (|I_TF|/1e5 over max(|I_p|, floor)/1e6, an input). They take the members' ordinary label weight (0.05), unweighted by ratio. Written per held-out frame: the 13 direct heads, q95_s x ratio, beta_n_s x ratio, the flux-coordinate squared error. fit_on_accelerators unchanged; Kaggle CPU (--allow-host), one fold per kernel.",
+ "smoke": "The kernel ran end to end on the workstation on a 120-shot subsample of fold 0 (four fits, heads q95_s and beta_n_s present, ratio answers finite; correlation with the direct heads .97 / .98). No full-data fit with these labels exists.",
+ "kernels": {
+  "kaggle_d23_f0": "4b89558c09df6d7c13eb7f468495ee323a575f400a15d1a7ba536994e3db5692",
+  "kaggle_d23_f1": "ee1baf1db77b20082f30e6a572f07d026c7ea82a3497540cd40d5c1f6c5a245b",
+  "kaggle_d23_f2": "3f79b6d63249db9eb076d5f329025934731744ef30c5d506e91b6c19e0368c8e",
+  "kaggle_d23_f3": "e0b2662d7128d577e09e14a28326de1f1ca8c28a4447cabe413037da7d211def",
+  "kaggle_d23_f4": "38ccc735f84da315fe42eaefc8e0fa15180da99117efe650f3e1651dc73f57b6",
+  "template": "f0af34c3af977a1f75e4150a8cf53e7009c4ad2bd08ac317550a2296aae0ebd6",
+  "kaggle_ids": [
+   "anulum/fec-d23-ratio-heads-f0",
+   "anulum/fec-d23-ratio-heads-f1",
+   "anulum/fec-d23-ratio-heads-f2",
+   "anulum/fec-d23-ratio-heads-f3",
+   "anulum/fec-d23-ratio-heads-f4"
+  ]
+ },
+ "measure": {
+  "file": "d23_eval.py",
+  "sha256": "57dc943e27a30c9ffc5f2b2629400de08ba4a57e6bc29261bbb18d043c87aa29",
+  "text": "per quantity: squared-error ratio of the ratio-derived estimate against the direct head; nested blend (weight of the ratio estimate by least squares on the other four folds, clipped to [0,1]) against the direct head of the same networks and against arm S of D18-0; qb gain = 0.15 x mean dR2 of q95 and betaN with a shot bootstrap (2000, seed 990); flux coordinates and the other heads of these networks against arm S. Checked before freeze on D18 files: with arm S as arm R and arm P's heads in place of the ratio estimates it returns R/S = 1 exactly and a blend gain of +1.55e-5 (that is what four more, weaker networks give; here no network is added)."
+ },
+ "rule": "PASS if all hold: (1) qb gain of the nested blend over the same networks' direct heads >= +1.5e-5 with P >= .95; (2) qb gain of the blend over arm S of D18-0 > 0; (3) flux-coordinate squared error of these networks <= 1.10 x arm S (the host-against-accelerator control of D20 was 1.07 on one fold; the two extra labels must not cost the map more than that). PASS -> the two labels and the blend are proposed for the bank members of the recipe (an all-data refit; entrant informed first). FAIL -> closed for the networks; the q95/betaN gap is then not a matter of the target's form.",
+ "machine_note": "Arm R is host-fitted, arm S accelerator-fitted; single host fits can land in a worse minimum (D20 control: one of four). Criterion (1) compares heads of the same fits and is free of this; (2) and (3) are not, and are read with the control in mind.",
+ "failed_fit_note": "A member with calibration flux R2 below 0.999 is reported and kept; no retry before the first evaluation. A kernel that dies on memory or the 12 h limit is re-run unchanged and that is recorded.",
+ "exposure": "D18-0, D20-0, D22 known; today's public scores known. Development scores are not used by this gate.",
+ "rule_3": "DIII-D training data only; the ratio is an input."
+}

@@ -1,0 +1,16 @@
+{
+  "UTC_seconds": 1791728488.6607833,
+  "reason": "ROCm compilation reached3GiB soft threshold with4651 reclaim events; host available>6GiB, no max/OOM event",
+  "before": {
+    "memory.events": "low 0\nhigh 6358\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+    "memory.pressure": "some avg10=0.13 avg60=0.20 avg300=0.10 total=1100177\nfull avg10=0.13 avg60=0.20 avg300=0.10 total=1082850\n",
+    "memory.current": "3221168128\n",
+    "memory.high": "3221225472\n",
+    "memory.max": "4294967296\n"
+  },
+  "after_high": "3758096384\n",
+  "hard4GiB_unchanged": "4294967296\n",
+  "available_bytes": 7664717824,
+  "scientific_sources_batches_gradients_tolerances_and_ROCm_card_unchanged": true,
+  "original_launch_preserved": true
+}

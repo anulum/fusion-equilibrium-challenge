@@ -1,0 +1,109 @@
+{
+ "member": "discharge_hx_seed0_tc_lw02",
+ "fold": 0,
+ "geometry_labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "fold_training_shots_excluded": true,
+ "reserved_excluded": true,
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1127528,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00105500740796145
+   ],
+   "residual_MSE_before": [
+    0.0001124832108007692
+   ],
+   "normal_equation_gradient_max_abs": 5.318308117572938e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1127530,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00035758778160434806,
+    0.0008229729659013239,
+    0.00014093987267429085
+   ],
+   "residual_MSE_before": [
+    0.00020899374163798197,
+    0.00020285703069443804,
+    0.004962240988875308
+   ],
+   "normal_equation_gradient_max_abs": 1.325262455318158e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1127398,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -9.927414536746696e-05
+   ],
+   "residual_MSE_before": [
+    0.000309584081162518
+   ],
+   "normal_equation_gradient_max_abs": 6.741852864552197e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 761072,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017514083430856235,
+    -0.0006777947522325251
+   ],
+   "residual_MSE_before": [
+    1.3373449978170807e-05,
+    2.155947733037614e-05
+   ],
+   "normal_equation_gradient_max_abs": 5.172724329763605e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 478644,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00016957924837857478,
+    0.0004655485763895575
+   ],
+   "residual_MSE_before": [
+    1.3161459242151026e-05,
+    3.618206615875644e-05
+   ],
+   "normal_equation_gradient_max_abs": 7.14154653653782e-19
+  }
+ ],
+ "initial_sha256": "f9084a4b81090cafe4a45615be3d09e43fa24371cc127ad9a43292a947e2ca13",
+ "network_sha256": "ca814d22f9eb99ec4a7f113d3df900cafebe6a03523bd0a5ac4ab50653de4ef0",
+ "seconds": 778.6943302154541
+}

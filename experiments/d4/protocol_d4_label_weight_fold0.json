@@ -1,0 +1,12 @@
+{
+ "id": "D4",
+ "frozen_utc": "2026-09-30T15:45:37Z",
+ "author": "first_agent",
+ "question": "Does a 4x label weight (0.05 -> 0.2) in the member fits improve the finished DIII-D score out of fold? The scalar heads (li, kappa, R_axis) are the measured limit (ledger 2.5).",
+ "design": "fold 0 of the K-fold OOF framework (80 held training shots), S16 sub-ensemble refitted on Kaggle CUDA with the ORIGINAL seeds and settings except label_weight 0.2 (d4/protocol_kfold_oof_maps_20260929.json); failed-fit rule amendment 1 and gradient-limit amendment 2 as in the all-data refits; bank members readout-refitted with the same fold excluded; maps built with the v25 finisher (kfold_build, identical to V0).",
+ "baseline": "reeval/r8/results/rows_V0_fold0.json (same shots, same finisher, label_weight 0.05 networks).",
+ "metric": "pooled S (r2.pooled) on every 2nd frame of the 80 shots; paired shot bootstrap 20000 (seed 930) of dS, as R8.",
+ "decision_rule": "Screening: extend D4 to folds 1-4 only if fold-0 dS >= +2e-5 and P(dS>0) >= 0.8; otherwise reject and record. Adoption for a public build needs the 5-fold pooled dS >= +2e-5 with P >= 0.9 (as R8). Per-term deltas (flux, qb, D, Consistency, each of the 7 scalars) reported either way.",
+ "control": "discharge_h_labels02_s76 keeps 0.2: its refit measures CUDA fit reproducibility (compare its validation numbers with the fold-0 original).",
+ "rule_3": "DIII-D only; no MAST data."
+}

@@ -1,0 +1,11 @@
+{
+  "status": "pre_fit_review_capacity_amendment",
+  "review_dependency": "prior independent full executable review143374 plus source-bound currentv3 SelfReview resolving every issue under canonical constrained-capacity fallback; independent revised verdict pending",
+  "prior_protocol": "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/reviewed_design_amendment_v1.json",
+  "recipe_loss_share_seeds_cohorts_quality_and_physical_gates_unchanged": true,
+  "fit_activation_only": true,
+  "no_claim_of_independent_approval": true,
+  "SelfReview_source": "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/trainer_v3_SelfReview_v1.json",
+  "authority_source": "$LAB/agentic-shared/REVIEW_CAPACITY_AND_ARCHITECTURE_STANDARD.md",
+  "UTC_seconds": 1791767023.3180416
+}

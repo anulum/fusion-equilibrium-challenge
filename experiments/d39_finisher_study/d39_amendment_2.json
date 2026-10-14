@@ -1,0 +1,17 @@
+{
+ "id": "D39-amendment-2-resampling-order",
+ "written": "after round 1 was started (about 15 minutes in) and before any variant result was read; no report has been run",
+ "finding_from_source": "every warp of the finisher (contour bend, both shape edits, each of their rounds) resamples the 65x65 map bilinearly (ndimage.map_coordinates order=1) from the previous round's result, so a finished map has been interpolated linearly several times in a row; D37 in-sample: flux residual 360 raw -> 475 final, oracle128 boundary .0028 raw -> .0056 final",
+ "added_variants": {
+  "cub": "cubic (order 3) resampling in every whole-grid warp, everything else as base",
+  "cub_c100": "cub with contour share 1.0",
+  "cub_c100r2": "cub with contour share 1.0 and two rounds"
+ },
+ "added_diagnostics_never_deployable": {
+  "orc128": "true 128-coordinate map through the base finisher with the held-out heads",
+  "orc128_cub": "the same with cubic resampling",
+  "orc128_c000": "the same without the contour bend"
+ },
+ "rule": "cub is one more one-at-a-time change under the same round-1 rule; oracle rows are excluded from every choice",
+ "operational": "unit fec-d39-round1 is restarted with a new priority order; finished shot-variant files are kept and not recomputed"
+}

@@ -1,0 +1,21 @@
+{
+ "name": "r8_finisher_retune_on_oof",
+ "status": "frozen_before_any_variant_is_built",
+ "frozen_at_utc": "2026-09-30T09:06:35Z",
+ "author": "first_agent",
+ "entrant_decision": "2026-09-30: give the finisher re-tuning on the 400 OOF shots a chance",
+ "question": "Is there a finisher setting better than v25's, measured honestly on shots the networks never saw, with the selection itself cross-validated?",
+ "data": "the 5 K-fold OOF folds (400 training shots; each fold's 16 networks never saw it), every 2nd frame, scored with the organisers' reading (as reeval/r2_stage_attribution.py)",
+ "variants": {
+  "V0": "v25 finisher (build_report of fixed_axis_volume_full357_56cb)",
+  "V1": "li_share 0.4", "V2": "li_share 0.8",
+  "V3": "geometric_share 0.35", "V4": "geometric_share 0.65",
+  "V5": "scalar_shares kappa=0.35 volume=0.35 (tri 0.25)", "V6": "scalar_shares kappa=0.65 volume=0.65 (tri 0.25)",
+  "V7": "contour_share 0.35", "V8": "contour_share 0.65",
+  "V9": "kept_coordinates 64 (smooth_from 30)"
+ },
+ "selection": "nested over folds: for each held-out fold j, the variant with the highest pooled S on the other four folds is chosen and scored on fold j; the nested estimate is the pooled S of the 400 shots under these per-fold choices minus V0",
+ "uncertainty": "20000-resample shot bootstrap of the nested difference (seed 930)",
+ "acceptance": "nested dS >= +0.00002 and P(dS > 0) >= 0.9; then the variant chosen on all 400 shots goes into the next public build",
+ "diagnosis_otherwise": true
+}

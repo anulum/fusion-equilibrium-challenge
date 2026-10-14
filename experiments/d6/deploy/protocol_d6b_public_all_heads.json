@@ -1,0 +1,12 @@
+{
+ "id": "D6b-public",
+ "frozen_utc": "2026-10-05T01:16:55Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-04/05: DIII-D back into the top 5 is the priority; 'pracujme teda ďalej'",
+ "question": "Our public DIII-D deficit to the leaders is mostly the boundary term (D_LCFS .00891 vs .0077-.0082, worth 0.7-1.2e-4 S) and Consistency. Does taking EVERY output head from the all-data D4-recipe specialists (scalars as in D6, plus the X-point positions and the 64 boundary radii that steer the X-point move and the contour bend), with the flux coordinates still from the 195-net ensemble, raise the public DIII-D score?",
+ "a_priori": "The specialists were trained with a 4x weight on all auxiliary outputs, including x_lower/upper_r/z and lcfs_r_00..63 (D4 recipe). D6 swapped only the ten scalars and kept geometry heads from the ensemble by an arbitrary scalar/geometry split made before any result. D6b removes that split. No OOF or public result of D6b exists at freeze; the D6 public result (#961044) is not known at freeze (Codabench outage).",
+ "build": "d6/deploy/deploy_build_portable.py --swap all --specialists specialists_deploy.sha on ML350 ($SAS/fec_first_agent/deploy), 20 workers; builder parity on ML350: scalars bit-identical, psi 1.5e-8 (no-swap 3-shot check).",
+ "submission": "D6b DIII-D + MAST v11 (e78b1a9f…); QA, HF, one Development submission; disclosed.",
+ "decision_rule": "Among {195-net (.995990), D6 (#961044), D6b}, deploy the highest public d3d_S only if it is >= .996010; otherwise keep the 195-net archive. No third head-swap variant is derived from these numbers.",
+ "rule_3": "DIII-D only."
+}

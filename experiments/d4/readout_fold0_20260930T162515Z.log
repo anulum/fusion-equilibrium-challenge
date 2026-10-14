@@ -1,0 +1,14 @@
+{"part": "training", "rows": 1044733}
+{"part": "calibration", "rows": 82797}
+{"refit": "discharge_h_seed0_tc_lw02", "labels": 5, "seconds": 840}
+{"refit": "discharge_h_seed1_tc_lw02", "labels": 5, "seconds": 770}
+{"refit": "discharge_h_labels02_s76_lw02", "labels": 5, "seconds": 729}
+{"refit": "discharge_h_seed8_lw02", "labels": 5, "seconds": 919}
+{"refit": "discharge_hx_seed0_tc_lw02", "labels": 9, "seconds": 779}
+{"refit": "discharge_hx_seed1_lw02", "labels": 9, "seconds": 734}
+{"refit": "discharge_hx_seed3_tc_lw02", "labels": 9, "seconds": 539}
+{"refit": "discharge_hc_seed0_tc_lw02", "labels": 73, "seconds": 771}
+{"refit": "discharge_hc_seed1_tc_lw02", "labels": 73, "seconds": 964}
+{"refit": "discharge_hc_seed2_tc_lw02", "labels": 73, "seconds": 1036}
+{"refit": "discharge_hc_seed3_tc_lw02", "labels": 73, "seconds": 1136}
+{"refit": "discharge_hc_seed4_tc_lw02", "labels": 73, "seconds": 1206}

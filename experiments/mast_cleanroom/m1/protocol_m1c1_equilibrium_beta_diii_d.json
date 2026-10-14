@@ -1,0 +1,8 @@
+{"id": "M1c-1", "frozen_utc": "2026-09-30T13:39:58Z",
+ "question": "Is betaN from the map's own current (Grad-Shafranov split of J_phi into p' and FF' on the solve's three terms, equilibrium_beta.py) a better label-free MAST betaN than the kinetic estimate (Thomson p_e x 2.25)?",
+ "rule_3": "DIII-D labels only; no MAST label/demo/leaderboard number.",
+ "seen_before_freezing": "smoke on 2 validation shots (38 frames) printed: sum J dA = Ip within ~2 % in flat-top (units OK); eq/label ~0.75 on one shot and ~2 on the other, pressure share ~0.37 nearly constant; kinetic closer on both. Disclosed; the formal test uses the same 60 shots as M1b.",
+ "data": "as M1b: DIII-D validation bucket, first 60 sorted shots, every 4th frame, |Ip| >= 0.3 MA, true maps; axis/LCFS/axis-flux handling as M1b amendment 1.",
+ "arms": {"kinetic": "map_scalars.normalised_beta (PRESSURE_FACTOR 2.25)", "equilibrium": "equilibrium_beta.equilibrium_beta"},
+ "metrics": "R2 on frames finite in both arms, median ratio, bias-removed R2, correlation, finite share.",
+ "decision_rule": "Equilibrium betaN is a MAST candidate only if its R2 >= the kinetic R2 AND its bias-removed R2 >= the kinetic bias-removed R2 on true DIII-D maps. Otherwise it is recorded as rejected and MAST keeps the kinetic estimate."}

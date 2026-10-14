@@ -1,0 +1,11 @@
+{
+ "id": "D39-amendment-3-oracle-x-point-diagnostic",
+ "written": "before any variant result was read",
+ "finding": "on the 120 screening shots the point of the Hausdorff distance of a head-only polygon lies at the lower X-point side in 55 percent of 26597 frames and at the upper in 42 percent; radius error of the heads is 4.3 mm away from the X-points and 10 mm at them",
+ "added_diagnostics_never_deployable": {
+  "orx": "base finisher with the true maps' own X-points as the X-point move's targets",
+  "orx_cub": "the same with cubic warps"
+ },
+ "purpose": "how much of the boundary term a better X-point prediction could buy at most in the present path",
+ "run": "first on development index divisible by 9 (40 screening shots) with 2 workers, then with the rest of the list"
+}

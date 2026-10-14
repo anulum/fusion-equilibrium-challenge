@@ -1,0 +1,44 @@
+{
+  "status": "full69_native_map_and_scalar_finisher_bitexact_qualified",
+  "frames": 213,
+  "all_seven_arms_finite_native_float32": true,
+  "development_and_confirmation_excluded_from_neural_fits": true,
+  "all_seven_arms_real_fork_bitexact": true,
+  "prediction_hashes": {
+    "matched69_scalar8": {
+      "psirz": "d97083ca712958bf6aa5f1584309300f53e4410ba5997b44e1a330970fedec0e",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "map_control25": {
+      "psirz": "d45aaa30762cc44601af7b50f0b0cc4c7533cdc4f757c698f0ccf6bd8abaa4da",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "map_boundary_frame25": {
+      "psirz": "1be2e48c5dcf24758318d9402677832706da01fd65f5dd00f6fbbf7a562917bc",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "map_boundary_shot25": {
+      "psirz": "0942a35b71efb80f305f601cb973289485f2ff14e8eab09d54dfa6c2ee550b81",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "map_spatial25": {
+      "psirz": "49b31f4110b864d8178e9ed0bc48ca5aa149f6da99717bb8781d830e05956580",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "scalar_static_conv25": {
+      "psirz": "d97083ca712958bf6aa5f1584309300f53e4410ba5997b44e1a330970fedec0e",
+      "q95": "3e11d297b8e397c9bb92f46b4d45f1f717b598624c2314394915b79aac51b617",
+      "betaN": "91349342c8f915fe83fbb0cc5750e0fa434acd354dfed4ee2153db757fe4dc29"
+    },
+    "scalar_learned_conv25": {
+      "psirz": "d97083ca712958bf6aa5f1584309300f53e4410ba5997b44e1a330970fedec0e",
+      "q95": "663eae282d5fdc00b7fed400bbe46ceb82750163a1bd277c768553f7a3e481f8",
+      "betaN": "baddb74e689787f541cf338d3d6a78b12a177fa42108bd2348d0d3dbff4baf57"
+    }
+  }
+}

@@ -1,0 +1,33 @@
+{
+  "name": "joint_seed204",
+  "family": "joint",
+  "status": "fit_complete",
+  "training_frames": 1404214,
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 204,
+    "threads": 12
+  },
+  "train_on_calibration": true,
+  "epochs_completed": 60,
+  "selected_epoch": 60,
+  "criterion": 0.0,
+  "resumed_from_epoch": 0,
+  "network_sha256": "61104543b18b3c95a2c851964b094594ffee4ddf62b0370c36b662d28fa4a742",
+  "seconds_this_attempt": 127.27604838495608,
+  "held_out_metrics_computed": false,
+  "selection": "fixed_final_epoch"
+}

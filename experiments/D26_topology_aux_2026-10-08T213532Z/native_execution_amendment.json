@@ -1,0 +1,7 @@
+{
+  "change": "Resource/backend qualification only: use existing fec_adapter interpreter with native map reader rather than harness interpreter without it. Scientific models/population/finish/scorer/gates unchanged.",
+  "evidence": "native_reading_qualification.json: six exact scalar and contour comparisons, three true frames and three noisy frames. Full end-to-end native smoke required before all400.",
+  "retained": "Python smoke and first successor logs/source preserved; first successor stopped before full output existed.",
+  "full_output": "full_score_v2",
+  "candidate_admission_from_smoke": false
+}

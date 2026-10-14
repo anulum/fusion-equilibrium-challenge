@@ -1,0 +1,13 @@
+{"id": "M3b", "name": "mast_v9_edge_terms_pilot", "status": "frozen_before_any_v9_solve", "frozen_utc": "2026-09-30T13:50:02Z", "author": "first_agent",
+ "rule_3": "MAST inputs and our own maps only; no MAST equilibrium field, demo shot or leaderboard number is read; a later MAST leaderboard number is observed only and never selects.",
+ "evidence_for_change": ["ledger 5.4 (audit_pair_flux): core equal-Te pairs met (gap .02), the Te 5 % pair missed by .13 normalised flux", "ledger 5.13 (M3a): the inboard shift is not explained by solenoid ramp/level or Ip (grouped-CV R2 <= .10) -> static or current-profile cause", "the v7 basis forces p' and FF' to vanish at the boundary; conventional magnetic reconstructions carry constant (edge) coefficients too"],
+ "change": "entrypoints_v9/thomson_isoflux.py = v7 entrypoint copy (sha 6588971a) + two NNLS terms plasma*(R/R_ref) and plasma*(R_ref/R): the constant coefficients of p' and FF'. Nothing else changed (same pairs, weights, iterations, relaxation, fill). Decided a priori as the conventional basis, no variant search. Disclosure: a 4-term basis was looked at with MAST demo S before rule 3; this re-decision uses no MAST label.",
+ "pilot": "41 public MAST shots, indices 0, 30, ..., 1200, all frames; baseline = ../v8/pilot/rows_v7.json (v7 arm, same harness, parity with #949223 maps exact).",
+ "metrics": "as pilot_v8.py: equal-Te pair normalised-flux gaps at Te shares .85/.5/.25/.10/.05 on the final maps (organisers' reading), Te 5 % marker minus LCFS crossing per side, solved share.",
+ "acceptance": {
+  "A1_independent_edge": "median |x_out - x_in| at share 0.05 (not a solve target) lower for v9 by >= 20 % relative to v7 (paired frames)",
+  "A2_independent_marker": "outboard median |d_out_te5 - 0.017| lower for v9 by >= 1.0 cm; inboard median |d_in_te5 + 0.017| not higher by more than 0.5 cm (DIII-D calibration: marker 1.7 cm inside the LCFS)",
+  "A3_core": "median pair gap at shares 0.5 and 0.85 not higher than v7 by more than 0.005",
+  "A4_solved": "solved-frame share v9 >= v7 - 0.05"},
+ "if_accepted": "full MAST v9 build (1206 shots), format QA; M2 then chooses the final MAST map set by a label-free criterion frozen before any MAST score of v9 is seen.",
+ "if_rejected": "record; v7 stays; next M3 candidate (FreeGS free-boundary with Thomson-constrained profiles)."}

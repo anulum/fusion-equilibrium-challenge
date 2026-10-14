@@ -1,0 +1,8 @@
+{
+ "amends": "protocol_d16_0_gate.json (65b5fb10…)",
+ "utc": "2026-10-06T01:10:36Z",
+ "reason": "The extractor frozen as efc2665f… called the package samplers once per time offset; each call re-sorts every 0.5 ms series, about two minutes per shot (first ML350 run stopped after 2 h, about 60 shots per process, directory kept).",
+ "change": "subframe_features.py bea1c161…: all instants of a shot are sampled in one call per signal (same package samplers, same interpolation); the raw series are handed over as arrays. One numerical difference: the shot's peak current used to normalise the plasma-current features now includes the raw record's 99.9th percentile in amperes (the earlier line compared kiloamperes with amperes, so only the frames' maximum counted). Checked on 20 shots against the slow version: every coil, TF and Thomson feature identical; plasma-current features differ only by that normalisation (max 2.7e-3).",
+ "unchanged": "feature definitions, corrector, folds, evaluation, rule. No model had been fitted.",
+ "features_file": "kaggle_ds/subframe_training.npz, 1321417 x 215, sha c86cf095…; stems and frames per shot verified against the table's shot_of_row."
+}

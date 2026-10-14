@@ -1,0 +1,12 @@
+{
+  "id": "D26-0 amendment1 before any fit",
+  "correction": "DIII-D magnetics_dsep is EFIT a-file separatrix-limiter clearance, not upper/lower separatrix balance. Source fec_harness/README.md414-419/477. Prior topology wording is superseded. Test auxiliary boundary supervision only.",
+  "control": "Identical74 outputs both arms. Auxiliary weight0 baseline versus.05 alternative; all common settings/seeds/features same. Output dimension and initialization shapes matched. Auxiliary output unused by inference finisher.",
+  "source_dsep_sha256": "ad722fb88527b6dc3081ef55dfe7664264c3edb10d42a69ea7c09be71ef9f599",
+  "data_source_correction": "First extractor failed before writing on absent ML350 validation path. Second uses retained tables28_subframe validation file solely for exact original validation stems/row counts; dataset alignment with Kaggle tables asserted for allthree parts before any fit. No interpolation.",
+  "paired_recipe": [
+    41,
+    42
+  ],
+  "full_finished_gate": "Original gain>=3e-5,P>=.95,all5folds400shots; no increased LCFS failure. No all-data candidate until pass."
+}

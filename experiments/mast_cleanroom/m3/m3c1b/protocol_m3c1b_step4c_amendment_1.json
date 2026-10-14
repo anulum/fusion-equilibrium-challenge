@@ -1,0 +1,3 @@
+{"protocol": "M3c-1b step 4c (sha b5422cf8)", "amendment": 1, "utc": "2026-10-01T02:21:03Z", "before_results": true,
+ "change": "implementation fix only: the derived step4c/step34_testbed.py computed the rule on the TEST split (inherited from step 4); the protocol says all included frames. The rule block now uses all included frames and the ALL summaries. Made while step3_prepare/step3_generate of 4c were running; no step-4c testbed result existed.",
+ "new_script_sha256": "ab7637c5fa1819f719544b5ef89be26c1aea7c8b822986863f87fa1375963971"}

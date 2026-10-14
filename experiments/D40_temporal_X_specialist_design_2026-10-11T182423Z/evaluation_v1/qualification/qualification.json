@@ -1,0 +1,155 @@
+{
+  "status": "actual_complete8_families_native_positive_full69_whole213_fork_bitexact_and_checkpoint_portable_qualified",
+  "training_quality_pass": {
+    "static": true,
+    "mean": true,
+    "ordered": true
+  },
+  "families": [
+    "static",
+    "mean",
+    "ordered"
+  ],
+  "activation_sha256": "bdc3f68e03b4cdc17680972877a0e760e26a5e39261a361d2c7998cf1b56ac3a",
+  "prediction": {
+    "frames": 213,
+    "prediction_hashes": {
+      "matched69_scalar8": {
+        "psirz": "d97083ca712958bf6aa5f1584309300f53e4410ba5997b44e1a330970fedec0e",
+        "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+        "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+      },
+      "static": {
+        "psirz": "9916d5837e3c691a8b5f2c955a060d92e0120031ff358286b8c12bd3fdd5b8bd",
+        "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+        "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+      },
+      "mean": {
+        "psirz": "735d5d683b77b9ff3a1ad21ce1462fad107ce228e8341cd1c8d1da1518984536",
+        "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+        "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+      },
+      "ordered": {
+        "psirz": "2d2fe1ffb25c246409ae8cd4a5ef420ef11ba4e294097c199c1c0375544e6612",
+        "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+        "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+      }
+    }
+  },
+  "actual_checkpoint_portable_parity": {
+    "static": {
+      "500": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "501": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "502": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "503": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "504": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "505": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "506": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "507": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      }
+    },
+    "mean": {
+      "500": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "501": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "502": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "503": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "504": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "505": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "506": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "507": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      }
+    },
+    "ordered": {
+      "500": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "501": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "502": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "503": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "504": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "505": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "506": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      },
+      "507": {
+        "actual_checkpoint_export_parameters_exact": true,
+        "whole213_portable_CPU_JAX_double_max_abs_m": 2.220446049250313e-16
+      }
+    }
+  },
+  "portable_tolerance_unchanged_from_prototype": {
+    "atol": 1e-10,
+    "rtol": 1e-10
+  },
+  "no_held_out_labels_or_scores_read": true,
+  "not_candidate_admission": true,
+  "seconds": 100.64507856499404,
+  "sources_sha256": {
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/d40_prediction_v1.py": "cea66fff8c7233d9d312b3ebc9e22af8e82c193299a44ae3eb873329486c0145",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/qualify_X_candidate_v1.py": "467b500f032d5e34abbf8487d4e1222a6183a276372306043223af343cd32f9e",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/evaluate_X_head_pregate_v2.py": "7e4be2aa7d9c76bb26c2be3267ac685d718f1c52d3dcb0301922fcae1c0167e7"
+  }
+}

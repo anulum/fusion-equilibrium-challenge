@@ -1,0 +1,15 @@
+{
+  "UTC": "2026-10-10T23:27:52.751116+00:00",
+  "trusted_authenticated_API_storage_host": "miniodis-rproxy.lisn.upsaclay.fr",
+  "scheme": "https",
+  "reason": "exact institutional MinIO proxy returned by Codabench; custom signature query differs from assumed S3 V4 parameters",
+  "reconciled_empty_dataset": 1032604,
+  "old_dataset_no_upload_no_submission": true,
+  "original_failures_retained": [
+    "codabench_operation_failure.json",
+    "codabench_recovery_operation_failure.json"
+  ],
+  "production_candidate_unchanged": true,
+  "new_source": "recover_codabench_v2.py",
+  "signed_storage_URL_never_printed_or_persisted": true
+}

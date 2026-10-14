@@ -1,0 +1,13 @@
+{
+ "id": "mast_q95_C1_C2",
+ "frozen_utc": "2026-10-04T14:34:45Z",
+ "author": "first_agent",
+ "input_from_diagnostic": "D1 (#960391, protocol 00c9808b): qb .165764 with constant betaN, so R2_q95 = .3315 - R2_const in [.33, .43] and R2_betaN(v11) in [.21, .31]. Both scalars are weak.",
+ "question": "Is q95 read from the v11 map's own boundary with the ITER/Uckan formula (a smooth function of a, R0, kappa, delta, B0, Ip) a better q95 than the v11 field-line integral at 95 % of the map's last closed flux, which diverges logarithmically near an X-point and so amplifies boundary errors of an approximate map?",
+ "a_priori": "formula: Uckan / ITER Physics Basis, Nucl. Fusion 39 (1999) 2137 (low-aspect-ratio factor included). Constant CAL = 0.8085 = median label/formula on 3449 frames of 60 DIII-D training shots with true boundaries (q95_formula_diiid_check.py; corr .952, R2 before CAL .19). TF turns 24 and Ip as in v11. Same 5-frame running median as v11.",
+ "candidates": "C1: q95 := CAL * formula on the v11 map's LCFS (scorer extract_lcfs, axis_sign = sign(Ip)); frames without a boundary keep v11. C2: q95 := sqrt(v11 * C1). betaN and flux maps bit-identical to v11; DIII-D archive unchanged.",
+ "metric": "public Development MAST r2_qb (used with disclosure); flux, D_LCFS and Consistency must equal v11's.",
+ "decision_rule": "adopt the candidate with the highest qb only if it beats v11 (.31978) by >= 0.01; otherwise keep v11. Two submissions; no further q95 variant is derived from these two numbers without a new frozen protocol.",
+ "rule_3": "No MAST label, demo shot or offline MAST equilibrium data. MAST inputs and our own v11 maps only; calibration on DIII-D labels (allowed).",
+ "scripts_sha256": "see protocol_mast_q95_candidates.sha256"
+}

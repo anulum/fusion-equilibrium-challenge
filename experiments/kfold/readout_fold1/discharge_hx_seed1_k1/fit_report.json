@@ -1,0 +1,97 @@
+{
+ "member": "discharge_hx_seed1",
+ "fold": 1,
+ "geometry_labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training"
+ ],
+ "fold_training_shots_excluded": true,
+ "reserved_excluded": true,
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa",
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1058088,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0011004193210664122,
+    0.0003999123138998681,
+    0.0008047853779128043,
+    0.00026405183369096865
+   ],
+   "residual_MSE_before": [
+    0.0001254126604244742,
+    0.00022690861542056477,
+    0.00022544322293054339,
+    0.005923765164884569
+   ],
+   "normal_equation_gradient_max_abs": 3.4039077776598127e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1057964,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00010369720363069856
+   ],
+   "residual_MSE_before": [
+    0.0003761815817198817
+   ],
+   "normal_equation_gradient_max_abs": 1.4239682634528857e-18
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 713517,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.0001734789608726645,
+    -0.0006782875094369109
+   ],
+   "residual_MSE_before": [
+    1.5067026135107008e-05,
+    2.7013282678592858e-05
+   ],
+   "normal_equation_gradient_max_abs": 8.485020200221945e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 452903,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017802327465785088,
+    0.00048113708585380917
+   ],
+   "residual_MSE_before": [
+    1.5193716013280886e-05,
+    4.22117568588781e-05
+   ],
+   "normal_equation_gradient_max_abs": 8.613266282392167e-19
+  }
+ ],
+ "initial_sha256": "1fc73c1a88a183b7f83596a7985b8e0cce33f0ad6144079c7e67ad102583170c",
+ "network_sha256": "5ce1b537e346fa4cd5309e5050d7652f387bfe28112e89a4caebcf203553f491",
+ "seconds": 557.0855920314789
+}

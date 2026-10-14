@@ -1,0 +1,97 @@
+{
+ "member": "discharge_hx_seed1_lwsel",
+ "fold": 1,
+ "geometry_labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training"
+ ],
+ "fold_training_shots_excluded": true,
+ "reserved_excluded": true,
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa",
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1058088,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010988594920123829,
+    0.00038996954500523977,
+    0.0008106195049516078,
+    0.0002501267249657379
+   ],
+   "residual_MSE_before": [
+    0.00011087837694451998,
+    0.00024229858729717097,
+    0.00024103637573512734,
+    0.004707015197803836
+   ],
+   "normal_equation_gradient_max_abs": 2.047966847783288e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1057964,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00011650890448776006
+   ],
+   "residual_MSE_before": [
+    0.00030211716253847397
+   ],
+   "normal_equation_gradient_max_abs": 7.490947627280219e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 713517,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017722251099194474,
+    -0.0006742035801187131
+   ],
+   "residual_MSE_before": [
+    1.976694478426185e-05,
+    3.0454755018502932e-05
+   ],
+   "normal_equation_gradient_max_abs": 6.399003044261218e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 452903,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017972953315542256,
+    0.0004847500930432431
+   ],
+   "residual_MSE_before": [
+    1.8138435443702737e-05,
+    4.406666569436448e-05
+   ],
+   "normal_equation_gradient_max_abs": 7.242528745718293e-19
+  }
+ ],
+ "initial_sha256": "e07d29ea19d98fb461214e191bb38873ed5f3e2b8908c00b08b4b9f09d90e158",
+ "network_sha256": "3b5c8bf66e9f9af55ee28c80dff7c89599faca39502da02d7f6e8516089e972f",
+ "seconds": 537.1925749778748
+}

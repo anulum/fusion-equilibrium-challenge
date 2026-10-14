@@ -1,0 +1,28 @@
+{
+  "status": "sole_static50_shared_eligible_four_trees_native_FORK_bitexact_on213",
+  "identity": {
+    "protocol_sha256": "20be0c8d8003d6d73a9e5a96e80ede84e707a944907d6172ca6ced69a9efde8f",
+    "original_training_activation_sha256": "bdc3f68e03b4cdc17680972877a0e760e26a5e39261a361d2c7998cf1b56ac3a",
+    "phase": "confirmation357",
+    "fixed_primary": "static",
+    "share": 0.5,
+    "finalist_lock_sha256": "735400e7b69d320e9af0ff50be38bf0680edc5ee8ae6eb497007f90a71506b9c",
+    "eligible_tree_receipt_sha256": "9ff19fc7828665db643f854151d6ba406633159f2c4ab987e17329be2ec43753"
+  },
+  "prediction": {
+    "frames": 213,
+    "prediction_hashes": {
+      "matched69_scalar8": {
+        "psirz": "dcf805b4aa18bfd02f5c59857a6010cb52b4c5e21071223037296e5f6829d35b",
+        "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+        "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+      },
+      "static": {
+        "psirz": "e25bd22c108294df69988457cd07663d5dd610f45d7ef23d245aa6695cbd949e",
+        "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+        "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+      }
+    }
+  },
+  "no357_labels_read": true
+}

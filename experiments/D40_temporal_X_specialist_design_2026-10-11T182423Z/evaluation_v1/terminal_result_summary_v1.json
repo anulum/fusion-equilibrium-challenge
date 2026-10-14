@@ -1,0 +1,59 @@
+{
+  "status": "D40_terminal_no_head_pregate_passer",
+  "shots": 120,
+  "frames": 26597,
+  "fixed_share": 0.5,
+  "minimum_endpoint_improvement_percent": 10,
+  "actual_complete24_quality_pass": true,
+  "official_S_measured": false,
+  "no238_or357_opened": true,
+  "publication": false,
+  "baseline_mm": {
+    "lower": 6.982727234713302,
+    "upper": 10.688254906220436
+  },
+  "families": {
+    "static": {
+      "head_pass": false,
+      "mean_distance_mm": {
+        "lower": 6.404255159334571,
+        "upper": 10.336044202986804
+      },
+      "improvement_percent": {
+        "lower": 8.284328686118037,
+        "upper": 3.2953059814156416
+      },
+      "raw_expert_upper_change_percent": -2.354406915138263
+    },
+    "mean": {
+      "head_pass": false,
+      "mean_distance_mm": {
+        "lower": 6.3004530347608725,
+        "upper": 10.527909418971687
+      },
+      "improvement_percent": {
+        "lower": 9.77088431237344,
+        "upper": 1.500202686552976
+      },
+      "raw_expert_upper_change_percent": -4.760133373184661
+    },
+    "ordered": {
+      "head_pass": false,
+      "mean_distance_mm": {
+        "lower": 6.328956658357605,
+        "upper": 10.443938100825552
+      },
+      "improvement_percent": {
+        "lower": 9.362682435962855,
+        "upper": 2.2858437372474727
+      },
+      "raw_expert_upper_change_percent": -3.8882855584040144
+    }
+  },
+  "sources_sha256": {
+    "head/head_pregate.json": "8ce057ecfb3603521c0bfe615209e4cb27f9eab43596580acb8bbb69f109088b",
+    "pipeline_terminal.json": "96ab2ea0077fa1e9a035d570320f0251b13898e0610c529081f2eb98cb9d852b",
+    "screen120/analysis.json": "745081fe1fd52edff30642ce8609679053521ca346188d62c03c0ca3241f7b19",
+    "qualification/qualification.json": "b013fce6215c534e2a389f50684ba2f1929e68be528dbeba569c3dfaf8fbb51a"
+  }
+}

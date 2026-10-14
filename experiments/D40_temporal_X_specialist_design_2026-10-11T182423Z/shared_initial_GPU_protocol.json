@@ -1,0 +1,19 @@
+{
+  "sources_sha256": {
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/qualify_shared_initial_gpu.py": "389acd169d65049f38069c23501152f37dc1c603b96da92da40135755af267a6",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters.py": "72af290319723ba1c5038b8a37d1264c9650cd35dff2843d9dc24bbbf4ffb5f5",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/training_recipe_frozen_v1.json": "739796c9e4d507f4473d62e97c19002413928a59a5e8d8d30f214c62e6a6b50f",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/receipt.json": "51c17f0de5188447863d490739c72bea0560536e29fbaed7f0c7b90cf3395f37",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed500.npz": "e6886576bf79114d9042112d648546b780f9767dbc0aa0de0ffb3c37cc2062d3",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed501.npz": "fb33145c7f1bfbd6b1074ffaf59fa2438395c4335f9a86d06750d4356ec51285",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed502.npz": "53cc3a5b8b18b657070cce3175fb0d797536dec9ce3938b36c5059421a137558",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed503.npz": "c16a80c3d10d539f3c28998c9f58ed80f179a6f986a7817c0b6281966e328a78",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed504.npz": "b7866e26d68d3b71a0578fc02d0054b1cb456c8231faa66eb6adb5e9bf86028a",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed505.npz": "b3d0449451c1f03f57e32346baad9282b78654528c8dfcf05115cca026b2a5e5",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed506.npz": "971bb946b3687eefd62143f5e7ce64eea494103d35ed9a20e595e9d65d7f1948",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/shared_initial_parameters/seed507.npz": "c021dfa8165c5844e41c5db989514649a479ae5b2e59437b06cd3442d3fc0781"
+  },
+  "no_updates": true,
+  "expected_devices": 3,
+  "exact_f32_parameter_transfer": true
+}

@@ -1,0 +1,8 @@
+{
+  "reason": "Publicfeatureextraction CPU/GILbottleneck observed~185percentCPU under400percent cap; changefourthreads tofourspawnprocesses, sourceinputs/models/scalarmath unchanged; realalreadycompletedpublicshot byteparityperworker required",
+  "completed_public_receipts_preserved": 70,
+  "predict_case_AST_identical": true,
+  "submission_not_created": true,
+  "scientific_recipe_changed": false,
+  "build_sha256": "f9c3c9e7add1092d421c79b1b96e8b2af0d2023ea76be785973181256c1b8598"
+}

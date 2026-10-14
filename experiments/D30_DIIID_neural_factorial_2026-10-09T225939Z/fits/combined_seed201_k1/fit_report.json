@@ -1,0 +1,41 @@
+{
+  "name": "combined_seed201_k1",
+  "status": "fixed_final_epoch_fit_complete",
+  "training_frames": 1140885,
+  "settings": {
+    "coordinates": 64,
+    "width": 1024,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [
+      [
+        "kappa",
+        0.2
+      ],
+      [
+        "li_scored",
+        0.2
+      ],
+      [
+        "r_axis",
+        0.1
+      ]
+    ],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 201,
+    "threads": 12
+  },
+  "epochs_completed": 60,
+  "resumed_from_epoch": 0,
+  "network_sha256": "82661b28fbd49f67dffc1b8565311b6dd7b3f6192c871c9ad5a81086c5a321f9",
+  "seconds_this_attempt": 357.74047355994117,
+  "validation_metrics_computed": false
+}

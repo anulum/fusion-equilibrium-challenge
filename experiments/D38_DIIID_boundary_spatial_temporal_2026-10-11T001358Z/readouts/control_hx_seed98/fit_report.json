@@ -1,0 +1,103 @@
+{
+  "name": "control_hx_seed98",
+  "family": "hx",
+  "status": "readout_complete",
+  "input": "$FEC_EXPERIMENTS/D38_DIIID_boundary_spatial_temporal_2026-10-11T001358Z/fits/control_hx_seed98/network.npz",
+  "input_sha256": "614055718f16531ef23afb04ead83807f2718442d77268636c6c13a018a965d5",
+  "network_sha256": "5b471f08a7d1c637aa4e5599e53458ed0649f424a9adaaed800f4a4c835a3197",
+  "fit_parts": [
+    "training",
+    "calibration"
+  ],
+  "rows": 1404214,
+  "development_and_confirmation_excluded": true,
+  "only_named_geometry_final_rows_changed": true,
+  "spatial_latent_rows_unchanged": true,
+  "CPU_GPU_moment_relative_max": 1.8279968043340742e-14,
+  "groups": [
+    {
+      "labels": [
+        "kappa"
+      ],
+      "finite_rows": 1404212,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        0.0010655008404385476
+      ],
+      "residual_MSE_before": [
+        0.00011236584677106663
+      ],
+      "normal_equation_gradient_max_abs": 1.0298861847428224e-18
+    },
+    {
+      "labels": [
+        "tri_top",
+        "tri_bot",
+        "volume"
+      ],
+      "finite_rows": 1404214,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        0.00037711667475519826,
+        0.000819023473711084,
+        0.0002268242670139048
+      ],
+      "residual_MSE_before": [
+        0.0001976645476156494,
+        0.00019130016597688142,
+        0.00468551242212649
+      ],
+      "normal_equation_gradient_max_abs": 1.1318213059889571e-18
+    },
+    {
+      "labels": [
+        "li_scored"
+      ],
+      "finite_rows": 1404057,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        -0.00014145608348474655
+      ],
+      "residual_MSE_before": [
+        0.0003132054774423635
+      ],
+      "normal_equation_gradient_max_abs": 1.0055339875092613e-18
+    },
+    {
+      "labels": [
+        "x_lower_r",
+        "x_lower_z"
+      ],
+      "finite_rows": 948946,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        -0.00017428829379016625,
+        -0.0006722901798957256
+      ],
+      "residual_MSE_before": [
+        1.3159836247081131e-05,
+        2.033295303951126e-05
+      ],
+      "normal_equation_gradient_max_abs": 5.187812104136573e-19
+    },
+    {
+      "labels": [
+        "x_upper_r",
+        "x_upper_z"
+      ],
+      "finite_rows": 597442,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        -0.00017915891886095492,
+        0.0004695048205692426
+      ],
+      "residual_MSE_before": [
+        1.3012611849913669e-05,
+        3.3034206656427975e-05
+      ],
+      "normal_equation_gradient_max_abs": 7.756174818889221e-19
+    }
+  ],
+  "seconds": 141.015029356,
+  "device": "rocm:1"
+}

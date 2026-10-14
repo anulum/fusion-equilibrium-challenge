@@ -1,0 +1,10 @@
+{
+ "amends": "protocol_d19_v29.json (161bc746…) and amendments 1, 2",
+ "utc": "2026-10-07T00:55:58Z",
+ "reason": "H1a (48 members) is built and uploaded but not yet scored (no logged-in browser). The ML350 is idle until the c members' retries finish on Kaggle CPU (about 03:15Z) and H1 can be built. The protocol's H2 is 'H1 with the D9 tree heads blended at the G1 weights'; the same step can be taken on H1a now.",
+ "added_candidate": "H2a = H1a (the same 48 networks, networks_v29_h1a.sha, deployed finisher, sub-frame features) with the D9 tree heads (tree_heads_public_test.npz, sha 67fd2caa…, fitted on the 367 table features, unchanged since G1) blended at the G1 weights li_scored .26, r_axis .14, kappa .09, x_lower_r .16. One Development submission with MAST v11.",
+ "caveat_stated_before_the_result": "The G1 weights were measured against networks without the sub-frame features. The new networks are better on these heads (D18-0 squared-error ratios: li .988, r_axis .978, kappa .949), so the trees' share of independent information is smaller and the weights may be too large; no weight is tuned on the public score. A refit of the trees on the extended features with weights measured out of fold against sub-frame networks stays a separate, later experiment.",
+ "rule": "H2a is compared with H1a's public score (H1a is submitted first). Deploy H2a if it exceeds the better of {H0 .996223, H1a} by at least 1e-5; otherwise the display ends on the better of H0 and H1a under amendment 2. H2a's sign also decides whether H2 (65 members) is built with the tree blend: if H2a is below H1a, H2 is not built and the blend is closed for v29 at these weights.",
+ "unchanged": "H1 (all 65) and the decision rule of the protocol.",
+ "exposure": "H0 public .996223 known; H1a not scored at this freeze; no H2a build exists."
+}

@@ -1,0 +1,8 @@
+{"id": "M3c-1b step 8", "name": "VP_s0.1_with_relaxed_shifts", "status": "frozen_before_any_step8_run", "frozen_utc": "2026-10-01T04:25:13Z",
+ "author": "first_agent", "evidence": "ledger 5.29 + diagnosis on real shots 300/600 (inputs only): every frame the arm leaves unsolved fails on convergence (change >= CONVERGED 0.002; 30 frames), none on the axis test or a failed solve -> the fitted shifts jump between Picard iterations.",
+ "change": "entrypoints_v7_vessel/thomson_isoflux.py (sha prefix d6f5b40d89a200bf): SHIFT_RELAXATION = 0.3 (= RELAXATION of the current): shifts = 0.7 shifts + 0.3 fitted each iteration. Arm VP_s0.1r = VP_s0.1 (P4/P5 pairs 3 %, floor .1, bound .1; vessel scale .1, bound .5) + this. Pre-specified, no tuning.",
+ "tests": {"A_testbed": "step-6 testbed frames (all included, TUNE+TEST): VP_s0.1r vs v7 by the step-6c rule (seed 938, >= 100 frames)",
+  "B_fresh": "step-6c fresh frames: same rule (seed 939)",
+  "C_real": "step-7 guards G1-G6 on the 41 real pilot shots (unchanged thresholds)"},
+ "decision_rule": "A and B and C all pass -> recommend MAST v10 = VP_s0.1r to the entrant (full build + QA; submission is the entrant's decision; the leaderboard observed only). Otherwise recorded.",
+ "rule_3": "synthetic data and real MAST inputs only."}

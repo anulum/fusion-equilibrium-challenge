@@ -1,0 +1,18 @@
+{
+ "id": "D19: the recipe refitted with the sub-frame input features (v29) and tested on the public score",
+ "frozen_utc": "2026-10-06T07:53:39Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-06: 'Do it all' (after the D18-0 result and my four-step plan); and: networks should also read the signals at 0.5 ms themselves (separate experiment D20).",
+ "basis": "D18-0 (ledger 2.40): paired K-fold, same four members with and without the 215 sub-frame features: every output better (z_axis squared error x0.85, flux coordinates x0.978, head proxy +1.35e-4, P 1.0).",
+ "v29_fit": "the 65 members of protocol_alldata_refit_20260929 exactly as v28 (training + validation + holdout rows; members' original settings, seeds and calibration flags; alldata_run.py unchanged), on tables whose features are the 367 table features plus the 215 sub-frame features (subframe_features.py bea1c161\u2026; training c86cf095\u2026, calibration, validation, holdout extracted the same way and checked row for row). Kernels kaggle_v29_a (members 0-32) and kaggle_v29_b (33-64) = the v28 kernels plus the feature append.",
+ "failed_fits": "amendment 1 (calibration flux R2 < 0.999 -> one refit with seed + 1000) and amendment 2 (gradient_limit 0.1 with the original seed) of the all-data protocol, in the same pre-committed order as for v27/v28.",
+ "readout": "the bank members' geometry readout rows are refitted as for v28 (alldata_readout.py) on the extended tables.",
+ "build": "deployed finisher flags unchanged. The predictor's feature matrix of a test shot gets the same 215 columns appended (out_public_test.npz, sha 8c8611a3\u2026, 193359 x 215, extracted by the same code from inputs only). Candidates, each one build and one Development submission with MAST v11: H1 = the 65 v29 networks alone; H2 = H1 with the D9 tree heads blended at the G1 weights. Whether the 195 old networks are added is decided by H1 against the deployed .996025: old and new members can answer together (each reads its own leading columns), but the old ones lack the new inputs.",
+ "decision_rule": "deploy the best of {deployed G1 .996025, H1, H2} if it exceeds .996025 by at least 1e-5; the display must end on the best admissible pair.",
+ "kernels": {
+  "a": "a5dffb86cf6a1d89dfa52e7a1f2f6333e1d1243cc121c89203081830a098d7bb",
+  "b": "3a4c5f2cfbce92a0e83213cd7cf401d35a22c394d85cae331ce796358f0d54da"
+ },
+ "exposure": "D18-0 known (training shots, out of fold). No v29 network and no public result with sub-frame features exist at freeze.",
+ "rule_3": "DIII-D only; inputs only for the new features; MAST unchanged v11."
+}

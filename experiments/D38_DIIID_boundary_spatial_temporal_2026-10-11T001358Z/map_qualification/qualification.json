@@ -1,0 +1,27 @@
+{
+  "status": "all_four_map_objectives_real_ROCm_qualified",
+  "unmodified_control_loss_and_gradient_exact": true,
+  "results": [
+    {
+      "family": "control",
+      "cpu_gpu_double_max_abs": 5.3290705182007514e-14,
+      "checkpoint_exact": true
+    },
+    {
+      "family": "boundary_frame",
+      "cpu_gpu_double_max_abs": 6.039613253960852e-14,
+      "checkpoint_exact": true
+    },
+    {
+      "family": "boundary_shot",
+      "cpu_gpu_double_max_abs": 6.750155989720952e-14,
+      "checkpoint_exact": true
+    },
+    {
+      "family": "spatial",
+      "cpu_gpu_double_max_abs": 4.973799150320701e-14,
+      "checkpoint_exact": true
+    }
+  ],
+  "development_metrics_computed": false
+}

@@ -1,0 +1,18 @@
+{
+  "status": "paired_temporal_real_ROCm_and_portable_double_qualified",
+  "input_window_reconstruction_exact": true,
+  "source_static_control_loss_gradient_parity": true,
+  "results": [
+    {
+      "family": "static_matched_conv_control",
+      "cpu_gpu_double_max_abs": 3.552713678800501e-15,
+      "checkpoint_exact": true
+    },
+    {
+      "family": "learned_conv_encoder",
+      "cpu_gpu_double_max_abs": 7.105427357601002e-15,
+      "checkpoint_exact": true
+    }
+  ],
+  "development_metrics_computed": false
+}

@@ -1,0 +1,29 @@
+{
+  "returncode": 0,
+  "stdout": "",
+  "stderr": "",
+  "canonical_receipt": {
+    "seq": 144999,
+    "payload": {
+      "client_msg_id": "cli-41c5776ca49147819915be7cc40f0bef",
+      "dead_lettered": false,
+      "deferred": false,
+      "delivered": true,
+      "matched_recipients": [
+        "a terminal"
+      ],
+      "message_id": 31289,
+      "message_seq": 144997,
+      "reason": "",
+      "recipient_wake_capabilities": {
+        "a terminal": "pane_bridge"
+      },
+      "recipients": [
+        "a terminal"
+      ],
+      "sender": "the second agent-D42-result-review-tx",
+      "stale_recipients": [],
+      "target": "a terminal"
+    }
+  }
+}

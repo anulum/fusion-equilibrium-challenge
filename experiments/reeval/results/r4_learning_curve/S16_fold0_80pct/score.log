@@ -1,0 +1,23 @@
+scoring 357 shots with 6 workers
+references ready
+
+==============================================================
+  COMPOSITE S = 0.9948      (357 held-out DIII-D shots)
+==============================================================
+            R2_psi    0.9999   x 0.55  =  0.5499
+    R2_{q95,betaN}    0.9971   x 0.15  =  0.1496
+        1 - D_LCFS    0.9893   x 0.10  =  0.0989
+       Consistency    0.9818   x 0.20  =  0.1964
+
+  per-derived-scalar R2 (the Consistency term):
+        R_axis   0.9802
+        Z_axis   0.9887
+         kappa   0.9732
+       tri_top   0.9923
+       tri_bot   0.9902
+        volume   0.9905
+            li   0.9577
+
+  LCFS extraction failed on 0.0% of frames; derivations on 0.0%
+  psi_sign = +1
+  S to six places: 0.994800; flux R2 0.999874; scalars 0.997143; Consistency 0.981827

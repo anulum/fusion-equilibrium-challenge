@@ -1,0 +1,8 @@
+{
+ "amends": "protocol_d19_v29.json (161bc746…) and amendment 1",
+ "utc": "2026-10-06T21:26:07Z",
+ "added_candidate": "H1a = the 48 v29 members that pass amendment 1 and have their readout refitted so far: members 33-64 (H0) plus the h family 16-22, 24-29 and hx 30-32; deployed finisher, no tree blend, sub-frame features. One Development submission with MAST v11.",
+ "why": "The c family (members 0-15) fails amendment 1 on 9 of 11 fits with the 582-column table and needs its retry/amendment-2 fits (running on Kaggle CPU and locally); h_seed7_tc failed too. The h family is the largest group missing from H0 and carries q95, betaN, li and the shape scalars; waiting for the c family would cost another day.",
+ "rule": "Deploy H1a if it exceeds the deployed H0 .996223 by at least 1e-5; otherwise restore with the H0 pointer. H1 (all 65) follows when the c members pass.",
+ "platform_note": "Members 16-27 fitted on Kaggle CPU, 28-32 on the ML350's CPU (jax 0.8.2, same code, settings and seeds as the CUDA members 33-64)."
+}

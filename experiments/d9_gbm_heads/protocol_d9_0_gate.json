@@ -1,0 +1,57 @@
+{
+ "id": "D9-0 gate: do gradient-boosted heads add information to the network heads?",
+ "frozen_utc": "2026-10-05T10:11:38Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-04/05: DIII-D back into the top 5 is the priority",
+ "question": "The 195 networks are one model family; their head errors are 99.3 % shared between members (ledger 2.10), so more networks of the family no longer help (ledger 4.3). Does a different family, boosted trees on the same 367 'discharge' features, make head errors different enough that a blend with the network heads is more accurate out of fold?",
+ "a_priori": "Gap to the leader by term (public, 4 Oct): Consistency +2.0e-4 S, D_LCFS +7e-5, q95/betaN +5.6e-5; all three are set by head accuracy (finisher targets, X-points, the two submitted scalars). Tree models were only tried on 321-600 shots with crude features before the network era (fec_adapter/out/scalar_heads_boosting.py and neighbours); residual correctors on 400 OOF shots (ledger 2.8, 2.13, 2.17) were data-starved and negative. A full-data tree family as an ensemble member was never measured. Two equally good estimators with error correlation rho blend to (1+rho)/2 of the error variance; rho is the unknown this gate measures.",
+ "data": "fec_adapter/runs/diii_d_accuracy/tables_lcfs_discharge (Kaggle anulum/fec-tables-lcfs, SHA256SUMS verified in the kernel): table_training 5954 shots, 1321417 frames, 367 features; folds and reserved stems exactly as protocol_kfold_oof_maps_20260929 (fold k = training stems with int(sha256(stem),16) % 5 == k; reserved_for_evaluation excluded everywhere); table_calibration (non-reserved) for early stopping only. Validation, holdout and test are not touched. DIII-D only.",
+ "trees": {
+  "library": "xgboost (Kaggle image version, recorded)",
+  "params": {
+   "tree_method": "hist",
+   "device": "cuda",
+   "objective": "reg:squarederror",
+   "max_depth": 8,
+   "eta": 0.05,
+   "subsample": 0.8,
+   "colsample_bytree": 0.5,
+   "min_child_weight": 20,
+   "lambda": 1.0,
+   "max_bin": 256,
+   "seed": 9
+  },
+  "rounds": 3000,
+  "early_stopping_rounds": 100,
+  "base_score": "mean of the fold's training labels",
+  "missing_labels": "weight 0",
+  "tuning": "none: one setting, fixed here before any fit"
+ },
+ "targets": [
+  "q95",
+  "beta_n",
+  "li_scored",
+  "r_axis",
+  "z_axis",
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "kernel": {
+  "file": "d9_gbm_heads/kaggle_gate/run_d9_gate.py",
+  "sha256": "232eed801be7f204587c39c1cb7743b9833427a3525afc4e5f3a528c80884bcd",
+  "kaggle_id": "anulum/fec-d9-gbm-gate"
+ },
+ "network_comparator": "fold k: the 16 S16 V0 networks of kfold/oof_fold{k}/receipt.json (sha256 verified), fec_adapter.diii_d_accuracy.network.predict_together on the same table rows (the frames of the fold's held-out shots); heads unsmoothed, as deployed (smooth-axis 0, smooth-scalars 0).",
+ "blend": "per target b = NN + w (GBM - NN); w by least squares on the held-out frames of the other four folds, clipped to [0, 1] (nested: no frame takes part in its own weight).",
+ "measure": "pooled R2 over all held-out frames with a finite label, per target, for NN, GBM and blend; dR2 = blend - NN. Head-level proxy of the score change: dS_proxy = 0.15 * mean(dR2 q95, dR2 beta_n) + 0.20 * (1/7) * (1.0 dR2 r_axis + 1.0 dR2 z_axis + 0.5 dR2 kappa + 0.5 dR2 volume + 0.25 dR2 tri_top + 0.25 dR2 tri_bot + 0.6 dR2 li_scored); the factors are the deployed finisher's shares of the way to each head. It is a proxy, not a score: the finisher and the map reading are not run.",
+ "rule": "PASS if dS_proxy >= +3e-5 and P(dS_proxy > 0) >= 0.95 under a bootstrap over shots (2000 resamples, seed 990). PASS -> a deployment protocol is frozen separately before any all-data tree fit (blend with the deployed 195-net heads, like for like; public Development score as the meter, with disclosure). FAIL -> the tree family is closed; no second hyperparameter setting is tried.",
+ "reported_not_in_rule": "GBM-alone R2, NN-GBM error correlation and nested weights per target; X-point targets (R2 and mean Euclidean error in mm, lower and upper, NN / GBM / blend); per-fold dS_proxy.",
+ "exposure": "none: no tree fit on the network feature table exists at freeze. The S16 OOF head accuracies are known (d7 score logs).",
+ "rule_3": "DIII-D training data only; no MAST data of any kind."
+}

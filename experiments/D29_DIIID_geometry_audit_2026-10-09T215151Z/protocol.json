@@ -1,0 +1,20 @@
+{
+  "id": "D29-DIII-D-geometry-attribution",
+  "entrant_steering": "DIII-D primary focus; stop cross-machine prioritization",
+  "purpose": "Locate geometric errors in learned heads, decoded flux and each existing deployment edit before next neural training. No new MAST computation.",
+  "population": "All same400 held DIII-Dshots/89584frames; originalp45fourmemberperfold/D9OOFtree/currentflags unchanged. Allframes, no new selection.",
+  "stages": [
+    "decoded_after_smoothing",
+    "axis",
+    "contour",
+    "shape",
+    "x_points",
+    "reshape",
+    "final"
+  ],
+  "measurements": "Native Reader geometry under original scorer masks/means; everyfinalmap/q95/betaN bit-identical to originalp45archive. Each final per-shot7geometrySSE mustmatchcachedoriginalofficialscore. Compare input-only learned geometry heads with native-derivedtruth; means/variance/eligibility computedfromexistingreferencecache. Retain all stage results; analyseonlyafterallcasescomplete.",
+  "prior_test_closed": "EFIT vs scorednative axes: pooledR2.999947354/.999959127, biases.11954mm/.00391mm. Labeldefinition mismatchcannot explain .983/.994currentaxisconsistency; not chosen as primary fix.",
+  "stability": "Same original sources andall20usedmodelweights pinned; existingreferencecache read-only. No source modifications, no candidateupload orfinisherchoicefrompartialresults.",
+  "resources": "CPU3workers,MemoryMax5G,noSwap,36hwall,BLAS1. One bounded restartbudget/checkpoints; finalreceipt onexternaltermination viaExecStopPost. Native geometry parity qualified against public original scorer on realmaps; no numerical retries/tuning.",
+  "output": "Per-case stage geometry sufficientstatistics/headerrors/parity, terminalreceipt andall-population aggregate. No duplicate fullmap archives."
+}

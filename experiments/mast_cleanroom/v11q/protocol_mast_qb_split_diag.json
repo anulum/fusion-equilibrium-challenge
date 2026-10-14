@@ -1,0 +1,12 @@
+{
+ "id": "mast_qb_split_diag",
+ "frozen_utc": "2026-10-04T13:56:29Z",
+ "author": "first_agent",
+ "entrant_request": "2026-10-04: continue with MAST variants for q95/betaN",
+ "question": "The public MAST qb of v11 (.31978) is the mean of two pooled R2 values, q95 and betaN, which the leaderboard does not show separately. Which of the two carries the loss?",
+ "design": "One diagnostic Development submission D1: the v11 archive unchanged (flux maps, q95) except every betaN value replaced by one constant, the median of all v11 betaN predictions of the split (input-only). DIII-D archive unchanged (195-net 33105268...).",
+ "arithmetic": "qb_D1 = (R2_q95 + R2_const)/2 with R2_const = -(c - mean_label)^2/var_label <= 0. Hence R2_q95 = 2 qb_D1 - R2_const >= 2 qb_D1, and R2_betaN(v11) = 2(.31978) - R2_q95. The constant's own R2 is unknown but small for a median (expected within [-0.1, 0]); the split is reported with that interval.",
+ "use": "Measurement only. It decides which scalar the next pre-justified variants target. No value of D1 is deployed. MAST flux, D_LCFS and Consistency of D1 must equal v11's (check).",
+ "rule_3": "Development score used with disclosure (organisers' answer 2026-10-02; entrant authorisation of documented comparisons). No MAST label, demo shot or offline MAST equilibrium data is read.",
+ "cost": "one of 5 daily submissions; the leaderboard shows the latest entry until the next submission"
+}

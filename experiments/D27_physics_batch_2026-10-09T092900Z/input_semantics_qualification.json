@@ -1,0 +1,7 @@
+{
+  "status": "joint_pressure_and_elapsed_time_memory_qualified",
+  "paired_pressure_before_binning": true,
+  "density_missing_channel_excluded": true,
+  "real_elapsed_gap_used": true,
+  "comparative_model_metrics_computed": false
+}

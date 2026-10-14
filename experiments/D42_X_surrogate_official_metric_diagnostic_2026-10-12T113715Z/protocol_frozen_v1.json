@@ -1,0 +1,38 @@
+{
+  "status": "frozen_before_current_official_S_diagnostic_scores",
+  "D40_root": "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z",
+  "families": [
+    "static",
+    "mean",
+    "ordered"
+  ],
+  "seeds": [
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507
+  ],
+  "share": 0.5,
+  "development_selector": "CASES index%3==0,120shots26597frames,allframes",
+  "bootstrap_seed": 3801,
+  "replicates": 10000,
+  "no238_or357": true,
+  "no_candidate_admission_or_publication": true,
+  "D40_rejection_unchanged": true,
+  "review_kind": "SelfReview, prior actual source-bound native/FORK qualification retained, independent review pending",
+  "purpose": "Measure actual official-score effect after surrogate rejects all families; exploratory follow-up, not a retrospectively changed D40 gate.",
+  "sources_sha256": {
+    "$FEC_EXPERIMENTS/D42_X_surrogate_official_metric_diagnostic_2026-10-12T113715Z/score_all3_official_diagnostic_v1.py": "1706dd97033441ee447b7d3378228606c59380eb47357d5e407523cb95c3c265",
+    "$FEC_EXPERIMENTS/D42_X_surrogate_official_metric_diagnostic_2026-10-12T113715Z/observe_diagnostic_v1.py": "aeb288b4e2a20107c0ccb02d38a70ba193129c217e956d95ae318ba761c87c5a",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/evaluate_X_official_v1.py": "0eae495ead50a23264e67bc2e6fa8236c49bca5eebccd144b4d69d972b2c71c1",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/evaluation_protocol_frozen_v1.json": "ed28f69ead009398c1f839386874e37fb991cd039b160f8688a7e5f07b0f712e",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/evaluation_v1/head/head_pregate.json": "8ce057ecfb3603521c0bfe615209e4cb27f9eab43596580acb8bbb69f109088b",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/evaluation_v1/pipeline_terminal.json": "96ab2ea0077fa1e9a035d570320f0251b13898e0610c529081f2eb98cb9d852b",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/evaluation_v1/qualification/qualification.json": "b013fce6215c534e2a389f50684ba2f1929e68be528dbeba569c3dfaf8fbb51a",
+    "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/real_fits_original6326_v1/attempt_1791802353681622165.json": "900830121b1bf7ba4b65de4d41556193a448a335bd269ea38efa99fd4afa0f11"
+  }
+}

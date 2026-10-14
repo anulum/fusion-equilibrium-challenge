@@ -1,0 +1,45 @@
+{
+  "id": "D31-DIII-D-learning-rate-stability",
+  "entrant_instruction": "pokra\u010dujeme teda, d\u00fafam \u017ee v\u0161etko dokumentuje\u0161; DIII-D primary",
+  "frozen_before_new_results": true,
+  "design": "Three new peak learning rates at fixed width1024/default loss, five original hash folds x seeds200,201 =30 fresh fits. Initialization and permutations matched to D30capacity, no warmstart. All previous results retained.",
+  "arms": [
+    "lr1000",
+    "lr0500",
+    "lr0250"
+  ],
+  "matched_control": "D27control width512 peak.002 reused, original normalization/rows/seeds; stronger D26p45 also required for admission.",
+  "default_label_weight": 0.05,
+  "settings": {
+    "coordinates": 64,
+    "width": 1024,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.001,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0
+  },
+  "training": "Originaltraining minusheldfold/reserved plus originalcalibration minusreserved. Originalvalidation/holdoutunused. Same originalbasis trainedalloriginaltr incllaterOOFstems disclosed; no newPCAfit.",
+  "checkpoint": "Fixedlast60epochs; no comparative/calibration/validation inspection or result-selectedepoch. Optimizer/PRNGcheckpoint every10epochs; boundedoperationalretry resumes, nonfinitefit terminal/no numericalretry.",
+  "readouts": "All30neuralfits terminal before same73headgeometry ridge.001 foldpermittedrefit. q95/betaN/coords unchanged by readout. Same2D18hx per-fold, D9OOFweights and exactcurrentfinisher/keep45.",
+  "evaluation": "All30neural tasks and readouts terminal before predictions/comparisons. Same full400shots/89584frames exact official scorer/finisher. Reused development cohort, not independent confirmation. Compare three arms against D27control, stronger D26p45 and D30wide002; admission requires both first two.",
+  "gate": "Three declared exploratory hypotheses,paired shot bootstrap2000seed993,P>=.99 anddeltaS>=3e-5 againstBOTH D27control/D26p45, noLCFSfailureincrease. No posthoc seed omission or bestepoch. Positive successor requires fresh reserved confirmation before public build.",
+  "qualification": "Complete real fold0 permitted training rows upload, one epoch width1024/lr.001; public CPU/GPU double parity, exact saved/restored parameter parity and all three actual start/peak/end schedules. Resource qualification is separate from fixed60 candidates and cannot establish long-horizon stability.",
+  "resources": "LocalROCmphysical1,2,3 idleverified. OneJAXprocess/threadpercard, transfer/compilelocks, per-fold reusedtables toavoidfullhostarrays;8GiB/noSwap/CPU400/Nice15/72h. Samsungonlywrites; oldhome/SASreadonly. Controller globalrestartbudget1/progresscheckpoints; per-fit nonfinitefailureisolated; normal/externalterminalreceipt/selfending.",
+  "public_upload_or_submission": false,
+  "MAST_new_work": false,
+  "created_utc": "2026-10-10T085649Z",
+  "learning_rates": {
+    "lr1000": 0.001,
+    "lr0500": 0.0005,
+    "lr0250": 0.00025
+  },
+  "same_width_control": "D30capacity width1024 peak.002, all10fixed60epoch fits/readouts/400scored shots reused; additional diagnostic comparison only, not sufficient admission.",
+  "hypothesis": "Lower learning rate may prevent sustained high training loss in width1024. Causal mechanism unresolved; stable training is not proof of held-shot score improvement.",
+  "schedule": "Unchanged official one_cycle: cosine10percent warmup, start peak/25, final start/10000, variable beta1 .95/.85 and beta2 .999. Only rate amplitude changes; decoupled decay per step also scales with rate.",
+  "diagnostics": "After all comparisons terminal, retain paired fixed60 training trajectories for all10runs vs D30capacity and D27control; report sustained-loss ratios and spikes descriptively. No diagnostic threshold filters seeds/epochs."
+}

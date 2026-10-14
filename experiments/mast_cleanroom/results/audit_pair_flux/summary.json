@@ -1,0 +1,63 @@
+{
+ "frames": 5401,
+ "0.02": {
+  "n": 142,
+  "x_in_median": 0.9572344727671835,
+  "x_out_median": 1.1194775696932244,
+  "x_out_minus_in_median": 0.16021585328535354,
+  "x_out_minus_in_p10": 0.07064307292980251,
+  "x_out_minus_in_p90": 0.32332234740990246,
+  "share_out_beyond_lcfs": 0.8591549295774648,
+  "share_in_beyond_lcfs": 0.11267605633802817
+ },
+ "0.05": {
+  "n": 1459,
+  "x_in_median": 0.9309333369447353,
+  "x_out_median": 1.0580009648699884,
+  "x_out_minus_in_median": 0.12567276287052054,
+  "x_out_minus_in_p10": 0.03970401371190757,
+  "x_out_minus_in_p90": 0.2974128682572237,
+  "share_out_beyond_lcfs": 0.6970527758738863,
+  "share_in_beyond_lcfs": 0.02604523646333105
+ },
+ "0.1": {
+  "n": 3746,
+  "x_in_median": 0.856393662852683,
+  "x_out_median": 0.9636009612159008,
+  "x_out_minus_in_median": 0.09906759801161041,
+  "x_out_minus_in_p10": 0.016609090146395777,
+  "x_out_minus_in_p90": 0.284887932115291,
+  "share_out_beyond_lcfs": 0.38841430859583553,
+  "share_in_beyond_lcfs": 0.004271222637479978
+ },
+ "0.25": {
+  "n": 5281,
+  "x_in_median": 0.662032036653857,
+  "x_out_median": 0.7246163659281089,
+  "x_out_minus_in_median": 0.048972594396072044,
+  "x_out_minus_in_p10": -0.011247702798978909,
+  "x_out_minus_in_p90": 0.20776771914676673,
+  "share_out_beyond_lcfs": 0.04677144480212081,
+  "share_in_beyond_lcfs": 0.006248816512024238
+ },
+ "0.5": {
+  "n": 5388,
+  "x_in_median": 0.4340352953878508,
+  "x_out_median": 0.46366002482890756,
+  "x_out_minus_in_median": 0.019087093590305915,
+  "x_out_minus_in_p10": -0.01081915781638249,
+  "x_out_minus_in_p90": 0.10441194086921486,
+  "share_out_beyond_lcfs": 0.012991833704528583,
+  "share_in_beyond_lcfs": 0.011321455085374908
+ },
+ "0.85": {
+  "n": 5401,
+  "x_in_median": 0.16558440665079882,
+  "x_out_median": 0.19387498829147173,
+  "x_out_minus_in_median": 0.02381351254375952,
+  "x_out_minus_in_p10": -0.02114236359889482,
+  "x_out_minus_in_p90": 0.09289210639925827,
+  "share_out_beyond_lcfs": 0.01388631734863914,
+  "share_in_beyond_lcfs": 0.013330864654693575
+ }
+}

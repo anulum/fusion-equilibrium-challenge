@@ -1,0 +1,17 @@
+{
+  "status": "frozen_before_first_ROCm_X_prototype_run",
+  "static_input": "$FEC_RUNS/ml350/runs/d39_finisher_20261011/cache/d3d_shot_0093deb434.npz",
+  "temporal_input": "$FEC_EXPERIMENTS/D38_DIIID_boundary_spatial_temporal_2026-10-11T001358Z/temporal/development/d3d_shot_0093deb434.npy",
+  "case": "d3d_shot_0093deb434",
+  "whole213": true,
+  "float32_atol": 1e-06,
+  "float32_rtol": 1e-05,
+  "double_atol": 1e-10,
+  "double_rtol": 1e-10,
+  "objective_reference": "unmodified_original_masked_fit_loss_identity4",
+  "no_optimizer_updates_no_true_labels_or_scoring": true,
+  "v1_failure_preserved": "ROCm_qualification_failure.json",
+  "repair": "portable_GPU_expected_uses_same_exported_parameters_instead_of_separately_regenerated_GPU_initialization",
+  "initialization_difference_reported_separately": true,
+  "double_tolerance_unchanged": true
+}

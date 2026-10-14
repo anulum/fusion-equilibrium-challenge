@@ -1,0 +1,22 @@
+{
+ "id": "D56-0 gate: the electron-pressure profile on the table's own bins, in the paired cross-fitted corrector of D50",
+ "frozen_utc": "2026-10-13T16:01:32Z",
+ "author": "first_agent",
+ "reason": "the second agent (handover 2026-10-13T155939Z) measured on 64 training shots that the product of the binned T_e and n_e means differs from the binned mean of the channel products by 0.235 % pressure-weighted (over 1 % in 17 % of bin observations), and proposes 42 columns (18 bin means of the product, 18 joint flags, 6 summaries) for a pressure-augmented network family. D50 tested chord integrals of the product (74 columns) and found nothing (+1.1e-6, P .55); it did not test the profile on bins. A network family costs GPU-hours and both cohorts are reused, so the cheaper discriminating test comes first.",
+ "arms": {
+  "control": "13 out-of-fold S16 heads + plasma current, toroidal-field current, their ratio, 1/current (identical to D50's control)",
+  "treatment": "control + the 42 columns of pressure_bins.py"
+ },
+ "data_corrector_measure": "exactly D50 (protocol d67ec5f9): nn_oof.npz 23f6d850, run_d50_gate.py, d50_paired.py, d9_gate_eval.py unchanged; 12 threads instead of 22 (another job of the first agent is running)",
+ "rule": "PASS if paired dS_proxy >= +1.5e-5 with P >= .95 and positive in at least four folds -> the pressure-augmented network arm is designed and frozen (matched zero-feature control, same width, seeds and member count, against the whole deployed baseline). FAIL -> the bin profile of the product carries nothing the heads lack either; the network arm is not run.",
+ "known_limits": "As in D50: the heads are the 16-network table ensemble of 5 Oct, and a corrector is not a network. A failure does not exclude every neural formulation; it removes the measured reason for building one.",
+ "exposure": "Smoke test of the extractor on the first 20 training shots (inputs only; zero shares printed). D50's result on the same heads and folds is known.",
+ "rule_3": "DIII-D training data only; inputs only for the features.",
+ "sha256": {
+  "pressure_bins.py": "fee815cd68b1a74f8e71da403a8734a804a68069238996b11b39366c27a188dd",
+  "run_d50_gate.py": "01b3c660c912c268670a42d56153a319550af1da923e24123670b06dbfeb5a87",
+  "d50_paired.py": "87cda6b97f603f2af6107c15498b7b447260c55190ecbdc822d9de0ece6d2c71",
+  "d9_gate_eval.py": "1bbb1e719be74f618cf4ab0b27415adf123b6b38f0c2390a26b5bdb771c8d26f",
+  "stems_training.json": "c84376c372cd0cea884df4522c2392b956690f57af798ffbf58ac801c49465f1"
+ }
+}

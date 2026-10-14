@@ -1,0 +1,11 @@
+{
+  "UTC_seconds": 1791727528.0657275,
+  "purpose": "entrant-authorized peer141008 requested complete120 cross-host audit",
+  "complete_before_compare": true,
+  "comparisons": "every local baseline part vs remote base and every local joint X part vs remote orx",
+  "zero_tolerance_acceptance": true,
+  "no_new_selection_candidate_or_training": true,
+  "no357_targets_read": true,
+  "publication": false,
+  "wait_bound_hours": 30
+}

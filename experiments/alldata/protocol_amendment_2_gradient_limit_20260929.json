@@ -1,0 +1,29 @@
+{
+ "name": "alldata_amendment_2_gradient_limit",
+ "status": "frozen_before_any_amendment2_fit",
+ "frozen_at_utc": "2026-09-29T11:46:55Z",
+ "author": "first_agent",
+ "entrant_decision": "2026-09-29 \"\u00e1no, sprav amendment 2 s gradient clippingom\"",
+ "amends": [
+  "protocol_alldata_refit_20260929.json (07860717\u2026)",
+  "amendment 1 failed-fit rule (7a32e1c4\u2026)"
+ ],
+ "reason": "direct c members failed amendment 1 by mid-training loss jumps without recovery (e.g. loss 753 at pass ~18); frequency rose with data (K-fold 80 %: 1/20; all-data: 6/16 first, retries 3/6 and 5/6 failed); added data holds no new extremes. fit_network.py documents the same failure and gradient_limit as its remedy; all 5 recipe members with a limit passed in v27 and v28.",
+ "scope": {
+  "27": [
+   "discharge_c_seed2_tc",
+   "discharge_c_seed9_tc",
+   "discharge_c_seed10"
+  ],
+  "28": [
+   "discharge_c_seed0",
+   "discharge_c_seed4",
+   "discharge_c_seed6",
+   "discharge_c_seed8",
+   "discharge_c_seed10"
+  ]
+ },
+ "refit": "original settings and ORIGINAL seed of each member, only gradient_limit = 0.1 (the recipe variant with the best calibration flux R2 in both runs: v27 .99994, v28 .99987); same tables, same calibration flag, reserved empty; fit name {name}_all_gl01",
+ "acceptance": "calibration flux R2 >= 0.999 \u2192 member included with this fit; otherwise dropped for good, no further attempt",
+ "unchanged": "every other member, the readout bank, finisher and build"
+}

@@ -1,0 +1,50 @@
+{
+  "id": "D27-physics-batch",
+  "entrant": "the second agent",
+  "frozen_before_new_results": true,
+  "entrant_instruction": "Run every remaining planned experiment; process comparative results only after all runs terminate. Operational health/integrity checks allowed. No intermediate winner selection or numerical-result-driven retries.",
+  "experiments": {
+    "pressure": "582 existing features +107 explicit paired-channel pressure/spatial-gradient/time-rate/coverage features; unused memory block zero.",
+    "memory": "582 existing features +76 full-discharge causal exponential response differences: 19 drives x tau[.05,.2,1,3]seconds; unused pressure block zero.",
+    "residual": "Existing inputs only; train coordinates minus computed coil flux projection. Original-coordinate scale retained. Restore coil contribution before common finish. ECOILA convention fixed from existing module, acknowledge residual includes passive-current errors.",
+    "gradient": "Existing inputs only; 64-coordinate gradient metric inside DIII-D envelope, normalized trace64, strength.2. Compare finishedkeep64 against commoncontrolkeep64.",
+    "pressure_factor": "Positive input-conditioned total/electron pressure factor; fivefold DIII-D-only ridge logratio fit, versus fixed2.25. No MAST labels. Final heldDIII-D comparison uses fixed input-only D26p45 maps; true training maps used to construct permitted supervision only."
+  },
+  "DIII_D_arms": [
+    "control",
+    "pressure",
+    "memory",
+    "residual",
+    "gradient"
+  ],
+  "folds": 5,
+  "seeds": [
+    200,
+    201
+  ],
+  "network_fits": 50,
+  "input_width": 765,
+  "pressure_width": 107,
+  "memory_width": 76,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "gradient_limit": 1.0,
+    "fine_emphasis": 0.0,
+    "dropout": 0.0
+  },
+  "checkpoint": "Fixed final epoch60 for every arm. No calibration/validation metric inspection or adaptive checkpoint selection during campaign.",
+  "training": "Originaltraining foldexcluded plus calibration; reserved excluded. No original validation/holdout training. Original shared basis remains common to arms; disclose it was fitted on originaltraining including later OOFstems.",
+  "control": "Identical765input architecture/init seed/output78 heads, with all183 appended features zero. Active blocks only in their declared arms.",
+  "readout": "After ALL50fit statuses terminal, fold-permitted geometry ridge.001 for allmodels; same twoD18hx members per fold, sameD9treeblending and deployedfinisher. Physical pressure factor fits finish before any comparative score.",
+  "evaluation": "Same400SHAselectedheldDIII-Dshots,89584frames, allframes. FourDIII-D comparisons:pressure/memory/residual atkeep45 vscontrol45;gradientkeep64 vscontrol64. Adaptivefactor comparison changesbetaN only on fixedD26p45 maps and same400cases.",
+  "gate": "Five declared hypotheses:pairedshotbootstrap2000/seed990,P>=.99; DIII-Dcompositegain>=3e-5; no increasedLCFSfailures. PressurefactorbetaN gain>=4e-4 in pooledR2 equivalent to deltaS>=3e-5 with other channels fixed. Reserved confirmation required for selected successors. No automatic combination, all-datafit, upload orpublicsubmission.",
+  "resources": "Samsung outputs; read existing sourceSAS tables/rawrelease. Boundedstreaming preprocessing and training to avoid old fulltableRAMloader. Qualified localROCm only, 3physical GPUs[1,2,3] initiallyidle; threads constrained/no swap, chunked transfer/inplace donation. If resourcequalification fails, repair resources in freshrecord without inspecting scores.",
+  "failures": "Each declared task has terminalsuccess/failure status; continue independent tasks on isolated failure, no automatic numerical retry, final failed tasks reported. Statistical comparison starts only after all declared fittingtasks terminal."
+}

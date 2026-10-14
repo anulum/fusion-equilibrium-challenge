@@ -1,0 +1,24 @@
+{
+ "frames": 3568,
+ "frames_both_finite": 3281,
+ "finite_share_kinetic": 0.9195627802690582,
+ "finite_share_equilibrium": 0.9330156950672646,
+ "kinetic": {
+  "R2": 0.899759857997045,
+  "median_ratio": 1.0712266895635334,
+  "R2_bias_removed": 0.8872582514726604,
+  "corr": 0.9492394656006107
+ },
+ "equilibrium": {
+  "R2": 0.43109463555039307,
+  "median_ratio": 0.7689236607265153,
+  "R2_bias_removed": 0.5340749015935319,
+  "corr": 0.73254817167585
+ },
+ "pressure_share_pct_10_50_90": [
+  0.126519237579666,
+  0.4603494153750631,
+  0.8491948595628936
+ ],
+ "candidate": false
+}

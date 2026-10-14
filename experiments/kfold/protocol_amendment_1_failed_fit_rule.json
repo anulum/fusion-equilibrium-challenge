@@ -1,0 +1,5 @@
+{"amends": "protocol_kfold_oof_maps_20260929.json (sha256 de6e2f71bd655edcba9d422a683fa1405902246fac8826eb6e207982e0bea830)",
+ "written_at_utc": "2026-09-28T22:55:09Z",
+ "trigger": "fold 3 discharge_c_seed1_k3 (gradient_limit 0) stuck at training loss ~3 (original seed1 fell to 0.27 by epoch 2); best calibration flux R2 0.927 vs originals ~0.9998. No kernel GPU fault logged. Observed before any OOF map, corrector or score exists.",
+ "rule": "A fold member whose best calibration flux R2 (fit_report calibration.flux_r2) is below 0.999 is a FAILED FIT. It is refitted once with seed + 1000 (all other settings unchanged). If the refit also fails, the member is dropped from that fold's sub-ensemble. Every failure, refit and drop is recorded in kfold_fit_ledger.json. The threshold is fixed here and never tuned.",
+ "applies_to": "all folds, both platforms"}

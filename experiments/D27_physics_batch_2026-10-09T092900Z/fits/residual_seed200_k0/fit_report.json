@@ -1,0 +1,29 @@
+{
+  "status": "fixed_final_epoch_fit_complete",
+  "name": "residual_seed200_k0",
+  "training_frames": 1127530,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 200,
+    "threads": 12
+  },
+  "device": "rocm:0",
+  "epochs_completed": 60,
+  "network_sha256": "4b1e0dbd9047d3a3605d21dc74a30eea2d27b6591d6fa222986cd5dd55e168b5",
+  "seconds": 107.35604420502204,
+  "calibration_selection": false,
+  "validation_metrics_computed": false
+}

@@ -1,0 +1,6 @@
+{
+  "reason": "recorded public psirz differs by7.450580596923828e-09; model69SHAsetandorder identical; investigate original precomputed public treeheads before any tolerancechange",
+  "recorded_archive_parity": false,
+  "scientific_run_started": false,
+  "source_snapshots": "$FEC_EXPERIMENTS/D37_H69_boundary_anatomy_2026-10-10T235436Z/profiles/qualification_v1"
+}

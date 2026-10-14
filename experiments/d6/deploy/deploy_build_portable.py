@@ -1,0 +1,169 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# SCPN Reactor Systems — public DIII-D archive builder, path-portable (workstation or ML350)
+"""The deployed 195-network DIII-D build with optional scalar-head swap and optional finisher overrides.
+
+Same functions and flags as deploy_build.py (the #949223 package entrypoint and the build_public_v25v27v28 flags),
+but every path is an argument, so it runs wherever the package, the networks and the data are mounted. Network lists
+are sha256-per-line files; --map OLD=NEW rewrites path prefixes written on the workstation.
+
+    python deploy_build_portable.py --pkg DIR --data-root DIR --v27 FILE --v28 FILE --out DIR
+        [--specialists FILE] [--map OLD=NEW ...] [--override FLAG=VALUE ...] [--workers N] [--limit N]
+
+Without --specialists the scalar heads are the ensemble's own (the deployed archive, up to platform rounding).
+--override replaces the value of one finisher flag, e.g. --override contour-share=0.65.
+"""
+import argparse
+import hashlib
+import itertools
+import json
+import multiprocessing
+import sys
+import time
+from concurrent.futures import ProcessPoolExecutor
+from pathlib import Path
+
+FLAGS = ['--kept-coordinates', '45', '--smooth-from', '30', '--smooth-axis', '0', '--shape', 'kappa', 'tri_top', 'tri_bot',
+         'volume', 'li', '--x-points', '--reshape-after-x-points', '--geometric-share', '0.5', '--li-share', '0.6',
+         '--edit-margin', '1', '--contour', '--contour-first', '--contour-share', '0.5', '--contour-rounds', '1',
+         '--scalar-share', 'kappa=0.5', 'volume=0.5', 'tri_top=0.25', 'tri_bot=0.25']
+"""Exactly build_public_v25v27v28.FLAGS (the deployed finisher)."""
+
+SCALAR_LABELS = ('q95', 'beta_n', 'li', 'li_scored', 'r_axis', 'z_axis', 'kappa', 'tri_top', 'tri_bot', 'volume')
+_STATE = {}
+
+
+def digest(path):
+    with Path(path).open('rb') as stream:
+        return hashlib.file_digest(stream, 'sha256').hexdigest()
+
+
+def mapped(path, maps):
+    for old, new in maps:
+        if path.startswith(old):
+            return new + path[len(old):]
+    return path
+
+
+def verified(listing, maps):
+    out = []
+    for line in Path(listing).read_text().splitlines():
+        if not line.strip() or line.startswith('#'):
+            continue
+        sha, path = line.split(maxsplit=1)
+        path = mapped(path, maps)
+        assert digest(path) == sha, path
+        out.append(path)
+    return out
+
+
+def _load_entrypoint(pkg):
+    for p in (Path(pkg) / 'entrypoints', Path(pkg) / 'source/fec_adapter/vendor', Path(pkg) / 'source/fec_adapter'):
+        if str(p) not in sys.path:
+            sys.path.insert(0, str(p))
+    import predict_diii_d as pd
+    return pd
+
+
+def _swapped(networks, features):
+    coordinates, labels = _STATE['original'](networks, features)
+    _, special = _STATE['original'](_STATE['specialists'], features)
+    names = SCALAR_LABELS if _STATE['swap'] == 'scalars' else tuple(labels)
+    for name in names:
+        if name in labels and name in special:
+            labels[name] = special[name]
+    return coordinates, labels
+
+
+def _predict_many(task):
+    pkg, files, v0_files, special_files, basis_file, finish, swap = task
+    pd = _load_entrypoint(pkg)
+    networks = [pd.Network.load(f) for f in v0_files]
+    if special_files:
+        _STATE['original'] = pd.predict_together
+        _STATE['swap'] = swap
+        _STATE['specialists'] = [pd.Network.load(f) for f in special_files]
+        pd.predict_together = _swapped
+    basis = pd.FluxBasis.load(basis_file).truncated(networks[0].coordinates)
+    return [pd.predict_shot(Path(path), networks, basis, finish, None) for path in files]
+
+
+def main():
+    ap = argparse.ArgumentParser()
+    ap.add_argument('--pkg', type=Path, required=True)
+    ap.add_argument('--data-root', type=Path, required=True)
+    ap.add_argument('--v27', type=Path, required=True)
+    ap.add_argument('--v28', type=Path, required=True)
+    ap.add_argument('--out', type=Path, required=True)
+    ap.add_argument('--specialists', type=Path, default=None)
+    ap.add_argument('--swap', choices=('scalars', 'all'), default='scalars',
+                    help="which outputs come from the specialists: the ten scalar heads, or every output they have")
+    ap.add_argument('--map', action='append', default=[])
+    ap.add_argument('--override', action='append', default=[], metavar='FLAG=VALUE',
+                    help='replace one finisher flag value, e.g. contour-share=0.65')
+    ap.add_argument('--scalar-shares', nargs='+', default=None, metavar='NAME=SHARE',
+                    help='replace the whole --scalar-share list of the finisher')
+    ap.add_argument('--workers', type=int, default=3)
+    ap.add_argument('--limit', type=int, default=None)
+    a = ap.parse_args()
+    started = time.time()
+    maps = [tuple(m.split('=', 1)) for m in a.map]
+    pd = _load_entrypoint(a.pkg)
+    manifest = json.loads((a.pkg / 'package_manifest.json').read_text())
+    v25 = []
+    for item in manifest['recipe']:
+        p = a.pkg / item['path']
+        assert digest(p) == item['sha256'], p
+        v25.append(str(p))
+    rest = verified(a.v27, maps) + verified(a.v28, maps)
+    assert len(v25) == 65 and len(rest) == 130
+    basis = a.pkg / manifest.get('basis_path', 'models/flux_basis.npz')
+    assert digest(basis) == manifest['basis_sha256']
+    special = verified(a.specialists, maps) if a.specialists else []
+    assert len(special) in (0, 16)
+    flags = list(FLAGS)
+    for item in a.override:
+        flag, value = item.split('=', 1)
+        i = flags.index('--' + flag)
+        flags[i + 1] = value
+    if a.scalar_shares:
+        i = flags.index('--scalar-share')
+        assert i + 5 == len(flags)
+        flags = flags[:i + 1] + list(a.scalar_shares)
+    v0 = v25 + rest
+    args = pd._parser().parse_args(['--data-root', str(a.data_root), '--network', *v0, '--basis', str(basis),
+                                    '--out', str(a.out), '--split', 'diii_d_public_test', *flags])
+    finish = pd._finish_from(args)
+    files = [str(f) for f in pd.split_files(a.data_root, 'diii_d_public_test', None)]
+    if a.limit:
+        files = files[:a.limit]
+    a.out.mkdir(parents=True, exist_ok=False)
+    import numpy as np
+    bounds = np.linspace(0, len(files), min(a.workers, len(files)) + 1).astype(int)
+    runs = [files[x:y] for x, y in itertools.pairwise(bounds)]
+    archive = pd.PredictionArchive()
+    with ProcessPoolExecutor(max_workers=len(runs), mp_context=multiprocessing.get_context('spawn')) as pool:
+        tasks = [(str(a.pkg), r, v0, special, str(basis), finish, a.swap) for r in runs]
+        for predictions in pool.map(_predict_many, tasks):
+            for maps_, q95, beta_n in predictions:
+                archive.add(maps_, q95, beta_n)
+    if archive.replaced:
+        raise RuntimeError('Refuse silent nonfinite-to-zero replacement')
+    archive.write(a.out / 'diii_d_public_test.npz')
+    receipt = {'status': 'portable_deploy_build', 'swap': bool(special), 'overrides': a.override, 'flags': flags,
+               'swap_mode': a.swap if special else None,
+               'scalar_labels_from_specialist': list(SCALAR_LABELS) if special else [], 'shots': archive.shots,
+               'frames': archive.frames, 'limit': a.limit, 'workers': a.workers, 'networks_195': v0,
+               'specialists': special, 'entrypoint_sha256': digest(pd.__file__), 'this_script_sha256': digest(__file__),
+               'archive_sha256': digest(a.out / 'diii_d_public_test.npz'), 'seconds': time.time() - started,
+               'MAST_targets_used': False}
+    (a.out / 'deploy_receipt.json').write_text(json.dumps(receipt, indent=1))
+    print(json.dumps({k: v for k, v in receipt.items() if k not in ('networks_195', 'specialists')}), flush=True)
+
+
+if __name__ == '__main__':
+    main()

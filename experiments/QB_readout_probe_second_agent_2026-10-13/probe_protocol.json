@@ -1,0 +1,26 @@
+{
+  "status": "training_only_operational_probe_frozen_before_execution_no_admission",
+  "utc": "2026-10-13T09:56:36.396042+00:00",
+  "method": "Reuse existing original standardized ridge readout kernel at lambda=.001; correct only final q95/beta_n rows and biases of frozen eligible neural networks. Shared encoder, flux coordinates, all other heads, linear branch and normalizers unchanged.",
+  "evidence": "D38 baseline task receipts explicitly record qbeta_parameters_readout_unchanged for H69; frozen original geometry readout NAMES excludes q95/beta_n. Scalar specialists previously trained from scratch, and D52 weight change failed. No claim this extension has never been considered elsewhere.",
+  "pilot_models": [
+    "control_hx_seed93",
+    "control_hc_seed200",
+    "joint_seed200",
+    "joint_seed201"
+  ],
+  "rows": "first1024 eligible training rows only in each pilot; no358/357 or calibration targets read by pilot",
+  "probe_tests": [
+    "public CPU prediction versus existing moment kernel residuals on actual selected training rows",
+    "normal equations solved, finite corrected parameters",
+    "all flux coordinates and non-qbeta label predictions bitexact unchanged",
+    "only named final output rows/biases changed",
+    "training residual decreases; this is an implementation check, never an admission score"
+  ],
+  "next_stage": "Full77 eligible-model readout study requires separately frozen full protocol/source and peer review; evaluate same whole69+joint8 .75/.25 combination on ALL358 and ALL357 reused cohorts, no small-ensemble admission.",
+  "no_publication_or_production_change": true,
+  "eligible_training_cohort_source": "$FEC_EXPERIMENTS/D38_DIIID_boundary_spatial_temporal_2026-10-11T001358Z/cohort.json",
+  "tasks_source": "$FEC_EXPERIMENTS/D38_DIIID_boundary_spatial_temporal_2026-10-11T001358Z/baseline_tasks.json",
+  "ridge": 0.001,
+  "finite_target_masks_retained": true
+}

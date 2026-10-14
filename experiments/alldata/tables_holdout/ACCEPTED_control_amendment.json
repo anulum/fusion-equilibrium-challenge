@@ -1,0 +1,7 @@
+{"accepted_at_utc": "2026-09-29T08:39:00Z", "author": "first_agent",
+ "refusal_file_kept": "REFUSED_code_state_differs",
+ "finding": "features and labels bitwise equal on all 5 control shots; coordinates bitwise equal on 1 shot, on the other 4 differ in 15 of 126080 entries by exactly 1 float32 ULP (control_coordinates_ulp.json)",
+ "cause": "floating-point reduction order in the basis projection (different batch composition), not a code-state difference",
+ "amended_criterion": "features and labels bitwise; coordinates within 1 float32 ULP",
+ "decision": "table_holdout.npz accepted for the v28 all-data refit",
+ "table_holdout_sha256": "c932fdf1bc6fff2f630423ecc98b25428136a8f96f72d37ca42b959e27f54def"}

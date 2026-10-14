@@ -1,0 +1,25 @@
+{
+  "status": "fit_complete",
+  "mode": "ordered",
+  "seed": 507,
+  "frozen": {
+    "mode": "ordered",
+    "seed": 507,
+    "activation_sha256": "bdc3f68e03b4cdc17680972877a0e760e26a5e39261a361d2c7998cf1b56ac3a",
+    "recipe_sha256": "739796c9e4d507f4473d62e97c19002413928a59a5e8d8d30f214c62e6a6b50f"
+  },
+  "epochs": 60,
+  "resumed_from": 0,
+  "operational_resumes": 0,
+  "quality": {
+    "final10_mean_training_loss": 0.0012942374800331891,
+    "lowest10_mean_training_loss": 0.0012942374800331891,
+    "final_parameters_finite": true,
+    "seed_quality_pass": true
+  },
+  "network_sha256": "1a618d2ca4c0833bc25a2021911ead00d8de751c69531610e278aa1fb64c036a",
+  "encoder_sha256": "d5e1209c5965a05a30bdf5fe2098e2dcb6160da8b0c3a0768f1195cd302eda29",
+  "training_frames": 1404214,
+  "held_out_scores_read": false,
+  "seconds": 500.62788948009256
+}

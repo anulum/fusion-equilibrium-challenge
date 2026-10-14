@@ -1,0 +1,112 @@
+{
+  "status": "all_scalar_comparisons_complete",
+  "shots": 5936,
+  "frames": 1317704,
+  "results": {
+    "stronger_p45": {
+      "r2_q95": 0.9973582403149776,
+      "r2_betaN": 0.9967913677222865,
+      "r2_qb": 0.997074804018632,
+      "weighted_scalar_term": 0.1495612206027948
+    },
+    "matched_control": {
+      "r2_q95": 0.9973619038446124,
+      "r2_betaN": 0.9968241330209278,
+      "r2_qb": 0.9970930184327701,
+      "weighted_scalar_term": 0.14956395276491552
+    },
+    "joint": {
+      "r2_q95": 0.9975084359866754,
+      "r2_betaN": 0.9970120679841973,
+      "r2_qb": 0.9972602519854363,
+      "weighted_scalar_term": 0.14958903779781543
+    },
+    "separate": {
+      "r2_q95": 0.9973993398407387,
+      "r2_betaN": 0.9969322688996823,
+      "r2_qb": 0.9971658043702105,
+      "weighted_scalar_term": 0.14957487065553157
+    }
+  },
+  "comparisons": {
+    "joint": {
+      "controls": {
+        "stronger_p45": {
+          "delta_S_if_map_identical": 2.7817195020624075e-05,
+          "ci95": [
+            6.150043974702257e-06,
+            4.262897222654521e-05
+          ],
+          "P_positive": 0.9915,
+          "passes": false
+        },
+        "matched_control": {
+          "delta_S_if_map_identical": 2.508503289991304e-05,
+          "ci95": [
+            4.493862604090099e-06,
+            4.126424196828972e-05
+          ],
+          "P_positive": 0.9865,
+          "passes": false
+        }
+      },
+      "hypothesis_screen_passes": false,
+      "production_admission": false
+    },
+    "separate": {
+      "controls": {
+        "stronger_p45": {
+          "delta_S_if_map_identical": 1.365005273676334e-05,
+          "ci95": [
+            -7.249933648032641e-06,
+            2.974730954157997e-05
+          ],
+          "P_positive": 0.906,
+          "passes": false
+        },
+        "matched_control": {
+          "delta_S_if_map_identical": 1.0917890616052306e-05,
+          "ci95": [
+            -1.040772062035275e-05,
+            2.7393041922456317e-05
+          ],
+          "P_positive": 0.86,
+          "passes": false
+        }
+      },
+      "hypothesis_screen_passes": false,
+      "production_admission": false
+    }
+  },
+  "diagnostic_reused400_only": {
+    "stronger_p45": {
+      "r2_q95": 0.9977836072688242,
+      "r2_betaN": 0.997994972581315,
+      "r2_qb": 0.9978892899250695,
+      "weighted_scalar_term": 0.14968339348876042
+    },
+    "matched_control": {
+      "r2_q95": 0.9977733595629907,
+      "r2_betaN": 0.9980198364093494,
+      "r2_qb": 0.99789659798617,
+      "weighted_scalar_term": 0.1496844896979255
+    },
+    "joint": {
+      "r2_q95": 0.9979425972537953,
+      "r2_betaN": 0.9983565918426035,
+      "r2_qb": 0.9981495945481994,
+      "weighted_scalar_term": 0.1497224391822299
+    },
+    "separate": {
+      "r2_q95": 0.9978226386247849,
+      "r2_betaN": 0.9982495465470377,
+      "r2_qb": 0.9980360925859113,
+      "weighted_scalar_term": 0.1497054138878867
+    }
+  },
+  "map_outputs_changed": false,
+  "score_evidence": "Exact scalar contribution using raw EFIT labels; full-map production equivalence not established.",
+  "full_H69_out_of_sample_validation_required": true,
+  "separate_cohort_confirmation_required": true,
+  "public_upload_or_submission": false
+}

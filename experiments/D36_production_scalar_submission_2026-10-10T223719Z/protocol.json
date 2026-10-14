@@ -1,0 +1,42 @@
+{
+  "id": "D36-production-D35-fixed25percent-joint8",
+  "validation": "$FEC_EXPERIMENTS/D35_DIIID_69member_scalar_transfer_2026-10-10T195748Z/completion_audit_2026-10-10T223225Z.json",
+  "scalar_weight": 0.25,
+  "baseline_weight": 0.75,
+  "seeds": [
+    200,
+    201,
+    202,
+    203,
+    204,
+    205,
+    206,
+    207
+  ],
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 200
+  },
+  "training_shots": 7041,
+  "training_frames": 1559340,
+  "checkpoint": "fixed_final60",
+  "baseline_map_archive": "$FEC_EXPERIMENTS/D25_member_ablation_2026-10-08T154444Z/diii_d_public_test.npz",
+  "mast_archive": "$FEC_EXPERIMENTS/D25_member_ablation_2026-10-08T154444Z/mast_v12/mast_public_test.npz",
+  "entrant_authorization": "je teda enseble hotove a mozeme ho nahrat naHF a pointer naCodabench; rychlou cestou",
+  "upload_private_existing_HF_repo": true,
+  "codabench_submit_authorized": true,
+  "MAST_pipeline_changed": false,
+  "held_score_weight_tuning": false
+}

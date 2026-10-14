@@ -1,0 +1,10 @@
+{"id": "M3c-1b step 1", "name": "synthetic_mast_generator_pilot", "status": "frozen_before_any_step1_solve", "frozen_utc": "2026-10-01T01:02:23Z",
+ "author": "first_agent", "entrant_go": "2026-10-01 option 1 (synthetic MAST testbed); 'to si ešte mohol spraviť'",
+ "question": "Can FreeGS, driven by real MAST frame inputs, produce sane free-boundary equilibria often enough to serve as synthetic truth, and at which axis-pressure scale?",
+ "rule_3": "MAST inputs only (coil currents, Ip, TF current, Thomson pressure for the p_axis scale), machine geometry; no MAST equilibrium field, demo shot or leaderboard number. Synthetic truth from our own solver is permitted by the organisers (starter issues 8/9).",
+ "frames": "21 public MAST shots (indices 0, 60, ..., 1200), the frame at 50 % of the live window (|Ip| >= 300 kA, Te 5 % marker on both sides; as m3c0_prepare).",
+ "solver": "FreeGS 9fbec205 (the second agent venv). One FilamentCoil per circuit with current = the circuit's summed ampere-turns, turns 1, control False (step 0: equals the house vacuum to 8e-16). Wall = vessel envelope contour. Organisers' 65x65 MAST grid. ConstrainPaxisIp(p_axis, Ip, F0 = mu0*24*I_TF/(2 pi)), FreeGS default exponents, Picard maxits 50, check_limited True. No constraints.",
+ "arms": "p_axis = s x 2.25 x Thomson peak p_e with s in {0.25, 0.5, 1.0}; plus the fixed 3 kPa of the second agent's converged runs.",
+ "sanity_per_frame": "converged; |Ip_solved/Ip - 1| <= 0.01; organisers' reading (Reader('MAST')) of psi.T finds a contour; magnetic axis R in [0.5, 1.2] m and |Z| <= 0.3 m; contour R_min >= 0.19 m and R_max <= 1.6 m.",
+ "decision_rule": "an arm with sane yield >= 0.6 makes the generator viable at that pressure scale -> step 2 (synthetic Thomson, v7 run on synthetic inputs, scored against the synthetic truth), frozen separately. If no arm reaches 0.6: step 1b adds vertical-field control (recorded).",
+ "resources": "CPU WS, sequential, ~20-40 min."}

@@ -1,0 +1,17 @@
+{
+ "id": "D39-amendment-5-report-guard-and-count",
+ "answers": "the second agent review 1791708290",
+ "count_corrected": "d39_variants_a2.json declares 32 variants (base, 25 one-at-a-time changes of the first list, cub, 2 composites, 3 oracle-map diagnostics); amendment 4's '28' is wrong; d39_variants_a3.json adds 2 oracle-X diagnostics, read separately and never in a selection",
+ "report_v3": "d39_report_v3.py: with --select it requires stride 3, offsets [0], base 'base', seed 3901, 10000 replicates and names exactly the 32 declared, then the existing completeness check enforces 32 x 120 records; it rejects oracle and oracle_x keys and non-selectable names in the combination. d39_report_v2.py is kept unchanged and is not used for the selection.",
+ "names_of_outputs": {
+  "screening report with selection": "reports/screen120_all32_selection.json",
+  "locked combination": "d39_combination_locked.json (variant name 'combo', its change dict, the report's sha256, source manifest)",
+  "238 gate report": "reports/confirm238_base_combo.json (stride 3 offsets 1 2, seed 3902)",
+  "all-358 report, labelled partly selected": "reports/all358_base_combo.json",
+  "final manifest": "SOURCE_MANIFEST_final.sha256"
+ },
+ "unit_revisions": {
+  "fec-d39-round1b stage 1": "d39_eval.py ee53ffaf, started 10:27:05 CEST",
+  "fec-d39-round1b stages 2-3 and fec-d39-orx": "d39_eval.py 29a3be36"
+ }
+}

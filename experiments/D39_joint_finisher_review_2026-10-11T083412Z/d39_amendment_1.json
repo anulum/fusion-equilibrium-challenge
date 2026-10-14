@@ -1,0 +1,10 @@
+{
+ "id": "D39-amendment-1-screening-subset",
+ "written_before_any_variant_score_beyond_the_one-shot_parity_check": true,
+ "reason": "measured finisher cost on ML350 is about 0.7 s per frame and variant (shot 0: 150 s for 213 frames); 26 variants on all 358 shots would take about 18 h on 22 workers",
+ "parity": "base variant on shot d3d_shot_0093deb434 equals D38 matched69_scalar8 to every printed digit (shot_dlcfs 0.0047987860905928945, flux, scalar and seven consistency residual sums identical)",
+ "change": "round 1 is read on the screening part only: shots whose index in the sorted development list is divisible by 3 (120 shots). Priority variants first: base c000 c025 c075 c100 c100r2 x075 sa1 sa2 sf1; then the rest of the frozen list.",
+ "round2": "the combination chosen by the round-1 rule is frozen and then scored, with base, on the other 238 shots, which no choice has seen",
+ "admission_gate": "on the 238 confirmation shots: delta S >= 3e-5, 99 percent paired whole-shot lower bound > 0 (bootstrap 10000, seed 3902), no more LCFS failures than base, all finite. The all-358 number is reported beside it, labelled as partly selected.",
+ "unchanged": "variants, scorer, cohort, baseline"
+}

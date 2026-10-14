@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed0_tc_lw02",
+ "recipe_index": 30,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1559338,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010842895897963847
+   ],
+   "residual_MSE_before": [
+    0.0001110406076798848
+   ],
+   "normal_equation_gradient_max_abs": 5.846115522830774e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1559340,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003832554904124078,
+    0.0008279262711143935,
+    0.0003783947227516398
+   ],
+   "residual_MSE_before": [
+    0.00020563234912882,
+    0.00020292296244352624,
+    0.004929581056362935
+   ],
+   "normal_equation_gradient_max_abs": 1.4028453793307315e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1559160,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00011001290437454504
+   ],
+   "residual_MSE_before": [
+    0.0003109170933967353
+   ],
+   "normal_equation_gradient_max_abs": 5.02211128382995e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1051847,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017381618411141603,
+    -0.0006751441626220708
+   ],
+   "residual_MSE_before": [
+    1.3794755608551836e-05,
+    2.200887423065491e-05
+   ],
+   "normal_equation_gradient_max_abs": 6.110283923255709e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 664229,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00019023543366287208,
+    0.00047105222683228355
+   ],
+   "residual_MSE_before": [
+    1.314778294141719e-05,
+    3.545552582947417e-05
+   ],
+   "normal_equation_gradient_max_abs": 9.213071488166618e-19
+  }
+ ],
+ "initial_sha256": "6b9fff6dd47346db17895e1b57cf8a98fc8fe2b4c81726055f317625bc392d6a",
+ "network_sha256": "e302bff938c4074a3dc6e58d5ae9bca7ffe47ffacf30a5b9a158e9a497513f8d",
+ "seconds": 1361.7375540733337
+}

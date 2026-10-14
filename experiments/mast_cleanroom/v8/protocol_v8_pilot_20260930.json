@@ -1,0 +1,19 @@
+{
+ "name": "mast_v8_correction_field_pilot",
+ "status": "frozen_before_any_v8_solve",
+ "frozen_at_utc": "2026-09-30T07:42:30Z",
+ "author": "first_agent",
+ "entrant_decision": "2026-09-30: continue with the MAST v8 pilot as proposed",
+ "rule_3": "no MAST equilibrium field, demo shot or MAST score is read by anything here; the MAST leaderboard number is observed only after a build and never selects",
+ "change": "entrypoints_v8/thomson_isoflux.py = v7 entrypoint (chord fix) + a per-frame uniform vertical-field correction c (R^2 - R_ref^2), relaxed each Picard iteration to make the Te 5 % pair isoflux; that pair is not in the current NNLS; the NNLS targets include the correction; unsolved-frame fill unchanged",
+ "evidence_for_change": ["calib_thomson_lcfs_diii_d.py (DIII-D truth: Te 5 % marks the LCFS at -1.7 cm, IQR 1.6 cm)", "audit_thomson_edge.py / audit_pair_flux.py (MAST v7 maps: x_out - x_in grows from 0.02 in the core to 0.13 at Te 5 %)"],
+ "pilot": "40 public MAST shots, indices 0, 30, ..., 1170 (sorted stream order), all frames, both arms from identical inputs and code except the change; v7 arm = entrypoints_v7_copy",
+ "metrics": "per frame on the final maps with the organisers' reading (Reader('MAST')): x_in, x_out at Te shares 0.85/0.5/0.25/0.10/0.05 (3 cm-smoothed profile, as v7); outer/inner Te 5 % marker minus LCFS crossing; solved share; field ratio 2c / Bz_vacuum at (R_ref, laser height)",
+ "acceptance": {
+  "P1_independent": "median |x_out - x_in| at shares 0.25 AND 0.5 lower for v8 than v7 (paired frames), and at 0.85 not higher by more than 0.005",
+  "P2_solved": "solved-frame share v8 >= v7 - 0.05",
+  "P3_plausible": "median |2c / Bz_vac| <= 0.2"
+ },
+ "if_accepted": "build the full MAST v8 archive with the entrypoint, validate format, submit only with the entrant's go (DIII-D archive unchanged)",
+ "if_rejected": "record; v7 stays"
+}

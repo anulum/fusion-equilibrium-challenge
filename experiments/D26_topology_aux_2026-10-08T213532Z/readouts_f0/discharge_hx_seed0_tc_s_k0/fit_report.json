@@ -1,0 +1,99 @@
+{
+  "fold": 0,
+  "role": "hx_shared",
+  "input": "$FEC_WORK/first_agent/d18_subframe_nets/kaggle_out_a/out/discharge_hx_seed0_tc_s_k0/network.npz",
+  "input_sha256": "7fbdccd77cb3d14e3742ebb98ddf5b4a65bc2e25ca0706d69a6ef1321d5f411e",
+  "network_sha256": "fcc38e22c6fa8ecc8a143790661f9e17582811bb89f8e77abaa3dd4e08a59fd6",
+  "fit_parts": [
+    "training"
+  ],
+  "training_rows": 1044733,
+  "calibration_rows": 82797,
+  "heldfold_reserved_excluded": true,
+  "CPU_GPU_moment_relative_max": 1.1773093247481513e-14,
+  "groups": [
+    {
+      "labels": [
+        "kappa"
+      ],
+      "finite_rows": 1044732,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        0.001068588015918702
+      ],
+      "residual_MSE_before": [
+        0.0001185754131146858
+      ],
+      "normal_equation_gradient_max_abs": 1.0725025299015544e-18
+    },
+    {
+      "labels": [
+        "tri_top",
+        "tri_bot",
+        "volume"
+      ],
+      "finite_rows": 1044733,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        0.00036642012841341657,
+        0.0008153013175273624,
+        0.0003579120427149031
+      ],
+      "residual_MSE_before": [
+        0.00020542666785485845,
+        0.00019925241185750434,
+        0.00509248136369332
+      ],
+      "normal_equation_gradient_max_abs": 1.776228090392268e-18
+    },
+    {
+      "labels": [
+        "li_scored"
+      ],
+      "finite_rows": 1044613,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        -0.00013521627016140306
+      ],
+      "residual_MSE_before": [
+        0.00032574839913427386
+      ],
+      "normal_equation_gradient_max_abs": 1.2286444510495141e-18
+    },
+    {
+      "labels": [
+        "x_lower_r",
+        "x_lower_z"
+      ],
+      "finite_rows": 702991,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        -0.0001753752347918263,
+        -0.0006727311034458587
+      ],
+      "residual_MSE_before": [
+        1.3420264834073642e-05,
+        2.0936871783474746e-05
+      ],
+      "normal_equation_gradient_max_abs": 6.479007953107347e-19
+    },
+    {
+      "labels": [
+        "x_upper_r",
+        "x_upper_z"
+      ],
+      "finite_rows": 445484,
+      "ridge": 0.001,
+      "mean_residual_before": [
+        -0.0001753439324129204,
+        0.000471033651714665
+      ],
+      "residual_MSE_before": [
+        1.3295193389438465e-05,
+        3.408291633940737e-05
+      ],
+      "normal_equation_gradient_max_abs": 9.430653076492566e-19
+    }
+  ],
+  "device": "rocm:0"
+}

@@ -1,0 +1,3 @@
+{"part": "training", "shots": 6669, "rows": 1476543}
+{"part": "calibration", "shots": 372, "rows": 82797}
+{"refit": "discharge_hc_seed0_tc_lw02", "seconds": 1401}

@@ -1,0 +1,12 @@
+{
+ "id": "D45-head-target-dose-response-protocol",
+ "frozen": "2026-10-12 about 22:10Z, before any D45 run",
+ "kind": "diagnostic with the true maps' derived scalars; nothing deployable or selectable; the 120 screening shots only; no 238, no 357",
+ "why": "the X-position specialist is the first thing that worked (D43: +45.5 microS on the 238), and the same idea - a dedicated small network for a finisher target, blended into the head - applies to every other target the finisher edits the map towards. Public board 2026-10-12: leader .9969 with Consistency .9892; we have .9876. On the 120 the Consistency scalars read R_axis .9863, Z_axis .9928, kappa .9785, tri .9927/.9934, volume .9922, li .9743. Before training anything: which target is worth how much.",
+ "arms": "each named head target moved 25 percent of the way from the deployed (tree-adjusted) head to the truth-derived scalar of the frame, where the truth is defined: axis (R and Z), R axis alone, kappa, both triangularities, volume, li; all seven together; all seven plus the X targets",
+ "truth": "D32 reference files (the scorer's derive_frame on the true map), the same numbers the Consistency term is scored against; the li head is li_scored",
+ "reading": "delta S per arm against base, bootstrap 10000 seed 4501, 99 percent; micro-S per percent of target error for each group; whether groups add (allgeo against the sum). The finisher goes only a share of the way to several targets (kappa .5, volume .5, triangularities .25, li .6, axis 1.0), so a head's accuracy reaches the map only in part; this run measures exactly that transfer.",
+ "limits": "a uniform shrink of error is an idealisation (as in D42-dose); the result ranks targets for a specialist study, it admits nothing",
+ "q95_betaN": "not in this run: they do not pass through the finisher; their dose-response is arithmetic on the scalar term",
+ "publication": false
+}

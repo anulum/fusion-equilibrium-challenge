@@ -1,0 +1,11 @@
+{
+  "status": "axis_cell_reference_flux_qualified",
+  "real_calibration_shots": 3,
+  "sample_frames": 60,
+  "positive_beta_e": 56,
+  "old_negative_axis_cell": 60,
+  "old_nan_corrected_finite": 56,
+  "axis_cell_depth_exactly_zero": true,
+  "all_original_frozen_sources_unchanged": true,
+  "comparative_scores_or_truth_beta_labels_inspected": false
+}

@@ -1,0 +1,12 @@
+{"id": "M3c-1b step 3", "name": "large_synthetic_mast_testbed_and_v7_baseline", "status": "frozen_before_any_step3_solve", "frozen_utc": "2026-10-01T01:38:15Z",
+ "author": "first_agent", "entrant_go": "2026-10-01: '(a) rozšíriť testbed, veľa snímok, li 0.8-1.3, opraviť vonkajšiu hranicu a kappa v7; (b) malá voľnosť P4/P5 vo v7 viazaná na Thomsonove značky'",
+ "rule_3": "MAST inputs only for generator and synthetic inputs; no MAST equilibrium field, demo shot or leaderboard number selects anything.",
+ "frames": "public MAST shots 0, 6, 12, ..., 1200 (201), frames at 33 % and 66 % of the live window (as m3c0_prepare's live rule), Te 5 % markers on both sides.",
+ "generator": "step 1c (FreeGS 9fbec205, FilamentCoil per circuit, P4/P5/P6 control from measured, isoflux at the markers and up-down, gamma 1e-12, check_limited False), with per-frame draws (rng seed = 1000*shot + frame): p_axis = s x 2.25 x Thomson peak p_e, s ~ U[0.3, 1.0]; ConstrainPaxisIp exponents alpha_m ~ U[1.5, 3.0], alpha_n ~ U[0.6, 1.6]. Pool(4).",
+ "inclusion": "step-2 filter (converged, Ip within 1 %, Reader contour, axis R .5-1.2 |Z| <= .3, inboard crossing in [.12, r_in+.01], outboard in [r_out-.01, r_out+.20], control <= 10 % of P4+P5) AND truth li (Reader) in [0.8, 1.3].",
+ "synthetic_thomson": "as step 2 but the Te exponent b ~ U[1.0, 2.0] per frame (Te = Te0 (1-psiN^2)^b inside), same SOL and ne.",
+ "variants": "inputs_exact = real coils + the FreeGS control change (machine model exact); inputs_measured = real coils only (the control change hidden: the model error the real data has).",
+ "split": "by shot: (shot/6) even -> TUNE, odd -> TEST. Step 4 (fixes) tunes on TUNE only and is judged on TEST only, by a rule frozen before step 4 runs.",
+ "baseline": "v7 entrypoint copy on both variants; per frame D (Hausdorff/R_geo), 7 consistency scalars, flux sse, outboard/inboard crossing errors; pooled flux R2, mean D, Consistency per split and variant.",
+ "decision_rule": "none (a build and a baseline). Usable if >= 150 frames pass the inclusion filter; else recorded and the priors widened in a frozen amendment.",
+ "resources": "CPU WS, FreeGS ~5 s/solve x ~400 with 4 workers (~10-20 min), v7 ~a few s/frame x 2 variants."}

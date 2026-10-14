@@ -1,0 +1,29 @@
+{
+ "id": "D24-0 gate: boosted-tree heads fitted on the table features plus the sub-frame features",
+ "frozen_utc": "2026-10-08T05:20:29Z",
+ "author": "first_agent (group manager)",
+ "why": "The D9 tree blend has raised the public score three times (G1 +3.5e-5, H2a +3.0e-5, H0t +2.4e-5) although the trees read only the 367 table features, while the networks gained most from the 215 sub-frame features (D18-0). Trees that read them too should be better members of the blend. Measured before freeze with the evaluation script on existing files: the TABLE trees blended into the sub-frame network heads (D18 arm S, four networks) give a head proxy of +5.1e-5 out of fold (weights li .32, r_axis .20, kappa .10, x_lower_r .19, q95 .08).",
+ "design": "D9 setting A unchanged (hist, depth 8, eta .05, 3000 rounds, patience 100 on the calibration table, subsample .8, colsample .5, min_child_weight 20, lambda 1, seed 9; folds and reserved stems of the K-fold protocol), features = 367 table + 215 sub-frame columns (training c86cf095, calibration as D18), eight heads: q95, beta_n, li_scored, r_axis (part a) and z_axis, kappa, x_lower_r, x_lower_z (part b). Host processor, 4 threads, one fold and one part per kernel (ten kernels); a kernel writes its predictions after every finished head.",
+ "kernels": {
+  "kaggle_d24_f0a": "e03a30fb39146f2a22a0029a176588d5d40c81e46755c191a922a9f568747d36",
+  "kaggle_d24_f0b": "bea66faae4a1ec6ae2dea315f168391ecb8c09ad6db9f0310bfdbb03396e8b08",
+  "kaggle_d24_f1a": "177b55cb3e376dbd0945b960a1d007e988ef4ead59d99f728209bcf56225b609",
+  "kaggle_d24_f1b": "df108e72ef82c970fb4916964a56b8b8a96026e701307f83dd7ea62111348a3d",
+  "kaggle_d24_f2a": "43f999d6b9d95c0b64e308d1957737edf4a8dfcb33d59e54adc04ae3ef609a48",
+  "kaggle_d24_f2b": "06501138d71e887255d2325abfdcd0164937fd5ac7fbe2db6d0ea9527bfcc7a3",
+  "kaggle_d24_f3a": "a5541a85af076e01ae036e7d93f9c5a108125ace10a2a6ce2d3d8ee5c0e7b015",
+  "kaggle_d24_f3b": "ae36a7e419a48493c770b1cb3f125dc276c0aefe4b4f24d8c4fc5b0d0f108bbc",
+  "kaggle_d24_f4a": "7380e775d4ab55ab8d81073c8b01c18fc60dacea7547e588a3024d1772940cb4",
+  "kaggle_d24_f4b": "fd1532cb54014d4fc3e3dbcd50b5c6b93f2682cc29e358ee553a2c00d6df5d0e",
+  "template": "31b7f38ec2fc5fbbed140ee0b56a2a43bd3c288a6938f7f6519bf7e43d5a4055"
+ },
+ "measure": {
+  "file": "d24_eval.py",
+  "sha256": "0ac4bf9e76624171cf460c837dd63c68bcae16ab6b32a7ba3da5e0df28804161",
+  "text": "per head: tree R2, nested-blend R2 and weight for the table trees (D9 out-of-fold predictions) and the sub-frame trees against the same network heads (D18 arm S); squared-error ratio of the two blends with a shot bootstrap (2000, seed 990); head proxy (0.15 mean dR2 of q95, betaN + 0.20/7 x shares x dR2 of r_axis, z_axis, kappa, li) of each blend over the network heads and of their difference. Checked before freeze with the table trees in both places: ratio 1 exactly, difference 0."
+ },
+ "rule": "PASS if the head proxy of the sub-frame-tree blend exceeds that of the table-tree blend by at least +1.0e-5 with P >= .95. PASS -> the trees are refitted on all labelled rows with the 582 features for the heads whose blend improved (P >= .95), predicted on the public test (features = test table + out_public_test sub-frame columns), and blended into the deployed 70 networks at weights = the nested out-of-fold weight of this gate times the factor that carried the D9 weights from four to sixteen networks (to be computed from the P-arm heads and the D9 gate before the build and written into the deployment protocol); one build, one Development submission; deployed if it exceeds the then-deployed score by 1e-5. FAIL -> the table trees stay; closed.",
+ "failed_run_note": "A kernel cut by the 12 h limit is used as far as it got (finished heads only) and its remaining heads are re-run unchanged; that is recorded.",
+ "exposure": "All public scores to H3 (.996263) known; D18-0, D9-0 known. No tree fitted on sub-frame features exists at freeze.",
+ "rule_3": "DIII-D training data only; inputs only."
+}

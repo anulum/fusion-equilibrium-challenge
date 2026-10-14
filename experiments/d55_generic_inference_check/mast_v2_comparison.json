@@ -1,0 +1,75 @@
+{
+ "same_keys": true,
+ "keys": 3618,
+ "shots": 1206,
+ "frames": 69075,
+ "non_finite": 0,
+ "scalar_arrays_identical": 2412,
+ "scalar_arrays": 2412,
+ "map_arrays_identical": 1206,
+ "maps_within_1e-6": 1206,
+ "map_max_abs": 0.0,
+ "worst": [
+  {
+   "key": "shot_1205_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1204_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1203_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1202_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1201_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1200_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1199_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1198_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1197_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  },
+  {
+   "key": "shot_1196_psirz",
+   "max_abs": 0.0,
+   "rms": 0.0
+  }
+ ],
+ "map_max_abs_quantiles_over_shots": [
+  0.0,
+  0.0,
+  0.0,
+  0.0,
+  0.0
+ ],
+ "map_rms_median_over_shots": 0.0,
+ "A": true,
+ "B": true,
+ "QUALIFIED": true
+}

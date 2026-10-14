@@ -1,0 +1,14 @@
+{
+ "id": "mast_v11f",
+ "frozen_utc": "2026-10-04T20:49:42Z",
+ "author": "first_agent (group manager, entrant 2026-10-04)",
+ "entrant_goal": "2026-10-04 /goal: research, development and submissions for the Equilibrium challenge",
+ "parent": "protocol_mast_v11_clean.json (3914aab5); v11 public MAST S .719023 (#960321/#960453); D1 split R2_q95 [.33,.43], R2_betaN [.21,.31]",
+ "change": "ONE line in thomson_isoflux.py: the current-profile shape of both basis terms (R and 1/R) goes from (1 - psi_n) to (1 - psi_n)^2. Everything else is byte-identical to v11 (diff recorded in v11f_vs_v11.diff).",
+ "a_priori": "FreeGS ConstrainPaxisIp, the documented default profile family of a public free-boundary GS code: Jtor = L (beta0 R/Raxis + (1-beta0) Raxis/R) (1 - psi_n^alpha_m)^alpha_n with defaults alpha_m = 1.0, alpha_n = 2.0 (https://freegs.readthedocs.io/en/stable/generated/freegs.jtor.ConstrainPaxisIp.html, read 2026-10-04). v11 used alpha_n = 1 as the lowest-order choice; v11f takes the code default. No MAST label, demo shot or offline MAST equilibrium value informs the choice.",
+ "exposure": "the author has seen v7/v10/v11 public MAST scores and the D1 decomposition; the exponent is fixed by the public code default, not tuned.",
+ "build": "full 1206-shot build on ML350 as v11 (22 workers, same venv, same pkg feef76c), smoke on 2 shots first (solve count and finiteness only).",
+ "comparison": "one Development submission: v11f MAST + the deployed 195-net DIII-D archive (33105268…). Metric: public MAST S and components, used with disclosure (organisers 2026-10-02; entrant authorisation of documented comparisons of pre-justified candidates).",
+ "decision_rule": "v11f replaces v11 as the deployed MAST map only if its public MAST S exceeds v11's .719023 by >= 0.003; otherwise v11 stays and v11f is recorded. No further exponent is tried from this comparison without a new a-priori protocol.",
+ "rule_3": "inputs-only physics solve; engineering constants as v11."
+}

@@ -1,0 +1,27 @@
+{
+ "id": "D50-0 gate: do explicit electron-pressure features from the Thomson pulses carry what the heads miss?",
+ "frozen_utc": "2026-10-13T08:23:18Z",
+ "author": "first_agent",
+ "entrant": "2026-10-13: continue; small confirmed gains count; honesty is rule zero",
+ "observation": "Public board 2026-10-13 by component: our q95/betaN term .99789 is the lowest of the first ten (5th place .9983; 9th and 14th also .9983 with a worse boundary than ours). D49 (measurement): the heads are calibrated (slope of truth on prediction 1.00), the last frame of a record holds about 10 % of the squared error of either head over 5936 shots; no shrink or regime fix is available. The networks read electron temperature and density separately, as 8 cm bin means of the one pulse nearest to the frame (features.py, shot_reader._resample), with window means over whole frames only. No pressure product, no chord integral of it, no ratio to field and current, no mean over the two or three pulses inside a frame.",
+ "question": "Does a cross-fitted residual corrector that reads thermal features (pressure integrals along the vertical laser, their means over +-10 ms, +-50 ms, 150 ms and 500 ms before the frame, and their ratios to toroidal-field current x plasma current, current squared and field squared) reduce the out-of-fold head error more than the same corrector without them?",
+ "arms": {
+  "control": "13 out-of-fold S16 heads + plasma current, toroidal-field current, their ratio, 1/current",
+  "treatment": "control + 74 thermal columns (thermal_features.py)"
+ },
+ "data": "nn_oof.npz of D9-0 (sha 'nn_oof' below): 5936 non-reserved training shots, 1 317 704 frames, five folds; DIII-D training data only, inputs only for the features",
+ "corrector": "D10-0 settings: xgboost hist, depth 6, eta .03, subsample .8, colsample .5, min_child_weight 50, lambda 5, 4000 rounds, patience 150, seed 10; CPU (xgboost 3.4.1) instead of the Kaggle GPU; fit on three folds, stop on a fourth, predict the fifth; both arms in the same process",
+ "measure": "d50_paired.py: each arm blended into the heads as in d9_gate_eval.py (nested least-squares weight in [0,1]); head proxy of the score change (d9_gate_eval.proxy); treatment minus control on the same 2000 shot resamples, seed 990",
+ "rule": "PASS if paired dS_proxy >= +1.5e-5 with P >= .95 and positive in at least four folds. PASS -> the thermal features go into the networks' own table: a paired network arm in the manner of D18-0 (same members, seeds and settings with and without the columns), then a production refit only if that passes. FAIL -> the heads already extract what the Thomson pressure carries; closed. Per-target differences are reported whatever the outcome and do not admit anything by themselves.",
+ "known_limits": "The out-of-fold heads are those of the 16-network table ensemble of 5 Oct, not the deployed 69 networks with sub-frame inputs: a gain here is an upper indication for the deployed heads, not a measurement on them. The control arm is compact (no 367-column table); D10-0 with the whole table found nothing (-2e-6).",
+ "exposure": "Before the freeze: extractor smoke test on the first 20 training shots (inputs), and on those 20 shots the correlation of the ratio columns with the betaN label (.64 to .92) as a check that the columns are what they claim. No corrector fitted. The 5936 shots' out-of-fold heads were used by D9, D10, D12, D14, D15, D16, D24 gates.",
+ "rule_3": "DIII-D only.",
+ "sha256": {
+  "thermal_features.py": "a84db867cb958b4aed17d26bb79a7e41dda2cbc277a670e70aef06d970903a2c",
+  "run_d50_gate.py": "01b3c660c912c268670a42d56153a319550af1da923e24123670b06dbfeb5a87",
+  "d50_paired.py": "87cda6b97f603f2af6107c15498b7b447260c55190ecbdc822d9de0ece6d2c71",
+  "d9_gate_eval.py": "1bbb1e719be74f618cf4ab0b27415adf123b6b38f0c2390a26b5bdb771c8d26f",
+  "stems_training.json": "c84376c372cd0cea884df4522c2392b956690f57af798ffbf58ac801c49465f1",
+  "nn_oof": "23f6d850e0a86ada6ab8c2854bef5990c0900978b601494d76c975a5c05a818f"
+ }
+}

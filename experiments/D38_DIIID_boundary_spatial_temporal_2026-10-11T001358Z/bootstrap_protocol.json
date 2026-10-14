@@ -1,0 +1,9 @@
+{
+  "replicates": 10000,
+  "seed": 3801,
+  "unit": "entire_whole_shot",
+  "CI": "two_sided99percent_quantiles0.005_and0.995",
+  "selection": "highest_unrounded_full69_S_among_prospective_gate_passers",
+  "scope": "per_contrast_CI_not_familywise",
+  "frozen_before_any_candidate_development_score": true
+}

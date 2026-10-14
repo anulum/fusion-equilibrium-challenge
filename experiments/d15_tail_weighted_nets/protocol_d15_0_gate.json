@@ -1,0 +1,40 @@
+{
+ "id": "D15-0 gate: networks with the label error of termination frames weighted up",
+ "frozen_utc": "2026-10-05T21:09:07Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-05 21:0xZ: 'Priprav tie nove materialy teraz' (after I named this as the one untried direction from the shot anatomy)",
+ "why": "D13: the scalar heads' squared error is concentrated in the termination and low-current frames (tail regime: 18 % of frames; 70 % of the li error, 67 % q95, 41 % betaN, 52 % z_axis, 44 % volume). The networks' loss gives every frame the same weight and the labels 0.05 against the flux coordinates, so that regime is a small part of what they are fitted to. D14: trees fitted on the tail alone are too weak. A network keeps the shared trunk and all the data and can still be told that the tail's label error counts more.",
+ "change": "fit_on_accelerators unchanged except the row weights of the LABEL error (its existing shot_balance path): tail frames weigh 5 times the others, scaled to mean one (about 2.9 against 0.58). The flux coordinates' error is not reweighted. Tail regime as in D14: fewer than 25 frames to the record end, or feature 62 (Ip / discharge peak) < 0.6, or feature 64 (seconds since start) < 0.3.",
+ "networks": "four S16 members per fold with their original settings and seeds: recipe indices 0 (c), 22 and 24 (h), 31 (hx); fitted on the training part only (no calibration rows, also for members that originally had them), no readout-bank refit. Folds and reserved stems as protocol_kfold_oof_maps_20260929. Kaggle 2xT4, jax[cuda12] 0.8.2.",
+ "kernels": {
+  "a": {
+   "file": "kaggle_a/run_d15.py",
+   "sha256": "93a2f103db52bc9bf693b67818d626db8a3d6f4d12385ab3c91e0ebfd128656e",
+   "folds": [
+    0,
+    1,
+    2
+   ],
+   "kaggle_id": "anulum/fec-d15-tail-nets-a"
+  },
+  "b": {
+   "file": "kaggle_b/run_d15.py",
+   "sha256": "3379ff4221b32077f2d18bded480e9241492f69f9464ec4faf5a40fda39d7e67",
+   "folds": [
+    3,
+    4
+   ],
+   "kaggle_id": "anulum/fec-d15-tail-nets-b"
+  }
+ },
+ "failed_fit_rule": "amendment 1 of the K-fold protocol applies in spirit: a member whose calibration flux R2 is below 0.999 is reported; the gate is evaluated with whatever four networks the kernel wrote, and a fold with a failed member is flagged in the result. No retry before the first evaluation.",
+ "measure": {
+  "file": "d15_eval.py",
+  "sha256": "7e61a23d6f09754e5deea3c01894563b190b3f87adcabb98e13b2ed00e2e01ae",
+  "text": "the four networks' mean heads on every held-out frame of their fold, blended into the S16 out-of-fold heads (nn_oof.npz) with nested weights; variant 'regime' uses separate weights inside and outside the tail. Same head-level proxy and shot bootstrap as D9-0. Reported too: one weight; the D9 tree blend; both together."
+ },
+ "rule": "PASS if dS_proxy(regime) >= +3e-5 with bootstrap P >= .95. PASS -> deployment protocol: tail-weighted members fitted on all data and blended into the 195-net heads with the out-of-fold regime weights, together with the D9 trees if 'both' exceeds 'trees' by more than 1e-5; public score as the meter. FAIL -> closed; one weight (5) only, no second value.",
+ "limits_known": "The comparison is S16 against S16 plus four differently weighted networks, so part of any gain could be plain ensemble growth (16 -> 20); ledger 2.10 puts 16 -> 65 at about +1e-4 S in total, i.e. four more plain members are worth well under 1e-5, and the regime weights show whether the gain sits in the tail. The reweighting may cost the heads outside the tail; the 'rest' weight is free to go to zero.",
+ "exposure": "D13, D14 and D9 results known. No tail-weighted network exists at freeze.",
+ "rule_3": "DIII-D training data only."
+}

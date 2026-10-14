@@ -1,0 +1,15 @@
+{
+ "id": "D7",
+ "frozen_utc": "2026-10-04T18:56:02Z",
+ "author": "first_agent",
+ "entrant": "2026-10-04: 'súhlasím, navrhni kandidáta a pusti to na 5 foldov' — single-stage decision on all five folds",
+ "question": "Do the S16 members that never train on the calibration part (c_seed0, c_seed1, h_labels02_s76, h_seed8, hx_seed1; 15 of the 65 recipe members) improve the finished out-of-fold maps when they also train on it (about 7 % more rows), all else unchanged?",
+ "a_priori": "Ledger 2.9: going from 80 % to 100 % of the data gave +2.4e-4 (data-limited). The architecture and schedule levers are exhausted on validation (depth 6/8/10, width 768/1024, 90/120 epochs, batch 2048, dropout/weight decay, edge/fine emphasis: none beats the 512x4x60 baseline). The holdout is already in v28. The calibration rows are the remaining labelled data these members do not see; checkpoint selection stays on calibration (in-sample for them, as for the other 11 members already).",
+ "design": "d7/protocol_kfold_oof_maps_20260929.json = the K-fold protocol with train_on_calibration=True and name suffix _tcall for those 5 members; settings and seeds unchanged. Refit the 5 on every fold (Kaggle CUDA, d7 code dataset). The other 11 members are the V0 networks of kfold/oof_fold{k} (unchanged). Bank members (h_labels02_s76, h_seed8, hx_seed1) get the readout refit with the fold excluded (kfold_readout.py, ML350), now over training + calibration as for tc members. v25 finisher; same 80 shots per fold.",
+ "failed_fit_rule": "amendment 1 (calibration flux R2 >= 0.999; else seed+1000) then amendment 2 (original seed, gradient_limit 0.1; accept >= 0.999; else drop). The retry and amendment-2 fits of the two c members are run in the same kernel up front; acceptance follows the pre-committed order.",
+ "metric": "pooled S over all 5 folds (400 shots), every 2nd frame, paired shot bootstrap 20000, seed 961, against reeval/r8/results/rows_V0_fold{0..4}.json.",
+ "decision_rule": "ADOPT only if dS >= +2e-5 and P >= 0.9 on all 400 shots. Single stage: no screen, no later re-selection. Per-fold and per-term deltas reported either way.",
+ "deployment_if_adopted": "refit the 15 non-tc recipe members of each of v25/v27/v28 with train_on_calibration (all-data tables as deployed), rebuild the 195-net archive; public score observed with disclosure.",
+ "prior_exposure": "none of the D7 networks exists; V0 out-of-fold results on all folds are known (they are the baseline).",
+ "rule_3": "DIII-D only."
+}

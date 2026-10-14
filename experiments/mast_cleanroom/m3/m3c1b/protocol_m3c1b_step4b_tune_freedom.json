@@ -1,0 +1,8 @@
+{"id": "M3c-1b step 4b", "name": "tune_the_coil_freedom_on_TUNE_judge_on_TEST", "status": "frozen_before_any_step4b_run", "frozen_utc": "2026-10-01T01:58:20Z",
+ "author": "first_agent", "evidence": "ledger 5.22/5.23: the 1 % freedom recovers ~10 % of the measured-vs-exact gap; the truth used P4/P5/P6 changes up to 10 %.",
+ "arms": "entrypoints_v7_coilfree with FREE_SCALE in {0.01, 0.03, 0.1, 0.3} x circuit sets {P45: (P4 pair, P5 pair) ; P456: (P4 pair, P5 pair, P6u alone, P6l alone)}; FREE_BOUND 0.10 fixed (for P6 alone the bound and scale use max(|I_P6|, 0.1 |I_P4 pair|) so an idle circuit can still move). 8 arms.",
+ "data": "the step-3 testbed (120 included frames), same synthetic inputs (exact and measured variants), same scoring.",
+ "selection_on_TUNE_only": "the arm with the lowest TUNE/measured mean D among arms whose TUNE/exact mean D is not worse than v7's by more than 5 % relative.",
+ "judgement_on_TEST_only": "the selected arm against v7 by the step-4 rule (TEST/measured D lower >= 10 % with P >= 0.9 (paired shot bootstrap, 20000, seed 934), |kappa bias| not larger; TEST/exact D not worse > 5 %, Consistency not lower > 0.02). Also reported: share of the measured-vs-exact D gap recovered.",
+ "caveat": "the testbed has 120 frames, below step 3's 150 threshold; a pass stays provisional until a widened testbed (frozen amendment) confirms it.",
+ "rule_3": "synthetic data and MAST inputs only; nothing reads a MAST equilibrium field or the leaderboard."}

@@ -1,0 +1,12 @@
+{
+  "id": "D26 amendment2 before any fit",
+  "schema_correction": "Actual hc family has78 training labels (73 readout geometry targets plus5 other labels); adding one clearance auxiliary output gives79. Both paired arms still identical shapes. Prior74 wording was incorrect; no numerical fits or outcomes existed.",
+  "verified_source": "kfold/protocol_kfold_oof_maps_20260929.json family_labels.hc length78",
+  "frozen_kernel_sha256": {
+    "kaggle_f4/run_d26.py": "c21c6ca59b00785e989cc149a08d41c0350408b6bd1c7a6a5cd6ead8fb60a191",
+    "kaggle_f2/run_d26.py": "93794ab27b9a78bc4d2f0c961f693deb63e1989b7f04061c4fafdb064cc490ac",
+    "kaggle_f1/run_d26.py": "2a7cd2bc61815167d0b36b3e8a7b8e1746864f7dd21d2f65d5180350ce906199",
+    "kaggle_f3/run_d26.py": "4f55aab6cc705d61cb1834fed897922c4eccd14ee2dc1c167569bfac4a2dc469",
+    "kaggle_f0/run_d26.py": "62605d3442669a7a2fd27e0b4217c826a44906bc26c14cc463eea648f8ae26db"
+  }
+}

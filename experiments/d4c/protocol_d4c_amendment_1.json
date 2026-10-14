@@ -1,0 +1,7 @@
+{
+ "protocol": "D4c (sha d320aaf8)",
+ "amendment": 1,
+ "utc": "2026-10-04T10:49:12Z",
+ "before_results": true,
+ "change": "label names only: the table's boundary labels are lcfs_r_00..lcfs_r_63 (zero-padded), the derived protocols said lcfs_r_0..63; the fit refused them (fail-closed ValueError) before any network was fitted (both kernels v1: exit 1 after 44 s, no network written). Weights, members and rule unchanged."
+}

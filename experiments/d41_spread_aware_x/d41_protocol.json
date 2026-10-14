@@ -1,0 +1,19 @@
+{
+ "id": "D41-spread-aware-X-move-protocol",
+ "frozen": "2026-10-11 about 23:20Z, before any D41 finisher run; D39 is terminal without a finalist (screen120_all32_selection.json sha 393678d4...)",
+ "entrant_of_study": "first_agent; asked for by the second agent (review 1791748330) as a study outside the D39 selection",
+ "hypothesis": "where the 69 members disagree about an X-point, the head is less reliable than the map's own saddle, so the X-point move should go a smaller share of the way there",
+ "evidence_before": "head-only, 120 screening shots, every second frame, raw decoded map saddle against head: per spread bin (fit on half the shots) the least-squares weight toward the map is 0, .16, .21, .44, .59 for the lower X-point (bins below the 50th, 50-80, 80-90, 90-95, above the 95th percentile of member spread) and .09, .15, .27, .07, .07 for the upper; on the other half the mean position error falls 9.3 percent (lower) and 3.6 percent (upper). D39: a uniform smaller share is worse (x075 -23 microS, x050 -64, neither significant upward).",
+ "rule": "share of the X-point move for an end and frame = 1 minus the bin weight; bin edges in metres and weights are the numbers in d41_variants.json, fixed; spread = hypot of the member standard deviations of R and Z, 69 held-out members, before the tree blend",
+ "arms": {
+  "sl": "lower end by the rule, upper end whole way",
+  "slu": "both ends by the rule",
+  "noop": "the same wrapper with share 1 everywhere; must equal base in every part (qualification, not a candidate)"
+ },
+ "exposure": "the bin weights were fitted on 60 of the 120 screening shots at head level; the 120 are therefore selection data. The 238 other development shots have not been scored by any study of the first agent.",
+ "selection": "on the 120 screening shots (index divisible by 3): the arm with the larger unrounded delta S against base, if delta S >= 1e-5 and the 99 percent paired whole-shot lower bound > 0 (10000, seed 4101) and no more LCFS failures; tie to sl; else no finalist",
+ "validation": "the one selected arm and base once on the 238: delta S >= 3e-5, 99 percent lower bound > 0 (seed 4102), no more LCFS failures, all finite. No second choice.",
+ "confirmation": "none claimed here. A passer is offered to the joint protocol as a change of the reference finisher for D40, or as a candidate for a confirmation the two agents agree on; the 357 are not touched by this study.",
+ "cross_host": "ML350 numbers are the screening record; a passer is recomputed centrally before any admission",
+ "publication": false
+}

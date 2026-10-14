@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed7_tc",
+ "recipe_index": 37,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1480463,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.001089039315150539
+   ],
+   "residual_MSE_before": [
+    0.00013514672460358996
+   ],
+   "normal_equation_gradient_max_abs": 1.6952305648110753e-18
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1480465,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00037693144005842167,
+    0.0008479041431353746,
+    0.000369659981321332
+   ],
+   "residual_MSE_before": [
+    0.00024281999401709291,
+    0.00023688021636249917,
+    0.0069809798622561085
+   ],
+   "normal_equation_gradient_max_abs": 4.556613739754509e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1480297,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00010224535435794088
+   ],
+   "residual_MSE_before": [
+    0.0004034301383361173
+   ],
+   "normal_equation_gradient_max_abs": 1.714818201716331e-18
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1000511,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017336915682125708,
+    -0.0006759684531445539
+   ],
+   "residual_MSE_before": [
+    1.7215402692752997e-05,
+    2.8858010699461456e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.1946754520144115e-18
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 630999,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018110816061387938,
+    0.00046711729977819214
+   ],
+   "residual_MSE_before": [
+    1.7001302319020883e-05,
+    4.427953456620389e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.1543867930994037e-18
+  }
+ ],
+ "initial_sha256": "ec49472e976e6f5db8aa4ec266763af0bc766a686b18eaa495406c5e76330447",
+ "network_sha256": "bd2a1e4c2b4429b60da07f57718c8c4536322a313d7b75743e76d2e35da0a605",
+ "seconds": 401.655654668808
+}

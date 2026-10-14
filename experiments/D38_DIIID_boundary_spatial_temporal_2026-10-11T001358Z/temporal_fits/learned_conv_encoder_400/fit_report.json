@@ -1,0 +1,31 @@
+{
+  "name": "learned_conv_encoder_400",
+  "family": "learned_conv_encoder",
+  "status": "fit_complete",
+  "training_frames": 1404214,
+  "epochs": 60,
+  "resumed_from_epoch": 0,
+  "selection": "fixed_final_epoch",
+  "network_sha256": "4630758af6749a307e83a8e0d26dd67b5819f506ac6b6b47f4af38d9b76f4135",
+  "encoder_sha256": "a4a25cadf0f71169f46e6e3093427aafee486662c51b966c530739ef1df0380f",
+  "seconds": 761.0385436599609,
+  "held_out_metrics_computed": false,
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 2048,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 400,
+    "threads": 12
+  }
+}

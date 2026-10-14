@@ -1,0 +1,8 @@
+{"id": "M3a", "frozen_utc": "2026-09-30T13:46:13Z",
+ "question": "What drives the inboard shift of our v7 MAST plasma relative to the Thomson edge? If the shift follows the solenoid ramp rate (vessel eddy currents induced by the solenoid) a passive-current model is the M3 lever; if it follows the solenoid current level, the solenoid treatment; if neither, a static or profile cause.",
+ "rule_3": "MAST inputs and our own v7 maps only (audit rows from audit_thomson_edge.py, 402 shots, 5879 frames). No MAST label, demo shot or leaderboard number.",
+ "definitions": "LCFS estimate from the Thomson Te 5 % marker moved by the DIII-D-calibrated 1.7 cm (outboard +0.017, inboard -0.017). shift = mean of (ours - estimate) over the two sides; width_error = (r_out - r_in) - (est_out - est_in). Frames kept where both markers lie strictly inside the laser coverage (5 mm margin) and our contour exists.",
+ "drivers": "dIsol/dt and dIp/dt at the frame time (centred difference over +-5 ms of the raw magnetics series), Isol level, Ip level, time since the first frame with Ip >= 100 kA.",
+ "method": "Per driver: Spearman correlation with shift; joint ridge regression (standardised drivers) with 5-fold CV grouped by shot -> out-of-fold R2 of shift and of width_error; also R2 of each driver alone (grouped CV).",
+ "decision_rule": "Grouped-CV R2 of shift: ramp-rate drivers alone (dIsol/dt, dIp/dt) >= 0.30 -> passive/eddy model is the M3 lever; else Isol level alone >= 0.30 -> solenoid treatment; else joint < 0.15 -> shift is static/profile-driven (next: current-profile basis / pressure term in the solve). Mixed cases reported as such.",
+ "resources": "CPU, 1 process, reads only magnetics columns of the local MAST test copy."}

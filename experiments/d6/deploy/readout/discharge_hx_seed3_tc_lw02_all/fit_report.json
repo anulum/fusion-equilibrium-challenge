@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed3_tc_lw02",
+ "recipe_index": 33,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1559338,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010695545054695739
+   ],
+   "residual_MSE_before": [
+    0.00010997301229528356
+   ],
+   "normal_equation_gradient_max_abs": 6.246867986000465e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1559340,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003853413710025757,
+    0.0008261833617059136,
+    0.00024298616926771228
+   ],
+   "residual_MSE_before": [
+    0.0002041407428445337,
+    0.00020054941299229827,
+    0.004866242547051192
+   ],
+   "normal_equation_gradient_max_abs": 1.17663464285463e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1559160,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00010715790988949756
+   ],
+   "residual_MSE_before": [
+    0.00030998520825212153
+   ],
+   "normal_equation_gradient_max_abs": 8.378346988427107e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1051847,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017596668390668874,
+    -0.0006751195528357744
+   ],
+   "residual_MSE_before": [
+    1.339382397249629e-05,
+    2.194102435317112e-05
+   ],
+   "normal_equation_gradient_max_abs": 4.293927646987269e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 664229,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018632175319866404,
+    0.00047270782475869195
+   ],
+   "residual_MSE_before": [
+    1.305353914486992e-05,
+    3.513606932753101e-05
+   ],
+   "normal_equation_gradient_max_abs": 7.585709438254293e-19
+  }
+ ],
+ "initial_sha256": "8ff1d3237156d178b2b1b7d403e9c7f14fbb571ad09b33643dbd873741644214",
+ "network_sha256": "9388d5a954d34105d20ffafccafb3b9bd1e56c7f18604636378c098c8e503062",
+ "seconds": 1421.1461434364319
+}

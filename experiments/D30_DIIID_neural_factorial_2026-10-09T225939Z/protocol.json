@@ -1,0 +1,42 @@
+{
+  "id": "D30-DIII-D-neural-capacity-geometry-factorial",
+  "entrant_instruction": "spusti; DIII-D primary",
+  "frozen_before_new_results": true,
+  "design": "2x2capacity/objective factorial. Existing D27control width512/weight.05 reused exactly. New capacity1024/.05, geometry512/weightedheads, combined1024/weightedheads. Five originalhashfolds/two seeds200,201 =30newfits;10matchedcontrols alreadycompleted.",
+  "arms": [
+    "capacity",
+    "geometry",
+    "combined"
+  ],
+  "matched_control": "ExistingD27 original control fits/readouts; same765inputs582active183zero,142outputs64coords+78labels,originalfoldscaling, same seeds/rowexclusions/epoch60",
+  "geometry_weights": {
+    "kappa": 0.2,
+    "li_scored": 0.2,
+    "r_axis": 0.1
+  },
+  "default_label_weight": 0.05,
+  "capacity_width": 1024,
+  "control_width": 512,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0
+  },
+  "training": "Originaltraining minusheldfold/reserved plus originalcalibration minusreserved. Originalvalidation/holdoutunused. Same originalbasis trainedalloriginaltr incllaterOOFstems disclosed; no newPCAfit.",
+  "checkpoint": "Fixedlast60epochs; no comparative/calibration/validation inspection or result-selectedepoch. Optimizer/PRNGcheckpoint every10epochs; boundedoperationalretry resumes, nonfinitefit terminal/no numericalretry.",
+  "readouts": "All30neuralfits terminal before same73headgeometry ridge.001 foldpermittedrefit. q95/betaN/coords unchanged by readout. Same2D18hx per-fold, D9OOFweights and exactcurrentfinisher/keep45.",
+  "evaluation": "Same400shots/89584frames. Three newarms vs matchedD27controlANDstrongerD26p45. Existingcontrol/strongerscoresparts reused withoriginalscorer reference/stats. Each newarm requires all10fivefoldmodels beforewholepopulationpredictions. Analyseonlyafterallfitting/readouts/archives terminal; no partialfoldpopulation substitution.",
+  "gate": "Three declared hypotheses,pairedshotbootstrap2000seed992,P>=.99 anddeltaS>=3e-5 againstBOTHcontrols/noLCFSfailureincrease. Anypositive exploratorysuccessor needsfreshreservedconfirmation beforeall-data/publicbuild. No automatic submission/combiningarms.",
+  "qualification": "REALcompletefold0permittedtrainingdata upload, oneepoch widestcombined architecture usingpublicNetworkexport/doubleCPU-GPUforward parity. Thisresourcefitnotcandidate/notoneof30. RequireGPUmemorypathplusmaskedtargets/lossweights/rowfilterparity before30fits.",
+  "resources": "LocalROCmphysical1,2,3 idleverified. OneJAXprocess/threadpercard, transfer/compilelocks, per-fold reusedtables toavoidfullhostarrays;8GiB/noSwap/CPU400/Nice15/72h. Samsungonlywrites; oldhome/SASreadonly. Controller globalrestartbudget1/progresscheckpoints; per-fit nonfinitefailureisolated; normal/externalterminalreceipt/selfending.",
+  "public_upload_or_submission": false,
+  "MAST_new_work": false
+}

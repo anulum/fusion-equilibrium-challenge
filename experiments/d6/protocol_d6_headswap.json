@@ -1,0 +1,15 @@
+{
+ "id": "D6",
+ "frozen_utc": "2026-10-04T14:12:02Z",
+ "author": "first_agent",
+ "entrant": "2026-10-04: continue MAST q95/betaN variants; a DIII-D improvement is welcome",
+ "question": "D4 (all scalar label weights x4) improved the scalar heads (li, kappa, R_axis, volume) but degraded the shared flux maps and boundary. Does taking only the scalar heads from such specialist networks, with the flux coordinates, X-point and boundary-radius outputs still from V0, keep the head gain without the map loss?",
+ "public_motivation": "public DIII-D components vs the leading entry (.9963): our qb .99763 vs .9980, Consistency .98652 vs .9875, D_LCFS .00891 vs .0082. The finisher bends the maps to the scalar heads (shape: kappa, tri_top, tri_bot, volume, li; axis: r_axis, z_axis), so better heads can lift Consistency without touching the flux network.",
+ "design": "Arm H only. Fold 0: V0 = kfold/oof_fold0 networks, specialist = d4/oof_fold0 networks (D4, x4 uniform). Fold 1: V0 = kfold/oof_fold1, specialist = d4b/oof_fold1 networks (D4b, x4 on li, li_scored, kappa, r_axis, volume). Labels taken from the specialist mean: q95, beta_n, li, li_scored, r_axis, z_axis, kappa, tri_top, tri_bot, volume (every scalar head; no per-scalar choice). Coordinates, x_lower/upper_r/z and lcfs_r_00..63 from V0. v25 finisher unchanged (kfold_build). Builder d6_build.py; same 80 shots per fold, same order.",
+ "baseline": "reeval/r8/results/rows_V0_fold{0,1}.json",
+ "metric": "pooled S over folds 0+1 (160 shots), every 2nd frame, paired shot bootstrap 20000, seed 951 (d6_score.py, from d4c_score.py).",
+ "decision_rule": "screen passes if pooled dS >= +2e-5 and P >= 0.8. Then a confirmation on unseen folds 2, 3, 4 with new D4-type specialist fits (uniform x4, recipe of D4) is frozen BEFORE any fold 2-4 result: adoption needs folds 2-4 dS >= +2e-5 and P >= 0.9. Otherwise rejected.",
+ "prior_exposure": "D4 fold-0 and D4b fold-1 per-scalar and per-term results are known (ledger 2.14, 2.16): heads li/kappa/R_axis/volume up, tri and D_LCFS down with the specialists' own maps. The head-swap combination itself has not been built or scored. Because folds 0 and 1 are exposed, the screen cannot adopt anything alone; folds 2-4 decide.",
+ "rule_3": "DIII-D only; no MAST data.",
+ "compute": "builds on the workstation CPU (5 workers, nice 5, single-threaded BLAS), as the D4c builds."
+}

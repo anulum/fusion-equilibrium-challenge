@@ -1,0 +1,43 @@
+{
+  "id": "D34-DIII-D-scalar-task-decoupling",
+  "created_utc": "2026-10-10T182830Z",
+  "frozen_before_candidate_results": true,
+  "entrant": "Ako teda dalej; subsequent steering asks to repair small versus production ensemble validation. DIII-D primary, authorized research training.",
+  "arms": {
+    "joint": [
+      "q95",
+      "beta_n"
+    ],
+    "separate": [
+      "q95",
+      "beta_n"
+    ]
+  },
+  "fits": "5 original SHA folds x seeds200,201; joint two-output models10; separate q95 models10 and beta_n models10; total30. All fits finish before any comparative evaluation.",
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0
+  },
+  "features": 765,
+  "active_features": 582,
+  "controls": "D26p45 and D27control; each 2 original D18hx +2 role per fold. Candidate replaces ONLY corresponding two role-member q/beta outputs, keeps original2hx q/beta; 4 effective estimates at equal weights. Common D26p45 flux/geometry bytes reused. Separate matched-control comparisons use same scalar substitution against D27control, never change maps.",
+  "normalization": "Exact D27control feature and q/beta scaling by fold; bothseeds match. Originaltraining minusheldfold/reserved plus calibration minusreserved; no originalvalidation orholdout. No newPCAfit orcoordinatesused.",
+  "checkpoint": "Final60 only. Atomic optimizer/PRNG every10epochs; operationalresume onlyidentical recipe. Numericalnonfinite failure isolated terminal; noseed/epochdrop.",
+  "qualification": "Full1M+fold0 rows GPU upload; oneepochforjoint/q95/beta_n; CPU/GPUdouble prediction parity using publicNetwork; exact optimizer checkpoint export parity and bothsingleoutputs work; no scientific scores.",
+  "evaluation": "All5936 nonreserved originaltraining shots via original5fold routing,~1317704frames. Predeclare equal4estimate scalar integration; outputper-shot sufficient statistics/fullscalar predictions. Exactofficial scalar validity and pooledR2; exactdeltaS=.15*deltaqb since map bytesunchanged. Pairedshotbootstrap2000seed995. Additional common400subset reported diagnosticallyafterfullpopulation, no selection frompartialresults.",
+  "gate": "ExploratorypassesonlyifdeltaS>=3e-5 andempiricalPpositive>=.99 againstBOTHstrongerP45 andmatchedcontrol. Freshfitdisjointseparatecohortconfirmation required; historicalholdout358 reused priorcampaigns, notvirgin. No posthoc lower threshold.",
+  "production_gate": "Smallfoldtest qualifies scalar hypothesis only. CurrentH69fittraining+validation+holdout: exactcheckpoint localholdout score is in-sample. Requirefitdisjointproduction-equivalent ensemble validation and member-size/weight transfer qualification beforepublicbuild; no directreplacement69by2. No automaticHF/Codabench.",
+  "resources": "Local idleROCm1,2,3; 8GiBRAM/jobswap0,CPU400,Nice15,72hbound. ExistingruntimeandSASreadonlycompatreaders; newcache/tmp/outputSamsung. Oneoperationalrestartglobal; failedfitno numericalretry.",
+  "MAST_new_work": false,
+  "public_upload_or_submission": false,
+  "prior_correction": "D27gradient arm geometry_mix implements derivative-weightedcoordinate loss atweight.2. EarlierD33 assertion gradientinputsonly was incorrect; retainoldreportandrecordcorrection; no duplicategradienttrial."
+}

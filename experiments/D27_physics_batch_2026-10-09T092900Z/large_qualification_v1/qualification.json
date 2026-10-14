@@ -1,0 +1,38 @@
+{
+  "status": "full_size_ROCm_resource_path_qualified",
+  "device": "rocm:0",
+  "rows": 1100000,
+  "input_columns": 765,
+  "GPU_table_bytes": 3990800000,
+  "fit": {
+    "status": "fixed_final_epoch_fit_complete",
+    "name": "large_qualification_only",
+    "training_frames": 1100000,
+    "settings": {
+      "coordinates": 64,
+      "width": 512,
+      "depth": 4,
+      "epochs": 1,
+      "batch": 4096,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "label_weight": 0.05,
+      "label_weights": [],
+      "fine_emphasis": 0.0,
+      "dropout": 0.0,
+      "gradient_limit": 1.0,
+      "edge_emphasis": 0.0,
+      "shot_balance": 0.0,
+      "seed": 200,
+      "threads": 12
+    },
+    "device": "rocm:0",
+    "epochs_completed": 1,
+    "network_sha256": "0bf15ea5362beaf4023120cdcbe42b222067aa13ce9c27927421b4e7e767a3c9",
+    "seconds": 243.13644229306374,
+    "calibration_selection": false,
+    "validation_metrics_computed": false
+  },
+  "synthetic_resource_test_only": true,
+  "scientific_campaign_fit": false
+}

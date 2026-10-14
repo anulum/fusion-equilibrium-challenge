@@ -1,0 +1,50 @@
+{
+  "id": "D32-DIII-D-fixed-LR001-separate-cohort-confirmation",
+  "created_utc": "2026-10-10T144836Z",
+  "entrant_instruction": "confirm on separate set before new candidate construction/submission",
+  "frozen_before_confirmation_results": true,
+  "cohort": "ALL358originalholdoutstems/sorted,78875frames; no score-based selection/exclusion. Fit-disjoint and D26-D31development400-disjoint. Historicalholdoutnotproject-virgin: earlier ledger shows v25/v27/smoothing use; explicit reused historicalholdout replication, not pristine newexternaltest.",
+  "single_primary_hypothesis": "D31fixed60epochLR001 candidate beats strongerD26P45 on separatecohort; D27matchedcontrol additional required corroboration. No otherLR/seed/epoch/adaptivefinisher trial.",
+  "recipes": {
+    "candidate001": [
+      "hx_shared",
+      "candidate001"
+    ],
+    "stronger_p45": [
+      "hx_shared",
+      "hc_p"
+    ],
+    "control27": [
+      "hx_shared",
+      "control27"
+    ]
+  },
+  "fold_routing": "same sha256stem mod5;2fixedoldhx+2armmembers percase, all358shots/all5folds/all10seeds represented; same architecture/comparison route as D31, no productionall20 averaging introduced.",
+  "trees": "Same fixed blendweights, originalD9deploy4treeUBJ models trainedoriginaltraining+validation, calibrationearlystop, NOholdout. CPU inference using frozen historicalbestiteration. Both controls andcandidate share sameheads. DevelopmentD31usedOOFtrees; thisknowncommon tree portabilitychange predeclared, no tune.",
+  "tree_weights": {
+    "li_scored": 0.26,
+    "r_axis": 0.14,
+    "kappa": 0.09,
+    "x_lower_r": 0.16
+  },
+  "gate": {
+    "bootstrap_draws": 2000,
+    "seed": 994,
+    "minimum_delta_S": 3e-05,
+    "minimum_P_positive": 0.99,
+    "controls_required": [
+      "stronger_p45",
+      "control27"
+    ],
+    "no_increased_LCFS_failures": true,
+    "require_complete_finite_predictions": true
+  },
+  "features": "Wide582read-only features fromwide tabletraining holdoutrows; candidate/control765 with183zero, oldnetprefix582. New model fits trainedonlyoriginaltraining/calibration filter, originalbasis trainedoriginaltraining only andshaidenticalacrossoriginal/wide/package.",
+  "finisher": "ExactD26/D31officialFLAGS/keep45; no settingchanges. FullNativeofficialreferenceandscorer; anyfailurefailsclosed/no cohortsurgery.",
+  "evaluation_order": "FinishALL358x3predictions/archives andALL358references before officialcomparativeinterpretation. Then full3scores/sharedmeans/pairedbootstrap, no partialresultselection.",
+  "qualification": "Publictreepredictionparity against retainedoriginaltestheads on128inputrows before confirmationprocess, plusfirstrealholdoutbase367featureparity/mixedensemblemeanparity/full3armrealprediction exports withoutlabelscore.",
+  "resources": "CPU3workers/CPU400/MemoryMax6GiB/Swap0/Nice15/48h;Samsung-onlyoutputs/tmp/cache/vendor. Bounded one operationalrestart with percaseSHA checkpoints; controllerterminalreceipt/ExecStopPost. No new neural fits needed.",
+  "publication": false,
+  "MAST_new_work": false,
+  "next_boundary": "Separate-cohort positivegate enables next candidate design/build; doesnot automatically upload or assertcompetition score. Negative/inconclusive retained, no posthoc adjustments."
+}

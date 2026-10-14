@@ -1,0 +1,6 @@
+{"id": "M3c-1b step 9", "name": "VP_s0.1r_with_300_iterations", "status": "frozen_before_any_step9_run", "frozen_utc": "2026-10-01T04:59:10Z",
+ "author": "first_agent", "evidence": "ledger 5.30: A, B pass, C fails only on solved share; real shot 300 (inputs only): 3x iterations converge 74/82 vs 67/82.",
+ "change": "VP_s0.1r with thomson_isoflux.ITERATIONS = 300 (module global, was 100) for this arm only. Everything else as step 8.",
+ "tests": "A (step-6 testbed, seed 940), B (fresh 6c frames, seed 941), C (step-7 guards G1-G6 on the 41 real pilot shots), rules unchanged.",
+ "decision_rule": "A, B, C all pass -> recommend MAST v10 = this arm to the entrant (full build + QA; submission is the entrant's; leaderboard observed only). Otherwise recorded.",
+ "rule_3": "synthetic data and real MAST inputs only."}

@@ -1,0 +1,90 @@
+{
+ "id": "D39-amendment-4-source-binding-selector-and-confirmation",
+ "answers_review": "the second agent review 2026-10-11T083557Z, points 1-4",
+ "1_sources": {
+  "d39_eval.py_revisions": {
+   "bf284c25...": "first revision, used only for nothing scored",
+   "63f8803b...": "stride/offset option; ran 15 minutes as unit fec-d39-round1, stopped before any shot-variant file was finished (0 files); kept on ML350 as d39_eval_round1_first.py",
+   "ee53ffaf...": "amendment 2 (warp order, oracle map); the revision loaded by stage 1 of unit fec-d39-round1b at 10:27:05 CEST; reconstructed byte-exactly as d39_eval_rev_a2_ee53.py",
+   "29a3be36...": "amendment 3 (oracle X-point branch, inert unless a variant sets oracle_x); the file on ML350 since 10:33:56 CEST; loaded by unit fec-d39-orx and by stages 2 and 3 of fec-d39-round1b; kept as d39_eval_rev_a3_29a3.py"
+  },
+  "difference_ee53_to_29a3": "only the oracle_x branch and its key in the ignored-keys tuple; no deployable variant's arithmetic differs",
+  "variants_file_of_round1b": "d39_variants_a2.json f15610a3...; d39_variants_a3.json 5bb5a54e... adds only the diagnostics orx and orx_cub",
+  "other": "d39_common.py 0f2e7dbe..., round1b.sh 225a6074..."
+ },
+ "2_reading_rule": "no variant is ranked, compared or combined until all 28 selectable-or-diagnostic variants of d39_variants_a2.json are complete on all 120 screening shots. d39_report_v2.py refuses to run otherwise (expected shot and variant set checked exactly).",
+ "3_selector": {
+  "screen_gate": "delta S >= 1e-5 (unrounded) and 99 percent paired whole-shot lower bound > 0 on the 120 screening shots, bootstrap 10000 seed 3901, no more LCFS failures than base",
+  "groups": {
+   "resampling": [
+    "cub"
+   ],
+   "contour": [
+    "c000",
+    "c025",
+    "c075",
+    "c100",
+    "c050r2",
+    "c100r2",
+    "c100r3"
+   ],
+   "x_point_share": [
+    "x050",
+    "x075"
+   ],
+   "head_smoothing": [
+    "sa1",
+    "sa2"
+   ],
+   "map_smoothing_window": [
+    "sf1",
+    "sf3"
+   ],
+   "map_smoothing_from": [
+    "s0",
+    "s45"
+   ],
+   "kept_coordinates": [
+    "k32",
+    "k64"
+   ],
+   "shape_shares": [
+    "sh_lo",
+    "sh_hi"
+   ],
+   "li_share": [
+    "li040",
+    "li080"
+   ],
+   "edit_margin": [
+    "m0",
+    "m3"
+   ],
+   "tree_scale": [
+    "t0",
+    "t2"
+   ]
+  },
+  "rule": "in each group the passing variant with the greatest unrounded delta S wins; an exact tie goes to the variant listed first; a group without a passer keeps the base setting. The combination is the union of the winners' changes. Nothing is merged by hand.",
+  "not_selectable": [
+   "cub_c100",
+   "cub_c100r2",
+   "orc128",
+   "orc128_cub",
+   "orc128_c000",
+   "orx",
+   "orx_cub"
+  ],
+  "note_on_composites": "cub_c100 and cub_c100r2 are read only as information on whether resampling and contour share add; they do not enter the selection",
+  "confirmation_within_development": "the sole combination and base are scored once on the other 238 development shots; gate delta S >= 3e-5, 99 percent lower bound > 0 (seed 3902), no more LCFS failures, all finite. No second choice after that. If no group has a passer, D39 ends with no finalist."
+ },
+ "4_superseded": "the sentence of d39_variants.json that names a public submission as the confirmation is withdrawn. Final confirmation is the one shared 357-shot confirmation with new eligible trees under D39_joint_finisher_review_2026-10-11T083412Z/joint_selection_protocol_frozen.json, which the first agent accepts. No publication from D39.",
+ "local_sources": "canonical local copy is now the working directory on the Samsung disk, first_agent/d39_finisher_study; ~/fec_d39 is left in place untouched until the units are inactive",
+ "exposure_before_selection": [
+  "no report has been run; no aggregate of any variant has been seen",
+  "one shot, d3d_shot_0093deb434, was printed for base and c100 during the parity check (c100 shot_dlcfs 0.00488 against base 0.00480)",
+  "head-only diagnostics on the 120 screening shots without any finisher variant: position of the Hausdorff point (lower X-point side 55 percent, upper 42 percent) and per-angle radius error of the heads",
+  "table_validation.npz (the 357 confirmation shots) was opened once by mistake to look for labels of the 358: only its stem list was compared (0 overlap), the script then failed on a missing key before any label was used; it is not used again",
+  "diagnostic oracle variants use the true maps of screening shots only and never enter a choice"
+ ]
+}

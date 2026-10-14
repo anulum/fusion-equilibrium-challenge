@@ -1,0 +1,18 @@
+{
+ "fold": 4,
+ "members": [
+  "discharge_h_seed0_tc",
+  "discharge_h_seed1_tc",
+  "discharge_h_labels02_s76",
+  "discharge_h_seed8",
+  "discharge_hx_seed0_tc",
+  "discharge_hx_seed1",
+  "discharge_hx_seed3_tc",
+  "discharge_hc_seed0_tc",
+  "discharge_hc_seed1_tc",
+  "discharge_hc_seed2_tc",
+  "discharge_hc_seed3_tc",
+  "discharge_hc_seed4_tc"
+ ],
+ "target_receipt_sha256": "08937274a1d52b56cac14f9ef222234123734af24504942be339ac2c32d302d4"
+}

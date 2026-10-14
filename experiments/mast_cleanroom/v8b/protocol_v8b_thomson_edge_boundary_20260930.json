@@ -1,0 +1,17 @@
+{
+ "name": "mast_v8b_thomson_edge_boundary",
+ "status": "frozen_before_any_v8b_map",
+ "frozen_at_utc": "2026-09-30T08:14:11Z",
+ "author": "first_agent",
+ "entrant_decision": "2026-09-30: variant 2 (keep the v7 solve, move the boundary to the Thomson edge)",
+ "rule_3": "inputs and our own maps only; no MAST equilibrium field, demo shot or MAST score; the MAST leaderboard is observed only after a build and never selects",
+ "method": "post-process the #949223 MAST v7 maps: per live frame with a scorer-read LCFS, Thomson Te profile smoothed as v7 (3 cm Gaussian); outboard (inboard) marker = radius beyond (before) the peak where Te falls to 5 % of the peak, when the laser reaches it; target = marker + 0.017 m outward (- 0.017 m inboard) = the DIII-D-calibrated median offset of the Te 5 % marker from the true LCFS; the map is warped in R about the axis, separately on each side, scale s_side = (target - R_axis)/(current crossing - R_axis), fading beyond the boundary as shape_edit.warped (fade 0.5 of the minor radius); two rounds (re-read, re-scale); sides without a marker are left as they are; frames without a marker unchanged",
+ "pilot": "the same 40 shots as the v8 pilot (indices 0, 30, ..., 1170), all frames",
+ "acceptance": {
+  "A1_edit_reaches_target": "after the edit, the scorer-read midplane crossing lies within 1 cm of the target on >= 80 % of edited sides",
+  "A2_no_contour_loss": "scorer contour present after the edit on >= 99 % of edited frames",
+  "A3_modest": "median |s_side - 1| <= 0.15 over edited sides"
+ },
+ "if_accepted": "build the full MAST v8b archive (post-process of all 1206 shots), validate format and precision, submit with the entrant's go (DIII-D archive #952730 unchanged)",
+ "caveat": "acceptance proves the edit does what it says; whether the Thomson edge is the true MAST LCFS rests on the DIII-D calibration and physics only"
+}

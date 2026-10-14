@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed10_tc",
+ "recipe_index": 40,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1480463,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010846749413010858
+   ],
+   "residual_MSE_before": [
+    0.00011872923302098251
+   ],
+   "normal_equation_gradient_max_abs": 6.498595590012602e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1480465,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00036147205015448327,
+    0.0008202308927420844,
+    0.0002838537007358111
+   ],
+   "residual_MSE_before": [
+    0.00021513340372402744,
+    0.00021274581968213323,
+    0.005440758112994709
+   ],
+   "normal_equation_gradient_max_abs": 2.395309913161655e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1480297,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00012409066663108325
+   ],
+   "residual_MSE_before": [
+    0.00034704373500791445
+   ],
+   "normal_equation_gradient_max_abs": 5.665169763834799e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1000511,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.000170580375524373,
+    -0.0006759116731547475
+   ],
+   "residual_MSE_before": [
+    1.5121285815364733e-05,
+    2.424042642336429e-05
+   ],
+   "normal_equation_gradient_max_abs": 6.273337765602162e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 630999,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.0001919266580703631,
+    0.0004781442164081317
+   ],
+   "residual_MSE_before": [
+    1.4349078291425027e-05,
+    3.882500324191625e-05
+   ],
+   "normal_equation_gradient_max_abs": 7.544416582075646e-19
+  }
+ ],
+ "initial_sha256": "962ef3f758aff7ffa0e44359282fbfd1e1c9b29934d77ae4df883214929f34e6",
+ "network_sha256": "c2fceb0c1e8e1dcd3c06322eaff8b7b03d5432d9ffec0c15ecf18c2b3df0b9b5",
+ "seconds": 974.2063794136047
+}

@@ -1,0 +1,46 @@
+{
+ "shots": [
+  "d3d_shot_0047b7837b",
+  "d3d_shot_00b2ec09d2",
+  "d3d_shot_016318d6ae"
+ ],
+ "frames": [
+  240,
+  328,
+  231
+ ],
+ "specialists": "fit-disjoint D40 static 500-507, mechanics only; deployment uses all-data refits",
+ "builder_sha256": "292cf383ef99e3ef3ac67165669498e0366bb0987db763f95dccaa55c8d82e8f",
+ "pinned_builder_sha256": "72e9929a6de689e9420673a6826bcab319282b566263ccbde809accff03e3dec",
+ "share0_equals_D25_path": [
+  true,
+  true,
+  true
+ ],
+ "scalars_unchanged_by_x_blend": [
+  true,
+  true,
+  true
+ ],
+ "label_blend_equals_wrapper_at_x_edit": [
+  true,
+  true,
+  true
+ ],
+ "max_map_change_at_share_half": [
+  0.005984216928482056,
+  0.005690544843673706,
+  0.004388198256492615
+ ],
+ "native_maps_equal_D36_archive": [
+  true,
+  true,
+  true
+ ],
+ "max_abs_difference_native_vs_D36_archive": [
+  0.0,
+  0.0,
+  0.0
+ ],
+ "pass": true
+}

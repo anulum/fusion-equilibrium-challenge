@@ -1,0 +1,24 @@
+{
+ "id": "D14-0 gate: trees for the termination and low-current frames",
+ "frozen_utc": "2026-10-05T20:28:51Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-05: 'treba detailn\u00fa anal\u00fdzu v\u0161etk\u00fdch shotov, cel\u00fa postupnos\u0165, odpove\u010f sa nach\u00e1dza niekde tam'; 'urobi\u0165 parametrick\u00e9 grafy na \u010dasovej osi shotov, a n\u00e1js\u0165 korel\u00e1cie'",
+ "finding_that_motivates": "D13 anatomy of the S16 out-of-fold head errors on all 1.32M training frames (d13_shot_anatomy): the squared error is concentrated at the end of the record and at low current. li: 30 % in the last 3 frames, 63 % in the last 25 (0.5 s), 60 % at Ip < 0.6 peak (7.6 % of frames); q95: 38 % in the last 25, 57 % at Ip < 0.6 peak, 10 % in the first 3 frames; betaN: 33 % in the last 25; z_axis 36 %, volume 30 %. The tail regime (fewer than 25 frames to the record end, or Ip < 0.6 peak, or < 0.3 s since start) is 10.9 % of the frames and holds 64 % (li), 62 % (q95), 33 % (betaN) of the head error. Inside it the general D9 trees are nearly as good as the networks for li (SSE ratio 1.10, in-regime weight .41).",
+ "question": "Do trees fitted only on the tail regime, with the frame's position in the record as two extra inputs, improve the blend there beyond the general D9 trees?",
+ "tail_regime": "from_end < 25 or feature 62 (Ip / discharge peak) < 0.6 or feature 64 (seconds since discharge start) < 0.3; defined from inputs only, identical at test time.",
+ "extra_inputs": "frames to the end of the record and frame index in the record (both follow from the test shot's own frame times).",
+ "trees": "D9 setting A unchanged; fits and early stopping on tail frames only; targets li_scored, q95, beta_n, r_axis, z_axis, kappa, volume.",
+ "kernel": {
+  "file": "d14_termination_trees/kaggle/run_d14_gate.py",
+  "sha256": "bf9fa28ee0039f3a3ae9725b07f8f02c43256a9aaabf3ce237b8169f67563dea",
+  "kaggle_id": "anulum/fec-d14-tail-trees"
+ },
+ "evaluation": {
+  "file": "d14_termination_trees/d14_eval.py",
+  "sha256": "6a69872ae168147737ed6b6a82415a58aea7b11751189a4730025a1b3013b553",
+  "variants": "general = D9 trees A with one nested weight (the D9-0 result); regime = D9 trees A with separate nested weights in and outside the tail; special = tail trees in the tail (nested weight) and D9 trees A outside (own nested weight). Same head-level proxy and shot bootstrap (2000, seed 990) as D9-0."
+ },
+ "rule": "PASS if dS_proxy(special) - dS_proxy(general) >= +1e-5 with bootstrap P >= .95. PASS -> a deployment protocol adds the tail trees (and the regime weights) to the D9 blend, like for like on the 195-net. If only 'regime' beats 'general' by that margin, the regime weights alone are adopted for the next D9 build (no new fit needed). FAIL on both -> closed.",
+ "exposure": "D13 anatomy and the in-regime weight of the general trees are known (computed from existing out-of-fold arrays). No tail-only fit exists at freeze.",
+ "rule_3": "DIII-D training data only."
+}

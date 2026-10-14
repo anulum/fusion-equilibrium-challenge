@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed8_tc",
+ "recipe_index": 38,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1559338,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010332253145522358
+   ],
+   "residual_MSE_before": [
+    0.00016791036684851303
+   ],
+   "normal_equation_gradient_max_abs": 1.0315828976152912e-17
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1559340,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003121791769067347,
+    0.0009077155949650364,
+    0.0005014626290166344
+   ],
+   "residual_MSE_before": [
+    0.000330428660442759,
+    0.00031063540530096886,
+    0.011190899062419307
+   ],
+   "normal_equation_gradient_max_abs": 7.196222513283085e-17
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1559160,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00023667807092871474
+   ],
+   "residual_MSE_before": [
+    0.000577575144745528
+   ],
+   "normal_equation_gradient_max_abs": 2.8384709337202045e-17
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1051847,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00014172281162576244,
+    -0.0006757162577643426
+   ],
+   "residual_MSE_before": [
+    3.513503910378863e-05,
+    4.3955440076831925e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.7532734975216763e-17
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 664229,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018985199074832818,
+    0.00043333071675028125
+   ],
+   "residual_MSE_before": [
+    3.0308914018555523e-05,
+    6.010583386678179e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.5888961661951386e-17
+  }
+ ],
+ "initial_sha256": "c179a53ea2c448995b057b9146effc5192e339a8e5693654a193d5778d02a17f",
+ "network_sha256": "c61b3bfa1c30e39e4c3618099efbc5c6ee0438f68fa2ef97e5fc251704437071",
+ "seconds": 695.3479793071747
+}

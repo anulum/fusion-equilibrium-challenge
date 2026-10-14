@@ -1,0 +1,465 @@
+{
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 0.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 1009,
+    "threads": 12
+  },
+  "fitted_with": "jax 0.8.2 on cuda:1",
+  "training_frames": 1480465,
+  "basis_ceiling": {
+    "training": 0.9999999676647379,
+    "calibration": 0.9999999445977888,
+    "validation": 0.9999999665631538
+  },
+  "calibration": {
+    "flux_r2": 0.9984116255821058,
+    "q95_r2": 0.918773007904956,
+    "beta_n_r2": 0.9777960847352781,
+    "li_r2": 0.8285076290504981,
+    "r_axis_r2": 0.9005327108786914,
+    "z_axis_r2": 0.9211642834651536
+  },
+  "validation": {
+    "flux_r2": 0.9983323229836392,
+    "q95_r2": 0.9189887700928283,
+    "beta_n_r2": 0.9772070410600859,
+    "li_r2": 0.8155535260474898,
+    "r_axis_r2": 0.8879640875195475,
+    "z_axis_r2": 0.9127739757626675
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "loss": 3.160120964050293,
+      "calibration_flux_r2": 0.7520022336075989,
+      "calibration_flux_r2_every_frame": 0.7464805033150386,
+      "seconds": 11.827823888000012
+    },
+    {
+      "epoch": 2,
+      "loss": 0.22712461650371552,
+      "calibration_flux_r2": 0.9514848067529856,
+      "calibration_flux_r2_every_frame": 0.9500495067525259,
+      "seconds": 4.910024551999982
+    },
+    {
+      "epoch": 3,
+      "loss": 0.07181540131568909,
+      "calibration_flux_r2": 0.9818642341732318,
+      "calibration_flux_r2_every_frame": 0.9812620528605739,
+      "seconds": 3.3595111570000427
+    },
+    {
+      "epoch": 4,
+      "loss": 0.0424920916557312,
+      "calibration_flux_r2": 0.9845482413205241,
+      "calibration_flux_r2_every_frame": 0.9841746067610605,
+      "seconds": 3.4047680709999213
+    },
+    {
+      "epoch": 5,
+      "loss": 0.038976725190877914,
+      "calibration_flux_r2": 0.9922422623233559,
+      "calibration_flux_r2_every_frame": 0.9919971698198229,
+      "seconds": 3.482034421000094
+    },
+    {
+      "epoch": 6,
+      "loss": 0.03342146426439285,
+      "calibration_flux_r2": 0.9880459157684623,
+      "calibration_flux_r2_every_frame": 0.987829744539183,
+      "seconds": 3.510582946999989
+    },
+    {
+      "epoch": 7,
+      "loss": 0.025949319824576378,
+      "calibration_flux_r2": 0.984183052947874,
+      "calibration_flux_r2_every_frame": 0.9839626296589818,
+      "seconds": 3.534298447000083
+    },
+    {
+      "epoch": 8,
+      "loss": 0.023388316854834557,
+      "calibration_flux_r2": 0.994159796163376,
+      "calibration_flux_r2_every_frame": 0.9939986402286446,
+      "seconds": 3.5461665289999473
+    },
+    {
+      "epoch": 9,
+      "loss": 0.02128162607550621,
+      "calibration_flux_r2": 0.9852935903018702,
+      "calibration_flux_r2_every_frame": 0.985112611852749,
+      "seconds": 3.5490049720000343
+    },
+    {
+      "epoch": 10,
+      "loss": 0.021124551072716713,
+      "calibration_flux_r2": 0.9867829680372607,
+      "calibration_flux_r2_every_frame": 0.9865761978734424,
+      "seconds": 3.4849875310000016
+    },
+    {
+      "epoch": 11,
+      "loss": 0.018604829907417297,
+      "calibration_flux_r2": 0.9944432584881479,
+      "calibration_flux_r2_every_frame": 0.9943361024477627,
+      "seconds": 3.4553734839998924
+    },
+    {
+      "epoch": 12,
+      "loss": 0.017262453213334084,
+      "calibration_flux_r2": 0.9944567107953274,
+      "calibration_flux_r2_every_frame": 0.9943659725452635,
+      "seconds": 3.4061369399998966
+    },
+    {
+      "epoch": 13,
+      "loss": 0.017054202035069466,
+      "calibration_flux_r2": 0.9884245629228631,
+      "calibration_flux_r2_every_frame": 0.9881377787614605,
+      "seconds": 3.372770969000044
+    },
+    {
+      "epoch": 14,
+      "loss": 0.016383662819862366,
+      "calibration_flux_r2": 0.9938385273467144,
+      "calibration_flux_r2_every_frame": 0.9937544713048421,
+      "seconds": 3.2883218069999884
+    },
+    {
+      "epoch": 15,
+      "loss": 0.015677912160754204,
+      "calibration_flux_r2": 0.9971632881744033,
+      "calibration_flux_r2_every_frame": 0.997076572104101,
+      "seconds": 3.3090034880000303
+    },
+    {
+      "epoch": 16,
+      "loss": 0.012609208934009075,
+      "calibration_flux_r2": 0.9976898643519373,
+      "calibration_flux_r2_every_frame": 0.9976272774157132,
+      "seconds": 3.253382370000054
+    },
+    {
+      "epoch": 17,
+      "loss": 0.012914709746837616,
+      "calibration_flux_r2": 0.9662655304188023,
+      "calibration_flux_r2_every_frame": 0.9649710618038683,
+      "seconds": 3.240591683000048
+    },
+    {
+      "epoch": 18,
+      "loss": 122.59151458740234,
+      "calibration_flux_r2": 0.9635230636543402,
+      "calibration_flux_r2_every_frame": 0.9615093266290025,
+      "seconds": 3.2156800029999886
+    },
+    {
+      "epoch": 19,
+      "loss": 0.0837370976805687,
+      "calibration_flux_r2": 0.9805652456893568,
+      "calibration_flux_r2_every_frame": 0.9795479943435562,
+      "seconds": 3.1791393629999902
+    },
+    {
+      "epoch": 20,
+      "loss": 0.06330019980669022,
+      "calibration_flux_r2": 0.9864360470335262,
+      "calibration_flux_r2_every_frame": 0.9857914260405495,
+      "seconds": 3.1818172750000713
+    },
+    {
+      "epoch": 21,
+      "loss": 0.05431290715932846,
+      "calibration_flux_r2": 0.989621405291187,
+      "calibration_flux_r2_every_frame": 0.9891675156732408,
+      "seconds": 3.217111755000019
+    },
+    {
+      "epoch": 22,
+      "loss": 0.04898248612880707,
+      "calibration_flux_r2": 0.9914823871276134,
+      "calibration_flux_r2_every_frame": 0.9911393897082947,
+      "seconds": 3.209197257000028
+    },
+    {
+      "epoch": 23,
+      "loss": 0.045485034584999084,
+      "calibration_flux_r2": 0.9928395024407001,
+      "calibration_flux_r2_every_frame": 0.9925651166098123,
+      "seconds": 3.194014559999914
+    },
+    {
+      "epoch": 24,
+      "loss": 0.04296870529651642,
+      "calibration_flux_r2": 0.9937205471862527,
+      "calibration_flux_r2_every_frame": 0.9934890129128743,
+      "seconds": 3.2184352300000683
+    },
+    {
+      "epoch": 25,
+      "loss": 0.04111447185277939,
+      "calibration_flux_r2": 0.9944970082727864,
+      "calibration_flux_r2_every_frame": 0.9943004345645997,
+      "seconds": 3.222571501999937
+    },
+    {
+      "epoch": 26,
+      "loss": 0.039679814130067825,
+      "calibration_flux_r2": 0.9950640695746005,
+      "calibration_flux_r2_every_frame": 0.994888162402006,
+      "seconds": 3.239399117000062
+    },
+    {
+      "epoch": 27,
+      "loss": 0.038502346724271774,
+      "calibration_flux_r2": 0.9954434123525986,
+      "calibration_flux_r2_every_frame": 0.9952838387762531,
+      "seconds": 3.2637430339999582
+    },
+    {
+      "epoch": 28,
+      "loss": 0.03750085458159447,
+      "calibration_flux_r2": 0.995884593648585,
+      "calibration_flux_r2_every_frame": 0.9957424432089984,
+      "seconds": 3.3032549029999245
+    },
+    {
+      "epoch": 29,
+      "loss": 0.03672982007265091,
+      "calibration_flux_r2": 0.9961493283963304,
+      "calibration_flux_r2_every_frame": 0.9960187326302744,
+      "seconds": 3.3081317259999423
+    },
+    {
+      "epoch": 30,
+      "loss": 0.036085933446884155,
+      "calibration_flux_r2": 0.9964278307035348,
+      "calibration_flux_r2_every_frame": 0.9963074675555557,
+      "seconds": 3.3241733930000237
+    },
+    {
+      "epoch": 31,
+      "loss": 0.035565685480833054,
+      "calibration_flux_r2": 0.9956464499254041,
+      "calibration_flux_r2_every_frame": 0.9955344048826117,
+      "seconds": 3.3759802340000533
+    },
+    {
+      "epoch": 32,
+      "loss": 0.034884627908468246,
+      "calibration_flux_r2": 0.9968976673073379,
+      "calibration_flux_r2_every_frame": 0.9967917117315716,
+      "seconds": 3.3957502539999496
+    },
+    {
+      "epoch": 33,
+      "loss": 0.0345056913793087,
+      "calibration_flux_r2": 0.9968833337021734,
+      "calibration_flux_r2_every_frame": 0.996781912234143,
+      "seconds": 3.391878535000046
+    },
+    {
+      "epoch": 34,
+      "loss": 0.034227803349494934,
+      "calibration_flux_r2": 0.9971802192802977,
+      "calibration_flux_r2_every_frame": 0.9970809826288,
+      "seconds": 3.3996960730000865
+    },
+    {
+      "epoch": 35,
+      "loss": 0.03356238827109337,
+      "calibration_flux_r2": 0.99724817843634,
+      "calibration_flux_r2_every_frame": 0.997152184171085,
+      "seconds": 3.3774727019999773
+    },
+    {
+      "epoch": 36,
+      "loss": 0.03335602208971977,
+      "calibration_flux_r2": 0.9974117743625621,
+      "calibration_flux_r2_every_frame": 0.9973165953852272,
+      "seconds": 3.3746721589999424
+    },
+    {
+      "epoch": 37,
+      "loss": 0.033174604177474976,
+      "calibration_flux_r2": 0.9974942046632014,
+      "calibration_flux_r2_every_frame": 0.9974028114187584,
+      "seconds": 3.372716469000011
+    },
+    {
+      "epoch": 38,
+      "loss": 0.032670654356479645,
+      "calibration_flux_r2": 0.9974281477423472,
+      "calibration_flux_r2_every_frame": 0.9973397790024868,
+      "seconds": 3.380337635999922
+    },
+    {
+      "epoch": 39,
+      "loss": 0.03244420886039734,
+      "calibration_flux_r2": 0.9972497272778356,
+      "calibration_flux_r2_every_frame": 0.9971634904289107,
+      "seconds": 3.3667893929999764
+    },
+    {
+      "epoch": 40,
+      "loss": 0.03225132077932358,
+      "calibration_flux_r2": 0.9976729938309026,
+      "calibration_flux_r2_every_frame": 0.9975865806295493,
+      "seconds": 3.359403549000035
+    },
+    {
+      "epoch": 41,
+      "loss": 0.031972043216228485,
+      "calibration_flux_r2": 0.997768904757345,
+      "calibration_flux_r2_every_frame": 0.9976872241689413,
+      "seconds": 3.360799162000035
+    },
+    {
+      "epoch": 42,
+      "loss": 0.031757161021232605,
+      "calibration_flux_r2": 0.997771968841161,
+      "calibration_flux_r2_every_frame": 0.9976897784548544,
+      "seconds": 3.3300906149999037
+    },
+    {
+      "epoch": 43,
+      "loss": 0.031551361083984375,
+      "calibration_flux_r2": 0.9977473463912055,
+      "calibration_flux_r2_every_frame": 0.9976692412926864,
+      "seconds": 3.3303542000001016
+    },
+    {
+      "epoch": 44,
+      "loss": 0.03132664039731026,
+      "calibration_flux_r2": 0.9979005257616068,
+      "calibration_flux_r2_every_frame": 0.9978207784346352,
+      "seconds": 3.3309056189999637
+    },
+    {
+      "epoch": 45,
+      "loss": 0.03113465942442417,
+      "calibration_flux_r2": 0.9979517929570189,
+      "calibration_flux_r2_every_frame": 0.9978760610464587,
+      "seconds": 3.2839884960000063
+    },
+    {
+      "epoch": 46,
+      "loss": 0.03090420924127102,
+      "calibration_flux_r2": 0.9979625126328923,
+      "calibration_flux_r2_every_frame": 0.9978876154330127,
+      "seconds": 3.27808906700011
+    },
+    {
+      "epoch": 47,
+      "loss": 0.030580157414078712,
+      "calibration_flux_r2": 0.9979862357999348,
+      "calibration_flux_r2_every_frame": 0.9979147101465466,
+      "seconds": 3.3072247359999665
+    },
+    {
+      "epoch": 48,
+      "loss": 0.030201561748981476,
+      "calibration_flux_r2": 0.9979810871578954,
+      "calibration_flux_r2_every_frame": 0.9979104194561653,
+      "seconds": 3.2978607259999535
+    },
+    {
+      "epoch": 49,
+      "loss": 0.029752328991889954,
+      "calibration_flux_r2": 0.9981013579514421,
+      "calibration_flux_r2_every_frame": 0.9980319623262414,
+      "seconds": 3.290172200000029
+    },
+    {
+      "epoch": 50,
+      "loss": 0.029244285076856613,
+      "calibration_flux_r2": 0.9981629999060331,
+      "calibration_flux_r2_every_frame": 0.9980959599541778,
+      "seconds": 3.281375665999917
+    },
+    {
+      "epoch": 51,
+      "loss": 0.028739606961607933,
+      "calibration_flux_r2": 0.998244847032382,
+      "calibration_flux_r2_every_frame": 0.9981788571477176,
+      "seconds": 3.2483869490000643
+    },
+    {
+      "epoch": 52,
+      "loss": 0.028272025287151337,
+      "calibration_flux_r2": 0.9983069073186072,
+      "calibration_flux_r2_every_frame": 0.9982419496568358,
+      "seconds": 3.238568459000021
+    },
+    {
+      "epoch": 53,
+      "loss": 0.027915341779589653,
+      "calibration_flux_r2": 0.9983329805588504,
+      "calibration_flux_r2_every_frame": 0.9982683263031052,
+      "seconds": 3.266150682999978
+    },
+    {
+      "epoch": 54,
+      "loss": 0.027620065957307816,
+      "calibration_flux_r2": 0.9983738011688461,
+      "calibration_flux_r2_every_frame": 0.9983097238197922,
+      "seconds": 3.2669393070000297
+    },
+    {
+      "epoch": 55,
+      "loss": 0.027361052110791206,
+      "calibration_flux_r2": 0.9984114980685239,
+      "calibration_flux_r2_every_frame": 0.9983481502093968,
+      "seconds": 3.2698709550001013
+    },
+    {
+      "epoch": 56,
+      "loss": 0.02714276872575283,
+      "calibration_flux_r2": 0.9984405346921459,
+      "calibration_flux_r2_every_frame": 0.9983776097162631,
+      "seconds": 3.264555083999994
+    },
+    {
+      "epoch": 57,
+      "loss": 0.027003459632396698,
+      "calibration_flux_r2": 0.9984547034539158,
+      "calibration_flux_r2_every_frame": 0.9983926842587209,
+      "seconds": 3.291018402000077
+    },
+    {
+      "epoch": 58,
+      "loss": 0.026912741363048553,
+      "calibration_flux_r2": 0.9984637457020659,
+      "calibration_flux_r2_every_frame": 0.9984018532450772,
+      "seconds": 3.293258714999979
+    },
+    {
+      "epoch": 59,
+      "loss": 0.026874447241425514,
+      "calibration_flux_r2": 0.9984728473124047,
+      "calibration_flux_r2_every_frame": 0.9984110146946552,
+      "seconds": 3.324940606999917
+    },
+    {
+      "epoch": 60,
+      "loss": 0.02685277909040451,
+      "calibration_flux_r2": 0.9984734211105448,
+      "calibration_flux_r2_every_frame": 0.9984116256570351,
+      "seconds": 3.3209594360000665
+    }
+  ],
+  "seconds": 236
+}
