@@ -1,0 +1,10 @@
+{
+ "amends": "protocol_d52.json 919ff520",
+ "utc": "2026-10-13T09:20:37Z",
+ "reason": "family_means.py stopped on its own check before writing anything: the family means were compared with the cached means to 1e-9, but the cache stores the features as float32 and the cached means came from float64 features. No family mean, error correlation or score was produced or seen.",
+ "change": "The file is written first, the largest deviation is printed, and the check is 1e-3 in the scalar's own units (q95 errors are about 7e-2, betaN 6e-2). Nothing else changes; hypothesis, measure and rule as frozen.",
+ "sha256": {
+  "family_means.py": "92ee7e6ced3325eaecedfc92a09bd18a2e5fbe620a4817798f0a180258f4029b",
+  "family_means_v1_failed_check.py": "52279c9f0713b3e87749b8ad227aaefaef271f0f42a9bb52a8284a5e87301719"
+ }
+}

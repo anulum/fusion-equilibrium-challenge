@@ -1,0 +1,4 @@
+{"protocol": "M1b (sha a377bbd8c4c63180417a310c4132586a2ebd23bd24ac5fdaa1bff43a36a529af)", "amendment": 1, "utc": "2026-09-30T13:33:43Z",
+ "before_results": true, "evidence": "smoke on 3 shots only (no arm comparison computed); betaN NaN on every frame",
+ "change": "axis_flux = extremum of the map in the 3x3 grid cells round the axis (as production's solved maps carry it), not the bilinear value at the sub-pixel axis, which lies inside the extremum and left the axis cell at normalised depth -0.0006 -> no plasma region -> NaN.",
+ "check_after_fix": "2 shots, A0 only: q95 median ratio 1.000/1.002, betaN finite 71/74 and 73/73 frames — consistent with the documented DIII-D calibration (label/map 0.996 q95, betaN quartiles 0.94-1.30)."}

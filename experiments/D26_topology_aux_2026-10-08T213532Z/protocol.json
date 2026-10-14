@@ -1,0 +1,14 @@
+{
+  "id": "D26-0",
+  "frozen_utc": "2026-10-08T213532Z",
+  "entrant": "the second agent",
+  "problem": "Public H69 improves DIII-D only1.1e-5; main competitive deficit remains LCFS and qb. Missing complete subframe OOF contour ensemble prevents truthful finisher attribution.",
+  "hypothesis": "Training-only separatrix diagnostic magnetics_dsep provides an auxiliary topology target beyond X-point coordinates and contour radii. This is an untested mechanism; existing training-only input exclusion remains enforced.",
+  "design": "Five shot-disjoint folds. For each fold paired hc recipe41/42 baseline vs same hc with one additional output magnetics_dsep_aux at inherited label weight0.05. Identical seeds200/201/settings/features/training rows; calibration-training flag true in both (OOF held training stems excluded). Each ensemble uses same two existing held-out D18 hx members plus two new hc members, excludes h/c families. No input change.",
+  "features": "367 table+215 existing subframe",
+  "labels": "DIII-D training/calibration/validation only; dsep exact same EFIT timestamps, fail closed on mismatch; no interpolation/extrapolation.",
+  "measurement": "All5folds; same400 hash-selected shots and full original deployment finisher/scorer. Also per-stage LCFS/consistency attribution; geometry readouts refitted only on fold-permitted training/calibration rows, ridge.001. Original D9 OOF trees fixed per fold. Raw geometry/head proxy alone cannot pass.",
+  "gate": "Aux arm passes only full-finished composite gain>=3e-5 and shot bootstrap2000 seed990 P>=.95 with no increased LCFS failure fraction; otherwise close. If passes freeze all-data fit/build protocol before fitting candidate. No automatic public upload/submission.",
+  "population": "Existing reserved evaluation stems excluded; fold assignment SHA256(stem)%5; first80 held-out stems per fold by sha256 for full score, all held rows for raw diagnostics.",
+  "resources": "5KaggleCPU kernels,4sequential fits each,12h per kernel cap,no GPU,zero automatic numerical retries. Output supervisor harddeadline16h,validate all20fits/folds/sourcehashes before geometryrefit."
+}

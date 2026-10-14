@@ -1,0 +1,24 @@
+{
+ "id": "D18-0 gate: networks with the sub-frame input features, paired against the same networks without",
+ "frozen_utc": "2026-10-06T04:27:22Z",
+ "author": "first_agent (group manager)",
+ "why": "D16-0 (ledger 2.38): a cross-fitted tree corrector reading the 215 sub-frame features reduced the z_axis head's out-of-fold error variance by 4.9 % (P 1.00) and the X-point heights by 1.2-1.3 % (P .96), where the same corrector without them (D10-0) found nothing. The fast coil signals therefore carry information on the vertical position that the 20 ms features lack. A corrector on top of the heads is the weakest way to use an input; the networks should read it themselves. The vertical position also enters the flux map directly (the axis move), so the flux coordinates are measured too.",
+ "design": "Paired fits: four S16 members (recipe 16 and 24 = h, 30 and 31 = hx; original settings and seeds; training part only; no readout-bank refit) fitted twice per fold, arm P on the 367 table features and arm S on those plus the 215 sub-frame features (subframe_features.py bea1c161\u2026; training c86cf095\u2026, calibration and validation extracted the same way). fit_on_accelerators unchanged. Folds and reserved stems as protocol_kfold_oof_maps_20260929; five folds (kernel a: 0-2, b: 3-4).",
+ "kernels": {
+  "a": "a01bc133d2c0bfeb2ae44302f1542293567053f0cfb99e6b84d9f364243dc24c",
+  "b": "ff4ae773e07d81184fbacd71354689803fedd6268602e508f99595b0276f207e",
+  "kaggle_ids": [
+   "anulum/fec-d18-subframe-nets-a",
+   "anulum/fec-d18-subframe-nets-b"
+  ]
+ },
+ "measure": {
+  "file": "d18_eval.py",
+  "sha256": "2833aea7e6c2e7577da7849927e0fc5b90e5d985e03da2e675cbb7cff61e228a",
+  "text": "on every held-out frame the mean heads of the four networks of each arm and the squared error of their 64 mean flux coordinates; per head the pooled squared-error ratio S/P with a shot bootstrap (2000, seed 990); the same ratio for the flux coordinates; the D9 head proxy of the difference."
+ },
+ "rule": "PASS if the z_axis squared-error ratio S/P is <= 0.95 with P(S better) >= .95 and the flux-coordinate squared-error ratio is <= 1.0. PASS -> the sub-frame features are worth a refit of the recipe; that is a large job (all-data members, readout bank, a 195-net-scale build) and goes to the entrant with this result before anything is started. FAIL -> closed; the 20 ms table stays.",
+ "failed_fit_note": "A member whose calibration flux R2 is below 0.999 in either arm is reported; the pair is still evaluated as fitted (both arms share the seed), no retry before the first evaluation.",
+ "exposure": "D16-0 result known. No network with these features exists at freeze.",
+ "rule_3": "DIII-D training data only; inputs only."
+}

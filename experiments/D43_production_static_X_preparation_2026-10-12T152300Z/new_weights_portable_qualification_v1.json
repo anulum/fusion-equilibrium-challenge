@@ -1,0 +1,58 @@
+{
+  "status": "new_all7041_static8_checkpoint_export_CPUdouble_whole213_PASS",
+  "reports": {
+    "500": {
+      "network_sha256": "b6b2abdb0bcc615f67f8bc1e65a6d8c0a732c508e3ccabb8b47f19ee30795aa9",
+      "encoder_sha256": "d400f6aa8207b7246062f9babd10190644c331dcac9747c79d52dbc2f10ecc41",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "501": {
+      "network_sha256": "2387534ddfe2d14d50a2da3dc3fae00b556b241c3d39aaa92be076fcbc7890b5",
+      "encoder_sha256": "3961a7c396bb02088941780b7d131b9e3fd6a10c74fd170bd9df58a4ac53b07a",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "502": {
+      "network_sha256": "65e4174353cfefa8d8612415d962002821fe47a77440d41993581c2f4fd052d2",
+      "encoder_sha256": "85bc5142f259ab9cf0a55f0e13c9b71cfdcd65fb32e6093b75334119e76eac4a",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "503": {
+      "network_sha256": "afc926d107f77ff9566c5a7d54567af7299f2ba1469b96a178110afb977f0145",
+      "encoder_sha256": "3dc9c1b45c525e351da9ed94dfce234d19107f8eb412264d98ed71c3119c5028",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "504": {
+      "network_sha256": "7faa4e011bdb3c5197613054703172eac58a5496d6a8af31ca952e7f23d61ada",
+      "encoder_sha256": "a10361a490c109bfe67e0f28407f9e57666d5fb92f19fdebd255cd904432dbdb",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "505": {
+      "network_sha256": "6dc193a1fa50c33c14bb77a2aa3dfbcc3937f00be368656d17fd6371f22239a0",
+      "encoder_sha256": "36d89f683f58da75e6b9595ed6c9dbc2a39d312905421f54edc558a8d51e22ee",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "506": {
+      "network_sha256": "7bd1f918531479bde94e2738990fde8308b4118538d1fe8e4f992b260af4807b",
+      "encoder_sha256": "e8eda0ac51f8b73ce8fd63bac8561b0907b73287d072d27035e4ef9eab9ce1f1",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    },
+    "507": {
+      "network_sha256": "9edb173d82be42c78961be2b6ee8697e82386da2b9f21c2d500c284528102bab",
+      "encoder_sha256": "c72752a6378aa6f705154d8056d0cab4c56d01f8af469e8b580ff8696776d168",
+      "checkpoint_parameters_exact": true,
+      "max_abs_CPUdouble_m": 2.220446049250313e-16
+    }
+  },
+  "activation_sha256": "c9e22ac87eec319da68789419b6f14d44cbeec65fa0957d8fd14f86c12cf7317",
+  "no_reference_answers_read": true,
+  "native_production_FORK_still_required": true,
+  "UTC_seconds": 1791843173.8175442,
+  "trainer_revision_used": "train_production_static_X_v2.py (one Fortran-aware read; receipt train_v1_fault_and_v2_revision_receipt.json)"
+}

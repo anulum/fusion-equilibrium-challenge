@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed0_tc",
+ "recipe_index": 30,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1480463,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010723401624807643
+   ],
+   "residual_MSE_before": [
+    0.00014205235301725772
+   ],
+   "normal_equation_gradient_max_abs": 8.188770426919754e-18
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1480465,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003837075720087134,
+    0.0008124836002626408,
+    0.00036942526895080113
+   ],
+   "residual_MSE_before": [
+    0.00026222083707367087,
+    0.0002543928528845877,
+    0.008145893845591223
+   ],
+   "normal_equation_gradient_max_abs": 4.814874085372345e-17
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1480297,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00011348691843505874
+   ],
+   "residual_MSE_before": [
+    0.0004399865750278074
+   ],
+   "normal_equation_gradient_max_abs": 1.1047003698090585e-17
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1000511,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00015947609615160548,
+    -0.0006790854977709922
+   ],
+   "residual_MSE_before": [
+    2.2504612821298068e-05,
+    3.4346346104752354e-05
+   ],
+   "normal_equation_gradient_max_abs": 8.734180235612718e-18
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 630999,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.0001799571467359208,
+    0.0004456757257575976
+   ],
+   "residual_MSE_before": [
+    2.0755056450108873e-05,
+    4.9134872632191815e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.1163411171333948e-17
+  }
+ ],
+ "initial_sha256": "1f2347f9c02b80e0e2e1294cc3fd214671b4cf05ff57521922f34c24e4545324",
+ "network_sha256": "a2544c7df9c6b3fd40b5dcb375d53b8b22a04cc5a9007a0aad69a8a7e296a686",
+ "seconds": 807.828999042511
+}

@@ -1,0 +1,18 @@
+{
+  "UTC_seconds": 1791731490.8019938,
+  "source_peer_seq": 141794,
+  "source_sha256": {
+    "$FEC_EXPERIMENTS/D39_first_agent_D38_map_objective_source_audit_2026-10-11/X_HEAD_DIAGNOSTICS.md": "62f852a3e0eb7f0c83825448f2e4da12c399fb5e78e67648f266dfd15d71025f",
+    "$FEC_EXPERIMENTS/D39_first_agent_D38_map_objective_source_audit_2026-10-11/xmembers.py": "4954cbf98a42e1988af628f73fd2ae417a8d01cbf0013b7d145c7f5a588b7595",
+    "$FEC_EXPERIMENTS/D39_first_agent_D38_map_objective_source_audit_2026-10-11/xmap.py": "4c99a51c94a53e06dc0f695ddede38f25053bd5efc5d5d2aee79727b809f26c3",
+    "$FEC_EXPERIMENTS/D39_first_agent_D38_map_objective_source_audit_2026-10-11/xmembers.log": "cb9328cce270ee0954a9f58df1c67ba19b037196ab0eac3fb45320b3b637f34f",
+    "$HOME/.first_agent/jobs/8a09b158/tmp/xmembers.npz": "b1569186827901389c8106897f0528a5a4a01dd450204a08e24127b715cf7fa9"
+  },
+  "analysis": "recompute saved-float32 69-head means, robust means, mean member squared error=ensemble squared error+member variance, per-shot offset fraction and tie-aware spread-errorSpearman; descriptive only",
+  "sampling": "same120 screening shots, everysecond frame13329, finite truth Xends; notall26597frames",
+  "comparison": "unblended neuralheads before currentnative x_lower_r treeweight0.16 orfinisher; notactual finalnative Xtarget",
+  "precision": "storedfloat32 memberpredictions vs original peermeans computed before storage; roundedtables approximatelyreproduce, no bitexact table claim",
+  "interpretation": "ensemble residual includes bias andcorrelatederror; no mathematicalunavoidable5.4mm floor; no linear10percentXerror->60microS score conversion",
+  "not_new_candidate_or_grid_or357_choice": true,
+  "publication": false
+}

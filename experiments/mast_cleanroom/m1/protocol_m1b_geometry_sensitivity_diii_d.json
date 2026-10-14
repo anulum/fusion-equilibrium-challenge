@@ -1,0 +1,17 @@
+{
+ "id": "M1b",
+ "frozen_utc": "2026-09-30T13:31:19Z",
+ "question": "How much of the MAST q95/betaN loss can the measured MAST geometry error explain? Diagnostic of our map_scalars routines under the boundary error we measured label-free on MAST (plasma ~5 cm inboard, ~2.6 cm narrower; ledger 5.3/5.4).",
+ "rule_3": "DIII-D only (its labels are allowed); no MAST label, demo shot or MAST leaderboard number is read. Result steers research priority only; it selects no MAST component.",
+ "data": "DIII-D validation bucket (split.bucket_of == 'validation'), first 60 shots in sorted stem order, every 4th frame with |Ip| >= 0.3 MA and finite efit_q95 and efit_beta_n.",
+ "map_reading": "true efit_psirz; axis and LCFS by the organisers' derivation (shape_edit.Reader, python/native as installed); axis_flux = map at axis, edge_flux = mean of map on the LCFS contour; q95 and betaN by fec_adapter.cross_machine.map_scalars unchanged (TF_TURNS DIII-D 144, PRESSURE_FACTOR 2.25).",
+ "arms": {
+  "A0": "true map (routine ceiling)",
+  "A1": "rigid inboard shift 0.05 m: psi'(R,Z) = psi(R + 0.05, Z)",
+  "A2": "rigid inboard shift 0.10 m (same share of major radius as 5 cm on MAST)",
+  "A3": "A1 plus radial compression about the axis so the width shrinks by 0.026 m"
+ },
+ "metrics": "per arm and scalar: R2 vs label (unclipped and clipped at 0 as scored), median ratio pred/label, R2 after dividing by the arm's median ratio (bias removed), finite share.",
+ "decision_rule": "If A1 or A3 lowers the mean clipped R2 of (q95, betaN) by >= 0.30 relative to A0, the measured geometry error alone can explain the MAST q95/betaN loss -> geometry (M3) is the lever for this term too, and constant re-tuning (TF, pressure factor) is deferred. If the drop is < 0.10, geometry does not explain it -> examine MAST-specific constants/profile handling (M1c). In between: both, geometry first.",
+ "resources": "CPU, 2 processes, nice 10."
+}

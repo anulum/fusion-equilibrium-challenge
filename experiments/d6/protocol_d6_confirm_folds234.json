@@ -1,0 +1,13 @@
+{
+ "id": "D6-confirm",
+ "frozen_utc": "2026-10-04T14:48:23Z",
+ "author": "first_agent",
+ "parent": "protocol_d6_headswap.json (sha 54d94e6d…); screen result folds 0+1: dS +5.98e-5, CI95 [+2.7e-6, +1.23e-4], P .980 (passes)",
+ "question": "Does the D6 head swap (V0 flux coordinates, X-point and boundary outputs; specialist scalar heads) replicate on folds 2, 3, 4, which no D4/D6 decision has seen?",
+ "specialists": "New fits of the D4 recipe (d4/protocol_kfold_oof_maps_20260929.json: all 16 S16 members, original seeds and settings, label_weight 0.2) for folds 2, 3, 4, run with d4/kfold_run.py on the workstation ROCm cards (5x RX 6600 XT; XLA command buffers off). Failed-fit rule amendment 1 and gradient-limit amendment 2 exactly as in D4 (kfold_ledger.py). Bank members readout-refitted with the fold excluded (kfold_readout.py). The specialists' own maps are built with d4's kfold_build (that build also extends D4 itself to folds 2-4; reported, not decided on). Hardware differs from D4 fold 0 (Kaggle CUDA); recorded.",
+ "build": "d6_build.py (sha 43879e2e…) --fold k --specialist <D4-type oof_fold k>; V0 = kfold/oof_fold k; v25 finisher.",
+ "metric": "d6_score.py 2 3 4: pooled S over the 240 shots, every 2nd frame, paired shot bootstrap 20000, seed 951; also all 5 folds reported.",
+ "decision_rule": "ADOPT for a public build only if folds 2-4 dS >= +2e-5 and P >= 0.9. Otherwise reject for good. No per-scalar re-selection of which heads to swap.",
+ "deployment_if_adopted": "an all-data D4-type S16 specialist (16 fits, all labelled data as v28) supplies the scalar heads; the deployed 195-net ensemble supplies the flux coordinates, X-point and boundary outputs; v25 finisher. Public DIII-D score observed with disclosure.",
+ "rule_3": "DIII-D only."
+}

@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed9_tc",
+ "recipe_index": 39,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1559338,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.001092220730825375
+   ],
+   "residual_MSE_before": [
+    0.00012545345458172156
+   ],
+   "normal_equation_gradient_max_abs": 1.6099515523793084e-18
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1559340,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00037445894072919456,
+    0.0008410113128885047,
+    0.0002764954262700457
+   ],
+   "residual_MSE_before": [
+    0.0002289607061967119,
+    0.00022597372172602126,
+    0.006060134532714432
+   ],
+   "normal_equation_gradient_max_abs": 4.665033957003059e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1559160,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00010866682249293202
+   ],
+   "residual_MSE_before": [
+    0.00037418468003152687
+   ],
+   "normal_equation_gradient_max_abs": 1.5084862697211038e-18
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1051847,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.0001679011376568611,
+    -0.0006830500047181069
+   ],
+   "residual_MSE_before": [
+    1.581933515421248e-05,
+    2.6401940959157407e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.2701259044078234e-18
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 664229,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018352573734119117,
+    0.0004609439286997404
+   ],
+   "residual_MSE_before": [
+    1.548124166864663e-05,
+    4.192103405018082e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.6925306472917023e-18
+  }
+ ],
+ "initial_sha256": "1cf439423bc0b80fdf40a7acb2f9110833b8a789a992080ca548892713a1da93",
+ "network_sha256": "ffe279a91ce7b3afbde5789bec2f36abb1fb7053726a5983579eb52d958f8ed8",
+ "seconds": 700.7137019634247
+}

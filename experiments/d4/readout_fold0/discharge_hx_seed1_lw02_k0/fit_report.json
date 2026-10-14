@@ -1,0 +1,108 @@
+{
+ "member": "discharge_hx_seed1_lw02",
+ "fold": 0,
+ "geometry_labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training"
+ ],
+ "fold_training_shots_excluded": true,
+ "reserved_excluded": true,
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1044732,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010700782556665946
+   ],
+   "residual_MSE_before": [
+    0.00011304051183353408
+   ],
+   "normal_equation_gradient_max_abs": 8.080561967908017e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1044733,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00034669405528785625,
+    0.0008073656949237326,
+    0.0002171161800655381
+   ],
+   "residual_MSE_before": [
+    0.00020808888177442555,
+    0.00020276847589492347,
+    0.0049527076299971705
+   ],
+   "normal_equation_gradient_max_abs": 1.5420499502560555e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1044613,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00012891864697191758
+   ],
+   "residual_MSE_before": [
+    0.0003100453611223063
+   ],
+   "normal_equation_gradient_max_abs": 5.5798295400377035e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 702991,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.0001722780265784486,
+    -0.0006782049178581986
+   ],
+   "residual_MSE_before": [
+    1.2784433076407148e-05,
+    2.1983097244476817e-05
+   ],
+   "normal_equation_gradient_max_abs": 5.270530165391875e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 445484,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017153134948737602,
+    0.000468990978741158
+   ],
+   "residual_MSE_before": [
+    1.3100789875872957e-05,
+    3.5911246415727465e-05
+   ],
+   "normal_equation_gradient_max_abs": 6.76342573492758e-19
+  }
+ ],
+ "initial_sha256": "0e869af77b3f2f377cfa6104acd7d47359d250799aa6ee98c43947c489d2844f",
+ "network_sha256": "9a4016d3fb171a0b76ab8c32754db0c615c5c20fc97a9a70dd050027c331b735",
+ "seconds": 734.0028750896454
+}

@@ -1,0 +1,31 @@
+{
+  "name": "static_matched_conv_control_401",
+  "family": "static_matched_conv_control",
+  "status": "fit_complete",
+  "training_frames": 1404214,
+  "epochs": 60,
+  "resumed_from_epoch": 0,
+  "selection": "fixed_final_epoch",
+  "network_sha256": "301fc5c942110c2f0d912ee032bcdde68289aa751a3fb557edd64037066930dd",
+  "encoder_sha256": "6137869ee36568825aa3ca51991383c6d9abb066de50e875d63a68b941204154",
+  "seconds": 145.33918443706352,
+  "held_out_metrics_computed": false,
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 2048,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 401,
+    "threads": 12
+  }
+}

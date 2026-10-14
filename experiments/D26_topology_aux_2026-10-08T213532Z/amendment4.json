@@ -1,0 +1,7 @@
+{
+  "id": "D26 amendment4: pre-score retention comparison",
+  "evidence": "ROCm true-map PCA diagnostic,16deterministic calibration shots x3frames; meanLCFS45=.00499637,64=.00310804,128=.00223017;CPU/GPUdouble parity max3.719e-15. This is representation diagnostic, no learned-model improvement claim.",
+  "comparison": "B current full finisher keeps45 versus C same finisher keeps64 on baseline clearance-weight0 four-member OOF ensembles. Same networks, treeblending, inputs, axis/shape/Xpoint/contour processing and time smoothing; only retained coordinate count changes. Both predicted by current64-coordinate fits, no extra training.",
+  "multiplicity": "Two declared full-score hypotheses: clearance aux effect at original45 and retention64 effect in baseline arm. Require each gain>=3e-5 and bootstrapP>=.975 to bound two comparisons. No changed outcome-based rule; no OOF finished-map result exists at amendment.",
+  "failure_guard": "No increased LCFS failure fraction. No all-data ensemble/public upload until full score gate qualifies. Any combination requires a separately frozen verification."
+}

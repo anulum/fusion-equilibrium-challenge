@@ -1,0 +1,15 @@
+{
+  "UTC_seconds": 1791721836.0923183,
+  "peer_actionable_review_seq": 141008,
+  "frozen_source_and_protocol_not_modified": true,
+  "correction": "Deployed baseline FLAGS set smooth_axis0. Target smoothing is identity in the base path, so the prior statement that the base pre-finisher oracle spreads NaN to neighboring frames was incorrect. Generic NaN-spread warning applies only to positive target smoothing sa1/sa2. Local post-smoothing factorial arithmetic remains correct and unchanged; peer orx should match local positions_and_validity in principle.",
+  "FLAGS_source_sha256": "72e9929a6de689e9420673a6826bcab319282b566263ccbde809accff03e3dec",
+  "baseline_target_half_window": 0,
+  "no_new_candidate_or_selection_changes": true,
+  "root_oracle_mechanism_ceiling": "Better X targets inside native5cm cap/3rounds/.15m window/searchwithin4cells of predicted contour end/secondshape; not ceiling of all X knowledge.",
+  "reference_inactive_saddles_possible": true,
+  "extractor_defined_target_validity_not_physical_presence": true,
+  "peer_review_full_numeric_script_and_protocol_no_defect_found": true,
+  "cross_host_plan": "After both complete120, compare every local joint part vsremote orx part and bind both record hashes; quantify all differences, no silently relaxed parity.",
+  "previous_proposal_and_mistaken_rationale_preserved_and_corrected_here": true
+}

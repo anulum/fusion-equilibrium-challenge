@@ -1,0 +1,6 @@
+{"id": "M3c-1b step 10", "name": "VP_s0.1r_300it_with_plain_v7_fallback", "status": "frozen_before_any_step10_run", "frozen_utc": "2026-10-01T05:39:11Z",
+ "author": "first_agent", "evidence": "ledger 5.31: testbed A/B pass strongly; real C fails only on solved share (.851 -> .702).",
+ "change": "entrypoints_v7_vessel/thomson_isoflux.py (sha prefix 8d2a35b3ddc928f3): FALLBACK_PLAIN = True -> in reconstruct, a frame whose freedom solve fails the solver's own trust test is solved again without any freedom (the plain v7 solve, default 100 iterations). Arm = VP_s0.1r, ITERATIONS 300, FALLBACK_PLAIN True. Pre-specified.",
+ "tests": "A (step-6 testbed, seed 942), B (fresh 6c frames, seed 943), C (step-7 guards G1-G6 on the 41 real pilot shots; G4/G6 computed over frames whose final solve used the freedom: frames that fell back carry no shifts and count as zero change). Rules unchanged.",
+ "decision_rule": "A, B, C all pass -> recommend MAST v10 = this arm to the entrant (full 1206-shot build + format QA; submission is the entrant's decision; leaderboard observed only). Otherwise recorded.",
+ "rule_3": "synthetic data and real MAST inputs only."}

@@ -1,0 +1,8 @@
+{
+ "id": "D6-confirm amendment 1",
+ "frozen_utc": "2026-10-04T15:20:44Z",
+ "parent": "protocol_d6_confirm_folds234.json (sha a355ff10…)",
+ "reason": "Two local ROCm attempts of the fold-2 specialist fits died before epoch 1 with 'could not allocate pinned host of size 1073741824 … ROCM_ERROR_ILLEGAL_ADDRESS' (kernel gfxhub page faults first on 04:00.0, then on 07:00.0 with GPU[0] excluded). The workstation is out of host memory (swap 26.9/32 GB and zram 15.6/15.6 GB used by other processes). No fit produced any epoch, so no result exists.",
+ "change": "The fold 2, 3, 4 specialist fits run on Kaggle CUDA (2x T4), as D4 fold 0 did, with the D4 code dataset (anulum/fec-d4-code: d4/kfold_run.py and the D4 protocol, label_weight 0.2, original seeds) and the kfold package (anulum/fec-kfold-code) and tables (anulum/fec-tables-lcfs). One kernel per fold (anulum/fec-d6conf-fold2..4), queued behind the two running deployment kernels. Readouts, ledger (amendments 1/2), builds, scoring and the decision rule are unchanged; amendment-1 retries also run on Kaggle.",
+ "results_seen_before_this_amendment": "none for folds 2-4"
+}

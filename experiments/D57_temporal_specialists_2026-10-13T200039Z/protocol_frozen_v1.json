@@ -1,0 +1,26 @@
+{
+ "id": "D57 stage 0: does a head-only network that reads the whole shot beat the same network restricted to the frame?",
+ "status": "frozen before any full fit",
+ "frozen_utc": "2026-10-13T20:25:44Z",
+ "author": "first_agent; entrant 2026-10-13: 'navrhni sieť čítajúcu celý výboj naraz' then 'spusti'",
+ "why": "Every tested route on the frame-wise heads ended at zero (ledger 2.63-2.71). Two things only a whole-shot reader could use: the internal inductance follows current diffusion over hundreds of milliseconds to seconds, and a per-shot offset holds 21-39 % of each head's error (D13) and is not shared with similar shots (D53). Earlier temporal tests were negative (D5: lags to +-8 frames in a boosted corrector; D20: raw +-10 ms windows), but none read the whole shot.",
+ "model": "temporal_model.py: per-frame trunk 582 -> 4 x 512 (SiLU); projection to 128 plus sinusoidal code of seconds since the discharge began (feature column 64, 8 periods 0.04-25 s); 2 pre-norm blocks of 4-head self-attention over the frames of one shot and a 128-256-128 perceptron, output projections zero at the start; heads read trunk activation and mixed vector; 9 outputs",
+ "arms": {
+  "temporal": "attention over all frames of the crop",
+  "control": "identical parameters, layers and arithmetic; every frame attends only to itself"
+ },
+ "targets": "r_axis, z_axis, q95, beta_n from the table labels; kappa, tri_top, tri_bot, volume, li_scored from the true-map teacher targets (as D47); per-target normalised, masked squared error weighted 5.5, 5.5, 4.9, 0.55, 0.55, 2.1, 10.6, 2.4, 6.8 (microS per percent of rms error; mean-normalised)",
+ "training": "the 6326 shots outside both evaluation cohorts (D38 eligible rows; 1 404 214 frames); crops of 256 consecutive frames (whole shot when shorter, padded and masked), 8 shots per step chosen in proportion to length, 60 epochs x 685 steps, one-cycle Adam at .002, weight decay 1e-5, gradient limit 1; both arms take the same crops for the same seed; seeds 800-807 (8 per arm); local ROCm cards",
+ "quality_rule": "final-10 mean training loss <= 1.25 x lowest contiguous 10-mean and finite, per member; all 8 of an arm or none; no refit, no seed replaced",
+ "measure": "head_report.py on all 358 development shots (120 exposed many times, 238 used by D43, D51, D52 and the second agent's readout study): each arm's 8-member mean, whole shot in one pass, blended .5 with the deployed heads; predicted score change of the blend P = 11.0 pct(axis) + 10.6 pct(li) + 4.9 pct(kappa) + 2.1 pct(volume) + 1.1 pct(tri) + 75000 x (dR2 q95 + dR2 betaN) microS; paired bootstrap over whole shots, 10000 resamples, seed 5701",
+ "rule": "PASS if P(temporal) - P(control) >= 30 microS with a positive share of resamples >= .95 and P(temporal) > 0 (the temporal blend must also be better than the deployed heads). PASS -> stage 1 is written and frozen (all-data refits, nested blend weight, finisher, the 357, public submission, package). FAIL -> whole-shot context adds nothing to these heads in this form; closed, no second architecture is tried on this cohort.",
+ "exposure": "Mechanics only before the freeze: seed 9001, 40 and 400 optimisation steps of each arm; mean training losses printed (7.06/6.88 at 40 steps, 3.29/2.96 at 400). No evaluation shot was read. No architecture or setting was changed after those numbers.",
+ "cost": "about half an hour per fit on one card; two processes (one per arm) because of host memory",
+ "rule_3": "DIII-D only.",
+ "publication": false,
+ "sha256": {
+  "temporal_model.py": "29414c8a8418d19daba17a8655c84681e8c2d55a9a67c827a04443319f0cb52c",
+  "train_temporal.py": "dd2d418c37a48d792d389175e1ed568e38f4117a65d09fb7857d207c5c2c6c4b",
+  "head_report.py": "a718c27f02235d90c3c404cdfe2b5957805cbd72d47feb6a7d17375410242cf8"
+ }
+}

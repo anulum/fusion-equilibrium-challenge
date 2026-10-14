@@ -1,0 +1,6 @@
+{
+  "returncode": 3,
+  "stdout": "delivery unknown: no matching receipt from hub for a terminal-pane-rx; client_msg_id=cli-dd02f7d743e14f9ab371aa296f552a6c. Check the hub journal before retrying.\n",
+  "stderr": "",
+  "sender": "the second agent-tx-1791708290"
+}

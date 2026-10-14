@@ -1,0 +1,27 @@
+{
+  "id": "D38-D39-joint-finalist-selection-v1",
+  "frozen_UTC": "2026-10-11T083412Z",
+  "entrant_scope": "Entrant explicitly requests the second agent/returned the first agent joint analysis and finite experiments through results. No publication.",
+  "frozen_before_D38_aggregate_analysis": true,
+  "D38_original_scientific_protocol_unchanged": true,
+  "D39_protocol_snapshot_sha256": {
+    "d39_variants.json": "f1e528376ed16740da0fefd06c28d7368368698cb5cc7a8c34f28b96bd7d1a1d",
+    "d39_amendment_1.json": "0a890b193ad08a42fc9a1f36cdcc1910ad96cf9d696712b192254b63738d55f7",
+    "SHA256SUMS_round1": "524c27ea8e87edf6778552c00e0d1040cb2cb8ec16cf797ba2efb281b92fcd32",
+    "d39_common.py": "0f2e7dbe2d2237a3fcc7d7407de7e598c823fa61b888cb0bb6a5bb82bfc118f6",
+    "d39_eval.py": "29a3be36ebc6ee695974950a0ccb61a18fa4c76832dbd8d25215fe8c60723b51",
+    "d39_report.py": "09ade67951d36753aee2233f81b1e5ac398b49a1b89920732c36d1f4b067f3fd"
+  },
+  "D39_scope": "All26 frozen one-at-a-time variants on exact120 screening shots; read/choose only after the complete planned screening matrix. Freeze one deterministic combined finisher with explicit mutually exclusive knob-group/tie resolution, then evaluate once on untouched238 development-validation shots, retain all358 as partly-selected descriptive performance.",
+  "D38_finalist": "Original frozen highest-unrounded-full358-S gate passer among the six non-baseline arms; original paired99percent/deltaS>=3e-5/no-increased-LCFS-failure/all-finite gate unchanged.",
+  "D39_finalist": "One frozen combined finisher passing its amendment1 prospective238-shot gate: deltaS>=3e-5, paired whole-shot99percent lower>0, no additional LCFS failures and all finite. Full358 score is partly selected and cannot be called independent generalization.",
+  "conditional_composition": "If both independent development-study gates pass, define exactly one additional candidate BEFORE their aggregate results: apply the locked D39 finisher/tree-blend scale to the locked D38 finalist, retaining its fixed25percent raw map/geometry or scalar contribution and spatial decoder when present. No new weight or parameter tuning. A scalar-only D38 finalist supplies its scalar output beside the D39 maps. Freeze actual concrete flags/model hashes once both finalists exist, before scoring this composition.",
+  "central_verification": "All finalists use the same full69 baseline, original held358 cases, native finisher/scorer and reference statistics. Verify source/cache/export hashes, same-host native/fork baseline parity and whole-shot finite float32 predictions. Quantify cross-host drift rather than relaxing previous archive gates; re-evaluate a D39 finalist and any composition centrally before final selection.",
+  "central_composition_gate": "Full358 deltaS>=3e-5 and paired whole-shot99percent lower>0, no increased contour failures and all finite, bootstrap10000 seed3941. This cohort selection is not independent confirmation. Use complete358 for every central arm before comparison.",
+  "joint_selection": "Choose highest unrounded same-path full358 composite S among eligible D38 finalist, eligible centrally-verified D39 finalist and eligible conditional composition. Exact ties prefer D38, then D39, then composition. If neither development study passes, no reserved scoring. No recombination, retuning or extra candidates after central scores.",
+  "bootstrap_interpretation": "Intervals are per contrast, not familywise. Recompute pooled truth denominators for every selected subgroup and bootstrap sample; LCFS remains equal-shot mean.",
+  "reserved_confirmation": "Keep original357/76251 targets closed until one joint candidate is concretely locked. Refit shared eligible four tree heads on5954training/cal372 stopping, excluding357. Compare baseline and sole locked candidate on all357 with original prospective deltaS>=3e-5/99percent-lower>0/no-additional-fail/all-finite gate,10000 whole-shot replicates seed3802. No adaptation or second candidate after those results.",
+  "D37_role": "Complete original all358/all14 in-sample diagnostic separately; oracle maps never deployable inputs or admission evidence.",
+  "publication": false,
+  "peer_acknowledgment_pending": true
+}

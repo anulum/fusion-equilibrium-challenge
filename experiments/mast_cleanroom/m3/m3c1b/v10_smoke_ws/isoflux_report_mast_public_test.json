@@ -1,0 +1,31 @@
+{
+  "split": "mast_public_test",
+  "shots": 2,
+  "frames": 104,
+  "solved_frames": 88,
+  "q95_read_frames": 88,
+  "beta_n_read_frames": 88,
+  "shots_without_a_solved_frame": 0,
+  "shots_without_a_read_q95": 0,
+  "shots_without_a_read_beta_n": 0,
+  "scalar_fallback": {
+    "q95": 5.585859120711676,
+    "beta_n": 2.1472536106701057
+  },
+  "non_finite_values_written_as_zero": 0,
+  "seconds": 91,
+  "per_shot": [
+    [
+      53,
+      52,
+      52,
+      52
+    ],
+    [
+      51,
+      36,
+      36,
+      36
+    ]
+  ]
+}

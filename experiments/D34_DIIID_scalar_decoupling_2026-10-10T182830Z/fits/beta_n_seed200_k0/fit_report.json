@@ -1,0 +1,31 @@
+{
+  "name": "beta_n_seed200_k0",
+  "status": "fixed_final_epoch_fit_complete",
+  "training_frames": 1127530,
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 200,
+    "threads": 12
+  },
+  "epochs_completed": 60,
+  "resumed_from_epoch": 0,
+  "network_sha256": "a2db1d8a6814d54aaaadc5535a21bf34ab095c2f30970b67ed23cd3c92b2ed4f",
+  "seconds_this_attempt": 95.00376191991381,
+  "validation_metrics_computed": false,
+  "targets": [
+    "beta_n"
+  ]
+}

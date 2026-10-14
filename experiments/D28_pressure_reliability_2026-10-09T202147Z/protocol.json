@@ -1,0 +1,26 @@
+{
+  "id": "D28-pressure-reliability",
+  "status": "frozen_before_guarded_comparison",
+  "predecessor": "D27 completed; all five hypotheses no admission",
+  "hypotheses": [
+    "physical betaN with fixed2.25 and input reliability fallback",
+    "physical betaN with D27 adaptive factors and input reliability fallback",
+    "physical betaN with five pressure factors refitted only on reliable DIII-D teacher rows and input reliability fallback"
+  ],
+  "baseline": "D26 p45 maps/q95/learned betaN; identical full400shots/89584frames to D27",
+  "guards": {
+    "current": "abs(corrected Ip)>=discharge.RUNNING_SHARE(.05)*whole-input-record99.5percentilepeak; targettime within corrected current5%start/end; no new clock shift",
+    "toroidal": "finite/nonzeroTFcurrent",
+    "Thomson": "atleast5pairedpositivefiniteTe/ne channels. Every core/edge family contributing any paired channel must have target inside its acquisition times and nearest pulse distance<=2*median positive pulse interval. Empty/unused family contributes zero. Actual nearest-sample convention reused.",
+    "physics": "existing map-based electron beta finitepositive; otherwise same learned betaN fallback. No guard uses truth labels or errors."
+  },
+  "clock_audit": "Every DIII-D input clock compared bit-for-bit to pinned official fix_d3d_ip_times; no modifications allowed if parity passes. MAST core first ghost channel handling audited. No MAST labels/envelope access.",
+  "factor_fit": "Five original hashfolds; original training minusheldfold/reserved plus originalcalibrationminusreserved. Same8inputfeatures, originalfold input standardization, ridge.01/equalshotweights/interceptunpenalized/logratio/factor[.5,8]; exclude unreliableteacherrows usinginputs only. No additional hyperparameter search.",
+  "evaluation": "All fits/400predictions/MASTinputcensus finish before processing comparative metrics. Maps/q95 unchanged so reuse checked scorer sufficientstatistics for those terms; beta residual replaced exactly. Validate against full original score_shot on deterministic public firstcase plus worst-current case227 before trusting shortcut. Fullpopulation retained.",
+  "gate": "All three hypotheses vs learnedbaseline; pairedshotbootstrap2000seed991, P>=.99, deltaS>=3e-5/noLCFSfailincrease. rawR2_beta reported even if compositeclips. A positive exploratory result requires fresh reserved confirmation; dataset reused/disclose.",
+  "artifacts": "Compact scalar archives keyed all400indices, lineage to unchanged p45 map/q95 archive. Not a public submission. MAST artifacts input audit only; no MAST scalar publication based on D3 success alone.",
+  "resources": "Samsung source/output/tmp/cache. CPU3workers/budget5GiB/noSwap/36h. No GPU fits required for ridgecalibration; ROCm remains available for subsequent model work. Autonomous stages with per-shot checkpoint receipts, bounded one restart only after progress, samefailure twice stops; terminalreceipt guaranteed for normal exception/time limit viacontroller.",
+  "official_fix_url": "https://raw.githubusercontent.com/Sophelio/fusion-equilibrium-challenge-starter/main/data_fixes.py",
+  "official_fix_sha256": "0bbee11cc167d932012489a1af079c628dda26be33907f8f2bbc3551446b9c15",
+  "comparative_metrics_processed": false
+}

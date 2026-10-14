@@ -1,0 +1,27 @@
+{
+  "status": "post_smoothing_X_factorial_native_noop_and_real_fork_bitexact",
+  "prediction_hashes": {
+    "baseline": {
+      "psirz": "d97083ca712958bf6aa5f1584309300f53e4410ba5997b44e1a330970fedec0e",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "positions_only": {
+      "psirz": "ee73dae9d399eea9d896c0aed2af51b198087e45837d66445fe82179efe1f982",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "validity_only": {
+      "psirz": "d97083ca712958bf6aa5f1584309300f53e4410ba5997b44e1a330970fedec0e",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    },
+    "positions_and_validity": {
+      "psirz": "ee73dae9d399eea9d896c0aed2af51b198087e45837d66445fe82179efe1f982",
+      "q95": "79f5f7bb99d06cc7b216fd5314c6a9986b48ce6fe683f6cb45a80ceae6d929cb",
+      "betaN": "cc88cb393d10aa1585942085d48051c954ab8f3b7898d6f3509195fddd4cc08a"
+    }
+  },
+  "protocol_sha256": "3e8797cfa6ff96e093fc33839874025d99ab7dda13f33a0eaaa0fce3bd8e0d05",
+  "no357_targets_read": true
+}

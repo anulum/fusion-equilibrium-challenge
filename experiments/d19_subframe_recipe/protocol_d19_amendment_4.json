@@ -1,0 +1,15 @@
+{
+ "amends": "protocol_d19_v29.json (161bc746…) and amendments 1-3",
+ "utc": "2026-10-07T07:20:21Z",
+ "results_known_at_this_freeze": {
+  "H0 (#965153, 32 networks hx 33+ and hc)": 0.996223,
+  "H1a (#966320, 48 = H0 + h 16-22, 24-29 + hx 30-32)": 0.996192,
+  "H2a (#966327, H1a + D9 tree heads at G1 weights)": 0.996222
+ },
+ "reading": "Adding the 16 h/hx members to H0 lowered the public score by 3.1e-5 (flux .999881 -> .999875, D_LCFS .008481 -> .008561, Consistency .987429 -> .987325). The tree blend on the same 48 networks raised it by 3.0e-5 (Consistency .987325 -> .987463, D_LCFS .008561 -> .008538), the size seen for G1 on the 195 networks (+3.5e-5). By amendment 3 neither is deployed (H2a is 1e-6 below H0) and the blend's sign is positive.",
+ "added_candidate": "H0t = H0's 32 networks (networks_v29_h0.sha, unchanged) with the D9 tree heads (67fd2caa…) at the G1 weights li_scored .26, r_axis .14, kappa .09, x_lower_r .16; deployed finisher; sub-frame features. One Development submission with MAST v11.",
+ "disclosure": "This candidate is chosen after seeing three public scores: the member set is the one that scored best in public, and the blend is the one whose public sign was positive. It is a selection on the public test (874 shots) and is reported as such; the blend's weights and the networks are not tuned on it. The expected gain (+3e-5) is of the order of what a selection among four candidates can produce by chance, so the Final-phase claim rests on the out-of-fold evidence (D9-0, D18-0), not on this score.",
+ "rule": "Deploy H0t if its public d3d_S >= .996233 (H0 + 1e-5); otherwise the display is restored with the H0 pointer. H1 (64 members) is scored when its build ends and enters the same comparison: the display ends on the best of {H0, H1, H0t} that exceeds H0 by 1e-5, else H0.",
+ "follow_up_not_part_of_this_rule": "Why the h family lowers the score is examined off the public test: per-family ensembles of the K-fold networks on the out-of-fold frames (flux coordinates and heads). A family subset is adopted for the final recipe only on that evidence.",
+ "exposure": "No H0t build exists at this freeze; H1 not scored."
+}

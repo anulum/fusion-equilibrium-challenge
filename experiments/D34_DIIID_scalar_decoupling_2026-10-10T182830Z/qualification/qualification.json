@@ -1,0 +1,127 @@
+{
+  "status": "full_real_scalar_ROCm_path_qualified",
+  "training_rows": 1127530,
+  "results": [
+    {
+      "arm": "joint",
+      "names": [
+        "q95",
+        "beta_n"
+      ],
+      "CPU_GPU_double_max_abs": 7.105427357601002e-15,
+      "checkpoint_exact": true,
+      "fit": {
+        "name": "qualification_joint",
+        "status": "fixed_final_epoch_fit_complete",
+        "training_frames": 1127530,
+        "settings": {
+          "coordinates": 0,
+          "width": 512,
+          "depth": 4,
+          "epochs": 1,
+          "batch": 4096,
+          "learning_rate": 0.002,
+          "weight_decay": 1e-05,
+          "label_weight": 0.05,
+          "label_weights": [],
+          "fine_emphasis": 0.0,
+          "dropout": 0.0,
+          "gradient_limit": 1.0,
+          "edge_emphasis": 0.0,
+          "shot_balance": 0.0,
+          "seed": 200,
+          "threads": 12
+        },
+        "epochs_completed": 1,
+        "resumed_from_epoch": 0,
+        "network_sha256": "4dbce55535f8377569b61822d7323bd36c04907a7b66b9120722803c230ce137",
+        "seconds_this_attempt": 71.72880717902444,
+        "validation_metrics_computed": false,
+        "targets": [
+          "q95",
+          "beta_n"
+        ]
+      }
+    },
+    {
+      "arm": "q95",
+      "names": [
+        "q95"
+      ],
+      "CPU_GPU_double_max_abs": 3.552713678800501e-15,
+      "checkpoint_exact": true,
+      "fit": {
+        "name": "qualification_q95",
+        "status": "fixed_final_epoch_fit_complete",
+        "training_frames": 1127530,
+        "settings": {
+          "coordinates": 0,
+          "width": 512,
+          "depth": 4,
+          "epochs": 1,
+          "batch": 4096,
+          "learning_rate": 0.002,
+          "weight_decay": 1e-05,
+          "label_weight": 0.05,
+          "label_weights": [],
+          "fine_emphasis": 0.0,
+          "dropout": 0.0,
+          "gradient_limit": 1.0,
+          "edge_emphasis": 0.0,
+          "shot_balance": 0.0,
+          "seed": 200,
+          "threads": 12
+        },
+        "epochs_completed": 1,
+        "resumed_from_epoch": 0,
+        "network_sha256": "ae56c9af140319cce64438cfb353c9406633c33a46f145cb341405edaecd109b",
+        "seconds_this_attempt": 25.1345947640948,
+        "validation_metrics_computed": false,
+        "targets": [
+          "q95"
+        ]
+      }
+    },
+    {
+      "arm": "beta_n",
+      "names": [
+        "beta_n"
+      ],
+      "CPU_GPU_double_max_abs": 8.881784197001252e-16,
+      "checkpoint_exact": true,
+      "fit": {
+        "name": "qualification_beta_n",
+        "status": "fixed_final_epoch_fit_complete",
+        "training_frames": 1127530,
+        "settings": {
+          "coordinates": 0,
+          "width": 512,
+          "depth": 4,
+          "epochs": 1,
+          "batch": 4096,
+          "learning_rate": 0.002,
+          "weight_decay": 1e-05,
+          "label_weight": 0.05,
+          "label_weights": [],
+          "fine_emphasis": 0.0,
+          "dropout": 0.0,
+          "gradient_limit": 1.0,
+          "edge_emphasis": 0.0,
+          "shot_balance": 0.0,
+          "seed": 200,
+          "threads": 12
+        },
+        "epochs_completed": 1,
+        "resumed_from_epoch": 0,
+        "network_sha256": "aa027ffd0e02a83abf8362253fc0b0fdb3e312e845d8f2e338a8331c460eb45e",
+        "seconds_this_attempt": 2.64821791194845,
+        "validation_metrics_computed": false,
+        "targets": [
+          "beta_n"
+        ]
+      }
+    }
+  ],
+  "campaign_candidate": false,
+  "comparative_metrics_processed": false
+}

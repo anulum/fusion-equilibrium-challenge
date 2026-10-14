@@ -1,0 +1,11 @@
+{
+ "shots": 41,
+ "frames_edited": 1686,
+ "lost_contour": 1,
+ "sides": 2225,
+ "A1_share_within_1cm": 0.9793258426966293,
+ "A3_median_abs_s_minus_1": 0.0663623815931953,
+ "p90_abs_s_minus_1": 0.19298128112689056,
+ "A2_share_contour_kept": 0.9994068801897983,
+ "accepted": true
+}

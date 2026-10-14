@@ -1,0 +1,16 @@
+{
+ "id": "D52: one third per network family (hx, hc, joint) in the submitted q95 and betaN",
+ "frozen_utc": "2026-10-13T08:58:09Z",
+ "author": "first_agent",
+ "background": "Deployed: .75 x equal mean of the 69 map networks (21 hx, 48 hc) + .25 x mean of the 8 joint networks. D49b (member report, 358 shots): the three families reach nearly the same accuracy alone (q95 hx .998331, hc .998219, joint .998227; betaN .995335, .995172, .995672), each is close to its own infinite-member limit, and a member-count mean gives the 48 hc networks 52 % of the answer and the 8 joint networks 25 %.",
+ "hypothesis": "When families are equally accurate and each is saturated in its own members, the weight should go by family, not by member count: one third each. No number is fitted.",
+ "exposure": "Seen before this freeze on the same 358 shots: each family's R2 alone, the joint-share grid of D49 and the nested weights of D51 (failed its 99 % bound). The hx/hc/joint error correlations and any three-way blend were not computed. The cohort is reused (120 many times, 238 once by D43); there is no untouched cohort.",
+ "measure": "equal_family.py on family means from family_means.py (which must reproduce the cached map and joint means to 1e-9); dS = 0.15 x mean dR2 with maps unchanged; paired bootstrap over whole shots, 10000 resamples, seed 5201.",
+ "rule": "PASS if dS >= +1e-5, the 99 % lower bound is above zero and dS is positive in both cohort parts. PASS -> the submitted scalars become the family-third mean of the all-data networks; maps, finisher, MAST unchanged; public submission named as a candidate from a reused cohort. FAIL -> deployed weights stay; no other weighting is tried on this cohort.",
+ "rule_3": "DIII-D only.",
+ "sha256": {
+  "family_means.py": "52279c9f0713b3e87749b8ad227aaefaef271f0f42a9bb52a8284a5e87301719",
+  "equal_family.py": "b0f71a3e5d47da7f606e8e4baee6c8dea8af60fdba37e3dbef74ddddba3ab70e",
+  "d39_common.py": "0f2e7dbe2d2237a3fcc7d7407de7e598c823fa61b888cb0bb6a5bb82bfc118f6"
+ }
+}

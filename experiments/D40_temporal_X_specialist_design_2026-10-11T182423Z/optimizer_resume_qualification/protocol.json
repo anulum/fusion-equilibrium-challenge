@@ -1,0 +1,21 @@
+{
+  "status": "frozen_before_GPU_optimizer_updates",
+  "static_input": "$FEC_RUNS/ml350/runs/d39_finisher_20261011/cache/d3d_shot_0093deb434.npz",
+  "temporal_input": "$FEC_EXPERIMENTS/D38_DIIID_boundary_spatial_temporal_2026-10-11T001358Z/temporal/development/d3d_shot_0093deb434.npy",
+  "real_input_frames": 213,
+  "repeated_input_rows": 4096,
+  "synthetic_target_seed": 4005,
+  "epoch_reference_steps": 3,
+  "saved_prefix_epochs": 1,
+  "epochs_optimized_per_path": 3,
+  "batch2048": true,
+  "paired_order_rng": "jax.random.fold_in(jax.random.key(seed),700);split_each_epoch",
+  "permuted_training_remainder": "floor(rows/batch)whole_batches, per_epoch_random_remainder_not_chosen_by_targets",
+  "optimizer_schedule": "frozen60epoch_schedule_even_for3epochqualification",
+  "no_true_labels_or24_candidate_fits": true,
+  "portable_updated_weight_tolerance": {
+    "atol": 1e-10,
+    "rtol": 1e-10
+  },
+  "actual_process_resume_after_reference_process_exits": true
+}

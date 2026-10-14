@@ -1,0 +1,8 @@
+{
+  "status": "frozen_before_initialization",
+  "recipe_sha256": "739796c9e4d507f4473d62e97c19002413928a59a5e8d8d30f214c62e6a6b50f",
+  "model_sha256": "8e8a1c1fbd48169c3c8a32590567bafb5996f210cfb2734505ecff18ad237bc3",
+  "initializer_source_sha256": "72af290319723ba1c5038b8a37d1264c9650cd35dff2843d9dc24bbbf4ffb5f5",
+  "sameCPUarrays_per_seed_for_everyfamily": true,
+  "no_training": true
+}

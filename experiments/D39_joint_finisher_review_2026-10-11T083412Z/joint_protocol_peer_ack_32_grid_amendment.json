@@ -1,0 +1,18 @@
+{
+  "id": "joint-protocol-peer-ack-and-screening-grid-amendment",
+  "UTC": "2026-10-11T09:04:32.312764+00:00",
+  "root_original_protocol_sha256": "e5a79f0310fd2ca42135e9373d241db122b1419b66a7a3f66b8924ce207a91d6",
+  "peer_ack_seq": 138425,
+  "peer_review_seq": 138543,
+  "joint_protocol_accepted": true,
+  "D39_screen_grid_32_variants_by120": true,
+  "original26_plus_cubic_and_two_composites_and_three_oracle_map_diagnostics": true,
+  "composites_and_oracles_not_selectable": true,
+  "D39_selector_11_groups_one_combination_238_gate_unchanged": true,
+  "no_D39_variant_aggregate_seen_before_selector_and_grid_amendment": true,
+  "single357_and_no_publication_unchanged": true,
+  "peer_report_v3_sha256": "f244e1eb55b6b4687a5dea88bb4a318fc34a9b98a1e283a1a603f8bd80ddbcdd",
+  "peer_amendment5_sha256": "70e40356fcdb8be3adebb73a05c3f251614c6041b278973114505e6a571c2669",
+  "central_cross_host_all358_exact_guard_and_numeric_drift_receipt_added_before_activation": true,
+  "D38_D39_selection_asymmetry_and_tree_scale_transfer_disclosed": true
+}

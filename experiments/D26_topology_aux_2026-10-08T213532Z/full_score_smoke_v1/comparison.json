@@ -1,0 +1,154 @@
+{
+  "status": "smoke_complete",
+  "shots": 1,
+  "results": {
+    "p45": {
+      "S": 0.974938,
+      "r2_psi": 0.999415,
+      "r2_qb": 0.994571,
+      "dlcfs": 0.017591,
+      "consistency": 0.889165,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999415,
+      "r2_psi_per_shot_mean": 0.999415,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 1,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.994374,
+        "betaN": 0.994768
+      },
+      "r2_cons_each": {
+        "R_axis": 0.948395,
+        "Z_axis": 0.869011,
+        "kappa": 0.840334,
+        "tri_top": 0.92661,
+        "tri_bot": 0.814111,
+        "volume": 0.968381,
+        "li": 0.857313
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      },
+      "S_unrounded": 0.9749378289801733
+    },
+    "s45": {
+      "S": 0.975048,
+      "r2_psi": 0.999396,
+      "r2_qb": 0.995218,
+      "dlcfs": 0.017521,
+      "consistency": 0.889248,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999396,
+      "r2_psi_per_shot_mean": 0.999396,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 1,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.995547,
+        "betaN": 0.994889
+      },
+      "r2_cons_each": {
+        "R_axis": 0.950895,
+        "Z_axis": 0.861499,
+        "kappa": 0.845044,
+        "tri_top": 0.923509,
+        "tri_bot": 0.818674,
+        "volume": 0.96772,
+        "li": 0.857395
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      },
+      "S_unrounded": 0.9750478504924109
+    },
+    "p64": {
+      "S": 0.975726,
+      "r2_psi": 0.999347,
+      "r2_qb": 0.994571,
+      "dlcfs": 0.017768,
+      "consistency": 0.893381,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999347,
+      "r2_psi_per_shot_mean": 0.999347,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 1,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.994374,
+        "betaN": 0.994768
+      },
+      "r2_cons_each": {
+        "R_axis": 0.948648,
+        "Z_axis": 0.868477,
+        "kappa": 0.85047,
+        "tri_top": 0.92957,
+        "tri_bot": 0.828084,
+        "volume": 0.967925,
+        "li": 0.860493
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      },
+      "S_unrounded": 0.975726082053582
+    }
+  },
+  "comparisons": {
+    "s45": {
+      "delta_S": 0.00011002151223760137,
+      "ci95": [
+        0.00011002151223760137,
+        0.00011002151223760137
+      ],
+      "P_positive": 1.0,
+      "no_increased_lcfs_failures": true,
+      "admission_passes": false
+    },
+    "p64": {
+      "delta_S": 0.0007882530734086846,
+      "ci95": [
+        0.0007882530734086846,
+        0.0007882530734086846
+      ],
+      "P_positive": 1.0,
+      "no_increased_lcfs_failures": true,
+      "admission_passes": false
+    }
+  },
+  "seconds": 308.49704122543335,
+  "public_candidate_built": false,
+  "public_upload_or_submission": false
+}

@@ -1,0 +1,37 @@
+{
+  "target": "x_lower_r",
+  "status": "eligible_tree_complete",
+  "best_iteration": 1,
+  "fit_frames": 2048,
+  "calibration_stop_frames": 2048,
+  "finite_fit_targets": 1043,
+  "calibration_rmse": 0.04620502249517231,
+  "model_sha256": "9b868d090b5f085d8f2abb90274dbefa8c110e6ef8e520fec2fe4e19a756b1b6",
+  "params": {
+    "tree_method": "hist",
+    "objective": "reg:squarederror",
+    "eval_metric": "rmse",
+    "max_depth": 8,
+    "subsample": 0.8,
+    "colsample_bytree": 0.5,
+    "min_child_weight": 20,
+    "lambda": 1.0,
+    "max_bin": 256,
+    "seed": 9,
+    "nthread": 4,
+    "device": "cpu",
+    "eta": 0.05,
+    "base_score": 1.3180948495864868
+  },
+  "settings": {
+    "eta": 0.05,
+    "rounds": 3000,
+    "patience": 100
+  },
+  "seconds": 0.39045690605416894,
+  "export_reload_predictions_bitexact": true,
+  "both358_development_and357_confirmation_excluded": true,
+  "lookup_sha256": "13c1234db0ffde410d6aa3e60132651f6ba181f2d794bf0f0d472ab483eec3be",
+  "base_score": 1.3180948495864868,
+  "tree_count": 2
+}

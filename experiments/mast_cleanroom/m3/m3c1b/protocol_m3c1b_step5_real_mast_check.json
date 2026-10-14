@@ -1,0 +1,10 @@
+{"id": "M3c-1b step 5", "name": "real_mast_label_free_check_of_P45_s0.03", "status": "frozen_before_any_step5_run", "frozen_utc": "2026-10-01T02:41:04Z",
+ "author": "first_agent", "evidence": "ledger 5.25: confirmed on 142 fresh synthetic frames.",
+ "rule_3": "real MAST inputs and our own maps only; no MAST equilibrium field, demo shot or leaderboard number.",
+ "arms": "v7 (v8/entrypoints_v7_copy) vs the confirmed arm (entrypoints_v7_coilfree, P4 pair + P5 pair, FREE_SCALE 0.03, FREE_FLOOR_SHARE 0.1, FREE_BOUND 0.10). The module gained a bookkeeping field Solved.shifts (flux unchanged).",
+ "data": "the 41 pilot shots (0, 30, ..., 1200), all live frames, thomson_isoflux.reconstruct per shot.",
+ "metrics": "per frame solved by both: M2 current closure |sum(J dA)/Ip - 1| and current-outside-LCFS share (m2_physical_consistency.measures); equal-Te pair gaps at shares .85/.5/.25/.10/.05 (pilot_m3b reading); fitted coil changes relative to |I_P4+P5|; solved share over live frames.",
+ "guards": {"G1": "solved share >= v7 - 0.05", "G2": "median closure error <= v7 + 0.01", "G3": "median outside share <= v7 + 0.01",
+  "G4": "median max-circuit change <= 0.05 of |I_P4+P5| and share of frames at the 10 % bound <= 0.20", "G5": "median Te-5 % pair gap <= v7 + 0.01"},
+ "decision_rule": "all guards pass -> the arm is recommended to the entrant as MAST v10 (full 1206-shot build, format QA); whether to submit is the entrant's decision and the MAST leaderboard score stays observed only. Any guard fails -> recorded, not recommended.",
+ "resources": "CPU WS, Pool(4), ~30-60 min."}

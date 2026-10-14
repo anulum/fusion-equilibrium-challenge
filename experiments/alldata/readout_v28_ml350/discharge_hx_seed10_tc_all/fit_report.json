@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed10_tc",
+ "recipe_index": 40,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1559338,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.001071797035629864
+   ],
+   "residual_MSE_before": [
+    0.00011827636853468453
+   ],
+   "normal_equation_gradient_max_abs": 5.759559343533225e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1559340,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003668217413769101,
+    0.0008218442312218329,
+    0.0001855712311330075
+   ],
+   "residual_MSE_before": [
+    0.00021489897106122884,
+    0.00021380627162823112,
+    0.005404480344002932
+   ],
+   "normal_equation_gradient_max_abs": 1.7131770753810258e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1559160,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00011816595035897856
+   ],
+   "residual_MSE_before": [
+    0.00034494100348696655
+   ],
+   "normal_equation_gradient_max_abs": 6.164282273643171e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1051847,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.000171591121187723,
+    -0.0006703185502676178
+   ],
+   "residual_MSE_before": [
+    1.5049588945704335e-05,
+    2.4293456355336996e-05
+   ],
+   "normal_equation_gradient_max_abs": 6.107107549703505e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 664229,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018188152979797814,
+    0.00046269758837191145
+   ],
+   "residual_MSE_before": [
+    1.4259868507221443e-05,
+    3.836749352998801e-05
+   ],
+   "normal_equation_gradient_max_abs": 7.326107074810651e-19
+  }
+ ],
+ "initial_sha256": "32d94a612f60f31521c3da523e1a9496e57a14f35b88a2fb4ea5e6a2c3c93ab7",
+ "network_sha256": "37969e264f1302c7691943673ec90845f681273feefc3856ae02dbf732948a25",
+ "seconds": 696.5521547794342
+}

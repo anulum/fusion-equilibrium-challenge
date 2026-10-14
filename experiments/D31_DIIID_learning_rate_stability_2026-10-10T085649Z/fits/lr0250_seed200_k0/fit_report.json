@@ -1,0 +1,28 @@
+{
+  "name": "lr0250_seed200_k0",
+  "status": "fixed_final_epoch_fit_complete",
+  "training_frames": 1127530,
+  "settings": {
+    "coordinates": 64,
+    "width": 1024,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.00025,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 200,
+    "threads": 12
+  },
+  "epochs_completed": 60,
+  "resumed_from_epoch": 0,
+  "network_sha256": "90e41670dd77288132c3e1a33510728550bf3a35a9531ffd0e3b67a935ef3460",
+  "seconds_this_attempt": 287.9206652549328,
+  "validation_metrics_computed": false
+}

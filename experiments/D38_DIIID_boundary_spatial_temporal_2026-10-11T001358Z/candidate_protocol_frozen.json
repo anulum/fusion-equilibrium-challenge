@@ -1,0 +1,92 @@
+{
+  "id": "D38-new-hypotheses-frozen-before-candidate-fits",
+  "UTC": "2026-10-11T00:50:06.956647+00:00",
+  "candidate_fits_started": false,
+  "development": 358,
+  "confirmation_reserved_before_fits": 357,
+  "eligible_training_plus_calibration": 6326,
+  "all_models_fixed_final_epoch": 60,
+  "map_seeds": [
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407
+  ],
+  "map_settings": {
+    "features": 582,
+    "coordinates": 64,
+    "label_names": "existing78",
+    "width": 512,
+    "depth": 4,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "gradient_limit": 1.0,
+    "dropout": 0.0
+  },
+  "map_families": {
+    "control": "unmodified coordinate+label objective, newpaired8; computeandinitmatchedtoframe/shot arms",
+    "boundary_frame": "globalcoordinate/labelanchor +0.2*4225*valid-near-boundary/X-ray flux-difference error relative to axis; rowweights normalizevalidframes equally",
+    "boundary_shot": "identicalframeobjective, onlyrayterm rowweights changed to equalmean overvalidshots andvalidframeswithinshot",
+    "spatial": "boundary_shot pluslearned16x65x65 residualdictionary; globalpixelanchor0.2againstPCA128teacher; sameold64coordinate+labelanchor; residualdictionarymaskedtoDIII-Denvelope+1cell androw-normalized; lowoutputinitiallyzero; nativefine-timesmoothingbeforecurrentfinisher"
+  },
+  "ray_positions": "32angles from64nativeGTcontourradii aroundEFITlabelaxis; plus5positionsaroundeachnativeGTlower/upperX; plusaxis. Training-onlytargets. Approximateboundary/Xsurrogate, not exact officialloss; teacherfluxPCA128projectiondeclared. Missing/outsidegridpositionsmaskedonlyinrayterm; wholeframesretainedglobal/evaluation.",
+  "ray_normalization": "meanvalidpoint_squared_flux-error_difference_from_axis normalizedbycurrentcommoncoordinatescale;4225factor; valid-row/frameweights sumtoeligibleN. Equal-shotcounts usevalid-rayframes per shot, not allT.",
+  "map_transfer": "primarysame69rawcoordinates/geometryheads baseline withprospective25percentcandidate8 mixing beforeidenticalfinisher; candidatepairedcontrol8 also tested forcausalobjectivecontrast; staticjoint8scalar75/25 fixed acrossmaparms",
+  "temporal_seeds": [
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407
+  ],
+  "temporal_families": [
+    "static_matched_conv_control",
+    "learned_conv_encoder"
+  ],
+  "temporal_settings": {
+    "static_features": 582,
+    "times": 41,
+    "channels": 21,
+    "window_ms": [
+      -10,
+      10
+    ],
+    "step_ms": 0.5,
+    "convolutions": 3,
+    "kernel_width": 5,
+    "dilations": [
+      1,
+      2,
+      4
+    ],
+    "hidden_channels": 32,
+    "pooling": "timeaverage32",
+    "dense_width": 512,
+    "dense_depth": 4,
+    "batch": 2048,
+    "epochs": 60,
+    "learning_rate": 0.002,
+    "gradient_limit": 1.0,
+    "label_weight": 0.05,
+    "weight_decay": 1e-05,
+    "dropout": 0.0
+  },
+  "temporal_input_source": "SHAexact existingD20rawinputcache; original40x21differences decodedchannelorder andinsertmathematicallyzero centreframe atindex20; no target resampling. Perchannelmean/std fromeligibletrain/cal only. NativecorrectedIpclock and2k/20ksamplers preservedbyoriginalextractor. Legacyimputation retained; current582staticfeatures provideavailablemissingness/context.",
+  "temporal_control": "samestaticfeatures/dense614inputs/initialweights/schedule/batch; temporalpool32setzero. Convolutionweightsinactive; pairedcomparisonseparateslearnedtimeinputfrombatch/architecture changes.",
+  "new_candidate_fits_total": 48,
+  "baseline_fits_total": 77,
+  "scientific_analysis_order": "allbaseline/candidatefits complete andallwhole-shotdevelopmentpredictions/scores complete beforecomparativewinnerselection",
+  "prospective_development_gate": "full69transfer deltaS>=3e-5, pairedshot99percentbootstraplowerbound>0, noincreasedLCFSfailure, allframesfinite; pairedmodelcontrol comparisondescriptive. Allbranchesreportedincludingnegative/inconclusive.",
+  "confirmation": "no winner finaladmission until separate357fit-disjoint comparison withproperlyrefiteligible4treeheads sharedbybotharms; oldtreesinvalidon357. Frozenwinnerconfig no posthocretuning afterconfirmation.",
+  "publication": false,
+  "MAST_work": false
+}

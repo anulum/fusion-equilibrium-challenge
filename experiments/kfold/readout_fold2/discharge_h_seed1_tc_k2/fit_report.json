@@ -1,0 +1,71 @@
+{
+ "member": "discharge_h_seed1_tc",
+ "fold": 2,
+ "geometry_labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "fold_training_shots_excluded": true,
+ "reserved_excluded": true,
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1133094,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010754652914748751
+   ],
+   "residual_MSE_before": [
+    0.00012365514384471882
+   ],
+   "normal_equation_gradient_max_abs": 8.744556389216583e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1133096,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.00039398029227244983,
+    0.0007989222551925822,
+    0.00038240856644435365
+   ],
+   "residual_MSE_before": [
+    0.00022445018272932604,
+    0.00022261312752946936,
+    0.00567483725526527
+   ],
+   "normal_equation_gradient_max_abs": 3.827609539744175e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1132977,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00013532463708124793
+   ],
+   "residual_MSE_before": [
+    0.00035197030905780485
+   ],
+   "normal_equation_gradient_max_abs": 8.877169985021085e-19
+  }
+ ],
+ "initial_sha256": "5eb721e167447e5ac5d86ccce8b0ebfcb871c66a887efe3dbfc0bf733e50ba82",
+ "network_sha256": "63c3c36ab966a3bc1c649963ddb95cdbe4bac37a0af171ac01e7bd314448fe89",
+ "seconds": 836.3890128135681
+}

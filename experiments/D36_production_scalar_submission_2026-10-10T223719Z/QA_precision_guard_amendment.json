@@ -1,0 +1,6 @@
+{
+  "reason": "Quantization is archive-level; legitimately allzero individualshots must not falselyfail unchangedMAST archive. Preserve strictdtype/fullfiniteness/officialvalidator and require nativeprecisioninarchive.",
+  "QA_not_started_yet": true,
+  "scientific_candidate_changed": false,
+  "sha256": "4b1e270e04c834ae8595dc728c5e53c4c248091c63dcfbc30180f3c3ed2cea17"
+}

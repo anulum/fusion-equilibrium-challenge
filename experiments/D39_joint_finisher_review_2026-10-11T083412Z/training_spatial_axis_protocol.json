@@ -1,0 +1,22 @@
+{
+  "UTC_seconds": 1791728703.3410065,
+  "peer_audit_seq": 141559,
+  "seeds": [
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407
+  ],
+  "sampling": "same5954 TRAIN-only midpoints as original anchor audit",
+  "intervention": "single spatial export decoded45+mean versus same45+mean+latent16@decoder; all5954 each8seed; native magnetic_axis grid/envelope/orientation",
+  "reports": "R/Z displacement RMSE and2Dmedian/p90/p95/p99/max; originalTRAINaxislabelerrors; counts1cm/5cm",
+  "scope": "raw single-model mechanistic diagnostic; not deployed H69 25percentblend; no finisher; no rho-band RMS claim",
+  "no_fit": true,
+  "no358_or357_labels": true,
+  "no_current_selection_change": true,
+  "publication": false
+}

@@ -1,0 +1,37 @@
+{
+  "target": "kappa",
+  "status": "eligible_tree_complete",
+  "best_iteration": 1,
+  "fit_frames": 2048,
+  "calibration_stop_frames": 2048,
+  "finite_fit_targets": 2048,
+  "calibration_rmse": 0.10009026099580631,
+  "model_sha256": "cc4d0c497a4b0482d7f78ee5258710c99c1a0158dfec70d2275915ea7da79215",
+  "params": {
+    "tree_method": "hist",
+    "objective": "reg:squarederror",
+    "eval_metric": "rmse",
+    "max_depth": 8,
+    "subsample": 0.8,
+    "colsample_bytree": 0.5,
+    "min_child_weight": 20,
+    "lambda": 1.0,
+    "max_bin": 256,
+    "seed": 9,
+    "nthread": 4,
+    "device": "cpu",
+    "eta": 0.1,
+    "base_score": 1.8184505701065063
+  },
+  "settings": {
+    "eta": 0.1,
+    "rounds": 6000,
+    "patience": 200
+  },
+  "seconds": 1.407909434987232,
+  "export_reload_predictions_bitexact": true,
+  "both358_development_and357_confirmation_excluded": true,
+  "lookup_sha256": "b0111fc70ebfd965b2ed62588b5c67ed94ab10a2e8f6cdaca27c72d198c1f16b",
+  "base_score": 1.8184505701065063,
+  "tree_count": 2
+}

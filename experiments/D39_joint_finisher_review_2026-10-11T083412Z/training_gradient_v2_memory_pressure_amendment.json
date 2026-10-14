@@ -1,0 +1,19 @@
+{
+  "UTC_seconds": 1791729974.0275297,
+  "reason": "compilation under4GiBsoft cap caused~one million reclaims and~41percent cgroupmemorypressure; GPU99percentbusy; no max/OOM",
+  "before": {
+    "memory.current": "4439011328\n",
+    "memory.events": "low 0\nhigh 1066739\nmax 0\noom 0\noom_kill 0\noom_group_kill 0\nsock_throttled 0\n",
+    "memory.pressure": "some avg10=40.12 avg60=41.31 avg300=35.35 total=234746727\nfull avg10=39.86 avg60=41.08 avg300=35.16 total=233420000\n",
+    "memory.high": "4294967296\n",
+    "memory.max": "5368709120\n"
+  },
+  "host_available_bytes": 6963224576,
+  "after": {
+    "memory.high": "5368709120\n",
+    "memory.max": "6442450944\n"
+  },
+  "original_launch_preserved": true,
+  "first_7GiB_headroom_probe_failed_before_mutation": "observed7389147136bytes; reviewed additional1GiBhard budget against>6GiBavailable and original6GiBlaunchheadroom requirement",
+  "scientific_sources_parameters_batch_cache_card_and_integrity_thresholds_unchanged": true
+}

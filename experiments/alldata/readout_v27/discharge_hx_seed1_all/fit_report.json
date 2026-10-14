@@ -1,0 +1,106 @@
+{
+ "member": "discharge_hx_seed1",
+ "recipe_index": 31,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1397667,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010846367143299129
+   ],
+   "residual_MSE_before": [
+    0.00011958678423760696
+   ],
+   "normal_equation_gradient_max_abs": 5.619534209440249e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1397668,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003578504778993934,
+    0.0008285328138385826,
+    0.00025616505587138845
+   ],
+   "residual_MSE_before": [
+    0.00021959198143782182,
+    0.00021728720950736223,
+    0.005414736686491366
+   ],
+   "normal_equation_gradient_max_abs": 1.5714578753935407e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1397512,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00010205204059906174
+   ],
+   "residual_MSE_before": [
+    0.00034981726671935536
+   ],
+   "normal_equation_gradient_max_abs": 6.120607137300371e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 942430,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017069167208655166,
+    -0.0006754000269853061
+   ],
+   "residual_MSE_before": [
+    1.4201078207425841e-05,
+    2.457974436157586e-05
+   ],
+   "normal_equation_gradient_max_abs": 4.499333136696437e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 597839,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017790363628635608,
+    0.0004704913420393884
+   ],
+   "residual_MSE_before": [
+    1.4462642080894189e-05,
+    3.9630634867624467e-05
+   ],
+   "normal_equation_gradient_max_abs": 6.631209185817104e-19
+  }
+ ],
+ "initial_sha256": "a37753b187d6d4a9056cdb4d6216b5ee6a5de05dc73616f07cc8a0a03b3c87ec",
+ "network_sha256": "24236f2094f5d20629931f6b4c1c4845b3d7ec8f91a5c004e67438a06b5dabda",
+ "seconds": 316.0824887752533
+}

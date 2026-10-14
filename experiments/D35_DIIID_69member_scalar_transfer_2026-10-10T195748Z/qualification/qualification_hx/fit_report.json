@@ -1,0 +1,33 @@
+{
+  "name": "qualification_hx",
+  "family": "hx",
+  "status": "fit_complete",
+  "training_frames": 1480465,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 1,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 93,
+    "threads": 12
+  },
+  "train_on_calibration": true,
+  "epochs_completed": 1,
+  "selected_epoch": 1,
+  "criterion": 111727.33807012587,
+  "resumed_from_epoch": 0,
+  "network_sha256": "83c9bb032df650561e11d494e8b1153c77eaed52104be74fd6f625e16e4b7413",
+  "seconds_this_attempt": 149.8967255030293,
+  "held_out_metrics_computed": false,
+  "selection": "eligible_calibration_flux"
+}

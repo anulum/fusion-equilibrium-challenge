@@ -1,0 +1,11 @@
+{
+  "UTC_seconds": 1791746477.119912,
+  "static_input": "$FEC_RUNS/ml350/runs/d39_finisher_20261011/cache/d3d_shot_0093deb434.npz",
+  "temporal_input": "$FEC_EXPERIMENTS/D38_DIIID_boundary_spatial_temporal_2026-10-11T001358Z/temporal/development/d3d_shot_0093deb434.npy",
+  "case": "d3d_shot_0093deb434",
+  "whole213_frames": true,
+  "atol": 1e-10,
+  "rtol": 1e-10,
+  "scope": "paired random initialization, real predictor-only inputs, portableCPU/JAXdouble inference, synthetic masked4targets gradientreference; nofit/scoring/GTlabels",
+  "training_not_activated": true
+}

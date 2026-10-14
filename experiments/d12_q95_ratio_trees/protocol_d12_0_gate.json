@@ -1,0 +1,18 @@
+{
+ "id": "D12-0 gate: trees for q95 on the ratio target",
+ "frozen_utc": "2026-10-05T19:52:08Z",
+ "author": "first_agent (group manager)",
+ "why": "Leaderboard by term (4 Oct): against places 4-5 we are level on Consistency and behind on the q95/betaN term (.9976 vs .9979-.9981). D9-0 trees on raw q95 were weak (R2 .9926, blend weight .06). D11 showed the q95 error sits in the high-q, low-current frames (41 % of the head's squared error in q95 > 9). q95 is (B_t/I_p) times a shape factor of order one; a tree cannot multiply, so on raw q95 it must build the product from steps.",
+ "question": "Do trees fitted on s = q95 / ratio (ratio = table feature 60 = B_t/I_p proxy), weighted by ratio^2 so that the loss is the squared error in q95, give a q95 estimate whose nested blend with the network head beats the head out of fold?",
+ "data_folds_comparator_blend": "exactly protocol_d9_0_gate.json: same table, folds, reserved stems, calibration early stopping, S16 fold heads nn_oof.npz, nested least-squares weight clipped to [0,1].",
+ "trees": "D9 setting A unchanged (depth 8, eta .05, 3000 rounds, patience 100, subsample .8, colsample .5, min_child_weight 20, lambda 1, seed 9); only the target and the frame weights differ.",
+ "kernel": {
+  "file": "d12_q95_ratio_trees/kaggle/run_d12_gate.py",
+  "sha256": "dc9075107040f78ff4c6f1b1ab6f1bd71ce8231a6e425f3fa63200aa3737468d",
+  "kaggle_id": "anulum/fec-d12-q95-ratio"
+ },
+ "measure": "d9_gbm_heads/d9_b_eval.py with --a kaggle_out (raw-q95 trees) and --b this run: tree R2, nested-blend R2, error correlation with the head, weight; plus dR2 of the blend per fold.",
+ "rule": "PASS if the nested-blend R2 of q95 exceeds the head's .99730 by at least 3e-4 (about +2.2e-5 in S) and is higher than the head's in each of the five folds. PASS -> q95 joins the D9 deployment as a blended head under a new deployment protocol (the submitted q95 itself is then blended, no finisher involved). FAIL -> closed; no other target transform for trees is tried.",
+ "exposure": "D9-0 raw-q95 tree result known; a look at the validation table showed s has a relative spread of 16 % and that q95 is not proportional to the ratio at the lowest currents (the ratio's floor). No tree on the ratio target exists at freeze.",
+ "rule_3": "DIII-D training data only."
+}

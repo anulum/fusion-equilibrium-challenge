@@ -1,0 +1,8 @@
+{
+  "status": "real_baseline_all_stage_geometry_parity_qualified",
+  "frames": 299,
+  "all_seven_stages_three_real_frames_original_derivation_parity": true,
+  "final_map_q95_betaN_bitwise_parity": true,
+  "final_fullshot_official_geometry_SSE_parity": true,
+  "comparative_population_metrics_processed": false
+}

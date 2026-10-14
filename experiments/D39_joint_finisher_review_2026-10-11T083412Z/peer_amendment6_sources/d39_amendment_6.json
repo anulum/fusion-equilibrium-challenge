@@ -1,0 +1,9 @@
+{
+ "id": "D39-amendment-6-round2-chain-and-fingerprints",
+ "written": "2026-10-11 about 20:45Z, round 1 still running, no variant aggregate read",
+ "eval_revision": "d39_eval_r2.py = d39_eval.py 29a3be36 plus SHA-256 of the final psirz, q95 and betaN arrays in every record (asked by the second agent for the central integrity review); no arithmetic differs",
+ "chain": "unit fec-d39-round2 waits for fec-d39-round1b to end, then, without a person in between: (1) d39_report_v3.py --select on the complete 32 x 120 batch -> reports/screen120_all32_selection.json; (2) d39_lock.py writes d39_combination_locked.json and d39_variants_r2.json {base, combo} exclusively (fails if they exist); if no group has a passer it stops there and D39 ends without a finalist; (3) base and combo on the 238 confirmation shots; (4) d39_report_v3.py on offsets 1 2, seed 3902 -> reports/confirm238_base_combo.json; (5) combo and base (r2 revision, for fingerprints) on the 120 screening shots for the all-358 record.",
+ "why_automatic": "the selector is frozen and leaves no choice to a person; running it unattended removes a night of idle time and any chance of a look before the lock",
+ "all358_report": "written by a later report revision that accepts the full set; v3 accepts only the 120 or the 238 part",
+ "base_on_screening_recomputed": "base records of round 1 lack fingerprints; step 5 writes base again under variant name base_r2 for the 120 shots, parts must equal the round-1 base parts"
+}

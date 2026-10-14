@@ -1,0 +1,53 @@
+{
+  "status": "fixed_full77_scalar_readout_study_frozen",
+  "utc": "2026-10-13T10:37:28.775404+00:00",
+  "method": "fixed standardized ridge .001 of q95/beta_n residuals on original last hidden activations; change only these final output rows and biases, original frozen encoder/normalizers/linear/flux/geometry unchanged",
+  "models": 77,
+  "map_models": 69,
+  "joint_models": 8,
+  "training_shots": 5954,
+  "calibration_shots": 372,
+  "all_model_tc_flags_retained": true,
+  "targets": [
+    "q95",
+    "beta_n"
+  ],
+  "ridge": 0.001,
+  "chunk": 4096,
+  "workers": 4,
+  "blas_threads_per_worker": 3,
+  "total_compute_threads_max": 12,
+  "model_source_manifest_sha256": "cacde95590796f137b1c2d627676b972e73f9fc11d4eac4de120760078e594b5",
+  "cohort_sha256": "e116eb28601f5e66921f18426dec759b14ee9aa4047535722381a3e49d200ae1",
+  "training_only_probe_pass_source": "$FEC_EXPERIMENTS/QB_readout_probe_second_agent_2026-10-13/probe_receipt_v1.json",
+  "evaluation": "ALL358 development plus ALL357 reserved confirmation, both previously exposed; no untouched holdout; same whole69+8 scalar composition, field/geometry/staticX unchanged",
+  "candidate_composition": ".75 correctedH69 mean + .25 correctedjoint8 mean; same declared archive rounding in both arms; no blending-weight tuning",
+  "gate": "PASS only if deltaS >=1e-5 and99% whole-shot paired-bootstrap lower bound>0 on BOTH358 and357; no new scalar nonfinite/missing frame; source/inference/export qualification required; otherwise no production change",
+  "bootstrap_replicates": 10000,
+  "bootstrap_seed": 5301,
+  "no_subset_or_lambda_search": true,
+  "no_model_selection_from_training_MSE": true,
+  "production_refit_requires_whole_77_result_review": true,
+  "publication": false,
+  "operational_change_before_execution": "4x3 BLAS threads on24-threadML350 leaves room for independent8-worker generic build; same fixed scientific method/gates.",
+  "sources_sha256": {
+    "fit_readouts.py": "69b93d4a26bf06928ce3b8b56c3a5526752eb302c6c9fb4ad970196834369942",
+    "evaluate_readouts.py": "8585f3beb8e1f19da0588c02545689e67b6b6c1e45533fbaf582b08f910c03c0"
+  },
+  "legacy_sources_sha256": {
+    "entrypoints/geometry_readout_streaming.py": "63e0a430d8a4a08e03e41c3e5071fab125ac6ddea028c46c5770ff9256001b49",
+    "entrypoints/li_readout_ridge.py": "2dc821b6b3c9196de7b1f0aa2faffe7c3c5124035667653abc2b6b9fe1b1c69f",
+    "source/fec_adapter/fec_adapter/diii_d_accuracy/network.py": "8de1cb51444991b2121869ca8b31d99944d43a37f8702dd7e5cc79b7613d1800"
+  },
+  "training_tables_sha256": {
+    "table_training.npz": "069c5a6a8fb6b75c733f82d372d6dcb01ec69f1e648480428bb0c1bc047518b3",
+    "table_calibration.npz": "ba1414f398bb07ec8b54942a4c092f44775626bf9cedee236ac6953723aa5025"
+  },
+  "evaluation_tables_sha256": {
+    "table_training.npz": "069c5a6a8fb6b75c733f82d372d6dcb01ec69f1e648480428bb0c1bc047518b3",
+    "table_validation.npz": "b5b1fe6793015a326492ee763a861c463f1dfcfb1a48db3eb57ff759d724e0b6"
+  },
+  "bootstrap_definition": "10000 paired whole-shot resamples, same shot multiplicities for both arms and both scalar metrics; each resample recomputes its own truth mean/variance. 358 uses5301,357 uses5302. ALL finite truth targets scored, all output frames retained.",
+  "score_difference_definition": ".075*deltaR2q95+.075*deltaR2betaN; all field and geometric outputs/parameters unchanged, fixed output composition and float32 archival rounding in both arms.",
+  "activation": "training-only fits first; no heldout scoring until complete77 qualified fit receipts; evaluation code frozen here before any full fit."
+}

@@ -1,0 +1,10 @@
+{
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/evaluate_batch.py": "b4ba4af39fe75aeb862e19e8f9c43d3e88e4e72e09075d3de530c6763bc24aa3",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/fit_pressure_factor.py": "916e25d25b461827b10839a00bc3b9093194cc21f77063125e53954e9ca5faab",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/pressure_integral.py": "45bc4aaa5adfb7ce0a14e8c538ce3c7c793d4209d4d2c5f76168036ebff422b3",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/refit_readouts.py": "a193b4c9509cdf700b4990816e7d84de27cde0b48c2fa5bd0e7750a162cc668d",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/regenerate_beta_targets.py": "a8a751f79d5fa6dfca7193dd297502bfc4fc77ba29d32ebeb4478b5a7fce9aee",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/resume_campaign.py": "2b43ea0375a3ad5b8dbd74ecadd588f25db04037cc7cfa8d52d1895355f358c0",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/amendment.json": "8dc4cac6218f8c93d8b01623f56d2f010dabc966023be82406e19357c4188b20",
+  "$FEC_EXPERIMENTS/D27_physics_batch_2026-10-09T092900Z/repair_axis_flux_v1/qualification.json": "73b8b6d0920d6bcdadfb692881a6926ff931ac17af89fb77aa8da2d1b04e6c4d"
+}

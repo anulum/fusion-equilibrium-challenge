@@ -1,0 +1,6 @@
+{
+  "reason": "Actual optionalleaderboardGET timed out; addboundedthree retriesforreadonlycompetition/phase/statusGETs. NoPOSTretry; creationintent protectsagainstduplicates.",
+  "API_creation_not_started": true,
+  "scientific_protocol_changed": false,
+  "script_sha256": "7e68f89b03efc6c34d0277fc1972cf0782369f2e9746616aaa335af37f44d5a4"
+}

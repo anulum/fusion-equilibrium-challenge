@@ -1,0 +1,31 @@
+{
+  "name": "q95_seed201_k0",
+  "status": "fixed_final_epoch_fit_complete",
+  "training_frames": 1127530,
+  "settings": {
+    "coordinates": 0,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 201,
+    "threads": 12
+  },
+  "epochs_completed": 60,
+  "resumed_from_epoch": 0,
+  "network_sha256": "d95a381ef8548ec8b6685c054e357c9a6fe76a1758e001aeb9dda1bff1250679",
+  "seconds_this_attempt": 80.27157977293245,
+  "validation_metrics_computed": false,
+  "targets": [
+    "q95"
+  ]
+}

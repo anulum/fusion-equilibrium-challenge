@@ -1,0 +1,13 @@
+{
+  "UTC": "2026-10-11T00:41:56.045860+00:00",
+  "measured_prior_memory_high_events": 23724,
+  "prior_oom_events": 0,
+  "prior_job_swap_bytes": 0,
+  "measured_host_available_GiB": 6.6,
+  "old_MemoryHigh_GiB": 4,
+  "old_MemoryMax_GiB": 6,
+  "new_MemoryHigh_GiB": 6,
+  "new_MemoryMax_GiB": 8,
+  "scientific_recipe_and_sources_unchanged": true,
+  "reason": "actual cgrouphigh throttling of clean data cache duringthreeGPUuploads/training; hosthasheadroom; preserveSwapMax0"
+}

@@ -1,0 +1,12 @@
+{
+ "id": "D6-public",
+ "frozen_utc": "2026-10-04T21:22:15Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-04 ~21:20Z: 'prečo neriešime hlavne to DIII-D aj nech nás to kopne naspať do prvej 5ky'",
+ "question": "Does the D6 head swap (195-net flux/X-point/boundary + all-data D4-recipe specialist scalar heads) raise the public DIII-D Development score?",
+ "status_of_candidate": "D6 was REJECTED by its own frozen OOF rule (folds 2-4 −9.8e-6 P .44; all 5 +1.9e-5 P .77; ledger 2.20-2.21). Ledger 2.24 shows the 80-shot-fold OOF framework cannot resolve effects below ~3e-5. The public Development score (874 shots) is a larger sample and its use is allowed with disclosure (organisers 2026-10-02, entrant authorisation). This is a documented Development comparison of an already pre-justified candidate, not a re-reading of the OOF result.",
+ "build": "d6/deploy/deploy_build.py (no-swap reproduction verified bit-for-bit on 3 shots), specialists_deploy.sha (16 all-data specialists; ledger d6/deploy/deploy_fit_ledger.json), 3 workers, WS CPU.",
+ "submission": "DIII-D D6 archive + MAST v11 archive (e78b1a9f…), format QA, HF upload, one Development submission.",
+ "decision_rule": "deploy D6 only if public d3d_S >= .995990 + 2e-5 (= .996010). Otherwise the displayed entry is restored to #960453 (v11 + 195-net). The public number is reported with disclosure in ledger and study either way.",
+ "rule_3": "DIII-D only change; MAST unchanged clean v11."
+}

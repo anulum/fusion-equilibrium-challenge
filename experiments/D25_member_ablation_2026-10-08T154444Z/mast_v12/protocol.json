@@ -1,0 +1,11 @@
+{
+  "id": "MAST-v12-input-domain-smoke",
+  "decision": "Remove organiser LCFS-union mask from current-support construction. Use finite positive-R input grid, exclude coil-conductor cells unchanged; current still restricted by closed-flux solve. No vessel boundary is inferred or claimed.",
+  "source": "v11 frozen entrypoints; only current-support definition changes. All prior exposure disclosed by v11 protocol retained.",
+  "evaluation": "First two public MAST input shots by sorted filename; no labels, demos or offline MAST score. Audit-hook blocks mast_envelope.npz opens. Check finite output, shape, solved-frame/scalar counts; no automatic deployment.",
+  "limits": "2 CPU, 8 GiB, 900s, zero restart; outputs only Samsung through SSH stdout.",
+  "hashes": {
+    "predict_mast.py": "49c0f62c19c87fba96b5d19ecbba4f7b6c3c278a48254ab7b467aea9ae07316a",
+    "thomson_isoflux.py": "9eb026e1ba439c2f1c8e237867b8d3cb8cc50b6e7e19e887b9ae613e5aebcce7"
+  }
+}

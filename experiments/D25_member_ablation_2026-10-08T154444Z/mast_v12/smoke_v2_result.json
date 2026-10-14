@@ -1,0 +1,41 @@
+{
+  "status": "smoke_completed",
+  "records": [
+    {
+      "stem": "mast_shot_0035568738",
+      "frames": 53,
+      "support_cells": 4010,
+      "solved": 53,
+      "q95_read": 53,
+      "betaN_read": 53,
+      "maps_finite": true,
+      "maps_shape": [
+        53,
+        65,
+        65
+      ],
+      "q95_finite": 53,
+      "betaN_finite": 53
+    },
+    {
+      "stem": "mast_shot_00398d18da",
+      "frames": 51,
+      "support_cells": 4010,
+      "solved": 32,
+      "q95_read": 29,
+      "betaN_read": 29,
+      "maps_finite": true,
+      "maps_shape": [
+        51,
+        65,
+        65
+      ],
+      "q95_finite": 51,
+      "betaN_finite": 51
+    }
+  ],
+  "forbidden_mask_reads": [],
+  "seconds": 74.88294196128845,
+  "MAST_labels_used": false,
+  "score_measured": false
+}

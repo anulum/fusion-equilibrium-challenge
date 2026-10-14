@@ -1,0 +1,10 @@
+{"id": "M3c-1b step 1b", "name": "synthetic_mast_generator_with_shaping_coil_control", "status": "frozen_before_any_step1b_solve", "frozen_utc": "2026-10-01T01:14:29Z",
+ "author": "first_agent", "evidence": "step 1 (ledger 5.18): with measured coils alone the plasma is not held radially at any pressure (sane 1-2 of 19).",
+ "rule_3": "MAST inputs only; no MAST equilibrium field, demo shot or leaderboard number.",
+ "frames": "the 19 frames of step 1 (step1_frames.json, step1_inputs.npz).",
+ "solver": "as step 1, but the circuits P4u/P4l/P5u/P5l/P6u/P6l are FreeGS control coils (start at the measured ampere-turns); all others fixed at measured. Constraints (freegs.control.constrain, gamma 1e-12): isoflux (R_in, z0, R_out, z0) with R_in/R_out = the Thomson Te 5 % markers moved by the DIII-D calibration (edge_boundary.markers, OFFSET), z0 = laser height; isoflux (R_mid, z0+0.5, R_mid, z0-0.5) for up-down position, R_mid = (R_in+R_out)/2.",
+ "arms": "p_axis = s x 2.25 x Thomson peak p_e, s in {0.5, 1.0}.",
+ "record": "per frame and control circuit the final minus measured ampere-turns, absolute and relative to the measured circuit.",
+ "sanity_per_frame": "as step 1 (converged, Ip within 1 %, Reader contour, axis R .5-1.2 and |Z| <= .3, R_min >= .19, R_max <= 1.6) AND the LCFS midplane crossings within 3 cm of R_in/R_out.",
+ "decision_rule": "viable arm: sane yield >= 0.6 and median over sane frames of max_circuit |dI|/|I_measured_P4+P5 total| <= 0.10. Viable -> step 2 (synthetic Thomson; v7 on synthetic inputs built from the ADJUSTED currents; frozen separately). Not viable -> recorded; the control needed is itself a finding about missing vertical field in the MAST inputs.",
+ "resources": "CPU WS, ~15 min."}

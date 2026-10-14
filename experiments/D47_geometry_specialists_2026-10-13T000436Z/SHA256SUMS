@@ -1,0 +1,9 @@
+3df1c366183361f3e4baa6b875193d827fba7baeda7544669210c9394491dad3  train_geometry_specialists.py
+6f58a6b1f93cfb7e5c4a0a7a91ddf144d8e069a18f3eb18d1163136bce886c8f  protocol_frozen_v1.json
+c27c6465cb1c4f39a8dd20107536c036cc900f96d26102583101009e5a578723  $FEC_EXPERIMENTS/D47_geometry_specialists_2026-10-13T000436Z/train_geometry_specialists.py
+first launch failed on import path before any data or fit (ModuleNotFoundError fec_adapter); trainer revised by two path lines, new sha above; protocol unchanged
+cb53ffb2513300b6a0082a9a105149374fd6ff48a60f03416659842edef37cc8  $FEC_EXPERIMENTS/D47_geometry_specialists_2026-10-13T000436Z/train_geometry_specialists.py
+second launch stopped by me at 00:20Z: the trainer held the whole feature matrix on the host (12.5 GiB at its cap, workstation at 2 GiB available); nothing was fitted. Revision: streamed moments and block upload (D38 Moments and put_block); arithmetic of normalisation unchanged in definition (population moments over finite values). New sha above.
+755aaca80bb5e249d08f18246a40fc5731ba5e8211b83c33193e64fe7767c269  $FEC_EXPERIMENTS/D47_geometry_specialists_2026-10-13T000436Z/train_geometry_specialists.py
+third launch stopped by me: the jitted epoch captured the data arrays as 3.3 GB of constants (host at its 10 GiB cap before the first epoch); nothing fitted. Revision: data passed as arguments. New sha above.
+ec26013a0313795328ab568927a096374962c852397fffb27007e00c801487be  head_report.py

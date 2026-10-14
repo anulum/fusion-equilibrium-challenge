@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed4_tc",
+ "recipe_index": 34,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1559338,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010924454931280777
+   ],
+   "residual_MSE_before": [
+    0.0001813846845873987
+   ],
+   "normal_equation_gradient_max_abs": 1.571944919338212e-17
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1559340,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003955861125852504,
+    0.0008247466281025999,
+    0.00027033048695081707
+   ],
+   "residual_MSE_before": [
+    0.00034703201182668974,
+    0.00034521291913067756,
+    0.013401528956484594
+   ],
+   "normal_equation_gradient_max_abs": 1.5126907295130373e-16
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1559160,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00011506659391741998
+   ],
+   "residual_MSE_before": [
+    0.0006770732323520671
+   ],
+   "normal_equation_gradient_max_abs": 3.634867192596459e-17
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1051847,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018423049429724703,
+    -0.0006864539116354411
+   ],
+   "residual_MSE_before": [
+    4.376902736705205e-05,
+    5.100308260703164e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.4326821148977643e-17
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 664229,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00018066160462035095,
+    0.000459546110556932
+   ],
+   "residual_MSE_before": [
+    3.4099755842184204e-05,
+    6.729527590527776e-05
+   ],
+   "normal_equation_gradient_max_abs": 1.3260194910147665e-17
+  }
+ ],
+ "initial_sha256": "73d1f0763bbce542b0bbfda74c64b19bc15aaa5c6b76286805879bbbdd7a5734",
+ "network_sha256": "a07aa9cb3e33b2d43c50164f9c94ad2d14f8ccb113251f510fefeba55f64dbd3",
+ "seconds": 1060.7523355484009
+}

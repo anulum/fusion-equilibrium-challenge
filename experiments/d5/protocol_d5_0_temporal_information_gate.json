@@ -1,0 +1,12 @@
+{"id": "D5-0", "name": "does_discharge_history_predict_the_oof_residuals", "status": "frozen_before_any_d5_fit",
+ "frozen_utc": "2026-10-01T00:02:45Z", "author": "first_agent", "entrant_go": "2026-10-01 (options 1 and 3)",
+ "question": "Before building a sequence network (D5): does the history of a discharge (input features and our map readings at other frames) predict the out-of-fold residuals of our maps beyond what the same frame alone predicts?",
+ "data": "the 5 OOF folds of the K-fold framework (400 DIII-D training shots, every 2nd frame): kfold/features_fold{k}.npz (inputs 367, map_features 27) aligned row for row with reeval/r8/results/rows_V0_fold{k}.json (checked: 0.0 max difference of the 7 readings). DIII-D labels only.",
+ "targets": "9 residuals: true minus predicted R_axis, Z_axis, kappa, tri_top, tri_bot, volume, li (rows 't' - 'p'), q95 and betaN (q[1]-q[0], q[3]-q[2]); frames with a non-finite target dropped for that target.",
+ "models": {"M0_same_frame": "HistGradientBoostingRegressor(max_iter=300, learning_rate=0.05, max_leaf_nodes=31, l2_regularization=1.0, random_state=0) on PCA-32 of the standardised inputs (fitted on the training folds only) + the 27 map features of the frame",
+  "M1_history": "M0 features + at lags -8,-4,-2,-1,+1,+2,+4,+8 scored rows (2 frames each) the PCA-32 and the 7 map readings (NaN outside the shot) + shot means of both (the whole test shot is available at inference) + causal running means up to the frame + the frame's position in the shot (0..1); same regressor"},
+ "evaluation": "nested by fold: for test fold k train on the other four; per target R2 = 1 - SSE(r - rhat)/SSE(r) pooled over all 400 shots (the reference is no correction). Gain = R2_M1 - R2_M0; paired shot bootstrap (20000, seed 932) of the gain.",
+ "decision_rule": "D5 justified if for at least 2 of the 9 targets: gain >= 0.05, P(gain > 0) >= 0.9 and R2_M1 > 0. Otherwise D5 is closed: the discharge history carries no correctable information beyond the frame.",
+ "caveat_recorded_in_advance": "a predictable scalar residual is necessary, not sufficient, for a score gain: the score reads the maps, so a justified D5 still needs a map-level model (D5-1, frozen separately).",
+ "diagnostics_not_deciding": "R2_M0 itself (a same-frame residual corrector); per-fold R2.",
+ "resources": "WS CPU, nice, 6 threads, ~1 h."}

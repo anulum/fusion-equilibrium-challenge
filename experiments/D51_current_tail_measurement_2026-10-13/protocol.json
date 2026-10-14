@@ -1,0 +1,33 @@
+{
+  "status": "frozen_before_execution_measurement_only",
+  "utc": "2026-10-13T09:05:17.924286+00:00",
+  "input": "$FEC_RUNS/ml350/runs/d39_finisher_20261011/reports/d49_qb_frames_358.npz",
+  "cohort": "358 previously exposed development shots; no untouched holdout",
+  "expected_shots": 358,
+  "expected_frames": 78875,
+  "baseline": "0.75 map69 + 0.25 joint8, fit-disjoint cached heads; scalar path unchanged by D43",
+  "input_source": "cached aligned physical plasma current in amperes",
+  "current_bins_A": [
+    0,
+    10000,
+    50000,
+    100000,
+    200000,
+    400000,
+    600000,
+    1000000,
+    10000000
+  ],
+  "historical_feature_current_floor_A": 50000,
+  "measure": [
+    "all-frame squared-error concentration by |Ip|, sign and record-end position",
+    "contribution of current-floor-clipped frames and worst shot to full pooled errors",
+    "all-frame current-scaled target dynamic range",
+    "per-shot error concentration and top20 frame input/target/prediction audit"
+  ],
+  "no_fitting": true,
+  "no_selection": true,
+  "no_prediction_clipping_or_frame_dropping": true,
+  "no_production_change": true,
+  "next_fit_requires_new_frozen_protocol_and_peer_review": true
+}

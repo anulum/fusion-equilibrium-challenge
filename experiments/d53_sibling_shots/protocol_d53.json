@@ -1,0 +1,17 @@
+{
+ "id": "D53-0 gate: do the most similar other shots share a shot's head offset?",
+ "frozen_utc": "2026-10-13T09:52:31Z",
+ "author": "first_agent",
+ "observation": "D13: a per-shot offset holds 21-39 % of each head's squared out-of-fold error; D49: 16-22 % for q95/betaN on the development shots. Stokolesov et al. (arXiv 2505.10709) report that the DIII-D database holds many repeated shots (about 30 % removed there as duplicates). The networks answer frame by frame from that frame's inputs and cannot use the labels of a sibling shot of the same session beyond what a smooth function of the inputs gives. Earlier correctors (D5, D10, D16) read the frame's own features, not other shots' residuals.",
+ "question": "Is a shot's mean head error predictable from the mean out-of-fold head errors of the training shots whose inputs resemble it most?",
+ "method": "sibling_offsets.py: shot descriptor = mean and sd over frames of the 367 table features (inputs only), standardised, 64 principal directions; for a shot of fold k the candidates are the shots of the other four folds; predicted offset per head = mean of the K nearest candidates' mean residuals; corrected head = head + offset; d9_gate_eval.py unchanged (nested least-squares shrink in [0,1], head proxy, shot bootstrap 2000, seed 990).",
+ "primary": "K = 5. K = 1, 3, 10, 20 are reported as diagnostics and select nothing.",
+ "rule": "PASS if dS_proxy >= +3e-5 with P >= .95 at K = 5. PASS -> a strict confirmation is written before anything is built: fit-disjoint networks on the 358 development shots, neighbours and their residuals from shots those networks never saw as labels of the corrected shot, and the corrected heads passed through the finisher. FAIL -> shot offsets are not shared between similar shots; closed.",
+ "known_limit": "A neighbour's out-of-fold residual comes from networks that were trained on the corrected shot's own labels (the neighbour is in another fold), so a small part of a gain here could be the corrected shot's label returning through those networks. The strict confirmation removes this path; a pass here is not a measurement of deployable gain.",
+ "exposure": "No sibling or neighbour statistic computed before this freeze. The 5936 shots' out-of-fold heads were used by earlier gates (D9, D10, D12, D14-D16, D24, D50).",
+ "rule_3": "DIII-D training data only.",
+ "sha256": {
+  "sibling_offsets.py": "4d207df4b6125455333fdbe9fd64c6a306fd32b1abfff88a7f56d4d029122158",
+  "d9_gate_eval.py": "1bbb1e719be74f618cf4ab0b27415adf123b6b38f0c2390a26b5bdb771c8d26f"
+ }
+}

@@ -1,0 +1,14 @@
+{
+  "UTC_seconds": 1791747168.2748253,
+  "cases": [
+    "d3d_shot_278521968a",
+    "d3d_shot_cbaaa0c1be",
+    "d3d_shot_10c92f8736",
+    "d3d_shot_b494392793"
+  ],
+  "selection": "union of maximum LCFS/positive-flux-residual discrepancies in complete120 baseline/orx cross-host report",
+  "comparison": "native input features,69 raw coordinates/all78 heads,8jointscalars,4tree predictions vs immutableML350cache; no finishing/scoring/newtargetreads",
+  "purpose": "attribute cross-host differences before any finalist; not candidate selection",
+  "no_tolerance_waiver": true,
+  "publication": false
+}

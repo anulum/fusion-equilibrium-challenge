@@ -1,0 +1,11 @@
+{
+ "id": "D42-X-target-dose-response-protocol",
+ "frozen": "2026-10-12 about 11:50Z, before any D42 run",
+ "kind": "diagnostic with true-map X-points; nothing here is deployable, selectable or an admission; no 238, no 357",
+ "question": "how much score does a given reduction of X-point target error buy through the deployed finisher - asked by the second agent after D40's head pre-gate (10 percent on both ends) rejected all three families at 8-10 percent (lower) and 1.5-3.3 percent (upper)",
+ "arms": "X targets moved a share alpha of the way from the held-out head (tree-adjusted, as deployed) to the true map's saddle, on frames and ends where the truth has one; alpha .10, .25, .50, 1.00 on both ends; .50 on the lower end only; .50 on the upper end only. A uniform shrink of the error vector by (1 - alpha) is an idealisation: a real model's error reduction is uneven across frames.",
+ "checks": "a100 must reproduce the positions-only arm of the second agent's factorial and be close to orx (+624.7 microS); base must equal the D39 round-1 base parts",
+ "cohort": "the 120 screening shots (index divisible by 3), all frames; bootstrap 10000, seed 4201, 99 percent",
+ "reading": "report delta S per arm and the implied score per percent of X error; state whether the response is near linear and which end carries it. If 8 percent on the lower end alone is worth at least 30 microS by this curve, a head gate asking 10 percent on BOTH ends can reject a candidate that would pass on score; whether to act on that is a separate, preregistered decision of both agents.",
+ "publication": false
+}

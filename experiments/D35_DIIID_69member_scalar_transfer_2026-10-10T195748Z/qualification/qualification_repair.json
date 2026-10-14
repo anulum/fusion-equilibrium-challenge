@@ -1,0 +1,27 @@
+{
+  "failure": "qualified oneepoch hx training completed, then qualification compared compiled fit SSE to eager float32 forward under rtol1e-12; difference1.64e-10R2",
+  "cause": "float32 fused compiled vs eager kernels differ4.0531158e-6normalized, no training defect demonstrated",
+  "correction": "qualification uses identical compiled calibration forward as original production source and D35training; same assertion tolerance unchanged",
+  "diagnostic": {
+    "compiled": {
+      "trimmed_coordinate_SSE": 111727.33807012587,
+      "original_fit_criterion": 111727.33807012587,
+      "criterion_difference": 0.0,
+      "r2": 0.9922496281816507,
+      "source_formula_difference": 0.0
+    },
+    "eager": {
+      "trimmed_coordinate_SSE": 111727.33570409678,
+      "original_fit_criterion": 111727.33807012587,
+      "criterion_difference": -0.0023660290898988023,
+      "r2": 0.9922496283457778,
+      "source_formula_difference": 0.0
+    },
+    "max_forward_difference": 4.0531158447265625e-06,
+    "no_heldout_metrics_computed": true
+  },
+  "training_checkpoint_recipe_optimizer_AST_unchanged": true,
+  "scientific_protocol_gate_unchanged": true,
+  "completed_hx_oneepoch_fit_preserved": true,
+  "holdout_metrics_computed": false
+}

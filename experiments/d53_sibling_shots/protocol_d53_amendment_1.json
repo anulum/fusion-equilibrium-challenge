@@ -1,0 +1,10 @@
+{
+ "amends": "protocol_d53.json 4026816e",
+ "utc": "2026-10-13T09:53:13Z",
+ "reason": "The chain named the sub-frame table of 6 Oct, whose rows are not those of nn_oof.npz; sibling_offsets.py stopped on its row check before computing anything.",
+ "change": "The chain reads the table the heads were made from: legacy_tree_fec_first_agent_20261005/d9/table/table_training.npz, sha256 fdca477d\u2026 as recorded in nn_oof.npz.json. Nothing else changes.",
+ "sha256": {
+  "d53_chain.sh": "a477bf2c51e1672189cb19594db2d095ca840d2d194516aac6f54bda73ebd7f5",
+  "d53_chain_v1_wrong_table.sh": "759c1c4628895adce43615b2ea0c3c69ea0a60d02011406cf8084c584a8fc1b7"
+ }
+}

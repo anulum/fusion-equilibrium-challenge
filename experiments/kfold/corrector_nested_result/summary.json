@@ -1,0 +1,682 @@
+{
+ "status": "nested_cross_fit_complete",
+ "protocol_sha256": "912aeb4e564b485ecdfa0d1e5fca4d300c409a288ff8182ce7d68e7d708d839a",
+ "pooled": {
+  "frames": 44888,
+  "shots": 400,
+  "gated_frame_share": 0.007841739440384958,
+  "gated_full": {
+   "mean_D_base": 0.008868766932444979,
+   "mean_D_arm": 0.008909273401280312,
+   "mean_shot_D_change": 4.368843641931181e-05,
+   "shot_bootstrap95": [
+    1.642718067403869e-05,
+    7.82090211127738e-05
+   ],
+   "changed_shots": 54,
+   "win_fraction_changed_shots": 0.2222222222222222,
+   "contour_losses": 0,
+   "squared_error_ratios": {
+    "R_axis": 1.0,
+    "Z_axis": 1.0,
+    "kappa": 1.0215615824878224,
+    "tri_top": 1.0136738648441979,
+    "tri_bot": 1.0041274582137707,
+    "volume": 1.006809266872361,
+    "li": 1.001135415457105,
+    "flux_sse": 1.0000183438428412
+   },
+   "gates": {
+    "mean_D_change_negative": false,
+    "bootstrap_upper_below_zero": false,
+    "wins": false,
+    "no_contour_losses": true,
+    "li": true,
+    "kappa": false,
+    "flux": false
+   }
+  },
+  "gated_half": {
+   "mean_D_base": 0.008868766932444979,
+   "mean_D_arm": 0.008881870369458195,
+   "mean_shot_D_change": 1.3104409771504846e-05,
+   "shot_bootstrap95": [
+    4.1686905745326206e-06,
+    2.4731917823683267e-05
+   ],
+   "changed_shots": 54,
+   "win_fraction_changed_shots": 0.35185185185185186,
+   "contour_losses": 0,
+   "squared_error_ratios": {
+    "R_axis": 1.0,
+    "Z_axis": 1.0,
+    "kappa": 1.0107987791010862,
+    "tri_top": 1.005039524911067,
+    "tri_bot": 1.0032159055268428,
+    "volume": 1.0026055224022128,
+    "li": 1.0007341591661707,
+    "flux_sse": 1.0000068007237308
+   },
+   "gates": {
+    "mean_D_change_negative": false,
+    "bootstrap_upper_below_zero": false,
+    "wins": false,
+    "no_contour_losses": true,
+    "li": true,
+    "kappa": false,
+    "flux": false
+   }
+  },
+  "ungated_full": {
+   "mean_D_base": 0.008868766932444979,
+   "mean_D_arm": 0.0092499227561585,
+   "mean_shot_D_change": 0.0004064795597597619,
+   "shot_bootstrap95": [
+    0.0003191383568955759,
+    0.000497066977014768
+   ],
+   "changed_shots": 398,
+   "win_fraction_changed_shots": 0.2864321608040201,
+   "contour_losses": 0,
+   "squared_error_ratios": {
+    "R_axis": 1.0,
+    "Z_axis": 0.9999999999999987,
+    "kappa": 1.1113133977715695,
+    "tri_top": 1.0815990010222396,
+    "tri_bot": 1.070455772548739,
+    "volume": 1.0136336952250715,
+    "li": 1.0184648858524112,
+    "flux_sse": 1.0000420639135614
+   }
+  },
+  "oracle_truth": {
+   "mean_D_base": 0.008868766932444979,
+   "mean_D_arm": 0.00668745367841936,
+   "mean_shot_D_change": -0.0021676337237139407,
+   "shot_bootstrap95": [
+    -0.002335347012690594,
+    -0.0020086227897856573
+   ],
+   "changed_shots": 398,
+   "win_fraction_changed_shots": 0.992462311557789,
+   "contour_losses": 0,
+   "squared_error_ratios": {
+    "R_axis": 0.9999999999999998,
+    "Z_axis": 1.0000000000000018,
+    "kappa": 0.6130125018852085,
+    "tri_top": 0.8440578915995075,
+    "tri_bot": 0.7681033542895752,
+    "volume": 1.0223481566004406,
+    "li": 1.0130790315187932,
+    "flux_sse": 0.9996024681514408
+   }
+  }
+ },
+ "per_fold": {
+  "0": {
+   "frames": 8798,
+   "shots": 80,
+   "gated_frame_share": 0.016708342805182998,
+   "gated_full": {
+    "mean_D_base": 0.008727663996922607,
+    "mean_D_arm": 0.008788120039475445,
+    "mean_shot_D_change": 5.333379168699819e-05,
+    "shot_bootstrap95": [
+     -9.584892000481714e-07,
+     0.0001560383583417583
+    ],
+    "changed_shots": 10,
+    "win_fraction_changed_shots": 0.3,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.0626506406029919,
+     "tri_top": 1.0237642626895536,
+     "tri_bot": 1.0140103192126806,
+     "volume": 1.0166074158780365,
+     "li": 1.000622563483995,
+     "flux_sse": 1.0000033152952208
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "gated_half": {
+    "mean_D_base": 0.008727663996922607,
+    "mean_D_arm": 0.008737865909263792,
+    "mean_shot_D_change": 9.107413539879435e-06,
+    "shot_bootstrap95": [
+     -2.321851980734856e-06,
+     2.7666643283158437e-05
+    ],
+    "changed_shots": 10,
+    "win_fraction_changed_shots": 0.6,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.0316829233631106,
+     "tri_top": 1.002728126205009,
+     "tri_bot": 1.0102262545787515,
+     "volume": 1.0072346001485657,
+     "li": 1.0001555162267677,
+     "flux_sse": 0.9999982508965074
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": true,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": true
+    }
+   },
+   "ungated_full": {
+    "mean_D_base": 0.008727663996922607,
+    "mean_D_arm": 0.00907662767282663,
+    "mean_shot_D_change": 0.0003724046888440685,
+    "shot_bootstrap95": [
+     0.00017892844573120465,
+     0.0005850255903041129
+    ],
+    "changed_shots": 80,
+    "win_fraction_changed_shots": 0.3375,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.1696183224500032,
+     "tri_top": 1.078872696196985,
+     "tri_bot": 1.0813076974100617,
+     "volume": 1.0188682122351371,
+     "li": 1.0148862302682022,
+     "flux_sse": 1.0000139993937671
+    }
+   },
+   "oracle_truth": {
+    "mean_D_base": 0.008727663996922607,
+    "mean_D_arm": 0.006645122050524112,
+    "mean_shot_D_change": -0.001999021811759584,
+    "shot_bootstrap95": [
+     -0.002276964390806284,
+     -0.0017451552744547475
+    ],
+    "changed_shots": 80,
+    "win_fraction_changed_shots": 0.9875,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 0.5804672169841405,
+     "tri_top": 0.7879960180719009,
+     "tri_bot": 0.7320328300156899,
+     "volume": 1.0320000270862755,
+     "li": 0.9956563247982415,
+     "flux_sse": 0.9996014272026518
+    }
+   }
+  },
+  "1": {
+   "frames": 8834,
+   "shots": 80,
+   "gated_frame_share": 0.001584786053882726,
+   "gated_full": {
+    "mean_D_base": 0.008392943703202451,
+    "mean_D_arm": 0.008400072851653041,
+    "mean_shot_D_change": 8.025610251769085e-06,
+    "shot_bootstrap95": [
+     -9.47086534524395e-08,
+     1.9135548972283138e-05
+    ],
+    "changed_shots": 7,
+    "win_fraction_changed_shots": 0.2857142857142857,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.0028459912419136,
+     "tri_top": 1.0005010978900912,
+     "tri_bot": 1.0036810486460428,
+     "volume": 1.0002238288817167,
+     "li": 0.9998840322011859,
+     "flux_sse": 1.000001372716072
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "gated_half": {
+    "mean_D_base": 0.008392943703202451,
+    "mean_D_arm": 0.008393407581143892,
+    "mean_shot_D_change": 1.4333551358308022e-06,
+    "shot_bootstrap95": [
+     -2.3310769097156594e-06,
+     5.97156248426814e-06
+    ],
+    "changed_shots": 7,
+    "win_fraction_changed_shots": 0.42857142857142855,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.000057014670378,
+     "tri_top": 0.9998120739465675,
+     "tri_bot": 1.0020981171306795,
+     "volume": 0.9999837127115957,
+     "li": 1.0000175802472426,
+     "flux_sse": 1.0000005955374822
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "ungated_full": {
+    "mean_D_base": 0.008392943703202451,
+    "mean_D_arm": 0.008785612281092295,
+    "mean_shot_D_change": 0.0003719788552496799,
+    "shot_bootstrap95": [
+     0.00020216448379022848,
+     0.0005566117085029154
+    ],
+    "changed_shots": 80,
+    "win_fraction_changed_shots": 0.2625,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0000000000000002,
+     "Z_axis": 0.999999999999993,
+     "kappa": 1.125693039450717,
+     "tri_top": 1.135818995040166,
+     "tri_bot": 1.07333731504465,
+     "volume": 1.0066261825943024,
+     "li": 1.0156157681465476,
+     "flux_sse": 1.0000154725936512
+    }
+   },
+   "oracle_truth": {
+    "mean_D_base": 0.008392943703202451,
+    "mean_D_arm": 0.006437472236765006,
+    "mean_shot_D_change": -0.00200435136933583,
+    "shot_bootstrap95": [
+     -0.0022908550990950486,
+     -0.0017345219987029163
+    ],
+    "changed_shots": 80,
+    "win_fraction_changed_shots": 1.0,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 0.9999999999999993,
+     "Z_axis": 1.0000000000000102,
+     "kappa": 0.7018011442410379,
+     "tri_top": 0.8620169488527188,
+     "tri_bot": 0.7075997034489391,
+     "volume": 1.022602643855986,
+     "li": 1.03948271630312,
+     "flux_sse": 0.9996547630017113
+    }
+   }
+  },
+  "2": {
+   "frames": 9142,
+   "shots": 80,
+   "gated_frame_share": 0.0037190986654998905,
+   "gated_full": {
+    "mean_D_base": 0.008669816794972748,
+    "mean_D_arm": 0.008715759811095566,
+    "mean_shot_D_change": 5.483776479595808e-05,
+    "shot_bootstrap95": [
+     1.4801272567901817e-05,
+     0.00010920916983069999
+    ],
+    "changed_shots": 15,
+    "win_fraction_changed_shots": 0.13333333333333333,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.0217452478046563,
+     "tri_top": 1.0019953627794416,
+     "tri_bot": 1.003701799118617,
+     "volume": 1.0010227377439964,
+     "li": 1.0009135780594938,
+     "flux_sse": 1.0000024351984917
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "gated_half": {
+    "mean_D_base": 0.008669816794972748,
+    "mean_D_arm": 0.008690769153946166,
+    "mean_shot_D_change": 2.4614343400161644e-05,
+    "shot_bootstrap95": [
+     5.696861857468602e-06,
+     4.89458792458472e-05
+    ],
+    "changed_shots": 15,
+    "win_fraction_changed_shots": 0.2,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.0097163761171475,
+     "tri_top": 1.002305607394444,
+     "tri_bot": 1.0021282173192974,
+     "volume": 1.0006973476304115,
+     "li": 1.0006337610417906,
+     "flux_sse": 1.0000007863548506
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "ungated_full": {
+    "mean_D_base": 0.008669816794972748,
+    "mean_D_arm": 0.009145519357229378,
+    "mean_shot_D_change": 0.0005005984658758651,
+    "shot_bootstrap95": [
+     0.00031109280768615516,
+     0.000706448345719019
+    ],
+    "changed_shots": 79,
+    "win_fraction_changed_shots": 0.24050632911392406,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0000000000000002,
+     "kappa": 1.1405044324257771,
+     "tri_top": 1.033368428458749,
+     "tri_bot": 1.1173844345937771,
+     "volume": 1.0051174905667561,
+     "li": 1.0190251855482548,
+     "flux_sse": 1.0000475662759427
+    }
+   },
+   "oracle_truth": {
+    "mean_D_base": 0.008669816794972748,
+    "mean_D_arm": 0.0061775379865195365,
+    "mean_shot_D_change": -0.0025087369436882345,
+    "shot_bootstrap95": [
+     -0.0030004629692464303,
+     -0.0020676788268860383
+    ],
+    "changed_shots": 79,
+    "win_fraction_changed_shots": 1.0,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 0.9999999999999993,
+     "kappa": 0.5284774380247848,
+     "tri_top": 0.818667264049483,
+     "tri_bot": 0.7415452169783942,
+     "volume": 1.0292030204864084,
+     "li": 0.9863157212957467,
+     "flux_sse": 0.9996622624155934
+    }
+   }
+  },
+  "3": {
+   "frames": 9324,
+   "shots": 80,
+   "gated_frame_share": 0.011475761475761476,
+   "gated_full": {
+    "mean_D_base": 0.009694245420834944,
+    "mean_D_arm": 0.009755710881549242,
+    "mean_shot_D_change": 6.399822184022759e-05,
+    "shot_bootstrap95": [
+     -5.375929704060138e-06,
+     0.00017069905841282022
+    ],
+    "changed_shots": 13,
+    "win_fraction_changed_shots": 0.3076923076923077,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.031759539303843,
+     "tri_top": 1.0549042709295928,
+     "tri_bot": 0.9998773794305785,
+     "volume": 1.0099033456568545,
+     "li": 0.9995928096709341,
+     "flux_sse": 1.0000807024956693
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "gated_half": {
+    "mean_D_base": 0.009694245420834944,
+    "mean_D_arm": 0.009720282461529861,
+    "mean_shot_D_change": 2.4965460587521565e-05,
+    "shot_bootstrap95": [
+     -7.2508646605362485e-06,
+     7.427802345166991e-05
+    ],
+    "changed_shots": 13,
+    "win_fraction_changed_shots": 0.38461538461538464,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 1.0150985629433245,
+     "tri_top": 1.0207390006515875,
+     "tri_bot": 0.9998424614398606,
+     "volume": 1.0040071763090572,
+     "li": 0.9996202814520558,
+     "flux_sse": 1.0000326680623437
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": false,
+     "flux": false
+    }
+   },
+   "ungated_full": {
+    "mean_D_base": 0.009694245420834944,
+    "mean_D_arm": 0.00997797746048649,
+    "mean_shot_D_change": 0.0003418636242029708,
+    "shot_bootstrap95": [
+     0.0001252499152716103,
+     0.0005821212260730795
+    ],
+    "changed_shots": 80,
+    "win_fraction_changed_shots": 0.325,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0000000000000002,
+     "kappa": 1.063171783039918,
+     "tri_top": 1.116354693242318,
+     "tri_bot": 1.0616710849238353,
+     "volume": 1.0247746049748003,
+     "li": 1.0180085698849048,
+     "flux_sse": 1.0001093064589575
+    }
+   },
+   "oracle_truth": {
+    "mean_D_base": 0.009694245420834944,
+    "mean_D_arm": 0.007292436722080525,
+    "mean_shot_D_change": -0.0022823094208828726,
+    "shot_bootstrap95": [
+     -0.0026547410190502145,
+     -0.0019315581471860258
+    ],
+    "changed_shots": 80,
+    "win_fraction_changed_shots": 0.975,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 0.9999999999999993,
+     "kappa": 0.604048830325477,
+     "tri_top": 0.8305789356257006,
+     "tri_bot": 0.770140648780473,
+     "volume": 1.011468698207991,
+     "li": 1.024722963163048,
+     "flux_sse": 0.9994576862099239
+    }
+   }
+  },
+  "4": {
+   "frames": 8790,
+   "shots": 80,
+   "gated_frame_share": 0.005688282138794084,
+   "gated_full": {
+    "mean_D_base": 0.008819493526856521,
+    "mean_D_arm": 0.00884569013711739,
+    "mean_shot_D_change": 3.824679352160609e-05,
+    "shot_bootstrap95": [
+     -4.383012723414437e-07,
+     0.00010715326007839412
+    ],
+    "changed_shots": 9,
+    "win_fraction_changed_shots": 0.1111111111111111,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 0.9925801357900356,
+     "tri_top": 0.9893576836503798,
+     "tri_bot": 1.001399650362677,
+     "volume": 1.0093253102321316,
+     "li": 1.0073647538653592,
+     "flux_sse": 1.0000080400945035
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": true,
+     "flux": false
+    }
+   },
+   "gated_half": {
+    "mean_D_base": 0.008819493526856521,
+    "mean_D_arm": 0.008826321390902302,
+    "mean_shot_D_change": 5.401476194130792e-06,
+    "shot_bootstrap95": [
+     -2.9892289634260155e-06,
+     1.4385347664631098e-05
+    ],
+    "changed_shots": 9,
+    "win_fraction_changed_shots": 0.2222222222222222,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.0,
+     "kappa": 0.9993186788374322,
+     "tri_top": 0.9983071955366879,
+     "tri_bot": 1.0026406527379665,
+     "volume": 1.0019147654364258,
+     "li": 1.005132670178198,
+     "flux_sse": 1.0000031531003226
+    },
+    "gates": {
+     "mean_D_change_negative": false,
+     "bootstrap_upper_below_zero": false,
+     "wins": false,
+     "no_contour_losses": true,
+     "li": true,
+     "kappa": true,
+     "flux": false
+    }
+   },
+   "ungated_full": {
+    "mean_D_base": 0.008819493526856521,
+    "mean_D_arm": 0.00922630986534444,
+    "mean_shot_D_change": 0.0004455521646262254,
+    "shot_bootstrap95": [
+     0.0002727613230361666,
+     0.0006393021641245903
+    ],
+    "changed_shots": 79,
+    "win_fraction_changed_shots": 0.26582278481012656,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 1.0,
+     "Z_axis": 1.000000000000001,
+     "kappa": 1.092055600489917,
+     "tri_top": 1.0461849423653775,
+     "tri_bot": 1.0397634102571691,
+     "volume": 1.0171930118856818,
+     "li": 1.0315484794169123,
+     "flux_sse": 1.0000314771262955
+    }
+   },
+   "oracle_truth": {
+    "mean_D_base": 0.008819493526856521,
+    "mean_D_arm": 0.0068696558483907376,
+    "mean_shot_D_change": -0.0020437490729031836,
+    "shot_bootstrap95": [
+     -0.002494831564161254,
+     -0.001662140888730622
+    ],
+    "changed_shots": 79,
+    "win_fraction_changed_shots": 1.0,
+    "contour_losses": 0,
+    "squared_error_ratios": {
+     "R_axis": 0.9999999999999999,
+     "Z_axis": 0.9999999999999978,
+     "kappa": 0.6551298734815464,
+     "tri_top": 0.8880730248172117,
+     "tri_bot": 0.8467629094932455,
+     "volume": 1.012708659380012,
+     "li": 1.0323485472492393,
+     "flux_sse": 0.9996222928843294
+    }
+   }
+  }
+ },
+ "folds_with_negative_mean_D_change": {
+  "gated_full": 0,
+  "gated_half": 0
+ },
+ "admitted_for_single_full357_screen": {
+  "gated_full": false,
+  "gated_half": false
+ },
+ "validation_targets_used": false,
+ "MAST_targets_used": false
+}

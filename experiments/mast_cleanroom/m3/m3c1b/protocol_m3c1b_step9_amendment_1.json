@@ -1,0 +1,3 @@
+{"protocol": "M3c-1b step 9 (sha fc8723cc)", "amendment": 1, "utc": "2026-10-01T04:59:32Z", "before_results": true,
+ "change": "implementation fix: solve_frame's 'iterations: int = ITERATIONS' default binds at definition, so setting the module global to 300 did not reach reconstruct's call. reconstruct now passes iterations=ITERATIONS explicitly (at the default 100 the behaviour of steps 6-8 is unchanged). The first step-9 chain was stopped by exact PIDs before any result file existed and is relaunched unchanged otherwise.",
+ "module_sha256": "822b8e353fcac764d394c75ed9e0df1fb3fe55d3d0270f0feaea2ce3c2ffe360"}

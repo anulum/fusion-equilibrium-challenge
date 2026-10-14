@@ -1,0 +1,35 @@
+{
+  "status": "ROCm_transfer_export_optimizer_qualified",
+  "device": "rocm:0",
+  "forward_CPU_GPU_double_max_abs_difference": 2.220446049250313e-15,
+  "fit": {
+    "status": "fixed_final_epoch_fit_complete",
+    "name": "qualification_only",
+    "training_frames": 1024,
+    "settings": {
+      "coordinates": 64,
+      "width": 32,
+      "depth": 2,
+      "epochs": 1,
+      "batch": 512,
+      "learning_rate": 0.002,
+      "weight_decay": 1e-05,
+      "label_weight": 0.05,
+      "label_weights": [],
+      "fine_emphasis": 0.0,
+      "dropout": 0.0,
+      "gradient_limit": 1.0,
+      "edge_emphasis": 0.0,
+      "shot_balance": 0.0,
+      "seed": 200,
+      "threads": 12
+    },
+    "device": "rocm:0",
+    "epochs_completed": 1,
+    "network_sha256": "f62a1e0ef8f18af379a642713ebd0a3e0bc71221cacfa4638b2054fe83044cdf",
+    "seconds": 115.10273907193914,
+    "calibration_selection": false,
+    "validation_metrics_computed": false
+  },
+  "scientific_campaign_fit": false
+}

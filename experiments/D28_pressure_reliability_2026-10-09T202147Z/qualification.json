@@ -1,0 +1,96 @@
+{
+  "status": "real_input_pressure_support_qualified",
+  "real_shots": [
+    {
+      "stem": "d3d_shot_182bbc8f9e",
+      "source": "DIII-D",
+      "frames": 299,
+      "reliable": 299,
+      "not_running": 0,
+      "unsupported_time": 0,
+      "too_few_pairs": 0,
+      "clock_parity_official": true,
+      "clock_shift_ms": -3169.7426147460938,
+      "core_ghost_channel_dropped": false,
+      "peak_current_A": 912153.076171875,
+      "window_ms": [
+        7.07037353515625,
+        7030.069885253906
+      ]
+    },
+    {
+      "stem": "d3d_shot_70c96b3145",
+      "source": "DIII-D",
+      "frames": 333,
+      "reliable": 329,
+      "not_running": 4,
+      "unsupported_time": 0,
+      "too_few_pairs": 0,
+      "clock_parity_official": true,
+      "clock_shift_ms": 0.0,
+      "core_ghost_channel_dropped": false,
+      "peak_current_A": 1337473.9526367188,
+      "window_ms": [
+        227.81292724609375,
+        7050.81298828125
+      ]
+    },
+    {
+      "stem": "d3d_shot_21f23b2392",
+      "source": "DIII-D",
+      "frames": 15,
+      "reliable": 8,
+      "not_running": 7,
+      "unsupported_time": 0,
+      "too_few_pairs": 0,
+      "clock_parity_official": true,
+      "clock_shift_ms": 0.0,
+      "core_ghost_channel_dropped": false,
+      "peak_current_A": 777530.4565429688,
+      "window_ms": [
+        293.81292724609375,
+        3223.31298828125
+      ]
+    },
+    {
+      "stem": "mast_shot_0035568738",
+      "source": "MAST",
+      "frames": 53,
+      "reliable": 2,
+      "not_running": 0,
+      "unsupported_time": 51,
+      "too_few_pairs": 0,
+      "clock_parity_official": null,
+      "clock_shift_ms": 0.0,
+      "core_ghost_channel_dropped": true,
+      "peak_current_A": 768477.4951171875,
+      "window_ms": [
+        1.600027084350586,
+        367.5999755859375
+      ]
+    },
+    {
+      "stem": "mast_shot_fffdb8dc56",
+      "source": "MAST",
+      "frames": 67,
+      "reliable": 65,
+      "not_running": 0,
+      "unsupported_time": 2,
+      "too_few_pairs": 0,
+      "clock_parity_official": null,
+      "clock_shift_ms": 0.0,
+      "core_ghost_channel_dropped": true,
+      "peak_current_A": 631824.7427368164,
+      "window_ms": [
+        4.89962100982666,
+        432.0997009277344
+      ]
+    }
+  ],
+  "official_clock_bitwise_parity_DIII_D": true,
+  "MAST_ghost_empty_channel_and_shape_verified": true,
+  "known_small_current_noise_frames_rejected": true,
+  "targets_read": false,
+  "comparative_metrics_computed": false,
+  "all_new_sources_syntax_valid": true
+}

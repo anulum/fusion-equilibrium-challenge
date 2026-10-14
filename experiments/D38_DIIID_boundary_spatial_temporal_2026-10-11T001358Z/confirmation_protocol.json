@@ -1,0 +1,22 @@
+{
+  "id": "D38-one-locked-winner-independent357",
+  "UTC": "2026-10-11T01:49:13.404003+00:00",
+  "confirmation_targets_opened": false,
+  "candidate_development_results_available": false,
+  "reserved_shots": 357,
+  "reserved_frames": 76251,
+  "candidate_selection": "highest unrounded full69 S among original prospective development gate passers; frozen before confirmation",
+  "shared_tree_refit": "original5954 training only, calibration372 only early stopping; both evaluation cohorts excluded; CPU hist original depth8 max_bin256 subsample.8 colsample.5 min_child_weight20 lambda1 seed9; B eta.1 rounds6000 patience200, A eta.05 rounds3000 patience100; nthread4",
+  "tree_targets": [
+    "li_scored",
+    "r_axis",
+    "kappa",
+    "x_lower_r"
+  ],
+  "tree_inputs": "original367 features, unchanged original label definitions",
+  "weight_or_candidate_retuning": false,
+  "bootstrap_seed": 3802,
+  "bootstrap_replicates": 10000,
+  "gate": "same full69 deltaS>=3e-5, pairedwhole-shot99percentlower>0, no increased LCFS fails, all finite; no publication",
+  "negative_development": "do not open confirmation targets or fit confirmation trees"
+}

@@ -1,0 +1,14 @@
+{
+  "status": "unopened_confirmation_watcher_stopped_pending_joint_development_selection",
+  "UTC": "2026-10-11T081559Z",
+  "entrant_authorization": "Entrant explicitly requests the second agent and returned the first agent to collaborate on the active equilibrium campaign.",
+  "unit": "fec-d38-confirmation-v3.service",
+  "before": "MainPID=1491380\nActiveState=active\n",
+  "after": "MainPID=0\nResult=success\nActiveState=inactive\n",
+  "development_analysis_exists": false,
+  "confirmation_labels_opened": false,
+  "original_scientific_sources_or_protocol_modified": false,
+  "all_neural_training_readouts_and_D38_development_unchanged": true,
+  "reason": "Protect the shared357 confirmation cohort from automatic opening while a newly authorized sibling finisher/head study is frozen and evaluated on358 development shots. Centralize and lock a single joint development selection before reserved scoring.",
+  "required_next": "Agree and record joint selection protocol before any candidate result or confirmation labels. Resume supervised eligible-tree confirmation with preserved original gate, cohorts and evidence after complete development studies; no abandonment or publication."
+}

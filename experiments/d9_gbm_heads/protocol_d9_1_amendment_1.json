@@ -1,0 +1,9 @@
+{
+ "amends": "protocol_d9_1_deploy.json (sha a50a0598…)",
+ "frozen_utc": "2026-10-05T15:01:49Z",
+ "author": "first_agent",
+ "reason": "The D8 rule is not finished: F2 was rejected on the public score (#962577, .995949 vs .995990), F1 is built but can only be submitted after 00:00Z on 6 Oct (the five submissions of 5 Oct UTC are used). A 195-net build takes 3.5-6 h on ML350.",
+ "change": "G1 is built now on the baseline finisher (the deployed flags); its reference is the baseline public score .995990 (#961623 = #962588). If F1 reaches .996010 and becomes the deployed finisher, G1 is rebuilt on the F1 flags and compared with the F1 score; the baseline-finisher G1 result is reported either way.",
+ "unchanged": "heads, weights, tree fits, builder, decision rule, the pre-declared halving.",
+ "exposure": "tree heads on the public test exist (tree_heads_public_test.npz sha 67fd2caa…, inputs only); no blended build and no G1 score exist. F2 public result known."
+}

@@ -1,0 +1,8 @@
+{
+  "status": "frozen_before_real_eligible_GPU_transfer",
+  "full_row_plan": "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/conditional400_data/fit_row_plan.json",
+  "normalization": "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/conditional400_data/normalization.npz",
+  "selection": "first,one_third,two_thirds,last_in_each_fit_part_whole_shots",
+  "no_optimizer_updates_or_validation_targets": true,
+  "physical_teacher_reconstruction_atol_m": 1e-07
+}

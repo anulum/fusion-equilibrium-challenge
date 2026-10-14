@@ -1,0 +1,60 @@
+{
+ "entrant_decision": "2026-09-29 \"Pretrenuj.\" + explicit go for the holdout (\"neblokujme sa\")",
+ "holdout_shots": 358,
+ "control_training_shots": [
+  "d3d_shot_932e29c275",
+  "d3d_shot_d26742ac81",
+  "d3d_shot_10f943e244",
+  "d3d_shot_d1737b9445",
+  "d3d_shot_ee66cc17b5"
+ ],
+ "control_rows": {
+  "shots": 5,
+  "frames": 985,
+  "features": 367,
+  "feature_layout": "discharge",
+  "flux_r2_ceiling_of_the_basis": 0.9999999950874116,
+  "flux_squares_about_the_mean": 144011.48605250937,
+  "flux_squares_left_out_by_the_basis": 0.0007074691572285101,
+  "failures": {}
+ },
+ "holdout_rows": {
+  "shots": 358,
+  "frames": 78875,
+  "features": 367,
+  "feature_layout": "discharge",
+  "flux_r2_ceiling_of_the_basis": 0.9999999916353435,
+  "flux_squares_about_the_mean": 13171471.835142631,
+  "flux_squares_left_out_by_the_basis": 0.11017483751484794,
+  "failures": {}
+ },
+ "control_bitwise": {
+  "d3d_shot_10f943e244": {
+   "features": true,
+   "coordinates": false,
+   "labels": true
+  },
+  "d3d_shot_932e29c275": {
+   "features": true,
+   "coordinates": false,
+   "labels": true
+  },
+  "d3d_shot_d1737b9445": {
+   "features": true,
+   "coordinates": false,
+   "labels": true
+  },
+  "d3d_shot_d26742ac81": {
+   "features": true,
+   "coordinates": false,
+   "labels": true
+  },
+  "d3d_shot_ee66cc17b5": {
+   "features": true,
+   "coordinates": true,
+   "labels": true
+  }
+ },
+ "control_all_equal": false,
+ "seconds": 753.3633780479431
+}

@@ -1,0 +1,34 @@
+{
+ "name": "mapaware_xpoint_corrector",
+ "status": "frozen_before_any_oof_map_exists",
+ "frozen_at_utc": "2026-09-28T23:04:13Z",
+ "author": "first_agent",
+ "depends_on": ["protocol_kfold_oof_maps_20260929.json (de6e2f71...)", "protocol_amendment_1_failed_fit_rule.json (7a32e1c4...)"],
+ "question": "Given a finished map made by networks that never saw the shot, can a corrector that reads the map around its X-points plus the inputs move the boundary saddles toward the true raw-map saddles selectively enough to lower D without hurting other terms?",
+ "data": "the five OOF archives (fold k maps of 80 fold-k training shots each, kfold_build.py), every 2nd frame",
+ "target": "per end (lower, upper): true raw-map saddle position minus the OOF map's saddle position (both from x_point.boundary_saddles); rows where both exist",
+ "features": "map-side: saddle R,Z and its Hessian (3), normalised saddle flux (phi_s - phi_b)/(phi_axis - phi_b), the other end's saddle R,Z and flux gap, LCFS lowest/highest point R,Z, axis R,Z, the seven derived scalars read from the map; input-side: the 367 table features",
+ "model": "HistGradientBoostingRegressor per target coordinate (max_iter 400, learning_rate 0.05, max_leaf_nodes 31, l2 1.0, early_stopping False, random_state 0); uncertainty per end = HistGB (max_iter 200) on log(|residual 2-D| + 1e-4) of inner cross-fitted predictions",
+ "evaluation": "nested cross-fit over the 5 folds: for each outer fold j, fit on the other four folds' OOF maps (uncertainty model from an inner 4-fold cross-fit), predict fold j; every metric is on fold j maps only",
+ "arms": {
+  "base": "OOF map unchanged",
+  "gated_full": "move an end with x_point.with_x_points to map saddle + predicted correction only if |correction| >= 0.001 m and |correction| >= 2 * sigma; share 1",
+  "gated_half": "same gate, share 0.5",
+  "ungated_full": "reference only",
+  "oracle_truth": "reference ceiling only"
+ },
+ "metrics": "per frame D (scorer Hausdorff / rgeo), seven derived-scalar squared errors and flux SSE versus the true map; per shot mean D change; 20000 shot bootstrap (seed 930)",
+ "admission_gates_for_gated_arms": {
+  "mean_D_change_negative": true,
+  "shot_bootstrap95_upper_below_zero": true,
+  "win_fraction_among_changed_shots_at_least": 0.55,
+  "contour_losses": 0,
+  "li_squared_error_ratio_at_most": 1.05,
+  "kappa_squared_error_ratio_at_most": 1.0,
+  "flux_sse_ratio_at_most": 1.0,
+  "gates_must_hold_in_at_least_4_of_5_outer_folds_for_the_mean_D_sign": true
+ },
+ "on_pass": "freeze: final corrector = fitted on all five folds' OOF maps; apply to v25 (65-member) full357 validation maps; ONE official-scorer full357 screen with paired whole-shot CI against v25; submission decision only after that and public-test transfer checks",
+ "on_fail": "record; no threshold or hyperparameter tuning on these folds",
+ "forbidden": ["reserved stems", "sealed holdout", "MAST targets", "validation targets before admission"]
+}

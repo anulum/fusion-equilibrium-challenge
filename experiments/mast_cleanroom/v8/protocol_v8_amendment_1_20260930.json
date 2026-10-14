@@ -1,0 +1,4 @@
+{"amends": "protocol_v8_pilot_20260930.json (sha 3818b5db...)", "frozen_at_utc": "2026-09-30T07:44:27Z", "status": "frozen_before_any_pilot_metric",
+ "finding_that_prompted_it": "smoke run on shot 0 (parity only, no metric read): v7 arm reproduces the #949223 maps exactly (max diff 0.0); v8 identical because the Te 5 % pair exists on only ~27 % of frames (audit_pair_flux: 1459/5401), the laser ending before Te falls to 5 % on the inboard side",
+ "change": "when no 5 % pair exists the correction field is fitted to the edge (10 %) pair (present on ~69 % of frames; DIII-D: Te 10 % marks the LCFS at -3.3 cm, IQR 3.9 cm); the 10 % pair stays in the NNLS as in v7",
+ "acceptance": "unchanged (P1, P2, P3)"}

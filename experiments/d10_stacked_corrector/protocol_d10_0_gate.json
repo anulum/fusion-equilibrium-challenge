@@ -1,0 +1,41 @@
+{
+ "id": "D10-0 gate: cross-fitted residual correctors of the network heads (stacking)",
+ "frozen_utc": "2026-10-05T15:09:59Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-04/05: DIII-D back into the top 5 is the priority",
+ "question": "D9-0 showed that trees fitted on the labels err differently from the networks (error correlation .5-.76) but are weaker, so a one-weight blend gains little (li error variance -4.8 %). Can trees fitted directly on the network heads' out-of-fold residuals, with the heads themselves among their inputs, remove more of the error the network family shares?",
+ "a_priori": "From the D9-0 covariances the part of the network error that the trees do not share is about 18 % of the error variance for li, 9 % r_axis, 11 % q95, 6 % kappa; it is the same for every network member (member errors 99.3 % shared), hence a systematic function of the inputs, which a corrector can learn if the sample suffices. Earlier residual correctors (ledger 2.8, 2.13, 2.17) had 400 out-of-fold shots and were negative; nn_oof.npz now holds out-of-fold heads for all 5936 training shots (1.32 million frames).",
+ "data": "table_training of tables_lcfs_discharge (sha fdca477d\u2026) and nn_oof.npz (sha 23f6d850\u2026: the S16 fold networks' heads on every held-out training frame, D9-0). Folds and reserved stems as protocol_kfold_oof_maps_20260929. No calibration, validation, holdout or test data. DIII-D only.",
+ "corrector": {
+  "inputs": "367 table features + the 13 out-of-fold network heads of the same frame",
+  "target": "label - network head, one model per target (13)",
+  "cross_fit": "outer fold k: fit on the three folds other than k and (k+1)%5, early stopping on fold (k+1)%5, predict fold k",
+  "library": "xgboost (Kaggle image version, recorded)",
+  "params": {
+   "tree_method": "hist",
+   "device": "cuda",
+   "objective": "reg:squarederror",
+   "max_depth": 6,
+   "eta": 0.03,
+   "subsample": 0.8,
+   "colsample_bytree": 0.5,
+   "min_child_weight": 50,
+   "lambda": 5.0,
+   "max_bin": 256,
+   "seed": 10
+  },
+  "rounds": 4000,
+  "early_stopping_rounds": 150,
+  "tuning": "none: one setting, more regularised than D9 because the residual signal is weak; fixed here before any fit"
+ },
+ "kernel": {
+  "file": "d10_stacked_corrector/kaggle_gate/run_d10_gate.py",
+  "sha256": "67ba000e65afc08eeafe4915806f973cacc11f83c54fc1a935f655f8f46e5aeb",
+  "kaggle_id": "anulum/fec-d10-stack-gate"
+ },
+ "measure": "d9_gbm_heads/d9_gate_eval.py (sha 1bbb1e71\u2026) unchanged, with the corrected head (network + predicted residual) in the place of the tree head: per target the nested weight is then the shrink factor of the correction, fitted on the other four folds; pooled R2, the same head-level proxy dS_proxy and the same bootstrap over shots (2000, seed 990).",
+ "rule": "PASS if dS_proxy >= +3e-5 and P >= 0.95. If it passes AND exceeds the D9-0 blend's +3.11e-5 by more than its own bootstrap half-width, the corrector replaces the D9 blend as the deployment candidate (new protocol before any all-data corrector fit); otherwise D9-1 stays the candidate and the corrector is reported. FAIL -> residual correctors are closed for good at this sample size; no second setting.",
+ "known_limit_for_deployment": "The corrector is fitted on residuals of 16-network fold heads; in deployment it would read 195-network all-data heads. Their errors are largely shared (ledger 2.10) but not identical, so a deployment would shrink the correction and be judged on the public score, like for like.",
+ "exposure": "D9-0/D9-0b results known (same folds and network heads). No residual corrector on these 5936 shots exists at freeze.",
+ "rule_3": "DIII-D training data only."
+}

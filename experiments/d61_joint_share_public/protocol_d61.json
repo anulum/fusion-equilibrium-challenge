@@ -1,0 +1,13 @@
+{
+ "id": "D61: the least-squares joint shares of D51 for q95 and betaN, checked on the public test",
+ "frozen_utc": "2026-10-14T00:21:21Z",
+ "author": "first_agent",
+ "entrant": "2026-10-14, on the proposal 'Jedna verejná submisia navyše … Skúsiť, alebo nechať?': 'toto si ešte nechcel spraviť?' — taken as the word to do it",
+ "candidate": "submitted q95 = (1 - .46) x mean of the 69 map networks + .46 x mean of the 8 joint networks; betaN = (1 - .87) x map + .87 x joint. The weights are D51's least-squares weights on all 358 development shots rounded to two decimals, the deployment form D51's protocol named before its result. Maps, MAST archive and everything else are those of #981856, byte for byte.",
+ "evidence_so_far": "D51 nested on 358 reused shots: dS +1.43e-5, 99 % interval [-5.9e-6, +3.9e-5], P .963 — FAILED its own rule on the 99 % bound. D52 (thirds): +7.8e-6, failed. D34 on 5936 other shots: joint networks alone better than map-type controls on both scalars. Not a verified candidate; the entrant authorised this one check knowing that.",
+ "why_the_public_test_is_a_fair_meter_here": "The 874 public shots were never used for this question; the weights are fixed before the submission; Development feedback on DIII-D is unrestricted by the rules. It is one more look at the public score, and is disclosed as such.",
+ "build": "extract the map-network scalars (float32) from the H69 archive 99a7df91 and the joint scalars (float64) from D36 public_predictions; first reproduce the deployed scalars with .25/.25 and require bit-equality with the archive of #981856 on all 1748 arrays; then write the candidate scalars with the same arithmetic (float32 base promoted to float64, blend, float32) into a copy of the deployed archive whose map records are kept unchanged",
+ "rule": "KEEP the candidate displayed if public d3d_S >= 0.996347 (the deployed 0.996342 + 5e-6) and d3d_r2_qb is higher than 0.997890. Otherwise the archive of #981856 is submitted again so that it is the newest scored entry. Either way the result is reported as observed; no second weight is tried on the public test.",
+ "final_phase": "If kept, the package's inference manifest gets the two weights and the D55 reproduction check is repeated for the scalars before the entrant is asked to publish.",
+ "cost": "one or two of the 48 remaining Development submissions"
+}

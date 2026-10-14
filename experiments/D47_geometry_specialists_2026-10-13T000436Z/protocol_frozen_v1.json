@@ -1,0 +1,38 @@
+{
+ "id": "D47-geometry-specialists",
+ "status": "frozen before any fit",
+ "frozen_UTC": "2026-10-13 about 00:25Z",
+ "author": "first_agent (takeover lead; the second agent's allowance is ending, so this is self-reviewed and says so)",
+ "why": "D45 (report d45_head_dose_response_120.json): moving each finisher target 25 percent of the way to the truth-derived value is worth, on the 120 screening shots, axis +274.5 microS [164.6, 427.9] (R alone +170.8), li +265.0 [128.8, 486.5], kappa +122.7 [80.4, 175.4], volume +52.0, triangularities +28.6, all seven +742.7 [531.3, 1038.0], with X +903.8; the groups add. D43 confirmed on the reserved cohort that a dedicated specialist blended at .5 improves the X targets enough to pass the score gate. D47 applies the same construction to the seven geometry targets.",
+ "prior_negative": "ledger 2.20-2.25 (D6): scalar heads SWAPPED to map networks refitted with 4x label weight failed on confirmation folds and on the public test (16 specialists replacing 195-member heads). D47 differs in three ways that D43 validated for X: head-only networks, blended at .5 rather than swapped, base heads keep their full ensemble.",
+ "specialists": {
+  "outputs": [
+   "r_axis",
+   "z_axis",
+   "kappa",
+   "tri_top",
+   "tri_bot",
+   "volume",
+   "li_scored"
+  ],
+  "targets": "r_axis and z_axis from the table (EFIT labels, as the base heads); the other five from the true-map teacher targets the base heads' readouts are fitted to",
+  "inputs": "the 582 features",
+  "recipe": "512x4, 60 fixed epochs, batch 2048, LR .002, wd 1e-5, gradient limit 1, masked squared error on per-target normalised outputs; D40's static recipe except per-target instead of common scale",
+  "seeds": "600..615 (16)",
+  "rows_replica": "the 6326 shots outside the 358 and the 357 (D38 eligible rows)",
+  "quality_rule": "final-10 mean training loss <= 1.25 x lowest contiguous 10-mean, finite; all 16 or none; no refit, no seed replaced"
+ },
+ "blend": "share .5 for every target, applied to the tree-adjusted base heads before the finisher (for r_axis, kappa and li_scored the tree blend then acts on half)",
+ "stage_1_head_report": {
+  "cohort": "the 120 screening shots; selection data, repeatedly exposed",
+  "what": "pooled squared error per target against the truth-derived scalars (the scorer's own references) for base, raw 16-mean and the .5 blend; prefixes 4/8/16; per-seed; error correlation",
+  "predicted_score": "P = 11.0 x pct(axis, mean of R and Z rms reduction) + 10.6 x pct(li) + 4.9 x pct(kappa) + 2.1 x pct(volume) + 1.1 x pct(tri, mean of both), pct = percent reduction of the pooled rms error of the blend against the base; coefficients = D45 delta S / 25",
+  "proceed_if": "P >= 30 microS",
+  "else": "stop, no candidate"
+ },
+ "stage_2": "native full-69 finisher on the 120 with base, X-only blend (the D43 arm) and X+geometry blend: diagnostic record, bootstrap 10000 seed 4701; then, if X+geometry exceeds X-only by >= 3e-5 with a 99 percent lower bound > 0 on the 120, the same two arms once on the 238 (third look at that cohort after D43 and before any D44; disclosed), gate: X+geometry minus X-only >= 3e-5, 99 percent lower bound > 0 (seed 4702), no more LCFS failures, all finite",
+ "no_untouched_cohort": "the 357 were spent by D43. A pass here rests on the 120 (selection), the reused 238 and, if deployed, one public submission named as a check on historically selected settings.",
+ "deployment_if_passing": "all-data refits of the same 16 seeds (--rows all), blended at .5 together with the D43 X specialists in a new builder revision qualified like build_h69x_v2 (share 0 must equal the D25/D36 maps); entrant authorised submissions on 2026-10-12 and asked for autonomous work towards the top five",
+ "machines": "fits on the local ROCm cards (minutes each); finisher runs on ML350 after the D43 candidate build",
+ "publication": false
+}

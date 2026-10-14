@@ -1,0 +1,28 @@
+{
+  "id": "D25-0",
+  "created_utc": "2026-10-08T154444Z",
+  "entrant": "the second agent",
+  "purpose": "Exact weak-member marginal raw-output diagnostic, plus calibration-excluded-member control. No deployment decision from contaminated H3 calibration.",
+  "weak": "v29_readout_s2/discharge_hx_seed2_all/network.npz",
+  "population": "All calibration rows; first 32 calibration shot stems by sha256 for bounded initial diagnostic, all frames of each selected shot. No outcome-based selection.",
+  "arms": [
+    "H3_70",
+    "H3_69_without_weak",
+    "calibration_untrained_members",
+    "calibration_untrained_without_weak"
+  ],
+  "metrics": [
+    "raw coordinate SSE",
+    "per-label paired SSE ratio",
+    "shot-bootstrap 2000 seed990 CI95 and probability improvement",
+    "input clipping association"
+  ],
+  "limits": {
+    "threads": 4,
+    "memory": "8G",
+    "wall_seconds": 900,
+    "restart": 0
+  },
+  "interpretation": "H3 comparisons exposed to calibration training. Calibration-untrained comparison still checkpoint-selected on calibration; diagnostic, not untouched test. No MAST use. No full composite-score claim.",
+  "next": "Full finisher attribution on existing held-out D18 models; full H3 ablation requires a frozen public evaluation decision or a newly fitted holdout ensemble."
+}

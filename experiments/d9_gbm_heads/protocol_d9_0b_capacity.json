@@ -1,0 +1,42 @@
+{
+ "id": "D9-0b: the gate's boosted heads trained to convergence",
+ "frozen_utc": "2026-10-05T13:00:00Z",
+ "author": "first_agent (group manager)",
+ "follows": "protocol_d9_0_gate.json (sha 70356ade\u2026), result d9_gate_result.json (sha 8c59ed7b\u2026): PASS, dS_proxy +3.11e-5, CI95 [+1.96e-5, +4.52e-5], P 1.0; gain from li_scored (dR2 +.00144, weight .27) and r_axis (+.00022, .14).",
+ "observation": "In the gate 64 of 65 fits stopped at the 3000-round cap (best_iteration 2999), so the trees were still improving on calibration: setting A is under-trained. The NN-tree error correlation is .48-.76 (network members among themselves: .993), i.e. the families err differently; the tree weight is small only because the trees are weaker (error variance 1.3x-3.8x the networks').",
+ "question": "Does the same tree model trained to convergence give a larger out-of-fold blend gain?",
+ "setting_B": {
+  "params": {
+   "tree_method": "hist",
+   "device": "cuda",
+   "objective": "reg:squarederror",
+   "max_depth": 8,
+   "eta": 0.1,
+   "subsample": 0.8,
+   "colsample_bytree": 0.5,
+   "min_child_weight": 20,
+   "lambda": 1.0,
+   "max_bin": 256,
+   "seed": 9
+  },
+  "rounds": 6000,
+  "early_stopping_rounds": 200,
+  "change_from_A": "eta 0.05 -> 0.1 and cap 3000 -> 6000 (four times the boosting length), patience 100 -> 200; nothing else"
+ },
+ "targets": [
+  "q95",
+  "li_scored",
+  "r_axis",
+  "kappa"
+ ],
+ "why_these": "the targets whose blend can matter (gate: li_scored and r_axis carry the gain, kappa P .973, q95 the larger half of the submitted scalars); 20 fits fit one kernel session",
+ "data_folds_comparator_blend": "exactly as protocol_d9_0_gate.json (same rows, same S16 network heads nn_oof.npz, same nested weight)",
+ "kernel": {
+  "file": "d9_gbm_heads/kaggle_b/run_d9_b.py",
+  "sha256": "4c588281113aae095afed6e0443c43ca7ca73698f935edbf21d8d25d6b4f6891",
+  "kaggle_id": "anulum/fec-d9-gbm-b"
+ },
+ "use": "For deployment each target takes the setting (A or B) with the higher out-of-fold nested-blend R2 on the 5936 shots. This is a selection between two settings on 1.3 million out-of-fold frames with a nested weight; its optimism is negligible against the effect and is disclosed. No third setting is run for these targets before the deployment protocol is frozen.",
+ "exposure": "gate result known; no B fit exists at freeze.",
+ "rule_3": "DIII-D training data only."
+}

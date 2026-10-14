@@ -1,0 +1,15 @@
+{
+ "name": "r6_physics_features_li_kappa",
+ "status": "frozen_before_any_feature_computation",
+ "frozen_at_utc": "2026-09-29T15:19:34Z",
+ "author": "first_agent",
+ "entrant_decision": "2026-09-29: yes, continue with new features for li and kappa",
+ "question": "Do input-only physics features (kinetic pressure / beta_p proxy, profile peaking and width, edge pedestal, current and conductivity history) carry information about the v25-recipe network ERROR in li and kappa that the current 367 inputs plus the finished map do not?",
+ "data": "K-fold OOF archives (C/kfold/oof_fold0..4: 400 training shots never seen by their networks), every 2nd frame as in C/kfold/features_fold*.npz",
+ "targets": "per frame residual = truth - OOF finished map, for li and kappa; truth = lcfs table labels li_scored and kappa (scorer reading of the basis map), map = features_fold map_features columns li and kappa",
+ "arms": {"A": "367 inputs + the 7 map-read scalars of the OOF map", "B": "A + physics block P (defined in r6_features.py, computed from fec_adapter.shot_reader aligned inputs and the raw plasma-current / Thomson traces only; no efit column)"},
+ "model": "HistGradientBoostingRegressor(max_iter 400, learning_rate 0.05, max_leaf_nodes 31, l2 1.0, early_stopping False, random_state 0)",
+ "evaluation": "leave-one-fold-out over the 5 K-fold folds (fit on 4 folds' frames, predict the 5th); metric per target: R2 of the residual explained, and SSE reduction relative to the uncorrected map; B vs A paired over shots, 20000-resample shot bootstrap (seed 930)",
+ "decision": "P is worth building into the recipe only if B beats A by >= 0.02 in residual R2 on li or kappa with P(B better) >= 0.95; otherwise recorded as no new information",
+ "diagnosis_only": true
+}

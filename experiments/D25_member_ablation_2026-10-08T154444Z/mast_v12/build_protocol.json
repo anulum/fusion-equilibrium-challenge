@@ -1,0 +1,19 @@
+{
+  "id": "MAST-v12-input-domain-full-build",
+  "created_utc": "2026-10-08T16:03:25.975276+00:00",
+  "parent": "protocol.json",
+  "scope": "One genuine input-only candidate, all1206 public shots, same v11 solver/scalars/fallbacks with current support from finite positive-R input grid excluding conductor cells. Frozen before full build; no label access, offline score or score-based tuning.",
+  "evidence": "Two-shot smoke passed finite65x65 maps and scalar filling;85/104 frames solved,82 direct scalar reads; audit hook denied any organiser mask opens, no attempts observed.",
+  "limits": {
+    "workers": 8,
+    "BLAS_threads": 1,
+    "CPUQuota": "800%",
+    "MemoryMax": "32G",
+    "MemorySwapMax": 0,
+    "RuntimeMaxSec": 21600,
+    "restart": 0
+  },
+  "storage": "SSH stream to Samsung only; inputs retained read-only; bytecode disabled.",
+  "admission": "Candidate only; no automatic upload or submission. Full output schema/finiteness validation required. Historical v11 exposure/provenance retained; this addresses mask dependency, not blanket cleanroom certification.",
+  "script_sha256": "a290758b895b54ba14f68eec039df95ccaa43e8728f1a1688a4472f895f9f154"
+}

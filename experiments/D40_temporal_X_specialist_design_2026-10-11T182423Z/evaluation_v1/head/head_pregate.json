@@ -1,0 +1,993 @@
+{
+  "status": "all_declared120_complete_X_head_pregate",
+  "activation_sha256": "bdc3f68e03b4cdc17680972877a0e760e26a5e39261a361d2c7998cf1b56ac3a",
+  "source_sha256": "890c8ecdab5cdf1bd4bbb08e1eb4e5aa267ec40ececf214ded7d3cddb05eea32",
+  "shots": 120,
+  "frames": 26597,
+  "training_quality_pass": {
+    "static": true,
+    "mean": true,
+    "ordered": true
+  },
+  "head_pregate_pass": {
+    "static": false,
+    "mean": false,
+    "ordered": false
+  },
+  "reports": {
+    "baseline": {
+      "lower": {
+        "equal_shot_mean_distance_m": 0.006982727234713302,
+        "pooled_frame_mean_distance_m": 0.0055120683144077275,
+        "eligible_shots": 104,
+        "eligible_frames": 16636,
+        "paired_component_error_correlation": 1.0
+      },
+      "upper": {
+        "equal_shot_mean_distance_m": 0.010688254906220437,
+        "pooled_frame_mean_distance_m": 0.005641455014927098,
+        "eligible_shots": 82,
+        "eligible_frames": 12629,
+        "paired_component_error_correlation": 1.0
+      }
+    },
+    "descriptive_base8": {
+      "lower": {
+        "equal_shot_mean_distance_m": 0.007352184419175817,
+        "pooled_frame_mean_distance_m": 0.005738510778879421,
+        "eligible_shots": 104,
+        "eligible_frames": 16636,
+        "paired_component_error_correlation": 0.9598614078162047
+      },
+      "upper": {
+        "equal_shot_mean_distance_m": 0.011262228145914996,
+        "pooled_frame_mean_distance_m": 0.005718591494256931,
+        "eligible_shots": 82,
+        "eligible_frames": 12629,
+        "paired_component_error_correlation": 0.9804896236974532
+      }
+    },
+    "static": {
+      "raw_expert": {
+        "lower": {
+          "equal_shot_mean_distance_m": 0.006501291479838979,
+          "pooled_frame_mean_distance_m": 0.004898346660367372,
+          "eligible_shots": 104,
+          "eligible_frames": 16636,
+          "paired_component_error_correlation": 0.8581374648906015
+        },
+        "upper": {
+          "equal_shot_mean_distance_m": 0.010939899918840095,
+          "pooled_frame_mean_distance_m": 0.005430576269507639,
+          "eligible_shots": 82,
+          "eligible_frames": 12629,
+          "paired_component_error_correlation": 0.9239197861151126
+        }
+      },
+      "share050": {
+        "lower": {
+          "equal_shot_mean_distance_m": 0.006404255159334571,
+          "pooled_frame_mean_distance_m": 0.004996413697069317,
+          "eligible_shots": 104,
+          "eligible_frames": 16636,
+          "paired_component_error_correlation": 0.965050536867281
+        },
+        "upper": {
+          "equal_shot_mean_distance_m": 0.010336044202986804,
+          "pooled_frame_mean_distance_m": 0.0053486815844311225,
+          "eligible_shots": 82,
+          "eligible_frames": 12629,
+          "paired_component_error_correlation": 0.979768644847526
+        }
+      },
+      "ratios": {
+        "lower": 0.9171567131388196,
+        "upper": 0.9670469401858436
+      },
+      "per_seed": {
+        "500": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0077657522920261506,
+              "pooled_frame_mean_distance_m": 0.005555777770552734,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7565799814847852
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012680981283797896,
+              "pooled_frame_mean_distance_m": 0.006123679825577158,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8625972531456365
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006691449371791001,
+              "pooled_frame_mean_distance_m": 0.0051191509019957405,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9335020104968278
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011031086569191424,
+              "pooled_frame_mean_distance_m": 0.005549433320601971,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9601291538302023
+            }
+          }
+        },
+        "501": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007737043321298376,
+              "pooled_frame_mean_distance_m": 0.005446474130945519,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7708687142649415
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011544751154710873,
+              "pooled_frame_mean_distance_m": 0.006033666894539618,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8750532530244187
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006692939340146405,
+              "pooled_frame_mean_distance_m": 0.0050524279053570315,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9381877887873343
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010458730010532581,
+              "pooled_frame_mean_distance_m": 0.005482064498030775,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9651822407254531
+            }
+          }
+        },
+        "502": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0076106065153873645,
+              "pooled_frame_mean_distance_m": 0.005592894665264101,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7916442730856118
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012792268923849383,
+              "pooled_frame_mean_distance_m": 0.0061312230633850445,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8687479877338258
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006641766843671063,
+              "pooled_frame_mean_distance_m": 0.00519443090252048,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9436668632892605
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011033525436479837,
+              "pooled_frame_mean_distance_m": 0.005539918819508017,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9614618343841325
+            }
+          }
+        },
+        "503": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.00753194545229538,
+              "pooled_frame_mean_distance_m": 0.005440362670910614,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.759871154561038
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.013310954101551708,
+              "pooled_frame_mean_distance_m": 0.006296192044265744,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8872176267125459
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.00663654290729175,
+              "pooled_frame_mean_distance_m": 0.005097730148800915,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9348694952556095
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.01121705241716605,
+              "pooled_frame_mean_distance_m": 0.005645054183570557,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9674397111474143
+            }
+          }
+        },
+        "504": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.008136958280787808,
+              "pooled_frame_mean_distance_m": 0.005619087904795589,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7816913186455315
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011253285806097779,
+              "pooled_frame_mean_distance_m": 0.005979851058772429,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8785852016965804
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006940739601609904,
+              "pooled_frame_mean_distance_m": 0.005202223759300786,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9392277383398541
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010284540590794547,
+              "pooled_frame_mean_distance_m": 0.0054442295367631306,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9666271172059565
+            }
+          }
+        },
+        "505": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007875157783708248,
+              "pooled_frame_mean_distance_m": 0.005728071756899684,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7834415806451616
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010666832982950146,
+              "pooled_frame_mean_distance_m": 0.006063299833352001,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8705763473724442
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006809523095569399,
+              "pooled_frame_mean_distance_m": 0.005264574549591689,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9387579198133051
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.009953224128261542,
+              "pooled_frame_mean_distance_m": 0.005505260755033035,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9645771583125479
+            }
+          }
+        },
+        "506": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007714136020841424,
+              "pooled_frame_mean_distance_m": 0.005592704752837632,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7960118806762216
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011376174218446913,
+              "pooled_frame_mean_distance_m": 0.006164862168147092,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8834222064633402
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006830535877234742,
+              "pooled_frame_mean_distance_m": 0.005230061274100281,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9429919078014125
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010348257378022148,
+              "pooled_frame_mean_distance_m": 0.005571863159878625,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.96792701781309
+            }
+          }
+        },
+        "507": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007456326052738301,
+              "pooled_frame_mean_distance_m": 0.005714512220585099,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7777895587858585
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012534474369658702,
+              "pooled_frame_mean_distance_m": 0.006124875106645316,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8673422966175235
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006627597188807816,
+              "pooled_frame_mean_distance_m": 0.0052535409534241765,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9382907316019268
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010795523522570556,
+              "pooled_frame_mean_distance_m": 0.005533520589226939,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9621337357781283
+            }
+          }
+        }
+      }
+    },
+    "mean": {
+      "raw_expert": {
+        "lower": {
+          "equal_shot_mean_distance_m": 0.006461902054475508,
+          "pooled_frame_mean_distance_m": 0.004833990978294771,
+          "eligible_shots": 104,
+          "eligible_frames": 16636,
+          "paired_component_error_correlation": 0.832099942931716
+        },
+        "upper": {
+          "equal_shot_mean_distance_m": 0.011197030095022483,
+          "pooled_frame_mean_distance_m": 0.00549812791893316,
+          "eligible_shots": 82,
+          "eligible_frames": 12629,
+          "paired_component_error_correlation": 0.9245694825992802
+        }
+      },
+      "share050": {
+        "lower": {
+          "equal_shot_mean_distance_m": 0.006300453034760872,
+          "pooled_frame_mean_distance_m": 0.004948526073419312,
+          "eligible_shots": 104,
+          "eligible_frames": 16636,
+          "paired_component_error_correlation": 0.9585408209309284
+        },
+        "upper": {
+          "equal_shot_mean_distance_m": 0.010527909418971687,
+          "pooled_frame_mean_distance_m": 0.005373493097376117,
+          "eligible_shots": 82,
+          "eligible_frames": 12629,
+          "paired_component_error_correlation": 0.9799004390203264
+        }
+      },
+      "ratios": {
+        "lower": 0.9022911568762656,
+        "upper": 0.9849979731344702
+      },
+      "per_seed": {
+        "500": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.00770566637412015,
+              "pooled_frame_mean_distance_m": 0.0055890252465392865,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7523248275975836
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012694015406740165,
+              "pooled_frame_mean_distance_m": 0.00617296891532145,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8684269065209861
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0067224373526293575,
+              "pooled_frame_mean_distance_m": 0.005176206415098389,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9315637149191986
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011080578686773304,
+              "pooled_frame_mean_distance_m": 0.005573413147832236,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9631223387398847
+            }
+          }
+        },
+        "501": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007812846756503232,
+              "pooled_frame_mean_distance_m": 0.0055936284243482464,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7690670713761877
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012405695415745249,
+              "pooled_frame_mean_distance_m": 0.006114668698593114,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8875111478730566
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006791560447444712,
+              "pooled_frame_mean_distance_m": 0.005183187404809676,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9360788049646022
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.01090467000131731,
+              "pooled_frame_mean_distance_m": 0.0055021455376077855,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9685316076420504
+            }
+          }
+        },
+        "502": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0076809878050130105,
+              "pooled_frame_mean_distance_m": 0.005389385728780262,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7575507349817033
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.013147394326989782,
+              "pooled_frame_mean_distance_m": 0.006296454127619188,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8714856962873517
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006790167055184476,
+              "pooled_frame_mean_distance_m": 0.005074286926460465,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9337130799198561
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011354662201287655,
+              "pooled_frame_mean_distance_m": 0.005588677195239745,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9621270421417243
+            }
+          }
+        },
+        "503": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007544533116606326,
+              "pooled_frame_mean_distance_m": 0.00560003045644316,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7573172280756074
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012024152642069104,
+              "pooled_frame_mean_distance_m": 0.006319850372701881,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8690382738702693
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006540264696866892,
+              "pooled_frame_mean_distance_m": 0.005158122713657821,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9325321432728542
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010797461379048868,
+              "pooled_frame_mean_distance_m": 0.005615395365086986,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.963048433055709
+            }
+          }
+        },
+        "504": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007755272214727896,
+              "pooled_frame_mean_distance_m": 0.005404588843743971,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7456620922641202
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012804510716037382,
+              "pooled_frame_mean_distance_m": 0.006059947798473283,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8773159187038524
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006623085744410043,
+              "pooled_frame_mean_distance_m": 0.005048990247162711,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9320494577994104
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010901504632721468,
+              "pooled_frame_mean_distance_m": 0.005497861759375537,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9650987466078216
+            }
+          }
+        },
+        "505": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007741567920969314,
+              "pooled_frame_mean_distance_m": 0.005613099131980513,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7337648857442944
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011816991544767765,
+              "pooled_frame_mean_distance_m": 0.006149104065916198,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8731857056345904
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006742023461073174,
+              "pooled_frame_mean_distance_m": 0.005184872771593967,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9250077732223242
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010500563537851768,
+              "pooled_frame_mean_distance_m": 0.005550213838787083,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9637394153385144
+            }
+          }
+        },
+        "506": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007648952942624219,
+              "pooled_frame_mean_distance_m": 0.005550814056815089,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7682517352479654
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.01248234073183906,
+              "pooled_frame_mean_distance_m": 0.006241952425204111,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8795381030018125
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006636379420758804,
+              "pooled_frame_mean_distance_m": 0.005152310948544976,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.933111359322736
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010837740845148821,
+              "pooled_frame_mean_distance_m": 0.005622048660927053,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9656090657153134
+            }
+          }
+        },
+        "507": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007603402563754796,
+              "pooled_frame_mean_distance_m": 0.005481468500093299,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.730384542216741
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011347921085957722,
+              "pooled_frame_mean_distance_m": 0.005968319951918457,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8756567860326092
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006475383564003087,
+              "pooled_frame_mean_distance_m": 0.005082875464184359,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9266090136864963
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010322144780533324,
+              "pooled_frame_mean_distance_m": 0.005473454513965595,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9663439121677843
+            }
+          }
+        }
+      }
+    },
+    "ordered": {
+      "raw_expert": {
+        "lower": {
+          "equal_shot_mean_distance_m": 0.006424972846197559,
+          "pooled_frame_mean_distance_m": 0.00482875690423864,
+          "eligible_shots": 104,
+          "eligible_frames": 16636,
+          "paired_component_error_correlation": 0.84969871887602
+        },
+        "upper": {
+          "equal_shot_mean_distance_m": 0.011103844778184414,
+          "pooled_frame_mean_distance_m": 0.005536677197704815,
+          "eligible_shots": 82,
+          "eligible_frames": 12629,
+          "paired_component_error_correlation": 0.9325514106407429
+        }
+      },
+      "share050": {
+        "lower": {
+          "equal_shot_mean_distance_m": 0.006328956658357605,
+          "pooled_frame_mean_distance_m": 0.0049534952066929245,
+          "eligible_shots": 104,
+          "eligible_frames": 16636,
+          "paired_component_error_correlation": 0.9632628567108591
+        },
+        "upper": {
+          "equal_shot_mean_distance_m": 0.01044393810082555,
+          "pooled_frame_mean_distance_m": 0.005396192942832266,
+          "eligible_shots": 82,
+          "eligible_frames": 12629,
+          "paired_component_error_correlation": 0.9821503378920471
+        }
+      },
+      "ratios": {
+        "lower": 0.9063731756403715,
+        "upper": 0.9771415626275253
+      },
+      "per_seed": {
+        "500": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007589859598529853,
+              "pooled_frame_mean_distance_m": 0.005577515420853234,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7535978831423952
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.01225770968357095,
+              "pooled_frame_mean_distance_m": 0.006151019843842579,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8760881444143511
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0066597620770042455,
+              "pooled_frame_mean_distance_m": 0.005197557744341509,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9304495007401246
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010745784695087673,
+              "pooled_frame_mean_distance_m": 0.005543053983768277,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9654232574797819
+            }
+          }
+        },
+        "501": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007596575271777236,
+              "pooled_frame_mean_distance_m": 0.005363548143259389,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7418501224261911
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011576701691036632,
+              "pooled_frame_mean_distance_m": 0.0061310913017633105,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8930812643317783
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0066716156451800315,
+              "pooled_frame_mean_distance_m": 0.005070688702247928,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9328646218625912
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010505782775664317,
+              "pooled_frame_mean_distance_m": 0.00555475243002196,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9695463094344768
+            }
+          }
+        },
+        "502": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0071951845252484405,
+              "pooled_frame_mean_distance_m": 0.005400455051193864,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.78900882031769
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.013076771578047125,
+              "pooled_frame_mean_distance_m": 0.006060877519769441,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8853497446269214
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006486837587290089,
+              "pooled_frame_mean_distance_m": 0.005074683439344499,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9423317155836829
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011248043774436058,
+              "pooled_frame_mean_distance_m": 0.005493152799102604,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.967602394843372
+            }
+          }
+        },
+        "503": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.008259424829148309,
+              "pooled_frame_mean_distance_m": 0.00560781790081094,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.755480256066549
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011991504988929067,
+              "pooled_frame_mean_distance_m": 0.006056084527064699,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8670515628994969
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.00695894756926038,
+              "pooled_frame_mean_distance_m": 0.005173959755541699,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.929421274447495
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010674365517610357,
+              "pooled_frame_mean_distance_m": 0.005500864481583352,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.964022875801618
+            }
+          }
+        },
+        "504": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007215801571278958,
+              "pooled_frame_mean_distance_m": 0.005462207612206294,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7317058235563239
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011783932658302328,
+              "pooled_frame_mean_distance_m": 0.006227684627269952,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8846338346255663
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006491968336558868,
+              "pooled_frame_mean_distance_m": 0.00511379104501861,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9265356868117821
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010488485321362193,
+              "pooled_frame_mean_distance_m": 0.005602785424678185,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9672748034465538
+            }
+          }
+        },
+        "505": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0075983208888778415,
+              "pooled_frame_mean_distance_m": 0.005563395579945456,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7788314071660486
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011794059162373536,
+              "pooled_frame_mean_distance_m": 0.006343204428628998,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.881515927569362
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006756727913144772,
+              "pooled_frame_mean_distance_m": 0.005155986761492922,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.937292512476648
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010669245500910394,
+              "pooled_frame_mean_distance_m": 0.005649470195734102,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9658040434429407
+            }
+          }
+        },
+        "506": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0072708805022301546,
+              "pooled_frame_mean_distance_m": 0.005547177931931765,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7680311954613852
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.012902083223701724,
+              "pooled_frame_mean_distance_m": 0.0062452563809829945,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.887103577564557
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.0064291920301664494,
+              "pooled_frame_mean_distance_m": 0.005134944806667865,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9356875605741176
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011177327609957552,
+              "pooled_frame_mean_distance_m": 0.005625118103862764,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9677712283669642
+            }
+          }
+        },
+        "507": {
+          "raw_expert": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.007532794673076059,
+              "pooled_frame_mean_distance_m": 0.005472265689203276,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.7852419640524299
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.011652785660476343,
+              "pooled_frame_mean_distance_m": 0.00626797628932142,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.8752385263201993
+            }
+          },
+          "share050": {
+            "lower": {
+              "equal_shot_mean_distance_m": 0.006613680386075089,
+              "pooled_frame_mean_distance_m": 0.005114873329580529,
+              "eligible_shots": 104,
+              "eligible_frames": 16636,
+              "paired_component_error_correlation": 0.9423839373354638
+            },
+            "upper": {
+              "equal_shot_mean_distance_m": 0.010362562821672222,
+              "pooled_frame_mean_distance_m": 0.005602450640033681,
+              "eligible_shots": 82,
+              "eligible_frames": 12629,
+              "paired_component_error_correlation": 0.9653908169876189
+            }
+          }
+        }
+      }
+    }
+  },
+  "share": 0.5,
+  "all8_members_used": true,
+  "full69_actual_tree_adjusted_smoothed_baseline": true,
+  "no238_or357_targets_read": true,
+  "not_official_S_admission": true,
+  "seconds": 1983.162205217057
+}

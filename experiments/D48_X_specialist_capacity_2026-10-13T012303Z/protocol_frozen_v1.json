@@ -1,0 +1,18 @@
+{
+ "id": "D48-X-specialist-training-length-and-width",
+ "status": "frozen before any fit",
+ "frozen_UTC": "2026-10-13 about 01:40Z",
+ "author": "first_agent (self-reviewed; no peer available)",
+ "why": "D43 confirmed the static X specialists (8 members, share .5). In every one of the 8 + 8 fits the last ten epochs are the lowest of the run (final-10 mean = lowest 10-mean), so 60 epochs do not exhaust the model. D42-dose: each percent of lower-end X error is worth about 4.47 microS, upper 2.76. D47 showed the construction does not help the geometry heads, so the remaining cheap lever of this kind is a better X specialist.",
+ "arms": {
+  "E60": "8 seeds 700-707, 60 epochs, width 512 - my trainer's replicate of D40's static arm, to tie the two trainers together",
+  "E180": "8 seeds 700-707, 180 epochs, width 512",
+  "W1024_E180": "8 seeds 700-707, 180 epochs, width 1024"
+ },
+ "common": "582 features, depth 4, batch 2048, LR .002 one-cycle over the run, wd 1e-5, gradient limit 1, masked squared error, one metre scale for the four targets, true-map teacher targets, the 6326 eligible shots; quality rule: final-10 mean <= 1.25 x lowest 10-mean, all 8 of an arm or the arm is out",
+ "stage_1": "head level on the 120 screening shots, all frames: equal-shot mean distance to the true-map saddle per end for base (cached held-out 69, tree-adjusted), D40 static 8 (the second agent's weights), each arm raw and blended at .5; predicted score = 4.47 x lower percent + 2.76 x upper percent against base",
+ "rule": "the arm with the highest predicted score is the candidate if it exceeds D40 static 8's prediction, computed in the same report, by at least 15 microS; ties to the cheaper arm; else stop. No share tuning, no seed selection, no mixing of arms.",
+ "stage_2_if_candidate": "native full-69 finisher on the 120 with base, D40 static 8 and the candidate (diagnostic, seed 4801), then the candidate against D40 static 8 once on the 238 (reused cohort, disclosed): gate candidate minus static 8 >= 3e-5, 99 percent lower bound > 0 (seed 4802), no more LCFS failures",
+ "limits": "the 120 select, the 238 are reused, the 357 are spent; a deployment would be checked by one public submission named as such",
+ "publication": false
+}

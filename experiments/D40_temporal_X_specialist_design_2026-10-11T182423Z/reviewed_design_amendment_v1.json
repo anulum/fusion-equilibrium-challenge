@@ -1,0 +1,64 @@
+{
+  "status": "reviewed_design_amendment_preparation_only_not_fit_activation",
+  "supersedes_design_choices_only": "$FEC_EXPERIMENTS/D40_temporal_X_specialist_design_2026-10-11T182423Z/DESIGN.md",
+  "peer_review_seq": 142914,
+  "peer_review_sha256": "722407f9c3571d1eb64f3ffb918410c91ee3f5c2f181651dfaaf391f67c39d2d",
+  "primary_contrast": "static_direct_X_specialist_against_actual_native_tree_adjusted_smoothed_baseline_X_targets",
+  "families": [
+    "static",
+    "mean",
+    "ordered"
+  ],
+  "seeds": [
+    500,
+    501,
+    502,
+    503,
+    504,
+    505,
+    506,
+    507
+  ],
+  "secondary_temporal_contrasts": "retain_both_declared_short_window_arms_with_prior_D20_negative_evidence_disclosed",
+  "specialist_share": 0.5,
+  "native_integration": "blend_after_baseline_tree_and_native_target_smoothing_exactly_once",
+  "tree_effect": "x_lower_r_tree_contribution_multiplied_by_1_minus_specialist_share; no_second_tree_blend",
+  "head_pre_gate": {
+    "cohort": "development_index_mod3_eq0_120",
+    "loss_evaluation": "for_each_shot_each_end_mean_Euclidean_distance_m_over_pairwise_finite_true_X_targets_then_equal_shot_mean",
+    "threshold": "both_lower_and_upper_mean_distance_at_declared_share_at_most_0.90_of_actual_same_flags_baseline",
+    "comparison": "whole8_family_mean_not_best_seeds_vs_full69_tree_adjusted_smoothed_native_target",
+    "required_reporting": [
+      "pooled_frame_distances",
+      "per_end_equal_shot_distances",
+      "paired_error_correlation",
+      "eligible_frame_and_shot_counts"
+    ],
+    "no_uses_of_pre_tree_5_55mm_as_actual_gate_denominator": true
+  },
+  "training_loss": "equally_weighted_frames; common4_target_metre_scale; undefined_targets_masked",
+  "readout_initialization_bound": "1/sqrt(5*41*32), predeclared smaller than 1/sqrt(41*32)",
+  "confirmation_branch_fixed_before_any_fit": {
+    "if_D39_does_not_open357": "one_D40_winner_only_357_excluded_from_all_specialist_fits_and_eligible_trees",
+    "if_D39_opens357": "new400_shot_hash_selected_from_original5954; exclude_from_specialists_normalizers_trees_and_matched69plus8_refit",
+    "existing120_238": "historically_exposed_selection120_and_disclosed_reused_validation238; never_virgin_holdout",
+    "new400": "prospectively_reserved_from_this_campaign_refits; historical_labels_models_exposure_disclosed"
+  },
+  "gate": {
+    "minimum_delta_S": 3e-05,
+    "paired_whole_shot_bootstrap_replicates": 10000,
+    "CI99_lower_strictly_positive": true,
+    "no_additional_LCFS_failures": true,
+    "all_predictions_finite": true
+  },
+  "activation_dependencies": [
+    "D39_terminal_outcome_and_confirmation_access_audit",
+    "exact_final_fit_and_normalizer_cohort_manifest",
+    "frozen_hyperparameters_optimizer_quality_and_checkpoint_protocol",
+    "peer_review_of_final_executable_training_protocol",
+    "native_positive_trained_specialist_and_selected_flags_qualification"
+  ],
+  "cross_host": "original_bitexact_failure_preserved; central_samehost_gates_authoritative; actual_finalist_integrity_review_still_required; no_gate_tolerance_waived",
+  "training_started": false,
+  "publication": false
+}

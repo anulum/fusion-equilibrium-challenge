@@ -1,0 +1,71 @@
+{
+ "networks": {
+  "full": [
+   "$HOME/fusion-equilibrium-challenge/fec_adapter/runs/diii_d_accuracy/gpu_fits_discharge/discharge_c_seed0/network.npz",
+   "$HOME/fusion-equilibrium-challenge/fec_adapter/runs/diii_d_accuracy/gpu_fits_discharge/discharge_c_seed1/network.npz",
+   "$HOME/fusion-equilibrium-challenge/fec_adapter/runs/diii_d_accuracy/gpu_fits_discharge/discharge_c_seed2_tc/network.npz",
+   "$HOME/fusion-equilibrium-challenge/fec_adapter/runs/diii_d_accuracy/gpu_fits_discharge/discharge_c_seed9_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_016_discharge_h_seed0_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_017_discharge_h_seed1_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_022_discharge_h_labels02_s76/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_024_discharge_h_seed8/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_030_discharge_hx_seed0_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_031_discharge_hx_seed1/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_033_discharge_hx_seed3_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_041_discharge_hc_seed0_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_042_discharge_hc_seed1_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_043_discharge_hc_seed2_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_044_discharge_hc_seed3_tc/network.npz",
+   "$FEC_WORK/second_agent-recovery-20260926/results/original_geometry_readout_bank_20260927/member_045_discharge_hc_seed4_tc/network.npz"
+  ],
+  "fold0": [
+   "$FEC_WORK/first_agent/kfold/kaggle_out_fold0/out/discharge_c_seed0_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/kaggle_out_fold0/out/discharge_c_seed1_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/kaggle_out_fold0/out/discharge_c_seed2_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/kaggle_out_fold0/out/discharge_c_seed9_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_h_seed0_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_h_seed1_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_h_labels02_s76_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_h_seed8_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hx_seed0_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hx_seed1_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hx_seed3_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hc_seed0_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hc_seed1_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hc_seed2_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hc_seed3_tc_k0/network.npz",
+   "$FEC_WORK/first_agent/kfold/readout_fold0/discharge_hc_seed4_tc_k0/network.npz"
+  ]
+ },
+ "score_tail": {
+  "S16_full_data": [
+   "  per-derived-scalar R2 (the Consistency term):",
+   "        R_axis   0.9817",
+   "        Z_axis   0.9885",
+   "         kappa   0.9757",
+   "       tri_top   0.9926",
+   "       tri_bot   0.9907",
+   "        volume   0.9921",
+   "            li   0.9579",
+   "",
+   "  LCFS extraction failed on 0.0% of frames; derivations on 0.0%",
+   "  psi_sign = +1",
+   "  S to six places: 0.995037; flux R2 0.999886; scalars 0.997263; Consistency 0.982721"
+  ],
+  "S16_fold0_80pct": [
+   "  per-derived-scalar R2 (the Consistency term):",
+   "        R_axis   0.9802",
+   "        Z_axis   0.9887",
+   "         kappa   0.9732",
+   "       tri_top   0.9923",
+   "       tri_bot   0.9902",
+   "        volume   0.9905",
+   "            li   0.9577",
+   "",
+   "  LCFS extraction failed on 0.0% of frames; derivations on 0.0%",
+   "  psi_sign = +1",
+   "  S to six places: 0.994800; flux R2 0.999874; scalars 0.997143; Consistency 0.981827"
+  ]
+ },
+ "selection_or_fit": false
+}

@@ -1,0 +1,21 @@
+# D35 prospective production69 scalar transfer
+
+User-authorized continuation after D34 completed with a small positive joint-scalar signal but failed its unchanged admission gate.
+
+Primary hypothesis: retain map/geometry outputs; blend the mean69 production-recipe q95/betaN refits at75% with eight fixedfinal60 joint scalar refits at25%. All77 use fit-disjoint confirmation; their original published models include those shots and cannot serve as this control.
+
+Control training includes original training5954+validation357, plus calibration372 for the64 TC recipes; five plain recipes omit calibration from training. All358historical holdout shots/78875frames are excluded from fit, normalization and checkpoint selection. This set is historically exposed; it is not a new external test. Original basis uses original training5954 and is heldout-disjoint.
+
+Controls select best eligible calibration flux checkpoint among60epochs, exactly their original recipe, while scalar models keepfinal60. The audit verifies geometry readout does not alter any of69q95/betaN predictions. Full-map readout refit is therefore unnecessary for this scalar transfer question. No absolute full composite score is claimed.
+
+The prospective single-hypothesis gate requires scalar deltaS>=1e-5 and paired shotbootstrap95% lowerbound>0 (2000drawsseed996). This is a new gate set before any D35metrics; D34's3e-5/.99gate remains unchanged. Diagnostic ensembles4/16/32 use frozen nested SHAorder withapproximate family proportions and cannot select the final member count or blend weight.
+
+`training_data.py`: stream permitted F582 tables, source-equivalent finite normalization; `train_batch.py`: all77fits and full-realTC3shape qualification, atomic optimizer/PRNG/current+bestcheckpoint. ScalarF765 padding occurs insidebatch only. `evaluate_batch.py`: actual production input-only367+215features, publicdoubleforward thenarchivefloat32, all358predictions and exactpooledrawEFITscalar scoring. `feature_qualification.py`: actual deployment features and all69core/readoutscalarbitexact checks on an eligible shot. `run_campaign.py`: finite stages, one global operationalresume, no numericalseed retry or partial-armcomparison. `finalize_unit.py`: autonomous terminal evidence/session/handover/SNN.
+
+Resource contract: physicalROCm1,2,3 only; idleGPU+9GiBavailableRAM; nopeerstop;10GiBcgroupRAM/swap0/CPU400/Nice15/72h. Allwrites/tmp/cacheSamsung; historicaldata/runtimeSAS+legacyhome read-only. No productedit/commit/push/HF/Codabench/MAST/agentdelegation.
+
+Reproduction: exact launch environment/argv are preserved in qualification_launch.json, feature_qualification_launch.json and launch_receipt.json. Immutable recipe/cohort/corelineage/diagnostic memberships/sourceSHA and input-table stat bindings are in this directory. Every fitted weight and heldoutprediction has SHA256 receipt. Run the qualification first; launch main only afterbothqualification receipts pass.
+
+Qualification v1 completed its real HX epoch, then stopped because the test compared the training's compiled float32 calibration forward with an eager float32 forward at1e-12 R2 tolerance. A dedicated actual-calibration diagnostic reproduced a4.0531158e-6 normalized forward difference and0.0023660 trimmed-SSE difference; using the identical compiled forward reproduced training SSE exactly and matched the original scorer formula exactly. Qualification v2 changes only that comparison to the production compiled path; fit/checkpoint/optimizer functions and frozen scientific gate are unchanged. Failed source/logs/unit evidence remain in qualification/failed_v1; the already-complete oneepoch HX fit is retained. Additional checkpoint storage qualification preserves distinct production/current and oneepoch/selected states, optimizer and PRNG exactly; that storage probe is never used for training.
+
+Original69 fits all used JAX0.8.2 (37CPU,32CUDA). D35 uses the same seeds, model/loss/optimizer recipes and selection semantics on ROCm; retraining predictions depend on floating-point kernels. Input tables/raw confirmation Parquet use explicit size/mtime bindings; source/models/recipes/results use SHA256. This does not claim full-table bytewise hashing.

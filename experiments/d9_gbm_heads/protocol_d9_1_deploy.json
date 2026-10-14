@@ -1,0 +1,41 @@
+{
+ "id": "D9-1: boosted-tree heads blended into the deployed 195-net heads, public comparison",
+ "frozen_utc": "2026-10-05T14:25:00Z",
+ "author": "first_agent (group manager)",
+ "follows": {
+  "gate": "protocol_d9_0_gate.json PASS (dS_proxy +3.11e-5, CI95 [+1.96e-5, +4.52e-5], P 1.0; result 8c59ed7b)",
+  "capacity": "protocol_d9_0b_capacity.json: trees trained to convergence (eta .1, stop at 2800-6000 rounds) are not better alone (li .9596 vs .9610) and give the same blend (li .971400 vs .971399, r_axis .981668 vs .981648, kappa .973474 vs .973410, q95 .997314 vs .997309); result f4175067. The round cap was not the limit; the tree family's accuracy is."
+ },
+ "candidate_G1": {
+  "heads_blended": {
+   "li_scored": 0.26,
+   "r_axis": 0.14,
+   "kappa": 0.09,
+   "x_lower_r": 0.16
+  },
+  "rule_for_heads": "the gate targets whose nested-blend dR2 is positive with bootstrap P >= .95 (li_scored 1.0, r_axis 1.0, x_lower_r .987, kappa .973); q95, beta_n, z_axis, triangularities, volume, x_lower_z and the upper X-point are not blended (P < .95 or weight < .06 with dR2 <= 1e-5)",
+  "weights": "the all-fold least-squares weights of the out-of-fold runs, rounded to two decimals (li .2620, r_axis .1417, kappa .0874 with setting B; x_lower_r .1565 with setting A). They were fitted against 16-network heads; the 195-network heads share 99.3 % of their error with them (ledger 2.10), so the same weights are used and no weight is tuned on the public score.",
+  "tree_setting": {
+   "li_scored": "B",
+   "r_axis": "B",
+   "kappa": "B",
+   "x_lower_r": "A (the only setting run for it)"
+  },
+  "tree_fit": "kaggle_deploy/run_d9_deploy.py: table_training + table_validation of tables_lcfs_discharge (every labelled shot the tables hold), table_calibration for early stopping, same parameters as out of fold; predicted on the public-test feature matrix test_features.npz (sha b2598845\u2026, d9_test_features.py on ML350, predictor inputs only; the same code reproduces the fitted table on 3 training shots within 2.1e-5 absolute / 1.2e-5 relative, i.e. cross-machine rounding)",
+  "build": "deploy_build_blend.py = deploy_build_portable.py (sha 90338b0a) plus the blend step after predict_together; 195 networks v25+v27+v28; ML350",
+  "finisher": "the finisher deployed after D8 by the D8 rule (protocol 9bb00be0): the baseline flags unless F1 or F2 reaches public .996010, then that one. The reference score is the public d3d_S of that same finisher without blending."
+ },
+ "like_for_like": "The network heads stay the 195-network means; the trees are added as one more, differently built, member with a small weight. No head is replaced (the error of ledger 2.25).",
+ "submission": "DIII-D archive + MAST v11 (e78b1a9f\u2026); QA, HF, one Development submission; disclosed.",
+ "decision_rule": "deploy G1 if its public d3d_S >= reference + 1e-5. The out-of-fold result carries the decision (5936 shots, P 1.0 at head level); the public score has to confirm the sign beyond rounding. If it is lower than the reference, G1 is rejected and the cause is looked for in the finisher path (the proxy does not run the finisher). No weight is changed after seeing the public score, except one pre-declared halving (G2: all four weights halved) if G1 lies within +-1e-5 of the reference.",
+ "expected": "about +2e-5 to +3e-5 in d3d_S, mostly through Consistency (li).",
+ "scripts_sha256": {
+  "deploy_build_blend.py": "e6cd21ebde00676e6cba71c716bee759348390df32e5f0d4b55aa3e44bdb253f",
+  "kaggle_deploy/run_d9_deploy.py": "b29d614e7511ad54dae6cb2cd34bda9c45f0d38f3affc2a6200c281dca5d918d",
+  "d9_test_features.py": "5731b143bbdd60544760923ec79ae849160ce6791ba0039a058d88e02227ea7e",
+  "d9_b_eval.py": "cc1840c25037914698d02579cf9be203cb40b318f115123001ad73e2419458de",
+  "d9_gate_eval.py": "1bbb1e719be74f618cf4ab0b27415adf123b6b38f0c2390a26b5bdb771c8d26f"
+ },
+ "exposure": "D9-0 and D9-0b out-of-fold results known; no all-data tree fit, no blended build and no public result exist at freeze. The F2 public result (#962577) is pending at freeze.",
+ "rule_3": "DIII-D only; MAST unchanged v11."
+}

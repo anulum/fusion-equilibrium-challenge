@@ -1,0 +1,8 @@
+{
+  "UTC_seconds": 1791719552.0961494,
+  "original_source_sha256": "aaf22db96095809cb5978096522b839ce0f1af1fc8c1e763ee7f70b16abba4f6",
+  "v2_source_sha256": "c2d64e652969718a24c64514c7772c196e404c25687042b388c5922c4ed922f4",
+  "original_anatomy_source_unchanged": true,
+  "operational_change": "Wait for terminal inactive/failed AND empty/deleted primary cgroup; do not begin during deactivating. Same actual TimeoutExpired-only branch, source/case hash verification, same6worker12h numeric anatomy. Original waiting service stopped before replacement; new outputs use v2 suffix.",
+  "old_resume_numeric_child_started": false
+}

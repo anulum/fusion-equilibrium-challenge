@@ -1,0 +1,26 @@
+{
+ "amends": "protocol_d19_v29.json (161bc746…) and amendments 1-4",
+ "utc": "2026-10-07T10:41:24Z",
+ "results_known_at_this_freeze": {
+  "H0 (32: hx 33-40, hc 41-64)": 0.996223,
+  "H1a (48)": 0.996192,
+  "H2a (48 + trees)": 0.996222,
+  "H1 (64)": 0.996044,
+  "H0t": "not built yet",
+  "D22/D22b": "out of fold the raw ensemble improves when h and c are added; the public score falls"
+ },
+ "why": "With the sub-frame inputs the members that work on the public test are the bank families hx and hc. The one way to enlarge the ensemble that does not add a family the public score has rejected is more members of the same two families. Expected size from the member-diversity diagnostic B3 (error correlation .59-.84; the removable part of the ensemble error scales as 1/N): about 1 % of each term's error from 32 to 67 members, i.e. of the order of +1e-5 to +3e-5 in d3d_S, mostly through Consistency. Small; stated before the fits.",
+ "v29_second_seed_set": "the 35 hx/hc members of protocol_alldata_refit_20260929 (recipe 30-64) fitted again exactly as in v29 (same extended all-data tables, settings, calibration flags, code) with seed + 5000 (hx 5090-5100, hc 5200-5223); names <member>_all_s2. Kaggle CPU kernels s2a-s2e (six members each, 30-59) and the ML350 CPU for 60-64 (--allow-host as for v29 members 0-32). Readout bank refitted as for v29.",
+ "failed_fits": "calibration flux R2 < 0.999 -> the member is dropped; no retry (these are additional members, the recipe is already complete without them).",
+ "candidate": "H3 = all hx/hc members with sub-frame inputs that pass: H0's 32 + v29 hx 30-32 (already fitted and in H1a) + the second-seed set; deployed finisher; with the tree blend at the G1 weights if H0t has passed its rule (amendment 4), without it otherwise. One build, one Development submission with MAST v11.",
+ "rule": "Deploy H3 if its public d3d_S exceeds the then-deployed score by at least 1e-5; otherwise the display stays.",
+ "disclosure": "The restriction to hx/hc is a choice made on public scores (H0, H1a, H1); the second-seed members themselves are not selected on any score.",
+ "kernels": {
+  "kaggle_v29_s2a": "8643d3008e3aa3010f39c5746c8d5f8d7850d0046deea3dfd3f01045a05cd926",
+  "kaggle_v29_s2b": "07a67e7f4b6c55fc9cdb00329ee974a8af1d02363c5f69ab8c02fc6ab5e06542",
+  "kaggle_v29_s2c": "1673f1b59ff22fcd3ef180f8361dbcd46c102331b0670e10ded3611b6a18ca0a",
+  "kaggle_v29_s2d": "09b5876c4d9c9d1e54cd9755598b4f0a3c0bfa9b425a26f87bd6402101f4412b",
+  "kaggle_v29_s2e": "63dbf99b2b7f53923c7716a339e113f7e66e9c96ee0ce9d1cdb6edd8511a795f"
+ },
+ "exposure": "no second-seed network exists at this freeze; H0t not scored."
+}

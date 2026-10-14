@@ -1,0 +1,37 @@
+{
+  "status": "diagnostic_contrasts_declared_before_any_D38_aggregate_read",
+  "UTC_seconds": 1791719702.6980448,
+  "requires_complete_original7x358_study_and_original_selection_preserved": true,
+  "contrasts": [
+    [
+      "map_boundary_frame25",
+      "map_control25"
+    ],
+    [
+      "map_boundary_shot25",
+      "map_control25"
+    ],
+    [
+      "map_spatial25",
+      "map_control25"
+    ],
+    [
+      "scalar_learned_conv25",
+      "scalar_static_conv25"
+    ]
+  ],
+  "replicates": 10000,
+  "bootstrap_seed": 3811,
+  "paired_whole_shot": true,
+  "CI_quantiles": [
+    0.005,
+    0.995
+  ],
+  "CI_is_per_contrast_not_familywise": true,
+  "pooled_truth_denominators_recomputed_each_bootstrap": true,
+  "purpose": "Separate changed objective/temporal learning from same8-model25percent ensemble addition; full69 baseline remains actual deployment admission comparator. Candidate8 can add variance despite useful objective improvement; this is a hypothesis requiring matched contrasts and future full-size tests.",
+  "diagnostic_only_no_candidate_selection": true,
+  "current_development_or357_gate_changes": false,
+  "not_independent_replication": true,
+  "publication": false
+}

@@ -1,0 +1,41 @@
+{
+  "name": "geometry_seed201_k0",
+  "status": "fixed_final_epoch_fit_complete",
+  "training_frames": 1127530,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [
+      [
+        "kappa",
+        0.2
+      ],
+      [
+        "li_scored",
+        0.2
+      ],
+      [
+        "r_axis",
+        0.1
+      ]
+    ],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 201,
+    "threads": 12
+  },
+  "epochs_completed": 60,
+  "resumed_from_epoch": 0,
+  "network_sha256": "262786c85167cc0832c807c6bd5d370aee85f2be6a8fbf83342a6c5b603902e1",
+  "seconds_this_attempt": 111.97794898203574,
+  "validation_metrics_computed": false
+}

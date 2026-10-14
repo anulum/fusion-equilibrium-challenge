@@ -1,0 +1,6 @@
+{"id": "M3c-1b step 1c", "name": "synthetic_mast_generator_diverted_boundary", "status": "frozen_before_any_step1c_solve", "frozen_utc": "2026-10-01T01:18:23Z",
+ "author": "first_agent",
+ "evidence": "step 1b (ledger 5.19): 8/19 crash in FreeGS _updateBoundaryPsi (check_limited: no limiter points inside the core mask); most converged plasmas are limited on the centre column. The scored corpus is diverted frames only (scoring_kit/common.py v3), so the true LCFS is the X-point surface, not a limiter surface.",
+ "change": "step 1b unchanged except freegs.solve(..., check_limited=False): the boundary is the X-point (separatrix) surface. Nothing else (frames, arms, control set, constraints, gamma, sanity, decision rule) changes.",
+ "decision_rule": "as step 1b: viable arm = sane yield >= 0.6 and median control change <= 0.10 of measured P4+P5.",
+ "rule_3": "MAST inputs only; no MAST equilibrium field, demo shot or leaderboard number."}

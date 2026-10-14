@@ -1,0 +1,10 @@
+{
+  "stage": "D26 fold-excluded geometry readout",
+  "created_utc": "2026-10-09T04:01:29.148158+00:00",
+  "models": 30,
+  "method": "Original grouped-finite ridge.001; GPUfloat64 moments verified per-model vsCPU128rows; only geometry finalrows/bias changed. ExistingD18hx actualtrainingparts inferred by exact rowcount; D26hc training+calibration. Allheldfold/reserved/validation/holdout excluded.",
+  "devices": "PhysicalROCm1,2,3,4; freshGPUholder and monitor checks pass; one worker per card; fold4 sequential oncard1.",
+  "limits": "3GiBhost memory,0swap,CPU400%,2hdeadline,no restart. Memory-mapped uncompressed feature arrays prevent full feature-copy RAM pressure.",
+  "script_sha256": "80c5a80511beb6ec35474018aac2fe7e7d50f9a42c6f2f8c634cc44f975caa0c",
+  "next": "Fourmember ensembles p/s keep45 and p keep64, identical originaltreeweights and fullfinisher, all400heldshots and officialscorer; gate unchanged."
+}

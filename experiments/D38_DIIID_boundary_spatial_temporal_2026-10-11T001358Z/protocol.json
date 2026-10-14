@@ -1,0 +1,25 @@
+{
+  "id": "D38-boundary-spatial-temporal",
+  "status": "matched_baseline_preparation_before_candidate_fits",
+  "entrant_authorized_all_planned_experiments": true,
+  "training_eligible_shots": 5954,
+  "calibration_eligible_shots": 372,
+  "development_excluded_shots": 358,
+  "confirmation_reserved_excluded_shots": 357,
+  "basis": "unchanged originaltraining-only5954 PCA; both evaluation cohorts excluded from basis fit",
+  "baseline_tasks": 77,
+  "baseline69_preserves_production_recipes_and_eligible_cal_flux_selection": true,
+  "static_scalar8_fixed_final60": true,
+  "planned_map_families": [
+    "matched_candidate_control",
+    "boundary_frame_surrogate",
+    "boundary_equal_shot_surrogate",
+    "learned_spatial_decoder"
+  ],
+  "planned_temporal_family": "small learned convolutional temporal scalar encoder matched to static8",
+  "candidate_count_and_all_training_details_must_be_frozen_before_candidate_fits": true,
+  "comparison": "complete whole-shot native full S; only matched69 contribution can support transfer; all declared fits terminal before comparative selection",
+  "tree_eligibility": "Existing D9 deploytrees exclude development358 but include confirmation357. They may be shared only for development. Before confirmation, refit all4 treeheads excluding confirmation357 for both comparator and candidate; never claim original trees eligible.",
+  "publication": false,
+  "MAST_work": false
+}

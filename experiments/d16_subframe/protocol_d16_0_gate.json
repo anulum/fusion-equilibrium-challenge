@@ -1,0 +1,22 @@
+{
+ "id": "D16-0 gate: do the 0.5 ms input signals inside a frame carry what the heads miss?",
+ "frozen_utc": "2026-10-05T22:53:41Z",
+ "author": "first_agent (group manager)",
+ "entrant": "2026-10-05: analyse every shot along its sequence; 'Dalsie varianty?'",
+ "observation": "The plasma current and the coil currents are recorded every 0.5 ms, the core Thomson laser fires every 7.8 ms; the fitted table samples them once per 20 ms frame (point value by interpolation), with window means only over whole frames (+-80 ms and longer). On 20 training shots the plasma current at +-1 ms differs from its value at the frame by 0.44 % of the shot's peak in the mean (0.5-0.8 % at +-5 to +-20 ms). The q95 head's relative error is about +-0.5 % (IQR), and q95 is inversely proportional to the current. D13 puts most of the scalar error in the current ramp-down, where the current changes fast.",
+ "question": "Do features of the signals inside and around a frame (window means, changes over +-1 to +-20 ms, swing, Thomson pulse timing) let a cross-fitted corrector reduce the heads' out-of-fold error? D10-0, the same corrector with the 367 table features and the heads only, found nothing (-2e-6), so a gain is attributable to the new inputs.",
+ "features": {
+  "file": "subframe_features.py",
+  "sha256": "efc2665f88cc65e68713b25f31a8d69241c29dede66b8f90d5c6ddc9a65b65b0",
+  "text": "per frame: plasma current at -20,-10,-5,-2,-1,+1,+2,+5,+10 ms minus its value at the frame, over the shot's peak (9); its swing within +-10 ms and the spread of those offsets (2); its mean over +-10 ms minus the frame value (1); per coil filament the change over +-10 ms and +-5 ms and the +-10 ms mean minus the frame value (3 each); relative change of the toroidal-field current over +-10 ms (1); ms since/until the last/next core and edge Thomson pulse (4). Predictor inputs only (input_columns), package clock handling."
+ },
+ "corrector_folds_measure": "exactly D10-0 (protocol d8d07fa9): xgboost depth 6, eta .03, min_child_weight 50, lambda 5, 4000 rounds, patience 150; fit on three folds, stop on a fourth, predict the fifth; inputs 367 table features + sub-frame features + 13 out-of-fold heads; evaluation d9_gate_eval.py unchanged (nested shrink, head proxy, shot bootstrap 2000 seed 990).",
+ "kernel": {
+  "file": "kaggle/run_d16_gate.py",
+  "sha256": "05d21dfd2288b3bb9900c760fd1f56f4c8c0e81f8c62cde5c4e3e806ddc31c27",
+  "kaggle_id": "anulum/fec-d16-subframe-gate"
+ },
+ "rule": "PASS if dS_proxy >= +3e-5 with P >= .95. PASS -> the sub-frame features are a real information source: next protocol puts them into the networks' own feature table (refit) and/or deploys the corrector on the 195-net heads, public score as the meter. FAIL -> the sub-frame signals add nothing the heads lack; closed.",
+ "exposure": "Sub-frame statistics of 20 training shots seen (input-only). No model with these features exists at freeze.",
+ "rule_3": "DIII-D training data only; inputs only."
+}

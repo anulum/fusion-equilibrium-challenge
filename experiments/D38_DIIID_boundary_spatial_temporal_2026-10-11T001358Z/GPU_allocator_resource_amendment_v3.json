@@ -1,0 +1,11 @@
+{
+  "UTC": "2026-10-11T02:41:37.720539+00:00",
+  "failure": "Real temporal full-corpus qualification failed allocating the initial2359079680byte float16 window array on GPU before any temporal fit.",
+  "all_four_map_objectives_ROCm_qualified": true,
+  "change": "XLA_CLIENT_MEM_FRACTION=0.90 with preallocation stillfalse; installedjaxlib/xla_client.py verified current accepted variable. Dedicated compute cards1/2/3 only. This changes allocation budget, not model/data/dtype/batch/schedule.",
+  "all_scientific_sources_and_frozen_protocol_unchanged": true,
+  "completed_map_qualification_reused_after_source_hash_verification": true,
+  "no_candidate_fits_or_scores_begun": true,
+  "original_v2_failures_preserved": true,
+  "v3_log_and_failure_names_distinct": true
+}

@@ -1,0 +1,33 @@
+{
+  "name": "control_hc_seed5217",
+  "family": "hc",
+  "status": "fit_complete",
+  "training_frames": 1480465,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 5217,
+    "threads": 12
+  },
+  "train_on_calibration": true,
+  "epochs_completed": 60,
+  "selected_epoch": 60,
+  "criterion": 1038.1052693000765,
+  "resumed_from_epoch": 0,
+  "network_sha256": "9ea82971ec8b77bbc76c46caa6f508fbbbe776cb528f3aece9750c5b6aa28c7f",
+  "seconds_this_attempt": 214.9301663970109,
+  "held_out_metrics_computed": false,
+  "selection": "eligible_calibration_flux"
+}

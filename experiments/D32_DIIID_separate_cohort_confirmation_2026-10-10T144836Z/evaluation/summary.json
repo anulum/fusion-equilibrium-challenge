@@ -1,0 +1,157 @@
+{
+  "status": "separate_cohort_confirmation_complete",
+  "shots": 358,
+  "frames": 78875,
+  "results": {
+    "candidate001": {
+      "S": 0.995239,
+      "r2_psi": 0.999865,
+      "r2_qb": 0.996566,
+      "dlcfs": 0.010331,
+      "consistency": 0.984306,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999865,
+      "r2_psi_per_shot_mean": 0.99952,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 358,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.997877,
+        "betaN": 0.995255
+      },
+      "r2_cons_each": {
+        "R_axis": 0.98375,
+        "Z_axis": 0.987854,
+        "kappa": 0.972969,
+        "tri_top": 0.993772,
+        "tri_bot": 0.992167,
+        "volume": 0.989915,
+        "li": 0.969715
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      },
+      "S_unrounded": 0.995238722261852
+    },
+    "stronger_p45": {
+      "S": 0.995223,
+      "r2_psi": 0.99986,
+      "r2_qb": 0.9964,
+      "dlcfs": 0.010206,
+      "consistency": 0.984302,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.99986,
+      "r2_psi_per_shot_mean": 0.999555,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 358,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.997893,
+        "betaN": 0.994908
+      },
+      "r2_cons_each": {
+        "R_axis": 0.983491,
+        "Z_axis": 0.988668,
+        "kappa": 0.971895,
+        "tri_top": 0.99381,
+        "tri_bot": 0.992057,
+        "volume": 0.989557,
+        "li": 0.970632
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      },
+      "S_unrounded": 0.995222721802526
+    },
+    "control27": {
+      "S": 0.995151,
+      "r2_psi": 0.999861,
+      "r2_qb": 0.996453,
+      "dlcfs": 0.01036,
+      "consistency": 0.983979,
+      "psi_sign": 1,
+      "psi_sign_flipped": false,
+      "psi_sign_probe_disagrees": false,
+      "r2_psi_unflipped": 0.999861,
+      "r2_psi_per_shot_mean": 0.999535,
+      "lcfs_fail_frac": 0.0,
+      "ref_lcfs_dropped": 0,
+      "psi_nonfinite_frac": 0.0,
+      "cons_fail_frac": 0.0,
+      "n_shots": 358,
+      "n_shots_missing": 0,
+      "r2_each": {
+        "q95": 0.997857,
+        "betaN": 0.99505
+      },
+      "r2_cons_each": {
+        "R_axis": 0.983414,
+        "Z_axis": 0.988505,
+        "kappa": 0.972242,
+        "tri_top": 0.9935,
+        "tri_bot": 0.991593,
+        "volume": 0.989401,
+        "li": 0.969197
+      },
+      "cons_fail_each": {
+        "R_axis": 0.0,
+        "Z_axis": 0.0,
+        "kappa": 0.0,
+        "tri_top": 0.0,
+        "tri_bot": 0.0,
+        "volume": 0.0,
+        "li": 0.0
+      },
+      "S_unrounded": 0.9951513564898143
+    }
+  },
+  "comparisons": {
+    "stronger_p45": {
+      "delta_S": 1.600045932592664e-05,
+      "ci95": [
+        -0.00010696776808536146,
+        0.00012744923826099315
+      ],
+      "P_positive": 0.615,
+      "no_increased_lcfs_failures": true,
+      "passes": false
+    },
+    "control27": {
+      "delta_S": 8.736577203760643e-05,
+      "ci95": [
+        -7.768813937372721e-06,
+        0.00018514058297810216
+      ],
+      "P_positive": 0.958,
+      "no_increased_lcfs_failures": true,
+      "passes": false
+    }
+  },
+  "confirmation_passes": false,
+  "cohort_historically_used_disclosed": true,
+  "fresh_project_virgin_external_test": false,
+  "neural_or_tree_fits_performed": false,
+  "public_upload_or_submission": false
+}

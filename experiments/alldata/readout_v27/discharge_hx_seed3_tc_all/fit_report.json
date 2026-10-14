@@ -1,0 +1,107 @@
+{
+ "member": "discharge_hx_seed3_tc",
+ "recipe_index": 33,
+ "labels": [
+  "kappa",
+  "tri_top",
+  "tri_bot",
+  "volume",
+  "li_scored",
+  "x_lower_r",
+  "x_lower_z",
+  "x_upper_r",
+  "x_upper_z"
+ ],
+ "fit_parts": [
+  "training",
+  "calibration"
+ ],
+ "ridge": 0.001,
+ "group_reports": [
+  {
+   "labels": [
+    "kappa"
+   ],
+   "finite_rows": 1480463,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0010886361016854134
+   ],
+   "residual_MSE_before": [
+    0.00011854659461513927
+   ],
+   "normal_equation_gradient_max_abs": 5.31140115945812e-19
+  },
+  {
+   "labels": [
+    "tri_top",
+    "tri_bot",
+    "volume"
+   ],
+   "finite_rows": 1480465,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    0.0003759421223658398,
+    0.0008204788734491412,
+    0.00026740521809010665
+   ],
+   "residual_MSE_before": [
+    0.00021526945162723819,
+    0.00021279163131676754,
+    0.005363110701317068
+   ],
+   "normal_equation_gradient_max_abs": 1.8015861392506934e-18
+  },
+  {
+   "labels": [
+    "li_scored"
+   ],
+   "finite_rows": 1480297,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00012911635402238026
+   ],
+   "residual_MSE_before": [
+    0.0003457743298199513
+   ],
+   "normal_equation_gradient_max_abs": 8.561914909964875e-19
+  },
+  {
+   "labels": [
+    "x_lower_r",
+    "x_lower_z"
+   ],
+   "finite_rows": 1000511,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00016820541133034974,
+    -0.0006804585180111437
+   ],
+   "residual_MSE_before": [
+    1.4596875357094599e-05,
+    2.3994327423000307e-05
+   ],
+   "normal_equation_gradient_max_abs": 4.380219128488801e-19
+  },
+  {
+   "labels": [
+    "x_upper_r",
+    "x_upper_z"
+   ],
+   "finite_rows": 630999,
+   "ridge": 0.001,
+   "mean_residual_before": [
+    -0.00017893361777914356,
+    0.0004640177689760466
+   ],
+   "residual_MSE_before": [
+    1.4195226749468376e-05,
+    3.7974516461903516e-05
+   ],
+   "normal_equation_gradient_max_abs": 7.337952301182411e-19
+  }
+ ],
+ "initial_sha256": "1a78fd9adba3913397b8e9de4fe54dc99c20e34d2f00ed5676a2b36202162876",
+ "network_sha256": "8328f64a1154c7a1dc37740961c6ac338c16877db9bac95b081467c000d85d77",
+ "seconds": 519.8135948181152
+}

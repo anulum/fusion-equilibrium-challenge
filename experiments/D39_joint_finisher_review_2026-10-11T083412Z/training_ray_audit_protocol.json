@@ -1,0 +1,27 @@
+{
+  "UTC_seconds": 1791727903.7171984,
+  "peer_audit_seq": 141559,
+  "families": [
+    "control",
+    "boundary_frame",
+    "boundary_shot",
+    "spatial"
+  ],
+  "seeds": [
+    400,
+    401,
+    402,
+    403,
+    404,
+    405,
+    406,
+    407
+  ],
+  "sampling": "exact same all5954 eligibleTRAIN-only midpoints as frozen prior anchor audit; no calibration/development/reserved labels",
+  "projection": "128teacher compared to45kept; all43 axis-relative bilinear points; actual exported spatial contribution included",
+  "report": "three exact quadratic decomposition terms and total ray MSE; all64 normalized anchor coefficient errors and paired differences",
+  "interpretation": "equal valid midpoint averages, not actual float32 training batch loss or gradients; no generalization/candidate admission",
+  "no_fit": true,
+  "no_current_selection_changes": true,
+  "publication": false
+}

@@ -1,0 +1,29 @@
+{
+  "status": "fixed_final_epoch_fit_complete",
+  "name": "pressure_seed201_k4",
+  "training_frames": 1136222,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 201,
+    "threads": 12
+  },
+  "device": "rocm:1",
+  "epochs_completed": 60,
+  "network_sha256": "a9678f91273381d26609327589af9c01f3d4b5d9e865b4d919fe252098cfff33",
+  "seconds": 106.23732797196135,
+  "calibration_selection": false,
+  "validation_metrics_computed": false
+}

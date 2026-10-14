@@ -1,0 +1,33 @@
+{
+  "name": "control_hx_seed96",
+  "family": "hx",
+  "status": "fit_complete",
+  "training_frames": 1404214,
+  "settings": {
+    "coordinates": 64,
+    "width": 512,
+    "depth": 4,
+    "epochs": 60,
+    "batch": 4096,
+    "learning_rate": 0.002,
+    "weight_decay": 1e-05,
+    "label_weight": 0.05,
+    "label_weights": [],
+    "fine_emphasis": 0.0,
+    "dropout": 0.0,
+    "gradient_limit": 1.0,
+    "edge_emphasis": 0.0,
+    "shot_balance": 0.0,
+    "seed": 96,
+    "threads": 12
+  },
+  "train_on_calibration": true,
+  "epochs_completed": 60,
+  "selected_epoch": 60,
+  "criterion": 1588.9002394471825,
+  "resumed_from_epoch": 0,
+  "network_sha256": "6f93fda20344709fd605a0ddbbe8f6566925f24b13e5048a50d5a49955d4cb51",
+  "seconds_this_attempt": 234.29280249401927,
+  "held_out_metrics_computed": false,
+  "selection": "eligible_calibration_flux"
+}

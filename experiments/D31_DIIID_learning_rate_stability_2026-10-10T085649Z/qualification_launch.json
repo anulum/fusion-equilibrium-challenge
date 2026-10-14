@@ -1,0 +1,33 @@
+{
+  "unit": "fec-d31-wide-qualify-v1",
+  "argv": [
+    "systemd-run",
+    "--user",
+    "--unit=fec-d31-wide-qualify-v1",
+    "--property=MemoryMax=8G",
+    "--property=MemorySwapMax=0",
+    "--property=CPUQuota=200%",
+    "--property=Nice=15",
+    "--property=RuntimeMaxSec=1h",
+    "--setenv=PYTHONDONTWRITEBYTECODE=1",
+    "--setenv=OPENBLAS_NUM_THREADS=1",
+    "--setenv=OMP_NUM_THREADS=1",
+    "--setenv=ROCR_VISIBLE_DEVICES=1",
+    "--setenv=HSA_ENABLE_SDMA=0",
+    "--setenv=HSA_OVERRIDE_GFX_VERSION=10.3.0",
+    "--setenv=ROCM_PATH=$HOME/fusion-equilibrium-challenge/rocm_root/opt/rocm-7.2.4",
+    "--setenv=LD_LIBRARY_PATH=$HOME/fusion-equilibrium-challenge/rocm_root/opt/rocm-7.2.4/lib:$HOME/fusion-equilibrium-challenge/rocm_root/opt/rocm-7.2.4/lib64:$HOME/fusion-equilibrium-challenge/rocm_root/opt/rocm-7.2.4/lib/llvm/lib",
+    "--setenv=XLA_FLAGS=--xla_gpu_enable_command_buffer=",
+    "--setenv=XLA_PYTHON_CLIENT_PREALLOCATE=false",
+    "--setenv=JAX_ENABLE_X64=1",
+    "--setenv=JAX_COMPILATION_CACHE_DIR=$FEC_EXPERIMENTS/D31_DIIID_learning_rate_stability_2026-10-10T085649Z/cache",
+    "--setenv=TMPDIR=$FEC_EXPERIMENTS/D31_DIIID_learning_rate_stability_2026-10-10T085649Z/tmp",
+    "$HOME/fusion-equilibrium-challenge/fec_adapter/.venv/bin/python",
+    "-u",
+    "$FEC_EXPERIMENTS/D31_DIIID_learning_rate_stability_2026-10-10T085649Z/train_batch.py",
+    "--qualify",
+    "--out",
+    "$FEC_EXPERIMENTS/D31_DIIID_learning_rate_stability_2026-10-10T085649Z/qualification"
+  ],
+  "result": "Running as unit: fec-d31-wide-qualify-v1.service; invocation ID: eca752ff0e3b43e8b2f08aa5c6a18620\n"
+}
