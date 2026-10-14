@@ -6,6 +6,13 @@ to 26 October 2026, when the Final phase closes: 37 days. The money figures rest
 entrant; the compute figures come from the run records where those exist and are marked as estimates where they
 do not.
 
+## Constraints
+
+The entry had a limited allowance of language-model use allocated to it, and limited compute: consumer
+graphics cards, one two-socket Xeon E5-2640 server and Kaggle's free tier. The compute limit was partly
+intentional. The figures below are therefore the cost of an entry made under those limits, not of what the
+task would cost with a research cluster.
+
 ## Money
 
 | Item | Basis | Amount |
