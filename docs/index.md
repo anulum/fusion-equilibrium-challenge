@@ -35,5 +35,7 @@ Code, pinned environments, training and inference entrypoints: [github.com/anulu
 Weights: [huggingface.co/anulum/fusion-equilibrium-challenge](https://huggingface.co/anulum/fusion-equilibrium-challenge).
 The published package reproduces the submitted predictions bit for bit.
 
+Cite as: [doi:10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092).
+
 Developed by Anulum (Miroslav Šotek) with Arcane Sapience, a research system of agents built on large language models.
 AGPL-3.0-or-later. Contact: protoscience@anulum.li.

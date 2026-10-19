@@ -32,4 +32,13 @@ keywords:
   - machine learning
 license: AGPL-3.0-or-later
 repository-code: "https://github.com/anulum/fusion-equilibrium-challenge"
-date-released: "2026-10-14"
+doi: "10.5281/zenodo.23480092"
+identifiers:
+  - type: doi
+    value: "10.5281/zenodo.23480092"
+    description: "Concept DOI, all versions"
+  - type: doi
+    value: "10.5281/zenodo.23480093"
+    description: "Version 1.0.0"
+date-released: "2026-10-19"
+version: "1.0.0"

@@ -1,6 +1,7 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # Fusion Equilibrium Challenge: the Anulum entry
 
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23480092.svg)](https://doi.org/10.5281/zenodo.23480092)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/anulum)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-anulum-ffdd00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/anulum)
 
@@ -136,7 +137,7 @@ SPDX identifier in each file governs. The organisers' scoring functions vendored
 notice; see [NOTICE.md](NOTICE.md). The challenge data are the organisers', released under CC BY 4.0, and are
 not redistributed here.
 
-To cite this entry, see [CITATION.cff](CITATION.cff). Contact: protoscience@anulum.li.
+To cite this entry, use the DOI [10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092) (all versions) or see [CITATION.cff](CITATION.cff). Contact: protoscience@anulum.li.
 
 Questions about the method or the results: [Discussions](https://github.com/anulum/fusion-equilibrium-challenge/discussions).
 A reproduction problem: [open an issue](https://github.com/anulum/fusion-equilibrium-challenge/issues/new?template=reproduction.yml).
