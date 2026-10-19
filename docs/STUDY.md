@@ -725,6 +725,58 @@ networks already train on all 7041 labelled shots and five on all but the calibr
 apply only to the copies fitted for evaluation, a distinction we briefly got wrong ourselves before checking the
 fit records.
 
+### 4.27 What the finishing step does to the physics of the map
+A second outside review (19 October) asked whether the finishing step, which moves the axis, bends the contour,
+reshapes the map and moves the X-points towards predicted targets, keeps the map an equilibrium. The score cannot
+answer this: it compares the boundary and seven geometric functionals of the map, and none of them tests force
+balance. We measured it on the 358 development shots (78 875 frames; the evaluated copies of the networks were not
+fitted on them, the shots had been used before), at all nine stages of the deployed pipeline, against the EFIT
+reference and with the same operators and masks on every map. The nine stages were regenerated with the sources of
+§4.26, and the last one equals, bit for bit, the maps that pipeline wrote there. The protocol was frozen before the first result
+(`experiments/d71_finisher_physics/`).
+
+What is measured: the current the map implies, by Ampère's law around its own boundary (the scorer's own μ0 I_p)
+and through the reference boundary; the current density Δ*ψ / R outside the plasma; the share of the current
+density inside the plasma that no pair of flux functions p′(ψ) and FF′(ψ) can describe, with both fitted for each
+map as cubic polynomials; the error of the poloidal-field vector; and the magnetic axes and X-points. The
+operators were first checked on an analytic Grad–Shafranov solution (non-equilibrium share 10⁻²⁵, 0.21 with a
+bump added), then on the data: on the reference maps, the area and loop integrals of the current agree to 0.7 %
+(median), and the current the reference map implies is 0.991 of the measured plasma current (median; 5–95 %: 0.975
+to 1.089), so ψ is in Wb/rad and the integral is the real current.
+
+| Shot mean over 358 shots | Before the finisher | Submitted | Change (99 % interval) | Where the change comes from |
+|---|---:|---:|---|---|
+| Benchmark score S (§4.26) | 0.994119 | 0.996100 | +1981 µS | axis +898, shape +417, contour +330, X-points +226, reshape +112 |
+| Implied current on its own boundary, error against the reference | 0.67 % | 0.80 % | +0.12 points (+0.07 to +0.17) | shape +0.07, reshape +0.08; X-points −0.02 |
+| Current inside the reference boundary, error | 0.66 % | 0.82 % | +0.16 points (+0.11 to +0.22) | shape, reshape |
+| Current outside the plasma, share of the current inside (above the reference's) | 0.70 % | 1.20 % | +0.50 points (+0.35 to +0.59) | contour +0.29, shape +0.11 |
+| Current density not of Grad–Shafranov form (above the reference's) | 0.35 % | 1.67 % | +1.32 points (+1.07 to +1.61) | contour +1.40 |
+| Poloidal-field error inside the reference boundary | 2.45 % | 2.97 % | +0.53 points (+0.43 to +0.70) | shape +0.24, reshape +0.26; axis −0.05 |
+| X-point cells, difference from the reference per frame | 0.225 | 0.178 | −0.047 (−0.062 to −0.033) | X-points −0.052 |
+| Extra magnetic axes per frame | 0.00005 | 0.00013 | inconclusive | — |
+| Frames without a boundary | 0 | 0 | — | — |
+
+The non-equilibrium share does not depend on the choices of the test: with quadratic or quintic profiles the
+change is +1.49 and +1.30 points, and with a fourth-order operator +1.68, every interval above zero. The reference
+maps themselves have a non-equilibrium share of 5 × 10⁻⁶ (median frame), as a Grad–Shafranov solver's output should.
+
+![Reference, submitted map and difference on four development frames](figures/fig6_reconstruction.png)
+
+The four frames were chosen by a rule fixed before any result: from the boundary distance of the submitted map,
+pooled over all frames, the frames nearest to its median, 90th and 99th percentile, and the largest. The last
+column shows the map before the finishing step; the edits appear as local patches near the axis and the boundary.
+
+What this says. The finishing step buys 1981 µS of benchmark score, and pays for it in the physics of the map:
+the submitted maps stay within about 1 % of the reference current and 3 % of its field, but the share of current
+density that is not of equilibrium form grows about fivefold, almost entirely in the contour bend, and current
+appears outside the plasma. Two edits improve the physics as they improve the score: the axis move lowers the field
+error, and the X-point move brings the number of X-point cells closer to the reference's. A map edited to match the scorer's
+functionals is therefore less of an equilibrium than the map it was edited from. Restricting the edits to fields
+that leave the plasma current a flux function, for example by adding only vacuum solutions outside the plasma, is
+the natural next step; we have not tried it. Limits: the 358 shots were used before, EFIT is itself a
+reconstruction, and derivatives on a 65 × 65 grid are coarse, which is why every measure is read against the
+reference computed the same way.
+
 ## 5. MAST without MAST equilibrium data
 
 ### 5.1 The rule and our reading of it

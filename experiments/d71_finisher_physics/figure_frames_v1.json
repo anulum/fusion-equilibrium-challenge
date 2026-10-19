@@ -1,0 +1,38 @@
+{
+ "rule": "Pool D70's per-frame boundary distance of the submitted stage (margin) over all 358 shots and pick the frames\nnearest to the 50th, 90th and 99th percentiles, and the largest. Ties break by shot order, then frame.",
+ "frames_pooled": 78875,
+ "chosen": {
+  "p50": {
+   "quantile": 0.5,
+   "target_metres": 0.004835042514395988,
+   "distance_metres": 0.004835042514395988,
+   "case_index": 166,
+   "frame": 130,
+   "stem": "d3d_shot_7c4a498508"
+  },
+  "p90": {
+   "quantile": 0.9,
+   "target_metres": 0.018356647306072484,
+   "distance_metres": 0.01835705872822422,
+   "case_index": 59,
+   "frame": 3,
+   "stem": "d3d_shot_2972d48ff4"
+  },
+  "p99": {
+   "quantile": 0.99,
+   "target_metres": 0.03233200352324907,
+   "distance_metres": 0.03232973604162678,
+   "case_index": 300,
+   "frame": 4,
+   "stem": "d3d_shot_d64eac1617"
+  },
+  "max": {
+   "quantile": 1.0,
+   "target_metres": 0.17219930187280932,
+   "distance_metres": 0.17219930187280932,
+   "case_index": 223,
+   "frame": 190,
+   "stem": "d3d_shot_ab60252341"
+  }
+ }
+}

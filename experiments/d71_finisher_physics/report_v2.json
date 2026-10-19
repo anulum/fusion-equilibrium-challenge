@@ -1,0 +1,1660 @@
+{
+ "shots": 358,
+ "frames": 78875,
+ "maps": [
+  "reference",
+  "raw_64coords",
+  "kept_45coords",
+  "smoothed",
+  "axis",
+  "contour",
+  "shape",
+  "x_points",
+  "reshape",
+  "margin"
+ ],
+ "seed": 71019,
+ "draws": 20000,
+ "qualification": {
+  "area_over_loop_reference_q05_50_95": [
+   0.9997965568462669,
+   1.0073824091511057,
+   1.0163616035064642
+  ],
+  "flux_surface_loop_over_signed_reference_q05_50_95": [
+   1.000068396605101,
+   1.0001507139052572,
+   1.000595587758006
+  ],
+  "loop_over_mu0_measured_ip_q05_50_95": [
+   0.9745968129776684,
+   0.9907051364069667,
+   1.0885382138263489
+  ]
+ },
+ "levels": {
+  "gs_fraction": {
+   "reference": 5.155090467815229e-06,
+   "raw_64coords": 0.0021650308969359644,
+   "kept_45coords": 0.001741155918602565,
+   "smoothed": 0.0017309574636572367,
+   "axis": 0.0017928450400846758,
+   "contour": 0.006745751555564449,
+   "shape": 0.0068749176407188126,
+   "x_points": 0.0068729340979435,
+   "reshape": 0.007060894338425727,
+   "margin": 0.007060760046397976
+  },
+  "outside_fraction": {
+   "reference": 0.0007886917871552019,
+   "raw_64coords": 0.004756147033161821,
+   "kept_45coords": 0.004222332194815984,
+   "smoothed": 0.0041987426109551884,
+   "axis": 0.004200673948513479,
+   "contour": 0.006359108505707565,
+   "shape": 0.007598420893914042,
+   "x_points": 0.007842991110278802,
+   "reshape": 0.008661081643219479,
+   "margin": 0.00866106390347787
+  },
+  "gs_fraction_o4": {
+   "reference": 7.873495602891892e-05,
+   "raw_64coords": 0.0025003728583071526,
+   "kept_45coords": 0.001987192387202124,
+   "smoothed": 0.001975562404674912,
+   "axis": 0.0020330654555647393,
+   "contour": 0.008457261933610747,
+   "shape": 0.008533221072756544,
+   "x_points": 0.008530786659490447,
+   "reshape": 0.008701718201515215,
+   "margin": 0.00870336330933604
+  }
+ },
+ "measures": {
+  "current_error_own": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.0062477386564372345,
+     "frame_median": 0.0036249526386347153,
+     "frame_p95": 0.013919922246000539
+    },
+    "kept_45coords": {
+     "shot_mean": 0.006722565976668968,
+     "frame_median": 0.004148611377834066,
+     "frame_p95": 0.01504920296382742
+    },
+    "smoothed": {
+     "shot_mean": 0.0067236550581858175,
+     "frame_median": 0.004142525744040504,
+     "frame_p95": 0.015088652947279261
+    },
+    "axis": {
+     "shot_mean": 0.006720709317260637,
+     "frame_median": 0.004143103706332196,
+     "frame_p95": 0.015081550963159593
+    },
+    "contour": {
+     "shot_mean": 0.00662971372003341,
+     "frame_median": 0.004112453277661077,
+     "frame_p95": 0.014768620017695354
+    },
+    "shape": {
+     "shot_mean": 0.00737066849523988,
+     "frame_median": 0.00481184487650077,
+     "frame_p95": 0.016797024858505184
+    },
+    "x_points": {
+     "shot_mean": 0.007200256351620548,
+     "frame_median": 0.004664811318449424,
+     "frame_p95": 0.016413790172546683
+    },
+    "reshape": {
+     "shot_mean": 0.007975606199992737,
+     "frame_median": 0.00520505386132053,
+     "frame_p95": 0.018756212251962005
+    },
+    "margin": {
+     "shot_mean": 0.00796679607107815,
+     "frame_median": 0.0052072622407882685,
+     "frame_p95": 0.01878917059113551
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0012431410128923312,
+     "ci99": [
+      0.0007074311918549058,
+      0.0016873011823579276
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.0004748273202317336,
+     "ci99": [
+      0.0003586119133167589,
+      0.000585918607730765
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 1.0890815168496689e-06,
+     "ci99": [
+      -1.2230833183763203e-05,
+      8.662223725843369e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": -2.9457409251818293e-06,
+     "ci99": [
+      -1.654559488788816e-05,
+      1.0571753622328336e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": -9.099559722722733e-05,
+     "ci99": [
+      -0.0002624859980705605,
+      4.0202022611558566e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.0007409547752064709,
+     "ci99": [
+      0.00048294082467528326,
+      0.0009522202190843348
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -0.0001704121436193321,
+     "ci99": [
+      -0.00020025343949236872,
+      -0.00014338531055425337
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0007753498483721884,
+     "ci99": [
+      0.0006246158418738833,
+      0.0009294858388124474
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": -8.81012891458675e-06,
+     "ci99": [
+      -7.995023985283912e-05,
+      3.086053570120815e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "current_error_ref": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.006030355128013796,
+     "frame_median": 0.00362212023418762,
+     "frame_p95": 0.01328934442251495
+    },
+    "kept_45coords": {
+     "shot_mean": 0.006555323139666634,
+     "frame_median": 0.004154625222048569,
+     "frame_p95": 0.014598640294197864
+    },
+    "smoothed": {
+     "shot_mean": 0.006561894773314877,
+     "frame_median": 0.004157616251016072,
+     "frame_p95": 0.014633534595639498
+    },
+    "axis": {
+     "shot_mean": 0.006555967350999108,
+     "frame_median": 0.00415874850203668,
+     "frame_p95": 0.014596987307579589
+    },
+    "contour": {
+     "shot_mean": 0.006497091509517863,
+     "frame_median": 0.004112177266931805,
+     "frame_p95": 0.014486896470483238
+    },
+    "shape": {
+     "shot_mean": 0.00742640628402794,
+     "frame_median": 0.004793308536947927,
+     "frame_p95": 0.016764383275651752
+    },
+    "x_points": {
+     "shot_mean": 0.007281274026060822,
+     "frame_median": 0.004657880501485967,
+     "frame_p95": 0.01645368125709176
+    },
+    "reshape": {
+     "shot_mean": 0.008146449146421078,
+     "frame_median": 0.005215441404227028,
+     "frame_p95": 0.0187697040328675
+    },
+    "margin": {
+     "shot_mean": 0.008150075227856376,
+     "frame_median": 0.00521869265277386,
+     "frame_p95": 0.018803367428160758
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0015881804545414986,
+     "ci99": [
+      0.0010833908048343542,
+      0.0021570402594773106
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.0005249680116528394,
+     "ci99": [
+      0.00041349850299441,
+      0.000638070347198995
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 6.571633648241388e-06,
+     "ci99": [
+      4.973781475959146e-07,
+      1.2346950229129023e-05
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": -5.927422315769099e-06,
+     "ci99": [
+      -2.1590809121053766e-05,
+      7.5385932074515886e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": -5.887584148124547e-05,
+     "ci99": [
+      -0.00022459739062335538,
+      6.330518493300545e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.0009293147745100782,
+     "ci99": [
+      0.0007113948027585804,
+      0.0012113100489614561
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -0.0001451322579671175,
+     "ci99": [
+      -0.0001684791378912387,
+      -0.00012383315770951388
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0008651751203602558,
+     "ci99": [
+      0.0006700626535462348,
+      0.0011192705972613566
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 3.6260814352967593e-06,
+     "ci99": [
+      -3.325553369768618e-05,
+      3.293600012186086e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "outside_excess": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.00782466029920764,
+     "frame_median": 0.003910502033549011,
+     "frame_p95": 0.015747203118321614
+    },
+    "kept_45coords": {
+     "shot_mean": 0.007010974053949433,
+     "frame_median": 0.003391662023089044,
+     "frame_p95": 0.013910592825731668
+    },
+    "smoothed": {
+     "shot_mean": 0.006970281367863873,
+     "frame_median": 0.0033647454373031877,
+     "frame_p95": 0.013807142986812867
+    },
+    "axis": {
+     "shot_mean": 0.006982553407370484,
+     "frame_median": 0.0033659224326183985,
+     "frame_p95": 0.013840608913502467
+    },
+    "contour": {
+     "shot_mean": 0.009909612500692827,
+     "frame_median": 0.0055303897239745775,
+     "frame_p95": 0.018873399800659524
+    },
+    "shape": {
+     "shot_mean": 0.011005395799428266,
+     "frame_median": 0.006762005779354254,
+     "frame_p95": 0.020916816665723995
+    },
+    "x_points": {
+     "shot_mean": 0.01126212834284479,
+     "frame_median": 0.007001923062841475,
+     "frame_p95": 0.021220093183444196
+    },
+    "reshape": {
+     "shot_mean": 0.011994254859872325,
+     "frame_median": 0.007829955475891433,
+     "frame_p95": 0.022923127411629832
+    },
+    "margin": {
+     "shot_mean": 0.011994272790885841,
+     "frame_median": 0.007829955475891433,
+     "frame_p95": 0.022923127411629832
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0050239914230219675,
+     "ci99": [
+      0.0034642744435608268,
+      0.005929357579979873
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0008136862452582084,
+     "ci99": [
+      -0.0011747014874926836,
+      -0.0004802345241735796
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -4.069268608556001e-05,
+     "ci99": [
+      -5.215377083457415e-05,
+      -3.2271790832442524e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 1.2272039506611304e-05,
+     "ci99": [
+      2.3684538885031307e-06,
+      3.570379123010951e-05
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.0029270590933223426,
+     "ci99": [
+      0.002579454350786981,
+      0.0033506423697809806
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.0010957832987354376,
+     "ci99": [
+      0.00021382561268425672,
+      0.0014980850519865495
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": 0.00025673254341652344,
+     "ci99": [
+      0.0002256613622020777,
+      0.00029098203819132284
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0007321265170275354,
+     "ci99": [
+      -4.8044634938602085e-05,
+      0.0010713996586421849
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 1.7931013516193122e-08,
+     "ci99": [
+      -1.2253725867149922e-08,
+      5.3500517908091045e-08
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "gs_excess": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.004367402417747301,
+     "frame_median": 0.002089054965890779,
+     "frame_p95": 0.010533505093427317
+    },
+    "kept_45coords": {
+     "shot_mean": 0.003505244156313596,
+     "frame_median": 0.0016695189866402626,
+     "frame_p95": 0.009013578763422295
+    },
+    "smoothed": {
+     "shot_mean": 0.0034812655055501233,
+     "frame_median": 0.0016580092089852224,
+     "frame_p95": 0.008916610939711156
+    },
+    "axis": {
+     "shot_mean": 0.0036338711455291073,
+     "frame_median": 0.0017149347511307153,
+     "frame_p95": 0.009150086143558287
+    },
+    "contour": {
+     "shot_mean": 0.017595205688769686,
+     "frame_median": 0.006639912613085854,
+     "frame_p95": 0.05403914436520869
+    },
+    "shape": {
+     "shot_mean": 0.01690659873138985,
+     "frame_median": 0.006776659247967239,
+     "frame_p95": 0.05214307257364322
+    },
+    "x_points": {
+     "shot_mean": 0.016901640043208318,
+     "frame_median": 0.006774434222996383,
+     "frame_p95": 0.05212122715837153
+    },
+    "reshape": {
+     "shot_mean": 0.016657780893305014,
+     "frame_median": 0.006964239735042064,
+     "frame_p95": 0.05114644196309112
+    },
+    "margin": {
+     "shot_mean": 0.016657775445793385,
+     "frame_median": 0.006964239735042067,
+     "frame_p95": 0.051146441963091115
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.013176509940243258,
+     "ci99": [
+      0.010728425637240495,
+      0.016147710441608176
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0008621582614337045,
+     "ci99": [
+      -0.0011822690504123235,
+      -0.0006050259485041818
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -2.397865076347316e-05,
+     "ci99": [
+      -3.4236902923995285e-05,
+      -1.495587094937941e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 0.00015260563997898457,
+     "ci99": [
+      -4.697210120020179e-06,
+      0.0002883370713154168
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.013961334543240576,
+     "ci99": [
+      0.011453787030239129,
+      0.017167393203720013
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": -0.000688606957379838,
+     "ci99": [
+      -0.001302379023354668,
+      -0.00023752515246815717
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -4.958688181527465e-06,
+     "ci99": [
+      -1.6126962278629292e-05,
+      4.258518381933596e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": -0.000243859149903308,
+     "ci99": [
+      -0.000550226151525383,
+      1.367042784857909e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": -5.447511629232948e-09,
+     "ci99": [
+      -3.3133121735023506e-08,
+      1.848397637946824e-08
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "bp_error_ref": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.024413335791867788,
+     "frame_median": 0.016675864173062414,
+     "frame_p95": 0.051326434013016065
+    },
+    "kept_45coords": {
+     "shot_mean": 0.024461425395344894,
+     "frame_median": 0.016727657363899844,
+     "frame_p95": 0.05129248226409451
+    },
+    "smoothed": {
+     "shot_mean": 0.02446501560606778,
+     "frame_median": 0.016728242699125553,
+     "frame_p95": 0.05129652262752619
+    },
+    "axis": {
+     "shot_mean": 0.024002436452649708,
+     "frame_median": 0.01633913798320285,
+     "frame_p95": 0.0505832583709243
+    },
+    "contour": {
+     "shot_mean": 0.024742469033212016,
+     "frame_median": 0.01709570234100666,
+     "frame_p95": 0.05153754522863266
+    },
+    "shape": {
+     "shot_mean": 0.027142241515217155,
+     "frame_median": 0.01929441828288579,
+     "frame_p95": 0.05449967682559775
+    },
+    "x_points": {
+     "shot_mean": 0.02712764503625087,
+     "frame_median": 0.019272504112419014,
+     "frame_p95": 0.054494834445229685
+    },
+    "reshape": {
+     "shot_mean": 0.029721259573760875,
+     "frame_median": 0.02114306920365227,
+     "frame_p95": 0.059394044366702335
+    },
+    "margin": {
+     "shot_mean": 0.029721259573760875,
+     "frame_median": 0.02114306920365227,
+     "frame_p95": 0.059394044366702335
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.005256243967693095,
+     "ci99": [
+      0.004273910970837959,
+      0.006957065288660882
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 4.808960347710386e-05,
+     "ci99": [
+      7.687974447744928e-06,
+      0.00011210160632847226
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 3.590210722885012e-06,
+     "ci99": [
+      -6.374767867144883e-07,
+      8.225290805976337e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": -0.00046257915341807297,
+     "ci99": [
+      -0.0006122835551329142,
+      -0.0002894138291511326
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.0007400325805623115,
+     "ci99": [
+      0.0005210951905045322,
+      0.0009614274195927526
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.002399772482005135,
+     "ci99": [
+      0.0020121089854786894,
+      0.0030082436047907087
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -1.4596478966277786e-05,
+     "ci99": [
+      -1.8599151298223596e-05,
+      -1.1196743928008557e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.002593614537509998,
+     "ci99": [
+      0.0020360075688877948,
+      0.0036718347492629287
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "bp_error_envelope": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.021496811893052747,
+     "frame_median": 0.01460210956169247,
+     "frame_p95": 0.043422652339254186
+    },
+    "kept_45coords": {
+     "shot_mean": 0.021539193277043865,
+     "frame_median": 0.014676190417017804,
+     "frame_p95": 0.04335087178909646
+    },
+    "smoothed": {
+     "shot_mean": 0.021540256721475897,
+     "frame_median": 0.014680829763039879,
+     "frame_p95": 0.04336070262347729
+    },
+    "axis": {
+     "shot_mean": 0.021173763505473318,
+     "frame_median": 0.014371989355843202,
+     "frame_p95": 0.042861360795877476
+    },
+    "contour": {
+     "shot_mean": 0.021701606392832203,
+     "frame_median": 0.014922716007462719,
+     "frame_p95": 0.04367927751647917
+    },
+    "shape": {
+     "shot_mean": 0.0238545166571318,
+     "frame_median": 0.016948270243740623,
+     "frame_p95": 0.04628488571218871
+    },
+    "x_points": {
+     "shot_mean": 0.023835291975123865,
+     "frame_median": 0.016923378928135436,
+     "frame_p95": 0.04621938694246528
+    },
+    "reshape": {
+     "shot_mean": 0.02613829661551533,
+     "frame_median": 0.01857023926191642,
+     "frame_p95": 0.050826815294976097
+    },
+    "margin": {
+     "shot_mean": 0.02613829661551533,
+     "frame_median": 0.01857023926191642,
+     "frame_p95": 0.050826815294976097
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.004598039894039439,
+     "ci99": [
+      0.003810418625594604,
+      0.0058363639167078145
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 4.23813839911214e-05,
+     "ci99": [
+      6.145150143906173e-07,
+      0.00010609865391928062
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 1.0634444320265575e-06,
+     "ci99": [
+      -3.3348401929385857e-06,
+      5.557742156551364e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": -0.0003664932160025791,
+     "ci99": [
+      -0.00048635365191789556,
+      -0.00024005046458529207
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.0005278428873588864,
+     "ci99": [
+      0.00030547116834962697,
+      0.0007259797035028435
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.002152910264299596,
+     "ci99": [
+      0.0018512467541179794,
+      0.0025924161531031553
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -1.9224682007931965e-05,
+     "ci99": [
+      -2.6163848901241165e-05,
+      -1.3582839825885858e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0023030046403914673,
+     "ci99": [
+      0.0018345160073035699,
+      0.003160063113605607
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "extra_o_points": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.00014538250309208367,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "kept_45coords": {
+     "shot_mean": 5.3915748792598504e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "smoothed": {
+     "shot_mean": 5.3915748792598504e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "axis": {
+     "shot_mean": 5.3915748792598504e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "contour": {
+     "shot_mean": 7.62621175076823e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "shape": {
+     "shot_mean": 7.62621175076823e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "x_points": {
+     "shot_mean": 0.00013146900705146293,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "reshape": {
+     "shot_mean": 0.00013225969817300795,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "margin": {
+     "shot_mean": 0.00013225969817300795,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 7.834394938040946e-05,
+     "ci99": [
+      -1.9264110961279137e-05,
+      0.0002450201964766212
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -9.146675429948516e-05,
+     "ci99": [
+      -0.00034724504326870414,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 2.23463687150838e-05,
+     "ci99": [
+      0.0,
+      8.93854748603352e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": 5.5206889543780615e-05,
+     "ci99": [
+      0.0,
+      0.00022082755817512246
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 7.906911215450391e-07,
+     "ci99": [
+      -3.852822192255827e-05,
+      4.169098640873843e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "saddle_difference": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.22271396551050293,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "kept_45coords": {
+     "shot_mean": 0.22537567040402146,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "smoothed": {
+     "shot_mean": 0.22504126679178033,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "axis": {
+     "shot_mean": 0.22501892042306523,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "contour": {
+     "shot_mean": 0.22749788147602554,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "shape": {
+     "shot_mean": 0.2272590970509652,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "x_points": {
+     "shot_mean": 0.17488775072105084,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "reshape": {
+     "shot_mean": 0.17762111067775105,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    },
+    "margin": {
+     "shot_mean": 0.17762111067775105,
+     "frame_median": 0.0,
+     "frame_p95": 1.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": -0.047420156114029256,
+     "ci99": [
+      -0.06214489366199922,
+      -0.033282744067760356
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.002661704893518531,
+     "ci99": [
+      -0.004564263721180277,
+      0.010185845051542394
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -0.00033440361224119756,
+     "ci99": [
+      -0.002690901290120312,
+      0.0018814897242394669
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": -2.23463687150838e-05,
+     "ci99": [
+      -8.93854748603352e-05,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.00247896105296031,
+     "ci99": [
+      -0.006952633204576317,
+      0.013087947272386035
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": -0.00023878442506032214,
+     "ci99": [
+      -0.0028972507946258288,
+      0.003260330935442799
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -0.05237134632991439,
+     "ci99": [
+      -0.06565699527256486,
+      -0.040087051510966074
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.00273335995670024,
+     "ci99": [
+      0.00035385406783212194,
+      0.00659193856270104
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "lcfs_failed": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "kept_45coords": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "smoothed": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "axis": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "contour": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "shape": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "x_points": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "reshape": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    },
+    "margin": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "gs_excess_deg2": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.005257354678995036,
+     "frame_median": 0.0027737937601671125,
+     "frame_p95": 0.014198634384965008
+    },
+    "kept_45coords": {
+     "shot_mean": 0.004541573754898656,
+     "frame_median": 0.0024433236999274353,
+     "frame_p95": 0.013197160670111818
+    },
+    "smoothed": {
+     "shot_mean": 0.004524184089274226,
+     "frame_median": 0.0024286441839214933,
+     "frame_p95": 0.013144364392655903
+    },
+    "axis": {
+     "shot_mean": 0.004816358273824727,
+     "frame_median": 0.0025450875700546082,
+     "frame_p95": 0.013485422235745748
+    },
+    "contour": {
+     "shot_mean": 0.018727976063961062,
+     "frame_median": 0.00794696615283122,
+     "frame_p95": 0.05705654945818785
+    },
+    "shape": {
+     "shot_mean": 0.018834664425943587,
+     "frame_median": 0.00871348944019057,
+     "frame_p95": 0.05691400706667049
+    },
+    "x_points": {
+     "shot_mean": 0.01881219424033543,
+     "frame_median": 0.008697409434682947,
+     "frame_p95": 0.05689077503231234
+    },
+    "reshape": {
+     "shot_mean": 0.01940028536151596,
+     "frame_median": 0.009228874616264347,
+     "frame_p95": 0.057865847868203805
+    },
+    "margin": {
+     "shot_mean": 0.01940027871458462,
+     "frame_median": 0.009228874616264347,
+     "frame_p95": 0.057865847868203805
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.014876094625310393,
+     "ci99": [
+      0.012530873110237123,
+      0.017845327080224238
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0007157809240963798,
+     "ci99": [
+      -0.0010330240027732643,
+      -0.00044947115176225235
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -1.7389665624430796e-05,
+     "ci99": [
+      -2.929958812142735e-05,
+      -6.860476539666795e-06
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 0.00029217418455050235,
+     "ci99": [
+      9.78629441273725e-05,
+      0.0005374071689126894
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.013911617790136338,
+     "ci99": [
+      0.011410500186720782,
+      0.01708831466373452
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": 0.00010668836198252068,
+     "ci99": [
+      -0.0003653026274867726,
+      0.0005056627857399946
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -2.2470185608155476e-05,
+     "ci99": [
+      -3.743046506450174e-05,
+      -9.70957297725214e-06
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0005880911211805264,
+     "ci99": [
+      0.00024175917336047355,
+      0.0011486961156604977
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": -6.646931337998959e-09,
+     "ci99": [
+      -5.0316437480301366e-08,
+      3.6545481427122834e-08
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "gs_excess_deg5": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.0034277854302262553,
+     "frame_median": 0.0014104289045717506,
+     "frame_p95": 0.007504021832048563
+    },
+    "kept_45coords": {
+     "shot_mean": 0.0026094323182968004,
+     "frame_median": 0.0010781393420540657,
+     "frame_p95": 0.005671313955383125
+    },
+    "smoothed": {
+     "shot_mean": 0.0025894586683315474,
+     "frame_median": 0.001069853518782734,
+     "frame_p95": 0.0056020933016240355
+    },
+    "axis": {
+     "shot_mean": 0.00265293902358572,
+     "frame_median": 0.001095907607125976,
+     "frame_p95": 0.005687569569909853
+    },
+    "contour": {
+     "shot_mean": 0.016649634556763628,
+     "frame_median": 0.005635853947271894,
+     "frame_p95": 0.0521581290118348
+    },
+    "shape": {
+     "shot_mean": 0.015862685345633978,
+     "frame_median": 0.005670138697302745,
+     "frame_p95": 0.05009628445357013
+    },
+    "x_points": {
+     "shot_mean": 0.015877181823451707,
+     "frame_median": 0.00568665964636239,
+     "frame_p95": 0.050099462506296336
+    },
+    "reshape": {
+     "shot_mean": 0.015557372291067266,
+     "frame_median": 0.005840917923449455,
+     "frame_p95": 0.049041092422687636
+    },
+    "margin": {
+     "shot_mean": 0.015557363045271692,
+     "frame_median": 0.005840917923449457,
+     "frame_p95": 0.0490410924226876
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.012967904376940146,
+     "ci99": [
+      0.010514069337872335,
+      0.015925031890161347
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0008183531119294535,
+     "ci99": [
+      -0.0011305249376897765,
+      -0.000578208977521925
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -1.997364996525379e-05,
+     "ci99": [
+      -2.9396335872703366e-05,
+      -1.214655306725097e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 6.348035525417323e-05,
+     "ci99": [
+      -9.744695409877754e-05,
+      0.0001592970738828668
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.013996695533177906,
+     "ci99": [
+      0.011486727310233867,
+      0.01720409867810055
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": -0.0007869492111296521,
+     "ci99": [
+      -0.0014127171259577503,
+      -0.0003367372136138458
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": 1.4496477817731389e-05,
+     "ci99": [
+      6.663669609067941e-06,
+      2.2187902346208505e-05
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": -0.00031980953238443835,
+     "ci99": [
+      -0.0006684605943176028,
+      -5.2226584050869914e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": -9.245795575715585e-09,
+     "ci99": [
+      -3.208783497753409e-08,
+      8.791940232609967e-09
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    }
+   }
+  },
+  "gs_excess_o4": {
+   "per_map": {
+    "raw_64coords": {
+     "shot_mean": 0.00489091533362646,
+     "frame_median": 0.0023120513608317966,
+     "frame_p95": 0.012367580162194731
+    },
+    "kept_45coords": {
+     "shot_mean": 0.0038043836897408635,
+     "frame_median": 0.001815363603032173,
+     "frame_p95": 0.010368804037701882
+    },
+    "smoothed": {
+     "shot_mean": 0.003774708818895347,
+     "frame_median": 0.0018048772101214622,
+     "frame_p95": 0.010260502322637522
+    },
+    "axis": {
+     "shot_mean": 0.003931403194332438,
+     "frame_median": 0.0018555386530950612,
+     "frame_p95": 0.01047569675067371
+    },
+    "contour": {
+     "shot_mean": 0.022113609494529143,
+     "frame_median": 0.008226310325651439,
+     "frame_p95": 0.06970727853420348
+    },
+    "shape": {
+     "shot_mean": 0.02106843462077143,
+     "frame_median": 0.008292447752638054,
+     "frame_p95": 0.06643461250450308
+    },
+    "x_points": {
+     "shot_mean": 0.02106568292423266,
+     "frame_median": 0.008293112542681991,
+     "frame_p95": 0.06645415555691857
+    },
+    "reshape": {
+     "shot_mean": 0.02059126484325408,
+     "frame_median": 0.008460230037232798,
+     "frame_p95": 0.06485293620281374
+    },
+    "margin": {
+     "shot_mean": 0.02059334761396227,
+     "frame_median": 0.008460430187162157,
+     "frame_p95": 0.06485413538466156
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.01681863879506692,
+     "ci99": [
+      0.013864676325419696,
+      0.020419454598797068
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.001086531643885596,
+     "ci99": [
+      -0.0014855339443092133,
+      -0.0007713351562035815
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -2.967487084551605e-05,
+     "ci99": [
+      -4.144086245237347e-05,
+      -1.945193947158938e-05
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0001566943754370905,
+     "ci99": [
+      -6.1587717351807914e-06,
+      0.0002936918811905396
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "axis->contour": {
+     "mean_change": 0.018182206300196704,
+     "ci99": [
+      0.015033307723453642,
+      0.0221883944719891
+     ],
+     "verdict": "worse",
+     "shots": 358
+    },
+    "contour->shape": {
+     "mean_change": -0.0010451748737577119,
+     "ci99": [
+      -0.0017533974386223534,
+      -0.0005300463938416373
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "shape->x_points": {
+     "mean_change": -2.751696538766882e-06,
+     "ci99": [
+      -1.2672668488328843e-05,
+      6.521156766120658e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358
+    },
+    "x_points->reshape": {
+     "mean_change": -0.00047441808097858684,
+     "ci99": [
+      -0.0008350833090500602,
+      -0.00018237091745082414
+     ],
+     "verdict": "better",
+     "shots": 358
+    },
+    "reshape->margin": {
+     "mean_change": 2.0827707081900037e-06,
+     "ci99": [
+      2.489282703227641e-07,
+      5.231153414514791e-06
+     ],
+     "verdict": "worse",
+     "shots": 358
+    }
+   }
+  }
+ },
+ "rule": "Lower is closer to the reference. A change is 'worse' if the 99 % paired whole-shot bootstrap interval of the mean shot-level change lies above zero, 'better' if below, else inconclusive."
+}

@@ -46,7 +46,13 @@ This splits the benchmark loss; it does not say how much of it can be removed. O
 solved and 90 % of what is left is the boundary and the geometry derived from the map; on MAST, 89 % is the
 scalars and their consistency.
 
-## Three findings
+![Reference, submitted map and difference on four DIII-D development frames](figures/fig6_reconstruction.png)
+
+Four DIII-D development frames, chosen by a fixed rule (median, 90th and 99th percentile and largest boundary
+error): the reference, the submitted map and their difference. The evaluated networks were not fitted on these
+shots ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
+
+## Four findings
 
 1. **Representation beat ensemble size.** 215 features describing what the 0.5 ms input signals do within ±20 ms of
    each 20 ms frame let 32 refitted networks score higher than the 195-network ensemble before them: +1.98 × 10⁻⁴ on the public
@@ -56,6 +62,9 @@ scalars and their consistency.
    ([What did not work](NEGATIVE_RESULTS.md)).
 3. **A physics reconstruction without MAST labels reached 0.7145 on MAST,** and label-free repairs confirmed on a
    synthetic testbed did not transfer to the real machine ([Study §5.9](STUDY.md#59-what-the-mast-result-says-a-limit-of-our-approach-not-of-the-problem)).
+4. **The finishing step trades equilibrium form for score.** It adds 1981 µS of benchmark score on the development
+   shots, while the share of current density that is not of Grad–Shafranov form, above the reference's, grows from 0.35 % to 1.67 % and
+   current appears outside the plasma ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
 
 ## Read
 
