@@ -11,7 +11,7 @@ available from the entrant: protoscience@anulum.li.
 
 | Material | Where | Origin and licence |
 |---|---|---|
-| Derivation of the seven map-derived scalars, boundary extraction and axis search | `source/*/fec_adapter/scoring_kit/`, `training_adapter/fec_adapter/scoring_kit/` | Fusion Equilibrium Challenge starter kit, © 2026 Sophelio and the Fusion Equilibrium Challenge authors, MIT; kept verbatim except for relative imports, licence text beside the files |
+| Derivation of the seven map-derived scalars, boundary extraction and axis search | `source/*/fec_adapter/scoring_kit/`, `training_adapter/fec_adapter/scoring_kit/` | [Fusion Equilibrium Challenge starter kit](https://github.com/Sophelio/fusion-equilibrium-challenge-starter), © 2026 Sophelio and the Fusion Equilibrium Challenge authors, MIT; kept verbatim except for relative imports, licence text beside the files |
 | Vessel envelope masks | `source/*/vendor/challenge_masks/` | the same starter kit, MIT; licence text beside the files |
 
 The solver modules under `source/*/vendor/scpn_fusion/` are the entrant's own code, copied from SCPN Fusion Core
@@ -19,7 +19,7 @@ at a recorded commit; `vendor/PROVENANCE.md` lists the copy and the changes made
 
 ## Not redistributed
 
-The challenge dataset (`Sophelio/fusion-equilibrium-challenge`, CC BY 4.0) is not part of this repository. No
+The challenge dataset ([`Sophelio/fusion-equilibrium-challenge`](https://huggingface.co/datasets/Sophelio/fusion-equilibrium-challenge), CC BY 4.0) is not part of this repository. No
 test-fold prediction is stored here.
 
 ## Software the entry runs on

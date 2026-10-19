@@ -8,7 +8,8 @@
 
 This repository is the reproduction package and the permanent record of one entry to the
 [Fusion Equilibrium Challenge](https://fusion-equilibrium-challenge.sophelio.io/) (NeurIPS 2026 competition,
-Codabench competition 17739). The task: reconstruct the poloidal flux map of a tokamak plasma, and the two
+[Codabench competition 17739](https://www.codabench.org/competitions/17739/)), organised by
+[Sophelio](https://github.com/Sophelio). The task: reconstruct the poloidal flux map of a tokamak plasma, and the two
 scalars q95 and βN, from coil currents and Thomson-scattering profiles alone, without any magnetic measurement.
 
 The entry is submitted by Anulum (Miroslav Šotek). It was developed with Arcane Sapience, the entrant's
@@ -89,6 +90,17 @@ python train.py --raw-dir /path/to/data/diii_d_train --out /work/smoke --limit 4
 of `infer.py`. It loads no existing weight. [TRAINING.md](TRAINING.md) describes the recipe and what the limited
 mode reduces; [COMPUTE.md](COMPUTE.md) declares the compute. One network of each of the four families was
 fitted with the full recipe on a single NVIDIA GTX 1060 (6 GiB) in 4.7 to 5.4 minutes.
+
+## The challenge's own resources
+
+| Resource | Link |
+|---|---|
+| Challenge site, rules and announcements | [fusion-equilibrium-challenge.sophelio.io](https://fusion-equilibrium-challenge.sophelio.io/) |
+| Organisers on GitHub | [github.com/Sophelio](https://github.com/Sophelio) |
+| Starter kit (data fixes, validator, local scorer) | [Sophelio/fusion-equilibrium-challenge-starter](https://github.com/Sophelio/fusion-equilibrium-challenge-starter) |
+| Training and public-test data (v1.1.0) | [Sophelio/fusion-equilibrium-challenge](https://huggingface.co/datasets/Sophelio/fusion-equilibrium-challenge) |
+| Final-phase test inputs | [ganatma/fusion-equilibrium-challenge-final](https://huggingface.co/datasets/ganatma/fusion-equilibrium-challenge-final) |
+| Platform and leaderboard | [Codabench 17739](https://www.codabench.org/competitions/17739/) |
 
 ## Where things are
 
