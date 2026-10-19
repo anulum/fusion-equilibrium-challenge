@@ -1,6 +1,9 @@
 ---
-title: Fusion Equilibrium Challenge — the Anulum entry
+title: Home
+nav_order: 1
 ---
+
+# Fusion Equilibrium Challenge — the Anulum entry
 
 The permanent record of one entry to the [Fusion Equilibrium Challenge](https://fusion-equilibrium-challenge.sophelio.io/)
 (NeurIPS 2026, organised by [Sophelio](https://github.com/Sophelio)): reconstructing the poloidal flux map of a tokamak plasma, and q95 and βN, from coil currents and
