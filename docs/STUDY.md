@@ -560,6 +560,8 @@ error at both ends, which by this table is about 7 × 10⁻⁵, more than twice 
 candidate was rejected by that screen and would have been lost if the second agent had not put it through the
 organisers' score as a diagnostic.
 
+![What a given accuracy buys](figures/fig4_dose_response.png)
+
 ### 4.21 Networks that answer only the X-points
 Eight networks with four outputs, the positions of the two X-points, were fitted on the 582 features with the
 recipe of the scalar networks, and their mean was blended at one half into the X-point targets of the finishing
@@ -706,6 +708,13 @@ channels that normally report have nothing, at the end of a discharge or when th
 | Clip at 50 instead of 8 (four networks per arm) | availability means keep their gradation | predicted +3.2 × 10⁻⁵ (95 % −7.1 to +13.3 × 10⁻⁵), flux error ×1.05 | rejected |
 | A small branch on the full incumbent reading the raw Thomson channels, against the same branch on coarse bins | a learned correction of the 13 heads | −198 µS and −157 µS through the finisher (99 % intervals entirely below zero) | rejected; the 357 not opened |
 | Context means over available values only, availability kept separately | the table itself, rebuilt for 7041 shots | heads −1.3 × 10⁻⁴ (95 % up to −1.8 × 10⁻⁵) | rejected |
+| A readout of the 64 boundary radii trained with a Hausdorff boundary loss, against the same readout without it | a learned correction of the finisher's boundary targets | −166 µS through the finisher (99 % −209 to −128) | rejected; the 357 not opened |
+
+Before the last attempt we measured where the boundary loss lies: 61 % of it within 15 cm of the two X-points, spread
+over many shots (the worst 1 % of shots hold 4 % of it), and every stage of the finisher adds score. The remaining
+deficit on these shots is 3900 µS, of which 87 % is boundary distance and geometric consistency.
+
+![Where the remaining DIII-D score sits](figures/fig3_remaining_deficit.png)
 
 Each attempt helped some heads (the axis height or q95 and li) and cost others more. The hard frames are located;
 none of these representations makes them easier for the networks.
@@ -918,6 +927,8 @@ shot's answer depends on the rest of its fold in one case only. A shot without a
 current pattern of the fold's solved frames, and a missing scalar takes the fold's median; both come from
 inputs alone.
 
+![MAST versions on the public fold](figures/fig5_mast_versions.png)
+
 ### 5.9 What the MAST result says: a limit of our approach, not of the problem
 Our submitted MAST score on the public fold was 0.7145. On the last public table before the Final (15 October),
 most entries near us on DIII-D had MAST S between 0.73 and 0.78, and the three highest had 0.85, 0.88 and 0.94; the
@@ -946,6 +957,10 @@ choose the same honesty again, but we would spend the permitted feedback channel
 the learned transfer route in parallel with the physics route instead of after it.
 
 ## 6. What moved the score
+
+![Public DIII-D score step by step](figures/fig1_score_progression.png)
+
+![Experiments under frozen rules](figures/fig2_frozen_experiments.png)
 
 In order of time. "Honest estimate" is the measurement on shots held out of the fits; "Public" is the change of
 the Development score, with the submission number.
@@ -1008,6 +1023,7 @@ the Development score, with the submission number.
 | Input clip at 50 instead of 8, four matched networks per arm (358 exposed shots) | heads +3.2 × 10⁻⁵ (95 % −7.1 to +13.3 × 10⁻⁵); flux error ×1.05 | — | no |
 | Zero-initialised branch on the full incumbent, raw Thomson channels against coarse bins, through the finisher | −198 µS (99 % −300 to −118) and −157 µS (−241 to −93) | — | no; the 357 not opened |
 | Thomson context over available values only, availability kept separately (table rebuilt) | heads −1.3 × 10⁻⁴ (95 % −2.0 to −0.2 × 10⁻⁴) | — | no |
+| Boundary radius readout trained with a Hausdorff loss, against the same readout without it | −166 µS (99 % −209 to −128) | — | no |
 
 ## 7. Integrity and limits
 - **The September holdout.** It was opened for training by the entrant's decision after its one honest

@@ -28,7 +28,10 @@ Development phase, public test folds, submission 986068 (14 October 2026):
 | Boundary distance D_LCFS | 0.008180 | 0.191791 |
 | Consistency of derived scalars | 0.987704 | 0.226646 |
 
-On that day the entry stood tenth of 129 on DIII-D; the leading score was 0.9970. The Final phase is scored on
+On that day the entry stood tenth of 129 on DIII-D, and eleventh when the Development phase closed; the leading
+score was 0.9970.
+
+![Public DIII-D score step by step](docs/figures/fig1_score_progression.png) The Final phase is scored on
 blind folds; its result is added here when it is published.
 
 ## What the model is
@@ -129,6 +132,8 @@ Every experiment has a protocol with a written decision rule, frozen with checks
 are measured on whole shots that no fitted component has seen, with a paired whole-shot bootstrap. A failed
 rule closes the experiment; thresholds are not moved after a result. The ledger in `docs/` lists every
 experiment, including the many that failed.
+
+![Experiments under frozen rules](docs/figures/fig2_frozen_experiments.png)
 
 ## Licence and citation
 
