@@ -1,0 +1,8 @@
+blank_issues_enabled: false
+contact_links:
+  - name: Questions and discussion
+    url: https://github.com/anulum/fusion-equilibrium-challenge/discussions
+    about: Questions about the method, the study or the results.
+  - name: Security
+    url: https://github.com/anulum/fusion-equilibrium-challenge/security/advisories/new
+    about: Report a security issue privately.

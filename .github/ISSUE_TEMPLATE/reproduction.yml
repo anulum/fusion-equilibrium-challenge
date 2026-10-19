@@ -1,0 +1,32 @@
+name: Reproduction problem
+description: The inference or training entrypoint does not reproduce what the README says.
+labels: [reproduction]
+body:
+  - type: input
+    id: commit
+    attributes:
+      label: Repository commit
+      description: Output of `git rev-parse HEAD`.
+    validations:
+      required: true
+  - type: dropdown
+    id: entrypoint
+    attributes:
+      label: Entrypoint
+      options: [infer.py (DIII-D), infer.py (MAST), train.py, fetch_weights.py]
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command and environment
+      description: The exact command, Python version, OS, CPU/GPU, and `pip freeze` if relevant.
+    validations:
+      required: true
+  - type: textarea
+    id: observed
+    attributes:
+      label: What happened
+      description: Error output, or the receipt JSON and how it differs from the expected result.
+    validations:
+      required: true

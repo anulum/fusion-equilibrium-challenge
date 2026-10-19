@@ -120,3 +120,7 @@ notice; see [NOTICE.md](NOTICE.md). The challenge data are the organisers', rele
 not redistributed here.
 
 To cite this entry, see [CITATION.cff](CITATION.cff). Contact: protoscience@anulum.li.
+
+Questions about the method or the results: [Discussions](https://github.com/anulum/fusion-equilibrium-challenge/discussions).
+A reproduction problem: [open an issue](https://github.com/anulum/fusion-equilibrium-challenge/issues/new?template=reproduction.yml).
+The documents are also readable as a site: [anulum.github.io/fusion-equilibrium-challenge](https://anulum.github.io/fusion-equilibrium-challenge/).
