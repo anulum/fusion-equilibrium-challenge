@@ -1,0 +1,51 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Fusion Equilibrium Challenge entry — weights integrity and a one-shot reproduction on every push
+name: Reproduce
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+  schedule:
+    - cron: "17 4 * * 1"
+
+permissions:
+  contents: read
+
+jobs:
+  reproduce:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 60
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      JAX_PLATFORMS: cpu
+      JAX_ENABLE_X64: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - name: Install the pinned inference environment
+        run: python -m pip install -r requirements-inference-cpu.txt huggingface_hub
+      - name: Fetch the weights at the pinned revision and verify every checksum
+        run: python fetch_weights.py
+      - name: Fetch one public DIII-D shot and one public MAST shot (CC BY 4.0)
+        run: |
+          python - <<'PY'
+          from huggingface_hub import hf_hub_download
+          for config, name in (("diii_d_public_test", "d3d_shot_0047b7837b.parquet"),
+                               ("mast_public_test", "mast_shot_0035568738.parquet")):
+              hf_hub_download("Sophelio/fusion-equilibrium-challenge", f"data/{config}/{name}",
+                              repo_type="dataset", local_dir="ci_data")
+          PY
+      - name: Regenerate the first public DIII-D shot
+        run: python -B infer.py --machine d3d --data-root ci_data/data --split diii_d_public_test --workers 1 --limit 1 --out ci_out/d3d.npz
+      - name: Compare with the submitted archive
+        run: python tools/ci_check_shot.py ci_out/d3d.npz
+      - name: Run the MAST reconstruction on one public shot
+        run: python -B infer.py --machine mast --data-root ci_data/data --split mast_public_test --workers 1 --limit 1 --out ci_out/mast.npz
