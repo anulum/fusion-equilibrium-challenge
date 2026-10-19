@@ -83,6 +83,7 @@ What has been checked:
 | Fresh environment from `requirements-inference-cpu.txt`, new directories | bit-identical on the shots run |
 | 22 worker processes against one | bit-identical |
 | GitHub-hosted runner (another CPU), first public DIII-D shot, on every push | q95 and βN bit-identical; flux map within 7.5 × 10⁻⁹ (the last bits of float32) |
+| Google Colab, the quickstart notebook, 19 October 2026 | runs end to end |
 
 Measured on a host with two Intel Xeon E5-2640 (24 threads) and 8 workers: 6 h 14 min for the DIII-D fold and
 1 h 52 min for the MAST fold. With 22 workers the DIII-D fold took 3 h 15 min, again bit-identical; 22 workers need
