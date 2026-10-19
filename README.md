@@ -50,6 +50,10 @@ did not help.
 
 ## Reproduce the predictions
 
+A first look in five minutes: [notebooks/quickstart.ipynb](notebooks/quickstart.ipynb) runs the entry on one public
+DIII-D shot and draws the predicted flux surfaces
+([open in Colab](https://colab.research.google.com/github/anulum/fusion-equilibrium-challenge/blob/main/notebooks/quickstart.ipynb)).
+
 Python 3.12 on Linux; CPU only.
 
 ```bash
