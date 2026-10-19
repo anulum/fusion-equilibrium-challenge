@@ -8,6 +8,7 @@
 [![Commercial licence](https://img.shields.io/badge/commercial%20licence-available-orange.svg)](mailto:protoscience@anulum.li)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23480092.svg)](https://doi.org/10.5281/zenodo.23480092)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/anulum)
+[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-anulum-ffdd00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/anulum)
 
 ![Tokamak equilibrium without magnetic measurements: the Anulum entry to the Fusion Equilibrium Challenge](docs/assets/fusion-equilibrium-challenge-preview.png)
 
