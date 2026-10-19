@@ -127,7 +127,7 @@ fitted with the full recipe on a single NVIDIA GTX 1060 (6 GiB) in 4.7 to 5.4 mi
 | `models/` | trained weights; fetched by `fetch_weights.py`, listed in `WEIGHTS.sha256` |
 | `requirements-*.txt` | pinned environments |
 | `DATA_PROVENANCE.md` | which data touched which part of the entry, per machine |
-| `docs/` | methods report, study, experiment ledger, cost of the entry |
+| `docs/` | methods report, study, experiment ledger, [what did not work](docs/NEGATIVE_RESULTS.md), cost of the entry |
 | `experiments/` | frozen protocols, scripts and result files of the experiments |
 
 The weights are not in this Git repository. `WEIGHTS.json` names the public repository and pinned revision they

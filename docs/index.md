@@ -19,6 +19,7 @@ Development phase. The blind Final was submitted on 19 October 2026; its result 
   experiments that failed.
 - [Experiment ledger](EXPERIMENT_LEDGER.md): one row per experiment, with the protocol checksum, the number and the
   decision.
+- [What did not work](NEGATIVE_RESULTS.md): the negative results by theme, with the numbers.
 - [What the entry cost](COSTS.md): time, money, compute and energy.
 
 ## The challenge
