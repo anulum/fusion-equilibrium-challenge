@@ -18,6 +18,7 @@
 !/WEIGHTS.json
 !/WEIGHTS.sha256
 !/.github/
+!/.zenodo.json
 !/SECURITY.md
 !/SUPPORT.md
 !/CODE_OF_CONDUCT.md

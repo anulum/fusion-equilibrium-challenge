@@ -1,0 +1,55 @@
+{
+  "title": "Fusion Equilibrium Challenge: the Anulum entry (code, weights, study and experiment record)",
+  "description": "<p>Reproduction package and permanent record of the Anulum entry to the Fusion Equilibrium Challenge (NeurIPS 2026 competition, Codabench 17739, organised by Sophelio): reconstruction of the poloidal flux map of a tokamak plasma, and of q95 and normalised beta, from coil currents and Thomson-scattering profiles alone, without any magnetic measurement.</p><p>DIII-D: an ensemble of 69 multilayer perceptrons predicting principal coordinates of the flux map, with gradient-boosted tree heads, networks dedicated to the X-points and to the submitted scalars, and a map-finishing step. MAST (zero-shot): an equal-temperature reconstruction from the coil set and the Thomson profile, using no MAST equilibrium data. Development phase: DIII-D composite S 0.996359 (flux-map R² 0.99988), MAST S 0.7145.</p><p>The archive contains the source, pinned environments, training and inference entrypoints (the package reproduces the submitted predictions bit for bit), the accompanying study, an experiment ledger with every negative result, frozen protocols and scripts, and an estimate of the entry's cost. Trained weights are on Hugging Face (anulum/fusion-equilibrium-challenge, pinned revision in WEIGHTS.json). Developed with Arcane Sapience, the entrant's research system of agents built on large language models.</p>",
+  "creators": [
+    {
+      "name": "Šotek, Miroslav",
+      "affiliation": "ANULUM / Fortis Studio",
+      "orcid": "0009-0009-3560-0851"
+    }
+  ],
+  "upload_type": "software",
+  "version": "1.0.0",
+  "access_right": "open",
+  "license": "AGPL-3.0-or-later",
+  "keywords": [
+    "tokamak",
+    "plasma equilibrium",
+    "equilibrium reconstruction",
+    "Grad-Shafranov",
+    "DIII-D",
+    "MAST",
+    "fusion energy",
+    "machine learning",
+    "scientific machine learning",
+    "reproducibility",
+    "negative results",
+    "NeurIPS 2026"
+  ],
+  "related_identifiers": [
+    {
+      "identifier": "https://github.com/anulum/fusion-equilibrium-challenge",
+      "relation": "isSupplementTo",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://huggingface.co/anulum/fusion-equilibrium-challenge",
+      "relation": "isSupplementedBy",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://fusion-equilibrium-challenge.sophelio.io/",
+      "relation": "isPartOf",
+      "scheme": "url"
+    },
+    {
+      "identifier": "https://github.com/Sophelio/fusion-equilibrium-challenge-starter",
+      "relation": "requires",
+      "scheme": "url"
+    }
+  ],
+  "communities": [
+    {"identifier": "zenodo"}
+  ],
+  "notes": "The code behind the Final-phase submission of 19 October 2026 is tagged final-submission-2026-10-19 (commit 19d2d341f3498617d6b28b5b90718a5d0858c859); later commits change documentation only. The challenge data (Sophelio/fusion-equilibrium-challenge, CC BY 4.0) are not redistributed."
+}
