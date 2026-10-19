@@ -918,6 +918,33 @@ shot's answer depends on the rest of its fold in one case only. A shot without a
 current pattern of the fold's solved frames, and a missing scalar takes the fold's median; both come from
 inputs alone.
 
+### 5.9 What the MAST result says: a limit of our approach, not of the problem
+Our submitted MAST score on the public fold was 0.7145. On the last public table before the Final (15 October),
+most entries near us on DIII-D had MAST S between 0.73 and 0.78, and the three highest had 0.85, 0.88 and 0.94; the
+highest was submitted on 8 October, after the 23 September rule. Better zero-shot MAST reconstructions are therefore
+possible under the rules. How those entries were made we do not know; their method fields were empty.
+
+We reached the limit of the approach we chose and of the constraints we set ourselves:
+
+- **A strict reading of rule 3.** We used nothing derived from MAST reconstructions or from the labelled
+  demonstration shots, and until 4 October we did not use the public MAST score either. When the organisers'
+  reading excluded every component the demonstration shots had touched, we replaced our best version (v7, 0.7296)
+  by v11 and v12, at a cost of about 0.015.
+- **A physics reconstruction instead of a learned one.** The equal-temperature solve is transparent and needs no
+  MAST labels, but its machine model is incomplete: vessel currents, the solenoid and the current profile. Our
+  label-free attempts to repair it (§5.4, §5.6) did not transfer to the real machine, and the synthetic testbed that
+  suggested they would was itself the misleading part: the errors we hid in it were not the machine's errors.
+- **Routes the rules allow and we did not take:** training on synthetic MAST equilibria from a validated
+  free-boundary solver; label-free adaptation of the DIII-D networks to MAST inputs; a full free-boundary solve with
+  passive structures. Each needed a way to check a MAST map without MAST truth, and we did not have one that we
+  trusted. With hindsight, the public MAST score, which the organisers allowed with disclosure from 2 October,
+  was that check, and we used it late and little.
+
+The lesson we draw: when a model must transfer to a machine it has no labels for, we chose verifiability over
+performance, and on this evidence it cost us between 0.05 and 0.2 in MAST S against the better entries. We would
+choose the same honesty again, but we would spend the permitted feedback channel much earlier, and we would build
+the learned transfer route in parallel with the physics route instead of after it.
+
 ## 6. What moved the score
 
 In order of time. "Honest estimate" is the measurement on shots held out of the fits; "Public" is the change of
