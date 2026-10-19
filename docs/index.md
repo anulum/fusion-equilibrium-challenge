@@ -99,7 +99,7 @@ On the hardware the entry was built on (two Intel Xeon E5-2640), the package rep
 both public folds bit for bit. On other CPUs the last bits of float32 can differ; the CI measures it on every push
 (q95 and βN identical, flux map within 7.5 × 10⁻⁹). [All checks](https://github.com/anulum/fusion-equilibrium-challenge#reproduce-the-predictions).
 
-Cite as: [doi:10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092).
+Cite as: [doi:10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092). Code archived by [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/anulum/fusion-equilibrium-challenge) (`swh:1:snp:143cae236c490f64c48de43ca03761a9623e16d6`).
 
 Developed by Anulum (Miroslav Šotek) with Arcane Sapience, a research system of agents built on large language models.
 AGPL-3.0-or-later. Contact: protoscience@anulum.li.
