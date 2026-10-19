@@ -1,9 +1,13 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # Fusion Equilibrium Challenge: the Anulum entry
 
+[![Reproduce](https://github.com/anulum/fusion-equilibrium-challenge/actions/workflows/reproduce.yml/badge.svg)](https://github.com/anulum/fusion-equilibrium-challenge/actions/workflows/reproduce.yml)
+[![Docs](https://img.shields.io/badge/docs-GitHub%20Pages-blue.svg)](https://anulum.github.io/fusion-equilibrium-challenge/)
+[![Weights](https://img.shields.io/badge/weights-Hugging%20Face-ffcc4d.svg)](https://huggingface.co/anulum/fusion-equilibrium-challenge)
+[![License: AGPL-3.0-or-later](https://img.shields.io/badge/license-AGPL--3.0--or--later-blue.svg)](LICENSE)
+[![Commercial licence](https://img.shields.io/badge/commercial%20licence-available-orange.svg)](mailto:protoscience@anulum.li)
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.23480092.svg)](https://doi.org/10.5281/zenodo.23480092)
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/anulum)
-[![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-anulum-ffdd00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/anulum)
 
 ![Tokamak equilibrium without magnetic measurements: the Anulum entry to the Fusion Equilibrium Challenge](docs/assets/fusion-equilibrium-challenge-preview.png)
 
@@ -77,6 +81,7 @@ What has been checked:
 | Whole public MAST fold, 1 206 shots, 69 075 frames | every map and scalar bit-identical to the submitted archive |
 | Fresh environment from `requirements-inference-cpu.txt`, new directories | bit-identical on the shots run |
 | 22 worker processes against one | bit-identical |
+| GitHub-hosted runner (another CPU), first public DIII-D shot, on every push | q95 and βN bit-identical; flux map within 7.5 × 10⁻⁹ (the last bits of float32) |
 
 Measured on a host with two Intel Xeon E5-2640 (24 threads) and 8 workers: 6 h 14 min for the DIII-D fold and
 1 h 52 min for the MAST fold. With 22 workers the DIII-D fold took 3 h 15 min, again bit-identical; 22 workers need
