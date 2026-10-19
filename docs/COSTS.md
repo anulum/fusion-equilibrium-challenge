@@ -21,6 +21,9 @@ task would cost with a research cluster.
 | The entrant's own time | 17 to 19 hours a day at the workstation, one twelfth of it on this entry: 52 to 59 hours, at 150 CHF an hour | 7 900 to 8 800 CHF |
 | **Total** | | **about 10 000 to 11 000 CHF** |
 
+Neither row is an invoice: the first is a share of the laboratory's running cost allocated to the entry, the second
+the entrant's time valued at his rate. Both were written on 19 October and count the week to 26 October in advance.
+
 The laboratory figure is the entrant's stated running cost of the laboratory as a whole; it is not itemised
 here.
 
@@ -42,7 +45,7 @@ only through the laboratory's running cost.
 
 ## Compute for the deployed model
 
-These are the fits that make up the submitted model, from their own fit reports; [COMPUTE.md](../COMPUTE.md)
+These are the fits that make up the submitted model, from their own fit reports; [COMPUTE.md](https://github.com/anulum/fusion-equilibrium-challenge/blob/main/COMPUTE.md)
 gives the detail and the caveats.
 
 | Component | Fits | Summed fit time | Hardware |

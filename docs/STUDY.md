@@ -2,7 +2,8 @@
 # What we tried, how we measured it, and what moved the score
 ## Accompanying study to the Anulum entry, Fusion Equilibrium Challenge (NeurIPS 2026)
 
-*Version of 14 October 2026, for the entry displayed as Codabench submission 986068 (Development phase). The
+*Model of 14 October 2026, the entry displayed as Codabench submission 986068 (Development phase); text last updated
+19 October 2026. The
 Final-phase result is added when it is published. Every number is taken from a protocol, receipt or result
 file of the experiment it belongs to; [EXPERIMENT_LEDGER.md](EXPERIMENT_LEDGER.md) has one row per experiment
 and names those files. The study is written in the order the work was done, and it keeps the conclusions we
@@ -686,7 +687,7 @@ directly. It is a hypothesis, not a result. These tests measure the sum of what 
 what our models fail to extract, and do not separate the two. §4.16 is the warning: an information limit we
 claimed for the table of September was a limit of the table, not of the data.
 
-### 4.26 After an external review: where the hard frames are, and three tries at them
+### 4.26 After an external review: where the hard frames are, and four tries at them
 On 14 October, with the model submitted, the entrant had the repository reviewed by an outside language model and
 reopened the research for the remaining days, keeping #986068 as the fallback. Two of the review's points held up.
 The study had claimed more than its tests showed about an information limit (§4.25 is now worded as a hypothesis),
@@ -701,7 +702,7 @@ holds any finite positive value; usually 1, and a 0 is 10 to 13 standard deviati
 Clipping a two-valued flag loses nothing, so the clip marks the frames rather than explaining them: frames in which
 channels that normally report have nothing, at the end of a discharge or when the plasma no longer reaches them.
 
-**Three tries, each frozen before it ran and recomputed independently by the other agent.**
+**Four tries, each frozen before it ran and recomputed independently by the other agent.**
 
 | Experiment | What changed | Result on the 358 | Decision |
 |---|---|---|---|
@@ -932,8 +933,9 @@ inputs alone.
 ### 5.9 What the MAST result says: a limit of our approach, not of the problem
 Our submitted MAST score on the public fold was 0.7145. On the last public table before the Final (15 October),
 most entries near us on DIII-D had MAST S between 0.73 and 0.78, and the three highest had 0.85, 0.88 and 0.94; the
-highest was submitted on 8 October, after the 23 September rule. Better zero-shot MAST reconstructions are therefore
-possible under the rules. How those entries were made we do not know; their method fields were empty.
+highest was submitted on 8 October, after the 23 September rule. A submission date does not show that a method
+complies with the rule, and we could not examine those entries: their method fields were empty. The table shows that
+higher public MAST scores exist; it does not show how they were made.
 
 We reached the limit of the approach we chose and of the constraints we set ourselves:
 
@@ -952,7 +954,10 @@ We reached the limit of the approach we chose and of the constraints we set ours
   was that check, and we used it late and little.
 
 The lesson we draw: when a model must transfer to a machine it has no labels for, we chose verifiability over
-performance, and on this evidence it cost us between 0.05 and 0.2 in MAST S against the better entries. We would
+performance. The public table puts us 0.02 to 0.07 in MAST S below the entries near us on DIII-D and 0.14 to 0.23
+below the three highest. How much of that gap our choices caused we cannot say: solver, representation, tuning,
+compute and verification strategy were never separated by a controlled comparison, and the other entries' methods
+are unknown. What we did measure is the cost of the components we removed, about 0.015 (v7 against v12). We would
 choose the same honesty again, but we would spend the permitted feedback channel much earlier, and we would build
 the learned transfer route in parallel with the physics route instead of after it.
 
@@ -1123,8 +1128,8 @@ written at the end of September; where the later work tried an item, the outcome
 
 ## 10. Reproduction
 The package in this repository answers any directory of shot files from its inputs alone, with one command per
-machine, and rebuilds the model from the released training data with one command. The [README](../README.md)
-gives the commands; [TRAINING.md](../TRAINING.md) and [COMPUTE.md](../COMPUTE.md) give the recipe and the
+machine, and rebuilds the model from the released training data with one command. The [README](https://github.com/anulum/fusion-equilibrium-challenge/blob/main/README.md)
+gives the commands; [TRAINING.md](https://github.com/anulum/fusion-equilibrium-challenge/blob/main/TRAINING.md) and [COMPUTE.md](https://github.com/anulum/fusion-equilibrium-challenge/blob/main/COMPUTE.md) give the recipe and the
 compute.
 
 What was checked, each under a protocol with criteria fixed before the run:

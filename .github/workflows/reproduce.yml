@@ -35,7 +35,7 @@ jobs:
         with:
           python-version: "3.12"
       - name: Install the pinned inference environment
-        run: python -m pip install -r requirements-inference-cpu.txt huggingface_hub
+        run: python -m pip install -r requirements-inference-cpu.txt
       - name: Fetch the weights at the pinned revision and verify every checksum
         run: python fetch_weights.py
       - name: Fetch one public DIII-D shot and one public MAST shot (CC BY 4.0)

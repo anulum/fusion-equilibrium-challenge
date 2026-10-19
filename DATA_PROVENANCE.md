@@ -42,9 +42,26 @@ MAST scalar and entirely unsolved-shot fallback statistics are computed
 from the supplied split's own inputs and solved predictions. They do not
 come from a fixed public-test lookup table.
 
-## Remaining reproducibility work
+## State of the reproduction (19 October 2026)
 
-Full public inference qualification, runnable training from scratch,
-the pinned CUDA training environment and the measured training GPU-hour
-declaration remain pending. Historical fit reports are evidence for
-recovery; they are not a substitute for an executed training recipe.
+| What | State |
+|---|---|
+| Inference from the published weights | done: both public folds bit-identical to the #986068 archives on the build host (two Xeon E5-2640); see the README |
+| Other CPUs | GitHub-hosted runner on every push, first public DIII-D shot: q95 and βN bit-identical, flux map within 7.5 × 10⁻⁹ |
+| Training chain in its limited mode | done: raw shot files to a model directory and its own inference, on two hosts ([COMPUTE.md](COMPUTE.md)) |
+| Full recipe, one network per family | done on one NVIDIA GTX 1060 and one AMD RX 6600 XT ([COMPUTE.md](COMPUTE.md)) |
+| Full production retrain and the score of its weights | not done |
+| Training time on an A100 | not measured; an estimate is in [COMPUTE.md](COMPUTE.md) |
+| Final phase | submitted 19 October 2026 (Codabench 1003274); result pending |
+
+Historical fit reports are evidence for recovery; they are not a substitute for an executed training recipe.
+
+## The manifest as frozen
+
+`deployment.json` is kept as it was committed with the package on 14 October; its SHA-256, `ca4d98d2…`, is written
+into the receipts of the Final runs, so it is not edited afterwards. Four of its fields describe that day, not the
+present: `status` (the full check then pending has since passed, see above), `published` and
+`training_reproduction_complete` (both `false` then), and `inference_entrypoint_sha256` (`caf77861…`), which is the
+`infer.py` of the earlier package versions (v3 and v4, used for the training-chain checks), not the one in this
+repository. The `infer.py` in this repository, `1f4d05d4…`, produced both Final archives and the regeneration of the whole public DIII-D fold; each of their receipts records it as `source_sha256` (the whole public MAST fold was regenerated with the earlier `59af1eeb…`). `verify()` checks the weights and source files listed
+in the manifest, not that field.

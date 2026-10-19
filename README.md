@@ -97,8 +97,8 @@ therefore depends on the fold it is supplied with.
 
 ```bash
 .venv/bin/python -m pip install -r requirements-training-cuda.txt      # or requirements-training-cpu.txt
-python train.py --raw-dir /path/to/data/diii_d_train --out /work/full --platform cuda
-python train.py --raw-dir /path/to/data/diii_d_train --out /work/smoke --limit 4      # whole chain in minutes
+.venv/bin/python train.py --raw-dir /path/to/data/diii_d_train --out /work/full --platform cuda
+.venv/bin/python train.py --raw-dir /path/to/data/diii_d_train --out /work/smoke --limit 4     # whole chain in minutes
 ```
 
 `train.py` goes from the raw shot files to a complete model directory with its own manifest and a runnable copy
@@ -140,9 +140,11 @@ that write code, run experiments, analyse results and review each other's work u
 The entrant sets direction, decides, and takes responsibility for every submission.
 
 Every experiment has a protocol with a written decision rule, frozen with checksums before its first fit. Gains
-are measured on whole shots that no fitted component has seen, with a paired whole-shot bootstrap. A failed
-rule closes the experiment; thresholds are not moved after a result. The ledger in `docs/` lists every
-experiment, including the many that failed.
+are measured on whole shots held out of every fit they judge, with a paired whole-shot bootstrap; a cohort used
+before is marked as such. A failed rule closes the experiment, and thresholds are not moved after a result. Two
+choices were made on the public score instead, and the study names both (§7): the shares of the scalar networks,
+which failed their rule and were put to the public test once under a rule written before the submission, and the
+32-network set. The ledger in `docs/` lists every experiment, including the many that failed.
 
 ![Experiments under frozen rules](docs/figures/fig2_frozen_experiments.png)
 

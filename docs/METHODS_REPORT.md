@@ -1,7 +1,8 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # Methods report: SCPN Reactor Systems entry, Fusion Equilibrium Challenge
 
-*Version of 2026-10-14, for the entry displayed as Codabench submission 986068 (Development phase).*
+*Version of 2026-10-14, for the entry displayed as Codabench submission 986068 (Development phase); governance
+wording corrected 2026-10-19.*
 
 **Entrant:** Anulum (Miroslav Šotek), protoscience@anulum.li.
 **Code:** https://github.com/anulum/fusion-equilibrium-challenge; the commit of each Final submission is named
@@ -19,8 +20,10 @@ The entrant sets direction, decides, and takes responsibility for every submissi
 The governance is concrete:
 
 - every experiment has a protocol with a written decision rule, frozen with checksums before the first fit;
-- gains are measured on whole shots no fitted component has seen, with a paired whole-shot bootstrap;
-- a failed rule closes the experiment; thresholds are not changed after a result;
+- gains are measured on whole shots held out of every fit they judge, with a paired whole-shot bootstrap; a cohort
+  used before is marked as such;
+- a failed rule closes the experiment; thresholds are not changed after a result. Two choices were made on the
+  public score instead, both named in the study (§4.17, §4.23, §7);
 - every submitted archive is rebuilt from recorded sources and weights, with SHA-256 checks at each hand-off.
 
 ## 2. DIII-D (Challenge 1)
