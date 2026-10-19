@@ -1,4 +1,33 @@
 title: Fusion Equilibrium Challenge — the Anulum entry
 description: Tokamak equilibrium reconstruction without magnetic measurements. Code, weights, study and the full experiment record.
-theme: jekyll-theme-minimal
-show_downloads: false
+remote_theme: just-the-docs/just-the-docs@v0.10.1
+plugins:
+  - jekyll-remote-theme
+  - jekyll-relative-links
+  - jekyll-optional-front-matter
+relative_links:
+  enabled: true
+  collections: false
+search_enabled: true
+heading_anchors: true
+color_scheme: light
+aux_links:
+  "GitHub": "https://github.com/anulum/fusion-equilibrium-challenge"
+  "Weights": "https://huggingface.co/anulum/fusion-equilibrium-challenge"
+  "DOI": "https://doi.org/10.5281/zenodo.23480092"
+aux_links_new_tab: true
+footer_content: "AGPL-3.0-or-later · Anulum (Miroslav Šotek) with Arcane Sapience · <a href=\"https://doi.org/10.5281/zenodo.23480092\">doi:10.5281/zenodo.23480092</a>"
+exclude:
+  - internal
+  - figures/README.md
+defaults:
+  - scope: {path: "index.md"}
+    values: {title: "Home", nav_order: 1}
+  - scope: {path: "METHODS_REPORT.md"}
+    values: {title: "Methods report", nav_order: 2, layout: default}
+  - scope: {path: "STUDY.md"}
+    values: {title: "Study", nav_order: 3, layout: default}
+  - scope: {path: "EXPERIMENT_LEDGER.md"}
+    values: {title: "Experiment ledger", nav_order: 4, layout: default}
+  - scope: {path: "COSTS.md"}
+    values: {title: "What the entry cost", nav_order: 5, layout: default}
