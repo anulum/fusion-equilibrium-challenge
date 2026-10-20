@@ -37,6 +37,9 @@ Tests use the published CSV and report, including deliberately damaged copies, a
 branch coverage of `per_shot_table.py`. Frame percentiles and the physical validity of withdrawn diagnostics
 remain outside this arithmetic check. The dependency-audit workflow checks all committed requirements files,
 including transitive dependencies, and fails on an advisory or an incomplete audit.
+The training environments use OSV for CPU-tagged PyTorch and also check its upstream release version against
+PyPI advisories. That additional single-package query does not replace the complete dependency-tree audit or
+change the installed version. An unauditable dependency fails the strict audit.
 
 For staged source checks, install `gitleaks` on the executable search path and run
 `.venv/bin/pre-commit install`. The hooks use the pinned tools in `.venv`; missing tools fail the check.

@@ -30,12 +30,27 @@ def test_dependency_audit_contract() -> None:
     workflow = (ROOT / ".github/workflows/diagnostics.yml").read_text()
     requirements = {path.name for path in ROOT.glob("requirements-*.txt")}
     entries = {
-        line.strip()[2:] for line in workflow.splitlines() if line.strip().startswith("- requirements-")
+        line.strip().split(": ", 1)[1]
+        for line in workflow.splitlines()
+        if line.strip().startswith("- requirements:")
     }
     assert entries == requirements
-    assert 'run: pip-audit --progress-spinner off -r "${{ matrix.requirements }}"' in workflow
-    for weakened in ("continue-on-error", "|| true", "--no-deps", "--ignore-vuln", "--skip-editable"):
+    command = (
+        'run: pip-audit --strict --vulnerability-service "${{ matrix.service }}" '
+        '--progress-spinner off -r "${{ matrix.requirements }}"'
+    )
+    assert command in workflow
+    for weakened in ("continue-on-error", "|| true", "--ignore-vuln", "--skip-editable"):
         assert weakened not in workflow
+    for filename in requirements:
+        service = "osv" if filename.startswith("requirements-training-") else "pypi"
+        assert f"- requirements: {filename}\n            service: {service}" in workflow
+    assert "if: matrix.service == 'osv'" in workflow
+    assert 'test "$(wc -l < "$RUNNER_TEMP/torch-upstream.txt")" -eq 1' in workflow
+    assert (
+        "pip-audit --strict --disable-pip --no-deps --progress-spinner off "
+        '-r "$RUNNER_TEMP/torch-upstream.txt"'
+    ) in workflow
     assert "  push:\n    branches: [main]\n  pull_request:" in workflow
 
 

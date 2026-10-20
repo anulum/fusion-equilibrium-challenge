@@ -52,11 +52,15 @@ jobs:
     strategy:
       fail-fast: false
       matrix:
-        requirements:
-          - requirements-inference-cpu.txt
-          - requirements-training-cpu.txt
-          - requirements-training-cuda.txt
-          - requirements-quality.txt
+        include:
+          - requirements: requirements-inference-cpu.txt
+            service: pypi
+          - requirements: requirements-training-cpu.txt
+            service: osv
+          - requirements: requirements-training-cuda.txt
+            service: osv
+          - requirements: requirements-quality.txt
+            service: pypi
     steps:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
@@ -69,4 +73,11 @@ jobs:
           version: "0.12.21"
       - run: uv pip install --system --require-hashes -r requirements-quality.txt
       - name: Audit every dependency, including transitive requirements
-        run: pip-audit --progress-spinner off -r "${{ matrix.requirements }}"
+        run: pip-audit --strict --vulnerability-service "${{ matrix.service }}" --progress-spinner off -r "${{ matrix.requirements }}"
+      - name: Also check the upstream PyTorch advisory version
+        if: matrix.service == 'osv'
+        # Some advisories enumerate the public version without its CPU build tag.
+        run: |
+          sed -n 's/^torch==\([0-9.]*\)+cpu$/torch==\1/p' "${{ matrix.requirements }}" > "$RUNNER_TEMP/torch-upstream.txt"
+          test "$(wc -l < "$RUNNER_TEMP/torch-upstream.txt")" -eq 1
+          pip-audit --strict --disable-pip --no-deps --progress-spinner off -r "$RUNNER_TEMP/torch-upstream.txt"
