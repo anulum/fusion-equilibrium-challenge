@@ -12,7 +12,7 @@ protocol checksum, the number and the decision. [docs/STUDY.md](../docs/STUDY.md
   (`.md`), and result, report and summary files up to 64 kB.
 - **Not included:** weights, feature tables, prediction archives and per-shot dumps (too large; the deployed
   weights are fetched by `fetch_weights.py`); scripts that upload or submit; anything holding a credential or an
-  address of the laboratory's machines.
+  address of the laboratory's machines; coordination messages and process-only assessments.
 - **Edited:** these are copies made for publication. The names of the agents were replaced by `first_agent` and
   `second_agent`, the name of the person who directs the work by "entrant", and local paths by placeholders
   (`$FEC_RUNS`, `$FEC_DATA`, `$FEC_WORK`, `$LAB`, `$SAS`, `$HOME`). Non-scientific process wording in
