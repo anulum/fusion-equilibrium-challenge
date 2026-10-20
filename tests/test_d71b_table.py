@@ -129,6 +129,7 @@ def test_changed_frozen_report(tmp_path: Path) -> None:
         "map_support",
         "pair_support",
         "map_mean",
+        "balanced_reference_excess",
         "overflow_mean",
         "pair_mean",
         "pair_interval",
@@ -172,10 +173,13 @@ def test_statistics_corruption(tmp_path: Path, real_rows: list[list[str]], fault
     elif fault == "pair_support":
         pair[4] = str(int(pair[4]) - 1)
     elif fault == "map_mean":
+        rows[2][5] = str(float(rows[2][5]) + 0.1)
+    elif fault == "balanced_reference_excess":
         first[5] = "0.1"
+        rows[1 + 9 * 19][5] = "-0.1"
     elif fault == "overflow_mean":
         for row in rows[1:]:
-            if row[1:4] == ["map", "reference", "outside_fixed_excess"]:
+            if row[1:4] == ["map", "raw_64coords", "outside_fixed_excess"]:
                 row[5] = "1e308"
     elif fault == "pair_mean":
         pair[5] = str(float(pair[5]) + 0.01)

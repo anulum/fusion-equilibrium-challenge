@@ -161,6 +161,8 @@ def _statistics(table: Path, cohort: list[Shot]) -> tuple[NDArray[np.float64], N
             value = float(row[5]) if count else np.nan
             if count and not np.isfinite(value):
                 raise ValueError("Non-finite supported mean")
+            if label == 0 and MEASURES[measure].endswith("_excess") and count and value != 0:
+                raise ValueError("Reference excess must be zero for each shot")
             means[measure, shot, label] = value
             counts[measure, shot, label] = count
     return means, counts
