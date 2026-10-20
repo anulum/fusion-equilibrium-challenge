@@ -18,15 +18,15 @@ repos:
         name: Check maintained verifiers and their tests
         entry: .venv/bin/ruff check
         language: system
-        files: ^(experiments/d71_finisher_physics/per_shot_table|tools/(check_doc_links|ci_check_shot)|tests/test_(d71_table|check_doc_links|ci_check_shot|licensing))\.py$
+        files: ^(experiments/d71_finisher_physics/per_shot_table|tools/(check_doc_links|ci_check_shot|d71b_table)|tests/test_(d71_table|d71b_table|check_doc_links|ci_check_shot|licensing))\.py$
       - id: d71-format
         name: Check maintained verifier formatting
         entry: .venv/bin/ruff format --check
         language: system
-        files: ^(experiments/d71_finisher_physics/per_shot_table|tools/(check_doc_links|ci_check_shot)|tests/test_(d71_table|check_doc_links|ci_check_shot|licensing))\.py$
+        files: ^(experiments/d71_finisher_physics/per_shot_table|tools/(check_doc_links|ci_check_shot|d71b_table)|tests/test_(d71_table|d71b_table|check_doc_links|ci_check_shot|licensing))\.py$
       - id: d71-mypy
         name: Check maintained verifier types
         entry: .venv/bin/mypy
         language: system
         pass_filenames: false
-        files: ^(experiments/d71_finisher_physics/per_shot_table|tools/(check_doc_links|ci_check_shot)|tests/test_(d71_table|check_doc_links|ci_check_shot|licensing)|pyproject)\.(py|toml)$
+        files: ^(experiments/d71_finisher_physics/per_shot_table|tools/(check_doc_links|ci_check_shot|d71b_table)|tests/test_(d71_table|d71b_table|check_doc_links|ci_check_shot|licensing)|pyproject)\.(py|toml)$

@@ -811,7 +811,9 @@ two on 3; detected saddles number 0, 1, 2, 3 and 4 on 1 452, 21 530, 55 881, 10 
 critical points of the interpolant, not guaranteed magnetic axes or boundary X-points. As in D71, all of these are
 diagnostics relative to EFIT on a 65 × 65 grid, not a percentage of nonequilibrium current and not a test of force
 balance. Sources, protocol with its four amendments, tests, report and the complete histograms:
-`experiments/d71b_physics_amendment/`.
+`experiments/d71b_physics_amendment/`. Its public per-shot table and `tools/d71b_table.py` also reproduce
+the shot means, common-frame paired changes and intervals without the private maps; this arithmetic check does
+not reproduce frame percentiles or independently remeasure the physics.
 
 ### 4.28 A Grad–Shafranov interior for the finished map
 D71 suggested one more try before the Final closed (D72, 20 October). Every grid node outside each finished map's

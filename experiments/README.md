@@ -30,6 +30,11 @@ protocols are those of the unedited originals, so a file here whose text was tou
 reproduce its checksum; the originals are kept by the entrant and are available to the organisers on request.
 One empty historical export, `D25_member_ablation_2026-10-08T154444Z/mast_v12/smoke_result.json`, is serialised as
 JSON `null`: no result was recoverable from that zero-byte file. It is not evidence of a completed smoke run.
+D71b also provides a compressed table of per-map and common-frame pair statistics with an ordered-cohort
+manifest. Its maintained verifier is `tools/d71b_table.py`; see the [D71b commands](d71b_physics_amendment/README.md).
+This table is a further documented exception to the historical size limit; it contains diagnostic aggregates,
+not predicted maps or input measurements.
+
 The historical experiment runners record what was run, on which inputs and in which order; they expect the
 laboratory's directory layout. The D71 table check is a separately documented public verification tool. The
 supported way to reproduce the entry's inference and training is the package

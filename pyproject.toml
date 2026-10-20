@@ -23,7 +23,9 @@ files = [
     "experiments/d71_finisher_physics/per_shot_table.py",
     "tools/check_doc_links.py",
     "tools/ci_check_shot.py",
+    "tools/d71b_table.py",
     "tests/test_d71_table.py",
+    "tests/test_d71b_table.py",
     "tests/test_check_doc_links.py",
     "tests/test_ci_check_shot.py",
     "tests/test_licensing.py",
@@ -40,4 +42,5 @@ include = [
     "experiments/d71_finisher_physics/per_shot_table.py",
     "tools/check_doc_links.py",
     "tools/ci_check_shot.py",
+    "tools/d71b_table.py",
 ]

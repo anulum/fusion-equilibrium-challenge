@@ -21,6 +21,36 @@ bytes by the publication edits described in [`../README.md`](../README.md) (labo
 Like D71, the run needs the private evaluation copies of the model and their caches, so it does not run outside the
 laboratory; the per-frame measures stay on the laboratory's storage.
 
+## Recompute the public shot-level results
+
+From the repository root, with the pinned quality environment installed:
+
+```bash
+.venv/bin/python tools/d71b_table.py \
+  --table experiments/d71b_physics_amendment/per_shot_v1.csv.gz \
+  --manifest experiments/d71b_physics_amendment/per_shot_manifest_v1.json \
+  --report experiments/d71b_physics_amendment/report_v5.json
+```
+
+The gzip CSV contains 61 218 rows: for each of the 358 shots and nine measures, ten per-map means and nine
+pair-specific means, each with its finite-frame count. A pair mean is the mean of `after - before` on frames
+where both values are finite, after the original reference-critical-point validity mask. It is not obtained by
+subtracting independently supported map means. The manifest retains the exact original shot order, frame
+counts, measurement-file hashes, activation, run receipt, frozen reporter, report and table digests. Its extraction
+script digest identifies the private producer; that script and the per-frame measurements are not redistributed.
+The published verifier checks the known cohort binding and report bytes, then recomputes all 90 map means,
+81 paired changes, their support, 99 % whole-shot intervals and verdicts (20 000 draws, seed 71020).
+The maximum arithmetic discrepancy observed with the pinned environment is about 1.4 × 10⁻¹⁷.
+
+This is an arithmetic reproduction from published sufficient statistics. It does not independently authenticate
+the private original measurements or recompute physics from maps. Frame sums, medians, 95th percentiles and
+critical-point histograms are not reconstructed from this table; the original report and histogram supplement
+retain those separate results. The reference validity count and total counts are retained, but individual
+frame identities, times and invalid-frame masks are not present. This completed cohort happens to have finite
+values for every map/measure; retaining pair-specific statistics preserves the original comparison definition.
+The original frozen report and diagnostic code are unchanged. `tools/d71b_table.py` is maintained code under
+the repository's strict gates; the original diagnostic runners remain archival.
+
 ## Custody of these files
 
 The Python, shell and protocol files are archival copies, not maintained code. Their executable numerical

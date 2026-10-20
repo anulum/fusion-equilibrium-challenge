@@ -115,6 +115,16 @@
    "frozen_sha256": "160d1270aa541c4e6aa30878c135ad7f7befeaa2073342868ae4bafe505026db",
    "identical_to_frozen": false,
    "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
+  },
+  {
+   "file": "per_shot_v1.csv.gz",
+   "published_sha256": "1c89463fe6dd5dd455a841613551880aff8c4ad33470987d19ccf189635b0da8",
+   "category": "post-freeze public sufficient-statistics export; original measurements and report unchanged"
+  },
+  {
+   "file": "per_shot_manifest_v1.json",
+   "published_sha256": "30fbc6b1dc77eec03d15e3334526defb0bd80411f00706d4493dd98e51b34e3c",
+   "category": "post-freeze public sufficient-statistics export; original measurements and report unchanged"
   }
  ]
 }

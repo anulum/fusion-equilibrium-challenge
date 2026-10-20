@@ -22,8 +22,8 @@ method itself is described in [docs/METHODS_REPORT.md](docs/METHODS_REPORT.md).
 | MAST predictor | `source/mast_entrypoints/`, `source/mast_legacy/` | The physics reconstruction for MAST; no model is trained on MAST. |
 | Organisers' scoring functions | `source/*/fec_adapter/scoring_kit/`, `training_adapter/fec_adapter/scoring_kit/` | MIT code of the starter kit, kept verbatim except for relative imports, used to read the boundary and the derived scalars the way the scorer does. |
 | Training | `train.py`, `training_adapter/`, `training_recipe.json` | From raw training shots to a complete model directory with its own manifest and a copy of the inference runtime. Retains the frozen MAST source. |
-| Maintained verifiers | `tools/check_doc_links.py`, `tools/ci_check_shot.py`, `experiments/d71_finisher_physics/per_shot_table.py`, `tests/` | The code that is linted, typed and tested in CI (see [VALIDATION.md](VALIDATION.md)). |
-| Experiment records | `experiments/` | Archival copies of the protocols, scripts and small results of each experiment, with laboratory paths and agent names replaced. Many runners require unredistributed laboratory inputs; the maintained public table verifier is the explicit exception listed above. |
+| Maintained verifiers | `tools/check_doc_links.py`, `tools/ci_check_shot.py`, `tools/d71b_table.py`, `experiments/d71_finisher_physics/per_shot_table.py`, `tests/` | The code that is linted, typed and tested in CI (see [VALIDATION.md](VALIDATION.md)). |
+| Experiment records | `experiments/` | Archival copies of the protocols, scripts and small results of each experiment, with laboratory paths and agent names replaced. Many runners require unredistributed laboratory inputs; the maintained public table verifiers are the explicit exceptions listed above. |
 | Documentation | `docs/`, `README.md` and the root `.md` files | GitHub renders the repository documents; GitHub Pages publishes only `docs/`. |
 
 The inference path loads the verified `models/` and imports `source/`, `tree_replica.py` and the pinned packages of

@@ -51,15 +51,15 @@ jobs:
         run: |
           ruff check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
           ruff format --check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
-          ruff check tools/check_doc_links.py tools/ci_check_shot.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
-          ruff format --check tools/check_doc_links.py tools/ci_check_shot.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          ruff check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tests/test_d71b_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          ruff format --check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tests/test_d71b_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
           mypy
           bandit -q experiments/d71_finisher_physics/per_shot_table.py
-          bandit -q tools/check_doc_links.py tools/ci_check_shot.py
+          bandit -q tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py
           reuse lint
       - name: Recompute the public table and reject corrupt inputs
         run: |
-          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_d71b_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
           python -m coverage combine
           python -m coverage report
   dependency-audit:
