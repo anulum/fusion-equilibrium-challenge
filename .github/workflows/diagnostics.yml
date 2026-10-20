@@ -89,7 +89,26 @@ jobs:
           version: "0.12.21"
       - run: uv pip install --system --require-hashes -r requirements-quality.txt
       - name: Audit every dependency, including transitive requirements
-        run: pip-audit --strict --vulnerability-service "${{ matrix.service }}" --progress-spinner off -r "${{ matrix.requirements }}" --format cyclonedx-json --output "sbom-${{ matrix.requirements }}.json"
+        run: pip-audit --strict --vulnerability-service "${{ matrix.service }}" --progress-spinner off -r "${{ matrix.requirements }}" --format cyclonedx-json --output "sbom-resolved-${{ matrix.requirements }}.json"
+      - name: Audit and inventory every locked version, including resolver bootstrap packages
+        env:
+          REQUIREMENTS: ${{ matrix.requirements }}
+          AUDIT_SERVICE: ${{ matrix.service }}
+        run: |
+          set -euo pipefail
+          sed -nE \
+            -e 's/^([A-Za-z0-9_.-]+)==([^[:space:]]+).*$/\1==\2/p' \
+            -e 's|^torch @ https://download-r2.pytorch.org/whl/cpu/torch-([0-9.]+)%2Bcpu-.*$|torch==\1+cpu|p' \
+            "$REQUIREMENTS" > "$RUNNER_TEMP/locked-versions.txt"
+          test "$(wc -l < "$RUNNER_TEMP/locked-versions.txt")" -gt 0
+          test "$(wc -l < "$RUNNER_TEMP/locked-versions.txt")" -eq "$(grep -cE '^[A-Za-z0-9_.-]+(==| @ )' "$REQUIREMENTS")"
+          pip-audit --strict --disable-pip --no-deps --vulnerability-service "$AUDIT_SERVICE" \
+            --progress-spinner off -r "$RUNNER_TEMP/locked-versions.txt" \
+            --format cyclonedx-json --output "sbom-$REQUIREMENTS.json"
+          awk -F '==' '{gsub(/[_.]/, "-", $1); print tolower($1) "==" $2}' "$RUNNER_TEMP/locked-versions.txt" | sort > "$RUNNER_TEMP/expected-versions.txt"
+          jq -r '.components[] | .name + "==" + .version' "sbom-$REQUIREMENTS.json" | \
+            awk -F '==' '{gsub(/[_.]/, "-", $1); print tolower($1) "==" $2}' | sort > "$RUNNER_TEMP/sbom-versions.txt"
+          diff -u "$RUNNER_TEMP/expected-versions.txt" "$RUNNER_TEMP/sbom-versions.txt"
       - name: Also check the upstream PyTorch advisory version
         if: matrix.service == 'osv'
         # Some advisories enumerate the public version without its CPU build tag.
@@ -101,7 +120,9 @@ jobs:
         uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
           name: sbom-${{ matrix.requirements }}
-          path: sbom-${{ matrix.requirements }}.json
+          path: |
+            sbom-${{ matrix.requirements }}.json
+            sbom-resolved-${{ matrix.requirements }}.json
           if-no-files-found: error
           retention-days: 30
   provenance:

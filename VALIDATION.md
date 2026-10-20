@@ -18,7 +18,9 @@ Three verification tools are maintained code: `tools/check_doc_links.py`, `tools
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
-included, with `pip-audit --strict`. The commands are in
+included, with `pip-audit --strict`. Each environment retains the resolver's inventory and a separate complete
+lock inventory. The latter must match every locked package name and version, including the packages already
+installed in the resolver's bootstrap environment. The commands are in
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
 The inference and training code, the vendored solver and the experiment records are not under these gates. They

@@ -49,6 +49,11 @@ def test_dependency_audit_contract() -> None:
     assert 'test "$(wc -l < "$RUNNER_TEMP/torch-upstream.txt")" -eq 1' in workflow
     assert "https://download-r2.pytorch.org/whl/cpu/torch-" in workflow
     assert "--format cyclonedx-json" in workflow
+    assert "set -euo pipefail" in workflow
+    assert "Audit and inventory every locked version" in workflow
+    assert 'diff -u "$RUNNER_TEMP/expected-versions.txt" "$RUNNER_TEMP/sbom-versions.txt"' in workflow
+    assert '"sbom-resolved-${{ matrix.requirements }}.json"' in workflow
+    assert 'pip-audit --strict --disable-pip --no-deps --vulnerability-service "$AUDIT_SERVICE"' in workflow
     assert (
         "pip-audit --strict --disable-pip --no-deps --progress-spinner off "
         '-r "$RUNNER_TEMP/torch-upstream.txt"'
