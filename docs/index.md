@@ -46,11 +46,11 @@ This splits the benchmark loss; it does not say how much of it can be removed. O
 solved and 90 % of what is left is the boundary and the geometry derived from the map; on MAST, 89 % is the
 scalars and their consistency.
 
-![Reference, submitted map and difference on four DIII-D development frames](figures/fig6_reconstruction.png)
+![Reference, map after the finisher and difference on four DIII-D development frames](figures/fig6_reconstruction.png)
 
 Four DIII-D development frames, chosen by a fixed rule (median, 90th and 99th percentile and largest boundary
-error): the reference, the submitted map and their difference. The evaluated networks were not fitted on these
-shots ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
+error): the reference, the map after the finisher and their difference. The evaluated networks exclude these
+shots from fitting, but the shots were used before in model comparisons ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
 
 ## Four findings
 
@@ -58,13 +58,15 @@ shots ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-o
    each 20 ms frame let 32 refitted networks score higher than the 195-network ensemble before them: +1.98 × 10⁻⁴ on the public
    score, the largest single gain of the entry ([Study §4.16](STUDY.md#416-the-signals-inside-a-frame)).
 2. **Most ideas did not help, and the record says by how much.** Correctors, history models, new input forms,
-   losses and finisher settings were measured on held-out shots and rejected
+   losses and finisher settings were tested with the exclusions and limitations recorded for each experiment;
+   early in-sample screens and capacity-confounded comparisons are disclosed
    ([What did not work](NEGATIVE_RESULTS.md)).
 3. **A physics reconstruction without MAST labels reached 0.7145 on MAST,** and label-free repairs confirmed on a
    synthetic testbed did not transfer to the real machine ([Study §5.9](STUDY.md#59-what-the-mast-result-says-a-limit-of-our-approach-not-of-the-problem)).
-4. **The finishing step trades equilibrium form for score.** It adds 1981 µS of benchmark score on the development
-   shots, while the share of current density that is not of Grad–Shafranov form, above the reference's, grows from 0.35 % to 1.67 % and
-   current appears outside the plasma ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
+4. **A higher score does not certify force balance.** The finisher adds 1981 µS on the evaluated development
+   cohort while the tested polynomial GS-form residual and poloidal-field error increase. These are numerical
+   diagnostics, not percentages of nonequilibrium current; the original topology counts are withdrawn
+   ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
 
 ## Read
 
@@ -96,8 +98,8 @@ the exact commit, weight revision, input revision and output checksums. A first 
 [the quickstart notebook in Colab](https://colab.research.google.com/github/anulum/fusion-equilibrium-challenge/blob/main/notebooks/quickstart.ipynb).
 
 On the hardware the entry was built on (two Intel Xeon E5-2640), the package reproduces the submitted predictions of
-both public folds bit for bit. On other CPUs the last bits of float32 can differ; the CI measures it on every push
-(q95 and βN identical, flux map within 7.5 × 10⁻⁹). [All checks](https://github.com/anulum/fusion-equilibrium-challenge#reproduce-the-predictions).
+both public folds bit for bit. On other CPUs the last bits of float32 can differ. On one DIII-D shot, hosted CI
+observed identical q95/βN and maximum flux difference 7.5 × 10⁻⁹; CI enforces numerical tolerances. [All checks](https://github.com/anulum/fusion-equilibrium-challenge#reproduce-the-predictions).
 
 Cite as: [doi:10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092). Code archived by [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/anulum/fusion-equilibrium-challenge) (`swh:1:snp:143cae236c490f64c48de43ca03761a9623e16d6`).
 

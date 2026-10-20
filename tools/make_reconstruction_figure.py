@@ -3,8 +3,8 @@
 """python tools/make_reconstruction_figure.py  (writes docs/figures/fig6_reconstruction.png)
 
 The four frames were chosen before any D71 result, by a fixed rule: pooled over all 78 875 frames of the 358
-development shots, the frames nearest to the 50th, 90th and 99th percentile of the submitted map's boundary
-distance, and the largest. The evaluated networks were not fitted on these shots; the shots had been used before
+development shots, the frames nearest to the 50th, 90th and 99th percentile of the boundary distance of the map
+after the finisher, and the largest. The evaluated networks were not fitted on these shots; the shots had been used before
 in model comparisons. Reference maps and inputs: organisers' DIII-D data, CC BY 4.0.
 """
 from pathlib import Path
@@ -37,11 +37,11 @@ def main() -> None:
         span = float(np.nanmax(np.abs(np.concatenate([(post - ref).ravel(), (pre - ref).ravel()]))))
         title = (f"{LABELS[key]}: {str(z[f'{key}_stem'])[9:]}, t = {float(z[f'{key}_time_ms']):.0f} ms, "
                  f"boundary distance {1000 * float(z[f'{key}_distance_m']):.1f} mm")
-        for j, (field, name) in enumerate(((ref, "reference (EFIT)"), (post, "submitted map"))):
+        for j, (field, name) in enumerate(((ref, "reference (EFIT)"), (post, "after the finisher"))):
             ax = axes[i, j]
             ax.contour(R, Z, field, levels=levels, cmap="plasma", linewidths=.8)
             ax.set_title(name, fontsize=9.5, color=INK)
-        for j, (field, name) in enumerate(((post - ref, "submitted − reference"),
+        for j, (field, name) in enumerate(((post - ref, "after the finisher − reference"),
                                            (pre - ref, "before the finisher − reference")), start=2):
             ax = axes[i, j]
             image = ax.pcolormesh(R, Z, field, cmap="RdBu_r", vmin=-span, vmax=span, shading="auto")
@@ -51,7 +51,7 @@ def main() -> None:
         for ax in axes[i]:
             ax.plot(c_ref[:, 0], c_ref[:, 1], color=REF, lw=1.6, label="reference boundary")
             if len(c_post):
-                ax.plot(c_post[:, 0], c_post[:, 1], color=PRED, lw=1.3, ls="--", label="submitted boundary")
+                ax.plot(c_post[:, 0], c_post[:, 1], color=PRED, lw=1.3, ls="--", label="boundary after the finisher")
             if len(c_pre) and ax is axes[i, 3]:
                 ax.plot(c_pre[:, 0], c_pre[:, 1], color=PRE, lw=1.1, ls=":", label="boundary before the finisher")
             ax.set_aspect("equal"); ax.set_xlabel("R [m]")
@@ -62,7 +62,7 @@ def main() -> None:
         for h, lab in zip(*ax.get_legend_handles_labels()):
             if lab not in labels:
                 handles.append(h); labels.append(lab)
-    fig.suptitle("DIII-D development shots: reference, submitted map and their difference (no magnetic measurement used)",
+    fig.suptitle("DIII-D development shots: reference, map after the finisher and their difference (no magnetic measurement used)",
                  color=INK, fontsize=12.5, x=.01, ha="left")
     fig.legend(handles, labels, loc="outside lower center", ncol=3, frameon=False)
     fig.savefig(OUT, dpi=150, bbox_inches="tight", facecolor="white")

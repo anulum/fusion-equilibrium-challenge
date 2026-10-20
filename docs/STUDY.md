@@ -3,8 +3,7 @@
 ## Accompanying study to the Anulum entry, Fusion Equilibrium Challenge (NeurIPS 2026)
 
 *Model of 14 October 2026, the entry displayed as Codabench submission 986068 (Development phase); text last updated
-19 October 2026. The
-Final-phase result is added when it is published. Every number is taken from a protocol, receipt or result
+20 October 2026. The Final-phase result is added when it is published. Every number is taken from a protocol, receipt or result
 file of the experiment it belongs to; [EXPERIMENT_LEDGER.md](EXPERIMENT_LEDGER.md) has one row per experiment
 and names those files. The study is written in the order the work was done, and it keeps the conclusions we
 later had to correct, with the correction.*
@@ -726,56 +725,64 @@ apply only to the copies fitted for evaluation, a distinction we briefly got wro
 fit records.
 
 ### 4.27 What the finishing step does to the physics of the map
-A second outside review (19 October) asked whether the finishing step, which moves the axis, bends the contour,
-reshapes the map and moves the X-points towards predicted targets, keeps the map an equilibrium. The score cannot
-answer this: it compares the boundary and seven geometric functionals of the map, and none of them tests force
-balance. We measured it on the 358 development shots (78 875 frames; the evaluated copies of the networks were not
-fitted on them, the shots had been used before), at all nine stages of the deployed pipeline, against the EFIT
-reference and with the same operators and masks on every map. The nine stages were regenerated with the sources of
-§4.26, and the last one equals, bit for bit, the maps that pipeline wrote there. The protocol was frozen before the first result
-(`experiments/d71_finisher_physics/`).
+A second outside review (19 October) asked whether moving the axis, bending the contour and editing the shape and
+X-points preserves equilibrium. The benchmark score cannot answer this: its boundary and geometry terms do not
+independently test force balance. D71 measured the nine native stages on 358 development shots (78 875 frames).
+The evaluated copies of the networks exclude those shots from fitting, but the cohort had already been used in
+model comparisons. The last regenerated stage equals the D70 evaluation outputs bit for bit; these are evaluation
+copies, not the public production weights. The protocol preceded the first D71 result.
 
-What is measured: the current the map implies, by Ampère's law around its own boundary (the scorer's own μ0 I_p)
-and through the reference boundary; the current density Δ*ψ / R outside the plasma; the share of the current
-density inside the plasma that no pair of flux functions p′(ψ) and FF′(ψ) can describe, with both fitted for each
-map as cubic polynomials; the error of the poloidal-field vector; and the magnetic axes and X-points. The
-operators were first checked on an analytic Grad–Shafranov solution (non-equilibrium share 10⁻²⁵, 0.21 with a
-bump added), then on the data: on the reference maps, the area and loop integrals of the current agree to 0.7 %
-(median), and the current the reference map implies is 0.991 of the measured plasma current (median; 5–95 %: 0.975
-to 1.089), so ψ is in Wb/rad and the integral is the real current.
+The current integrals, poloidal-field errors and polynomial-fit residuals are numerical diagnostics relative to
+EFIT, using the same operators. Their regions are specified separately: some use each map's own contour, others
+the fixed reference contour. The polynomial GS-form diagnostic fits
+−Δ*ψ = R² a(ψ_N) + b(ψ_N), with cubic a and b, and reports SSE/TSS inside each map's contour. It is a normalised
+least-squares residual for this profile family, not the fraction of physical current that violates equilibrium.
+A nonzero value does not establish that no other flux functions could represent the field.
 
-| Shot mean over 358 shots | Before the finisher | Submitted | Change (99 % interval) | Where the change comes from |
+The operators were checked on an analytic Grad–Shafranov field (SSE/TSS about 10⁻²⁵, 0.21 after adding a bump).
+On EFIT references the median area/loop current ratio is 1.007; the median implied/measured plasma-current ratio
+is 0.991 (5–95 %: 0.975 to 1.089). These are checks of numerical convention and consistency, not independent
+validation of force balance. The reference field is also a reconstruction, sampled on a coarse 65 × 65 grid.
+
+| Metric on the 358 development shots | Before the finisher | After the finisher | Change (99 % interval) | Stage contributions |
 |---|---:|---:|---|---|
-| Benchmark score S (§4.26) | 0.994119 | 0.996100 | +1981 µS | axis +898, shape +417, contour +330, X-points +226, reshape +112 |
+| Pooled benchmark score S (§4.26) | 0.994119 | 0.996100 | +1981 µS | axis +898, shape +417, contour +330, X-points +226, reshape +112 |
 | Implied current on its own boundary, error against the reference | 0.67 % | 0.80 % | +0.12 points (+0.07 to +0.17) | shape +0.07, reshape +0.08; X-points −0.02 |
 | Current inside the reference boundary, error | 0.66 % | 0.82 % | +0.16 points (+0.11 to +0.22) | shape, reshape |
-| Current outside the plasma, share of the current inside (above the reference's) | 0.70 % | 1.20 % | +0.50 points (+0.35 to +0.59) | contour +0.29, shape +0.11 |
-| Current density not of Grad–Shafranov form (above the reference's) | 0.35 % | 1.67 % | +1.32 points (+1.07 to +1.61) | contour +1.40 |
+| Own-mask outside-current ratio minus the reference's ratio (different masks) | 0.70 % | 1.20 % | +0.50 points (+0.35 to +0.59) | contour +0.29, shape +0.11 |
+| Polynomial GS-form SSE/TSS minus the reference's | 0.35 % | 1.67 % | +1.32 points (+1.07 to +1.61) | contour +1.40 |
 | Poloidal-field error inside the reference boundary | 2.45 % | 2.97 % | +0.53 points (+0.43 to +0.70) | shape +0.24, reshape +0.26; axis −0.05 |
-| X-point cells, difference from the reference per frame | 0.225 | 0.178 | −0.047 (−0.062 to −0.033) | X-points −0.052 |
-| Extra magnetic axes per frame | 0.00005 | 0.00013 | inconclusive | — |
-| Frames without a boundary | 0 | 0 | — | — |
+| Frames without an extracted boundary | 0 | 0 | — | — |
 
-The non-equilibrium share does not depend on the choices of the test: with quadratic or quintic profiles the
-change is +1.49 and +1.30 points, and with a fourth-order operator +1.68, every interval above zero. The reference
-maps themselves have a non-equilibrium share of 5 × 10⁻⁶ (median frame), as a Grad–Shafranov solver's output should.
+Except for the pooled benchmark score and the boundary-failure count, these are means over shots, not bounds on
+individual frames. Rounded endpoints need not subtract to the independently rounded change. Quadratic and
+quintic profile fits give residual changes of +1.49 and +1.30 points; a fourth-order derivative operator gives
++1.68. These checks support an increase in the tested residual, not independence from the assumed profile family.
+For a nearly constant GS source, TSS is near zero and SSE/TSS is ill-conditioned or undefined. That limitation
+must accompany the statistic; D71b adds the fit's parts and explicit degeneracy flags.
 
-![Reference, submitted map and difference on four development frames](figures/fig6_reconstruction.png)
+**Corrections after the 20 October review.** D71's critical-point detector can duplicate a smooth maximum, miss an
+axis-aligned saddle and count a saddle on a node more than once. Its topology rows are withdrawn; they establish
+neither an improvement in X-point counts nor an increase in magnetic axes. The outside-current row above uses
+moving masks and a reference subtraction on a different region. It cannot isolate an increase of current in a
+fixed exterior region. The historical numbers remain in `report_v2.json`, with these limitations documented in
+`experiments/d71_finisher_physics/README.md`.
 
-The four frames were chosen by a rule fixed before any result: from the boundary distance of the submitted map,
-pooled over all frames, the frames nearest to its median, 90th and 99th percentile, and the largest. The last
-column shows the map before the finishing step; the edits appear as local patches near the axis and the boundary.
+![Reference, map after the finisher and difference on four development frames](figures/fig6_reconstruction.png)
 
-What this says. The finishing step buys 1981 µS of benchmark score, and pays for it in the physics of the map:
-the submitted maps stay within about 1 % of the reference current and 3 % of its field, but the share of current
-density that is not of equilibrium form grows about fivefold, almost entirely in the contour bend, and current
-appears outside the plasma. Two edits improve the physics as they improve the score: the axis move lowers the field
-error, and the X-point move brings the number of X-point cells closer to the reference's. A map edited to match the scorer's
-functionals is therefore less of an equilibrium than the map it was edited from. Restricting the edits to fields
-that leave the plasma current a flux function, for example by adding only vacuum solutions outside the plasma, is
-the natural next step; we have not tried it. Limits: the 358 shots were used before, EFIT is itself a
-reconstruction, and derivatives on a 65 × 65 grid are coarse, which is why every measure is read against the
-reference computed the same way.
+The four frames were selected by a rule fixed before the D71 measurements: pooled boundary distances of the
+post-finisher evaluation maps, nearest to the median, 90th and 99th percentile, and the largest. The final column
+shows the pre-finisher map minus the reference. These are examples from the evaluation copies, not predictions
+retrieved from the production submission.
+
+D71 establishes a benchmark gain accompanied by increases in these current-error, field-error and polynomial
+residual diagnostics. It does not certify either map as a physical equilibrium or quantify a percentage of
+nonequilibrium current. A corrected D71b diagnostic uses one scalar interpolant for critical points, one common
+exterior mask per frame and matched valid-frame comparisons. Its analytic checks and three-shot real-grid
+qualification passed independent review on 20 October; complete-cohort reporting and provenance checks are still
+pending. No corrected whole-cohort D71b result is claimed here. The original per-shot table supports independent
+recomputation of the retained D71 shot means and paired intervals; full stage regeneration still needs the private
+evaluation models and caches, as the experiment README states.
 
 ## 5. MAST without MAST equilibrium data
 
@@ -820,9 +827,9 @@ D 0.188, Consistency 0.273).
   core, 0.13 at Te 5 %): the edge surfaces, not only the chosen boundary level, sit inboard.
 - The inboard shift (median 4.9 cm, 386 shots, 2365 frames with both markers inside the laser) does not follow
   the solenoid's ramp rate, the solenoid current, the plasma current or the time in the discharge: none of them,
-  alone or together, predicts it out of sample (shot-grouped cross-validated R² at most 0.10). Eddy currents
-  induced in the vessel by the solenoid would follow the ramp rate, so they are not the main cause; the shift is
-  static or comes from the current profile the solve can represent.
+  alone or together, predicts it out of sample (shot-grouped cross-validated R² at most 0.10). The tested correlates
+  did not explain the shift out of sample. This does not independently isolate vessel-current effects or prove
+  which machine-model restriction causes the shift.
 
 ### 5.4 Two corrections
 - *v8, a correction vertical field in the solve,* fitted to the edge pair: rejected by its frozen pilot
