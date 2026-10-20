@@ -159,7 +159,23 @@ jobs:
             echo 'Altered source unexpectedly passed attestation verification.' >&2
             exit 1
           fi
-          grep -Ei 'no (matching attestations|attestations.*match|attestations found)' altered-refusal.txt
+          gh attestation verify source.tar.gz --bundle attestation.jsonl \
+            --repo "$SOURCE_REPOSITORY" --source-digest "$SOURCE_SHA" \
+            --source-ref refs/heads/main --deny-self-hosted-runners \
+            --signer-workflow "$SOURCE_REPOSITORY/.github/workflows/diagnostics.yml" \
+            --format json > restored-source.verification.json
+          if gh attestation verify source.tar.gz --bundle attestation.jsonl \
+            --repo "$SOURCE_REPOSITORY" --source-digest 0000000000000000000000000000000000000000 \
+            --source-ref refs/heads/main --deny-self-hosted-runners \
+            --signer-workflow "$SOURCE_REPOSITORY/.github/workflows/diagnostics.yml" 2> wrong-source-refusal.txt; then
+            echo 'Incorrect source commit unexpectedly passed attestation verification.' >&2
+            exit 1
+          fi
+          gh attestation verify source.tar.gz --bundle attestation.jsonl \
+            --repo "$SOURCE_REPOSITORY" --source-digest "$SOURCE_SHA" \
+            --source-ref refs/heads/main --deny-self-hosted-runners \
+            --signer-workflow "$SOURCE_REPOSITORY/.github/workflows/diagnostics.yml" \
+            --format json > restored-policy.verification.json
           rm altered-source.tar.gz
       - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
         with:
@@ -171,5 +187,6 @@ jobs:
             attestation.jsonl
             *.verification.json
             altered-refusal.txt
+            wrong-source-refusal.txt
           if-no-files-found: error
           retention-days: 30
