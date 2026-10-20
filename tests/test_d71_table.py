@@ -67,10 +67,14 @@ def test_diagnostic_scope_contract() -> None:
         "          mypy\n",
     ):
         assert command in workflow
-    assert set(config["tool"]["mypy"]["files"]) == {source, tests}
+    support = {"tools/check_doc_links.py", "tools/ci_check_shot.py"}
+    support_tests = {"tests/test_check_doc_links.py", "tests/test_ci_check_shot.py"}
+    assert set(config["tool"]["mypy"]["files"]) == {source, tests} | support | support_tests
+    for path in support | support_tests:
+        assert path in workflow
     assert config["tool"]["mypy"]["strict"] is True
     assert config["tool"]["coverage"]["run"]["branch"] is True
-    assert config["tool"]["coverage"]["report"]["include"] == [source]
+    assert set(config["tool"]["coverage"]["report"]["include"]) == {source} | support
     assert config["tool"]["coverage"]["report"]["fail_under"] == 100
 
 
