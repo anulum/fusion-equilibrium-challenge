@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — diagnostic publication checks
+[tool.ruff]
+target-version = "py312"
+line-length = 110
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "D", "UP", "B"]
+
+[tool.ruff.lint.pydocstyle]
+convention = "numpy"
+
+[tool.mypy]
+strict = true
+python_version = "3.12"
+explicit_package_bases = true
+files = ["experiments/d71_finisher_physics/per_shot_table.py", "tests/test_d71_table.py"]
+
+[tool.coverage.run]
+branch = true
+source = ["experiments/d71_finisher_physics"]
+
+[tool.coverage.report]
+fail_under = 100
+show_missing = true
+include = ["experiments/d71_finisher_physics/per_shot_table.py"]

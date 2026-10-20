@@ -20,6 +20,10 @@
 !/.github/
 !/.zenodo.json
 !/.zenodo.json.license
+!/pyproject.toml
+!/.pre-commit-config.yaml
+!/requirements-quality.txt
+!/tests/
 !/tools/
 !/notebooks/
 !/SECURITY.md
@@ -40,6 +44,9 @@
 !/docs/NEGATIVE_RESULTS.md
 !/docs/index.md
 !/docs/_config.yml
+!/docs/_includes/
+!/docs/robots.txt
+!/docs/.well-known/
 !/docs/assets/
 !/docs/figures/
 # models/ holds the trained weights: fetched by fetch_weights.py, never committed here

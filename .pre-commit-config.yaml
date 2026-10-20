@@ -1,0 +1,32 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — staged source checks
+repos:
+  - repo: local
+    hooks:
+      - id: staged-secrets
+        name: Scan staged changes for secrets
+        entry: gitleaks git --pre-commit --staged --redact --no-banner
+        language: system
+        pass_filenames: false
+        always_run: true
+      - id: d71-ruff
+        name: Check the maintained D71 table verifier
+        entry: .venv/bin/ruff check
+        language: system
+        files: ^(experiments/d71_finisher_physics/per_shot_table|tests/test_d71_table)\.py$
+      - id: d71-format
+        name: Check D71 verifier formatting
+        entry: .venv/bin/ruff format --check
+        language: system
+        files: ^(experiments/d71_finisher_physics/per_shot_table|tests/test_d71_table)\.py$
+      - id: d71-mypy
+        name: Check D71 verifier types
+        entry: .venv/bin/mypy
+        language: system
+        pass_filenames: false
+        files: ^(experiments/d71_finisher_physics/per_shot_table|tests/test_d71_table|pyproject)\.(py|toml)$

@@ -10,6 +10,7 @@
 This verifies historical arithmetic, including withdrawn topology diagnostics. It does not validate those
 diagnostics physically or recover frame percentiles from shot means.
 """
+
 from __future__ import annotations
 
 import argparse
@@ -21,11 +22,32 @@ from typing import TypedDict, cast
 
 import numpy as np
 
-MAPS = ("reference", "raw_64coords", "kept_45coords", "smoothed", "axis", "contour", "shape", "x_points",
-        "reshape", "margin")
-MEASURES = ("current_error_own", "current_error_ref", "outside_excess", "gs_excess", "bp_error_ref",
-            "bp_error_envelope", "extra_o_points", "saddle_difference", "lcfs_failed", "gs_excess_deg2",
-            "gs_excess_deg5", "gs_excess_o4")
+MAPS = (
+    "reference",
+    "raw_64coords",
+    "kept_45coords",
+    "smoothed",
+    "axis",
+    "contour",
+    "shape",
+    "x_points",
+    "reshape",
+    "margin",
+)
+MEASURES = (
+    "current_error_own",
+    "current_error_ref",
+    "outside_excess",
+    "gs_excess",
+    "bp_error_ref",
+    "bp_error_envelope",
+    "extra_o_points",
+    "saddle_difference",
+    "lcfs_failed",
+    "gs_excess_deg2",
+    "gs_excess_deg5",
+    "gs_excess_o4",
+)
 
 
 class Change(TypedDict):
@@ -102,7 +124,10 @@ def verify(table: Path, report_path: Path) -> float:
     draws = rng.integers(0, len(shots), size=(report["draws"], len(shots)))
     worst = 0.0
     for key, measure in report["measures"].items():
-        expected_steps = {"smoothed->margin", *[f"{a}->{b}" for a, b in zip(maps[1:-1], maps[2:])]}
+        expected_steps = {
+            "smoothed->margin",
+            *[f"{a}->{b}" for a, b in zip(maps[1:-1], maps[2:], strict=True)],
+        }
         if set(measure["per_map"]) != set(maps[1:]) or set(measure["changes"]) != expected_steps:
             raise ValueError(f"Incomplete report comparisons: {key}")
         means = np.empty((len(shots), len(maps)), dtype=np.float64)
@@ -110,7 +135,10 @@ def verify(table: Path, report_path: Path) -> float:
             for j, name in enumerate(maps):
                 row = indexed[shot, name]
                 count = int(row[key + "_frames"])
-                if int(row["frames_with_reference"]) != reference_frames[shot] or not 0 <= count <= reference_frames[shot]:
+                if (
+                    int(row["frames_with_reference"]) != reference_frames[shot]
+                    or not 0 <= count <= reference_frames[shot]
+                ):
                     raise ValueError(f"Invalid frame support: {shot}, {name}, {key}")
                 value = float(row[key]) if row[key] else np.nan
                 if (count > 0) != bool(row[key]) or (row[key] and not np.isfinite(value)):
@@ -126,8 +154,10 @@ def verify(table: Path, report_path: Path) -> float:
             difference_by_shot = means[:, maps.index(after)] - means[:, maps.index(before)]
             bootstrap = np.nanmean(difference_by_shot[draws], axis=1)
             interval = np.nanquantile(bootstrap, [0.005, 0.995])
-            differences = [abs(float(np.nanmean(difference_by_shot)) - recorded["mean_change"]),
-                           *np.abs(interval - recorded["ci99"])]
+            differences = [
+                abs(float(np.nanmean(difference_by_shot)) - recorded["mean_change"]),
+                *np.abs(interval - recorded["ci99"]),
+            ]
             if not np.all(np.isfinite(differences)):
                 raise ValueError(f"Undefined paired comparison: {key}, {step}")
             worst = max(worst, *differences)
@@ -143,8 +173,16 @@ def main() -> None:
     parser.add_argument("--report", type=Path, required=True)
     args = parser.parse_args()
     error = verify(args.table, args.report)
-    print(json.dumps({"shots": 358, "rows": 3580, "maximum_absolute_difference": error,
-                      "frame_percentiles_verified": False}))
+    print(
+        json.dumps(
+            {
+                "shots": 358,
+                "rows": 3580,
+                "maximum_absolute_difference": error,
+                "frame_percentiles_verified": False,
+            }
+        )
+    )
 
 
 if __name__ == "__main__":

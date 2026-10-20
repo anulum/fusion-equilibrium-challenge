@@ -1,5 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Fusion Equilibrium Challenge entry — reference, prediction and difference on four development frames (D71)
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — reference and post-finisher comparison figure
 """python tools/make_reconstruction_figure.py  (writes docs/figures/fig6_reconstruction.png)
 
 The four frames were chosen before any D71 result, by a fixed rule: pooled over all 78 875 frames of the 358
@@ -24,6 +29,7 @@ LABELS = {"p50": "typical (median)", "p90": "90th percentile", "p99": "99th perc
 
 
 def main() -> None:
+    """Render the four published reference and evaluation-map comparisons."""
     z = np.load(DATA, allow_pickle=False)
     R, Z = z["R"], z["Z"]
     rows = [str(k) for k in z["order"]]

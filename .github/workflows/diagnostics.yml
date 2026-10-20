@@ -1,0 +1,72 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — public diagnostic and dependency verification
+name: Diagnostics
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  table-verifier:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    env:
+      OPENBLAS_NUM_THREADS: "1"
+      OMP_NUM_THREADS: "1"
+      PYTHONDONTWRITEBYTECODE: "1"
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: "0.12.21"
+      - run: uv pip install --system --require-hashes -r requirements-quality.txt
+      - name: Check maintained diagnostic source and tests
+        run: |
+          ruff check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
+          ruff format --check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
+          mypy
+          bandit -q experiments/d71_finisher_physics/per_shot_table.py
+      - name: Recompute the public table and reject corrupt inputs
+        run: |
+          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py
+          python -m coverage combine
+          python -m coverage report
+  dependency-audit:
+    runs-on: ubuntu-24.04
+    timeout-minutes: 20
+    strategy:
+      fail-fast: false
+      matrix:
+        requirements:
+          - requirements-inference-cpu.txt
+          - requirements-training-cpu.txt
+          - requirements-training-cuda.txt
+          - requirements-quality.txt
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
+        with:
+          python-version: "3.12"
+      - uses: astral-sh/setup-uv@37802adc94f370d6bfd71619e3f0bf239e1f3b78 # v7
+        with:
+          version: "0.12.21"
+      - run: uv pip install --system --require-hashes -r requirements-quality.txt
+      - name: Audit every dependency, including transitive requirements
+        run: pip-audit --progress-spinner off -r "${{ matrix.requirements }}"
