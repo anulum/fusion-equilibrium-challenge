@@ -9,7 +9,7 @@ TOOLBIN ?= .venv/bin
 PYTHON ?= $(TOOLBIN)/python
 SOURCES := experiments/d71_finisher_physics/per_shot_table.py tools/check_doc_links.py tools/ci_check_shot.py
 FROZEN := source training_adapter infer.py train.py tree_replica.py deployment.json training_recipe.json WEIGHTS.json WEIGHTS.sha256
-FINAL := 19d2d341f3498617d6b28b5b90718a5d0858c859
+FINAL := 25ba6fd4257cc37451f851983d8eaeb7e7381e02
 
 .PHONY: check quality links frozen test
 check: quality links frozen
