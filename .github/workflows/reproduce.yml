@@ -1,5 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Fusion Equilibrium Challenge entry — weights integrity and a one-shot reproduction on every push
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — pinned-input prediction reproduction
 name: Reproduce
 
 on:
@@ -41,11 +46,23 @@ jobs:
       - name: Fetch one public DIII-D shot and one public MAST shot (CC BY 4.0)
         run: |
           python - <<'PY'
+          import hashlib
           from huggingface_hub import hf_hub_download
-          for config, name in (("diii_d_public_test", "d3d_shot_0047b7837b.parquet"),
-                               ("mast_public_test", "mast_shot_0035568738.parquet")):
-              hf_hub_download("Sophelio/fusion-equilibrium-challenge", f"data/{config}/{name}",
-                              repo_type="dataset", local_dir="ci_data")
+          for config, name, expected in (
+              ("diii_d_public_test", "d3d_shot_0047b7837b.parquet",
+               "24e3ddbb5b751266c1dfea7fe2300892fda35c220ebb5b47d904ced85304dac3"),
+              ("mast_public_test", "mast_shot_0035568738.parquet",
+               "a0db42606bfb994013bdecef952cd438bc803b4652631b711a2ac12af5b3ed82"),
+          ):
+              path = hf_hub_download(
+                  "Sophelio/fusion-equilibrium-challenge", f"data/{config}/{name}",
+                  repo_type="dataset", revision="1e280905b85f2a6fdde7e06fca8cf3a1edf447cb",
+                  local_dir="ci_data",
+              )
+              with open(path, "rb") as stream:
+                  actual = hashlib.file_digest(stream, "sha256").hexdigest()
+              if actual != expected:
+                  raise SystemExit("Pinned public reproduction input checksum mismatch.")
           PY
       - name: Regenerate the first public DIII-D shot
         run: python -B infer.py --machine d3d --data-root ci_data/data --split diii_d_public_test --workers 1 --limit 1 --out ci_out/d3d.npz

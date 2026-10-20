@@ -1,5 +1,10 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Fusion Equilibrium Challenge entry — every relative link of the published site lands on a published page
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — links in the actual public source projection
 name: Docs links
 
 on:
@@ -22,5 +27,10 @@ jobs:
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
-      - name: Check relative links and anchors of docs/
-        run: python tools/check_doc_links.py
+      - name: Check repository documents and Pages without private working files
+        run: |
+          mkdir "$RUNNER_TEMP/public-docs"
+          git archive HEAD | tar -x -C "$RUNNER_TEMP/public-docs"
+          test ! -e "$RUNNER_TEMP/public-docs/docs/internal"
+          python tools/check_doc_links.py --docs-root "$RUNNER_TEMP/public-docs"
+          python tools/check_doc_links.py --docs-root "$RUNNER_TEMP/public-docs/docs"

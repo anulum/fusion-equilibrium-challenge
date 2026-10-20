@@ -1,0 +1,48 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge entry — copyright and licence of every file, by path (REUSE Specification 3.3)
+#
+# The entrant's own work is AGPL-3.0-or-later. Files written for this entry without a header (many archived
+# experiment records, data manifests, figures) get that information here, without changing their bytes. Material
+# of others keeps its own licence: the organisers' scoring functions, masks and data-fix helper (MIT), the
+# Contributor Covenant text (CC BY 4.0) and the excerpts of the organisers' CC BY 4.0 dataset. NOTICE.md describes
+# each item. Later annotations take precedence over earlier ones for the same file.
+version = 1
+
+[[annotations]]
+path = "**"
+precedence = "aggregate"
+SPDX-FileCopyrightText = "2020-2026 Miroslav Šotek <protoscience@anulum.li>"
+SPDX-License-Identifier = "AGPL-3.0-or-later"
+
+[[annotations]]
+path = [
+    "source/d3d_legacy/fec_adapter/scoring_kit/*.py",
+    "source/mast_legacy/fec_adapter/scoring_kit/*.py",
+    "training_adapter/fec_adapter/scoring_kit/*.py",
+    "source/d3d_legacy/vendor/challenge_masks/d3d_envelope.npz",
+    "source/mast_legacy/vendor/challenge_masks/d3d_envelope.npz",
+    "experiments/D28_pressure_reliability_2026-10-09T202147Z/official_data_fixes.py",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Sophelio and the Fusion Equilibrium Challenge authors"
+SPDX-License-Identifier = "MIT"
+
+[[annotations]]
+path = "CODE_OF_CONDUCT.md"
+precedence = "override"
+SPDX-FileCopyrightText = "Contributor Covenant contributors <https://www.contributor-covenant.org/>"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = ["tools/reference/d71_figure_frames.npz", "docs/figures/fig6_reconstruction.png"]
+precedence = "override"
+SPDX-FileCopyrightText = [
+    "2026 Sophelio and the Fusion Equilibrium Challenge authors (EFIT reference frames and contours)",
+    "2020-2026 Miroslav Šotek <protoscience@anulum.li> (predicted frames, selection and rendering)",
+]
+SPDX-License-Identifier = "CC-BY-4.0 AND AGPL-3.0-or-later"

@@ -28,6 +28,18 @@ jobs:
       - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
         with:
           persist-credentials: false
+          fetch-depth: 0
+      - name: Keep the submitted numerical source and model identities frozen
+        run: |
+          make frozen
+          mkdir "$RUNNER_TEMP/frozen-probe"
+          git archive HEAD source training_adapter infer.py train.py tree_replica.py deployment.json training_recipe.json WEIGHTS.json WEIGHTS.sha256 | tar -x -C "$RUNNER_TEMP/frozen-probe"
+          cp Makefile "$RUNNER_TEMP/frozen-probe/Makefile"
+          printf '\n' >> "$RUNNER_TEMP/frozen-probe/infer.py"
+          if GIT_DIR="$GITHUB_WORKSPACE/.git" GIT_WORK_TREE="$RUNNER_TEMP/frozen-probe" GIT_OPTIONAL_LOCKS=0 make -C "$RUNNER_TEMP/frozen-probe" frozen; then
+            echo 'Altered numerical source unexpectedly passed the frozen-source check.' >&2
+            exit 1
+          fi
       - uses: actions/setup-python@5fda3b95a4ea91299a34e894583c3862153e4b97 # v7.0.0
         with:
           python-version: "3.12"
@@ -39,14 +51,15 @@ jobs:
         run: |
           ruff check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
           ruff format --check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
-          ruff check tools/check_doc_links.py tools/ci_check_shot.py tests/test_check_doc_links.py tests/test_ci_check_shot.py
-          ruff format --check tools/check_doc_links.py tools/ci_check_shot.py tests/test_check_doc_links.py tests/test_ci_check_shot.py
+          ruff check tools/check_doc_links.py tools/ci_check_shot.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          ruff format --check tools/check_doc_links.py tools/ci_check_shot.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
           mypy
           bandit -q experiments/d71_finisher_physics/per_shot_table.py
           bandit -q tools/check_doc_links.py tools/ci_check_shot.py
+          reuse lint
       - name: Recompute the public table and reject corrupt inputs
         run: |
-          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py
+          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
           python -m coverage combine
           python -m coverage report
   dependency-audit:
@@ -76,11 +89,87 @@ jobs:
           version: "0.12.21"
       - run: uv pip install --system --require-hashes -r requirements-quality.txt
       - name: Audit every dependency, including transitive requirements
-        run: pip-audit --strict --vulnerability-service "${{ matrix.service }}" --progress-spinner off -r "${{ matrix.requirements }}"
+        run: pip-audit --strict --vulnerability-service "${{ matrix.service }}" --progress-spinner off -r "${{ matrix.requirements }}" --format cyclonedx-json --output "sbom-${{ matrix.requirements }}.json"
       - name: Also check the upstream PyTorch advisory version
         if: matrix.service == 'osv'
         # Some advisories enumerate the public version without its CPU build tag.
         run: |
-          sed -n 's/^torch==\([0-9.]*\)+cpu$/torch==\1/p' "${{ matrix.requirements }}" > "$RUNNER_TEMP/torch-upstream.txt"
+          sed -n 's|^torch @ https://download-r2.pytorch.org/whl/cpu/torch-\([0-9.]*\)%2Bcpu-.*$|torch==\1|p' "${{ matrix.requirements }}" > "$RUNNER_TEMP/torch-upstream.txt"
           test "$(wc -l < "$RUNNER_TEMP/torch-upstream.txt")" -eq 1
           pip-audit --strict --disable-pip --no-deps --progress-spinner off -r "$RUNNER_TEMP/torch-upstream.txt"
+      - name: Retain the audited dependency inventory
+        uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: sbom-${{ matrix.requirements }}
+          path: sbom-${{ matrix.requirements }}.json
+          if-no-files-found: error
+          retention-days: 30
+  provenance:
+    needs: [table-verifier, dependency-audit]
+    if: github.event_name != 'pull_request' && github.ref == 'refs/heads/main'
+    runs-on: ubuntu-24.04
+    timeout-minutes: 10
+    permissions:
+      contents: read
+      id-token: write
+      attestations: write
+    steps:
+      - uses: actions/checkout@3d3c42e5aac5ba805825da76410c181273ba90b1 # v7.0.1
+        with:
+          persist-credentials: false
+      - uses: actions/download-artifact@9000827ccba6bdab643e8b6fd33ac0654aef8333 # v8
+        with:
+          pattern: sbom-*
+          merge-multiple: true
+      - name: Archive the exact public source object
+        run: |
+          git archive --format=tar --prefix=fusion-equilibrium-challenge/ HEAD | gzip -n > source.tar.gz
+          sha256sum source.tar.gz > source.sha256
+          git --version
+          gzip --version
+          gh --version
+      - name: Attest the checked source and audited inventories
+        id: attest
+        uses: actions/attest-build-provenance@4d101475d8b20a2381f78447822ac1eab6504dd8 # v4.2.2
+        with:
+          subject-path: |
+            source.tar.gz
+            sbom-*.json
+      - name: Verify producer, source object and every subject digest
+        env:
+          GH_TOKEN: ${{ github.token }}
+          SOURCE_SHA: ${{ github.sha }}
+          SOURCE_REPOSITORY: ${{ github.repository }}
+          BUNDLE_PATH: ${{ steps.attest.outputs.bundle-path }}
+        run: |
+          cp "$BUNDLE_PATH" attestation.jsonl
+          for subject in source.tar.gz sbom-*.json; do
+            gh attestation verify "$subject" --bundle attestation.jsonl \
+              --repo "$SOURCE_REPOSITORY" --source-digest "$SOURCE_SHA" \
+              --source-ref refs/heads/main --deny-self-hosted-runners \
+              --signer-workflow "$SOURCE_REPOSITORY/.github/workflows/diagnostics.yml" \
+              --format json > "$subject.verification.json"
+          done
+          cp source.tar.gz altered-source.tar.gz
+          printf '\0' >> altered-source.tar.gz
+          if gh attestation verify altered-source.tar.gz --bundle attestation.jsonl \
+            --repo "$SOURCE_REPOSITORY" --source-digest "$SOURCE_SHA" \
+            --source-ref refs/heads/main --deny-self-hosted-runners \
+            --signer-workflow "$SOURCE_REPOSITORY/.github/workflows/diagnostics.yml" 2> altered-refusal.txt; then
+            echo 'Altered source unexpectedly passed attestation verification.' >&2
+            exit 1
+          fi
+          grep -Ei 'no (matching attestations|attestations.*match|attestations found)' altered-refusal.txt
+          rm altered-source.tar.gz
+      - uses: actions/upload-artifact@cf430e030ddbb5b0abf93d22962f4752f3646cd9 # v7
+        with:
+          name: verified-source-and-sboms
+          path: |
+            source.tar.gz
+            source.sha256
+            sbom-*.json
+            attestation.jsonl
+            *.verification.json
+            altered-refusal.txt
+          if-no-files-found: error
+          retention-days: 30

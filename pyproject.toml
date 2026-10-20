@@ -26,6 +26,7 @@ files = [
     "tests/test_d71_table.py",
     "tests/test_check_doc_links.py",
     "tests/test_ci_check_shot.py",
+    "tests/test_licensing.py",
 ]
 
 [tool.coverage.run]

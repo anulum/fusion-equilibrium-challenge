@@ -1,0 +1,28 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — reviewed verification-tool dependency updates
+version: 2
+updates:
+  - package-ecosystem: github-actions
+    directory: /
+    schedule:
+      interval: weekly
+    open-pull-requests-limit: 5
+  - package-ecosystem: pip
+    directory: /
+    schedule:
+      interval: weekly
+    allow:
+      - dependency-name: reuse
+      - dependency-name: ruff
+      - dependency-name: mypy
+      - dependency-name: coverage
+      - dependency-name: pytest
+      - dependency-name: bandit
+      - dependency-name: pip-audit
+      - dependency-name: pre-commit
+    open-pull-requests-limit: 5

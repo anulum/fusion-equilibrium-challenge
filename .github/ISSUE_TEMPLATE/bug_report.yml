@@ -1,0 +1,37 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge entry — documentation or tool error form
+name: Error in the documentation or a tool
+description: A wrong number, a broken link or command, or a verification tool that fails. Reproduction problems have their own form.
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        For a result that the inference or training entrypoint does not reproduce, use the reproduction form instead.
+        Security issues go to the private advisory route in SECURITY.md, not here.
+  - type: input
+    id: where
+    attributes:
+      label: Where
+      description: The page URL or file path, with the section or line.
+    validations:
+      required: true
+  - type: textarea
+    id: wrong
+    attributes:
+      label: What is wrong
+      description: What the text or tool says or does, and what it should say or do.
+    validations:
+      required: true
+  - type: textarea
+    id: evidence
+    attributes:
+      label: Evidence
+      description: The protocol, receipt, ledger row or command output that shows it, and the repository commit (`git rev-parse HEAD`).
+    validations:
+      required: true

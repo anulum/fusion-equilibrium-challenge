@@ -47,6 +47,8 @@ def test_dependency_audit_contract() -> None:
         assert f"- requirements: {filename}\n            service: {service}" in workflow
     assert "if: matrix.service == 'osv'" in workflow
     assert 'test "$(wc -l < "$RUNNER_TEMP/torch-upstream.txt")" -eq 1' in workflow
+    assert "https://download-r2.pytorch.org/whl/cpu/torch-" in workflow
+    assert "--format cyclonedx-json" in workflow
     assert (
         "pip-audit --strict --disable-pip --no-deps --progress-spinner off "
         '-r "$RUNNER_TEMP/torch-upstream.txt"'
@@ -68,10 +70,19 @@ def test_diagnostic_scope_contract() -> None:
     ):
         assert command in workflow
     support = {"tools/check_doc_links.py", "tools/ci_check_shot.py"}
-    support_tests = {"tests/test_check_doc_links.py", "tests/test_ci_check_shot.py"}
+    support_tests = {
+        "tests/test_check_doc_links.py",
+        "tests/test_ci_check_shot.py",
+        "tests/test_licensing.py",
+    }
     assert set(config["tool"]["mypy"]["files"]) == {source, tests} | support | support_tests
     for path in support | support_tests:
         assert path in workflow
+    for path in {source, tests} | support | support_tests:
+        for prefix in ("ruff check ", "ruff format --check "):
+            assert any(
+                line.strip().startswith(prefix) and path in line.split() for line in workflow.splitlines()
+            )
     assert config["tool"]["mypy"]["strict"] is True
     assert config["tool"]["coverage"]["run"]["branch"] is True
     assert set(config["tool"]["coverage"]["report"]["include"]) == {source} | support

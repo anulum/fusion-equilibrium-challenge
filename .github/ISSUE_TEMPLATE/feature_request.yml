@@ -1,0 +1,31 @@
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge entry — suggestion form
+name: Suggestion
+description: An addition to the documentation, the study or the verification tools of this record.
+labels: [enhancement]
+body:
+  - type: markdown
+    attributes:
+      value: >-
+        This repository is the record of one submitted entry. The model, the weights and the inference arithmetic of
+        the submission are frozen and will not change here; work that builds on them belongs in a fork, with a
+        citation (CITATION.cff). Open-ended questions fit Discussions better.
+  - type: textarea
+    id: proposal
+    attributes:
+      label: Suggestion
+      description: What should be added or clarified, and where.
+    validations:
+      required: true
+  - type: textarea
+    id: why
+    attributes:
+      label: Why it helps
+      description: Who needs it and what it lets them check or understand.
+    validations:
+      required: true

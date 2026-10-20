@@ -1,4 +1,12 @@
-<!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
+<!--
+SPDX-License-Identifier: AGPL-3.0-or-later
+Commercial license available
+© Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+© Code 2020–2026 Miroslav Šotek. All rights reserved.
+ORCID: 0009-0009-3560-0851
+Contact: www.anulum.li | protoscience@anulum.li
+Fusion Equilibrium Challenge entry — repository overview
+-->
 # Fusion Equilibrium Challenge: the Anulum entry
 
 [![Reproduce](https://github.com/anulum/fusion-equilibrium-challenge/actions/workflows/reproduce.yml/badge.svg)](https://github.com/anulum/fusion-equilibrium-challenge/actions/workflows/reproduce.yml)
@@ -64,11 +72,12 @@ A first look in five minutes: [notebooks/quickstart.ipynb](notebooks/quickstart.
 DIII-D shot and draws the predicted flux surfaces
 ([open in Colab](https://colab.research.google.com/github/anulum/fusion-equilibrium-challenge/blob/main/notebooks/quickstart.ipynb)).
 
-Python 3.12 on Linux; CPU only.
+CPython 3.12 on Linux x86-64; CPU only. Each `requirements-*.txt` is a complete lock: every package, transitive
+ones included, is pinned with its SHA-256 hashes. The commands use [uv](https://docs.astral.sh/uv/).
 
 ```bash
-python3.12 -m venv .venv
-.venv/bin/python -m pip install -r requirements-inference-cpu.txt
+uv venv --python 3.12.3 .venv
+uv pip sync --python .venv/bin/python --require-hashes requirements-inference-cpu.txt
 .venv/bin/python fetch_weights.py                  # downloads models/ and verifies every file
 export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 JAX_PLATFORMS=cpu JAX_ENABLE_X64=1
 .venv/bin/python -B infer.py --machine d3d  --data-root /path/to/data --split diii_d_public_test --workers 8 --out d3d.npz
@@ -85,14 +94,14 @@ reports the cross-CPU check. What has been checked:
 | Check | Outcome |
 |---|---|
 | Whole public DIII-D fold, 874 shots, 193 359 frames | every map and scalar bit-identical to the submitted archive |
-| Whole public MAST fold, 1 206 shots, 69 075 frames | every map and scalar bit-identical to the submitted archive |
+| Whole public MAST fold, 1 206 shots, 69 075 frames | every map and scalar bit-identical to the submitted archive, run with an earlier version of the package (`package_v2`); the current package has not been run on the whole MAST fold again |
 | Fresh environment from `requirements-inference-cpu.txt`, new directories | bit-identical on the shots run |
 | 22 worker processes against one | bit-identical |
 | GitHub-hosted runner (another CPU), first public DIII-D shot | observed q95 and βN bit-identical; maximum flux difference 7.5 × 10⁻⁹; CI checks numerical tolerances |
 | Google Colab, the quickstart notebook, 19 October 2026 | runs end to end |
 
 Measured on a host with two Intel Xeon E5-2640 (24 threads) and 8 workers: 6 h 14 min for the DIII-D fold and
-1 h 52 min for the MAST fold. With 22 workers the DIII-D fold took 3 h 15 min, again bit-identical; 22 workers need
+1 h 52 min for the MAST fold (with `package_v2`). With 22 workers the DIII-D fold took 3 h 15 min, again bit-identical; 22 workers need
 about 42 GiB of memory.
 
 For MAST, a shot in which no frame can be solved takes the mean current pattern of the solved frames of the
@@ -101,10 +110,13 @@ therefore depends on the fold it is supplied with.
 
 ## Rebuild the model from the released data
 
+Training uses its own environment, separate from the inference one (same platform scope):
+
 ```bash
-.venv/bin/python -m pip install -r requirements-training-cuda.txt      # or requirements-training-cpu.txt
-.venv/bin/python train.py --raw-dir /path/to/data/diii_d_train --out /work/full --platform cuda
-.venv/bin/python train.py --raw-dir /path/to/data/diii_d_train --out /work/smoke --limit 4     # whole chain in minutes
+uv venv --python 3.12.3 .venv-train
+uv pip sync --python .venv-train/bin/python --require-hashes requirements-training-cuda.txt   # or requirements-training-cpu.txt
+.venv-train/bin/python train.py --raw-dir /path/to/data/diii_d_train --out /work/full --platform cuda
+.venv-train/bin/python train.py --raw-dir /path/to/data/diii_d_train --out /work/smoke --limit 4     # whole chain in minutes
 ```
 
 `train.py` goes from the raw shot files to a complete model directory with its own manifest and a runnable copy
@@ -133,7 +145,10 @@ completed checks cover the reduced integration chain and one full-recipe fit per
 | `deployment.json`, `training_recipe.json` | the deployed model and the recipe that fits it, with SHA-256 of every source and weight file |
 | `source/`, `training_adapter/` | model, feature and finishing code for both machines |
 | `models/` | trained weights; fetched by `fetch_weights.py`, listed in `WEIGHTS.sha256` |
-| `requirements-*.txt` | pinned environments |
+| `requirements-*.txt` | complete hashed locks for CPython 3.12 on Linux x86-64 |
+| [`ARCHITECTURE.md`](ARCHITECTURE.md) | the parts, their boundaries, what is trusted and what is kept frozen |
+| [`VALIDATION.md`](VALIDATION.md) | what has been checked, on what, and what is not claimed |
+| [`CHANGELOG.md`](CHANGELOG.md) | what changed after the Final submission |
 | `DATA_PROVENANCE.md` | which data touched which part of the entry, per machine |
 | `docs/` | methods report, study, experiment ledger, [what did not work](docs/NEGATIVE_RESULTS.md), cost of the entry |
 | `experiments/` | frozen protocols, scripts and result files of the experiments |
@@ -161,10 +176,14 @@ which failed their rule and were put to the public test once under a rule writte
 ## Licence and citation
 
 Source code: AGPL-3.0-or-later ([LICENSE](LICENSE)); a commercial licence is available from the entrant. The
-SPDX identifier in each file governs. The organisers' scoring functions vendored under `source/` keep their MIT
-notice; see [NOTICE.md](NOTICE.md). The full challenge datasets are not included. The four EFIT reference frames
-and contours used by the reconstruction figure are small CC BY 4.0 excerpts; a single-shot prediction is also
-included as the CI reference. Their provenance and attribution are described in the notice.
+copyright and licence of every file are given by its SPDX header or, for files without one, by
+[`REUSE.toml`](REUSE.toml); the licence texts are in [`LICENSES/`](LICENSES). Material of others keeps its own
+licence: the organisers' scoring functions, envelope masks and data-fix helper are MIT, the Code of Conduct is
+Contributor Covenant text under CC BY 4.0, and the four EFIT reference frames used by the reconstruction figure
+(and the figure's reference panels) are small CC BY 4.0 excerpts of the challenge dataset. The full challenge
+datasets are not included; a single-shot prediction is included as the CI reference. The weights are published on
+Hugging Face, where the model card declares the licence `agpl-3.0`. [NOTICE.md](NOTICE.md) lists each item with its
+origin and attribution; [GOVERNANCE.md](GOVERNANCE.md) says who decides what.
 
 To cite this entry, use the DOI [10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092) (all versions) or see [CITATION.cff](CITATION.cff). The code is also archived by
 [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/anulum/fusion-equilibrium-challenge)
