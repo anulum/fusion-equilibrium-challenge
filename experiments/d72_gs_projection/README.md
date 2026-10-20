@@ -13,6 +13,41 @@ submitted. Study §4.28. `export_manifest_v1.json` lists frozen and published SH
 `d39_common.py` and `run_d72.sh` differ by the publication edits described in [`../README.md`](../README.md).
 The run script was not bound by the activation; its recorded original and published hashes are listed separately.
 
+## Reproduce the pooled score and intervals
+
+From the repository root, install `requirements-quality.txt` in a Python 3.12 environment, then run:
+
+```sh
+python tools/d72_table.py \
+  --data experiments/d72_gs_projection/pooled_statistics_v1.json.gz \
+  --manifest experiments/d72_gs_projection/pooled_manifest_v1.json \
+  --gate experiments/d72_gs_projection/gate_v1.json
+```
+
+The public gzip JSON carries reference sums, sums of squares and counts for each shot and each of ten quantities
+(flux, q95, βN and seven derived quantities), both arms' residual sums, per-shot boundary distances, extraction
+counters and convergence counts. The manifest fixes the original shot order and records hashes of the original
+per-shot records and convergence arrays. Its extraction-source hash identifies the private export script; the
+script and raw maps are not redistributed. Extraction checked the activated sources and all 358 base score parts
+against D70's margin statistics, using the same fields as the frozen runner.
+
+The maintained verifier resamples **both reference moments and residual sums** in each of the original 20 000
+whole-shot multinomial draws (seed 72020). It reconstructs pooled R² and every consistency component, boundary
+means over finite-distance shots, failure totals, the score difference and 95 % and 99 % intervals. It does not
+average per-shot R² or per-shot scores. All 78 875 frames, including the 3 435 nonconverged frames in 185 shots,
+remain included. Output reports the reconstructed −157 µS change and the failed admission rule.
+
+The public computation matches the original scoring function on the same host, including all bootstrap draws.
+Compared with the stored report from the original host, the largest observed difference is 2.6 × 10⁻¹⁴ in one
+consistency component; the arithmetic comparison uses an absolute tolerance of 10⁻¹³. This numerical tolerance
+does not alter the experiment's admission threshold. Invalid inputs return exit status 2 and a fixed refusal
+message. Transport hashes and bound identities check the published package; they do not independently
+authenticate the original private measurements.
+
+This reproduces score arithmetic and aggregate convergence counts. It does **not** regenerate scored maps,
+remeasure physical diagnostics, reconstruct per-frame displacement, or establish a physical improvement from
+the projection. Those conclusions cannot be recovered from these pooled statistics alone.
+
 ## A correction to the frozen protocol's wording
 
 `PROTOCOL.md` motivates the test with "the share of current density not of Grad-Shafranov form rises from 0.35 % to

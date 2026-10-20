@@ -74,9 +74,15 @@ def test_diagnostic_scope_contract() -> None:
         "          mypy\n",
     ):
         assert command in workflow
-    support = {"tools/check_doc_links.py", "tools/ci_check_shot.py", "tools/d71b_table.py"}
+    support = {
+        "tools/check_doc_links.py",
+        "tools/ci_check_shot.py",
+        "tools/d71b_table.py",
+        "tools/d72_table.py",
+    }
     support_tests = {
         "tests/test_d71b_table.py",
+        "tests/test_d72_table.py",
         "tests/test_check_doc_links.py",
         "tests/test_ci_check_shot.py",
         "tests/test_licensing.py",

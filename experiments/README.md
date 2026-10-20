@@ -47,3 +47,8 @@ are the first agent's; those beginning with an upper-case `D` and a timestamp ar
 The same number can appear in both where one agent reviewed or continued the other's experiment. The `b*.py`
 files at the top level are the diagnostics of the first days (boundary structure, member diversity, time
 structure).
+
+D72 publishes per-shot reference moments, residual sums, boundary distances and convergence counts in a
+compressed JSON supplement. The maintained `tools/d72_table.py` reconstructs pooled scores and intervals;
+see the [D72 command and limitations](d72_gs_projection/README.md). This is another aggregate-data exception
+to the historical export size limit; raw scored maps remain outside the public package.

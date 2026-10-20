@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Four verification tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Five verification tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones

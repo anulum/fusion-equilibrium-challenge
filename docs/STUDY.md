@@ -844,6 +844,11 @@ benchmark answer; other constructions were not tried.
 The corrected D71b diagnostics have not been evaluated on these scored float32 maps, so a physical improvement
 on this cohort is not established by the projection or its analytic tests alone. `experiments/d72_gs_projection/`.
 
+The public D72 pooled-statistics supplement and `tools/d72_table.py` reproduce this gate, including all seven
+consistency components and whole-shot multinomial intervals, without private maps. Reference moments are
+resampled with residuals; per-shot scores are not averaged. This arithmetic check retains all nonconverged
+frames but does not measure the projection's physical effect. See `experiments/d72_gs_projection/README.md`.
+
 ## 5. MAST without MAST equilibrium data
 
 ### 5.1 The rule and our reading of it

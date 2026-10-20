@@ -28,7 +28,7 @@ By contributing you agree that your contribution is licensed under AGPL-3.0-or-l
 
 ## Checking the maintained verification tools
 
-The checked scope comprises the D71 and D71b table verifiers, the published-document link checker and the submitted-shot
+The checked scope comprises the D71, D71b and D72 table verifiers, the published-document link checker and the submitted-shot
 comparison tool, with their dedicated tests. It does not qualify every historical experiment script or the
 full inference and training paths:
 
@@ -36,20 +36,20 @@ full inference and training paths:
 uv venv --python 3.12.3 .venv
 uv pip install --python .venv/bin/python --require-hashes -r requirements-quality.txt
 .venv/bin/ruff check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
-.venv/bin/ruff check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tests/test_d71b_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+.venv/bin/ruff check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
 .venv/bin/mypy
-.venv/bin/python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_d71b_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+.venv/bin/python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
 .venv/bin/python -m coverage combine
 .venv/bin/python -m coverage report
 ```
 
-Tests use the published CSV and report, including deliberately damaged copies, and require full statement and
-branch coverage of the four verifier modules. The archive tests exercise the actual submitted prediction,
+Tests use the published statistics and reports, including deliberately damaged copies, and require full statement and
+branch coverage of the five verifier modules. The archive tests exercise the actual submitted prediction,
 damage its structure and reference metadata, and check refusal under optimised Python. Documentation tests
 reject empty roots and links to missing or private destinations, including symlink escapes.
 Licence tests check the actual public projection and reject missing licence texts or lost annotations.
 `make check` runs the native checks, document links and frozen-source comparison without running tests.
-`make test` runs the five maintained test modules; the frozen scientific recipes are not in that test denominator.
+`make test` runs the six maintained test modules; the frozen scientific recipes are not in that test denominator.
 Frame percentiles and the physical validity of withdrawn diagnostics
 remain outside this arithmetic check. The dependency-audit workflow checks all committed requirements files,
 including transitive dependencies, and fails on an advisory or an incomplete audit.

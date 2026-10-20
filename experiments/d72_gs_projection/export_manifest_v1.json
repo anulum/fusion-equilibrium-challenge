@@ -66,6 +66,16 @@
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "c904f5bdbbd46766a29a949a9dca62940d0b74fa3d72ccff61fa3bf342d6470a",
    "identical_to_frozen": true
+  },
+  {
+   "file": "pooled_statistics_v1.json.gz",
+   "published_sha256": "fc3b47088540d33dd748a49c3804f105aefdb0de7c6876563c46c9e5e3c37312",
+   "category": "post-freeze public sufficient-statistics supplement; original run unchanged"
+  },
+  {
+   "file": "pooled_manifest_v1.json",
+   "published_sha256": "cf4e12cde97178b4799b8bdc0cdd5a88c163cfb4b66872a9779acbb45859e8f0",
+   "category": "post-freeze public sufficient-statistics supplement; original run unchanged"
   }
  ]
 }
