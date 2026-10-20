@@ -48,7 +48,8 @@ score was 0.9970.
 blind folds; its result is added here when it is published.
 
 Final submission **1003274** finished on 19 October 2026; its scores remain hidden until the Final closes.
-It uses source tag `final-submission-2026-10-19` (`19d2d341…`) and weights revision `398d05cc…`.
+Its original source commit is `19d2d341…`; tag `final-submission-2026-10-19` retains the same inference source.
+The weights revision is `398d05cc…`.
 The Development scores above are not Final results.
 
 ## What the model is
