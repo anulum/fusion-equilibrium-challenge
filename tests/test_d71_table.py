@@ -14,6 +14,7 @@ import gzip
 import json
 import subprocess
 import sys
+import tomllib
 from pathlib import Path
 
 import pytest
@@ -36,6 +37,26 @@ def test_dependency_audit_contract() -> None:
     for weakened in ("continue-on-error", "|| true", "--no-deps", "--ignore-vuln", "--skip-editable"):
         assert weakened not in workflow
     assert "  push:\n    branches: [main]\n  pull_request:" in workflow
+
+
+def test_diagnostic_scope_contract() -> None:
+    """Keep maintained source and its real-data tests enrolled in each static gate."""
+    workflow = (ROOT / ".github/workflows/diagnostics.yml").read_text()
+    config = tomllib.loads((ROOT / "pyproject.toml").read_text())
+    source = "experiments/d71_finisher_physics/per_shot_table.py"
+    tests = "tests/test_d71_table.py"
+    for command in (
+        f"ruff check {source} {tests}",
+        f"ruff format --check {source} {tests}",
+        f"bandit -q {source}",
+        "          mypy\n",
+    ):
+        assert command in workflow
+    assert set(config["tool"]["mypy"]["files"]) == {source, tests}
+    assert config["tool"]["mypy"]["strict"] is True
+    assert config["tool"]["coverage"]["run"]["branch"] is True
+    assert config["tool"]["coverage"]["report"]["include"] == [source]
+    assert config["tool"]["coverage"]["report"]["fail_under"] == 100
 
 
 def test_published_cli() -> None:
