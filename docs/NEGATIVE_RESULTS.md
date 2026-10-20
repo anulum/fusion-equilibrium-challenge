@@ -62,6 +62,8 @@ against every later attempt to retune them.
 | Larger shares for triangularity and elongation | −4.8 to −7.3 × 10⁻⁵; the boundary distance grows 7–8 % |
 | 26 settings, cubic warps and two composites on the held-out answers of the 69 networks | best +1.1 × 10⁻⁵ (interval −0.2 to +5.3 × 10⁻⁵) |
 | X-point move by a share that depends on member disagreement | +0.3 × 10⁻⁵ (interval −2.7 to +2.9 × 10⁻⁵) |
+| The inside of each finished map replaced by a Grad–Shafranov solution (D72, 358 shots) | −157 µS (99 % interval −239 to −93); the axis-height consistency falls most ([§4.28](STUDY.md#428-a-gradshafranov-interior-for-the-finished-map)) |
+
 
 ## More networks, other networks
 

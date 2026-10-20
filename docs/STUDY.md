@@ -777,12 +777,66 @@ retrieved from the production submission.
 
 D71 establishes a benchmark gain accompanied by increases in these current-error, field-error and polynomial
 residual diagnostics. It does not certify either map as a physical equilibrium or quantify a percentage of
-nonequilibrium current. A corrected D71b diagnostic uses one scalar interpolant for critical points, one common
-exterior mask per frame and matched valid-frame comparisons. Its analytic checks and three-shot real-grid
-qualification passed independent review on 20 October; complete-cohort reporting and provenance checks are still
-pending. No corrected whole-cohort D71b result is claimed here. The original per-shot table supports independent
-recomputation of the retained D71 shot means and paired intervals; full stage regeneration still needs the private
-evaluation models and caches, as the experiment README states.
+nonequilibrium current. The original per-shot table supports independent recomputation of the retained D71 shot means
+and paired intervals; full stage regeneration still needs the private evaluation models and caches, as the
+experiment README states.
+
+**D71b: the corrected measurements (20 October).** D71b regenerated the same nine stages on the same 358 shots
+and replaced the faulty measures: critical points from one scalar interpolant (an interpolating bicubic spline;
+roots of its gradient, classified by its own Hessian); exterior current on one region per frame, outside the
+reference contour and all nine stage contours, the same for every map and for the reference, with one reference
+denominator; the polynomial GS-form fit as a ratio of RMS residual to RMS source, with its parts and a degeneracy
+flag; and a flux-surface test that assumes no radial profile shape: on the surfaces ψ_N = 0.2, 0.4, 0.6 and 0.8 of
+each map, −Δ*ψ is fitted as a R² + b with one a and b per surface, and the residual is reported over the source.
+Every shot record and the run receipt are bound to the frozen activation and the exact cohort. The second agent
+reviewed the sources at each amendment and the complete run once, regenerated the report byte for byte and recomputed the
+intervals. All 78 875 frames are finite on every map, so each comparison uses the same frames; no frame was
+flagged degenerate.
+
+| D71b metric, 358 development shots | Before the finisher | After the finisher | Change (99 % interval) | Stage contributions |
+|---|---:|---:|---|---|
+| Exterior current-density ratio on the common region, minus the reference's | 0.70 % | 1.23 % | +0.53 points (+0.48 to +0.58) | contour +0.28, shape +0.13, reshape +0.09 |
+| Flux-surface GS-form residual ratio, minus the reference's | 1.33 % | 5.14 % | +3.81 points (+3.44 to +4.21) | contour +3.81 |
+| Polynomial GS-form RMS residual ratio, minus the reference's | 2.43 % | 5.94 % | +3.51 points (+3.15 to +3.91) | contour +3.50 |
+| Frames with more or fewer detected maxima or saddles than the reference | — | — | no interval excludes zero | — |
+
+The direction D71 found holds under the corrected measures. On a region that does not move with the map, the
+exterior ratio rises; the excess of the flux-surface residual ratio, a test that does not depend on a profile
+family, rises about fourfold, and almost all of it comes from the contour bend. For the numbers of detected maxima
+and saddles inside the scorer's envelope (eroded by two cells), no pre-specified interval excludes zero; that does
+not show that the finisher leaves the topology unchanged. On the references, one maximum is detected on 78 872 frames and
+two on 3; detected saddles number 0, 1, 2, 3 and 4 on 1 452, 21 530, 55 881, 10 and 2 frames. These are detected
+critical points of the interpolant, not guaranteed magnetic axes or boundary X-points. As in D71, all of these are
+diagnostics relative to EFIT on a 65 × 65 grid, not a percentage of nonequilibrium current and not a test of force
+balance. Sources, protocol with its four amendments, tests, report and the complete histograms:
+`experiments/d71b_physics_amendment/`.
+
+### 4.28 A Grad–Shafranov interior for the finished map
+D71 suggested one more try before the Final closed (D72, 20 October). Every grid node outside each finished map's
+official boundary keeps its value; the nodes inside are replaced by the solution of a Grad–Shafranov equation with
+those values as its boundary, cubic p′ and FF′ fitted to the finished map itself and the map's own plasma current
+kept. The boundary the scorer extracts afterwards is extracted anew and need not coincide with the old one. The
+construction is one configuration fixed before the run, with no parameter tuned on labels. On an analytic
+equilibrium it returns the map unchanged, and on a warped copy it removes the warp's non-equilibrium part (analytic
+probe `test_gs_project.py`). The solve is a Picard iteration of at most 40 steps; on 3 435 of the 78 875 frames
+(4.35 %, in 185 shots) it reached the 40th step without meeting its convergence criterion, and the code used the
+40-step solution, so not every frame became a converged Grad–Shafranov solution. It was scored on the 358
+development shots, used before in model comparisons, against the evaluation pipeline of §4.26 (69 map, 8 joint and
+8 static networks, fitted without these shots), under a rule fixed before the run: at least +1 × 10⁻⁵, the 99 %
+whole-shot interval above zero, and no new failures.
+
+| 358 development shots | Evaluation pipeline (§4.26) | Grad–Shafranov interior |
+|---|---:|---:|
+| Benchmark score S | 0.996100 | 0.995943 |
+| Boundary distance | 0.008278 | 0.008359 |
+| Consistency | 0.98713 | 0.98639 |
+| Z_axis R² (largest change) | 0.9938 | 0.9903 |
+| li R² | 0.9732 | 0.9728 |
+
+The change is −157 µS (99 % interval −239 to −93); the rule failed and nothing was submitted. The hope had been that
+a consistent interior would improve li, the weakest derived scalar; it did not, and the largest loss is in the
+consistency of the axis height (Z_axis R² 0.9938 → 0.9903). For this score, this way of bringing the inside closer
+to equilibrium gave a worse answer; other constructions were not tried. `experiments/d72_gs_projection/`.
 
 ## 5. MAST without MAST equilibrium data
 

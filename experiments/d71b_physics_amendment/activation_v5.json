@@ -1,0 +1,22 @@
+{
+ "name": "D71b_physics_amendment",
+ "version": 5,
+ "utc": "2026-10-20T11:30:07.725685+00:00",
+ "D71b_sources": {
+  "physics.py": "31094bce283aeafd5b32c27ef2cba83ebf6de7144fa23b97126b0b350b60f249",
+  "physics_b.py": "8cf25b87f0b21f7fe2bf6817b2c9dac6c854ac85535c204b0763d2f4ebc4b434",
+  "critical.py": "4960c3360f8b61890137be39af7ea1544c459259c279181006678e620ea762b1",
+  "receipts.py": "bf655566e626627acc07f3c1740940c38a679b598c1094db733a21511cf83288",
+  "run_d71b.py": "cb72668d8e7698b8193ca9cc3d650f8bc73f6573bbb367758f1ea3d9038e26c6",
+  "report_d71b.py": "f1922260bcfee6e6b2cc2626722fec9582520676642675b1cc7e32f0dec04743"
+ },
+ "protocol_sha256": "3fd57cf960c01d11baebffe00325716ce03d2d5ff773d457264daa0835c00ee0",
+ "tests_sha256": {
+  "test_critical.py": "47e1965ea6af072c705beee23c16b7cb7ba366629db22930880141259af376fc",
+  "test_physics_b.py": "81bc1b2abdc017fc63cee20ea3b1a43fde564ce02dcc42f83aecbd03f6229db6",
+  "test_receipts.py": "92682f0d68036eb316be64a992f633de842b3f0bfd20283105227ad243cac5d0",
+  "test_runner_cache.py": "160d1270aa541c4e6aa30878c135ad7f7befeaa2073342868ae4bafe505026db"
+ },
+ "run_script_sha256": "4a35d9af1f92ef180c15c5a6c2ba42aa2f02cdad78d909812e0b68fcb140db26",
+ "D70_activation_sha256": "bd6d6bca394a3f7d91eb88e538dc3521143cf54d5dbd131b4979c319c31cddca"
+}

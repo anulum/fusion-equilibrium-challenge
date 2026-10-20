@@ -1,0 +1,112 @@
+{
+ "note": "every file in this folder except README.md, this manifest and the .license sidecars",
+ "files": [
+  {
+   "file": "PROTOCOL.md",
+   "published_sha256": "3fd57cf960c01d11baebffe00325716ce03d2d5ff773d457264daa0835c00ee0",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "3fd57cf960c01d11baebffe00325716ce03d2d5ff773d457264daa0835c00ee0",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "activation_v5.json",
+   "published_sha256": "5436f808fbf4eea8735a384cb564dc437abbca0b2d82918b1ce698f9fca5f7a8",
+   "category": "the activation itself (its SHA-256 is recorded in every run receipt)"
+  },
+  {
+   "file": "critical.py",
+   "published_sha256": "4960c3360f8b61890137be39af7ea1544c459259c279181006678e620ea762b1",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "4960c3360f8b61890137be39af7ea1544c459259c279181006678e620ea762b1",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "physics.py",
+   "published_sha256": "31094bce283aeafd5b32c27ef2cba83ebf6de7144fa23b97126b0b350b60f249",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "31094bce283aeafd5b32c27ef2cba83ebf6de7144fa23b97126b0b350b60f249",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "physics_b.py",
+   "published_sha256": "8cf25b87f0b21f7fe2bf6817b2c9dac6c854ac85535c204b0763d2f4ebc4b434",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "8cf25b87f0b21f7fe2bf6817b2c9dac6c854ac85535c204b0763d2f4ebc4b434",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "qualification_v3_receipt.json",
+   "published_sha256": "af0c91d7c20b352be44a52b5d253a6f4d7420a585f1e7b252ec321e119eced66",
+   "category": "qualification receipt written under activation v3 (amendment 2), before activation v5; reference-column coverage only"
+  },
+  {
+   "file": "receipts.py",
+   "published_sha256": "bf655566e626627acc07f3c1740940c38a679b598c1094db733a21511cf83288",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "bf655566e626627acc07f3c1740940c38a679b598c1094db733a21511cf83288",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "report_d71b.py",
+   "published_sha256": "f1922260bcfee6e6b2cc2626722fec9582520676642675b1cc7e32f0dec04743",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "f1922260bcfee6e6b2cc2626722fec9582520676642675b1cc7e32f0dec04743",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "report_v5.json",
+   "published_sha256": "368410df403a3e204eed90c77370681ed33fe779f4c9a3b776cd112c5c92b2b0",
+   "category": "result produced by the frozen run (not a frozen input)"
+  },
+  {
+   "file": "run_d71b.py",
+   "published_sha256": "caaf14a2f4b07b17435d88950ef0c6507d5cf96e82d0f7171c576a424ce3d5cb",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "cb72668d8e7698b8193ca9cc3d650f8bc73f6573bbb367758f1ea3d9038e26c6",
+   "identical_to_frozen": false
+  },
+  {
+   "file": "run_d71b.sh",
+   "published_sha256": "def85dae283502e93f13fe26890bc63a5085d1fb7ffaf7922fad1b12fcdd00fd",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "4a35d9af1f92ef180c15c5a6c2ba42aa2f02cdad78d909812e0b68fcb140db26",
+   "identical_to_frozen": false
+  },
+  {
+   "file": "supplement_critical_histograms_v1.json",
+   "published_sha256": "bcfd14f3bd663943fdff643afaf9580f9548cd7872bed11ff4444e77f2874a31",
+   "category": "post-freeze supplement, computed after the run from the frozen measures (validated by receipts.validate_run) by an unpublished helper",
+   "helper_sha256": "72f70bf775e8b0141a0ae0f4933fa238870bedf6102bdf583b237671fb5be38a",
+   "input_run_receipt_sha256": "579a02a8da967fdf0073e6ad5925b1e9aea16e751661af97667d1218295fb78e",
+   "input_report_sha256": "368410df403a3e204eed90c77370681ed33fe779f4c9a3b776cd112c5c92b2b0"
+  },
+  {
+   "file": "test_critical.py",
+   "published_sha256": "47e1965ea6af072c705beee23c16b7cb7ba366629db22930880141259af376fc",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "47e1965ea6af072c705beee23c16b7cb7ba366629db22930880141259af376fc",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "test_physics_b.py",
+   "published_sha256": "81bc1b2abdc017fc63cee20ea3b1a43fde564ce02dcc42f83aecbd03f6229db6",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "81bc1b2abdc017fc63cee20ea3b1a43fde564ce02dcc42f83aecbd03f6229db6",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "test_receipts.py",
+   "published_sha256": "92682f0d68036eb316be64a992f633de842b3f0bfd20283105227ad243cac5d0",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "92682f0d68036eb316be64a992f633de842b3f0bfd20283105227ad243cac5d0",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "test_runner_cache.py",
+   "published_sha256": "160d1270aa541c4e6aa30878c135ad7f7befeaa2073342868ae4bafe505026db",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "160d1270aa541c4e6aa30878c135ad7f7befeaa2073342868ae4bafe505026db",
+   "identical_to_frozen": true
+  }
+ ]
+}

@@ -1,0 +1,1535 @@
+{
+ "shots": 358,
+ "frames": 78875,
+ "maps": [
+  "reference",
+  "raw_64coords",
+  "kept_45coords",
+  "smoothed",
+  "axis",
+  "contour",
+  "shape",
+  "x_points",
+  "reshape",
+  "margin"
+ ],
+ "seed": 71020,
+ "draws": 20000,
+ "reference_counts_per_frame": {
+  "cp_max": {
+   "0": 0,
+   "1": 78872,
+   "2": 3,
+   "3": 0
+  },
+  "cp_saddle": {
+   "0": 1452,
+   "1": 21530,
+   "2": 55881,
+   "3": 10
+  },
+  "cp_min": {
+   "0": 78869,
+   "1": 6,
+   "2": 0,
+   "3": 0
+  }
+ },
+ "measures": {
+  "outside_fixed_excess": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.007759694577499477,
+     "frame_median": 0.0037447731443562837,
+     "frame_p95": 0.014957464682411449,
+     "frames_valid": 78875,
+     "frames_sum": 440.5040896454707
+    },
+    "kept_45coords": {
+     "shot_mean": 0.007028560507841853,
+     "frame_median": 0.0032392411084491528,
+     "frame_p95": 0.013048017191895698,
+     "frames_valid": 78875,
+     "frames_sum": 387.90692576909044
+    },
+    "smoothed": {
+     "shot_mean": 0.006989439547693154,
+     "frame_median": 0.003214994123664523,
+     "frame_p95": 0.012964682756357815,
+     "frames_valid": 78875,
+     "frames_sum": 385.3694219550676
+    },
+    "axis": {
+     "shot_mean": 0.006995004321581036,
+     "frame_median": 0.0032157037999203746,
+     "frame_p95": 0.012983492066329032,
+     "frames_valid": 78875,
+     "frames_sum": 385.6269066851733
+    },
+    "contour": {
+     "shot_mean": 0.00978969651975048,
+     "frame_median": 0.005311681178172647,
+     "frame_p95": 0.01795342181089433,
+     "frames_valid": 78875,
+     "frames_sum": 582.077885916198
+    },
+    "shape": {
+     "shot_mean": 0.011085148400962943,
+     "frame_median": 0.006520667818020954,
+     "frame_p95": 0.019939028629500245,
+     "frames_valid": 78875,
+     "frames_sum": 683.1016936858748
+    },
+    "x_points": {
+     "shot_mean": 0.011347628514444657,
+     "frame_median": 0.006765995353274859,
+     "frame_p95": 0.020310268354746627,
+     "frames_valid": 78875,
+     "frames_sum": 703.2440710565273
+    },
+    "reshape": {
+     "shot_mean": 0.012293580702570974,
+     "frame_median": 0.007580989257032858,
+     "frame_p95": 0.022065957142952685,
+     "frames_valid": 78875,
+     "frames_sum": 775.1011302166312
+    },
+    "margin": {
+     "shot_mean": 0.012293580702570974,
+     "frame_median": 0.007580989257032858,
+     "frame_p95": 0.022065957142952685,
+     "frames_valid": 78875,
+     "frames_sum": 775.1011302166312
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.005304141154877819,
+     "ci99": [
+      0.004846597102625949,
+      0.005806350618852768
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.000731134069657623,
+     "ci99": [
+      -0.0011800942173432433,
+      -0.0002017770801744023
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -3.912096014869798e-05,
+     "ci99": [
+      -5.062669946658805e-05,
+      -3.088610870601916e-05
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 5.564773887881679e-06,
+     "ci99": [
+      8.618711681097056e-07,
+      1.5048076227794964e-05
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.0027946921981694415,
+     "ci99": [
+      0.002479923136899936,
+      0.0031858401341543097
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": 0.0012954518812124652,
+     "ci99": [
+      0.0011274310113773285,
+      0.0014405927877108127
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": 0.000262480113481717,
+     "ci99": [
+      0.00023160816799104453,
+      0.00029575649391994525
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0009459521881263135,
+     "ci99": [
+      0.0008363377093892855,
+      0.0010608463584480688
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "gs_surface_excess": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.014478054831598166,
+     "frame_median": 0.009115655058341629,
+     "frame_p95": 0.029831641580838668,
+     "frames_valid": 78875,
+     "frames_sum": 948.1769685276396
+    },
+    "kept_45coords": {
+     "shot_mean": 0.013412031075003206,
+     "frame_median": 0.008287752361197893,
+     "frame_p95": 0.028159882927007003,
+     "frames_valid": 78875,
+     "frames_sum": 874.7469206966757
+    },
+    "smoothed": {
+     "shot_mean": 0.013321596899052842,
+     "frame_median": 0.008208517614654855,
+     "frame_p95": 0.02793164925996936,
+     "frames_valid": 78875,
+     "frames_sum": 867.826418019871
+    },
+    "axis": {
+     "shot_mean": 0.013941896942831359,
+     "frame_median": 0.008619869395686295,
+     "frame_p95": 0.028636189186662327,
+     "frames_valid": 78875,
+     "frames_sum": 906.7188406687831
+    },
+    "contour": {
+     "shot_mean": 0.052038929241289625,
+     "frame_median": 0.03433756680346866,
+     "frame_p95": 0.11959934161279945,
+     "frames_valid": 78875,
+     "frames_sum": 3666.623863925188
+    },
+    "shape": {
+     "shot_mean": 0.05153300537896712,
+     "frame_median": 0.034587404834311025,
+     "frame_p95": 0.11767763349956761,
+     "frames_valid": 78875,
+     "frames_sum": 3655.5769721186616
+    },
+    "x_points": {
+     "shot_mean": 0.05153139255097102,
+     "frame_median": 0.034591618486139813,
+     "frame_p95": 0.11766157519443501,
+     "frames_valid": 78875,
+     "frames_sum": 3655.342375866056
+    },
+    "reshape": {
+     "shot_mean": 0.05138308184146412,
+     "frame_median": 0.034986859108969544,
+     "frame_p95": 0.11706783471024168,
+     "frames_valid": 78875,
+     "frames_sum": 3665.1040381654234
+    },
+    "margin": {
+     "shot_mean": 0.05138308263858075,
+     "frame_median": 0.03498692680730369,
+     "frame_p95": 0.11706772046012583,
+     "frames_valid": 78875,
+     "frames_sum": 3665.1041616787143
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0380614857395279,
+     "ci99": [
+      0.034400408682032105,
+      0.04207302877583151
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0010660237565949596,
+     "ci99": [
+      -0.001623425842391909,
+      -0.0005337201898419245
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -9.043417595036171e-05,
+     "ci99": [
+      -0.00010738675450912349,
+      -7.497012357518456e-05
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0006203000437785151,
+     "ci99": [
+      0.00045354370596992346,
+      0.0008307032730532462
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.03809703229845826,
+     "ci99": [
+      0.03434946505065624,
+      0.042441037549599415
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": -0.0005059238623224943,
+     "ci99": [
+      -0.0011093322884215937,
+      -8.63956243715554e-05
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": -1.6128279960985016e-06,
+     "ci99": [
+      -1.3990186489848495e-05,
+      5.937671968449847e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": -0.0001483107095069035,
+     "ci99": [
+      -0.0006057167523611126,
+      0.00015583961210637333
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": 7.971166252607628e-10,
+     "ci99": [
+      -1.2485499925878631e-08,
+      1.4367806240142319e-08
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "gs_rms_norm_excess": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.027527905637505012,
+     "frame_median": 0.023601786326507026,
+     "frame_p95": 0.05102923494276122,
+     "frames_valid": 78875,
+     "frames_sum": 2042.08918798909
+    },
+    "kept_45coords": {
+     "shot_mean": 0.02439479159036494,
+     "frame_median": 0.020894200106630224,
+     "frame_p95": 0.04673244172365418,
+     "frames_valid": 78875,
+     "frames_sum": 1821.6031340627037
+    },
+    "smoothed": {
+     "shot_mean": 0.024285194487292584,
+     "frame_median": 0.0208281694728423,
+     "frame_p95": 0.04665029281819359,
+     "frames_valid": 78875,
+     "frames_sum": 1813.9644421704336
+    },
+    "axis": {
+     "shot_mean": 0.024870663198859295,
+     "frame_median": 0.021214698850958752,
+     "frame_p95": 0.04723591156615519,
+     "frames_valid": 78875,
+     "frames_sum": 1850.6695695811088
+    },
+    "contour": {
+     "shot_mean": 0.059835119421929046,
+     "frame_median": 0.04392574513614379,
+     "frame_p95": 0.1299142065303152,
+     "frames_valid": 78875,
+     "frames_sum": 4368.4659346089775
+    },
+    "shape": {
+     "shot_mean": 0.05933334503779252,
+     "frame_median": 0.04431495782506511,
+     "frame_p95": 0.12720360497965194,
+     "frames_valid": 78875,
+     "frames_sum": 4353.414908156468
+    },
+    "x_points": {
+     "shot_mean": 0.05932892109617793,
+     "frame_median": 0.04429762116812703,
+     "frame_p95": 0.12722062875599782,
+     "frames_valid": 78875,
+     "frames_sum": 4352.915689427778
+    },
+    "reshape": {
+     "shot_mean": 0.05939378283317122,
+     "frame_median": 0.04501126187218826,
+     "frame_p95": 0.12632873268131062,
+     "frames_valid": 78875,
+     "frames_sum": 4368.840154808453
+    },
+    "margin": {
+     "shot_mean": 0.059393778869224936,
+     "frame_median": 0.04501126187218827,
+     "frame_p95": 0.12632873268131062,
+     "frames_valid": 78875,
+     "frames_sum": 4368.839555000535
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.03510858438193235,
+     "ci99": [
+      0.031537013189976544,
+      0.03913756099540576
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0031331140471400733,
+     "ci99": [
+      -0.003900563976298996,
+      -0.002501243346857516
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -0.00010959710307235392,
+     "ci99": [
+      -0.0001371082835881104,
+      -8.721519677054922e-05
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.000585468711566709,
+     "ci99": [
+      0.00036884549446635433,
+      0.0008195374453098694
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.03496445622306974,
+     "ci99": [
+      0.0311500136911418,
+      0.03937949402166577
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": -0.0005017743841365223,
+     "ci99": [
+      -0.0009921267860996195,
+      -0.00015632710767201014
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": -4.4239416145851554e-06,
+     "ci99": [
+      -1.4098529202501337e-05,
+      6.409865119831244e-06
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 6.486173699329034e-05,
+     "ci99": [
+      -0.00018706958728044375,
+      0.00026970488743787054
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": -3.963946282064119e-09,
+     "ci99": [
+      -4.7287583772229664e-08,
+      3.9079680766695056e-08
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "max_extra": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.00020363865060568631,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 10.0
+    },
+    "kept_45coords": {
+     "shot_mean": 5.484884976823722e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 4.0
+    },
+    "smoothed": {
+     "shot_mean": 5.484884976823722e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 4.0
+    },
+    "axis": {
+     "shot_mean": 5.484884976823722e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 4.0
+    },
+    "contour": {
+     "shot_mean": 5.484884976823722e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 4.0
+    },
+    "shape": {
+     "shot_mean": 5.484884976823722e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 4.0
+    },
+    "x_points": {
+     "shot_mean": 6.527159637042183e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 5.0
+    },
+    "reshape": {
+     "shot_mean": 6.527159637042183e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 5.0
+    },
+    "margin": {
+     "shot_mean": 6.527159637042183e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 5.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 1.0422746602184608e-05,
+     "ci99": [
+      0.0,
+      4.169098640873843e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -0.0001487898008374491,
+     "ci99": [
+      -0.0005155445586083053,
+      3.971511027562287e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": 1.0422746602184608e-05,
+     "ci99": [
+      0.0,
+      4.169098640873843e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "max_missing": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "kept_45coords": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "smoothed": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "axis": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "contour": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "shape": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "x_points": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "reshape": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "margin": {
+     "shot_mean": 3.774389404374675e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "saddle_extra": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.007234564327040192,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 476.0
+    },
+    "kept_45coords": {
+     "shot_mean": 0.007272465176565743,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 466.0
+    },
+    "smoothed": {
+     "shot_mean": 0.00735531306288721,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 473.0
+    },
+    "axis": {
+     "shot_mean": 0.00735531306288721,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 473.0
+    },
+    "contour": {
+     "shot_mean": 0.008375011069448763,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 517.0
+    },
+    "shape": {
+     "shot_mean": 0.00853213743489368,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 520.0
+    },
+    "x_points": {
+     "shot_mean": 0.0069380286133346215,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 424.0
+    },
+    "reshape": {
+     "shot_mean": 0.0072152887839535785,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 437.0
+    },
+    "margin": {
+     "shot_mean": 0.007181090557727894,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 435.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": -0.0001742225051593168,
+     "ci99": [
+      -0.0024824147750417747,
+      0.0022515523718441
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 3.7900849525550024e-05,
+     "ci99": [
+      -0.000966301249677447,
+      0.0008777107199296658
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 8.284788632146793e-05,
+     "ci99": [
+      -0.00011764130657754787,
+      0.0003121057679882304
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.0010196980065615524,
+     "ci99": [
+      0.00020019813621550327,
+      0.0021411515872204394
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": 0.00015712636544491768,
+     "ci99": [
+      -6.716131657337258e-05,
+      0.0004580782215300631
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": -0.001594108821559057,
+     "ci99": [
+      -0.004594437547992786,
+      0.0010337282863887784
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 0.00027726017061895563,
+     "ci99": [
+      -5.547342266090598e-05,
+      0.0007952128721498555
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": -3.419822622568542e-05,
+     "ci99": [
+      -0.0001627906010133983,
+      7.524560597186295e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "saddle_missing": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.008524057378020566,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 359.0
+    },
+    "kept_45coords": {
+     "shot_mean": 0.009181944356197963,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 407.0
+    },
+    "smoothed": {
+     "shot_mean": 0.009159981706220992,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 404.0
+    },
+    "axis": {
+     "shot_mean": 0.009159981706220992,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 404.0
+    },
+    "contour": {
+     "shot_mean": 0.007457398652652065,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 358.0
+    },
+    "shape": {
+     "shot_mean": 0.007397832885790727,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 359.0
+    },
+    "x_points": {
+     "shot_mean": 0.008620368443403846,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 412.0
+    },
+    "reshape": {
+     "shot_mean": 0.008624394546416538,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 415.0
+    },
+    "margin": {
+     "shot_mean": 0.00859347071064225,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 412.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": -0.0005665109955787423,
+     "ci99": [
+      -0.00376745653445636,
+      0.0010905662290346858
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.0006578869781773962,
+     "ci99": [
+      -6.371443157504986e-05,
+      0.0017248929607633435
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": -2.1962649976969525e-05,
+     "ci99": [
+      -0.00017363262282707142,
+      0.00012841131696162154
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": -0.001702583053568927,
+     "ci99": [
+      -0.004800846046086234,
+      -0.0003124931295847545
+     ],
+     "verdict": "better",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": -5.9565766861337394e-05,
+     "ci99": [
+      -0.0005026684646205558,
+      0.00017089011380529357
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": 0.0012225355576131187,
+     "ci99": [
+      0.0003966423636705963,
+      0.00245184113813078
+     ],
+     "verdict": "worse",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 4.026103012691357e-06,
+     "ci99": [
+      -0.0003965448327361393,
+      0.0003913466500189242
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": -3.092383577428792e-05,
+     "ci99": [
+      -8.369417163427316e-05,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "min_extra": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.0001329759902427815,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 11.0
+    },
+    "kept_45coords": {
+     "shot_mean": 5.27906158303093e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "smoothed": {
+     "shot_mean": 5.27906158303093e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "axis": {
+     "shot_mean": 5.27906158303093e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "contour": {
+     "shot_mean": 5.27906158303093e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "shape": {
+     "shot_mean": 5.27906158303093e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 3.0
+    },
+    "x_points": {
+     "shot_mean": 7.225609380512097e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 5.0
+    },
+    "reshape": {
+     "shot_mean": 7.225609380512097e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 5.0
+    },
+    "margin": {
+     "shot_mean": 7.225609380512097e-05,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 5.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 1.946547797481167e-05,
+     "ci99": [
+      0.0,
+      7.786191189924668e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": -8.018537441247222e-05,
+     "ci99": [
+      -0.00024057284011176663,
+      1.9810610563017552e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": 1.946547797481167e-05,
+     "ci99": [
+      0.0,
+      7.786191189924668e-05
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  },
+  "gs_degenerate": {
+   "per_map": {
+    "reference": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "raw_64coords": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "kept_45coords": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "smoothed": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "axis": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "contour": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "shape": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "x_points": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "reshape": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    },
+    "margin": {
+     "shot_mean": 0.0,
+     "frame_median": 0.0,
+     "frame_p95": 0.0,
+     "frames_valid": 78875,
+     "frames_sum": 0.0
+    }
+   },
+   "changes": {
+    "smoothed->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "raw_64coords->kept_45coords": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "kept_45coords->smoothed": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "smoothed->axis": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "axis->contour": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "contour->shape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "shape->x_points": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "x_points->reshape": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    },
+    "reshape->margin": {
+     "mean_change": 0.0,
+     "ci99": [
+      0.0,
+      0.0
+     ],
+     "verdict": "inconclusive",
+     "shots": 358,
+     "matched_frames": 78875
+    }
+   }
+  }
+ },
+ "rule": "Lower is closer to the reference (gs_degenerate: fewer degenerate frames). 'worse' if the 99 % paired whole-shot interval lies above zero, 'better' if below, else inconclusive."
+}

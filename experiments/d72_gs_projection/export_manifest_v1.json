@@ -1,0 +1,71 @@
+{
+ "note": "every file in this folder except README.md, this manifest and the .license sidecars",
+ "files": [
+  {
+   "file": "PROTOCOL.md",
+   "published_sha256": "9770ff36db5f0a0b90bdd4306e5535ebced743d1cb2b6b328840c57c102e3893",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "9770ff36db5f0a0b90bdd4306e5535ebced743d1cb2b6b328840c57c102e3893",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "activation_v1.json",
+   "published_sha256": "5b156162e3add75896f89e2f44e9b3f98b2151fdd2f61f7e8fe33024b5c8eb0c",
+   "category": "the activation itself (its SHA-256 is recorded in every run receipt)"
+  },
+  {
+   "file": "d39_common.py",
+   "published_sha256": "41c58cc559b636cea58d295f6fbefe7791675ff5fb00db275da4d14f7c55b817",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "0f2e7dbe2d2237a3fcc7d7407de7e598c823fa61b888cb0bb6a5bb82bfc118f6",
+   "identical_to_frozen": false
+  },
+  {
+   "file": "gate_d72.py",
+   "published_sha256": "726d348ff9675817868663b10d9e54948b2cdf6dc74445175e7af76192a9f2c4",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "726d348ff9675817868663b10d9e54948b2cdf6dc74445175e7af76192a9f2c4",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "gate_v1.json",
+   "published_sha256": "41381c826e894168c61a23f333f9ce67af7ef89ce68ed7f03399ec359835f985",
+   "category": "result produced by the frozen run (not a frozen input)"
+  },
+  {
+   "file": "gs_project.py",
+   "published_sha256": "3ad3e5c30b0bd2b0db673450d847191ab8e81f355c77e4475ce4c2f5ba964b74",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "3ad3e5c30b0bd2b0db673450d847191ab8e81f355c77e4475ce4c2f5ba964b74",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "physics.py",
+   "published_sha256": "31094bce283aeafd5b32c27ef2cba83ebf6de7144fa23b97126b0b350b60f249",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "31094bce283aeafd5b32c27ef2cba83ebf6de7144fa23b97126b0b350b60f249",
+   "identical_to_frozen": true
+  },
+  {
+   "file": "run_d72.py",
+   "published_sha256": "237e80b4edac3350ab0ad34f565171c71d3d28b4cf05df7a725fe66cd871b08f",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "09baeac74a0ca956e40b406432c84e774d387438face044842dd9b94cbae613b",
+   "identical_to_frozen": false
+  },
+  {
+   "file": "run_d72.sh",
+   "published_sha256": "47c7f97403f3fbc52c9212a2b78bab34e95938980a0bc2a5925a1e680a109262",
+   "category": "archival run script not bound by the activation; published copy has laboratory-path substitutions",
+   "original_archival_sha256": "0681111a73d5e838a9cb79890457f7c8df78008b6df0d19c80ae961f771083b0",
+   "identical_to_original": false
+  },
+  {
+   "file": "test_gs_project.py",
+   "published_sha256": "c904f5bdbbd46766a29a949a9dca62940d0b74fa3d72ccff61fa3bf342d6470a",
+   "category": "frozen source or test (bound by the activation)",
+   "frozen_sha256": "c904f5bdbbd46766a29a949a9dca62940d0b74fa3d72ccff61fa3bf342d6470a",
+   "identical_to_frozen": true
+  }
+ ]
+}

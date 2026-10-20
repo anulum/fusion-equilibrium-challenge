@@ -64,8 +64,10 @@ shots from fitting, but the shots were used before in model comparisons ([Study 
 3. **A physics reconstruction without MAST labels reached 0.7145 on MAST,** and label-free repairs confirmed on a
    synthetic testbed did not transfer to the real machine ([Study §5.9](STUDY.md#59-what-the-mast-result-says-a-limit-of-our-approach-not-of-the-problem)).
 4. **A higher score does not certify force balance.** The finisher adds 1981 µS on the evaluated development
-   cohort while the tested polynomial GS-form residual and poloidal-field error increase. These are numerical
-   diagnostics, not percentages of nonequilibrium current; the original topology counts are withdrawn
+      cohort while the tested GS-form residuals and poloidal-field error increase; the corrected D71b measures
+   confirm the direction on a fixed exterior region and with a flux-surface test that assumes no profile shape.
+   A Grad–Shafranov interior lowered the score by 157 µS. These are numerical diagnostics, not percentages of
+   nonequilibrium current; the original topology counts are withdrawn
    ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
 
 ## Read

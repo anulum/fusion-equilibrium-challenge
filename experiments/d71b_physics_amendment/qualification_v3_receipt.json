@@ -1,0 +1,139 @@
+{
+ "status": "qualification",
+ "shots": [
+  {
+   "stem": "d3d_shot_0093deb434",
+   "frames": 213,
+   "finite_by_measure_reference": {
+    "outside_fixed_over_ref": 213,
+    "cp_max": 213,
+    "cp_min": 213,
+    "cp_saddle": 213,
+    "gs_surface": 213,
+    "gs_sse": 213,
+    "gs_tss": 213,
+    "gs_pixels": 213,
+    "gs_rank": 213,
+    "gs_rms_residual": 213,
+    "gs_rms_source": 213,
+    "gs_degenerate": 213,
+    "outside_pixels": 213
+   },
+   "finite_by_measure_all_maps": {
+    "outside_fixed_over_ref": 2130,
+    "cp_max": 2130,
+    "cp_min": 2130,
+    "cp_saddle": 2130,
+    "gs_surface": 2130,
+    "gs_sse": 2130,
+    "gs_tss": 2130,
+    "gs_pixels": 2130,
+    "gs_rank": 2130,
+    "gs_rms_residual": 2130,
+    "gs_rms_source": 2130,
+    "gs_degenerate": 2130,
+    "outside_pixels": 2130
+   },
+   "reference_degenerate_frames": 0,
+   "reference_cp_max_values": [
+    1
+   ],
+   "reference_cp_saddle_values": [
+    1,
+    2
+   ],
+   "outside_pixels_min": 442
+  },
+  {
+   "stem": "d3d_shot_862555f165",
+   "frames": 293,
+   "finite_by_measure_reference": {
+    "outside_fixed_over_ref": 293,
+    "cp_max": 293,
+    "cp_min": 293,
+    "cp_saddle": 293,
+    "gs_surface": 293,
+    "gs_sse": 293,
+    "gs_tss": 293,
+    "gs_pixels": 293,
+    "gs_rank": 293,
+    "gs_rms_residual": 293,
+    "gs_rms_source": 293,
+    "gs_degenerate": 293,
+    "outside_pixels": 293
+   },
+   "finite_by_measure_all_maps": {
+    "outside_fixed_over_ref": 2930,
+    "cp_max": 2930,
+    "cp_min": 2930,
+    "cp_saddle": 2930,
+    "gs_surface": 2930,
+    "gs_sse": 2930,
+    "gs_tss": 2930,
+    "gs_pixels": 2930,
+    "gs_rank": 2930,
+    "gs_rms_residual": 2930,
+    "gs_rms_source": 2930,
+    "gs_degenerate": 2930,
+    "outside_pixels": 2930
+   },
+   "reference_degenerate_frames": 0,
+   "reference_cp_max_values": [
+    1
+   ],
+   "reference_cp_saddle_values": [
+    1,
+    2
+   ],
+   "outside_pixels_min": 490
+  },
+  {
+   "stem": "d3d_shot_fedaca60be",
+   "frames": 217,
+   "finite_by_measure_reference": {
+    "outside_fixed_over_ref": 217,
+    "cp_max": 217,
+    "cp_min": 217,
+    "cp_saddle": 217,
+    "gs_surface": 217,
+    "gs_sse": 217,
+    "gs_tss": 217,
+    "gs_pixels": 217,
+    "gs_rank": 217,
+    "gs_rms_residual": 217,
+    "gs_rms_source": 217,
+    "gs_degenerate": 217,
+    "outside_pixels": 217
+   },
+   "finite_by_measure_all_maps": {
+    "outside_fixed_over_ref": 2170,
+    "cp_max": 2170,
+    "cp_min": 2170,
+    "cp_saddle": 2170,
+    "gs_surface": 2170,
+    "gs_sse": 2170,
+    "gs_tss": 2170,
+    "gs_pixels": 2170,
+    "gs_rank": 2170,
+    "gs_rms_residual": 2170,
+    "gs_rms_source": 2170,
+    "gs_degenerate": 2170,
+    "outside_pixels": 2170
+   },
+   "reference_degenerate_frames": 0,
+   "reference_cp_max_values": [
+    1
+   ],
+   "reference_cp_saddle_values": [
+    2
+   ],
+   "outside_pixels_min": 465
+  }
+ ],
+ "note": "engineering coverage of the reference column only; no stage comparison computed",
+ "tests": {
+  "critical": "FAILURES: []",
+  "physics_b": "FAILURES: []"
+ },
+ "activation_v3_sha256": "44d57de7219d244db4837f7a9af3cb49a0d20fb15230aa280e477e9fd2497e91"
+}

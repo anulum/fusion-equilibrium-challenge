@@ -1,0 +1,14 @@
+{
+ "name": "D72_gs_projection",
+ "utc": "2026-10-19T22:45:16.787903+00:00",
+ "D72_sources": {
+  "gs_project.py": "3ad3e5c30b0bd2b0db673450d847191ab8e81f355c77e4475ce4c2f5ba964b74",
+  "physics.py": "31094bce283aeafd5b32c27ef2cba83ebf6de7144fa23b97126b0b350b60f249",
+  "run_d72.py": "09baeac74a0ca956e40b406432c84e774d387438face044842dd9b94cbae613b",
+  "gate_d72.py": "726d348ff9675817868663b10d9e54948b2cdf6dc74445175e7af76192a9f2c4",
+  "d39_common.py": "0f2e7dbe2d2237a3fcc7d7407de7e598c823fa61b888cb0bb6a5bb82bfc118f6"
+ },
+ "protocol_sha256": "9770ff36db5f0a0b90bdd4306e5535ebced743d1cb2b6b328840c57c102e3893",
+ "test_sha256": "c904f5bdbbd46766a29a949a9dca62940d0b74fa3d72ccff61fa3bf342d6470a",
+ "D70_activation_sha256": "bd6d6bca394a3f7d91eb88e538dc3521143cf54d5dbd131b4979c319c31cddca"
+}
