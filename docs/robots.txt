@@ -36,5 +36,65 @@ Disallow: /
 User-agent: Amazonbot
 Disallow: /
 
+User-agent: cohere-ai
+Disallow: /
+
+User-agent: cohere-training-data-crawler
+Disallow: /
+
+User-agent: Diffbot
+Disallow: /
+
+User-agent: AI2Bot
+Disallow: /
+
+User-agent: Ai2Bot-Dolma
+Disallow: /
+
+User-agent: omgili
+Disallow: /
+
+User-agent: omgilibot
+Disallow: /
+
+User-agent: Timpibot
+Disallow: /
+
+User-agent: ImagesiftBot
+Disallow: /
+
+User-agent: img2dataset
+Disallow: /
+
+User-agent: laion-huggingface-processor
+Disallow: /
+
+User-agent: LAIONDownloader
+Disallow: /
+
+User-agent: PanguBot
+Disallow: /
+
+User-agent: Kangaroo Bot
+Disallow: /
+
+User-agent: Webzio-Extended
+Disallow: /
+
+User-agent: MistralAI-Training
+Disallow: /
+
+User-agent: FacebookBot
+Disallow: /
+
+User-agent: YandexAdditional
+Disallow: /
+
+User-agent: YandexAdditionalBot
+Disallow: /
+
+User-agent: Google-CloudVertexBot
+Disallow: /
+
 User-agent: *
 Allow: /
