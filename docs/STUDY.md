@@ -424,8 +424,8 @@ Consistency rose from 0.98668 to 0.98743 and the boundary distance fell from 0.0
 networks that read the fast signals beat 195 that do not, on every term. It was deployed; §4.17 follows the
 rest of the recipe.
 
-The earlier conclusion that the heads had reached an information limit was true for the table and false for the
-data. A claim of that kind has to name the inputs it is conditional on.
+The earlier tests had found a plateau with one feature table and the tested predictors. Changing the
+representation improved the score; those tests had not established an irreducible limit, even for the old table.
 
 ### 4.17 Which networks to average, and the raw signal
 **The whole recipe is not the best ensemble.** The remaining members of the recipe were fitted with the 582
@@ -1033,7 +1033,7 @@ the Development score, with the submission number.
 |---|---|---|---|
 | Out-of-fold evaluation | — | — | method |
 | X-point head / map-aware corrector | worse than the map | — | no |
-| Whole-shot context / physics features | no information | — | no |
+| Whole-shot context / physics features | no reliable gain with the tested predictors | — | no |
 | More data (v27) | −1.9 × 10⁻⁵ (n.s.) | — | as ensemble member |
 | Gradient clipping (amendment 2) | fits recovered 8/8 | — | yes, for refits |
 | Ensemble v25 + v28 | +1.9 × 10⁻⁵ (v25 + v27, holdout) | +2.8 × 10⁻⁵ | yes (#952730) |
