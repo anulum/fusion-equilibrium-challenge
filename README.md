@@ -154,7 +154,7 @@ their evaluation shots from fitting, but repeated use of those cohorts still add
 rule closes that fixed experiment; it does not establish that a wider method cannot work. Two DIII-D choices
 were made on the public score instead, and the study names both (§7): the shares of the scalar networks,
 which failed their rule and were put to the public test once under a rule written before the submission, and the
-32-network set. The ledger in `docs/` lists every experiment, including the many that failed.
+32-network set. The ledger in `docs/` records the published experiments, including the many that failed.
 
 ![Experiments under frozen rules](docs/figures/fig2_frozen_experiments.png)
 

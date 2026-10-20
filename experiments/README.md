@@ -15,16 +15,23 @@ protocol checksum, the number and the decision. [docs/STUDY.md](../docs/STUDY.md
   address of the laboratory's machines.
 - **Edited:** these are copies made for publication. The names of the agents were replaced by `first_agent` and
   `second_agent`, the name of the person who directs the work by "entrant", and local paths by placeholders
-  (`$FEC_RUNS`, `$FEC_DATA`, `$FEC_WORK`, `$LAB`, `$SAS`, `$HOME`). The empty-export correction below
-  is the other publication edit.
+  (`$FEC_RUNS`, `$FEC_DATA`, `$FEC_WORK`, `$LAB`, `$SAS`, `$HOME`). The empty-export correction and the
+  reviewed D71 additions described below are explicit exceptions to this historical copying policy.
 
-Two consequences of the editing should be stated plainly. The checksums quoted in the ledger and inside the
+The reviewed D71 additions include a compressed table of per-shot means (about 313 kB), a compressed dependency
+inventory (about 170 kB), the frozen native stage sources and a new table-verification script. They are exceptions
+to the automatic 64 kB result-file limit and the omission of per-shot dumps: the table contains aggregate metrics,
+not predicted fields or frame archives. The D71 README states the original and published source hashes and the
+remaining private dependencies. Its table verification runs from public files alone.
+
+Two consequences of the historical editing should be stated plainly. The checksums quoted in the ledger and inside the
 protocols are those of the unedited originals, so a file here whose text was touched by a replacement will not
 reproduce its checksum; the originals are kept by the entrant and are available to the organisers on request.
 One empty historical export, `D25_member_ablation_2026-10-08T154444Z/mast_v12/smoke_result.json`, is serialised as
 JSON `null`: no result was recoverable from that zero-byte file. It is not evidence of a completed smoke run.
-And the scripts are a record of what was run, on which inputs and in which order, not a second reproduction
-package: they expect the laboratory's directory layout. The supported way to reproduce the entry is the package
+The historical experiment runners record what was run, on which inputs and in which order; they expect the
+laboratory's directory layout. The D71 table check is a separately documented public verification tool. The
+supported way to reproduce the entry's inference and training is the package
 at the top of this repository.
 
 ## Naming
