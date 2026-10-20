@@ -21,7 +21,7 @@ abstract: >-
   competition): reconstruction of tokamak flux maps, q95 and normalised beta from coil currents and
   Thomson-scattering profiles without magnetic measurements. An ensemble of multilayer perceptrons with
   tree-based and specialist heads and a map-finishing step for DIII-D, and an equal-temperature free-boundary
-  reconstruction for MAST without any MAST training data. Developed with Arcane Sapience, the entrant's
+  reconstruction for MAST without MAST equilibrium targets. Developed with Arcane Sapience, the entrant's
   research system built on large language models.
 keywords:
   - tokamak

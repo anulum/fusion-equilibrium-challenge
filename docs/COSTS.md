@@ -41,7 +41,7 @@ only through the laboratory's running cost.
 |---|---|
 | Calendar days | 37 |
 | Development-phase submissions used | 53 of 100 |
-| Experiments and measurements recorded in the ledger | 128 |
+| Numbered experiment and measurement records in the public ledger (20 October 2026) | 136 |
 
 ## Compute for the deployed model
 
@@ -57,7 +57,8 @@ gives the detail and the caveats.
 | Tree heads | 4 | 0.53 h | NVIDIA Tesla T4, Kaggle free tier |
 
 With the full recipe, one network of each family fits in 4.7 to 5.4 minutes on a single NVIDIA GTX 1060 (6 GiB).
-All 85 networks would therefore take about seven hours on that one card.
+Extrapolating these measurements gives about seven hours of network fitting for all 85 networks on that card;
+the full ensemble was not retrained there, and this excludes preparation, trees and geometry readouts.
 
 Inference for one public fold: about 50 CPU-hours for DIII-D (874 shots) and about 15 CPU-hours for MAST
 (1 206 shots), measured.

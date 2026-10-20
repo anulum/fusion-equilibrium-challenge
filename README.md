@@ -40,6 +40,10 @@ score was 0.9970.
 ![Public DIII-D score step by step](docs/figures/fig1_score_progression.png) The Final phase is scored on
 blind folds; its result is added here when it is published.
 
+Final submission **1003274** finished on 19 October 2026; its scores remain hidden until the Final closes.
+It uses source tag `final-submission-2026-10-19` (`19d2d341…`) and weights revision `398d05cc…`.
+The Development scores above are not Final results.
+
 ## What the model is
 
 - **DIII-D.** 69 multilayer perceptrons answer the coordinates of the flux map in a principal-direction basis,
@@ -75,7 +79,8 @@ export OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 JAX_PLATFORMS=cpu JAX_ENABLE_X64
 Each run writes the archive in the challenge format and a receipt with coverage, source and weight hashes, wall
 time and the archive's SHA-256.
 
-What has been checked:
+Whole-fold and worker-count comparisons below used the two-Xeon build host. The separate hosted-CI row
+reports the cross-CPU check. What has been checked:
 
 | Check | Outcome |
 |---|---|
@@ -83,7 +88,7 @@ What has been checked:
 | Whole public MAST fold, 1 206 shots, 69 075 frames | every map and scalar bit-identical to the submitted archive |
 | Fresh environment from `requirements-inference-cpu.txt`, new directories | bit-identical on the shots run |
 | 22 worker processes against one | bit-identical |
-| GitHub-hosted runner (another CPU), first public DIII-D shot, on every push | q95 and βN bit-identical; flux map within 7.5 × 10⁻⁹ (the last bits of float32) |
+| GitHub-hosted runner (another CPU), first public DIII-D shot | observed q95 and βN bit-identical; maximum flux difference 7.5 × 10⁻⁹; CI checks numerical tolerances |
 | Google Colab, the quickstart notebook, 19 October 2026 | runs end to end |
 
 Measured on a host with two Intel Xeon E5-2640 (24 threads) and 8 workers: 6 h 14 min for the DIII-D fold and
@@ -103,9 +108,11 @@ therefore depends on the fold it is supplied with.
 ```
 
 `train.py` goes from the raw shot files to a complete model directory with its own manifest and a runnable copy
-of `infer.py`. It loads no existing weight. [TRAINING.md](TRAINING.md) describes the recipe and what the limited
+of `infer.py`. It fits DIII-D from scratch and retains the frozen MAST solver source. [TRAINING.md](TRAINING.md) describes the recipe and what the limited
 mode reduces; [COMPUTE.md](COMPUTE.md) declares the compute. One network of each of the four families was
 fitted with the full recipe on a single NVIDIA GTX 1060 (6 GiB) in 4.7 to 5.4 minutes.
+The complete production retrain and the accuracy of its resulting ensemble have not been qualified; the
+completed checks cover the reduced integration chain and one full-recipe fit per family.
 
 ## The challenge's own resources
 
@@ -140,10 +147,12 @@ The entry was developed by Arcane Sapience: a control-bound system of agents bui
 that write code, run experiments, analyse results and review each other's work under the entrant's governance.
 The entrant sets direction, decides, and takes responsibility for every submission.
 
-Every experiment has a protocol with a written decision rule, frozen with checksums before its first fit. Gains
-are measured on whole shots held out of every fit they judge, with a paired whole-shot bootstrap; a cohort used
-before is marked as such. A failed rule closes the experiment, and thresholds are not moved after a result. Two
-choices were made on the public score instead, and the study names both (§7): the shares of the scalar networks,
+Later candidate experiments use protocols with written decision rules frozen before fitting or scoring, and
+paired whole-shot comparisons. Early correction screens were found to be in-sample in the 28 September audit;
+they are historical diagnostics, not evidence of generalisation (Study §4.5). The later evaluation copies exclude
+their evaluation shots from fitting, but repeated use of those cohorts still adds selection uncertainty. A failed
+rule closes that fixed experiment; it does not establish that a wider method cannot work. Two DIII-D choices
+were made on the public score instead, and the study names both (§7): the shares of the scalar networks,
 which failed their rule and were put to the public test once under a rule written before the submission, and the
 32-network set. The ledger in `docs/` lists every experiment, including the many that failed.
 
@@ -153,8 +162,9 @@ which failed their rule and were put to the public test once under a rule writte
 
 Source code: AGPL-3.0-or-later ([LICENSE](LICENSE)); a commercial licence is available from the entrant. The
 SPDX identifier in each file governs. The organisers' scoring functions vendored under `source/` keep their MIT
-notice; see [NOTICE.md](NOTICE.md). The challenge data are the organisers', released under CC BY 4.0, and are
-not redistributed here.
+notice; see [NOTICE.md](NOTICE.md). The full challenge datasets are not included. The four EFIT reference frames
+and contours used by the reconstruction figure are small CC BY 4.0 excerpts; a single-shot prediction is also
+included as the CI reference. Their provenance and attribution are described in the notice.
 
 To cite this entry, use the DOI [10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092) (all versions) or see [CITATION.cff](CITATION.cff). The code is also archived by
 [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/anulum/fusion-equilibrium-challenge)

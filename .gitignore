@@ -19,6 +19,7 @@
 !/WEIGHTS.sha256
 !/.github/
 !/.zenodo.json
+!/.zenodo.json.license
 !/tools/
 !/notebooks/
 !/SECURITY.md

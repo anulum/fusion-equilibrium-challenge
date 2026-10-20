@@ -1,6 +1,13 @@
-# Python 3.12.3; CUDA port specification, not yet executed as a whole recipe.
-# Historical CUDA field fits used JAX 0.8.2. Static production fits used
-# jaxlib 0.8.2+rocm7.2.4; the corresponding CUDA training needs qualification.
+# SPDX-License-Identifier: AGPL-3.0-or-later
+# Commercial license available
+# © Concepts 1996–2026 Miroslav Šotek. All rights reserved.
+# © Code 2020–2026 Miroslav Šotek. All rights reserved.
+# ORCID: 0009-0009-3560-0851
+# Contact: www.anulum.li | protoscience@anulum.li
+# Fusion Equilibrium Challenge — CUDA training environment
+# Python 3.12.3; one full-recipe fit per family was qualified on CUDA.
+# Historical CUDA field fits used JAX 0.8.2; static production used ROCm.
+# Full-production retraining and its ensemble accuracy remain unqualified.
 numpy==2.5.3
 scipy==1.18.1
 pyarrow==25.0.1

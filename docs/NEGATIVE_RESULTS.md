@@ -19,14 +19,15 @@ information is absent from the data.
 | Boosted trees fitted on the networks' out-of-fold errors (all 5936 shots) | proxy −2 × 10⁻⁶ (interval −5.5 to +1.3 × 10⁻⁶) |
 | A shot's error predicted from its five most similar training shots | correlation of offsets −0.04 to −0.20 |
 
-The error that remains is not predictable from the inputs by these means: three directions hold 83 % of what is
-left of the map, and 38 % of it is an offset per shot ([§4.25](STUDY.md#425-what-is-left-of-the-map)).
+These tested correctors did not extract a reliable improvement from the evaluated inputs. Three directions hold
+83 % of the remaining map error, and 38 % is an offset per shot; that structure does not identify how much is
+irreducible ([§4.25](STUDY.md#425-what-is-left-of-the-map)).
 
 ## More information from the inputs
 
 | What | Result |
 |---|---|
-| Whole-shot context; 27 physics features (profiles, pressure, pedestal, current diffusion) | no information beyond the per-frame model |
+| Whole-shot context; 27 physics features (profiles, pressure, pedestal, current diffusion) | no reliable gain with the tested representation and models |
 | History of the discharge (gate before building a sequence model) | residual R² worse on all nine targets |
 | A network attending over all frames of a shot, against an identical network without context | −0.7 × 10⁻⁵ (95 % interval −6.3 to +6.2 × 10⁻⁵) |
 | Slow memory of the discharge (21 measures over 0.3 to 10 s) | leading direction +2.6 % (P 0.73) |

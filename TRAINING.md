@@ -1,6 +1,6 @@
 # Training DIII-D from raw data for #986068
 
-Install `requirements-training-cpu.txt` in a fresh environment. For NVIDIA
+Install `requirements-training-cpu.txt` in a fresh `.venv` environment. For NVIDIA
 training, use the separate `requirements-training-cuda.txt` environment instead.
 Keep temporary files and package caches on a disk with enough space.
 
@@ -8,7 +8,7 @@ Run the complete small integration test:
 
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 JAX_PLATFORMS=cpu JAX_ENABLE_X64=1 \
-python train.py --raw-dir /data/diii_d_train --out /work/smoke --limit 4
+.venv/bin/python train.py --raw-dir /data/diii_d_train --out /work/smoke --limit 4
 ```
 
 It uses four fitting shots, two calibration shots and two excluded validation
@@ -24,7 +24,7 @@ For the full production recipe, omit `--limit`:
 ```bash
 OPENBLAS_NUM_THREADS=1 OMP_NUM_THREADS=1 JAX_PLATFORMS=cuda,cpu \
 JAX_ENABLE_X64=1 XLA_PYTHON_CLIENT_PREALLOCATE=false \
-python train.py --raw-dir /data/diii_d_train --out /work/full --platform cuda
+.venv/bin/python train.py --raw-dir /data/diii_d_train --out /work/full --platform cuda
 ```
 
 ROCm uses its separately installed JAX environment and `--platform rocm`.

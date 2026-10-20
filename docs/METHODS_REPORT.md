@@ -1,8 +1,8 @@
 <!-- SPDX-License-Identifier: AGPL-3.0-or-later -->
 # Methods report: SCPN Reactor Systems entry, Fusion Equilibrium Challenge
 
-*Version of 2026-10-14, for the entry displayed as Codabench submission 986068 (Development phase); governance
-wording corrected 2026-10-19.*
+*Version of 2026-10-14, for the entry displayed as Codabench submission 986068 (Development phase); reproduction and governance
+wording corrected 2026-10-20.*
 
 **Entrant:** Anulum (Miroslav Šotek), protoscience@anulum.li.
 **Code:** https://github.com/anulum/fusion-equilibrium-challenge; the commit of each Final submission is named
@@ -19,11 +19,12 @@ The entrant sets direction, decides, and takes responsibility for every submissi
 
 The governance is concrete:
 
-- every experiment has a protocol with a written decision rule, frozen with checksums before the first fit;
-- gains are measured on whole shots held out of every fit they judge, with a paired whole-shot bootstrap; a cohort
-  used before is marked as such;
-- a failed rule closes the experiment; thresholds are not changed after a result. Two choices were made on the
-  public score instead, both named in the study (§4.17, §4.23, §7);
+- later candidate experiments have a written decision rule frozen before fitting or scoring;
+- the 28 September audit identified early in-sample correction screens (Study §4.5). Later evaluation copies
+  exclude the scored shots from fitting and use paired whole-shot comparisons, but reused cohorts retain
+  adaptive-selection uncertainty;
+- a failed rule closes that fixed experiment, rather than a whole method class. Two DIII-D choices were made on
+  the public score instead, both named in the study (§4.17, §4.23, §7);
 - every submitted archive is rebuilt from recorded sources and weights, with SHA-256 checks at each hand-off.
 
 ## 2. DIII-D (Challenge 1)
@@ -101,13 +102,18 @@ scikit-learn, JAX and XGBoost at the versions pinned in the package.
 
 ## 5. Reproduction
 
-- **Inference.** One command per machine answers any directory of shot files from its inputs alone. Run on the
-  public folds, it reproduces the submitted archives exactly: 874 DIII-D shots (193 359 frames) and 1 206 MAST
-  shots (69 075 frames), every map and scalar bit-identical. Measured on a 24-thread CPU host with 8 worker
+- **Inference.** One command per machine answers any directory of shot files from its inputs alone. On the
+  two-Xeon build host, both public folds reproduced every map and scalar bit-identically: 874 DIII-D shots
+  (193 359 frames) and 1 206 MAST shots (69 075 frames). Another CPU in hosted CI reproduced one DIII-D shot with
+  identical scalars and a maximum flux difference of 7.5 × 10⁻⁹; cross-hardware bit identity is not assumed.
+  Measured on the 24-thread build host with 8 worker
   processes: 6 h 14 min for DIII-D and 1 h 52 min for MAST.
-- **Training.** `train.py` rebuilds the model from the raw training files and loads no existing weight. One
+- **Training.** `train.py` implements the DIII-D rebuild from raw training files without loading existing DIII-D
+  weights; the frozen MAST solver source is retained. Full-production retraining and its resulting composite
+  score have not been qualified. The reduced complete chain and one full-recipe fit per family were checked. One
   network of each of the four families, with the full recipe, took 279 to 326 s on one NVIDIA GTX 1060 (6 GiB) and
-  265 to 403 s on one AMD RX 6600 XT; all 85 networks take about seven hours on the GTX 1060. For a single A100
+  265 to 403 s on one AMD RX 6600 XT; extrapolating those fits gives about seven hours for all 85 networks on the
+  GTX 1060, excluding data preparation, trees and geometry readouts. For a single A100
   the dense training arithmetic (5.7 × 10¹⁶ FLOPs) gives 0.8 h at peak and 1.6 to 3.3 h at 25 to 50 % of peak;
   this is an estimate, not a measurement. `COMPUTE.md` gives the basis and declares the CPU stages.
 - **Weights.** All 85 networks, the four tree models with their leaf tables, and the flux basis are in the package
