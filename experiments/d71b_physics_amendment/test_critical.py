@@ -34,7 +34,7 @@ for n in (33, 65, 129):
         expect(f"n{n} ellipse max rotated {deg}", -(xr ** 2 + 3 * zr ** 2), R, Z, (1, 0, 0))
     two = np.exp(-((x) ** 2 + (z - .4) ** 2) / .05) + np.exp(-((x) ** 2 + (z + .4) ** 2) / .05)
     expect(f"n{n} two maxima and a saddle", two, R, Z, (2, 0, 1))
-# The peer review's counterexample (20 October): a cubic field in one cell; the truth from the exact derivatives.
+# The cubic counterexample (20 October): a cubic field in one cell; the truth from the exact derivatives.
 h = 1 / 32
 R = 2 + np.arange(-32, 33) * h; Z = np.arange(-32, 33) * h; RR, ZZ = np.meshgrid(R, Z); x, z = RR - 2, ZZ
 cubic = x ** 3 * z - 2 * h ** 2 * x * z + .05 * h ** 2 * z ** 2 - .14 * h ** 3 * x + .79 * h ** 3 * z

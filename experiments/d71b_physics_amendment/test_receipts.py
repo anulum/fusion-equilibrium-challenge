@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Equilibrium Challenge — D71b FEC-R18 guard tests through the real report CLI and the runner's cached-shot check
+# Equilibrium Challenge — D71b guard tests through the real report CLI and the runner's cached-shot check
 """python test_receipts.py QUALIFICATION_DIR  (exits non-zero on the first unexpected acceptance or rejection)
 
 Builds a three-shot mini cohort in a temporary folder from real qualification measures (shots 0, 179, 357), with

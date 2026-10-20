@@ -69,7 +69,7 @@ st = 1 + .06 * np.cos(3 * t) * np.exp(-np.clip(rad / .6 - 1, 0, None) ** 2 / .06
 warp = ndimage.map_coordinates(sol, [((ZZ / st) - Z[0]) / (Z[1] - Z[0]), ((1.7 + (RR - 1.7) / st) - R[0]) / (R[1] - R[0])],
                                order=1, mode="nearest")
 run("warped", warp, -.3, {"gs_surface": lambda v: v > 1e-2})
-# The peer review's mask counterexample: one field, reference circle 0.4, own circle 0.6. With one common region
+# The mask counterexample: one field, reference circle 0.4, own circle 0.6. With one common region
 # and one denominator the reference and the prediction must give the same value (excess 0).
 phi = -((RR - 2) ** 2 + ZZ ** 2)
 t = np.linspace(0, 2 * np.pi, 400, endpoint=False)

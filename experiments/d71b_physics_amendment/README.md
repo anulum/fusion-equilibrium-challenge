@@ -1,7 +1,6 @@
 # D71b — corrected diagnostics of the finishing step
 
-Measurement only, 20 October 2026, on the same 358 development shots and nine regenerated stages as D71, after the
-second external review, with the second agent reviewing each amendment and the complete run. `PROTOCOL.md` holds the frozen protocol and its four
+Measurement only, 20 October 2026, on the same 358 development shots and nine regenerated stages as D71. `PROTOCOL.md` holds the frozen protocol and its four
 amendments, each written before any D71b result; `activation_v5.json` binds the sources, tests and run script by
 SHA-256. `report_v5.json` is the complete report of the full run; `supplement_critical_histograms_v1.json` holds the
 complete histograms of detected critical points (the report's own reference-count histogram stops at three and
@@ -24,9 +23,10 @@ laboratory; the per-frame measures stay on the laboratory's storage.
 
 ## Custody of these files
 
-The Python, shell and protocol files are archival copies of the frozen originals, not maintained code: their bytes
-are the frozen bytes except for the publication edits listed in `export_manifest_v1.json`, so they are not
-reformatted, given new headers or linted, and the repository's maintained-code checks do not cover them. Every file
-in this folder except this README, the manifest and the `.license` sidecars is listed in the manifest with its
-published SHA-256, its category (frozen source, the activation, a result of the frozen run, or a post-freeze
-supplement) and, for frozen files, its frozen SHA-256.
+The Python, shell and protocol files are archival copies, not maintained code. Their executable numerical
+contents and recorded results remain frozen. Publication edits remove laboratory paths, agent identities and
+non-scientific process wording from selected headers, titles or module documentation; original and published
+SHA-256 values are retained in `export_manifest_v1.json`. These algorithms are not reformatted or covered by the
+repository's maintained-code checks. Every file in this folder except this README, the manifest and the
+`.license` sidecars is listed in the manifest with its published SHA-256, its category (frozen source, the
+activation, a result of the frozen run, or a post-freeze supplement) and, for frozen files, its frozen SHA-256.

@@ -1,5 +1,5 @@
 # SPDX-License-Identifier: AGPL-3.0-or-later
-# Equilibrium Challenge — D71b FEC-R18 regression: the actual run_d71b.one() on cached shot records
+# Equilibrium Challenge — D71b cache regression: the actual run_d71b.one() on cached shot records
 """python test_runner_cache.py QUALIFICATION_DIR ACTIVATION  (exits non-zero on the first unexpected outcome)
 
 Copies one real qualified shot into a temporary output folder and calls the actual run_d71b.one() on its cached

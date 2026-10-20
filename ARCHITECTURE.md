@@ -59,6 +59,6 @@ every receipt as `model_manifest_sha256`; `infer.py`'s own SHA-256 as `source_sh
 The Final submission was made from tag `final-submission-2026-10-19`. Its source, `deployment.json`, the weights
 revision and the inference arithmetic are not changed afterwards, so that anyone can rebuild exactly what was scored.
 Fields of `deployment.json` that describe the day it was frozen are explained in
-[DATA_PROVENANCE.md](DATA_PROVENANCE.md) rather than edited. Experiment records keep their frozen bytes; corrections
-are written beside them. Later work (documentation, verifiers, licensing metadata) lands on `main` without touching
+[DATA_PROVENANCE.md](DATA_PROVENANCE.md) rather than edited. Experiment numerical records remain frozen; publication sanitization is recorded in their export manifests,
+and scientific corrections are written beside them. Later work (documentation, verifiers, licensing metadata) lands on `main` without touching
 these files.

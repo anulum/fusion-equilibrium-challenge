@@ -3,10 +3,11 @@
  "files": [
   {
    "file": "PROTOCOL.md",
-   "published_sha256": "3fd57cf960c01d11baebffe00325716ce03d2d5ff773d457264daa0835c00ee0",
+   "published_sha256": "f02181bc02b55f2bf920666adfd8144706ebe559d7b47f768a445057d6ec48f5",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "3fd57cf960c01d11baebffe00325716ce03d2d5ff773d457264daa0835c00ee0",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Non-scientific process wording removed from title/header/module documentation; executable arithmetic and recorded results unchanged."
   },
   {
    "file": "activation_v5.json",
@@ -15,10 +16,11 @@
   },
   {
    "file": "critical.py",
-   "published_sha256": "4960c3360f8b61890137be39af7ea1544c459259c279181006678e620ea762b1",
+   "published_sha256": "e83d80df73ee3fdc00724519e7ed00faa2f373584f0de25857c576abd8f977b7",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "4960c3360f8b61890137be39af7ea1544c459259c279181006678e620ea762b1",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
   },
   {
    "file": "physics.py",
@@ -29,10 +31,11 @@
   },
   {
    "file": "physics_b.py",
-   "published_sha256": "8cf25b87f0b21f7fe2bf6817b2c9dac6c854ac85535c204b0763d2f4ebc4b434",
+   "published_sha256": "428dd72e7a624a9a44454b6aecd7da4481d6b81ddb5a4d226cb3e9f63c083c86",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "8cf25b87f0b21f7fe2bf6817b2c9dac6c854ac85535c204b0763d2f4ebc4b434",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Non-scientific process wording removed from title/header/module documentation; executable arithmetic and recorded results unchanged."
   },
   {
    "file": "qualification_v3_receipt.json",
@@ -41,10 +44,11 @@
   },
   {
    "file": "receipts.py",
-   "published_sha256": "bf655566e626627acc07f3c1740940c38a679b598c1094db733a21511cf83288",
+   "published_sha256": "53844d0acb8e33842cae95131886e3566f3be4d0fe55f7d4d53974aa564276f8",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "bf655566e626627acc07f3c1740940c38a679b598c1094db733a21511cf83288",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
   },
   {
    "file": "report_d71b.py",
@@ -82,31 +86,35 @@
   },
   {
    "file": "test_critical.py",
-   "published_sha256": "47e1965ea6af072c705beee23c16b7cb7ba366629db22930880141259af376fc",
+   "published_sha256": "c98934d42d019a88bbaad3f9c1c9f90dd972628f3e372b789a92ebf09fca60ba",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "47e1965ea6af072c705beee23c16b7cb7ba366629db22930880141259af376fc",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
   },
   {
    "file": "test_physics_b.py",
-   "published_sha256": "81bc1b2abdc017fc63cee20ea3b1a43fde564ce02dcc42f83aecbd03f6229db6",
+   "published_sha256": "504ab1a6da01004963a1a095e265b136d077275fa60aded7e69634e6ad517adb",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "81bc1b2abdc017fc63cee20ea3b1a43fde564ce02dcc42f83aecbd03f6229db6",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
   },
   {
    "file": "test_receipts.py",
-   "published_sha256": "92682f0d68036eb316be64a992f633de842b3f0bfd20283105227ad243cac5d0",
+   "published_sha256": "18399678c51f7727ad818786e3a6bfb6782d28ce3300348f3e86efc1a0be06cd",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "92682f0d68036eb316be64a992f633de842b3f0bfd20283105227ad243cac5d0",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
   },
   {
    "file": "test_runner_cache.py",
-   "published_sha256": "160d1270aa541c4e6aa30878c135ad7f7befeaa2073342868ae4bafe505026db",
+   "published_sha256": "539e5ca43363a056519ee47b4e00fb058af73bcd458475ac445e70e49a8f140a",
    "category": "frozen source or test (bound by the activation)",
    "frozen_sha256": "160d1270aa541c4e6aa30878c135ad7f7befeaa2073342868ae4bafe505026db",
-   "identical_to_frozen": true
+   "identical_to_frozen": false,
+   "publication_edits": "Process-only wording omitted from module documentation, titles or comments; executable arithmetic and scientific records unchanged."
   }
  ]
 }

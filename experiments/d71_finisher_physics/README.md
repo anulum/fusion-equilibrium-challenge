@@ -3,8 +3,9 @@
 Measurement only, 19 October 2026. The nine native stages of the deployed DIII-D pipeline are regenerated with the
 D70 sources, unchanged, on the 358 development shots, and each map is measured against the EFIT reference with the
 same operators. `PROTOCOL.md` was frozen before the first result; `report_v2.json` is the historical complete report.
-Study §4.27 states the corrections and limits found on 20 October. Corrected D71b whole-cohort reporting is pending;
-its three-shot qualification is not a replacement for the full result. The dependency inventory uses the same
+Study §4.27 states the corrections and limits found on 20 October. The corrected D71b full-cohort result is complete: see
+[`report_v5.json`](../d71b_physics_amendment/report_v5.json) and its
+[histogram supplement](../d71b_physics_amendment/supplement_critical_histograms_v1.json). The dependency inventory uses the same
 publication replacements as the experiment sources; hashes retain their original values. The exported `encoded_features_digest` key names the original
 `tokens_sha256` value, a feature-cache checksum rather than an access credential.
 
@@ -46,14 +47,14 @@ described in [`../README.md`](../README.md) and nothing else:
   `$FEC_RUNS` (a literal string here, not expanded), and the second agent's name in a folder name replaced.
 - `PROTOCOL.md`: "Owner" replaced by "Entrant", and the seat wording by "first agent" / "second agent".
 
-## Known faults (found by the second external review, 20 October 2026)
+## Known faults (20 October 2026)
 
 - `critical_points()` is unreliable: one smooth maximum between grid nodes is counted as four maxima, an
   axis-aligned saddle between nodes is missed, a saddle on a node counts as four cells. The topology rows of the
-  report are withdrawn; corrected whole-cohort counts have not yet been published.
+  report are withdrawn; corrected whole-cohort counts are published in D71b and its histogram supplement.
 - `gs_form_residual()` is undefined for a nearly constant source (it returns about 1 for an exact field). In these
   data the sensitivity to near-degenerate denominators needs explicit support counts. D71b adds the residual's
-  parts and a degeneracy flag; its full-cohort report is pending.
+  parts and a degeneracy flag; its complete full-cohort result is in `../d71b_physics_amendment/report_v5.json`.
 - The docstring of `loop_current()` says the signed loop integral equals *minus* the area integral of Δ*φ / R; it
   equals plus that integral. The computation and the report (which compares the area integral of −Δ*φ / R with
   minus the signed loop integral) are correct.

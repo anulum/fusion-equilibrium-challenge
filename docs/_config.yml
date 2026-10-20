@@ -1,5 +1,5 @@
 title: Anulum · Fusion Equilibrium
-description: Tokamak equilibrium reconstruction without magnetic measurements. Code, weights, study and the full experiment record.
+description: Tokamak equilibrium reconstruction from currents and Thomson profiles, without magnetic probes or flux loops. Code, weights, study and the full experiment record.
 remote_theme: just-the-docs/just-the-docs@v0.10.1
 plugins:
   - jekyll-remote-theme

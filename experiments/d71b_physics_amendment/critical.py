@@ -18,7 +18,7 @@ a cell are merged. Cells within EDGE_CELLS of the grid's edge are not searched (
 make spurious extrema there), and a root whose Hessian is below SIGNIFICANCE of the largest Hessian on the grid is
 discarded as numerical noise in a flat region.
 
-Version 2, after the peer review of 20 October 2026: version 1 interpolated the two gradient components
+Version 2 (20 October 2026): version 1 interpolated the two gradient components
 independently and symmetrized their Jacobian, which can change the sign of the determinant.
 """
 from __future__ import annotations

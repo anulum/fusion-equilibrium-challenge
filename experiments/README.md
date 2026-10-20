@@ -15,7 +15,8 @@ protocol checksum, the number and the decision. [docs/STUDY.md](../docs/STUDY.md
   address of the laboratory's machines.
 - **Edited:** these are copies made for publication. The names of the agents were replaced by `first_agent` and
   `second_agent`, the name of the person who directs the work by "entrant", and local paths by placeholders
-  (`$FEC_RUNS`, `$FEC_DATA`, `$FEC_WORK`, `$LAB`, `$SAS`, `$HOME`). The empty-export correction and the
+  (`$FEC_RUNS`, `$FEC_DATA`, `$FEC_WORK`, `$LAB`, `$SAS`, `$HOME`). Non-scientific process wording in
+  selected headers, titles and notes is omitted; the D71b export manifest records its changed published hashes. The empty-export correction and the
   reviewed D71 additions described below are explicit exceptions to this historical copying policy.
 
 The reviewed D71 additions include a compressed table of per-shot means (about 313 kB), a compressed dependency

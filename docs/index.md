@@ -7,8 +7,8 @@ nav_order: 1
 
 The permanent record of one entry to the [Fusion Equilibrium Challenge](https://fusion-equilibrium-challenge.sophelio.io/)
 (NeurIPS 2026, organised by [Sophelio](https://github.com/Sophelio)): reconstructing the poloidal flux map of a
-tokamak plasma, and q95 and βN, from coil currents and Thomson-scattering profiles alone, without any magnetic
-measurement.
+tokamak plasma, and q95 and βN, from coil currents, measured plasma current I_p and Thomson-scattering profiles,
+without magnetic probes or flux-loop measurements.
 
 The entry has two parts that share nothing but the task:
 
@@ -42,8 +42,9 @@ our arithmetic on the components above:
 | Boundary distance | 22.5 % | 6.7 % |
 | Consistency of derived scalars | 67.5 % | 54.2 % |
 
-This splits the benchmark loss; it does not say how much of it can be removed. On DIII-D the flux map is almost
-solved and 90 % of what is left is the boundary and the geometry derived from the map; on MAST, 89 % is the
+This splits the benchmark loss; it does not say how much of it can be removed. On DIII-D pixelwise flux-map R² is
+near one; this does not establish accurate derivatives or force balance. About 90 % of the remaining score deficit
+is the boundary and the geometry derived from the map; on MAST, 89 % is the
 scalars and their consistency.
 
 ![Reference, map after the finisher and difference on four DIII-D development frames](figures/fig6_reconstruction.png)
@@ -68,7 +69,8 @@ shots from fitting, but the shots were used before in model comparisons ([Study 
    confirm the direction on a fixed exterior region and with a flux-surface test that assumes no profile shape.
    A Grad–Shafranov interior lowered the score by 157 µS. These are numerical diagnostics, not percentages of
    nonequilibrium current; the original topology counts are withdrawn
-   ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
+   ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map),
+   [§4.28](STUDY.md#428-a-gradshafranov-interior-for-the-finished-map)).
 
 ## Read
 
@@ -99,8 +101,9 @@ Weights: [huggingface.co/anulum/fusion-equilibrium-challenge](https://huggingfac
 the exact commit, weight revision, input revision and output checksums. A first look in five minutes:
 [the quickstart notebook in Colab](https://colab.research.google.com/github/anulum/fusion-equilibrium-challenge/blob/main/notebooks/quickstart.ipynb).
 
-On the hardware the entry was built on (two Intel Xeon E5-2640), the package reproduces the submitted predictions of
-both public folds bit for bit. On other CPUs the last bits of float32 can differ. On one DIII-D shot, hosted CI
+On the hardware the entry was built on (two Intel Xeon E5-2640), the DIII-D package reproduces the submitted public
+fold bit for bit. The whole-fold MAST check used the earlier `package_v2`; the current package has not been rerun
+on the whole MAST fold. On other CPUs the last bits of float32 can differ. On one DIII-D shot, hosted CI
 observed identical q95/βN and maximum flux difference 7.5 × 10⁻⁹; CI enforces numerical tolerances. [All checks](https://github.com/anulum/fusion-equilibrium-challenge#reproduce-the-predictions).
 
 Cite as: [doi:10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092). Code archived by [Software Heritage](https://archive.softwareheritage.org/browse/origin/?origin_url=https://github.com/anulum/fusion-equilibrium-challenge) (`swh:1:snp:143cae236c490f64c48de43ca03761a9623e16d6`).

@@ -4,14 +4,14 @@
 # © Code 2020–2026 Miroslav Šotek. All rights reserved.
 # ORCID: 0009-0009-3560-0851
 # Contact: www.anulum.li | protoscience@anulum.li
-# Equilibrium Challenge — D71b: corrected and added measures after the second external review
-"""Measures added to D71 after the review of 20 October 2026; D71's physics.py is imported unchanged.
+# Equilibrium Challenge — D71b: corrected and added physical measures
+"""Measures added to D71 on 20 October 2026; D71's physics.py is imported unchanged.
 
 1. Critical points from roots of the interpolated gradient (critical.py), counted signed against the reference.
 2. Current density on ONE region per frame, the scorer's eroded envelope outside the union of the reference LCFS
    and the LCFS of all nine stages (dilated by one cell), the same for every map and for the reference, over the
    reference's current density inside its own LCFS (one denominator per frame). An identical field gives an
-   identical value whatever its own boundary (peer review of 20 October: version 1 used different regions).
+   identical value whatever its own boundary (version 1 used different regions).
 3. The polynomial GS-form residual with its parts: SSE, TSS, pixels, rank, RMS residual and source RMS, and a
    degenerate flag when the source is nearly constant (TSS below 1e-10 of the sum of squares).
 4. A flux-surface GS test: on the surfaces psi_N = 0.2, 0.4, 0.6, 0.8 of the map, -Delta* phi is fitted as

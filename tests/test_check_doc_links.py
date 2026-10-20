@@ -29,7 +29,8 @@ def site(tmp_path: Path) -> Path:
     for page in DOCS.glob("*.md"):
         shutil.copy2(page, destination / page.name)
     for name in ("assets", "figures"):
-        shutil.copytree(DOCS / name, destination / name)
+        if (DOCS / name).is_dir():
+            shutil.copytree(DOCS / name, destination / name)
     return destination
 
 

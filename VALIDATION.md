@@ -57,8 +57,8 @@ produce, have not been run; training time on an A100 has not been measured.
 
 [docs/EXPERIMENT_LEDGER.md](docs/EXPERIMENT_LEDGER.md) records the tested configurations and outcomes.
 Frozen protocols and decision rules are retained where recorded; this does not retroactively preregister every
-exploratory comparison. Reused cohorts are not untouched confirmation data. The finisher diagnostics (study §4.27, D71 and D71b) were reviewed independently by the second
-agent; they are numerical diagnostics relative to EFIT, not a validation of force balance.
+exploratory comparison. Reused cohorts are not untouched confirmation data. The finisher diagnostics (study §4.27, D71 and D71b) are numerical diagnostics relative to EFIT, not a validation
+of force balance.
 
 ## Licensing metadata
 

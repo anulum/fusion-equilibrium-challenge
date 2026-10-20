@@ -35,7 +35,7 @@ later change is to documentation, verification tools, experiment records, licens
 
 ### 2026-10-19
 
-- Finisher diagnostics D71 and the reconstruction figure (`51cc8ad`); fixes after an external review: links,
+- Finisher diagnostics D71 and the reconstruction figure (`51cc8ad`); corrections to links,
   one install, dated reproduction state, results on the home page (`3fe21ea`).
 - Quickstart notebook for one public DIII-D shot, with a comparison against the submitted archive (`d3b04e2`,
   `86a2c61`, `525af63`, `e08f7fa`); "What did not work" page (`54e7aae`).

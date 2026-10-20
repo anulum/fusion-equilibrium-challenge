@@ -5,7 +5,7 @@
 # ORCID: 0009-0009-3560-0851
 # Contact: www.anulum.li | protoscience@anulum.li
 # Equilibrium Challenge — D71b: bind every shot record and the run receipt to the activation and the exact cohort
-"""Fail-closed validation of D71b outputs (TODO FEC-R18, after the second agent's review of 20 October 2026).
+"""Fail-closed validation of D71b outputs and source/cohort bindings.
 
 A shot record is accepted only if it names the expected activation, the expected stem and frame count, the frozen
 map order, and the SHA-256 of its measures file, and if that file's arrays have exactly (frames, maps) shape and the

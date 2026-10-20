@@ -28,8 +28,8 @@ maintainer and changes little; this page says who decides what, and what does no
   submission) and `v1.0.0` (the record of the entry) are not moved, and published history is not rewritten.
 - The weights stay at the revision pinned in `WEIGHTS.json`; `fetch_weights.py` checks every file against
   `WEIGHTS.sha256`.
-- Frozen experiment records under `experiments/` keep their bytes; corrections to them are written beside them
-  (README, manifests), never into them.
+- Numerical contents and results of frozen experiment records under `experiments/` are preserved. Publication
+  sanitization is documented in their export manifests; scientific corrections are written beside the records.
 
 ## How changes are made
 
