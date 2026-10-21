@@ -19,6 +19,8 @@ Fusion Equilibrium Challenge entry — repository overview
 [![Sponsor](https://img.shields.io/badge/Sponsor-GitHub%20Sponsors-ea4aaa?logo=githubsponsors&logoColor=white)](https://github.com/sponsors/anulum)
 [![Buy Me a Coffee](https://img.shields.io/badge/Buy%20Me%20a%20Coffee-anulum-ffdd00?logo=buymeacoffee&logoColor=black)](https://buymeacoffee.com/anulum)
 
+![Tokamak equilibrium without magnetic probes: the Anulum entry to the Fusion Equilibrium Challenge, with predicted flux surfaces of one DIII-D frame](docs/assets/fusion-equilibrium-challenge-preview.png)
+
 This repository is the reproduction package and the permanent record of one entry to the
 [Fusion Equilibrium Challenge](https://fusion-equilibrium-challenge.sophelio.io/) (NeurIPS 2026 competition,
 [Codabench competition 17739](https://www.codabench.org/competitions/17739/)), organised by
