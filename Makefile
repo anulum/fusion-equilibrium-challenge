@@ -7,12 +7,12 @@
 # Fusion Equilibrium Challenge — declared verification and reproduction commands
 TOOLBIN ?= .venv/bin
 PYTHON ?= $(TOOLBIN)/python
-SOURCES := experiments/d71_finisher_physics/per_shot_table.py tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py
+SOURCES := experiments/d71_finisher_physics/per_shot_table.py tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/check_publication_boundary.py
 FROZEN := source training_adapter infer.py train.py tree_replica.py deployment.json training_recipe.json WEIGHTS.json WEIGHTS.sha256
 FINAL := 25ba6fd4257cc37451f851983d8eaeb7e7381e02
 
-.PHONY: check quality links frozen test
-check: quality links frozen
+.PHONY: check quality links frozen test boundary
+check: quality links frozen boundary
 
 quality:
 	$(TOOLBIN)/ruff check $(SOURCES) tests
@@ -32,3 +32,6 @@ test:
 	$(PYTHON) -m coverage run --parallel-mode -m pytest -q tests
 	$(PYTHON) -m coverage combine
 	$(PYTHON) -m coverage report
+
+boundary:
+	$(PYTHON) tools/check_publication_boundary.py

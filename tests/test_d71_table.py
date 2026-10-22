@@ -79,10 +79,14 @@ def test_diagnostic_scope_contract() -> None:
         "tools/ci_check_shot.py",
         "tools/d71b_table.py",
         "tools/d72_table.py",
+        "tools/surface_gs.py",
+        "tools/check_publication_boundary.py",
     }
     support_tests = {
         "tests/test_d71b_table.py",
         "tests/test_d72_table.py",
+        "tests/test_surface_gs.py",
+        "tests/test_check_publication_boundary.py",
         "tests/test_check_doc_links.py",
         "tests/test_ci_check_shot.py",
         "tests/test_licensing.py",
@@ -95,6 +99,11 @@ def test_diagnostic_scope_contract() -> None:
             assert any(
                 line.strip().startswith(prefix) and path in line.split() for line in workflow.splitlines()
             )
+    assert "python tools/check_publication_boundary.py" in workflow
+    assert "python3 tools/check_publication_boundary.py\n          git archive --format=tar" in workflow
+    hooks = (ROOT / ".pre-commit-config.yaml").read_text()
+    assert "id: publication-boundary" in hooks
+    assert "entry: .venv/bin/python tools/check_publication_boundary.py" in hooks
     assert config["tool"]["mypy"]["strict"] is True
     assert config["tool"]["coverage"]["run"]["branch"] is True
     assert set(config["tool"]["coverage"]["report"]["include"]) == {source} | support

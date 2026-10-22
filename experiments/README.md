@@ -52,3 +52,7 @@ D72 publishes per-shot reference moments, residual sums, boundary distances and 
 compressed JSON supplement. The maintained `tools/d72_table.py` reconstructs pooled scores and intervals;
 see the [D72 command and limitations](d72_gs_projection/README.md). This is another aggregate-data exception
 to the historical export size limit; raw scored maps remain outside the public package.
+
+The separately maintained [surface-GS support diagnostic](d71b_surface_support/README.md) exposes the support and
+conditioning behind the frozen D71b surface ratio. It supplies an analytic example and dedicated tests; a full
+cohort support census has not yet been measured. Original D71b numerical records remain unchanged.

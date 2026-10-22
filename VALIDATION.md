@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Five verification tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py`, `tools/d72_table.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Seven verification and diagnostic tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
@@ -23,7 +23,18 @@ lock inventory. The latter must match every locked package name and version, inc
 installed in the resolver's bootstrap environment. The commands are in
 [CONTRIBUTING.md](CONTRIBUTING.md).
 
-The inference and training code, the vendored solver and the experiment records are not under these gates. They
+The surface-GS helper exposes per-level support, rank and conditioning without changing the historical contour
+weights or fit inclusion. Analytic tests exercise complete, partial, rank-deficient and unavailable cases. Its
+ratio was also compared with the frozen D71b implementation on 12 published illustration maps and 300 synthetic
+perturbed elliptical maps, with exact agreement on the checked host. This is arithmetic parity, not a count of
+usable surfaces across the full cohort. See the [support diagnostic](experiments/d71b_surface_support/README.md).
+
+The publication guard runs in commit hooks, Diagnostics and immediately before the CI source archive. It reads
+the staged blobs and working files, rejects symbolic links and recognised private/process record shapes, and
+checks all members of gzip files within a fixed decompression limit. Tests cover actual Git staging, exported
+trees and refusal cases. This is a bounded publication check, not a general confidentiality guarantee.
+
+The inference and training code, the vendored solver and the historical experiment runners are not under these gates. They
 are the code that produced the submission, kept as it was; their quality is shown by the reproduction checks below,
 not by lint, type or coverage results. Reproduction evidence is narrower than full native-code acceptance;
 those historical qualification gaps are not silently passed.
