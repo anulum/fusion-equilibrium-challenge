@@ -87,16 +87,22 @@ def test_large_and_compressed_wrappers() -> None:
     assert classify(Path("experiments/x/measurement.json"), padded) == "message_wrapper"
     assert classify(Path("experiments/x/measurement.json.gz"), gzip.compress(padded)) == "message_wrapper"
     assert classify(Path("experiments/x/statistics.json.gz"), gzip.compress(SCIENCE)) is None
+    appended = gzip.compress(SCIENCE) + gzip.compress(WRAPPER)
+    assert classify(Path("experiments/x/measurements.json.gz"), appended) == "message_wrapper"
+    both = gzip.compress(SCIENCE) + gzip.compress(SCIENCE)
+    assert classify(Path("experiments/x/measurements.json.gz"), both) is None
 
 
 @pytest.mark.parametrize(
     "content",
     [
         gzip.compress(b" " * (GZIP_LIMIT + 1)),
+        gzip.compress(b" " * (GZIP_LIMIT // 2 + 1)) * 2,
         gzip.compress(WRAPPER)[:-12],
         b"\x1f\x8b\x08\x00" + b"\x00" * 6 + b"\xff" * 8,
+        gzip.compress(SCIENCE) + b"\x1f\x8b\x08\x00" + b"\x00" * 6 + b"\xff" * 8,
     ],
-    ids=["beyond-limit", "truncated", "corrupt"],
+    ids=["beyond-limit", "members-beyond-limit", "truncated", "corrupt", "corrupt-second-member"],
 )
 def test_unchecked_archive_refused(content: bytes) -> None:
     """A gzip member that cannot be fully checked is refused, not admitted."""
@@ -162,6 +168,21 @@ def test_symbolic_links_refused(repo: Path, tmp_path_factory: pytest.TempPathFac
     (exported / "experiments").symlink_to(outside, target_is_directory=True)
     (exported / "result.json").write_bytes(SCIENCE)
     assert check(tree(exported)) == ["symlink: experiments"]
+
+
+def test_path_below_linked_directory(repo: Path, tmp_path_factory: pytest.TempPathFactory) -> None:
+    """A staged path whose work-tree parent became a link is refused without reading through the link."""
+    (repo / "d").mkdir()
+    (repo / "d" / "x.json").write_bytes(SCIENCE)
+    git(repo, "add", "d/x.json")
+    outside = tmp_path_factory.mktemp("outside")
+    (outside / "x.json").write_bytes(WRAPPER)
+    (repo / "d" / "x.json").unlink()
+    (repo / "d").rmdir()
+    (repo / "d").symlink_to(outside, target_is_directory=True)
+    entries = projection(repo)
+    assert (Path("d/x.json"), b"", True) in entries
+    assert check(entries) == ["symlink: d", "symlink: d/x.json"]
 
 
 def test_git_projection(repo: Path) -> None:

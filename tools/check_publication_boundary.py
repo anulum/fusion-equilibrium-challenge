@@ -14,15 +14,17 @@ checked, so neither a staged record hidden behind a clean work-tree file nor
 the reverse passes. A directory, such as a freshly exported experiments/ tree,
 can be checked instead. Refused:
 
-* symbolic links, staged or in the work tree or the exported directory; no
-  link is followed, so no path can resolve into a private root;
+* symbolic links, staged or in the work tree or the exported directory, and
+  work-tree paths below a linked directory; no link is followed and such a
+  path is not read, so no path can resolve outside the root;
 * private custody: paths under docs/internal, private or a coordination
   directory, and coordination records named as handovers, session logs,
   message inboxes or bus records;
 * message wrappers: text containing at least two quoted keys of a
   message-bus envelope or delivery receipt, whatever the file is called and
-  however large it is, also inside a gzip member; a gzip member that cannot be
-  decompressed, or decompresses beyond GZIP_LIMIT, is refused unchecked;
+  however large it is, also inside every member of a gzip file; a gzip file
+  that cannot be decompressed, or decompresses beyond GZIP_LIMIT in total, is
+  refused unchecked;
 * process-only assessments: file names that mark a review as a peer review,
   a review request, delivery, reply or acknowledgement, or a review of one
   agent's work, and any delivery record that is not code. A program named
@@ -107,13 +109,19 @@ def text_of(content: bytes) -> str | None:
         A gzip member is corrupt or decompresses beyond ``GZIP_LIMIT``.
     """
     if content[:2] == b"\x1f\x8b":
-        inflate = zlib.decompressobj(16 + zlib.MAX_WBITS)
-        try:
-            content = inflate.decompress(content, GZIP_LIMIT + 1)
-        except zlib.error as error:
-            raise ValueError("corrupt gzip member") from error
-        if len(content) > GZIP_LIMIT or inflate.unconsumed_tail or not inflate.eof:
-            raise ValueError("gzip member too large or truncated")
+        members: list[bytes] = []
+        remaining = content
+        while remaining:
+            inflate = zlib.decompressobj(16 + zlib.MAX_WBITS)
+            budget = GZIP_LIMIT + 1 - sum(map(len, members))
+            try:
+                members.append(inflate.decompress(remaining, budget))
+            except zlib.error as error:
+                raise ValueError("corrupt gzip member") from error
+            if sum(map(len, members)) > GZIP_LIMIT or inflate.unconsumed_tail or not inflate.eof:
+                raise ValueError("gzip member too large or truncated")
+            remaining = inflate.unused_data
+        content = b"".join(members)
     if b"\0" in content[:8192]:
         return None
     return content.decode("utf-8", errors="replace")
@@ -127,7 +135,8 @@ def classify(relative: Path, content: bytes, link: bool = False) -> str | None:
     relative : Path
         Path of the file relative to the projection root.
     content : bytes
-        Complete bytes of this version (for a link, its target).
+        Complete bytes of this version (empty for a work-tree link, which is
+        never read; the link target for a staged link).
     link : bool
         Whether this version is a symbolic link.
 
@@ -167,10 +176,11 @@ def _git(root: Path, *arguments: str, stdin: bytes = b"") -> bytes:
     ).stdout
 
 
-def _worktree(path: Path, relative: Path) -> Entry:
-    if path.is_symlink():
-        return relative, os.readlink(path).encode(), True
-    return relative, path.read_bytes(), False
+def _worktree(root: Path, relative: Path) -> Entry:
+    for depth in range(1, len(relative.parts) + 1):
+        if (root / Path(*relative.parts[:depth])).is_symlink():
+            return relative, b"", True
+    return relative, (root / relative).read_bytes(), False
 
 
 def projection(root: Path) -> list[Entry]:
@@ -214,10 +224,10 @@ def projection(root: Path) -> list[Entry]:
         offset = header_end + 2 + size
         path = root / relative
         if path.is_symlink() or path.exists():
-            entries.append(_worktree(path, relative))
+            entries.append(_worktree(root, relative))
     for name in _git(root, "ls-files", "--others", "--exclude-standard", "-z").decode().split("\0"):
         if name:
-            entries.append(_worktree(root / name, Path(name)))
+            entries.append(_worktree(root, Path(name)))
     return sorted(entries, key=lambda entry: entry[0])
 
 
@@ -248,7 +258,7 @@ def tree(directory: Path) -> list[Entry]:
         for name in directories + files:
             path = base / name
             if path.is_symlink() or name in files:
-                entries.append(_worktree(path, path.relative_to(directory)))
+                entries.append(_worktree(directory, path.relative_to(directory)))
     return sorted(entries, key=lambda entry: entry[0])
 
 
