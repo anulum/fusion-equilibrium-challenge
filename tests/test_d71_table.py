@@ -82,6 +82,8 @@ def test_diagnostic_scope_contract() -> None:
         "tools/surface_gs.py",
         "tools/surface_support_summary.py",
         "tools/surface_support_table.py",
+        "tools/scored_map_summary.py",
+        "tools/scored_map_table.py",
         "tools/make_preview.py",
         "tools/check_publication_boundary.py",
     }
@@ -91,6 +93,8 @@ def test_diagnostic_scope_contract() -> None:
         "tests/test_surface_gs.py",
         "tests/test_surface_support_summary.py",
         "tests/test_surface_support_table.py",
+        "tests/test_scored_map_summary.py",
+        "tests/test_scored_map_table.py",
         "tests/test_make_preview.py",
         "tests/test_check_publication_boundary.py",
         "tests/test_check_doc_links.py",

@@ -67,10 +67,13 @@ shots from fitting, but the shots were used before in model comparisons ([Study 
 4. **A higher score does not certify force balance.** The finisher adds 1981 µS on the evaluated development
       cohort while the tested GS-form residuals and poloidal-field error increase; the corrected D71b measures
    confirm the direction on a fixed exterior region and with a flux-surface test that assumes no profile shape.
-   A Grad–Shafranov interior lowered the score by 157 µS. These are numerical diagnostics, not percentages of
-   nonequilibrium current; the original topology counts are withdrawn
+   The existing Grad–Shafranov interior lowered the score by 157 µS; measurement on its scored float32 maps
+   subsequently found lower GS-form residuals and field error against EFIT, but a higher interface-crossing
+   current proxy. These are specific numerical diagnostics, not percentages of nonequilibrium current or a
+   force-balance certificate; the original topology counts are withdrawn
    ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map),
-   [§4.28](STUDY.md#428-a-gradshafranov-interior-for-the-finished-map)).
+   [§4.28](STUDY.md#428-a-gradshafranov-interior-for-the-finished-map),
+   [§4.29](STUDY.md#429-physical-diagnostics-on-the-scored-projection-maps)).
 
 ## Read
 

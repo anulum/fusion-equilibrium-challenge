@@ -48,6 +48,15 @@ This reproduces score arithmetic and aggregate convergence counts. It does **not
 remeasure physical diagnostics, reconstruct per-frame displacement, or establish a physical improvement from
 the projection. Those conclusions cannot be recovered from these pooled statistics alone.
 
+## Physical diagnostics on the actual scored arrays
+
+The subsequent [scored-map diagnostic supplement](../d72_scored_map_physics/README.md) remeasures the existing
+base/projected float32 maps against EFIT with corrected D71b operators and retains all 358 shots and
+78,875 frames. The tested GS-form residuals and field error against EFIT decrease, while the interface-crossing
+current proxy increases; the original score loss and failed gate remain unchanged. Its separate public
+sufficient-statistics consumer reproduces diagnostic means and intervals. The pooled-score table above remains
+a score-arithmetic check and does not itself contain those physical measurements.
+
 ## A correction to the frozen protocol's wording
 
 `PROTOCOL.md` motivates the test with "the share of current density not of Grad-Shafranov form rises from 0.35 % to

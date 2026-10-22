@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Ten verification, diagnostic and rendering tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Twelve verification, diagnostic and rendering tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/scored_map_summary.py`, `tools/scored_map_table.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
@@ -33,6 +33,14 @@ equal-shot means and 20,000-draw intervals. This verifies the table's arithmetic
 measurements, remeasuring private maps or reproducing frame quantiles. The census uses the historical float64
 stage snapshots; it is not an audit of the scored float32 D72 projection maps.
 See the [support diagnostic and reproduction command](experiments/d71b_surface_support/README.md).
+
+The scored-map statistics and verifier separately reproduce diagnostic means, common-frame comparisons and
+20,000-draw intervals for the actual float32 D72 projection comparison. The full 358-shot, 78,875-frame
+measurement retains the repeatedly examined development cohort. The public command verifies typed support,
+availability, caller-pinned identities and aggregate arithmetic; its tests use the complete release and
+changed copies. It does not regenerate maps, authenticate private measurements, reproduce frame quantiles
+or certify force balance. [Definitions and measured results](experiments/d72_scored_map_physics/README.md)
+keep own-map GS domains, common exterior, stencil classes and convergence subsets separate.
 
 The publication guard runs in commit hooks, Diagnostics and immediately before the CI source archive. It reads
 the staged blobs and working files, rejects symbolic links and recognised private/process record shapes, and
