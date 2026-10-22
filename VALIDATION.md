@@ -28,6 +28,10 @@ are the code that produced the submission, kept as it was; their quality is show
 not by lint, type or coverage results. Reproduction evidence is narrower than full native-code acceptance;
 those historical qualification gaps are not silently passed.
 
+The figure scripts `tools/make_figures.py`, `tools/make_reconstruction_figure.py` and `tools/make_preview.py`
+are not under these gates either. They draw the published figures and the README image from published files; their
+output is checked by inspecting the images, not by lint, type or coverage results.
+
 ## Reproduction of the submitted predictions
 
 | Check | Where | Scope | Outcome |
