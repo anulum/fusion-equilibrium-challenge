@@ -51,17 +51,17 @@ jobs:
         run: |
           ruff check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
           ruff format --check experiments/d71_finisher_physics/per_shot_table.py tests/test_d71_table.py
-          ruff check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/check_publication_boundary.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_surface_gs.py tests/test_check_publication_boundary.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
-          ruff format --check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/check_publication_boundary.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_surface_gs.py tests/test_check_publication_boundary.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          ruff check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/make_preview.py tools/check_publication_boundary.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_surface_gs.py tests/test_make_preview.py tests/test_check_publication_boundary.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          ruff format --check tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/make_preview.py tools/check_publication_boundary.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_surface_gs.py tests/test_make_preview.py tests/test_check_publication_boundary.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
           mypy
           bandit -q experiments/d71_finisher_physics/per_shot_table.py
-          bandit -q tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/check_publication_boundary.py
+          bandit -q tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/make_preview.py tools/check_publication_boundary.py
           reuse lint
       - name: Check the exact public source projection
         run: python tools/check_publication_boundary.py
       - name: Recompute the public table and reject corrupt inputs
         run: |
-          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_surface_gs.py tests/test_check_publication_boundary.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
+          python -m coverage run --parallel-mode -m pytest -q tests/test_d71_table.py tests/test_d71b_table.py tests/test_d72_table.py tests/test_surface_gs.py tests/test_make_preview.py tests/test_check_publication_boundary.py tests/test_check_doc_links.py tests/test_ci_check_shot.py tests/test_licensing.py
           python -m coverage combine
           python -m coverage report
   dependency-audit:

@@ -80,12 +80,14 @@ def test_diagnostic_scope_contract() -> None:
         "tools/d71b_table.py",
         "tools/d72_table.py",
         "tools/surface_gs.py",
+        "tools/make_preview.py",
         "tools/check_publication_boundary.py",
     }
     support_tests = {
         "tests/test_d71b_table.py",
         "tests/test_d72_table.py",
         "tests/test_surface_gs.py",
+        "tests/test_make_preview.py",
         "tests/test_check_publication_boundary.py",
         "tests/test_check_doc_links.py",
         "tests/test_ci_check_shot.py",

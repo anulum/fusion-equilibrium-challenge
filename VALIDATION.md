@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Seven verification and diagnostic tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Eight verification, diagnostic and rendering tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
@@ -39,9 +39,11 @@ are the code that produced the submission, kept as it was; their quality is show
 not by lint, type or coverage results. Reproduction evidence is narrower than full native-code acceptance;
 those historical qualification gaps are not silently passed.
 
-The figure scripts `tools/make_figures.py`, `tools/make_reconstruction_figure.py` and `tools/make_preview.py`
-are not under these gates either. They draw the published figures and the README image from published files; their
-output is checked by inspecting the images, not by lint, type or coverage results.
+The preview renderer reads the published reconstruction frame. Tests check its flux normalisation, boundary
+data and distance, render determinism and image dimensions through the actual CLI, and refusal of missing,
+damaged or degenerate frames. Its pixels depend on installed fonts. The other figure scripts
+`tools/make_figures.py` and `tools/make_reconstruction_figure.py` remain outside these gates; their outputs are
+checked by inspecting the images.
 
 ## Reproduction of the submitted predictions
 
