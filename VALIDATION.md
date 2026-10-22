@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Eight verification, diagnostic and rendering tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Ten verification, diagnostic and rendering tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
@@ -26,8 +26,13 @@ installed in the resolver's bootstrap environment. The commands are in
 The surface-GS helper exposes per-level support, rank and conditioning without changing the historical contour
 weights or fit inclusion. Analytic tests exercise complete, partial, rank-deficient and unavailable cases. Its
 ratio was also compared with the frozen D71b implementation on 12 published illustration maps and 300 synthetic
-perturbed elliptical maps, with exact agreement on the checked host. This is arithmetic parity, not a count of
-usable surfaces across the full cohort. See the [support diagnostic](experiments/d71b_surface_support/README.md).
+perturbed elliptical maps, with exact agreement on the checked host. A separate census of all 358 historical
+D71b shots (78,875 frames at ten map stages) found complete four-surface support throughout, with all fits of
+rank two. The published per-shot aggregates and checksum-bound command reproduce its support counts,
+equal-shot means and 20,000-draw intervals. This verifies the table's arithmetic, without authenticating the
+measurements, remeasuring private maps or reproducing frame quantiles. The census uses the historical float64
+stage snapshots; it is not an audit of the scored float32 D72 projection maps.
+See the [support diagnostic and reproduction command](experiments/d71b_surface_support/README.md).
 
 The publication guard runs in commit hooks, Diagnostics and immediately before the CI source archive. It reads
 the staged blobs and working files, rejects symbolic links and recognised private/process record shapes, and

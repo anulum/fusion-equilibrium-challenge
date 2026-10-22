@@ -52,6 +52,52 @@ support and an unavailable ratio. No arclength resampling is performed.
 
 The ratio agrees exactly with the frozen implementation on the checked host for 12 published illustration maps
 and 300 synthetic perturbed elliptical maps. Dedicated analytic tests cover deformation, partial contours,
-missing or zero sources and rank loss. The full 358-shot support census has not been run, so these checks do not
-establish how partial support affects the published cohort result. This statistic is a diagnostic of the GS form,
-not a certification of physical force balance. Original D71b results and source are unchanged.
+missing or zero sources and rank loss. This statistic is a diagnostic of the GS form, not a certification of
+physical force balance. Original D71b results and source are unchanged.
+
+## Complete cohort census
+
+The census covers the original 358 shots and 78,875 frames at all ten D71b map stages. All four requested surfaces
+were used on every frame in every stage. All 3,155,000 individual fits had rank two and positive source energy;
+none had an unavailable condition number. Restricting the comparison to complete surface support removes no
+frames. Partial support, rank loss and zero sources therefore do not explain the historical cohort result.
+Finite condition numbers alone do not establish adequate conditioning or physical validity.
+
+| Surface-GS ratio, equal weight per shot | Reference | Before finishing (`smoothed`) | After finishing (`margin`) |
+|---|---:|---:|---:|
+| Raw residual/source ratio | 0.2024% | 1.5346% | 5.3407% |
+| Excess over the reference on common frames | 0 | 1.3322 percentage points | 5.1383 percentage points |
+
+The paired increase from before to after finishing is **3.8061 percentage points**, with a 99% whole-shot
+bootstrap interval of **[3.4380, 4.2001] percentage points**. The common-frame and complete-support comparisons
+are identical. These are changes in diagnostic ratios, not percentages of plasma or current outside equilibrium.
+
+The inputs are the historical D71b stage snapshots, evaluated in float64. This census does not measure the
+scored float32 D72 projection maps. Its report preserves the original finite-reference selection and separately
+shows historical per-map support and common support for the reference, `smoothed` and `margin` maps. Surface
+rank is recorded rather than used as a new exclusion. The published aggregates include per-level vertex and
+finite-sample counts, rank histograms and condition ranges for each shot and map.
+
+## Recompute the published report
+
+The compressed [per-shot statistics](per_shot_v1.json.gz), [manifest](manifest_v1.json) and
+[report](report_v1.json) support an independent arithmetic check without the private maps. From the repository
+root, in the pinned quality environment:
+
+```sh
+python -m tools.surface_support_table \
+  --table experiments/d71b_surface_support/per_shot_v1.json.gz \
+  --manifest experiments/d71b_surface_support/manifest_v1.json \
+  --manifest-sha256 7afd91aea533d4b79e7db595b657fe4c8c5f0c0cef712090912c76c11fdcdd54 \
+  --report experiments/d71b_surface_support/report_v1.json
+```
+
+The command checks the caller-supplied manifest checksum, ordered cohort, file checksums, counts, means and
+intervals. It refuses missing, reordered or inconsistent records. It reproduces 20,000 draws of the original
+358-shot cohort using seed 25025. Unsupported shots are omitted within each draw and the remaining weights
+renormalised; undefined draws are counted rather than replaced. All shots support this cohort comparison.
+The seed differs from the original D71b report; these intervals supplement its frozen results.
+
+The checksum binds the supplied files to this published manifest. The arithmetic check does not authenticate
+the original measurements, remeasure private maps or reproduce frame-level quantiles. The support-conditioned
+comparison is a sensitivity diagnostic and does not estimate an unconditional effect on other cohorts.

@@ -1,0 +1,2346 @@
+{
+  "shots": 358,
+  "frames": 78875,
+  "reference_valid": 78875,
+  "seed": 25025,
+  "draws": 20000,
+  "maps": [
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.632091506323578,
+            51.27488164476795
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4626159,
+            "minimum": 17,
+            "maximum": 95
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4626159,
+            "minimum": 17,
+            "maximum": 95
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.92311366178493,
+            31.371853985225346
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6783259,
+            "minimum": 29,
+            "maximum": 125
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6783259,
+            "minimum": 29,
+            "maximum": 125
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.72875115051102,
+            21.674865577383585
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8721583,
+            "minimum": 37,
+            "maximum": 147
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8721583,
+            "minimum": 37,
+            "maximum": 147
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.920973629553737,
+            15.7525479739827
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10740017,
+            "minimum": 53,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10740017,
+            "minimum": 53,
+            "maximum": 169
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.18246791141878,
+            33.70955477793431
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4613761,
+            "minimum": 35,
+            "maximum": 129
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4613761,
+            "minimum": 35,
+            "maximum": 129
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.892667063296638,
+            23.16968988465763
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6770591,
+            "minimum": 51,
+            "maximum": 133
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6770591,
+            "minimum": 51,
+            "maximum": 133
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.674478649119516,
+            17.623178982529126
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8714987,
+            "minimum": 69,
+            "maximum": 151
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8714987,
+            "minimum": 69,
+            "maximum": 151
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.920120336271019,
+            13.513340098391376
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10736007,
+            "minimum": 89,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10736007,
+            "minimum": 89,
+            "maximum": 169
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.115791466678928,
+            33.50781274345922
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4613541,
+            "minimum": 35,
+            "maximum": 129
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4613541,
+            "minimum": 35,
+            "maximum": 129
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.883493829289776,
+            23.08890192779727
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6770991,
+            "minimum": 53,
+            "maximum": 133
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6770991,
+            "minimum": 53,
+            "maximum": 133
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.672352764197113,
+            17.573861306592583
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8715347,
+            "minimum": 71,
+            "maximum": 151
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8715347,
+            "minimum": 71,
+            "maximum": 151
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.920407479503809,
+            13.480556041715285
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10736441,
+            "minimum": 89,
+            "maximum": 171
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10736441,
+            "minimum": 89,
+            "maximum": 171
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.115791466678928,
+            33.50781274345922
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4613473,
+            "minimum": 35,
+            "maximum": 129
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4613473,
+            "minimum": 35,
+            "maximum": 129
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.888465272517381,
+            23.08890192779727
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6771023,
+            "minimum": 53,
+            "maximum": 133
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6771023,
+            "minimum": 53,
+            "maximum": 133
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.672352764197113,
+            17.573861306592583
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8715337,
+            "minimum": 71,
+            "maximum": 151
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8715337,
+            "minimum": 71,
+            "maximum": 151
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.920071010340183,
+            13.480556041715285
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10736457,
+            "minimum": 89,
+            "maximum": 171
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10736457,
+            "minimum": 89,
+            "maximum": 171
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.280799980583812,
+            33.611133981538664
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4613361,
+            "minimum": 35,
+            "maximum": 93
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4613361,
+            "minimum": 35,
+            "maximum": 93
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.864758885116785,
+            23.10011503504458
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6770507,
+            "minimum": 55,
+            "maximum": 129
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6770507,
+            "minimum": 55,
+            "maximum": 129
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.679383330001425,
+            17.58320304612565
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8715271,
+            "minimum": 71,
+            "maximum": 149
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8715271,
+            "minimum": 71,
+            "maximum": 149
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.920052015047142,
+            13.484086763902585
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10736403,
+            "minimum": 89,
+            "maximum": 171
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10736403,
+            "minimum": 89,
+            "maximum": 171
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.333798597611194,
+            33.3706603351635
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4612779,
+            "minimum": 35,
+            "maximum": 93
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4612779,
+            "minimum": 35,
+            "maximum": 93
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.863808502184693,
+            22.27068411968425
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6770015,
+            "minimum": 53,
+            "maximum": 129
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6770015,
+            "minimum": 53,
+            "maximum": 129
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.726211468732684,
+            16.988240255880815
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8714631,
+            "minimum": 71,
+            "maximum": 145
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8714631,
+            "minimum": 71,
+            "maximum": 145
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.917759716372857,
+            12.989207786895781
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10736399,
+            "minimum": 91,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10736399,
+            "minimum": 91,
+            "maximum": 169
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.052030286994043,
+            33.30218487103004
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4596725,
+            "minimum": 31,
+            "maximum": 99
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4596725,
+            "minimum": 31,
+            "maximum": 99
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.747125587430551,
+            21.603613939844767
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6755365,
+            "minimum": 49,
+            "maximum": 131
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6755365,
+            "minimum": 49,
+            "maximum": 131
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.677675795980079,
+            16.307662973690572
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8705565,
+            "minimum": 67,
+            "maximum": 147
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8705565,
+            "minimum": 67,
+            "maximum": 147
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.917554991529086,
+            12.902202407923465
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10733057,
+            "minimum": 91,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10733057,
+            "minimum": 91,
+            "maximum": 169
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            12.052030286994043,
+            33.30220537367067
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4596763,
+            "minimum": 31,
+            "maximum": 99
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4596763,
+            "minimum": 31,
+            "maximum": 99
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.747125587430551,
+            21.592062156716004
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6755535,
+            "minimum": 49,
+            "maximum": 131
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6755535,
+            "minimum": 49,
+            "maximum": 131
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.677675795980079,
+            16.298249451502762
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8705747,
+            "minimum": 67,
+            "maximum": 147
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8705747,
+            "minimum": 67,
+            "maximum": 147
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.9200996090797515,
+            12.892864680128906
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10733279,
+            "minimum": 91,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10733279,
+            "minimum": 91,
+            "maximum": 169
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            11.46280496339213,
+            38.56345756376235
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4587811,
+            "minimum": 27,
+            "maximum": 109
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4587811,
+            "minimum": 27,
+            "maximum": 109
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.5280791653461,
+            23.30091973424947
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6747231,
+            "minimum": 45,
+            "maximum": 135
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6747231,
+            "minimum": 45,
+            "maximum": 135
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.575024753529512,
+            16.63235172804153
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8700387,
+            "minimum": 63,
+            "maximum": 149
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8700387,
+            "minimum": 63,
+            "maximum": 149
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.855012959093006,
+            12.866510844960084
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10731121,
+            "minimum": 89,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10731121,
+            "minimum": 89,
+            "maximum": 169
+          }
+        }
+      ]
+    },
+    {
+      "measured": 78875,
+      "missing_reference": 0,
+      "finite_ratio": 78875,
+      "used_level_histogram": [
+        0,
+        0,
+        0,
+        0,
+        78875
+      ],
+      "levels": [
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            11.462805027366487,
+            38.56345827401978
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 4587809,
+            "minimum": 27,
+            "maximum": 109
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 4587809,
+            "minimum": 27,
+            "maximum": 109
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            9.528079845479427,
+            23.300920117778624
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 6747229,
+            "minimum": 45,
+            "maximum": 135
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 6747229,
+            "minimum": 45,
+            "maximum": 135
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            8.575025366764613,
+            16.632352093115298
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 8700387,
+            "minimum": 63,
+            "maximum": 149
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 8700387,
+            "minimum": 63,
+            "maximum": 149
+          }
+        },
+        {
+          "used": 78875,
+          "rank_deficient": 0,
+          "condition_unavailable": 0,
+          "condition_range": [
+            7.85501358085202,
+            12.866512321999544
+          ],
+          "rank_histogram": [
+            0,
+            0,
+            78875
+          ],
+          "zero_source": 0,
+          "reasons": {
+            "missing_reference": 0,
+            "used": 78875,
+            "invalid_axis_boundary": 0,
+            "insufficient_plasma": 0,
+            "no_closed_contour": 0,
+            "insufficient_finite_samples": 0
+          },
+          "vertices": {
+            "count": 78875,
+            "total": 10731121,
+            "minimum": 89,
+            "maximum": 169
+          },
+          "finite_points": {
+            "count": 78875,
+            "total": 10731121,
+            "minimum": 89,
+            "maximum": 169
+          }
+        }
+      ]
+    }
+  ],
+  "historical": {
+    "reference": {
+      "frames": 78875,
+      "shots": 358,
+      "shot_mean": 0.0
+    },
+    "smoothed": {
+      "frames": 78875,
+      "shots": 358,
+      "shot_mean": 0.013321596899052842
+    },
+    "margin": {
+      "frames": 78875,
+      "shots": 358,
+      "shot_mean": 0.05138308263858075
+    },
+    "smoothed->margin": {
+      "frames": 78875,
+      "shots": 358,
+      "mean_change": 0.0380614857395279
+    }
+  },
+  "common": {
+    "frames": 78875,
+    "shots": 358,
+    "raw_means": [
+      0.0020243742596254685,
+      0.015345971158678322,
+      0.053407456898206224
+    ],
+    "excess_means": [
+      0.0,
+      0.013321596899052832,
+      0.05138308263858076
+    ],
+    "change": {
+      "mean_change": 0.0380614857395279,
+      "ci99": [
+        0.03437953582954224,
+        0.0420005047611092
+      ],
+      "supported_shots": 358,
+      "draws": 20000,
+      "finite_draws": 20000,
+      "unavailable_draws": 0,
+      "sampled_nonempty_histogram": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20000
+      ]
+    }
+  },
+  "full": {
+    "frames": 78875,
+    "shots": 358,
+    "raw_means": [
+      0.0020243742596254685,
+      0.015345971158678322,
+      0.053407456898206224
+    ],
+    "excess_means": [
+      0.0,
+      0.013321596899052832,
+      0.05138308263858076
+    ],
+    "change": {
+      "mean_change": 0.0380614857395279,
+      "ci99": [
+        0.03437953582954224,
+        0.0420005047611092
+      ],
+      "supported_shots": 358,
+      "draws": 20000,
+      "finite_draws": 20000,
+      "unavailable_draws": 0,
+      "sampled_nonempty_histogram": [
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        0,
+        20000
+      ]
+    }
+  },
+  "reference_valid_frames_removed_by_full_support": 0,
+  "frame_quantiles_reproduced": false,
+  "private_maps_remeasured": false
+}
