@@ -15,8 +15,8 @@ These diagnostics do not compute the competition score or certify physical force
 From the repository root, install the maintained diagnostic environment:
 
 ```bash
-python3.12 -m venv .venv
-.venv/bin/pip install --require-hashes -r requirements-quality.txt
+uv venv --python 3.12.3 .venv
+uv pip install --python .venv/bin/python --require-hashes -r requirements-quality.txt
 ```
 
 Create an analytic field, with coordinates in metres and flux per radian:

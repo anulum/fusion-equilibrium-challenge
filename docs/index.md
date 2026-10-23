@@ -10,6 +10,17 @@ The permanent record of one entry to the [Fusion Equilibrium Challenge](https://
 tokamak plasma, and q95 and βN, from coil currents, measured plasma current I_p and Thomson-scattering profiles,
 without magnetic probes or flux-loop measurements.
 
+## A higher score does not certify force balance
+
+On 358 development shots, the finishing step added 1981 µS to the score while increasing several measured
+GS-form residuals and field/current errors. An interior projection subsequently reduced the tested GS-form
+residuals but lost 157 µS and increased an interface-current proxy. These are specific numerical diagnostics,
+not percentages of nonequilibrium current or a force-balance certificate.
+[Physics audit](PHYSICS_AUDIT.md) explains the corrected measurements, public table reproduction and tools for
+examining another model's maps.
+
+## The entry
+
 The entry has two parts that share nothing but the task:
 
 - **DIII-D:** an ensemble of networks trained on the organisers' labelled DIII-D shots, followed by a finishing step
@@ -53,7 +64,7 @@ Four DIII-D development frames, chosen by a fixed rule (median, 90th and 99th pe
 error): the reference, the map after the finisher and their difference. The evaluated networks exclude these
 shots from fitting, but the shots were used before in model comparisons ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map)).
 
-## Four findings
+## Other findings
 
 1. **Representation beat ensemble size.** 215 features describing what the 0.5 ms input signals do within ±20 ms of
    each 20 ms frame let 32 refitted networks score higher than the 195-network ensemble before them: +1.98 × 10⁻⁴ on the public
@@ -64,19 +75,10 @@ shots from fitting, but the shots were used before in model comparisons ([Study 
    ([What did not work](NEGATIVE_RESULTS.md)).
 3. **A physics reconstruction without MAST labels reached 0.7145 on MAST,** and label-free repairs confirmed on a
    synthetic testbed did not transfer to the real machine ([Study §5.9](STUDY.md#59-what-the-mast-result-says-a-limit-of-our-approach-not-of-the-problem)).
-4. **A higher score does not certify force balance.** The finisher adds 1981 µS on the evaluated development
-      cohort while the tested GS-form residuals and poloidal-field error increase; the corrected D71b measures
-   confirm the direction on a fixed exterior region and with a flux-surface test that assumes no profile shape.
-   The existing Grad–Shafranov interior lowered the score by 157 µS; measurement on its scored float32 maps
-   subsequently found lower GS-form residuals and field error against EFIT, but a higher interface-crossing
-   current proxy. These are specific numerical diagnostics, not percentages of nonequilibrium current or a
-   force-balance certificate; the original topology counts are withdrawn
-   ([Study §4.27](STUDY.md#427-what-the-finishing-step-does-to-the-physics-of-the-map),
-   [§4.28](STUDY.md#428-a-gradshafranov-interior-for-the-finished-map),
-   [§4.29](STUDY.md#429-physical-diagnostics-on-the-scored-projection-maps)).
 
 ## Read
 
+- [Physics audit](PHYSICS_AUDIT.md): what the corrected measurements establish, and how to recompute them.
 - [Audit your maps](AUDIT_TOOL.md): measure GS-form, field and current diagnostics with explicit units,
   support and fixed comparison regions, without our trained models.
 

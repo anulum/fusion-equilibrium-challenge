@@ -26,12 +26,12 @@ defaults:
   - scope: {path: "index.md"}
     values: {title: "Home", nav_order: 1}
   - scope: {path: "METHODS_REPORT.md"}
-    values: {title: "Methods report", nav_order: 2, layout: default}
+    values: {title: "Methods report", nav_order: 3, layout: default}
   - scope: {path: "STUDY.md"}
-    values: {title: "Study", nav_order: 3, layout: default}
+    values: {title: "Study", nav_order: 4, layout: default}
   - scope: {path: "EXPERIMENT_LEDGER.md"}
-    values: {title: "Experiment ledger", nav_order: 4, layout: default}
+    values: {title: "Experiment ledger", nav_order: 5, layout: default}
   - scope: {path: "COSTS.md"}
-    values: {title: "What the entry cost", nav_order: 6, layout: default}
+    values: {title: "What the entry cost", nav_order: 7, layout: default}
   - scope: {path: "NEGATIVE_RESULTS.md"}
-    values: {title: "What did not work", nav_order: 5, layout: default}
+    values: {title: "What did not work", nav_order: 6, layout: default}
