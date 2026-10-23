@@ -52,6 +52,41 @@ The weights are not in this repository. They are published on Hugging Face as
 pinned in `WEIGHTS.json`; that model card declares the licence `agpl-3.0` (the Hugging Face licence tag, which has
 no "or later" form). They were fitted on the challenge's DIII-D training data, CC BY 4.0, attributed above.
 
+## Official-method audit baseline
+
+`tools/official_ridge.py` adapts the input alignment, Ip time correction and PCA/Ridge recipe of
+[Sophelio's starter](https://github.com/Sophelio/fusion-equilibrium-challenge-starter/tree/823f6eef1f527e1b5566a8fc1e952da6e2fadf43),
+particularly `experiments.py` and `data_fixes.py`. The method is independently authored by the organisers;
+its reproduction here is performed by this entry, not by an independent outside evaluator.
+The training subset, exclusions, random seed, numerical conventions and published predictions are described in
+[the calibration record](experiments/audit_calibration/README.md). No MAST equilibrium labels are used.
+The four baseline predictions are this entry's generated outputs, fitted on the attributed CC BY 4.0
+DIII-D training data; they are not copies of a competitor's model or hidden test labels.
+
+The adapted starter code retains this permission notice (the starter's licence does not license the dataset):
+
+> MIT License
+>
+> Copyright (c) 2026 Sophelio and the Fusion Equilibrium Challenge authors
+>
+> Permission is hereby granted, free of charge, to any person obtaining a copy
+> of this software and associated documentation files (the "Software"), to deal
+> in the Software without restriction, including without limitation the rights
+> to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
+> copies of the Software, and to permit persons to whom the Software is
+> furnished to do so, subject to the following conditions:
+>
+> The above copyright notice and this permission notice shall be included in all
+> copies or substantial portions of the Software.
+>
+> THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+> IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+> FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
+> AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+> LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
+> OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
+> SOFTWARE.
+
 ## Software the entry runs on
 
 NumPy, SciPy, PyArrow, scikit-image, scikit-learn, JAX, XGBoost and PyTorch (imported by the training code),

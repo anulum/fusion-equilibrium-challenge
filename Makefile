@@ -7,7 +7,7 @@
 # Fusion Equilibrium Challenge — declared verification and reproduction commands
 TOOLBIN ?= .venv/bin
 PYTHON ?= $(TOOLBIN)/python
-SOURCES := experiments/d71_finisher_physics/per_shot_table.py tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/surface_support_summary.py tools/surface_support_table.py tools/scored_map_summary.py tools/scored_map_table.py tools/audit_map_input.py tools/field_diagnostics.py tools/equilibrium_audit.py tools/make_preview.py tools/check_publication_boundary.py
+SOURCES := experiments/d71_finisher_physics/per_shot_table.py tools/check_doc_links.py tools/ci_check_shot.py tools/d71b_table.py tools/d72_table.py tools/surface_gs.py tools/surface_support_summary.py tools/surface_support_table.py tools/scored_map_summary.py tools/scored_map_table.py tools/audit_map_input.py tools/field_diagnostics.py tools/equilibrium_audit.py tools/official_ridge.py tools/audit_calibration.py tools/make_preview.py tools/check_publication_boundary.py
 FROZEN := source training_adapter infer.py train.py tree_replica.py deployment.json training_recipe.json WEIGHTS.json WEIGHTS.sha256
 FINAL := 25ba6fd4257cc37451f851983d8eaeb7e7381e02
 

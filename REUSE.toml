@@ -46,3 +46,12 @@ SPDX-FileCopyrightText = [
     "2020-2026 Miroslav Šotek <protoscience@anulum.li> (predicted frames, selection and rendering)",
 ]
 SPDX-License-Identifier = "CC-BY-4.0 AND AGPL-3.0-or-later"
+
+[[annotations]]
+path = "tools/official_ridge.py"
+precedence = "override"
+SPDX-FileCopyrightText = [
+    "2026 Sophelio and the Fusion Equilibrium Challenge authors (adapted starter recipe)",
+    "2020-2026 Miroslav Šotek <protoscience@anulum.li> (adaptations and audit interface)",
+]
+SPDX-License-Identifier = "AGPL-3.0-or-later AND MIT"

@@ -121,3 +121,5 @@ example has a known stencil error: −Δ*φ = R² + 1.8 − ΔR²/4, even though
 Pixelwise agreement alone says little about derivative errors. The
 [scored-map experiment](https://github.com/anulum/fusion-equilibrium-challenge/blob/main/experiments/d72_scored_map_physics/README.md) shows why score and these diagnostics
 need separate measurement.
+
+[Calibrate the audit](AUDIT_CALIBRATION.md) with known discretisation errors, unavailable controls and the organisers’ independently authored PCA–Ridge method on four reference-assisted illustrations.

@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Fifteen verification, diagnostic and rendering tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/scored_map_summary.py`, `tools/scored_map_table.py`, `tools/audit_map_input.py`, `tools/field_diagnostics.py`, `tools/equilibrium_audit.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Seventeen verification, diagnostic, rendering and baseline-reproduction tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/scored_map_summary.py`, `tools/scored_map_table.py`, `tools/audit_map_input.py`, `tools/field_diagnostics.py`, `tools/equilibrium_audit.py`, `tools/official_ridge.py`, `tools/audit_calibration.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
@@ -46,15 +46,22 @@ The external-map audit accepts explicitly declared units and orientation, fixed 
 references/current measurements. Its maintained input, field and CLI modules are covered by analytic discrete
 operator controls, actual malformed archives, convention/gauge comparisons and a published DIII-D illustration
 through the real command. Rank, surface support, zero denominators and unavailable domains are reported rather
-than certified. This tests the declared diagnostic implementation, not an independent physical truth or an
-external predictor baseline. [Input contract and numerical definitions](docs/AUDIT_TOOL.md) describe the scope.
+than certified. Those operator tests alone do not evaluate an external predictor or establish independent physical truth. [Input contract and numerical definitions](docs/AUDIT_TOOL.md) describe the scope.
+
+The calibration adds a known continuous/discrete source comparison on three resolutions and fixed
+perturbation, unavailable and common-sign controls. Four checksum-bound public illustrations compare the
+entry and the organisers' independently authored PCA–Ridge method on identical reference-assisted regions.
+This method was fitted by the entry on 512 other released DIII-D shots, excluding the entire 358-shot cohort;
+it is not independent external reproduction. Its maintained offline fitter has real Parquet, alignment,
+fit, provenance and public-command tests. The submitted training path remains frozen and outside these gates.
+[Calibration definitions and reproduction](docs/AUDIT_CALIBRATION.md) state the population and physical limits.
 
 The publication guard runs in commit hooks, Diagnostics and immediately before the CI source archive. It reads
 the staged blobs and working files, rejects symbolic links and recognised private/process record shapes, and
 checks all members of gzip files within a fixed decompression limit. Tests cover actual Git staging, exported
 trees and refusal cases. This is a bounded publication check, not a general confidentiality guarantee.
 
-The inference and training code, the vendored solver and the historical experiment runners are not under these gates. They
+The submitted inference and training code, the vendored solver and the historical experiment runners are not under these gates. They
 are the code that produced the submission, kept as it was; their quality is shown by the reproduction checks below,
 not by lint, type or coverage results. Reproduction evidence is narrower than full native-code acceptance;
 those historical qualification gaps are not silently passed.

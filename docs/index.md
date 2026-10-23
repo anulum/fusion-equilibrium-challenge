@@ -116,3 +116,5 @@ Cite as: [doi:10.5281/zenodo.23480092](https://doi.org/10.5281/zenodo.23480092).
 
 Developed by Anulum (Miroslav Šotek) with Arcane Sapience, a research system of agents built on large language models.
 AGPL-3.0-or-later. Contact: protoscience@anulum.li.
+
+The [audit calibration](AUDIT_CALIBRATION.md) provides exact stencil controls and a reference-assisted comparison with the organisers’ PCA–Ridge method.

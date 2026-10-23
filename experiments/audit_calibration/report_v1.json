@@ -1,0 +1,3890 @@
+{
+  "analytic": [
+    {
+      "case": "quartic_33",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 1.3616184969187606,
+          "current": {
+            "absolute_A": 11591945.064220311,
+            "density_rms_A_m2": 2274049.6345659224,
+            "net_A": 11591945.064220311,
+            "reason": "available",
+            "requested_nodes": 1089,
+            "used_nodes": 961
+          },
+          "reason": "available",
+          "requested_nodes": 1089,
+          "source_rms_T": 5.142562168992819,
+          "used_nodes": 961
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1845020.0192448192,
+          "density_rms_A_m2": 2198878.957483018,
+          "net_A": 1845020.0192448192,
+          "reason": "available",
+          "requested_nodes": 158,
+          "used_nodes": 158
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.9999999999998995,
+            7.705131519120298e-13,
+            -1.5419059252564439e-12,
+            9.244883021905985e-13,
+            1.799294433594027,
+            -2.0470914023099967e-12,
+            3.967840199006886e-12,
+            -2.286352399304584e-12
+          ],
+          "condition": 2205.427854929344,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 1.0434505930667639e-14,
+          "reason": "available",
+          "requested_nodes": 158,
+          "required_rank": 8,
+          "rms_residual_T": 4.823108150883612e-14,
+          "rms_source_T": 4.622267870592903,
+          "singular_values": [
+            45.84500707451413,
+            14.858791528708576,
+            4.4835706494541405,
+            2.9072082266749404,
+            1.1119925418483958,
+            0.3509977782958575,
+            0.1899663377056011,
+            0.02078735288123169
+          ],
+          "sse_T2": 3.675454813148949e-25,
+          "sse_over_tss": 3.902997351754975e-27,
+          "tss_T2": 94.17005654631787,
+          "used_nodes": 158,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 1781.6987388364041,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 1.3616184969187606,
+            "current": {
+              "absolute_A": 11591945.064220311,
+              "density_rms_A_m2": 2274049.6345659224,
+              "net_A": 11591945.064220311,
+              "reason": "available",
+              "requested_nodes": 1089,
+              "used_nodes": 961
+            },
+            "reason": "available",
+            "requested_nodes": 1089,
+            "source_rms_T": 5.142562168992819,
+            "used_nodes": 961
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1845020.0192448192,
+            "density_rms_A_m2": 2198878.957483018,
+            "net_A": 1845020.0192448192,
+            "reason": "available",
+            "requested_nodes": 158,
+            "used_nodes": 158
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 6.282828881696895
+          },
+          "requested_nodes": 1089,
+          "used_nodes": 961
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.88294455029157,
+                "contour_points": 25,
+                "finite_points": 25,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.4403832845334134e-06,
+                "singular_values": [
+                  15.441894793512136,
+                  0.7394500692334853
+                ],
+                "source_energy": 554.9795808950175,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.60346027631642,
+                "contour_points": 37,
+                "finite_points": 37,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.2586705333925216e-06,
+                "singular_values": [
+                  19.060770437167132,
+                  1.30522287707931
+                ],
+                "source_energy": 834.0590010061401,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.85537357983276,
+                "contour_points": 47,
+                "finite_points": 47,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.5908868951202487e-06,
+                "singular_values": [
+                  21.41636914478963,
+                  1.8064693618108443
+                ],
+                "source_energy": 1050.0172700990795,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.680673273530488,
+                "contour_points": 55,
+                "finite_points": 55,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 3.005639288739389e-06,
+                "singular_values": [
+                  23.399424156650905,
+                  2.1908192074970425
+                ],
+                "source_energy": 1241.3194671389695,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 5.28907047651074e-05,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "grid_shape": [
+        33,
+        33
+      ],
+      "known_continuous_source_rms_T": 5.143231877618458,
+      "known_discrete_source_rms_T": 5.142562168992811,
+      "known_pointwise_source_error_T": 0.0007055664062500001,
+      "measured_source_rms_relative_difference": 0.0001302116337693615
+    },
+    {
+      "case": "quartic_65",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 1.3890257155496673,
+          "current": {
+            "absolute_A": 11986770.62265063,
+            "density_rms_A_m2": 2277551.949597986,
+            "net_A": 11986770.62265063,
+            "reason": "available",
+            "requested_nodes": 4225,
+            "used_nodes": 3969
+          },
+          "reason": "available",
+          "requested_nodes": 4225,
+          "source_rms_T": 5.158826177357215,
+          "used_nodes": 3969
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1875503.2843693865,
+          "density_rms_A_m2": 2200416.634990658,
+          "net_A": 1875503.2843693865,
+          "reason": "available",
+          "requested_nodes": 642,
+          "used_nodes": 642
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.9999999999997958,
+            2.0092366525331523e-12,
+            -4.914478476268402e-12,
+            3.367659107669139e-12,
+            1.7998236083989736,
+            -4.925178350852106e-12,
+            1.1553297823116131e-11,
+            -7.67052795978721e-12
+          ],
+          "condition": 2286.7797540152546,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 6.553219888425873e-14,
+          "reason": "available",
+          "requested_nodes": 642,
+          "required_rank": 8,
+          "rms_residual_T": 3.041244081824049e-13,
+          "rms_source_T": 4.640839363860528,
+          "singular_values": [
+            94.50265163020104,
+            31.518591998632967,
+            9.047268750459379,
+            6.25002867641641,
+            2.257263280669563,
+            0.7427598441146561,
+            0.3837209731519881,
+            0.04132564645295116
+          ],
+          "sse_T2": 5.937964292877534e-23,
+          "sse_over_tss": 1.5375377920481315e-25,
+          "tss_T2": 386.1995668391122,
+          "used_nodes": 642,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 7657.758588240855,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 1.3890257155496673,
+            "current": {
+              "absolute_A": 11986770.62265063,
+              "density_rms_A_m2": 2277551.949597986,
+              "net_A": 11986770.62265063,
+              "reason": "available",
+              "requested_nodes": 4225,
+              "used_nodes": 3969
+            },
+            "reason": "available",
+            "requested_nodes": 4225,
+            "source_rms_T": 5.158826177357215,
+            "used_nodes": 3969
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1875503.2843693865,
+            "density_rms_A_m2": 2200416.634990658,
+            "net_A": 1875503.2843693865,
+            "reason": "available",
+            "requested_nodes": 642,
+            "used_nodes": 642
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 6.391228809114576
+          },
+          "requested_nodes": 4225,
+          "used_nodes": 3969
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.716200491808106,
+                "contour_points": 53,
+                "finite_points": 53,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.4863199827457374e-07,
+                "singular_values": [
+                  22.424567703248844,
+                  1.082465276975683
+                ],
+                "source_energy": 1172.390273589245,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.489199657051609,
+                "contour_points": 75,
+                "finite_points": 75,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 3.4583841012368463e-07,
+                "singular_values": [
+                  26.822758941090058,
+                  1.8512243309474963
+                ],
+                "source_energy": 1663.9689387968979,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.797650606236061,
+                "contour_points": 89,
+                "finite_points": 89,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 4.278585921541678e-07,
+                "singular_values": [
+                  29.40417344532863,
+                  2.4923753403737883
+                ],
+                "source_energy": 1982.3087763902663,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.382564555112737,
+                "contour_points": 107,
+                "finite_points": 107,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 4.786775681653798e-07,
+                "singular_values": [
+                  32.390072896860936,
+                  3.119660149949266
+                ],
+                "source_energy": 2388.1831754456052,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 1.4431734143648945e-05,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "grid_shape": [
+        65,
+        65
+      ],
+      "known_continuous_source_rms_T": 5.158993351210897,
+      "known_discrete_source_rms_T": 5.158826177357258,
+      "known_pointwise_source_error_T": 0.00017639160156250003,
+      "measured_source_rms_relative_difference": 3.2404355327142476e-05
+    },
+    {
+      "alpha": 0.1,
+      "case": "deformation_0.1",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 1.3315504426678546,
+          "current": {
+            "absolute_A": 11301779.745060744,
+            "density_rms_A_m2": 2154283.9136662693,
+            "net_A": 11301779.745060744,
+            "reason": "available",
+            "requested_nodes": 4225,
+            "used_nodes": 3969
+          },
+          "reason": "available",
+          "requested_nodes": 4225,
+          "source_rms_T": 4.962657412307704,
+          "used_nodes": 3969
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1862959.3653545363,
+          "density_rms_A_m2": 2185847.1047462183,
+          "net_A": 1862959.3653545363,
+          "reason": "available",
+          "requested_nodes": 642,
+          "used_nodes": 642
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            1.000582658535759,
+            0.0019049562351840948,
+            0.01327044936990891,
+            -0.008033825298664308,
+            1.7982772977185943,
+            -0.06208186559223818,
+            -0.03302093371718968,
+            0.016809183103461054
+          ],
+          "condition": 2296.914615217134,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.0009934397191286022,
+          "reason": "available",
+          "requested_nodes": 642,
+          "required_rank": 8,
+          "rms_residual_T": 0.004583118264930783,
+          "rms_source_T": 4.613383355510362,
+          "singular_values": [
+            94.36865354175676,
+            31.402137627438517,
+            9.023910495703657,
+            6.225463658801334,
+            2.2459489032877333,
+            0.7397881865112751,
+            0.38155052861076444,
+            0.04108496367978216
+          ],
+          "sse_T2": 0.01348519268547966,
+          "sse_over_tss": 3.440255385618074e-05,
+          "tss_T2": 391.982314506483,
+          "used_nodes": 642,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 34.525198362901186,
+          "bp_reference_energy_T2": 7657.758588240855,
+          "bp_relative_l2": 0.0671455531175655,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 1.3890257155496673,
+            "current": {
+              "absolute_A": 11986770.62265063,
+              "density_rms_A_m2": 2277551.949597986,
+              "net_A": 11986770.62265063,
+              "reason": "available",
+              "requested_nodes": 4225,
+              "used_nodes": 3969
+            },
+            "reason": "available",
+            "requested_nodes": 4225,
+            "source_rms_T": 5.158826177357215,
+            "used_nodes": 3969
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1875503.2843693865,
+            "density_rms_A_m2": 2200416.634990658,
+            "net_A": 1875503.2843693865,
+            "reason": "available",
+            "requested_nodes": 642,
+            "used_nodes": 642
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 6.025998375609787
+          },
+          "requested_nodes": 4225,
+          "used_nodes": 3969
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.692878963421098,
+                "contour_points": 53,
+                "finite_points": 53,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0001507827890885654,
+                "singular_values": [
+                  22.424826945942563,
+                  1.0836977776549623
+                ],
+                "source_energy": 1166.856402010256,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.477507087381495,
+                "contour_points": 75,
+                "finite_points": 75,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0007912392030318354,
+                "singular_values": [
+                  26.82335306885012,
+                  1.8527604861080806
+                ],
+                "source_energy": 1648.474578107358,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.7872721553986,
+                "contour_points": 89,
+                "finite_points": 89,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0019022164936608292,
+                "singular_values": [
+                  29.40493275142714,
+                  2.4946342430856325
+                ],
+                "source_energy": 1954.9016095802276,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.371767789375504,
+                "contour_points": 107,
+                "finite_points": 107,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.003852886494548317,
+                "singular_values": [
+                  32.39142963603891,
+                  3.1230384534080695
+                ],
+                "source_energy": 2344.1726179532343,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.0009702304560951626,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      }
+    },
+    {
+      "alpha": 0.4,
+      "case": "deformation_0.4",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 1.1867238877052448,
+          "current": {
+            "absolute_A": 9397296.322407614,
+            "density_rms_A_m2": 1859681.0877207203,
+            "net_A": 9246807.112291109,
+            "reason": "available",
+            "requested_nodes": 4225,
+            "used_nodes": 3969
+          },
+          "reason": "available",
+          "requested_nodes": 4225,
+          "source_rms_T": 4.442051925917178,
+          "used_nodes": 3969
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1825327.608309989,
+          "density_rms_A_m2": 2142451.5502637248,
+          "net_A": 1825327.608309989,
+          "reason": "available",
+          "requested_nodes": 642,
+          "used_nodes": 642
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            1.0029196763447044,
+            0.0023203707817310223,
+            0.0662098964350162,
+            -0.04035884324292115,
+            1.7918282259622031,
+            -0.23140499490747135,
+            -0.17665066123509818,
+            0.0940994199043309
+          ],
+          "condition": 2335.1593201408564,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.0040631312509167815,
+          "reason": "available",
+          "requested_nodes": 642,
+          "required_rank": 8,
+          "rms_residual_T": 0.018412295577025884,
+          "rms_source_T": 4.5315532381267385,
+          "singular_values": [
+            94.01308889439697,
+            31.037520684715872,
+            8.958611978400235,
+            6.139150066602785,
+            2.2113793373593547,
+            0.7277459810132367,
+            0.3745889234257714,
+            0.0402598178563363
+          ],
+          "sse_T2": 0.2176461074429224,
+          "sse_over_tss": 0.0005284471534950004,
+          "tss_T2": 411.8597403798515,
+          "used_nodes": 642,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 552.4031738064197,
+          "bp_reference_energy_T2": 7657.758588240855,
+          "bp_relative_l2": 0.26858221247026215,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 1.3890257155496673,
+            "current": {
+              "absolute_A": 11986770.62265063,
+              "density_rms_A_m2": 2277551.949597986,
+              "net_A": 11986770.62265063,
+              "reason": "available",
+              "requested_nodes": 4225,
+              "used_nodes": 3969
+            },
+            "reason": "available",
+            "requested_nodes": 4225,
+            "source_rms_T": 5.158826177357215,
+            "used_nodes": 3969
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1875503.2843693865,
+            "density_rms_A_m2": 2200416.634990658,
+            "net_A": 1875503.2843693865,
+            "reason": "available",
+            "requested_nodes": 642,
+            "used_nodes": 642
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 5.010546449438681
+          },
+          "requested_nodes": 4225,
+          "used_nodes": 3969
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.67618216878573,
+                "contour_points": 53,
+                "finite_points": 53,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0023455801245628027,
+                "singular_values": [
+                  22.42486839079493,
+                  1.0845749088363685
+                ],
+                "source_energy": 1150.267871729253,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.454564331949719,
+                "contour_points": 75,
+                "finite_points": 75,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.012460744939444058,
+                "singular_values": [
+                  26.82416332863608,
+                  1.8557573035491048
+                ],
+                "source_energy": 1602.1660395696945,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.759547359469607,
+                "contour_points": 89,
+                "finite_points": 89,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.030082621039366906,
+                "singular_values": [
+                  29.406601031193766,
+                  2.5006575620883504
+                ],
+                "source_energy": 1873.2491972754149,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.339479973961405,
+                "contour_points": 107,
+                "finite_points": 107,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.06133760306153028,
+                "singular_values": [
+                  32.395118666155525,
+                  3.1331477741374125
+                ],
+                "source_energy": 2213.5327094410723,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.0039410630460661004,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      }
+    },
+    {
+      "case": "missing_mask",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 1.3890257155496673,
+          "current": {
+            "absolute_A": 11986770.62265063,
+            "density_rms_A_m2": 2277551.949597986,
+            "net_A": 11986770.62265063,
+            "reason": "available",
+            "requested_nodes": 4225,
+            "used_nodes": 3969
+          },
+          "reason": "available",
+          "requested_nodes": 4225,
+          "source_rms_T": 5.158826177357215,
+          "used_nodes": 3969
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": null,
+        "polynomial_gs": {
+          "available": false,
+          "coefficients": [],
+          "condition": null,
+          "degree": 3,
+          "rank": null,
+          "ratio": null,
+          "reason": "missing_plasma_mask",
+          "requested_nodes": 0,
+          "required_rank": 8,
+          "rms_residual_T": null,
+          "rms_source_T": null,
+          "singular_values": [],
+          "sse_T2": null,
+          "sse_over_tss": null,
+          "tss_T2": null,
+          "used_nodes": 0,
+          "variance_degenerate": null
+        },
+        "reference_comparison": {
+          "available": false,
+          "reason": "missing_reference"
+        },
+        "surface_gs": {
+          "available": false,
+          "reason": "missing_plasma_mask",
+          "support": null
+        }
+      }
+    },
+    {
+      "case": "open_surfaces",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.6810045240104201,
+          "current": {
+            "absolute_A": 1945405.6847938646,
+            "density_rms_A_m2": 441722.2851457879,
+            "net_A": 1945405.6847938646,
+            "reason": "available",
+            "requested_nodes": 4225,
+            "used_nodes": 3969
+          },
+          "reason": "available",
+          "requested_nodes": 4225,
+          "source_rms_T": 0.6810045240104241,
+          "used_nodes": 3969
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1945405.6847938646,
+          "density_rms_A_m2": 441722.2851457879,
+          "net_A": 1945405.6847938646,
+          "reason": "available",
+          "requested_nodes": 4225,
+          "used_nodes": 3969
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.40776968828249316,
+            0.9035751117413691,
+            1.0346066813905754,
+            1.0906562934019859,
+            -2.2381159802602806,
+            -0.12106947115403555,
+            2.0591814660452044,
+            4.379486825673207
+          ],
+          "condition": 1.0628585595152643e+17,
+          "degree": 3,
+          "rank": 6,
+          "ratio": 0.00041785098261974473,
+          "reason": "rank_deficient",
+          "requested_nodes": 4225,
+          "required_rank": 8,
+          "rms_residual_T": 0.00028455840952624725,
+          "rms_source_T": 0.6810045240104241,
+          "singular_values": [
+            231.56756560386435,
+            48.09141558605354,
+            12.069139671000608,
+            2.16459982220828,
+            0.2840031412140766,
+            0.025821392741926907,
+            4.1214978347321625e-14,
+            2.1787241917633412e-15
+          ],
+          "sse_T2": 0.00032138377558703444,
+          "sse_over_tss": 1.8848155516790516e-06,
+          "tss_T2": 170.51205636579976,
+          "used_nodes": 3969,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": false,
+          "reason": "missing_reference"
+        },
+        "surface_gs": {
+          "available": false,
+          "reason": "no_usable_surface",
+          "support": {
+            "full_support": false,
+            "levels": [
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.2,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              },
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.4,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              },
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.6,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              },
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.8,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              }
+            ],
+            "ratio": null,
+            "reason": "no_usable_surface",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": []
+          }
+        }
+      }
+    },
+    {
+      "case": "quartic_129",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 1.4026894337616789,
+          "current": {
+            "absolute_A": 12186565.349184576,
+            "density_rms_A_m2": 2279246.8781173048,
+            "net_A": 12186565.349184576,
+            "reason": "available",
+            "requested_nodes": 16641,
+            "used_nodes": 16129
+          },
+          "reason": "available",
+          "requested_nodes": 16641,
+          "source_rms_T": 5.166819498796075,
+          "used_nodes": 16129
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1874410.3079449907,
+          "density_rms_A_m2": 2200858.9792589517,
+          "net_A": 1874410.3079449907,
+          "reason": "available",
+          "requested_nodes": 2566,
+          "used_nodes": 2566
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.9999999999999252,
+            8.011449929805523e-13,
+            -2.144354165695056e-12,
+            1.5906997314012274e-12,
+            1.7999559020997975,
+            -1.9122124714790643e-12,
+            4.894329046659762e-12,
+            -3.5287122460050855e-12
+          ],
+          "condition": 2248.2194360581384,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 2.0720346238166871e-13,
+          "reason": "available",
+          "requested_nodes": 2566,
+          "required_rank": 8,
+          "rms_residual_T": 9.624342157094408e-13,
+          "rms_source_T": 4.6448751610947365,
+          "singular_values": [
+            189.5013708215394,
+            63.506007516583416,
+            18.197685090877393,
+            12.678768586004805,
+            4.557099416221065,
+            1.5200527667842498,
+            0.7774451965275189,
+            0.08428953499031976
+          ],
+          "sse_T2": 2.3768335038121204e-21,
+          "sse_over_tss": 1.5242359796242335e-24,
+          "tss_T2": 1559.3605816850459,
+          "used_nodes": 2566,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 31734.41471792523,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 1.4026894337616789,
+            "current": {
+              "absolute_A": 12186565.349184576,
+              "density_rms_A_m2": 2279246.8781173048,
+              "net_A": 12186565.349184576,
+              "reason": "available",
+              "requested_nodes": 16641,
+              "used_nodes": 16129
+            },
+            "reason": "available",
+            "requested_nodes": 16641,
+            "source_rms_T": 5.166819498796075,
+            "used_nodes": 16129
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1874410.3079449907,
+            "density_rms_A_m2": 2200858.9792589517,
+            "net_A": 1874410.3079449907,
+            "reason": "available",
+            "requested_nodes": 2566,
+            "used_nodes": 2566
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 6.501546271662001
+          },
+          "requested_nodes": 16641,
+          "used_nodes": 16129
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.16628909808175,
+                "contour_points": 105,
+                "finite_points": 105,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 3.070982973143755e-08,
+                "singular_values": [
+                  31.567779779681896,
+                  1.56537375945308
+                ],
+                "source_energy": 2322.6628724100365,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.235567595382287,
+                "contour_points": 147,
+                "finite_points": 147,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 4.066849019917664e-08,
+                "singular_values": [
+                  37.393699458435755,
+                  2.6267796635355425
+                ],
+                "source_energy": 3241.728228479323,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.750298072516333,
+                "contour_points": 181,
+                "finite_points": 181,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 4.560697387751363e-08,
+                "singular_values": [
+                  41.901460392801425,
+                  3.565991273941207
+                ],
+                "source_energy": 4027.052438660734,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.352461477274042,
+                "contour_points": 209,
+                "finite_points": 209,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 5.9098567537116135e-08,
+                "singular_values": [
+                  45.23283798454632,
+                  4.369283390606425
+                ],
+                "source_energy": 4659.53212185536,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 3.515098323145384e-06,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "grid_shape": [
+        129,
+        129
+      ],
+      "known_continuous_source_rms_T": 5.166861260791604,
+      "known_discrete_source_rms_T": 5.166819498796098,
+      "known_pointwise_source_error_T": 4.409790039062501e-05,
+      "measured_source_rms_relative_difference": 8.082662456221357e-06
+    },
+    {
+      "case": "zero_source",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 2.0,
+          "current": {
+            "absolute_A": 0.0,
+            "density_rms_A_m2": 0.0,
+            "net_A": 0.0,
+            "reason": "available",
+            "requested_nodes": 81,
+            "used_nodes": 49
+          },
+          "reason": "available",
+          "requested_nodes": 81,
+          "source_rms_T": 0.0,
+          "used_nodes": 49
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 0.0,
+          "density_rms_A_m2": 0.0,
+          "net_A": 0.0,
+          "reason": "available",
+          "requested_nodes": 81,
+          "used_nodes": 49
+        },
+        "polynomial_gs": {
+          "available": false,
+          "coefficients": [
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0,
+            0.0
+          ],
+          "condition": 1.2130927201728879e+19,
+          "degree": 3,
+          "rank": 5,
+          "ratio": null,
+          "reason": "zero_source",
+          "requested_nodes": 81,
+          "required_rank": 8,
+          "rms_residual_T": 0.0,
+          "rms_source_T": 0.0,
+          "singular_values": [
+            251.42069930814318,
+            21.9228788341864,
+            3.22011645973897,
+            1.1181179597174977,
+            0.07251146633750191,
+            3.461674208830559e-16,
+            1.0805408942829738e-16,
+            2.0725596248925732e-17
+          ],
+          "sse_T2": 0.0,
+          "sse_over_tss": null,
+          "tss_T2": 0.0,
+          "used_nodes": 49,
+          "variance_degenerate": true
+        },
+        "reference_comparison": {
+          "available": false,
+          "reason": "missing_reference"
+        },
+        "surface_gs": {
+          "available": false,
+          "reason": "no_usable_surface",
+          "support": {
+            "full_support": false,
+            "levels": [
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.2,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              },
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.4,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              },
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.6,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              },
+              {
+                "condition": null,
+                "contour_points": 0,
+                "finite_points": 0,
+                "level": 0.8,
+                "rank": 0,
+                "rank_deficient": false,
+                "reason": "no_closed_contour",
+                "residual_energy": 0.0,
+                "singular_values": [],
+                "source_energy": 0.0,
+                "used": false,
+                "zero_source": false
+              }
+            ],
+            "ratio": null,
+            "reason": "no_usable_surface",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": []
+          }
+        }
+      }
+    }
+  ],
+  "competition_score_computed": false,
+  "external_independent_replication": false,
+  "illustrations": [
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p50",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.3355539490586157,
+          "current": {
+            "absolute_A": 1429506.3307153836,
+            "density_rms_A_m2": 961539.1935846658,
+            "net_A": 1429506.3307153836,
+            "reason": "available",
+            "requested_nodes": 1276,
+            "used_nodes": 1276
+          },
+          "reason": "available",
+          "requested_nodes": 1276,
+          "source_rms_T": 2.1156869974360886,
+          "used_nodes": 1276
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1429506.3307153836,
+          "density_rms_A_m2": 961539.1935846658,
+          "net_A": 1429506.3307153836,
+          "reason": "available",
+          "requested_nodes": 1276,
+          "used_nodes": 1276
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.2451410994399326,
+            0.15301035843414318,
+            -0.07061460387377588,
+            0.043334770784325315,
+            3.630338786183208,
+            -6.359774903433808,
+            2.6360899487459157,
+            -0.15903294182367686
+          ],
+          "condition": 2563.2883027370276,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.006263597700893941,
+          "reason": "available",
+          "requested_nodes": 1276,
+          "required_rank": 8,
+          "rms_residual_T": 0.013251812212951889,
+          "rms_source_T": 2.1156869974360886,
+          "singular_values": [
+            149.37511581189816,
+            45.66724989584747,
+            16.241843158584498,
+            8.931965345264052,
+            3.407666076647073,
+            1.056059249816437,
+            0.5521833746155187,
+            0.058274801025073306
+          ],
+          "sse_T2": 0.22407903235928692,
+          "sse_over_tss": 0.0001530979836190273,
+          "tss_T2": 1463.6315061920773,
+          "used_nodes": 1276,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 143.6730736819897,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.3355539490586157,
+            "current": {
+              "absolute_A": 1429506.3307153836,
+              "density_rms_A_m2": 961539.1935846658,
+              "net_A": 1429506.3307153836,
+              "reason": "available",
+              "requested_nodes": 1276,
+              "used_nodes": 1276
+            },
+            "reason": "available",
+            "requested_nodes": 1276,
+            "source_rms_T": 2.1156869974360886,
+            "used_nodes": 1276
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1429506.3307153836,
+            "density_rms_A_m2": 961539.1935846658,
+            "net_A": 1429506.3307153836,
+            "reason": "available",
+            "requested_nodes": 1276,
+            "used_nodes": 1276
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.0
+          },
+          "requested_nodes": 1276,
+          "used_nodes": 1276
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.942205444582996,
+                "contour_points": 59,
+                "finite_points": 59,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.002338877689207402,
+                "singular_values": [
+                  25.67987527926094,
+                  1.2262259267398894
+                ],
+                "source_energy": 653.1236644856294,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.721512021337904,
+                "contour_points": 85,
+                "finite_points": 85,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0032061848545522245,
+                "singular_values": [
+                  31.012033405614336,
+                  2.1065793622736813
+                ],
+                "source_energy": 506.54763610165173,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.025405725466262,
+                "contour_points": 109,
+                "finite_points": 109,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.002799555825996889,
+                "singular_values": [
+                  35.59056500705104,
+                  2.959614487823951
+                ],
+                "source_energy": 337.897766398195,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.15730596215553,
+                "contour_points": 137,
+                "finite_points": 137,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0015283907378318157,
+                "singular_values": [
+                  40.139196263080606,
+                  3.9517561460324937
+                ],
+                "source_energy": 223.5961894838684,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.0023950439285862673,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "reference",
+      "reference_assisted_domain": true,
+      "region_identity": "373e2f490aeae7170ad2cfa7144683605f527e26c6220ee7d9b7c2587d5fc852",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1276,
+      "stem": "d3d_shot_7c4a498508",
+      "time_ms": 3060.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p50",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.3321893201881878,
+          "current": {
+            "absolute_A": 1419673.1214090826,
+            "density_rms_A_m2": 957481.9824623637,
+            "net_A": 1419673.1214090826,
+            "reason": "available",
+            "requested_nodes": 1276,
+            "used_nodes": 1276
+          },
+          "reason": "available",
+          "requested_nodes": 1276,
+          "source_rms_T": 2.1123924807628445,
+          "used_nodes": 1276
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1419673.1214090826,
+          "density_rms_A_m2": 957481.9824623637,
+          "net_A": 1419673.1214090826,
+          "reason": "available",
+          "requested_nodes": 1276,
+          "used_nodes": 1276
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.4485552217098314,
+            -0.9203022713875105,
+            1.9568198742587586,
+            -1.1882511393841537,
+            3.1964812206682462,
+            -5.3290637767790985,
+            1.791573055116225,
+            0.1731027767332978
+          ],
+          "condition": 2589.9842941178667,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.08985921129147059,
+          "reason": "available",
+          "requested_nodes": 1276,
+          "required_rank": 8,
+          "rms_residual_T": 0.18981792225938213,
+          "rms_source_T": 2.1123924807628445,
+          "singular_values": [
+            149.18981453931337,
+            45.504977816041254,
+            16.246176483483413,
+            8.903477739531969,
+            3.3903551735712303,
+            1.0534043114546445,
+            0.5463559826459085,
+            0.05760259430072202
+          ],
+          "sse_T2": 45.97535644746864,
+          "sse_over_tss": 0.030710132679171078,
+          "tss_T2": 1497.0744974557238,
+          "used_nodes": 1276,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.06365395923272966,
+          "bp_reference_energy_T2": 143.6730736819897,
+          "bp_relative_l2": 0.021048687448635493,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.3355539490586157,
+            "current": {
+              "absolute_A": 1429506.3307153836,
+              "density_rms_A_m2": 961539.1935846658,
+              "net_A": 1429506.3307153836,
+              "reason": "available",
+              "requested_nodes": 1276,
+              "used_nodes": 1276
+            },
+            "reason": "available",
+            "requested_nodes": 1276,
+            "source_rms_T": 2.1156869974360886,
+            "used_nodes": 1276
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1429506.3307153836,
+            "density_rms_A_m2": 961539.1935846658,
+            "net_A": 1429506.3307153836,
+            "reason": "available",
+            "requested_nodes": 1276,
+            "used_nodes": 1276
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 0.993121255152903
+          },
+          "requested_nodes": 1276,
+          "used_nodes": 1276
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 21.861572347329027,
+                "contour_points": 57,
+                "finite_points": 57,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.0985519600870344,
+                "singular_values": [
+                  25.443816192800178,
+                  1.1638603019287777
+                ],
+                "source_energy": 621.8844823457547,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 15.1697025059497,
+                "contour_points": 83,
+                "finite_points": 83,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 3.9784677673020923,
+                "singular_values": [
+                  30.875539197442258,
+                  2.0353424324130667
+                ],
+                "source_energy": 471.44114102902887,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.060622079543045,
+                "contour_points": 109,
+                "finite_points": 109,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.447723598616903,
+                "singular_values": [
+                  35.61800106951528,
+                  2.953247422446785
+                ],
+                "source_energy": 334.0900079503149,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.324862772195814,
+                "contour_points": 135,
+                "finite_points": 135,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.8220245609663337,
+                "singular_values": [
+                  40.083392773852026,
+                  3.8822203895817387
+                ],
+                "source_energy": 256.2078348958602,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.08209441270356337,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "entry_after_finisher",
+      "reference_assisted_domain": true,
+      "region_identity": "373e2f490aeae7170ad2cfa7144683605f527e26c6220ee7d9b7c2587d5fc852",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1276,
+      "stem": "d3d_shot_7c4a498508",
+      "time_ms": 3060.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p50",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.310809693162371,
+          "current": {
+            "absolute_A": 1219278.425539332,
+            "density_rms_A_m2": 884088.2905233612,
+            "net_A": 1219021.8789258115,
+            "reason": "available",
+            "requested_nodes": 1276,
+            "used_nodes": 1276
+          },
+          "reason": "available",
+          "requested_nodes": 1276,
+          "source_rms_T": 1.8948533158848486,
+          "used_nodes": 1276
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1219278.425539332,
+          "density_rms_A_m2": 884088.2905233612,
+          "net_A": 1219021.8789258115,
+          "reason": "available",
+          "requested_nodes": 1276,
+          "used_nodes": 1276
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.15124406460439646,
+            -0.01781697309840145,
+            -0.056781577607751134,
+            0.06546047922945454,
+            3.9787041796093883,
+            -7.057997131939779,
+            4.612331169722893,
+            -1.6811637000389137
+          ],
+          "condition": 2577.8073096116705,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.018358577252296934,
+          "reason": "available",
+          "requested_nodes": 1276,
+          "required_rank": 8,
+          "rms_residual_T": 0.034786810981443005,
+          "rms_source_T": 1.8948533158848486,
+          "singular_values": [
+            154.60581518636207,
+            46.47792809843658,
+            16.26582738029435,
+            9.201036370170632,
+            3.3995858942454387,
+            1.0988605809139256,
+            0.554169384279488,
+            0.05997570672171475
+          ],
+          "sse_T2": 1.544115950498029,
+          "sse_over_tss": 0.0009632433284787275,
+          "tss_T2": 1603.0383028312142,
+          "used_nodes": 1276,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 2.039594930673208,
+          "bp_reference_energy_T2": 143.6730736819897,
+          "bp_relative_l2": 0.11914731789121395,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.3355539490586157,
+            "current": {
+              "absolute_A": 1429506.3307153836,
+              "density_rms_A_m2": 961539.1935846658,
+              "net_A": 1429506.3307153836,
+              "reason": "available",
+              "requested_nodes": 1276,
+              "used_nodes": 1276
+            },
+            "reason": "available",
+            "requested_nodes": 1276,
+            "source_rms_T": 2.1156869974360886,
+            "used_nodes": 1276
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1429506.3307153836,
+            "density_rms_A_m2": 961539.1935846658,
+            "net_A": 1429506.3307153836,
+            "reason": "available",
+            "requested_nodes": 1276,
+            "used_nodes": 1276
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 0.8529367092268525
+          },
+          "requested_nodes": 1276,
+          "used_nodes": 1276
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.57295490471391,
+                "contour_points": 57,
+                "finite_points": 57,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.0637574670611301,
+                "singular_values": [
+                  24.27023296146809,
+                  1.1797154601212398
+                ],
+                "source_energy": 580.8920930192236,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 14.218909679655535,
+                "contour_points": 83,
+                "finite_points": 83,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.039958212325507246,
+                "singular_values": [
+                  29.83162006676124,
+                  2.0980244434244084
+                ],
+                "source_energy": 407.7896384516879,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.628694145465353,
+                "contour_points": 107,
+                "finite_points": 107,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.013021706994274993,
+                "singular_values": [
+                  34.38383847797317,
+                  2.9568099433917316
+                ],
+                "source_energy": 222.81418974194017,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.81463897054881,
+                "contour_points": 133,
+                "finite_points": 133,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.027357056318865498,
+                "singular_values": [
+                  38.75923256747718,
+                  3.9491246375728744
+                ],
+                "source_energy": 93.51794351284678,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.010507902948587076,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "official_ridge",
+      "reference_assisted_domain": true,
+      "region_identity": "373e2f490aeae7170ad2cfa7144683605f527e26c6220ee7d9b7c2587d5fc852",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1276,
+      "stem": "d3d_shot_7c4a498508",
+      "time_ms": 3060.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p90",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.11020137575757438,
+          "current": {
+            "absolute_A": 524684.0777845853,
+            "density_rms_A_m2": 339816.11914922117,
+            "net_A": 524604.3715754818,
+            "reason": "available",
+            "requested_nodes": 1268,
+            "used_nodes": 1268
+          },
+          "reason": "available",
+          "requested_nodes": 1268,
+          "source_rms_T": 0.6946079254740839,
+          "used_nodes": 1268
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 524684.0777845853,
+          "density_rms_A_m2": 339816.11914922117,
+          "net_A": 524604.3715754818,
+          "reason": "available",
+          "requested_nodes": 1268,
+          "used_nodes": 1268
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            -0.11472984918556246,
+            -0.13235506979644254,
+            1.0070582735881424,
+            -0.6881005665968133,
+            0.9672071275436871,
+            1.6798594958524409,
+            -4.537692887788434,
+            1.712239270212956
+          ],
+          "condition": 1884.7801232511963,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.034268066646367716,
+          "reason": "available",
+          "requested_nodes": 1268,
+          "required_rank": 8,
+          "rms_residual_T": 0.023802870683241127,
+          "rms_source_T": 0.6946079254740839,
+          "singular_values": [
+            139.2636167439627,
+            47.26004229290064,
+            15.03616202867969,
+            9.348189244743427,
+            3.8506394146066354,
+            1.122877165491354,
+            0.6671229864069459,
+            0.07388852154475006
+          ],
+          "sse_T2": 0.7184191957036107,
+          "sse_over_tss": 0.008426710532485669,
+          "tss_T2": 85.2549987250713,
+          "used_nodes": 1268,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 15.399027201517146,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.11020137575757438,
+            "current": {
+              "absolute_A": 524684.0777845853,
+              "density_rms_A_m2": 339816.11914922117,
+              "net_A": 524604.3715754818,
+              "reason": "available",
+              "requested_nodes": 1268,
+              "used_nodes": 1268
+            },
+            "reason": "available",
+            "requested_nodes": 1268,
+            "source_rms_T": 0.6946079254740839,
+            "used_nodes": 1268
+          },
+          "reference_plasma_current": {
+            "absolute_A": 524684.0777845853,
+            "density_rms_A_m2": 339816.11914922117,
+            "net_A": 524604.3715754818,
+            "reason": "available",
+            "requested_nodes": 1268,
+            "used_nodes": 1268
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.0
+          },
+          "requested_nodes": 1268,
+          "used_nodes": 1268
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 15.929601801655373,
+                "contour_points": 73,
+                "finite_points": 73,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.00012261419128119138,
+                "singular_values": [
+                  26.592561989322547,
+                  1.6693802092754824
+                ],
+                "source_energy": 50.65614994181302,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.010557752423466,
+                "contour_points": 103,
+                "finite_points": 103,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 7.261029619163843e-05,
+                "singular_values": [
+                  32.275270039856885,
+                  2.687241567390527
+                ],
+                "source_energy": 78.90861387550981,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.365824059432189,
+                "contour_points": 127,
+                "finite_points": 127,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.001457121424413192,
+                "singular_values": [
+                  36.51265012480861,
+                  3.522406893601923
+                ],
+                "source_energy": 73.88153024105625,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.456777478008357,
+                "contour_points": 145,
+                "finite_points": 145,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.005799601420934263,
+                "singular_values": [
+                  40.07264329269331,
+                  4.237452280745935
+                ],
+                "source_energy": 36.72161162666927,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.00557028483074528,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "reference",
+      "reference_assisted_domain": true,
+      "region_identity": "93af7f1fcff417195d7a679ddc80fd9da282bc747759c6b606a05e92f7e5f9b8",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1268,
+      "stem": "d3d_shot_2972d48ff4",
+      "time_ms": 240.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p90",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.10984094006845399,
+          "current": {
+            "absolute_A": 525514.2585979393,
+            "density_rms_A_m2": 341012.7452264272,
+            "net_A": 521563.40633329813,
+            "reason": "available",
+            "requested_nodes": 1268,
+            "used_nodes": 1268
+          },
+          "reason": "available",
+          "requested_nodes": 1268,
+          "source_rms_T": 0.6933164939698482,
+          "used_nodes": 1268
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 525514.2585979393,
+          "density_rms_A_m2": 341012.7452264272,
+          "net_A": 521563.40633329813,
+          "reason": "available",
+          "requested_nodes": 1268,
+          "used_nodes": 1268
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            -0.17865349410765322,
+            0.4744380603852924,
+            -0.24307724774032968,
+            -0.00546329122188017,
+            1.1625522164460338,
+            0.17801765148107176,
+            -2.0713071641073073,
+            0.6870333931783922
+          ],
+          "condition": 1911.765485607304,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.17669938933470988,
+          "reason": "available",
+          "requested_nodes": 1268,
+          "required_rank": 8,
+          "rms_residual_T": 0.12250860110015424,
+          "rms_source_T": 0.6933164939698482,
+          "singular_values": [
+            140.99074289430055,
+            47.77065406394582,
+            15.005344104950506,
+            9.511911858545107,
+            3.7907765995881726,
+            1.147250885404326,
+            0.6538019670379238,
+            0.07374897389650933
+          ],
+          "sse_T2": 19.03059711157919,
+          "sse_over_tss": 0.19999288800726234,
+          "tss_T2": 95.1563693149335,
+          "used_nodes": 1268,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.018705500423713533,
+          "bp_reference_energy_T2": 15.399027201517146,
+          "bp_relative_l2": 0.03485282796209591,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.11020137575757438,
+            "current": {
+              "absolute_A": 524684.0777845853,
+              "density_rms_A_m2": 339816.11914922117,
+              "net_A": 524604.3715754818,
+              "reason": "available",
+              "requested_nodes": 1268,
+              "used_nodes": 1268
+            },
+            "reason": "available",
+            "requested_nodes": 1268,
+            "source_rms_T": 0.6946079254740839,
+            "used_nodes": 1268
+          },
+          "reference_plasma_current": {
+            "absolute_A": 524684.0777845853,
+            "density_rms_A_m2": 339816.11914922117,
+            "net_A": 524604.3715754818,
+            "reason": "available",
+            "requested_nodes": 1268,
+            "used_nodes": 1268
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.0015822489160702
+          },
+          "requested_nodes": 1268,
+          "used_nodes": 1268
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 16.070091778224867,
+                "contour_points": 73,
+                "finite_points": 73,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 1.1036176739139256,
+                "singular_values": [
+                  26.52589493323574,
+                  1.6506374263013601
+                ],
+                "source_energy": 54.24708770981967,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.079186018447379,
+                "contour_points": 103,
+                "finite_points": 103,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 1.8671458693920522,
+                "singular_values": [
+                  32.172310389444355,
+                  2.663450197745997
+                ],
+                "source_energy": 78.42799351923705,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.329930683040297,
+                "contour_points": 123,
+                "finite_points": 123,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 1.5397268021184458,
+                "singular_values": [
+                  35.956263213169954,
+                  3.480784558622743
+                ],
+                "source_energy": 65.13167127355806,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.400928684990273,
+                "contour_points": 143,
+                "finite_points": 143,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 1.1433326811002618,
+                "singular_values": [
+                  39.33794770321072,
+                  4.184474643023146
+                ],
+                "source_energy": 32.50962518171093,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.15667824360417737,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "entry_after_finisher",
+      "reference_assisted_domain": true,
+      "region_identity": "93af7f1fcff417195d7a679ddc80fd9da282bc747759c6b606a05e92f7e5f9b8",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1268,
+      "stem": "d3d_shot_2972d48ff4",
+      "time_ms": 240.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p90",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.14918020418643196,
+          "current": {
+            "absolute_A": 621288.4980407011,
+            "density_rms_A_m2": 427085.6860187853,
+            "net_A": 620150.6700536632,
+            "reason": "available",
+            "requested_nodes": 1268,
+            "used_nodes": 1268
+          },
+          "reason": "available",
+          "requested_nodes": 1268,
+          "source_rms_T": 0.8854378698075492,
+          "used_nodes": 1268
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 621288.4980407011,
+          "density_rms_A_m2": 427085.6860187853,
+          "net_A": 620150.6700536632,
+          "reason": "available",
+          "requested_nodes": 1268,
+          "used_nodes": 1268
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            -0.15356545075011396,
+            0.6799439625397473,
+            -0.5688481324302066,
+            0.04728013738970219,
+            1.9990671896970533,
+            -3.012576457068727,
+            1.1951762065041565,
+            -0.08482629534696906
+          ],
+          "condition": 2168.120076830359,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.04972426167764155,
+          "reason": "available",
+          "requested_nodes": 1268,
+          "required_rank": 8,
+          "rms_residual_T": 0.04402774433760409,
+          "rms_source_T": 0.8854378698075492,
+          "singular_values": [
+            150.94296769098005,
+            48.375228323445256,
+            15.529528413057115,
+            9.859047740618424,
+            3.629655558924943,
+            1.219068228545446,
+            0.621913876582406,
+            0.06961928414576014
+          ],
+          "sse_T2": 2.45794480020802,
+          "sse_over_tss": 0.009521170816323884,
+          "tss_T2": 258.1557297547814,
+          "used_nodes": 1268,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 2.8840514530911845,
+          "bp_reference_energy_T2": 15.399027201517146,
+          "bp_relative_l2": 0.4327677195930551,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.11020137575757438,
+            "current": {
+              "absolute_A": 524684.0777845853,
+              "density_rms_A_m2": 339816.11914922117,
+              "net_A": 524604.3715754818,
+              "reason": "available",
+              "requested_nodes": 1268,
+              "used_nodes": 1268
+            },
+            "reason": "available",
+            "requested_nodes": 1268,
+            "source_rms_T": 0.6946079254740839,
+            "used_nodes": 1268
+          },
+          "reference_plasma_current": {
+            "absolute_A": 524684.0777845853,
+            "density_rms_A_m2": 339816.11914922117,
+            "net_A": 524604.3715754818,
+            "reason": "available",
+            "requested_nodes": 1268,
+            "used_nodes": 1268
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.1841192144881092
+          },
+          "requested_nodes": 1268,
+          "used_nodes": 1268
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 17.89787802757801,
+                "contour_points": 61,
+                "finite_points": 61,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.06501555741087411,
+                "singular_values": [
+                  24.189775875667227,
+                  1.3515443472345898
+                ],
+                "source_energy": 107.6047020008257,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.830419120717217,
+                "contour_points": 89,
+                "finite_points": 89,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.05750747731478025,
+                "singular_values": [
+                  29.812711513768715,
+                  2.3235960753324316
+                ],
+                "source_energy": 101.55262786447332,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.725111463242174,
+                "contour_points": 113,
+                "finite_points": 113,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.042653640100120904,
+                "singular_values": [
+                  34.20411916205149,
+                  3.189162115403477
+                ],
+                "source_energy": 69.05819714434273,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.215603000467299,
+                "contour_points": 137,
+                "finite_points": 137,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.11826497963245901,
+                "singular_values": [
+                  38.2054519286671,
+                  4.14573543659919
+                ],
+                "source_energy": 29.1164274773584,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.030368824249428626,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "official_ridge",
+      "reference_assisted_domain": true,
+      "region_identity": "93af7f1fcff417195d7a679ddc80fd9da282bc747759c6b606a05e92f7e5f9b8",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1268,
+      "stem": "d3d_shot_2972d48ff4",
+      "time_ms": 240.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p99",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.08396881114622717,
+          "current": {
+            "absolute_A": 396723.18314745586,
+            "density_rms_A_m2": 242852.45910664304,
+            "net_A": 392658.0570998127,
+            "reason": "available",
+            "requested_nodes": 1390,
+            "used_nodes": 1390
+          },
+          "reason": "available",
+          "requested_nodes": 1390,
+          "source_rms_T": 0.5409348514392502,
+          "used_nodes": 1390
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 396723.18314745586,
+          "density_rms_A_m2": 242852.45910664304,
+          "net_A": 392658.0570998127,
+          "reason": "available",
+          "requested_nodes": 1390,
+          "used_nodes": 1390
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.10123723370192311,
+            0.1167219225170847,
+            -0.0007532404219343896,
+            0.0004102753049620443,
+            0.5544367524768873,
+            -0.9358616130668634,
+            0.019722105069102817,
+            -0.0017341729944902059
+          ],
+          "condition": 2167.918150024311,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.001098562753693314,
+          "reason": "available",
+          "requested_nodes": 1390,
+          "required_rank": 8,
+          "rms_residual_T": 0.0005942508799657864,
+          "rms_source_T": 0.5409348514392502,
+          "singular_values": [
+            145.72941066908658,
+            46.84461760620415,
+            17.6748040350599,
+            9.178812372867034,
+            3.8446952940324626,
+            1.0912141100609172,
+            0.6319218013730171,
+            0.06722090069103963
+          ],
+          "sse_T2": 0.0004908564105927549,
+          "sse_over_tss": 4.5154285990119305e-06,
+          "tss_T2": 108.70649370918288,
+          "used_nodes": 1390,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 9.800558130981962,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.08396881114622717,
+            "current": {
+              "absolute_A": 396723.18314745586,
+              "density_rms_A_m2": 242852.45910664304,
+              "net_A": 392658.0570998127,
+              "reason": "available",
+              "requested_nodes": 1390,
+              "used_nodes": 1390
+            },
+            "reason": "available",
+            "requested_nodes": 1390,
+            "source_rms_T": 0.5409348514392502,
+            "used_nodes": 1390
+          },
+          "reference_plasma_current": {
+            "absolute_A": 396723.18314745586,
+            "density_rms_A_m2": 242852.45910664304,
+            "net_A": 392658.0570998127,
+            "reason": "available",
+            "requested_nodes": 1390,
+            "used_nodes": 1390
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.0
+          },
+          "requested_nodes": 1390,
+          "used_nodes": 1390
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 19.242710354857095,
+                "contour_points": 63,
+                "finite_points": 63,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 1.5232583671277332e-05,
+                "singular_values": [
+                  25.93113005933574,
+                  1.3475819976051557
+                ],
+                "source_energy": 35.7232692203887,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 13.707833076257213,
+                "contour_points": 93,
+                "finite_points": 93,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 3.60942970494589e-05,
+                "singular_values": [
+                  31.886918952568465,
+                  2.3261823203696954
+                ],
+                "source_energy": 38.83554645842375,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.086679162215505,
+                "contour_points": 119,
+                "finite_points": 119,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 5.810098030556144e-05,
+                "singular_values": [
+                  36.29486441007455,
+                  3.2737363352022513
+                ],
+                "source_energy": 35.35342585341029,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.538128128511206,
+                "contour_points": 141,
+                "finite_points": 141,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 7.343219702259001e-05,
+                "singular_values": [
+                  39.619378930127574,
+                  4.153789757939823
+                ],
+                "source_energy": 29.492711924213612,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.0011453028034270698,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "reference",
+      "reference_assisted_domain": true,
+      "region_identity": "221b914deb929fdde8328f707a0a8a601927af43a664b571213deb85268c67e7",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1390,
+      "stem": "d3d_shot_d64eac1617",
+      "time_ms": 360.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p99",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.0851941822876697,
+          "current": {
+            "absolute_A": 395358.4925182793,
+            "density_rms_A_m2": 246703.04321516713,
+            "net_A": 394383.7647574885,
+            "reason": "available",
+            "requested_nodes": 1390,
+            "used_nodes": 1390
+          },
+          "reason": "available",
+          "requested_nodes": 1390,
+          "source_rms_T": 0.5507716286605557,
+          "used_nodes": 1390
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 395358.4925182793,
+          "density_rms_A_m2": 246703.04321516713,
+          "net_A": 394383.7647574885,
+          "reason": "available",
+          "requested_nodes": 1390,
+          "used_nodes": 1390
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            -0.05767378927838279,
+            1.3223737699538893,
+            -1.7890041224911712,
+            0.6026035762368905,
+            1.039718565423537,
+            -4.501922857212631,
+            5.60825494259091,
+            -2.237010222829518
+          ],
+          "condition": 2153.9295627381853,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.12452741382973592,
+          "reason": "available",
+          "requested_nodes": 1390,
+          "required_rank": 8,
+          "rms_residual_T": 0.06858616652789067,
+          "rms_source_T": 0.5507716286605557,
+          "singular_values": [
+            145.66769192905178,
+            47.09198054406864,
+            17.5908819545775,
+            9.210259845180117,
+            3.834323629151618,
+            1.0965965756382912,
+            0.633609002767541,
+            0.06762880943231568
+          ],
+          "sse_T2": 6.538646512198255,
+          "sse_over_tss": 0.05302068473536579,
+          "tss_T2": 123.32255882461013,
+          "used_nodes": 1390,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.018596574490076,
+          "bp_reference_energy_T2": 9.800558130981962,
+          "bp_relative_l2": 0.04356032110840331,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.08396881114622717,
+            "current": {
+              "absolute_A": 396723.18314745586,
+              "density_rms_A_m2": 242852.45910664304,
+              "net_A": 392658.0570998127,
+              "reason": "available",
+              "requested_nodes": 1390,
+              "used_nodes": 1390
+            },
+            "reason": "available",
+            "requested_nodes": 1390,
+            "source_rms_T": 0.5409348514392502,
+            "used_nodes": 1390
+          },
+          "reference_plasma_current": {
+            "absolute_A": 396723.18314745586,
+            "density_rms_A_m2": 242852.45910664304,
+            "net_A": 392658.0570998127,
+            "reason": "available",
+            "requested_nodes": 1390,
+            "used_nodes": 1390
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 0.996560093568645
+          },
+          "requested_nodes": 1390,
+          "used_nodes": 1390
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 19.179224186086238,
+                "contour_points": 65,
+                "finite_points": 65,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.24605416605238334,
+                "singular_values": [
+                  26.67088454828598,
+                  1.390613316238028
+                ],
+                "source_energy": 40.07917554382104,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 13.682756492351519,
+                "contour_points": 91,
+                "finite_points": 91,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.597902424659847,
+                "singular_values": [
+                  31.759696362198003,
+                  2.3211475246198567
+                ],
+                "source_energy": 45.31985525269703,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.105333128630416,
+                "contour_points": 117,
+                "finite_points": 117,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.4580921425258178,
+                "singular_values": [
+                  36.179201875606125,
+                  3.2578222964184045
+                ],
+                "source_energy": 40.69163727968327,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.559628211473989,
+                "contour_points": 139,
+                "finite_points": 139,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.2832756882212009,
+                "singular_values": [
+                  39.495348008385534,
+                  4.131473226226628
+                ],
+                "source_energy": 25.459903753591576,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.10227754270680824,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "entry_after_finisher",
+      "reference_assisted_domain": true,
+      "region_identity": "221b914deb929fdde8328f707a0a8a601927af43a664b571213deb85268c67e7",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1390,
+      "stem": "d3d_shot_d64eac1617",
+      "time_ms": 360.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "p99",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.14040631241944057,
+          "current": {
+            "absolute_A": 660422.3677235479,
+            "density_rms_A_m2": 407459.24967281066,
+            "net_A": 660047.1970253643,
+            "reason": "available",
+            "requested_nodes": 1390,
+            "used_nodes": 1390
+          },
+          "reason": "available",
+          "requested_nodes": 1390,
+          "source_rms_T": 0.9176274498163949,
+          "used_nodes": 1390
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 660422.3677235479,
+          "density_rms_A_m2": 407459.24967281066,
+          "net_A": 660047.1970253643,
+          "reason": "available",
+          "requested_nodes": 1390,
+          "used_nodes": 1390
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.6209545786449724,
+            -0.6964472216418299,
+            0.7031671614178907,
+            -0.4346883780574315,
+            -0.42904950183381857,
+            0.8963126981265656,
+            -0.743727598492675,
+            -0.05302759405695791
+          ],
+          "condition": 2257.093209440281,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.02846321964674094,
+          "reason": "available",
+          "requested_nodes": 1390,
+          "required_rank": 8,
+          "rms_residual_T": 0.026118631658002798,
+          "rms_source_T": 0.9176274498163949,
+          "singular_values": [
+            146.78687817092046,
+            47.7331810342962,
+            17.865288524998206,
+            9.492271512331364,
+            3.7645308976529677,
+            1.1451772875080608,
+            0.611046019231566,
+            0.06503359168198508
+          ],
+          "sse_T2": 0.9482342583641321,
+          "sse_over_tss": 0.0028549511797859284,
+          "tss_T2": 332.13676824947777,
+          "used_nodes": 1390,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 4.5242782836906015,
+          "bp_reference_energy_T2": 9.800558130981962,
+          "bp_relative_l2": 0.6794370892645858,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.08396881114622717,
+            "current": {
+              "absolute_A": 396723.18314745586,
+              "density_rms_A_m2": 242852.45910664304,
+              "net_A": 392658.0570998127,
+              "reason": "available",
+              "requested_nodes": 1390,
+              "used_nodes": 1390
+            },
+            "reason": "available",
+            "requested_nodes": 1390,
+            "source_rms_T": 0.5409348514392502,
+            "used_nodes": 1390
+          },
+          "reference_plasma_current": {
+            "absolute_A": 396723.18314745586,
+            "density_rms_A_m2": 242852.45910664304,
+            "net_A": 392658.0570998127,
+            "reason": "available",
+            "requested_nodes": 1390,
+            "used_nodes": 1390
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.6646931557767803
+          },
+          "requested_nodes": 1390,
+          "used_nodes": 1390
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 20.267364060292067,
+                "contour_points": 63,
+                "finite_points": 63,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.007308567452664929,
+                "singular_values": [
+                  26.498497893060158,
+                  1.3074466819775623
+                ],
+                "source_energy": 114.47290840920724,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 13.918960636906922,
+                "contour_points": 93,
+                "finite_points": 93,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.01715211103750289,
+                "singular_values": [
+                  31.96346682835205,
+                  2.2963975301143598
+                ],
+                "source_energy": 126.39873862308629,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.296413646009302,
+                "contour_points": 115,
+                "finite_points": 115,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.00937716198103665,
+                "singular_values": [
+                  35.533875233995154,
+                  3.14558906459204
+                ],
+                "source_energy": 110.60171070582757,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 9.51333304590214,
+                "contour_points": 143,
+                "finite_points": 143,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.03881099550515714,
+                "singular_values": [
+                  39.63030299878784,
+                  4.165764281306073
+                ],
+                "source_energy": 77.60388018376392,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.013012076021535356,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "official_ridge",
+      "reference_assisted_domain": true,
+      "region_identity": "221b914deb929fdde8328f707a0a8a601927af43a664b571213deb85268c67e7",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 1390,
+      "stem": "d3d_shot_d64eac1617",
+      "time_ms": 360.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "max",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.37475099130969086,
+          "current": {
+            "absolute_A": 1106311.181949225,
+            "density_rms_A_m2": 1172976.8346108245,
+            "net_A": 1106213.199451691,
+            "reason": "available",
+            "requested_nodes": 921,
+            "used_nodes": 921
+          },
+          "reason": "available",
+          "requested_nodes": 921,
+          "source_rms_T": 2.3621850992238413,
+          "used_nodes": 921
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1106311.181949225,
+          "density_rms_A_m2": 1172976.8346108245,
+          "net_A": 1106213.199451691,
+          "reason": "available",
+          "requested_nodes": 921,
+          "used_nodes": 921
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.6656567091617347,
+            -0.9174534094571901,
+            0.31942123953942664,
+            -0.10794392926493179,
+            2.7492183390230163,
+            0.671444184699009,
+            -8.321257777930509,
+            4.786080945290776
+          ],
+          "condition": 2216.9746172740233,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.03543782080858515,
+          "reason": "available",
+          "requested_nodes": 921,
+          "required_rank": 8,
+          "rms_residual_T": 0.08371069226300443,
+          "rms_source_T": 2.3621850992238413,
+          "singular_values": [
+            113.33791739211077,
+            34.92376905841659,
+            13.54629766588065,
+            6.851658715557524,
+            2.919625927258741,
+            0.8109634819945973,
+            0.4794672451739083,
+            0.05112278530796636
+          ],
+          "sse_T2": 6.453889079218466,
+          "sse_over_tss": 0.003023368624182174,
+          "tss_T2": 2134.668272865421,
+          "used_nodes": 921,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 0.0,
+          "bp_reference_energy_T2": 129.34367935407593,
+          "bp_relative_l2": 0.0,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.37475099130969086,
+            "current": {
+              "absolute_A": 1106311.181949225,
+              "density_rms_A_m2": 1172976.8346108245,
+              "net_A": 1106213.199451691,
+              "reason": "available",
+              "requested_nodes": 921,
+              "used_nodes": 921
+            },
+            "reason": "available",
+            "requested_nodes": 921,
+            "source_rms_T": 2.3621850992238413,
+            "used_nodes": 921
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1106311.181949225,
+            "density_rms_A_m2": 1172976.8346108245,
+            "net_A": 1106213.199451691,
+            "reason": "available",
+            "requested_nodes": 921,
+            "used_nodes": 921
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.0
+          },
+          "requested_nodes": 921,
+          "used_nodes": 921
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 18.153274841684688,
+                "contour_points": 55,
+                "finite_points": 55,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.00485251236678062,
+                "singular_values": [
+                  21.255819423428928,
+                  1.1709082580857522
+                ],
+                "source_energy": 812.9411680490788,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.622597095495825,
+                "contour_points": 77,
+                "finite_points": 77,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.014872996119093379,
+                "singular_values": [
+                  25.381364313904626,
+                  2.010787805542931
+                ],
+                "source_energy": 647.0345113112584,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.306509850223998,
+                "contour_points": 95,
+                "finite_points": 95,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.02755001812988255,
+                "singular_values": [
+                  28.412050736319657,
+                  2.7567092206002366
+                ],
+                "source_energy": 312.22646540260854,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 8.901116053613901,
+                "contour_points": 115,
+                "finite_points": 115,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 0.03808462341667994,
+                "singular_values": [
+                  31.886635458444534,
+                  3.5823188088305384
+                ],
+                "source_energy": 40.28350504026949,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.006862625449700595,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "reference",
+      "reference_assisted_domain": true,
+      "region_identity": "f6af06edad4c3f35fe51f3fb8e575bf210930b13d822d9f1ad7a0d13eba72e7a",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 921,
+      "stem": "d3d_shot_ab60252341",
+      "time_ms": 4040.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "max",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.41536656183985404,
+          "current": {
+            "absolute_A": 1536204.7405985512,
+            "density_rms_A_m2": 1576279.920683218,
+            "net_A": 1354511.496201529,
+            "reason": "available",
+            "requested_nodes": 921,
+            "used_nodes": 921
+          },
+          "reason": "available",
+          "requested_nodes": 921,
+          "source_rms_T": 3.1771713646163313,
+          "used_nodes": 921
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 1536204.7405985512,
+          "density_rms_A_m2": 1576279.920683218,
+          "net_A": 1354511.496201529,
+          "reason": "available",
+          "requested_nodes": 921,
+          "used_nodes": 921
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            -1.794686789749939,
+            14.440174453245573,
+            -23.429780244077715,
+            10.371563273691846,
+            6.893388292698135,
+            -18.873285619693053,
+            17.921684303491016,
+            -5.513156577540525
+          ],
+          "condition": 1191.843682107008,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.3587608290958907,
+          "reason": "available",
+          "requested_nodes": 921,
+          "required_rank": 8,
+          "rms_residual_T": 1.1398446329494776,
+          "rms_source_T": 3.1771713646163313,
+          "singular_values": [
+            117.22685703356663,
+            48.166934356294625,
+            14.488780162297335,
+            10.32063551262297,
+            4.148307796510259,
+            1.3382199679002111,
+            0.8120723164030903,
+            0.09835757725067304
+          ],
+          "sse_T2": 1196.6053700698944,
+          "sse_over_tss": 0.25194337581363374,
+          "tss_T2": 4749.501217110948,
+          "used_nodes": 921,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 19.827398048312826,
+          "bp_reference_energy_T2": 129.34367935407593,
+          "bp_relative_l2": 0.3915256842935821,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.37475099130969086,
+            "current": {
+              "absolute_A": 1106311.181949225,
+              "density_rms_A_m2": 1172976.8346108245,
+              "net_A": 1106213.199451691,
+              "reason": "available",
+              "requested_nodes": 921,
+              "used_nodes": 921
+            },
+            "reason": "available",
+            "requested_nodes": 921,
+            "source_rms_T": 2.3621850992238413,
+            "used_nodes": 921
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1106311.181949225,
+            "density_rms_A_m2": 1172976.8346108245,
+            "net_A": 1106213.199451691,
+            "reason": "available",
+            "requested_nodes": 921,
+            "used_nodes": 921
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 1.3885828559482611
+          },
+          "requested_nodes": 921,
+          "used_nodes": 921
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 14.309520917296117,
+                "contour_points": 67,
+                "finite_points": 67,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 160.78928824461002,
+                "singular_values": [
+                  23.787386857138063,
+                  1.6623468384875077
+                ],
+                "source_energy": 1523.5673094128535,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 11.472524658026975,
+                "contour_points": 89,
+                "finite_points": 89,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 126.39340558651922,
+                "singular_values": [
+                  27.898922514899848,
+                  2.431803229586421
+                ],
+                "source_energy": 1797.8269615843292,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.1281330083721,
+                "contour_points": 105,
+                "finite_points": 105,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 147.787905847672,
+                "singular_values": [
+                  30.66722542772175,
+                  3.0279248310001123
+                ],
+                "source_energy": 1003.9392182747773,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 8.934826455295656,
+                "contour_points": 117,
+                "finite_points": 117,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 289.8889744872325,
+                "singular_values": [
+                  32.55217675253352,
+                  3.6432914411269732
+                ],
+                "source_energy": 547.8772803188278,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.3856730941948512,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "entry_after_finisher",
+      "reference_assisted_domain": true,
+      "region_identity": "f6af06edad4c3f35fe51f3fb8e575bf210930b13d822d9f1ad7a0d13eba72e7a",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 921,
+      "stem": "d3d_shot_ab60252341",
+      "time_ms": 4040.0
+    },
+    {
+      "axis_sign_from_reference": -1,
+      "case": "max",
+      "diagnostics": {
+        "field_on_comparison_region": {
+          "bp_rms_T": 0.3210165122318981,
+          "current": {
+            "absolute_A": 973428.7872515226,
+            "density_rms_A_m2": 1066502.8494747682,
+            "net_A": 973405.890563533,
+            "reason": "available",
+            "requested_nodes": 921,
+            "used_nodes": 921
+          },
+          "reason": "available",
+          "requested_nodes": 921,
+          "source_rms_T": 2.266005076268857,
+          "used_nodes": 921
+        },
+        "measured_current_comparison": {
+          "absolute_magnitude_error_A": null,
+          "available": false,
+          "measured_A": null,
+          "reason": "missing_current_measurement",
+          "relative_magnitude_error": null
+        },
+        "plasma_current": {
+          "absolute_A": 973428.7872515226,
+          "density_rms_A_m2": 1066502.8494747682,
+          "net_A": 973405.890563533,
+          "reason": "available",
+          "requested_nodes": 921,
+          "used_nodes": 921
+        },
+        "polynomial_gs": {
+          "available": true,
+          "coefficients": [
+            0.35130411719757404,
+            0.7087643520802912,
+            -1.6631526019120246,
+            0.6670745584357686,
+            4.676914479490576,
+            -11.713053778083061,
+            10.271859397379375,
+            -2.974659158269432
+          ],
+          "condition": 1649.6721489743263,
+          "degree": 3,
+          "rank": 8,
+          "ratio": 0.07480709096454008,
+          "reason": "available",
+          "requested_nodes": 921,
+          "required_rank": 8,
+          "rms_residual_T": 0.16951324786655397,
+          "rms_source_T": 2.266005076268857,
+          "singular_values": [
+            132.4016238065897,
+            48.68900025087592,
+            16.707918266117353,
+            10.300549917177742,
+            3.9575691440678926,
+            1.3641563569320492,
+            0.6958974755020157,
+            0.08025935570829004
+          ],
+          "sse_T2": 26.464696647288616,
+          "sse_over_tss": 0.011889118348414232,
+          "tss_T2": 2225.9595599717845,
+          "used_nodes": 921,
+          "variance_degenerate": false
+        },
+        "reference_comparison": {
+          "available": true,
+          "bp_error_energy_T2": 37.71438336788236,
+          "bp_reference_energy_T2": 129.34367935407593,
+          "bp_relative_l2": 0.5399840106946293,
+          "reason": "available",
+          "reference_field": {
+            "bp_rms_T": 0.37475099130969086,
+            "current": {
+              "absolute_A": 1106311.181949225,
+              "density_rms_A_m2": 1172976.8346108245,
+              "net_A": 1106213.199451691,
+              "reason": "available",
+              "requested_nodes": 921,
+              "used_nodes": 921
+            },
+            "reason": "available",
+            "requested_nodes": 921,
+            "source_rms_T": 2.3621850992238413,
+            "used_nodes": 921
+          },
+          "reference_plasma_current": {
+            "absolute_A": 1106311.181949225,
+            "density_rms_A_m2": 1172976.8346108245,
+            "net_A": 1106213.199451691,
+            "reason": "available",
+            "requested_nodes": 921,
+            "used_nodes": 921
+          },
+          "region_absolute_current_over_reference_plasma": {
+            "reason": "available",
+            "value": 0.8798869641147665
+          },
+          "requested_nodes": 921,
+          "used_nodes": 921
+        },
+        "surface_gs": {
+          "available": true,
+          "reason": "available",
+          "support": {
+            "full_support": true,
+            "levels": [
+              {
+                "condition": 21.922053175588093,
+                "contour_points": 49,
+                "finite_points": 49,
+                "level": 0.2,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 2.157372496276926,
+                "singular_values": [
+                  22.108124496196105,
+                  1.0084878601067904
+                ],
+                "source_energy": 801.6311122499635,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 15.165291966614307,
+                "contour_points": 73,
+                "finite_points": 73,
+                "level": 0.4,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 3.086319168088751,
+                "singular_values": [
+                  27.05157468686642,
+                  1.7837819902458336
+                ],
+                "source_energy": 544.3593535374956,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 12.305862168284694,
+                "contour_points": 93,
+                "finite_points": 93,
+                "level": 0.6,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 17.770279702957257,
+                "singular_values": [
+                  30.737724077604,
+                  2.497811502945552
+                ],
+                "source_energy": 354.9987274176541,
+                "used": true,
+                "zero_source": false
+              },
+              {
+                "condition": 10.156592781962912,
+                "contour_points": 107,
+                "finite_points": 107,
+                "level": 0.8,
+                "rank": 2,
+                "rank_deficient": false,
+                "reason": "used",
+                "residual_energy": 44.24550852037442,
+                "singular_values": [
+                  32.39636669935524,
+                  3.18968845111994
+                ],
+                "source_energy": 261.17224122484686,
+                "used": true,
+                "zero_source": false
+              }
+            ],
+            "ratio": 0.18514389009336263,
+            "reason": "available",
+            "requested_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ],
+            "schema": "surface-gs-support.v1",
+            "used_levels": [
+              0.2,
+              0.4,
+              0.6,
+              0.8
+            ]
+          }
+        }
+      },
+      "map": "official_ridge",
+      "reference_assisted_domain": true,
+      "region_identity": "f6af06edad4c3f35fe51f3fb8e575bf210930b13d822d9f1ad7a0d13eba72e7a",
+      "region_policy": "calibration-reference-plasma.v1",
+      "requested_nodes": 921,
+      "stem": "d3d_shot_ab60252341",
+      "time_ms": 4040.0
+    }
+  ],
+  "physical_force_balance_certified": false,
+  "schema": "audit-calibration.v1"
+}

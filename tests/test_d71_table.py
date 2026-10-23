@@ -87,6 +87,8 @@ def test_diagnostic_scope_contract() -> None:
         "tools/audit_map_input.py",
         "tools/field_diagnostics.py",
         "tools/equilibrium_audit.py",
+        "tools/official_ridge.py",
+        "tools/audit_calibration.py",
         "tools/make_preview.py",
         "tools/check_publication_boundary.py",
     }
@@ -101,6 +103,8 @@ def test_diagnostic_scope_contract() -> None:
         "tests/test_audit_map_input.py",
         "tests/test_field_diagnostics.py",
         "tests/test_equilibrium_audit.py",
+        "tests/test_official_ridge.py",
+        "tests/test_audit_calibration.py",
         "tests/test_make_preview.py",
         "tests/test_check_publication_boundary.py",
         "tests/test_check_doc_links.py",
