@@ -31,6 +31,16 @@ magnetic probes or flux-loop measurements.
 The entry is submitted by Anulum (Miroslav Šotek). It was developed with Arcane Sapience, the entrant's
 research system built on large language models; see [How the work was done](#how-the-work-was-done).
 
+## Audit your own maps
+
+The [map audit](docs/AUDIT_TOOL.md) measures field, current and GS-form diagnostics without this entry's
+trained weights. Supply a single-map NPZ with explicitly declared coordinates, units and flux convention;
+the guide explains masks, optional references, support counts and input refusal codes. The audit does not
+compute the competition score or certify physical force balance.
+
+[Calibrated examples](docs/AUDIT_CALIBRATION.md) show how fitted GS residual and field error can differ.
+The [Physics audit](docs/PHYSICS_AUDIT.md) explains the measured results and public reproduction commands.
+
 ## Result
 
 Development phase, public test folds, submission 986068 (14 October 2026):
