@@ -83,3 +83,8 @@ include = [
     "tools/make_preview.py",
     "tools/check_publication_boundary.py",
 ]
+
+[tool.pytest.ini_options]
+markers = [
+    "integration: complete numerical or process boundary checks in the dedicated pinned runtimes",
+]

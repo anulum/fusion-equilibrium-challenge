@@ -40,6 +40,8 @@
 !/pyproject.toml
 !/.pre-commit-config.yaml
 !/requirements-quality.txt
+!/requirements-constructive.txt
+!/requirements-constructive-reference.txt
 !/tests/
 !/tools/
 !/notebooks/
@@ -61,6 +63,7 @@
 !/docs/NEGATIVE_RESULTS.md
 !/docs/index.md
 !/docs/PHYSICS_AUDIT.md
+!/docs/CONSTRUCTIVE_PAIRS.md
 !/docs/AUDIT_TOOL.md
 !/docs/AUDIT_CALIBRATION.md
 !/docs/_config.yml

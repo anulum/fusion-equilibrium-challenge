@@ -57,8 +57,10 @@ The preview tests render the published frame through the actual CLI, check flux 
 determinism, and refuse damaged or degenerate frames. Installed fonts affect the rendered pixels; cross-host
 image identity is not required. To write a preview without replacing the committed image, use
 `python tools/make_preview.py --out /path/to/preview.png`.
-`make check` runs the native checks, document links, publication boundary and frozen-source comparison without running tests.
-`make test` runs the eighteen maintained test modules; the frozen scientific recipes are not in that test denominator.
+`make check` runs both maintained scopes' native checks, document links, publication boundary and frozen-source
+comparison without running tests. It requires the additional constructive environment described below.
+`make test` runs the eighteen diagnostic test modules in the quality environment; the six constructive test
+modules have a separate target. The frozen scientific recipes are not in either test denominator.
 Frame percentiles and the physical validity of withdrawn diagnostics
 remain outside this arithmetic check. The dependency-audit workflow checks all committed requirements files,
 including transitive dependencies, and fails on an advisory or an incomplete audit.
@@ -79,3 +81,38 @@ Baseline tests exercise real Parquet alignment, both Ip timestamp cases, actual 
 offline public command, with disjoint-shot and numerical-range refusals. Its small test fixtures are analytic
 controls, not independent research baselines. The published baseline's scope and refit command are in
 [the calibration guide](docs/AUDIT_CALIBRATION.md).
+
+## Checking the synthetic equilibrium tools
+
+The six `tools/constructive_*.py` modules and six `tests/test_constructive_*.py` modules use a numerical
+environment incompatible with the older diagnostic scope's dependency versions. Create it with:
+
+```bash
+UV_LINK_MODE=hardlink uv venv --python 3.12.3 .venv-constructive
+uv pip install --python .venv-constructive/bin/python --require-hashes -r requirements-constructive.txt
+make constructive-quality
+```
+
+The commit hooks check their lint, formatting, strict types and source security. Type checking uses
+`.venv-constructive`, while the other static tools use the pinned quality environment `.venv`.
+Missing environments fail the applicable checks.
+
+`make constructive-test` runs the complete numerical integrations and requires both
+`CONSTRUCTIVE_REFERENCE_PYTHON` and `CONSTRUCTIVE_WRONG_VERSION_PYTHON` to identify executable, separately
+provisioned interpreters. Their defaults name `.venv-constructive-reference/bin/python` and
+`.venv-constructive-wrong-version/bin/python`. The reference interpreter also needs the exact coverage
+observer from the quality lock. The deliberate wrong-version interpreter uses the modern lock with the
+hash-pinned NumPy probe substituted. The [dedicated CI job](.github/workflows/diagnostics.yml) contains the
+complete provisioning recipe. Both interpreter paths are asserted before testing, so this target cannot
+report complete coverage by silently skipping the integrations. It retains a separate coverage data file and
+requires 100% statement and branch coverage for the six-source scope.
+
+For the small original-map arithmetic check, only the modern environment is needed:
+
+```bash
+.venv-constructive/bin/python -m pytest -q tests/test_constructive_pairs.py::test_recorded_coarse_solver_gate
+```
+
+[Scientific definitions and reproduction](docs/CONSTRUCTIVE_PAIRS.md) distinguish the failed compatibility
+gate, the separate prescribed-source boundary control and software integration checks. The complete numerical
+tests run on the hosted runner; a local fast subset is not the full validation result.

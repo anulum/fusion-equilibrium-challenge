@@ -2,6 +2,7 @@
 title: Physics audit
 layout: default
 nav_order: 2
+has_children: true
 ---
 
 # A higher score does not certify force balance
@@ -110,6 +111,15 @@ this entry and the organisers' independently authored PCA–Ridge method on four
 the diagnostic cohort. Those frames were selected by this entry's boundary errors, so this is a reference-assisted
 illustration, not a population comparison or an outside replication. The analytic controls expose discretisation
 error, controlled perturbations and unavailable diagnostics before experimental maps are interpreted.
+
+## A bounded synthetic ambiguity test
+
+The [synthetic equilibrium search](CONSTRUCTIVE_PAIRS.md) asks a different question: can two independently
+converged equilibria produce compatible declared kinetic observations while differing in internal inductance
+and flux? Its required coarse compatibility check between inverse and forward solvers failed, so it admits no
+ambiguity witness. A separate prescribed-current boundary calibration helps diagnose that numerical failure;
+it does not repair the gate or establish a limit on real DIII-D information. The original coarse maps,
+explicit tolerances and public boundary-operator reproducer keep this unsuccessful test inspectable.
 
 ## Related work and scope
 

@@ -92,6 +92,17 @@ The adapted starter code retains this permission notice (the starter's licence d
 NumPy, SciPy, PyArrow, scikit-image, scikit-learn, JAX, XGBoost and PyTorch (imported by the training code),
 each under its own licence, at the versions pinned in `requirements-*.txt`.
 
+The separate synthetic equilibrium calculations import [FreeGS 0.8.2](https://github.com/freegs-plasma/freegs),
+[FreeGS4E 0.15.0](https://github.com/FusionComputingLab/freegs4e) and
+[FreeGSNKE 3.1.1](https://github.com/FusionComputingLab/freegsnke). Their inspected
+source headers permit LGPL-3.0-or-later. FreeGS and inherited FreeGS4E boundary
+code credit Ben Dudson and the University of York; FreeGSNKE credits UKAEA,
+UKRI-STFC and its authors. These packages are imported dependencies; their
+source is not vendored or relicensed here. Shapely supplies polygon validation
+in the same calculation. The two isolated numerical environments are pinned in
+`requirements-constructive.txt` and `requirements-constructive-reference.txt`.
+These research calculations are separate from the submitted competition solver.
+
 ## Text and data mining reservation
 
 The rightsholder, Miroslav Šotek (ANULUM), expressly reserves the use of the

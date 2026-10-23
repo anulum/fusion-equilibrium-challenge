@@ -17,7 +17,7 @@ Seventeen verification, diagnostic, rendering and baseline-reproduction tools ar
 `tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/scored_map_summary.py`, `tools/scored_map_table.py`, `tools/audit_map_input.py`, `tools/field_diagnostics.py`, `tools/equilibrium_audit.py`, `tools/official_ridge.py`, `tools/audit_calibration.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
-mocks. The same workflow audits every locked dependency of the four `requirements-*.txt` files, transitive ones
+mocks. The same workflow audits every locked dependency of the six root `requirements-*.txt` files, transitive ones
 included, with `pip-audit --strict`. Each environment retains the resolver's inventory and a separate complete
 lock inventory. The latter must match every locked package name and version, including the packages already
 installed in the resolver's bootstrap environment. The commands are in
@@ -72,6 +72,48 @@ damaged or degenerate frames. Its pixels depend on installed fonts. The other fi
 `tools/make_figures.py` and `tools/make_reconstruction_figure.py` remain outside these gates; their outputs are
 checked by inspecting the images.
 
+## Synthetic equilibrium calculations
+
+Six additional tools are maintained in a separate numerical environment:
+`tools/constructive_geometry.py`, `tools/constructive_model.py`, `tools/constructive_observations.py`,
+`tools/constructive_pairs.py`, `tools/constructive_reference.py` and `tools/constructive_boundary.py`.
+The dedicated Diagnostics integration job checks these files and their six test modules with Ruff,
+strict mypy and Bandit, then requires 100% statement and branch coverage for this separate scope.
+This does not extend the seventeen-tool coverage result to the submitted models, third-party solvers
+or all historical research code.
+
+The modern forward runtime and the older inverse runtime are isolated, hash-pinned environments.
+The legacy test interpreter additionally receives the exact coverage observer from the quality lock;
+that observer is not added to the original calculation environment. A separate actual NumPy 2.4.6
+installation exercises refusal by the forward entrypoint, whose qualified version is 2.3.5.
+The dependencies permit 2.4.6, so its dependency check is expected to pass; this probe tests the
+entrypoint's declared-version refusal rather than a dependency conflict or general functional incompatibility.
+The two production locks and the wrong-version probe lock are audited with blocking strict checks.
+The original submitted-inference and training locks remain unchanged.
+
+Tests run complete external inverse/forward calculations, reload their generated maps and currents,
+and check provenance and numerical-runtime refusals. Fault cases execute the genuine solver before
+corrupting one returned current value; they check the export guard, not solver accuracy.
+Analytic tests check signed current/pressure normalization, discrete/continuous source behavior,
+contour availability and observation tolerances. Nine public boundary-operator integrations compare
+three grids and three engines with an independent continuous-source Green integral.
+The small original coarse-map bundle also has a focused checksum/arithmetic test.
+
+The following skips are explicit in a local environment that has not provisioned both interpreters:
+
+| Missing setting | Checks unavailable locally | Where executed |
+|---|---|---|
+| `CONSTRUCTIVE_REFERENCE_PYTHON` | Complete inverse/export, two post-solve current faults, changed-source refusal in the correct runtime, three legacy boundary grids | Dedicated constructive integration job |
+| `CONSTRUCTIVE_WRONG_VERSION_PYTHON` | Actual unqualified-NumPy refusal | Dedicated constructive integration job |
+
+The dedicated job provisions and asserts both interpreter paths before running the tests; missing
+provisioning fails the job. A fast subset or named local skip is not reported as complete integration
+coverage. Timed-out verification attempts remain distinct from completed checks and physical failures.
+
+The scientific search itself is inconclusive: the fixed coarse solver-pair compatibility gate failed.
+Passing software controls does not admit an ambiguity witness or prove a real-DIII-D information limit.
+[Model, numerical gates, stored results and reproduction](docs/CONSTRUCTIVE_PAIRS.md) state these limits.
+
 ## Reproduction of the submitted predictions
 
 | Check | Where | Scope | Outcome |
@@ -121,7 +163,7 @@ Specification 3.3) reports the repository compliant.
 ## Supplementary source and dependency provenance
 
 The Diagnostics workflow defines a provenance job for successful trusted `main` runs. It packages the exact
-Git source object, audits each of the four dependency environments and retains CycloneDX inventories. It uses
+Git source object, audits each of the six dependency environments and retains CycloneDX inventories. It uses
 GitHub OIDC to attest those subjects, then verifies each digest against the expected repository, commit, main
 ref and workflow identity. An altered source archive must be refused. An unsuccessful or skipped job provides
 no qualified attestation for that commit. These records are supplementary; they do not backdate a signature of

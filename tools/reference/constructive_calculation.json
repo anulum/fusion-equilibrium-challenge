@@ -1,0 +1,881 @@
+{
+  "schema": "constructive_calculation_v1",
+  "result": "inconclusive_numerical_compatibility_gate_failed",
+  "source_sha256": {
+    "tools/constructive_geometry.py": "c4fe1bd60dd8e27d6139566c377f3c059126f343570594ae91743ede9db8d4f5",
+    "tools/constructive_model.py": "0c9db524608a0dff9ac59e6ebf66e878e01edf789f9ca6cc1972edb163bb6d9e",
+    "tools/constructive_observations.py": "52723684ca5a9e74dcca7a6d8f7950c89beaa8bf37d76ebebbae6f1cbb2a446a",
+    "tools/constructive_pairs.py": "064707a591f5a523ea6a1e948c69549a0167c908ea4da15608fad5b87ca14cce",
+    "tools/constructive_reference.py": "d6f957784054e2cca5812cd4fcbc12033abcb4437d6cd4c5a17b7c3a494c4969"
+  },
+  "original_source_binding_sha256": "0c427e56a6c207e83c12fc2d2e97d4c4cc393299ed6948d5ed79f485070eb48b",
+  "flux_convention": "psi in Wb/rad = R*A_phi",
+  "coordinates": "R,Z in metres, arrays indexed R,Z",
+  "coarse_bundle": {
+    "path": "tools/reference/constructive_coarse_v4.npz",
+    "sha256": "f37c4c55d9ceb740a6819e0626cdb038dc30513e27f8caa62034a82d59a4efff",
+    "size_bytes": 156847,
+    "originals": {
+      "inverse": {
+        "maps_sha256": "fd34e21ab1284437e86f11e67ba71524226e65a78455b83363708a6f6e099fd0",
+        "report_sha256": "218c70a1776b03018c6f0a4449ee6ca582faac76d69d7a2ad645e007b2fbc12c"
+      },
+      "forward": {
+        "maps_sha256": "122fe875eee2621ff00e529a37fbab7365d3828acfc0f856b756f68b0a774028",
+        "report_sha256": "781243cad04c269f5fa97abf85d1904727762ca3f60530e6e7109a6eb389488f"
+      }
+    }
+  },
+  "coarse_reports": {
+    "inverse": {
+      "schema": "constructive_reference_v1",
+      "source_binding_sha256": "0c427e56a6c207e83c12fc2d2e97d4c4cc393299ed6948d5ed79f485070eb48b",
+      "versions": {
+        "freegs": "0.8.2",
+        "numpy": "1.26.4",
+        "scipy": "1.13.1"
+      },
+      "axis": [
+        [
+          1.6750787517866348,
+          -0.08107150558606979,
+          0.42952570170435006
+        ],
+        [
+          0.8132047484057964,
+          0.183319254241346,
+          0.016773214212097546
+        ],
+        [
+          0.799204909922358,
+          0.4660395204245278,
+          0.015417354940240236
+        ],
+        [
+          2.6354759005300843,
+          0.4474483554053047,
+          -0.28611956119397197
+        ],
+        [
+          2.6513595946781128,
+          -0.45205007833461053,
+          -0.28300310632452474
+        ],
+        [
+          2.339026439448047,
+          1.1251229937759732,
+          -0.19835789921884492
+        ],
+        [
+          2.412971721765026,
+          -1.121792117824579,
+          -0.20170516097825889
+        ],
+        [
+          2.524818842354236,
+          1.0692525089449765,
+          -0.19989350137919362
+        ],
+        [
+          2.608901720404545,
+          -1.0614195514087674,
+          -0.19741132824111074
+        ],
+        [
+          1.013094447690132,
+          1.510556129040581,
+          0.11602420572736978
+        ],
+        [
+          1.052336814412708,
+          -1.5454089765409043,
+          0.12092788214717554
+        ],
+        [
+          1.2379415812559,
+          -1.583562959025359,
+          0.1307208282878942
+        ],
+        [
+          1.150767039773392,
+          1.5721584697455944,
+          0.10504728368011529
+        ],
+        [
+          1.2318030021623017,
+          1.6016979068637571,
+          0.09907380966038715
+        ]
+      ],
+      "xpoints": [
+        [
+          1.2849930121861328,
+          -1.1759969070209735,
+          0.08273387025415282
+        ],
+        [
+          1.200146987131431,
+          0.999871804674397,
+          0.08041357960715527
+        ],
+        [
+          0.8209698965223835,
+          -0.4032914202304894,
+          0.019390936288001412
+        ],
+        [
+          2.7267154736469346,
+          -0.8746087919892447,
+          -0.1681489487169147
+        ],
+        [
+          2.6977814009542063,
+          0.8816089009687692,
+          -0.17932336896897924
+        ]
+      ],
+      "limited": true,
+      "flux_span_Wb_per_rad": -0.34062146522793973,
+      "current_rectangle_A": 999989.8487315063,
+      "current_romberg_A": 1000000.0000000002,
+      "coil_labels": [
+        "FC1",
+        "FC2",
+        "FC3",
+        "FC4",
+        "FC5",
+        "FC6",
+        "FC7",
+        "FC8",
+        "FC9",
+        "FC10",
+        "FC11",
+        "FC12",
+        "FC13",
+        "FC14",
+        "FC15",
+        "FC16",
+        "FC17",
+        "FC18"
+      ],
+      "coil_turns": [
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1,
+        1
+      ],
+      "coil_current_unit": "A per turn; effective ampere-turns = current times turns",
+      "limiter_vertices_m": [
+        [
+          1.016,
+          0.964
+        ],
+        [
+          1.016,
+          0.968
+        ],
+        [
+          1.016,
+          1.001
+        ],
+        [
+          1.016,
+          1.019
+        ],
+        [
+          1.016,
+          1.07
+        ],
+        [
+          1.016,
+          1.077
+        ],
+        [
+          1.016,
+          1.096
+        ],
+        [
+          1.016,
+          1.113
+        ],
+        [
+          1.016,
+          1.138
+        ],
+        [
+          1.016,
+          1.147
+        ],
+        [
+          1.012,
+          1.165
+        ],
+        [
+          1.001,
+          1.217
+        ],
+        [
+          1.029,
+          1.217
+        ],
+        [
+          1.042,
+          1.1624
+        ],
+        [
+          1.046,
+          1.16238
+        ],
+        [
+          1.056,
+          1.1626
+        ],
+        [
+          1.097,
+          1.1645
+        ],
+        [
+          1.108,
+          1.16594
+        ],
+        [
+          1.116,
+          1.16591
+        ],
+        [
+          1.134,
+          1.16896
+        ],
+        [
+          1.148,
+          1.17175
+        ],
+        [
+          1.162,
+          1.17556
+        ],
+        [
+          1.181,
+          1.183
+        ],
+        [
+          1.182,
+          1.1835
+        ],
+        [
+          1.185,
+          1.185
+        ],
+        [
+          1.19,
+          1.188
+        ],
+        [
+          1.195,
+          1.191
+        ],
+        [
+          1.201,
+          1.196
+        ],
+        [
+          1.209,
+          1.202
+        ],
+        [
+          1.215,
+          1.208
+        ],
+        [
+          1.222,
+          1.214
+        ],
+        [
+          1.228,
+          1.221
+        ],
+        [
+          1.234,
+          1.231
+        ],
+        [
+          1.239,
+          1.238
+        ],
+        [
+          1.242,
+          1.244
+        ],
+        [
+          1.248,
+          1.254
+        ],
+        [
+          1.258,
+          1.278
+        ],
+        [
+          1.263,
+          1.29
+        ],
+        [
+          1.28,
+          1.331
+        ],
+        [
+          1.28,
+          1.347
+        ],
+        [
+          1.28,
+          1.348
+        ],
+        [
+          1.31,
+          1.348
+        ],
+        [
+          1.328,
+          1.348
+        ],
+        [
+          1.361,
+          1.348
+        ],
+        [
+          1.38,
+          1.348
+        ],
+        [
+          1.419,
+          1.348
+        ],
+        [
+          1.419,
+          1.31
+        ],
+        [
+          1.372,
+          1.31
+        ],
+        [
+          1.37167,
+          1.29238
+        ],
+        [
+          1.37003,
+          1.28268
+        ],
+        [
+          1.36688,
+          1.25644
+        ],
+        [
+          1.36719,
+          1.22955
+        ],
+        [
+          1.37178,
+          1.19576
+        ],
+        [
+          1.37224,
+          1.19402
+        ],
+        [
+          1.38662,
+          1.16487
+        ],
+        [
+          1.38708,
+          1.16421
+        ],
+        [
+          1.40382,
+          1.15696
+        ],
+        [
+          1.41127,
+          1.1573
+        ],
+        [
+          1.41857,
+          1.16132
+        ],
+        [
+          1.421,
+          1.164
+        ],
+        [
+          1.48663,
+          1.2405
+        ],
+        [
+          1.4973,
+          1.23458
+        ],
+        [
+          1.49762,
+          1.23428
+        ],
+        [
+          1.49745,
+          1.23174
+        ],
+        [
+          1.49275,
+          1.2133
+        ],
+        [
+          1.4926,
+          1.21061
+        ],
+        [
+          1.49261,
+          1.20486
+        ],
+        [
+          1.49279,
+          1.20214
+        ],
+        [
+          1.4934,
+          1.19642
+        ],
+        [
+          1.4947,
+          1.18511
+        ],
+        [
+          1.49622,
+          1.1607
+        ],
+        [
+          1.47981,
+          1.12426
+        ],
+        [
+          1.48082,
+          1.12256
+        ],
+        [
+          1.48149,
+          1.12138
+        ],
+        [
+          1.48646,
+          1.11692
+        ],
+        [
+          1.49095,
+          1.11439
+        ],
+        [
+          1.50305,
+          1.11244
+        ],
+        [
+          1.59697,
+          1.09489
+        ],
+        [
+          1.6255,
+          1.0853
+        ],
+        [
+          1.63752,
+          1.07988
+        ],
+        [
+          1.647,
+          1.077
+        ],
+        [
+          1.785,
+          1.077
+        ],
+        [
+          2.07,
+          1.04
+        ],
+        [
+          2.128,
+          0.993
+        ],
+        [
+          2.245,
+          0.709
+        ],
+        [
+          2.33956,
+          0.46143
+        ],
+        [
+          2.34708,
+          0.41583
+        ],
+        [
+          2.34913,
+          0.27218
+        ],
+        [
+          2.35103,
+          0.17018
+        ],
+        [
+          2.35158,
+          0.07012
+        ],
+        [
+          2.35125,
+          -0.03179
+        ],
+        [
+          2.35051,
+          -0.14435
+        ],
+        [
+          2.34965,
+          -0.21483
+        ],
+        [
+          2.3487,
+          -0.32669
+        ],
+        [
+          2.3476,
+          -0.38677
+        ],
+        [
+          2.3402,
+          -0.45304
+        ],
+        [
+          2.32942,
+          -0.47757
+        ],
+        [
+          2.134,
+          -0.973
+        ],
+        [
+          1.786,
+          -1.174
+        ],
+        [
+          1.768,
+          -1.211
+        ],
+        [
+          1.768,
+          -1.25
+        ],
+        [
+          1.682,
+          -1.25
+        ],
+        [
+          1.372,
+          -1.25
+        ],
+        [
+          1.372,
+          -1.329
+        ],
+        [
+          1.42,
+          -1.329
+        ],
+        [
+          1.42,
+          -1.363
+        ],
+        [
+          1.273,
+          -1.363
+        ],
+        [
+          1.153,
+          -1.363
+        ],
+        [
+          1.016,
+          -1.223
+        ],
+        [
+          1.016,
+          -0.83
+        ],
+        [
+          1.016,
+          -0.8
+        ],
+        [
+          1.016,
+          -0.415
+        ],
+        [
+          1.016,
+          -0.4
+        ],
+        [
+          1.016,
+          -0.001
+        ],
+        [
+          1.016,
+          0.0
+        ],
+        [
+          1.016,
+          0.964
+        ]
+      ],
+      "status": "returned",
+      "currents_A": [
+        -42112.15456402302,
+        -96332.76724373456,
+        -101338.43555575795,
+        -294.3947041425854,
+        152064.61810411466,
+        112590.82357473951,
+        -178792.36643774435,
+        -149524.75418440253,
+        69730.48849922046,
+        -36700.332460630685,
+        -89292.81921767257,
+        -88730.06091128103,
+        -64231.22665274143,
+        40826.497391109704,
+        122312.13291123742,
+        -178967.7886627391,
+        -159294.7619926557,
+        119144.29404760338
+      ],
+      "seconds": 111.31689377897419
+    },
+    "forward": {
+      "schema": "constructive_static_v1",
+      "source_binding_sha256": "0c427e56a6c207e83c12fc2d2e97d4c4cc393299ed6948d5ed79f485070eb48b",
+      "versions": {
+        "freegs": "0.8.2",
+        "freegs4e": "0.15.0",
+        "freegsnke": "3.1.1",
+        "numpy": "2.3.5",
+        "scipy": "1.18.1",
+        "shapely": "2.2.0"
+      },
+      "size": 65,
+      "power": 2.0,
+      "initial": 0,
+      "profile": {
+        "paxis": 20000.0,
+        "current": 1000000.0,
+        "fvac": 3.4,
+        "power": 2.0,
+        "span": -0.34052999454313837,
+        "amplitude": 5.514124996443547
+      },
+      "axis": [
+        [
+          1.6746077445672707,
+          -0.08093860818839146,
+          0.4297495196862443
+        ]
+      ],
+      "xpoints": [
+        [
+          1.2853363028571627,
+          -1.175460459564202,
+          0.08299794360356771
+        ],
+        [
+          1.1992992423758475,
+          0.9998250007414907,
+          0.08071201749513146
+        ],
+        [
+          0.7948296561382575,
+          -0.5338365646194849,
+          0.01641023878117172
+        ],
+        [
+          0.803050117433945,
+          0.2522654754517425,
+          0.016240086323220642
+        ],
+        [
+          0.8003342604583525,
+          0.3918974969095362,
+          0.015148316695884253
+        ],
+        [
+          2.7233642631376958,
+          -0.8852506781379433,
+          -0.16854436949737714
+        ],
+        [
+          2.6973107629934088,
+          0.8845884148678012,
+          -0.1795603719734428
+        ],
+        [
+          2.379591942130682,
+          1.1157366773237478,
+          -0.18449814279498034
+        ],
+        [
+          2.5244658415954193,
+          1.0673855602361457,
+          -0.20080615009836797
+        ]
+      ],
+      "limited": true,
+      "li": 1.6225724936664814,
+      "li_definition": "ITER li(2), spline Bp, volume within s=.999 contour, Ampere loop normalization",
+      "li3_true_Ip": 1.4388194218130055,
+      "ampere_loop_current_A": 1000306.0348276932,
+      "betaN_model": 0.2000282831280221,
+      "betaN_geometry": {
+        "Rgeo_m": 1.6252736969515442,
+        "minor_radius_m": 0.6085076499472521,
+        "B0_T": 2.091955346583922
+      },
+      "q95_model": 4.695420485835726,
+      "inner_surface_psiN": 0.999,
+      "inner_surface_sampling": "720 uniform arclength samples, no contour-vertex filtering",
+      "plasma_gs_rms_over_source": 5.434271816671662e-09,
+      "total_gs_rms_over_source": 0.0002246081787196461,
+      "gs_stencil_nodes": 618,
+      "current_A": 999999.9999999998,
+      "relative_current_error": 2.220446049250313e-16,
+      "flux_span_Wb_per_rad": -0.34052999454313837,
+      "field_checks_passed": true,
+      "nonlinear_relative_max": 9.294821022399166e-10,
+      "reported_relative_change": 9.035532604827504e-10,
+      "norm_relative_history": [
+        0.45081612786060193,
+        0.35319088587579023,
+        0.2874218478449989,
+        0.21565638980970311,
+        0.13979248646837494,
+        0.0632668971796876,
+        0.028991668821489944,
+        0.0342974171915319,
+        0.03178799476933981,
+        0.02896151367024637,
+        0.037084680538188565,
+        0.030352177506923126,
+        0.02267937291845805,
+        0.016744165811929338,
+        0.013610895238834244,
+        0.010311419774942472,
+        0.001915217165358065,
+        0.0004247349346164912,
+        7.065681308573975e-05,
+        1.2748941150510238e-05,
+        1.7230408233511087e-06,
+        2.210963765069393e-07,
+        1.536389694681772e-08,
+        1.2731652591794902e-09,
+        2.5443294324273084e-10
+      ],
+      "coil_currents_unchanged": true,
+      "converged": true,
+      "native_initialization_rescales": 10,
+      "native_default_initialization_used": false,
+      "source_reevaluated_on_accepted_map": true,
+      "source_refresh_max_absolute_A_m2": 0.0,
+      "numerically_admissible": true,
+      "status": "returned",
+      "seconds": 16.03264296078123
+    }
+  },
+  "coarse_comparison": {
+    "max_flux_over_reference_span": 0.009416717819584176,
+    "axis_distance_m": 0.0004893970974605166,
+    "same_limited_regime": true,
+    "rectangle_Ip_relative_difference": 1.0151268493500538e-05,
+    "both_initialisations_checked": false,
+    "limits": {
+      "max_flux_over_reference_span": 0.005,
+      "axis_distance_m": 0.05625,
+      "rectangle_Ip_relative_difference": 0.01
+    }
+  },
+  "gauge_alignment": "delta=forward-inverse; subtract mean(delta) over whole grid; maxabs/reference_abs_flux_span",
+  "runtime_locks": {
+    "requirements-constructive.txt": "2bc33d2613f0e435a1eb27f9a7c36742fa54d3120f2a42456318bfd1d3eb156b",
+    "requirements-constructive-reference.txt": "4aa78c7908eda4dd6dc26266b51a3b08dac93777f757f60ee5afbee4f9e4f9dd"
+  },
+  "boundary_control": {
+    "measurement_source_sha256": "f8093844e7456a6a6477f0ee1ce019690744a3784d19b7d8f2da49e1974d8513",
+    "maintained_reproducer_path": "tools/constructive_boundary.py",
+    "maintained_reproducer_sha256": "00228bbe3c4d77d29bd3f5543c8d2656bddf8197fab917481b6c1b9f71ed4a88",
+    "reproducer_verification": "All9 engine/grid publicCLI integrations compared the measured edge-error constants with relative tolerance1e-4 and absolute tolerance2e-13. Source/kernel analytic controls passed. Original numerical expressions preserved; metadata source description corrected.",
+    "summary": {
+      "schema": "prescribed_current_boundary_control_v1",
+      "rows": [
+        {
+          "size": 65,
+          "reference_edge_max_Wb_per_rad": 0.3827839291605356,
+          "native_actual_edge_max_relative": 1.0379843954395266e-06,
+          "legacy_Hagenow_actual_edge_max_relative": 0.008966860044823596,
+          "legacy_Hagenow_shifted_target_max_relative": 0.013182749796173877,
+          "legacy_direct_Romberg_actual_edge_max_relative": 0.00016790780250473383,
+          "reference_quad_probe_max_relative": 1.0441407238323074e-14
+        },
+        {
+          "size": 129,
+          "reference_edge_max_Wb_per_rad": 0.3827839291605356,
+          "native_actual_edge_max_relative": 2.9057679487247883e-08,
+          "legacy_Hagenow_actual_edge_max_relative": 0.006741825290069578,
+          "legacy_Hagenow_shifted_target_max_relative": 0.0028172426447601643,
+          "legacy_direct_Romberg_actual_edge_max_relative": 1.7770224377612354e-06,
+          "reference_quad_probe_max_relative": 1.0441407238323074e-14
+        },
+        {
+          "size": 257,
+          "reference_edge_max_Wb_per_rad": 0.3827839291605356,
+          "native_actual_edge_max_relative": 7.139802365265423e-10,
+          "legacy_Hagenow_actual_edge_max_relative": 0.005364127783675042,
+          "legacy_Hagenow_shifted_target_max_relative": 0.0004233873946466867,
+          "legacy_direct_Romberg_actual_edge_max_relative": 9.03443051334994e-09,
+          "reference_quad_probe_max_relative": 1.0441407238323074e-14
+        }
+      ],
+      "v4_primary_gate": "unchanged FAILED; separate operator diagnosis does not turn it into a pass",
+      "interpretation": "For this one smooth compact prescribed source the modern direct-Green boundary agrees much more closely with independent continuous quadrature than legacy Hagenow. This does not establish a universal accuracy theorem or nonlinear equilibrium uniqueness; the shifted-target control does not isolate a sole epsilon mechanism."
+    }
+  },
+  "interpretation": "Failed numerical control precludes primary witness admission. Separate prescribed-source calibration does not rescue the failed gate. No real-DIII-D information limit, stability certificate or competition improvement is established.",
+  "coarse_comparison_scope": "The metrics compare initial0 only. Initial1 was attempted but refused because no eroded plasma stencil was available, so a second map comparison could not be computed. The gate required both starts.",
+  "case_ledger": {
+    "path": "tools/reference/constructive_cases_v4.json",
+    "sha256": "2931675e259b0a977078c1587d6afb034c3c9fe2a62709674db61c107446b0f2",
+    "size_bytes": 455712,
+    "forward_cases": 36,
+    "individual_checks_passed": 11,
+    "individual_checks_failed_after_return": 14,
+    "diagnostic_exceptions": 4,
+    "timeouts": 7,
+    "unattempted": 0,
+    "available_fine_grid_comparisons": 4,
+    "unavailable_fine_grid_comparisons": 16,
+    "primary_admitted_pairs": 0
+  }
+}
