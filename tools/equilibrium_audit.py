@@ -16,14 +16,10 @@ from typing import Never
 
 import numpy as np
 
-from tools.audit_map_input import FLUX_FACTORS, LENGTH_FACTORS, MapData, load_map, load_region
+from tools.audit_map_input import InputRefusal, MapData, RefusalCode, load_map, load_region
 from tools.field_diagnostics import measure
 
 REFUSAL = "Map audit refused: check input files, units, grid and numerical range."
-
-
-class InputRefusal(ValueError):
-    """Deliberately authored refusal of a command or input declaration."""
 
 
 class Parser(argparse.ArgumentParser):
@@ -31,7 +27,7 @@ class Parser(argparse.ArgumentParser):
 
     def error(self, message: str) -> Never:
         """Refuse invalid arguments without printing interpreter-generated text."""
-        raise InputRefusal(REFUSAL)
+        raise InputRefusal("INVALID_ARGUMENT", REFUSAL)
 
 
 def _identity(frame: MapData) -> dict[str, object]:
@@ -48,7 +44,7 @@ def _identity(frame: MapData) -> dict[str, object]:
 
 
 def main(argv: list[str] | None = None) -> int:
-    """Write a deterministic JSON audit, or one fixed refusal and exit two.
+    """Write a deterministic audit, or a coded refusal with fixed text and exit two.
 
     Parameters
     ----------
@@ -63,8 +59,8 @@ def main(argv: list[str] | None = None) -> int:
     """
     parser = Parser(description=__doc__)
     parser.add_argument("--map", type=Path, required=True)
-    parser.add_argument("--length-unit", choices=LENGTH_FACTORS, required=True)
-    parser.add_argument("--flux-unit", choices=FLUX_FACTORS, required=True)
+    parser.add_argument("--length-unit", metavar="{m,cm,mm}", required=True)
+    parser.add_argument("--flux-unit", metavar="{Wb/rad,Wb-total}", required=True)
     parser.add_argument("--axis-sign", type=int, choices=(-1, 1), required=True)
     parser.add_argument("--reference", type=Path)
     parser.add_argument("--reference-axis-sign", type=int, choices=(-1, 1))
@@ -73,7 +69,7 @@ def main(argv: list[str] | None = None) -> int:
     try:
         args = parser.parse_args(argv)
         if args.reference_axis_sign is not None and args.reference is None:
-            raise InputRefusal(REFUSAL)
+            raise InputRefusal("INVALID_ARGUMENT", REFUSAL)
         frame = load_map(args.map, args.length_unit, args.flux_unit, args.axis_sign)
         region = load_region(args.comparison_region, frame)
         reference = (
@@ -124,11 +120,24 @@ def main(argv: list[str] | None = None) -> int:
             "diagnostics": measure(frame, region, reference, args.measured_current_a),
         }
         output = json.dumps(report, sort_keys=True, indent=2, allow_nan=False)
+    except InputRefusal as exc:
+        code: RefusalCode = exc.code
+    except OSError:
+        code = "INPUT_UNREADABLE"
+    except (FloatingPointError, OverflowError):
+        code = "NUMERIC_RANGE_EXCEEDED"
     except Exception:
-        print(json.dumps({"status": "refused", "message": REFUSAL}, sort_keys=True))
-        return 2
-    print(output)
-    return 0
+        code = "AUDIT_REFUSED"
+    else:
+        print(output)
+        return 0
+    print(
+        json.dumps(
+            {"schema": "equilibrium-audit-refusal.v1", "status": "refused", "code": code, "message": REFUSAL},
+            sort_keys=True,
+        )
+    )
+    return 2
 
 
 if __name__ == "__main__":

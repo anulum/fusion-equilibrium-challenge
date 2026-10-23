@@ -17,7 +17,7 @@ import zipfile
 from collections.abc import Callable
 from dataclasses import dataclass
 from pathlib import Path
-from typing import BinaryIO, cast
+from typing import BinaryIO, Literal, cast
 
 import numpy as np
 from numpy.lib import format as npformat
@@ -32,6 +32,33 @@ UNIFORM_RTOL = 1e-5
 LENGTH_FACTORS = {"m": 1.0, "cm": 0.01, "mm": 0.001}
 FLUX_FACTORS = {"Wb/rad": 1.0, "Wb-total": 1 / (2 * math.pi)}
 Header = tuple[tuple[int, ...], bool, np.dtype[np.generic]]
+type RefusalCode = Literal[
+    "INVALID_ARGUMENT",
+    "MISSING_ARRAY",
+    "INVALID_LENGTH_UNIT",
+    "INVALID_FLUX_UNIT",
+    "GRID_NONUNIFORM",
+    "INPUT_UNREADABLE",
+    "NUMERIC_RANGE_EXCEEDED",
+    "AUDIT_REFUSED",
+]
+
+
+class InputRefusal(ValueError):
+    """An input refusal with an authored code independent of exception text."""
+
+    def __init__(self, code: RefusalCode, message: str) -> None:
+        """Retain a controlled caller code and the internal validation explanation.
+
+        Parameters
+        ----------
+        code : RefusalCode
+            Stable code selected by the validator, never parsed from user input.
+        message : str
+            Internal explanation; command output never includes this text.
+        """
+        super().__init__(message)
+        self.code = code
 
 
 @dataclass(frozen=True)
@@ -71,10 +98,12 @@ def _arrays(path: Path, required: set[str], optional: set[str]) -> tuple[dict[st
             members = archive.infolist()
             names = [item.filename for item in members]
             keys = {name[:-4] for name in names}
+            if not required <= keys:
+                raise InputRefusal("MISSING_ARRAY", "Map archive lacks a required array")
             if (
                 len(names) != len(set(names))
                 or any(not name.endswith(".npy") for name in names)
-                or not required <= keys <= required | optional
+                or not keys <= required | optional
                 or sum(item.file_size for item in members) > MAX_EXPANDED
             ):
                 raise ValueError("Map archive members differ from the input schema")
@@ -112,10 +141,10 @@ def _coordinates(values: dict[str, NDArray[np.generic]], factor: float) -> tuple
             if grid.ndim != 1 or len(grid) < 3 or not np.isfinite(grid).all():
                 raise ValueError("Expected finite one-dimensional coordinates")
             difference = np.diff(grid)
-            if np.any(difference <= 0) or not np.allclose(
-                difference, difference.mean(), rtol=UNIFORM_RTOL, atol=0
-            ):
+            if np.any(difference <= 0):
                 raise ValueError("Coordinates must increase with uniform spacing")
+            if not np.allclose(difference, difference.mean(), rtol=UNIFORM_RTOL, atol=0):
+                raise InputRefusal("GRID_NONUNIFORM", "Coordinates must have uniform spacing")
         if np.any(radius <= 0) or len(radius) * len(height) > MAX_ELEMENTS:
             raise ValueError("Invalid cylindrical grid extent")
     return radius, height
@@ -158,8 +187,10 @@ def load_map(path: Path, length_unit: str, flux_unit: str, axis_sign: int) -> Ma
     OSError
         The input cannot be read.
     """
-    if length_unit not in LENGTH_FACTORS or flux_unit not in FLUX_FACTORS:
-        raise ValueError("Explicit supported units are required")
+    if length_unit not in LENGTH_FACTORS:
+        raise InputRefusal("INVALID_LENGTH_UNIT", "Explicit supported length units are required")
+    if flux_unit not in FLUX_FACTORS:
+        raise InputRefusal("INVALID_FLUX_UNIT", "Explicit supported flux units are required")
     if type(axis_sign) is not int or axis_sign not in (-1, 1):
         raise ValueError("Axis orientation must be +1 or -1")
     values, checksum = _arrays(path, {"R", "Z", "psi"}, {"plasma_mask", "axis_flux", "boundary_flux"})

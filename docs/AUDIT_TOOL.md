@@ -56,6 +56,26 @@ have unavailable diagnostics, represented by null values, reasons and support co
 or numerical range produce exit code 2 and a fixed refusal without file paths or exception text. The command
 does not write files; shell redirection is optional and controlled by the caller.
 
+### Interpret an input refusal
+
+Refusals retain exit code 2, `status: refused` and the same fixed message. The additive
+`equilibrium-audit-refusal.v1` schema and `code` fields identify a controlled category without exposing
+exception text, file paths or a traceback. Successful audit reports keep `equilibrium-audit.v1`.
+
+| Code | What to check |
+|---|---|
+| `INVALID_ARGUMENT` | Supply required options, supported signs and correctly typed arguments. |
+| `INPUT_UNREADABLE` | Check that the supplied files exist and are readable. |
+| `MISSING_ARRAY` | Supply every required NPZ array for the map or comparison region. |
+| `INVALID_LENGTH_UNIT` | Declare `m`, `cm` or `mm`. |
+| `INVALID_FLUX_UNIT` | Declare `Wb/rad` or `Wb-total`. |
+| `GRID_NONUNIFORM` | Supply coordinates with the uniform spacing required below. |
+| `NUMERIC_RANGE_EXCEEDED` | Check magnitudes, unit declarations and grid spacing; arithmetic exceeded numerical range. |
+| `AUDIT_REFUSED` | The remaining input or calculation was refused; check the full input contract. |
+
+Codes classify the detected failure, not every possible error in a file. Unavailable diagnostics within
+a successful audit still use their individual reasons and support counts; they are not command refusals.
+
 ## Input contract
 
 The map is an NPZ archive containing:

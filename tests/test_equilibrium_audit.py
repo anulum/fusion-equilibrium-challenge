@@ -177,8 +177,78 @@ def test_real_input_refusals(tmp_path: Path, capsys: pytest.CaptureFixture[str],
         np.savez(path, R=radius, Z=height, psi=phi)
     assert main(args) == 2
     output = capsys.readouterr()
-    assert output.err == "" and json.loads(output.out) == {"status": "refused", "message": REFUSAL}
+    code = (
+        "INPUT_UNREADABLE"
+        if case == "missing_file"
+        else "INVALID_LENGTH_UNIT"
+        if case == "unit"
+        else "INVALID_ARGUMENT"
+        if case in {"missing_flag", "sign", "orphan_sign", "unknown_flag", "bad_float"}
+        else "NUMERIC_RANGE_EXCEEDED"
+        if case == "overflow"
+        else "AUDIT_REFUSED"
+    )
+    assert output.err == "" and json.loads(output.out) == {
+        "schema": "equilibrium-audit-refusal.v1",
+        "status": "refused",
+        "code": code,
+        "message": REFUSAL,
+    }
     assert str(path) not in output.out and "Traceback" not in output.out
+
+
+@pytest.mark.parametrize(
+    "fault,code",
+    [
+        ("grid", "GRID_NONUNIFORM"),
+        ("missing", "MISSING_ARRAY"),
+        ("flux_unit", "INVALID_FLUX_UNIT"),
+        ("overflow", "NUMERIC_RANGE_EXCEEDED"),
+    ],
+)
+def test_actionable_refusal_codes_cli(tmp_path: Path, fault: str, code: str) -> None:
+    """Identify the actual declaration fault without exposing private input details."""
+    radius, height = np.linspace(1.0, 2.0, 17), np.linspace(-1.0, 1.0, 17)
+    rr, zz = np.meshgrid(radius, height)
+    phi = -((rr - 1.5) ** 2) - zz**2
+    path = tmp_path / "private-map-name.npz"
+    args = _args(path)
+    if fault == "missing":
+        np.savez(path, R=radius, Z=height)
+    else:
+        if fault == "grid":
+            radius[5] += 0.01
+        elif fault == "flux_unit":
+            args[5] = "tesla"
+        else:
+            phi *= 1e200
+        np.savez(path, R=radius, Z=height, psi=phi)
+    result = subprocess.run(
+        [
+            sys.executable,
+            "-m",
+            "coverage",
+            "run",
+            "--branch",
+            "--parallel-mode",
+            "-m",
+            "tools.equilibrium_audit",
+            *args,
+        ],
+        cwd=ROOT,
+        capture_output=True,
+        text=True,
+        check=False,
+        timeout=60,
+    )
+    assert result.returncode == 2 and result.stderr == ""
+    assert json.loads(result.stdout) == {
+        "schema": "equilibrium-audit-refusal.v1",
+        "status": "refused",
+        "code": code,
+        "message": REFUSAL,
+    }
+    assert str(path) not in result.stdout and "Traceback" not in result.stdout
 
 
 def test_minimal_field_and_help(tmp_path: Path, capsys: pytest.CaptureFixture[str]) -> None:
