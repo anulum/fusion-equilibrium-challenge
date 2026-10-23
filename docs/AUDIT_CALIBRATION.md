@@ -85,6 +85,21 @@ finished boundary error, and the largest error. They were selected using this en
 They are reused illustrative cases, not a representative population sample, a new confirmation cohort or a
 basis for ranking methods. Model capacity and use of Thomson signals also differ.
 
+The measured values below are diagnostic ratios multiplied by 100. `B` is the poloidal-field L2 error
+against the reference; `GS` is the cubic fitted source RMS residual divided by source RMS. All values
+come from the [published calibration report](https://github.com/anulum/fusion-equilibrium-challenge/blob/main/experiments/audit_calibration/report_v1.json).
+
+| Original illustration | Entry B, % | PCA–Ridge B, % | Reference GS, % | Entry GS, % | PCA–Ridge GS, % |
+|---|---:|---:|---:|---:|---:|
+| p50 | 2.105 | 11.915 | 0.626 | 8.986 | 1.836 |
+| p90 | 3.485 | 43.277 | 3.427 | 17.670 | 4.972 |
+| p99 | 4.356 | 67.944 | 0.110 | 12.453 | 2.846 |
+| max | 39.153 | 53.998 | 3.544 | 35.876 | 7.481 |
+
+PCA–Ridge has a smaller fitted GS ratio and a larger field error on each of these four examples.
+This illustrates the limited information supplied by a fitted residual alone. These deliberately selected,
+reused cases do not rank methods on a shot population or certify physical force balance.
+
 For each frame, reference, entry and baseline use the same fixed EFIT polygon mask and central-stencil support.
 This **reference-assisted diagnostic** uses each map's flux sampled on the reference contour for its boundary
 value, and its own grid extremum inside that mask for axis normalisation. It is not the baseline predicting a
