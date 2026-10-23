@@ -110,3 +110,15 @@ this entry and the organisers' independently authored PCA–Ridge method on four
 the diagnostic cohort. Those frames were selected by this entry's boundary errors, so this is a reference-assisted
 illustration, not a population comparison or an outside replication. The analytic controls expose discretisation
 error, controlled perturbations and unavailable diagnostics before experimental maps are interpreted.
+
+## Related work and scope
+
+[Grandin et al. (2026, v2)](https://arxiv.org/html/2606.09487v2) describe a TCV LIUQE surrogate using flux-loop
+and magnetic-probe measurements. Its training uses LIUQE flux, field and current targets, with spatial derivatives
+of predicted flux entering the losses (§II-C4); the authors also publish
+[code](https://github.com/matgrand/liuqe-nn/tree/ed503a4f03c5ad2efdec3b26b17f9100a93c2ffd).
+Those inputs, machine and reference differ from this challenge's coil-current, measured plasma-current and
+Thomson-scattering inputs and EFIT reference.
+Our study contributes measurements across prediction stages, public aggregate reproduction and a negative
+projection experiment. This comparison establishes neither a competitive score ranking nor priority over
+other teams' unpublished methods.
