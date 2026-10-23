@@ -77,6 +77,9 @@ shots from fitting, but the shots were used before in model comparisons ([Study 
 
 ## Read
 
+- [Audit your maps](AUDIT_TOOL.md): measure GS-form, field and current diagnostics with explicit units,
+  support and fixed comparison regions, without our trained models.
+
 - [Methods report](METHODS_REPORT.md): the method in two pages.
 - [Accompanying study](STUDY.md): what we tried, how we measured it, and what moved the score, including the many
   experiments that failed.
