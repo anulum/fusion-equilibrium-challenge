@@ -56,6 +56,55 @@ have unavailable diagnostics, represented by null values, reasons and support co
 or numerical range produce exit code 2 and a fixed refusal without file paths or exception text. The command
 does not write files; shell redirection is optional and controlled by the caller.
 
+## Select a map from a competition archive
+
+The adapter reads the prediction format written by this repository's `infer.py`:
+`shot_0000_psirz`, `shot_0001_psirz`, and subsequent zero-based shot indices. Each
+selected array must have shape `(frames, 65, 65)`, with rows along Z and columns
+along R, and contain real float32 or float64 values. The archive itself supplies
+neither physical coordinates nor timestamps; the adapter does not infer them
+from the machine name, shot index or array shape.
+
+Supply a separate `grid.npz` containing `R` and `Z` for the selected map, then
+run the adapter and the existing audit as two commands:
+
+```bash
+.venv/bin/python -m tools.competition_map \
+  --archive predictions.npz --shot-index 0 --frame 12 \
+  --grid grid.npz --out selected-frame \
+  --length-unit m --flux-unit Wb/rad --axis-sign 1
+.venv/bin/python -m tools.equilibrium_audit \
+  --map selected-frame/map.npz \
+  --length-unit m --flux-unit Wb/rad --axis-sign 1
+```
+
+The output directory must be new. It contains the selected `map.npz` and a
+`competition-map-selection.v1` receipt. The frame's numerical values, dtype and
+Z/R orientation are preserved, including for a Fortran-ordered source array.
+The receipt binds the full archive bytes, array key, frame index, selected frame
+bytes, supplied grid, exported map and adapter source with SHA-256 identities.
+An optional `--archive-sha256 HASH` requires the caller's expected archive
+identity. Hashing reads the entire archive, while selection allocates only one
+frame; unselected frames and scalar predictions are not validated. This command
+does not compute the competition score.
+
+To select by time, replace `--frame 12` with `--time-ms 1200 --times times.npz`.
+The supplied NPZ must contain only `times_ms`: one finite, strictly increasing
+timestamp per frame of the selected shot. The requested time must match exactly;
+there is no nearest-time selection or interpolation. Passing `--times` with a
+frame index instead records that frame's declared timestamp. The receipt also
+records the time-axis checksum. These are caller-supplied timestamps, not time
+metadata discovered inside the prediction archive.
+
+The grid file may additionally contain `plasma_mask`, `axis_flux` and
+`boundary_flux` for this particular frame, under the single-map contract below.
+The adapter passes them through for validation without constructing a plasma
+region from the predictions. Without suitable metadata, dependent diagnostics
+remain unavailable. A reference map and fixed comparison region can be supplied
+to the audit command in the usual way. Units and sign must be declared again
+consistently when running that command. Invalid selection, input or destination
+returns exit code 2 and a fixed refusal; an existing output directory is retained.
+
 ### Interpret an input refusal
 
 Refusals retain exit code 2, `status: refused` and the same fixed message. The additive

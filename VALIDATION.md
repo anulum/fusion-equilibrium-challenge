@@ -13,8 +13,8 @@ Each claim of this repository rests on one of the checks below. They differ in s
 
 ## Maintained code under strict gates
 
-Seventeen verification, diagnostic, rendering and baseline-reproduction tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
-`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/scored_map_summary.py`, `tools/scored_map_table.py`, `tools/audit_map_input.py`, `tools/field_diagnostics.py`, `tools/equilibrium_audit.py`, `tools/official_ridge.py`, `tools/audit_calibration.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
+Eighteen verification, diagnostic, rendering and baseline-reproduction tools are maintained code: `tools/check_doc_links.py`, `tools/ci_check_shot.py`,
+`tools/d71b_table.py`, `tools/d72_table.py`, `tools/surface_gs.py`, `tools/surface_support_summary.py`, `tools/surface_support_table.py`, `tools/scored_map_summary.py`, `tools/scored_map_table.py`, `tools/audit_map_input.py`, `tools/field_diagnostics.py`, `tools/equilibrium_audit.py`, `tools/competition_map.py`, `tools/official_ridge.py`, `tools/audit_calibration.py`, `tools/make_preview.py`, `tools/check_publication_boundary.py` and `experiments/d71_finisher_physics/per_shot_table.py`, with their tests in `tests/`. On every push and pull request
 the Diagnostics workflow runs Ruff (lint and format), strict mypy and Bandit on them and requires full statement
 and branch coverage; the tests use the published files themselves and deliberately damaged copies of them, not
 mocks. The same workflow audits every locked dependency of the six root `requirements-*.txt` files, transitive ones
@@ -48,6 +48,13 @@ operator controls, actual malformed archives, convention/gauge comparisons and a
 through the real command. Rank, surface support, zero denominators and unavailable domains are reported rather
 than certified. Those operator tests alone do not evaluate an external predictor or establish independent physical truth. [Input contract and numerical definitions](docs/AUDIT_TOOL.md) describe the scope.
 
+The competition adapter selects one frame from the actual prediction-archive format into the same audit
+contract. A process-level test selects a frame from the published submission 986068 archive, runs the real
+audit command and compares its diagnostics with the original frame's direct audit. Dedicated tests cover
+storage layout, exact caller-supplied timestamps, provenance and malformed inputs. Coordinates, units and
+orientation remain explicit; this adapter does not reproduce pooled competition scoring or validate the
+unselected predictions.
+
 The calibration adds a known continuous/discrete source comparison on three resolutions and fixed
 perturbation, unavailable and common-sign controls. Four checksum-bound public illustrations compare the
 entry and the organisers' independently authored PCA–Ridge method on identical reference-assisted regions.
@@ -80,7 +87,7 @@ Seven additional tools are maintained in a separate numerical environment:
 and `tools/constructive_plot.py`.
 The dedicated Diagnostics integration job checks these files and their seven test modules with Ruff,
 strict mypy and Bandit, then requires 100% statement and branch coverage for this separate scope.
-This does not extend the seventeen-tool coverage result to the submitted models, third-party solvers
+This does not extend the eighteen-tool coverage result to the submitted models, third-party solvers
 or all historical research code.
 
 The modern forward runtime and the older inverse runtime are isolated, hash-pinned environments.

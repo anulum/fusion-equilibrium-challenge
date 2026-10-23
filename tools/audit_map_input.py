@@ -88,7 +88,29 @@ class Region:
     source_sha256: str | None
 
 
-def _arrays(path: Path, required: set[str], optional: set[str]) -> tuple[dict[str, NDArray[np.generic]], str]:
+def load_arrays(
+    path: Path, required: set[str], optional: set[str]
+) -> tuple[dict[str, NDArray[np.generic]], str]:
+    """Read one bounded numerical archive under an explicit key schema.
+
+    Parameters
+    ----------
+    path : Path
+        NPZ containing only supported real numerical arrays; masks are boolean.
+    required, optional : set of str
+        Required and optional keys. Headers, sizes and dtypes are checked before
+        loading arrays, and the processed byte snapshot supplies the checksum.
+
+    Returns
+    -------
+    values, sha256 : dict of str to ndarray, str
+        Decoded arrays and identity of the exact archive bytes read.
+
+    Raises
+    ------
+    OSError, ValueError
+        Input bytes, keys, dimensions or numerical formats are unavailable or invalid.
+    """
     with path.open("rb") as stream:
         raw = stream.read(MAX_ARCHIVE + 1)
     if len(raw) > MAX_ARCHIVE:
@@ -193,7 +215,7 @@ def load_map(path: Path, length_unit: str, flux_unit: str, axis_sign: int) -> Ma
         raise InputRefusal("INVALID_FLUX_UNIT", "Explicit supported flux units are required")
     if type(axis_sign) is not int or axis_sign not in (-1, 1):
         raise ValueError("Axis orientation must be +1 or -1")
-    values, checksum = _arrays(path, {"R", "Z", "psi"}, {"plasma_mask", "axis_flux", "boundary_flux"})
+    values, checksum = load_arrays(path, {"R", "Z", "psi"}, {"plasma_mask", "axis_flux", "boundary_flux"})
     radius, height = _coordinates(values, LENGTH_FACTORS[length_unit])
     factor = FLUX_FACTORS[flux_unit] * axis_sign
     phi = values["psi"].astype(np.float64) * factor
@@ -251,7 +273,7 @@ def load_region(path: Path | None, frame: MapData) -> Region:
         mask = np.ones(frame.phi.shape, dtype=np.bool_)
         policy, checksum = "grid-interior.v1", None
     else:
-        values, checksum = _arrays(path, {"R", "Z", "mask"}, set())
+        values, checksum = load_arrays(path, {"R", "Z", "mask"}, set())
         radius, height = _coordinates(values, LENGTH_FACTORS[frame.length_unit])
         mask = values["mask"].astype(np.bool_)
         if (
