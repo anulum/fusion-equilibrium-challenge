@@ -21,6 +21,7 @@ import hashlib
 import itertools
 import json
 import re
+import zlib
 from pathlib import Path
 from typing import TypedDict, cast
 
@@ -256,7 +257,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         result = verify(args.table, args.manifest, args.report)
-    except (ValueError, OSError, csv.Error):
+    except (ValueError, OSError, csv.Error, EOFError, zlib.error):
         print(
             json.dumps({"status": "refused", "message": "D71b inputs are missing, invalid or inconsistent."})
         )

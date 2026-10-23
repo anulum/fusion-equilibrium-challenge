@@ -203,8 +203,22 @@ def test_statistics_corruption(tmp_path: Path, real_rows: list[list[str]], fault
         verify(table, destination, REPORT)
 
 
-def test_cli_refusal(tmp_path: Path) -> None:
-    """Keep missing-input failures caller-safe through the actual process boundary."""
+@pytest.mark.parametrize("fault", ["missing", "truncated_gzip", "invalid_deflate"])
+def test_cli_refusal(tmp_path: Path, fault: str) -> None:
+    """Keep input and decompression failures safe through the actual process boundary."""
+    table = tmp_path / "statistics.csv.gz"
+    manifest_path = MANIFEST
+    if fault != "missing":
+        contents = (
+            TABLE.read_bytes()[:-10]
+            if fault == "truncated_gzip"
+            else b"\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x07" + b"\x00" * 8
+        )
+        table.write_bytes(contents)
+        manifest = json.loads(MANIFEST.read_text())
+        manifest["table_sha256"] = hashlib.sha256(contents).hexdigest()
+        manifest_path = tmp_path / "manifest.json"
+        manifest_path.write_text(json.dumps(manifest))
     result = subprocess.run(
         [
             sys.executable,
@@ -214,9 +228,9 @@ def test_cli_refusal(tmp_path: Path) -> None:
             "--parallel-mode",
             "tools/d71b_table.py",
             "--table",
-            str(tmp_path / "missing.csv.gz"),
+            str(table),
             "--manifest",
-            str(MANIFEST),
+            str(manifest_path),
             "--report",
             str(REPORT),
         ],

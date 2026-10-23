@@ -204,13 +204,18 @@ def test_damaged_statistics(tmp_path: Path, fault: str) -> None:
         verify(table, destination, GATE)
 
 
-@pytest.mark.parametrize("fault", ["missing", "truncated_gzip", "invalid_json"])
+@pytest.mark.parametrize("fault", ["missing", "truncated_gzip", "invalid_json", "invalid_deflate"])
 def test_cli_refusal(tmp_path: Path, fault: str) -> None:
     """Refuse an unavailable input without exposing a path or traceback to the caller."""
     table = tmp_path / "absent.gz"
     manifest_path = MANIFEST
     if fault != "missing":
-        contents = DATA.read_bytes()[:-10] if fault == "truncated_gzip" else gzip.compress(b"{")
+        if fault == "truncated_gzip":
+            contents = DATA.read_bytes()[:-10]
+        elif fault == "invalid_deflate":
+            contents = b"\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\xff\x07" + b"\x00" * 8
+        else:
+            contents = gzip.compress(b"{")
         table.write_bytes(contents)
         manifest = json.loads(MANIFEST.read_text())
         manifest["data_sha256"] = hashlib.sha256(contents).hexdigest()

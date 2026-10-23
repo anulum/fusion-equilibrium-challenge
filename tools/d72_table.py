@@ -18,6 +18,7 @@ import gzip
 import hashlib
 import json
 import re
+import zlib
 from pathlib import Path
 from typing import TypedDict, cast
 
@@ -353,7 +354,7 @@ def main() -> int:
     args = parser.parse_args()
     try:
         result = verify(args.data, args.manifest, args.gate)
-    except (ValueError, OSError, TypeError, KeyError, OverflowError, EOFError):
+    except (ValueError, OSError, TypeError, KeyError, OverflowError, EOFError, zlib.error):
         print(
             json.dumps({"status": "refused", "message": "D72 inputs are missing, invalid or inconsistent."})
         )
