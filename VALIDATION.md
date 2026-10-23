@@ -74,10 +74,11 @@ checked by inspecting the images.
 
 ## Synthetic equilibrium calculations
 
-Six additional tools are maintained in a separate numerical environment:
+Seven additional tools are maintained in a separate numerical environment:
 `tools/constructive_geometry.py`, `tools/constructive_model.py`, `tools/constructive_observations.py`,
-`tools/constructive_pairs.py`, `tools/constructive_reference.py` and `tools/constructive_boundary.py`.
-The dedicated Diagnostics integration job checks these files and their six test modules with Ruff,
+`tools/constructive_pairs.py`, `tools/constructive_reference.py`, `tools/constructive_boundary.py`
+and `tools/constructive_plot.py`.
+The dedicated Diagnostics integration job checks these files and their seven test modules with Ruff,
 strict mypy and Bandit, then requires 100% statement and branch coverage for this separate scope.
 This does not extend the seventeen-tool coverage result to the submitted models, third-party solvers
 or all historical research code.
@@ -98,6 +99,9 @@ Analytic tests check signed current/pressure normalization, discrete/continuous 
 contour availability and observation tolerances. Nine public boundary-operator integrations compare
 three grids and three engines with an independent continuous-source Green integral.
 The small original coarse-map bundle also has a focused checksum/arithmetic test.
+Its maintained figure command exports PNG, SVG and exact plotted quantities. Dedicated tests recompute
+the unchanged whole-grid gauge/span and reference-core/edge measures, render repeatable actual images,
+and refuse substituted originals or an existing output directory. The figure does not change the failed gate.
 
 The following skips are explicit in a local environment that has not provisioned both interpreters:
 

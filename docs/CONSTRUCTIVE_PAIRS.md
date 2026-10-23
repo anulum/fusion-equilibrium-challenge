@@ -120,6 +120,29 @@ after inspecting the result.
 
 The public coarse NPZ retains the original inverse and forward maps, current and support. Gauge alignment
 subtracts the whole-grid mean of δψ=ψ_forward−ψ_inverse before taking max|δψ|/|Δψ_inverse|.
+
+![Original coarse inverse/forward flux difference with the inverse plasma-core mask outlined; the accompanying box-edge trace reaches its largest error on the outer radial boundary.](figures/constructive_coarse/coarse_difference.png)
+
+Both panels use that same whole-grid gauge correction and inverse flux span. The maximum is **0.00941672**
+at R = 2.8 m, Z = −0.05625 m, on the outer computational boundary. Within the original inverse
+`limiter_core_mask > 0.5`, the descriptive maximum is **0.00136812** across 740 nodes. The right panel follows
+the box counterclockwise from its lower-left corner, including each corner once and repeating the start
+only to close the trace. These are errors in the original nonlinear comparison, distinct from the separate
+prescribed-source boundary calibration below. Restricting the descriptive region does not replace the
+whole-domain gate, which remains failed at its original limit of 0.005.
+
+The [vector figure](figures/constructive_coarse/coarse_difference.svg) and
+[exact plotted quantities](figures/constructive_coarse/coarse_difference.json) are also available.
+Recreate all three outputs from the hash-pinned original bundle and record, without solving another equilibrium:
+
+```bash
+.venv-constructive/bin/python -m tools.constructive_plot --out /path/to/new-figure-directory
+```
+
+The destination must be new. Changed original inputs are refused. Figure pixels depend on the pinned
+Matplotlib/font environment; the JSON retains the input and renderer hashes, gauge, normalization and full
+edge trace. The [numerical environment](#reproduce-the-calculations) is installed as described below.
+
 The fixed search continued after the failed control to retain descriptive results; no later state could
 repair that admission failure. All 36 forward cases were attempted, finishing in 10,181 seconds:
 
