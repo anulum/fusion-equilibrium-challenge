@@ -61,6 +61,9 @@ files = [
 branch = true
 source = ["experiments/d71_finisher_physics", "tools"]
 
+[tool.coverage.paths]
+tools = ["tools", "*/source-archive/tools"]
+
 [tool.coverage.report]
 fail_under = 100
 show_missing = true

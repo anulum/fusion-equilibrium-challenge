@@ -9,7 +9,11 @@
 
 from __future__ import annotations
 
+import hashlib
 import json
+import os
+import platform
+import shutil
 import subprocess
 import sys
 from pathlib import Path
@@ -62,6 +66,16 @@ def test_real_published_map_cli(tmp_path: Path) -> None:
     report = json.loads(result.stdout)
     assert result.stderr == ""
     assert report["schema"] == "equilibrium-audit.v1"
+    tool = report["tool"]
+    assert tool["schema"] == "equilibrium-audit-tool.v1"
+    assert tool["environment"]["python"] == platform.python_version()
+    assert tool["environment"]["packages"]["numpy"] == np.__version__
+    assert (
+        tool["dependency_lock"]["sha256"]
+        == hashlib.sha256((ROOT / "requirements-quality.txt").read_bytes()).hexdigest()
+    )
+    for name, digest in tool["sources_sha256"].items():
+        assert digest == hashlib.sha256((ROOT / name).read_bytes()).hexdigest()
     assert report["input"]["axis_origin"] == "supplied"
     assert report["grid"]["shape"] == [65, 65]
     assert report["diagnostics"]["polynomial_gs"]["available"] is True
@@ -263,3 +277,57 @@ def test_minimal_field_and_help(tmp_path: Path, capsys: pytest.CaptureFixture[st
         main(["--help"])
     assert result.value.code == 0
     assert "--length-unit" in capsys.readouterr().out
+
+
+def test_source_archive_identity_cli(tmp_path: Path) -> None:
+    """Bind real archive execution to actual measuring sources and lock availability."""
+    archive = tmp_path / "source-archive"
+    sources = archive / "tools"
+    sources.mkdir(parents=True)
+    for name in ("equilibrium_audit", "audit_map_input", "field_diagnostics", "surface_gs"):
+        shutil.copyfile(ROOT / "tools" / f"{name}.py", sources / f"{name}.py")
+    lock = archive / "requirements-quality.txt"
+    shutil.copyfile(ROOT / "requirements-quality.txt", lock)
+    path = tmp_path / "map.npz"
+    np.savez(path, R=np.arange(1.0, 5.0), Z=np.arange(4.0), psi=np.zeros((4, 4)))
+    env = os.environ.copy()
+    env.pop("PYTHONPATH", None)
+    command = [
+        sys.executable,
+        "-m",
+        "coverage",
+        "run",
+        "--branch",
+        "--parallel-mode",
+        "-m",
+        "tools.equilibrium_audit",
+        *_args(path),
+    ]
+    reports = []
+    for change in ("original", "source", "lock", "missing_lock"):
+        if change == "source":
+            target = sources / "field_diagnostics.py"
+            target.write_bytes(target.read_bytes() + b"\n# Source-archive identity probe.\n")
+        elif change == "lock":
+            lock.write_bytes(lock.read_bytes() + b"\n# Lock identity probe.\n")
+        elif change == "missing_lock":
+            lock.unlink()
+        result = subprocess.run(
+            command, cwd=archive, env=env, capture_output=True, text=True, check=True, timeout=60
+        )
+        assert result.stderr == ""
+        report = json.loads(result.stdout)
+        for name, digest in report["tool"]["sources_sha256"].items():
+            assert digest == hashlib.sha256((archive / name).read_bytes()).hexdigest()
+        reports.append(report)
+    assert len({report["tool"]["measurement_identity_sha256"] for report in reports}) == 4
+    assert reports[0]["tool"]["implementation_sha256"] != reports[1]["tool"]["implementation_sha256"]
+    assert reports[1]["tool"]["implementation_sha256"] == reports[2]["tool"]["implementation_sha256"]
+    assert reports[1]["tool"]["dependency_lock"]["sha256"] != reports[2]["tool"]["dependency_lock"]["sha256"]
+    assert reports[3]["tool"]["dependency_lock"] == {
+        "name": "requirements-quality.txt",
+        "sha256": None,
+        "available": False,
+        "reason": "not_distributed",
+    }
+    assert all(report["diagnostics"] == reports[0]["diagnostics"] for report in reports[1:])

@@ -76,6 +76,20 @@ exception text, file paths or a traceback. Successful audit reports keep `equili
 Codes classify the detected failure, not every possible error in a file. Unavailable diagnostics within
 a successful audit still use their individual reasons and support counts; they are not command refusals.
 
+### Identify the measuring tool
+
+Successful reports include an additive `tool` object with schema `equilibrium-audit-tool.v1`. It hashes the
+actual four measuring source files, records the distributed `requirements-quality.txt` hash, and identifies
+Python, machine architecture and the installed NumPy, SciPy and scikit-image versions. The
+`implementation_sha256` is a content identifier for those sources. The `measurement_identity_sha256` binds
+that identifier, the lock hash and the recorded environment together. A source or lock change changes its
+corresponding identity, including when running from a source archive without Git history.
+
+If the lock is absent, its hash is null and its status is `not_distributed`; the tool does not invent an
+unavailable release or clean commit. These fields identify the files and environment observed by the command,
+not a signature authenticating the run, proof that installed packages match the lock, or a guarantee of
+identical floating-point results across hosts. Input and region hashes remain separate from tool identity.
+
 ## Input contract
 
 The map is an NPZ archive containing:

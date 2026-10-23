@@ -10,7 +10,10 @@
 from __future__ import annotations
 
 import argparse
+import hashlib
 import json
+import platform
+from importlib.metadata import version
 from pathlib import Path
 from typing import Never
 
@@ -40,6 +43,40 @@ def _identity(frame: MapData) -> dict[str, object]:
         "axis_flux_Wb_per_rad": frame.axis,
         "boundary_flux_Wb_per_rad": frame.boundary,
         "plasma_nodes": None if frame.plasma is None else int(frame.plasma.sum()),
+    }
+
+
+def _tool_identity() -> dict[str, object]:
+    root = Path(__file__).resolve().parent.parent
+    sources = {
+        f"tools/{name}.py": hashlib.sha256((root / "tools" / f"{name}.py").read_bytes()).hexdigest()
+        for name in ("equilibrium_audit", "audit_map_input", "field_diagnostics", "surface_gs")
+    }
+    source_digest = hashlib.sha256(json.dumps(sources, sort_keys=True).encode()).hexdigest()
+    lock = root / "requirements-quality.txt"
+    lock_digest = hashlib.sha256(lock.read_bytes()).hexdigest() if lock.is_file() else None
+    environment = {
+        "python": platform.python_version(),
+        "implementation": platform.python_implementation(),
+        "machine": platform.machine(),
+        "packages": {name: version(name) for name in ("numpy", "scipy", "scikit-image")},
+    }
+    identity = {"implementation": source_digest, "dependency_lock": lock_digest, "environment": environment}
+    return {
+        "schema": "equilibrium-audit-tool.v1",
+        "name": "equilibrium-audit",
+        "implementation_sha256": source_digest,
+        "sources_sha256": sources,
+        "dependency_lock": {
+            "name": "requirements-quality.txt",
+            "sha256": lock_digest,
+            "available": lock_digest is not None,
+            "reason": "available" if lock_digest is not None else "not_distributed",
+        },
+        "environment": environment,
+        "measurement_identity_sha256": hashlib.sha256(
+            json.dumps(identity, sort_keys=True).encode()
+        ).hexdigest(),
     }
 
 
@@ -84,6 +121,7 @@ def main(argv: list[str] | None = None) -> int:
         )
         report = {
             "schema": "equilibrium-audit.v1",
+            "tool": _tool_identity(),
             "physical_force_balance_certified": False,
             "competition_score_computed": False,
             "input": _identity(frame),
