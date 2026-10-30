@@ -24,6 +24,9 @@ available from the entrant: protoscience@anulum.li.
 | Helper that fixes two errata of dataset release v1.1.0 (Ip time axis, MAST Thomson channel alignment) | `experiments/D28_pressure_reliability_2026-10-09T202147Z/official_data_fixes.py` | the same starter kit's `data_fixes.py`, MIT; an archival copy kept unchanged, without a header; its licence and copyright are given in `REUSE.toml` |
 | Four EFIT reference flux frames and their contours used in the reconstruction figure | `tools/reference/d71_figure_frames.npz`, reference fields and contours | [Sophelio Fusion Equilibrium Challenge dataset](https://huggingface.co/datasets/Sophelio/fusion-equilibrium-challenge), CC BY 4.0; selected DIII-D development frames, with shot identifiers and timestamps retained |
 | The same four reference frames, rendered | `docs/figures/fig6_reconstruction.png` (reference panels, and the reference in each difference panel) | the same dataset, CC BY 4.0; adapted: drawn as contours and subtracted from this entry's predictions |
+| Three original scored-map reference excerpts and timestamps | `experiments/d72_scored_map_replay/illustration_v1/*/reference.npy`, `times_ms.npy` | Sophelio Fusion Equilibrium Challenge DIII-D training data, CC BY 4.0; original cohort indices 0, 179, 357 at frame zero, represented in scorer float32 precision |
+| Original replay contours | `experiments/d72_scored_map_replay/illustration_v1/*/contours.npy` | Extracted reference geometry from the attributed CC BY 4.0 data, alongside this entry's predicted geometry, AGPL-3.0-or-later |
+| Original replay grid and envelope | `experiments/d72_scored_map_replay/illustration_v1/{R,Z,envelope}.npy` | Official starter grid and mask, MIT |
 | Code of Conduct | `CODE_OF_CONDUCT.md` | [Contributor Covenant](https://www.contributor-covenant.org/) 2.1, CC BY 4.0; the contact address is this entry's |
 
 The solver modules under `source/*/vendor/scpn_fusion/` are the entrant's own code, copied from SCPN Fusion Core
@@ -39,8 +42,8 @@ on the dataset's shots, not the dataset's fields; the dataset is attributed to S
 Challenge authors under [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/).
 
 
-The full challenge datasets and full-fold prediction archives are not included. The small reference excerpt
-above is attributed to Sophelio and the Fusion Equilibrium Challenge authors under
+The full challenge datasets and full-fold prediction archives are not included. The small reference excerpts
+above are attributed to Sophelio and the Fusion Equilibrium Challenge authors under
 [CC BY 4.0](https://creativecommons.org/licenses/by/4.0/); it was selected and packaged for the figure, alongside
 predictions from this entry. `tools/reference/d3d_shot_0047b7837b_submitted_986068.npz` contains this entry's
 single-shot Development prediction for the CI comparison. It contains predicted fields, not hidden test labels.

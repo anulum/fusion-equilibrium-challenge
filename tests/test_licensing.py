@@ -66,6 +66,12 @@ def test_public_licence_inventory() -> None:
         "MIT"
     }
     assert licences["CODE_OF_CONDUCT.md"] == {"CC-BY-4.0"}
+    prefix = "experiments/d72_scored_map_replay/illustration_v1/"
+    assert licences[prefix + "d3d_shot_0093deb434/reference.npy"] == {"CC-BY-4.0"}
+    assert licences[prefix + "d3d_shot_0093deb434/times_ms.npy"] == {"CC-BY-4.0"}
+    assert licences[prefix + "d3d_shot_0093deb434/contours.npy"] == {"CC-BY-4.0 AND AGPL-3.0-or-later"}
+    assert licences[prefix + "d3d_shot_0093deb434/base.npy"] == {"AGPL-3.0-or-later"}
+    assert licences[prefix + "envelope.npy"] == {"MIT"}
     assert licences["docs/figures/fig6_reconstruction.png"] == {"CC-BY-4.0 AND AGPL-3.0-or-later"}
 
 

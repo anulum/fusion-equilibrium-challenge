@@ -92,6 +92,130 @@ class Shot(TypedDict):
     statistics: dict[str, dict[str, Entry]]
 
 
+def frame_statistics(values: F64, stratum: NDArray[np.bool_]) -> Entry:
+    """Measure map levels and paired changes on explicit finite-frame support.
+
+    Parameters
+    ----------
+    values : ndarray
+        Three map values for each frame; NaN denotes unavailable measurement.
+    stratum : ndarray of bool
+        Prespecified frame group, with the same number of rows.
+
+    Returns
+    -------
+    Entry
+        Independent map means and separate pairwise common-frame statistics.
+
+    Raises
+    ------
+    ValueError
+        Frame, map or stratum dimensions differ.
+    """
+    if values.ndim != 2 or values.shape[1] != 3 or stratum.shape != (len(values),):
+        raise ValueError("Diagnostic frame dimensions differ")
+    finite = np.isfinite(values) & stratum[:, None]
+    pairs: dict[str, Pair] = {}
+    for a, b in PAIRS:
+        keep = finite[:, a] & finite[:, b]
+        pairs[f"{MAPS[a]}->{MAPS[b]}"] = {
+            "frames": int(keep.sum()),
+            "means": [float(np.mean(values[keep, j])) for j in (a, b)] if keep.any() else None,
+            "change": float(np.mean(values[keep, b] - values[keep, a])) if keep.any() else None,
+        }
+    return {
+        "counts": [int(finite[:, j].sum()) for j in range(3)],
+        "means": [float(np.mean(values[finite[:, j], j])) if finite[:, j].any() else None for j in range(3)],
+        "pairs": pairs,
+    }
+
+
+def extract(
+    stem: str,
+    values: F64,
+    names: Sequence[str],
+    reference_frames: int,
+    reference_inside: F64,
+    used: F64,
+    converged: F64,
+) -> Shot:
+    """Extract the fixed raw and normalised diagnostics without remeasuring maps.
+
+    Parameters
+    ----------
+    stem : str
+        Original cohort shot identity.
+    values : ndarray
+        Recorded diagnostic values, shape (21, frames, 3).
+    names : Sequence of str
+        Exact recorded raw measure order.
+    reference_frames : int
+        Reference-contour count from the independently bound shot receipt.
+    reference_inside : ndarray
+        Reference interior sum of the absolute discrete current proxy per frame.
+    used, converged : ndarray
+        Original D72 application and convergence flags, stored as numeric zero/one.
+
+    Returns
+    -------
+    Shot
+        All original frames, per-stratum applicability, matched means and changes.
+
+    Raises
+    ------
+    ValueError
+        Recorded dimensions, labels or flag types differ from the protocol.
+    """
+    n = len(used)
+    if (
+        not n
+        or tuple(names) != RAW
+        or values.shape != (len(RAW), n, 3)
+        or reference_inside.shape != (n,)
+        or used.shape != (n,)
+        or converged.shape != (n,)
+        or not np.isin(used, (0, 1)).all()
+        or not np.isin(converged, (0, 1)).all()
+        or not 0 <= reference_frames <= n
+    ):
+        raise ValueError("Scored-map diagnostic dimensions or labels differ")
+    metrics = {name: values[j] for j, name in enumerate(RAW)}
+    source = metrics["gs_rms_source"]
+    with np.errstate(over="ignore", invalid="ignore", divide="ignore"):
+        metrics["gs_rms_norm"] = np.divide(
+            metrics["gs_rms_residual"],
+            source,
+            out=np.full_like(source, np.nan),
+            where=np.isfinite(source) & (source > 0),
+        )
+        denominator = reference_inside[:, None]
+        for name in ("interior_abs_current", "crossing_abs_current", "exterior_abs_current"):
+            metrics[name + "_over_refinside"] = np.divide(
+                metrics[name],
+                denominator,
+                out=np.full_like(source, np.nan),
+                where=np.isfinite(denominator) & (denominator > 0),
+            )
+    applied = used.astype(bool)
+    solved = converged.astype(bool)
+    strata = {
+        "all": np.ones(n, dtype=bool),
+        "used_converged": applied & solved,
+        "used_nonconverged": applied & ~solved,
+        "unused": ~applied,
+    }
+    return {
+        "stem": stem,
+        "frames": n,
+        "reference_frames": reference_frames,
+        "stratum_frames": {key: int(mask.sum()) for key, mask in strata.items()},
+        "statistics": {
+            key: {name: frame_statistics(metrics[name], mask) for name in METRICS}
+            for key, mask in strata.items()
+        },
+    }
+
+
 def bootstrap(values: F64, weights: NDArray[np.int64]) -> dict[str, object]:
     """Renormalise fixed multinomial whole-shot weights over available shot means.
 

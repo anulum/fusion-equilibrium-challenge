@@ -141,3 +141,76 @@ def test_invalid_weights_refused(case: str) -> None:
         values = np.array(1.0)
     with pytest.raises(ValueError, match="weights"):
         bootstrap(values, weights)
+
+
+def test_original_frame_measurements_reconstruct_selected_statistics() -> None:
+    """The original matched-shot frame arrays reproduce their bound illustration statistics."""
+    from tools.scored_map_summary import RAW, extract, frame_statistics
+
+    example = ROOT / "experiments/d72_scored_map_replay/illustration_v1"
+    with gzip.open(example / "expected_statistics.json.gz", "rt") as stream:
+        expected = json.load(stream)["shots"]
+    with np.load(example / "original_frame_diagnostics.npz", allow_pickle=False) as data:
+        for i, row in enumerate(expected):
+            actual = extract(
+                row["stem"],
+                data["values"][:, i : i + 1],
+                RAW,
+                1,
+                data["reference_inside_current"][i : i + 1],
+                data["used"][i : i + 1].astype(float),
+                data["converged"][i : i + 1].astype(float),
+            )
+            assert actual == row
+        ratios = data["values"][RAW.index("gs_surface")].copy()
+    unsupported = frame_statistics(ratios, np.zeros(3, dtype=bool))
+    assert unsupported["counts"] == [0, 0, 0] and unsupported["means"] == [None, None, None]
+    with pytest.raises(ValueError, match="dimensions"):
+        frame_statistics(ratios[:, :2], np.ones(3, dtype=bool))
+
+
+@pytest.mark.parametrize(
+    "case",
+    [
+        "empty",
+        "labels",
+        "values",
+        "reference",
+        "used-shape",
+        "converged-shape",
+        "used",
+        "converged",
+        "reference-count",
+    ],
+)
+def test_invalid_recorded_frame_contract_refused(case: str) -> None:
+    """Real measurements cannot be silently relabelled, reshaped or assigned invalid flags."""
+    from tools.scored_map_summary import RAW, extract
+
+    example = ROOT / "experiments/d72_scored_map_replay/illustration_v1"
+    with np.load(example / "original_frame_diagnostics.npz", allow_pickle=False) as data:
+        values = data["values"].copy()
+        inside = data["reference_inside_current"].copy()
+        used, converged = data["used"].astype(float), data["converged"].astype(float)
+    names = RAW
+    reference_frames = 3
+    if case == "empty":
+        used = used[:0]
+    elif case == "labels":
+        names = RAW[::-1]
+    elif case == "values":
+        values = values[:, :, :2]
+    elif case == "reference":
+        inside = inside[:1]
+    elif case == "used-shape":
+        used = used[:, None]
+    elif case == "converged-shape":
+        converged = converged[:1]
+    elif case == "used":
+        used[0] = 2
+    elif case == "converged":
+        converged[0] = np.nan
+    else:
+        reference_frames = 4
+    with pytest.raises(ValueError, match="dimensions or labels"):
+        extract("original-frame-contract", values, names, reference_frames, inside, used, converged)

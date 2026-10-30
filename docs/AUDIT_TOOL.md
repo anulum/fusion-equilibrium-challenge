@@ -206,3 +206,14 @@ Pixelwise agreement alone says little about derivative errors. The
 need separate measurement.
 
 [Calibrate the audit](AUDIT_CALIBRATION.md) with known discretisation errors, unavailable controls and the organisers’ independently authored PCA–Ridge method on four reference-assisted illustrations.
+
+
+## Remeasure the original scored-map example
+
+The [scored-field replay](https://github.com/anulum/fusion-equilibrium-challenge/tree/main/experiments/d72_scored_map_replay)
+provides three actual reference/base/projection frames with the original grid and contours.
+It runs the historical diagnostic definitions and compares newly measured statistics to retained
+original values, without model weights. It also exports surface-fit support and paired full-support
+sensitivity. This is a separate input contract from the general audit above: flux values remain in
+the unchanged released convention, rather than being assigned inferred absolute units. The small
+example validates a measurement path and does not reproduce the whole-cohort claim.

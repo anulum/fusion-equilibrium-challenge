@@ -55,3 +55,32 @@ SPDX-FileCopyrightText = [
     "2020-2026 Miroslav Šotek <protoscience@anulum.li> (adaptations and audit interface)",
 ]
 SPDX-License-Identifier = "AGPL-3.0-or-later AND MIT"
+
+
+[[annotations]]
+path = [
+    "experiments/d72_scored_map_replay/illustration_v1/*/reference.npy",
+    "experiments/d72_scored_map_replay/illustration_v1/*/times_ms.npy",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Sophelio and the Fusion Equilibrium Challenge authors"
+SPDX-License-Identifier = "CC-BY-4.0"
+
+[[annotations]]
+path = "experiments/d72_scored_map_replay/illustration_v1/*/contours.npy"
+precedence = "override"
+SPDX-FileCopyrightText = [
+    "2026 Sophelio and the Fusion Equilibrium Challenge authors (reference data)",
+    "2020-2026 Miroslav Šotek <protoscience@anulum.li> (prediction and extraction)",
+]
+SPDX-License-Identifier = "CC-BY-4.0 AND AGPL-3.0-or-later"
+
+[[annotations]]
+path = [
+    "experiments/d72_scored_map_replay/illustration_v1/R.npy",
+    "experiments/d72_scored_map_replay/illustration_v1/Z.npy",
+    "experiments/d72_scored_map_replay/illustration_v1/envelope.npy",
+]
+precedence = "override"
+SPDX-FileCopyrightText = "2026 Sophelio and the Fusion Equilibrium Challenge authors"
+SPDX-License-Identifier = "MIT"

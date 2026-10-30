@@ -323,3 +323,87 @@ def test_missing_input_cli_has_fixed_refusal(tmp_path: Path) -> None:
     assert result.returncode == 2
     assert result.stdout == "Unable to verify the supplied scored-map diagnostic statistics.\n"
     assert result.stderr == ""
+
+
+def test_original_replay_reference_populations() -> None:
+    """Read genuine full, qualification and frame-zero reference statistics separately."""
+    from tools.scored_map_table import reference
+
+    root = Path(__file__).resolve().parents[1]
+    path = root / "experiments/d72_scored_map_physics/per_shot_v1.json.gz"
+    checksum = hashlib.sha256(path.read_bytes()).hexdigest()
+    with gzip.open(path, "rt") as stream:
+        original = json.load(stream)["shots"]
+    stems = [row["stem"] for row in original]
+    rows, report = reference(path, checksum, "full358", stems)
+    assert rows == original and report["shots"] == 358 and report["frames"] == 78875
+    chosen = [stems[i] for i in (0, 179, 357)]
+    rows, report = reference(path, checksum, "qualification", chosen)
+    assert [row["stem"] for row in rows] == chosen and report["frames"] == 723
+    example = root / "experiments/d72_scored_map_replay/illustration_v1/expected_statistics.json.gz"
+    rows, report = reference(
+        example, hashlib.sha256(example.read_bytes()).hexdigest(), "illustration", chosen
+    )
+    assert len(rows) == 3 and report["frames"] == 3
+    with pytest.raises(ValueError, match="population differs"):
+        reference(path, checksum, "full358", chosen)
+    with pytest.raises(ValueError, match="Original statistics"):
+        reference(example, hashlib.sha256(example.read_bytes()).hexdigest(), "qualification", chosen)
+
+
+@pytest.mark.parametrize("case", ["scope", "pin", "schema", "duplicate", "empty", "oversize"])
+def test_replay_reference_invalid_inputs_refused(tmp_path: Path, case: str) -> None:
+    """Changed illustration statistics fail their identity, size or population contract."""
+    from tools.scored_map_table import reference
+
+    root = Path(__file__).resolve().parents[1]
+    original = root / "experiments/d72_scored_map_replay/illustration_v1/expected_statistics.json.gz"
+    with gzip.open(original, "rt") as stream:
+        data = json.load(stream)
+    stems = [s["stem"] for s in data["shots"]]
+    if case == "schema":
+        data["schema"] = "unknown"
+    elif case == "duplicate":
+        data["shots"].append(data["shots"][0])
+    elif case == "empty":
+        stems = []
+    path = tmp_path / "reference.json.gz"
+    with gzip.open(path, "wt") as stream:
+        stream.write(" " * (64 * 2**20 + 1) if case == "oversize" else json.dumps(data))
+    checksum = "0" * 64 if case == "pin" else hashlib.sha256(path.read_bytes()).hexdigest()
+    with pytest.raises(ValueError):
+        reference(path, checksum, "invalid" if case == "scope" else "illustration", stems)
+
+
+def test_changed_original_replay_report_refused(tmp_path: Path, monkeypatch: pytest.MonkeyPatch) -> None:
+    """A physically altered report is refused before its full-cohort values are reused."""
+    from tools import scored_map_table
+
+    root = Path(__file__).resolve().parents[1]
+    path = root / "experiments/d72_scored_map_physics/per_shot_v1.json.gz"
+    with gzip.open(path, "rt") as stream:
+        stems = [row["stem"] for row in json.load(stream)["shots"]]
+    report = tmp_path / "experiments/d72_scored_map_physics/report_v1.json"
+    report.parent.mkdir(parents=True)
+    report.write_text("{}\n")
+    monkeypatch.setattr(scored_map_table, "ROOT", tmp_path)
+    with pytest.raises(ValueError, match="Original report identity"):
+        scored_map_table.reference(path, hashlib.sha256(path.read_bytes()).hexdigest(), "full358", stems)
+
+
+@pytest.mark.parametrize("fault", ["gzip-eof", "deflate", "missing-key"])
+def test_replay_reference_compression_and_structure_errors(tmp_path: Path, fault: str) -> None:
+    """The SDK boundary also normalises actual truncated streams and missing members."""
+    from tools.scored_map_table import reference
+
+    root = Path(__file__).resolve().parents[1]
+    original = root / "experiments/d72_scored_map_replay/illustration_v1/expected_statistics.json.gz"
+    path = tmp_path / "broken.json.gz"
+    if fault == "gzip-eof":
+        path.write_bytes(original.read_bytes()[:-7])
+    elif fault == "deflate":
+        path.write_bytes(b"\x1f\x8b\x08\x00\x00\x00\x00\x00\x00\x03\x07\x00")
+    else:
+        path.write_bytes(gzip.compress(b"{}"))
+    with pytest.raises(ValueError, match="Invalid replay comparison"):
+        reference(path, hashlib.sha256(path.read_bytes()).hexdigest(), "illustration", ["not-read"])

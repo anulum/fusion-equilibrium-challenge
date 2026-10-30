@@ -1,0 +1,109 @@
+{
+  "schema": "scored-map-bundle.v1",
+  "scope": "qualification",
+  "maps": [
+    "reference",
+    "base",
+    "gs"
+  ],
+  "length_unit": "m",
+  "flux_convention": "released-psirz-unscaled",
+  "axis_sign": -1,
+  "grid": {
+    "R.npy": "bb12d3623401581aad9bc5f145c1330acb7a636c16c4d40c0300534c050f5ccf",
+    "Z.npy": "bf93da12697ff8a04335130a994bc1b254ea499fb819b3ff198b6251107c11e7",
+    "envelope.npy": "15473f59fd8fa93eb8c2ac177bbca4074451fa4d55ad978731a36c4d15b448b1"
+  },
+  "shots": [
+    {
+      "stem": "d3d_shot_0093deb434",
+      "frames": 213,
+      "source_frames": 213,
+      "contour_points": 327168,
+      "files": {
+        "reference.npy": "0ac01f113dcc7626a6a810fe38dd794527fe3e68208019c3e91ece7a0f2e3ef5",
+        "base.npy": "08f8b651a1506156fac9187e6e57c6a317cf8a0e339073b88711d05eb1f63f43",
+        "gs.npy": "55bc2bf6b1a0799503cefe995ff6e50c7241a68cff4fbda8c77483b5b8440643",
+        "contours.npy": "6ad7db0019c1b17811a051988234fa03834db35965050f4a86a6d224293fd8a6",
+        "offsets.npy": "065c880a0fe874bc8d1d19daaa12b36e0f233a04c8b6f856b975bd490c059a73",
+        "times_ms.npy": "6b897adeae392d4ccb355e2ae3670ba2cdc4f4d6f57f292d1e4731ec7febb8cb",
+        "source_indices.npy": "a0124498ec34fb1ed066961a98af3649e334bc94300c5b4aae56736574e61eb1",
+        "scalars.npy": "7b1f710a28afc890ce7406cba23bae8ff7f9d660bc5fd7d3fadb100ef86dcf7d",
+        "pixels.npy": "721c00b527fcdbe598c8047b59a2ae61de163fcdd7d4796855d46c96aade64ad",
+        "iterations.npy": "887b57d1e7d3263af7cbac2269694627b05b3cf4de1cad71959b489757a146cd",
+        "converged.npy": "027a858251f4af8815300fffc58feca103b3284fdf70bd031c1261c0e4683bc6",
+        "used.npy": "027a858251f4af8815300fffc58feca103b3284fdf70bd031c1261c0e4683bc6"
+      },
+      "identities": {
+        "raw_parquet_sha256": "ba75c17735d4bc2288bc48acf03be37bfb0758b295db1988ca007fb048729eeb",
+        "d70_base_array_sha256": "ff2eaa5772cf322af32cbe98753485089d57665d5250fa6e87f04ab387ffa3b2",
+        "d72_gs_array_sha256": "c951544ac7af8df3dff44a64e67c18f55c86e850e010000ec469bac4fdb83924"
+      },
+      "arrays_sha256": {
+        "reference": "a3c6b0725a9777d555490e968f7d799d2167aad494fd55552db8d9bfd3b64f48",
+        "base": "ff2eaa5772cf322af32cbe98753485089d57665d5250fa6e87f04ab387ffa3b2",
+        "gs": "c951544ac7af8df3dff44a64e67c18f55c86e850e010000ec469bac4fdb83924"
+      }
+    },
+    {
+      "stem": "d3d_shot_862555f165",
+      "frames": 293,
+      "source_frames": 293,
+      "contour_points": 450048,
+      "files": {
+        "reference.npy": "c47ce1948d46262b499c6605824c403053248c7f0469d977bf6e4780e0b89a1d",
+        "base.npy": "b47a9411245fc0604e5b8f2c77fd21f3acfb6cc9a5ca779ea7e3490c5353f015",
+        "gs.npy": "3da9520e615fc60dfd0ac24cd46b98453d3bcee65577756e42aa9c07d8a9c954",
+        "contours.npy": "e7a22dfceb3b4e260d29a4cbd7cd673b40c0940dd817ad37c3c33ecea279dc88",
+        "offsets.npy": "77682eadae4cceb0c07c0c299c95535508f16ffe9940ba2e164048aaaf22a4f4",
+        "times_ms.npy": "a1e5c6878fb28cb9b40ca723aecb2cad4acdbb30ea4cbdfeb2d9ee4ff802ff75",
+        "source_indices.npy": "d5c402c02f513ebfdf711be79d0b1ca8ca9ed637fadcf9f63604838b9df9722e",
+        "scalars.npy": "6c7890c3598d28cb65ce17b58ed6ae20c171d413a51ab150b04b76c1a661f0dd",
+        "pixels.npy": "35d26400e6da94b5d64dee8e103ad5c2d0c17aebd09db257e26a3726ec6cef63",
+        "iterations.npy": "c9466bd9501a84dba553a72d25b1ce0320bb985aafc4fcd71aea27d930a85f31",
+        "converged.npy": "74c9f495ac374250325c15ff01f8d6b25328b1f89568847884d199d917d6b55c",
+        "used.npy": "74c9f495ac374250325c15ff01f8d6b25328b1f89568847884d199d917d6b55c"
+      },
+      "identities": {
+        "raw_parquet_sha256": "4a6d13e63b24a3c149dac314958aed22dc250f04c51699629d9c582ff591c804",
+        "d70_base_array_sha256": "4286432cd1c5153d81e79a84bcbd396e2a72fc008f875e5cb0b25b3d802a66c1",
+        "d72_gs_array_sha256": "50465270e36921d0d8b28e12502e7e8052f3733c5778b84b75d8b0b685202063"
+      },
+      "arrays_sha256": {
+        "reference": "60300ce25ec3d99a326b13270445eb64a01ae458aefb44c9c3fd118102125230",
+        "base": "4286432cd1c5153d81e79a84bcbd396e2a72fc008f875e5cb0b25b3d802a66c1",
+        "gs": "50465270e36921d0d8b28e12502e7e8052f3733c5778b84b75d8b0b685202063"
+      }
+    },
+    {
+      "stem": "d3d_shot_fedaca60be",
+      "frames": 217,
+      "source_frames": 217,
+      "contour_points": 333312,
+      "files": {
+        "reference.npy": "bca0a14d898e589f61b922c82cbb39913d8776ce02ce1747872f180b55249971",
+        "base.npy": "a4581ffad87b2dd2b7940b8b36a281781e873056a4927c1227e9fa5f70c6f995",
+        "gs.npy": "0ac73950b3e7afd5b8d75d3f16f53acaea7a224042e5dadc0804fe6e7d8c2f25",
+        "contours.npy": "40a7f96b65531a67ed8a6a782889a11a801b0e163f6d8dd5a4fb3ed660644c13",
+        "offsets.npy": "1362f3067bbfe6f870829c5bc9f72ae2b7d025253b5ef91bf26222bff7686023",
+        "times_ms.npy": "2db3c51dfa4d58563447ad4f8fc97bb80a4e64db541ee5b2b5ac53d2923b0ee8",
+        "source_indices.npy": "d8ddf3f8e1463ed689c12fb8e553e53eb677c80ce63a4502ea198a17e0df6d15",
+        "scalars.npy": "1fb602d9a53d0984ce34a8c8a3054c7e5b9dbcb34911ca9f6909aa4b11392d21",
+        "pixels.npy": "1e7b67a2ae0c64726cd303e73107beb50934c91b73707c014ea6897a3b5e55be",
+        "iterations.npy": "484408028136cd149f38ddced54ff039fc30e6686c228e36db08f2fb88501791",
+        "converged.npy": "399d22ba45360d341e4fc41b80cb7c4f3d5ae1edc1b5eb0ef0c8dd907efe0f42",
+        "used.npy": "399d22ba45360d341e4fc41b80cb7c4f3d5ae1edc1b5eb0ef0c8dd907efe0f42"
+      },
+      "identities": {
+        "raw_parquet_sha256": "883e7749c89777e4cc2e206d88b59fe3cc38cdf9fa0fa8a41b48e12292ad7a53",
+        "d70_base_array_sha256": "cc1a11ba0dac6ca9e583240b27410f79099ab8c2ac02fb6c76ff8cd2b3d3ca43",
+        "d72_gs_array_sha256": "fad4362b1a48fd206004b6627bf94efb835f5197d32768261f0c5ba482f90eea"
+      },
+      "arrays_sha256": {
+        "reference": "c440979300a4452830c131d4d2ef4f987b61d9e6bc83d1a09a9c14b86f6f50b9",
+        "base": "cc1a11ba0dac6ca9e583240b27410f79099ab8c2ac02fb6c76ff8cd2b3d3ca43",
+        "gs": "fad4362b1a48fd206004b6627bf94efb835f5197d32768261f0c5ba482f90eea"
+      }
+    }
+  ]
+}

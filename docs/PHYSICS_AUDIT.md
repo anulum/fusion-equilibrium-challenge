@@ -66,6 +66,15 @@ this does not establish that pinning the axis would recover that score.
 and [full diagnostic table](https://github.com/anulum/fusion-equilibrium-challenge/tree/main/experiments/d72_scored_map_physics)
 retain the intervals, support and definitions.
 
+## Remeasure original scored fields
+
+The [scored-field replay](https://github.com/anulum/fusion-equilibrium-challenge/tree/main/experiments/d72_scored_map_replay)
+accepts original float32 fields, grid, contours and stopping flags without loading the ensemble.
+Its included example remeasures three predetermined frames and compares the computed diagnostics to
+retained original measurements. It also reports per-surface support, rank, conditioning and the effect
+of requiring all four surfaces. Three frames do not reproduce the full-cohort result; the guide keeps
+this illustration, whole-shot numerical qualification and full-population inputs distinct.
+
 ## Recompute the published tables
 
 From the repository root, use the hash-pinned environment in [the audit guide](AUDIT_TOOL.md#run-an-example).

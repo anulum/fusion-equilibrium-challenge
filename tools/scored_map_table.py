@@ -20,11 +20,13 @@ import json
 import math
 import re
 import zlib
+from collections.abc import Sequence
 from pathlib import Path
 from typing import TypedDict, cast
 
 from tools.scored_map_summary import MAPS, METRICS, PAIRS, STRATA, Shot, summarise
 
+ROOT = Path(__file__).resolve().parents[1]
 COHORT_SHA256 = "5f719b4324cb1cde8308bf2285f4bad73ae9b365815a2b705b927139bef41f0b"
 PRODUCER_SHA256 = "aae8f6c128795ca3b67c8e4dc5b92eba51b6387ff25cf812e45bfaa66b3d3584"
 ABSOLUTE_TOLERANCE = 1e-13
@@ -51,16 +53,33 @@ def _object(value: object) -> dict[str, object]:
     return cast(dict[str, object], value)
 
 
-def _compare(actual: object, expected: object) -> tuple[float, float]:
+def compare(actual: object, expected: object) -> tuple[float, float]:
+    """Compare diagnostic JSON values with the unchanged published tolerances.
+
+    Parameters
+    ----------
+    actual, expected : object
+        Corresponding JSON structures, with explicit numerical availability.
+
+    Returns
+    -------
+    tuple of float
+        Maximum absolute difference and maximum fraction of the allowed error.
+
+    Raises
+    ------
+    ValueError
+        Types, fields, support counts or numerical values differ materially.
+    """
     if isinstance(actual, dict):
         left, right = _object(actual), _object(expected)
         if left.keys() != right.keys():
             raise ValueError("Report fields differ")
-        differences = [_compare(value, right[key]) for key, value in left.items()]
+        differences = [compare(value, right[key]) for key, value in left.items()]
     elif isinstance(actual, list):
         if not isinstance(expected, list) or len(actual) != len(expected):
             raise ValueError("Report dimensions differ")
-        differences = [_compare(a, b) for a, b in zip(actual, expected, strict=True)]
+        differences = [compare(a, b) for a, b in zip(actual, expected, strict=True)]
     elif isinstance(actual, float):
         if type(expected) not in (int, float):
             raise ValueError("Report numerical availability differs")
@@ -74,6 +93,102 @@ def _compare(actual: object, expected: object) -> tuple[float, float]:
             raise ValueError("Report count or availability differs")
         return 0.0, 0.0
     return max((d[0] for d in differences), default=0.0), max((d[1] for d in differences), default=0.0)
+
+
+def _reference(
+    table: Path, checksum: str, scope: str, stems: Sequence[str]
+) -> tuple[list[Shot], dict[str, object]]:
+    """Read pinned reference statistics for a declared replay population.
+
+    Parameters
+    ----------
+    table : Path
+        Original public full-shot statistics, or explicit illustration reference.
+    checksum : str
+        Independently supplied SHA256 of the compressed statistics.
+    scope : str
+        Full358, qualification or illustration; subsets retain their own report.
+    stems : Sequence of str
+        Ordered identifiers already validated against the original population.
+
+    Returns
+    -------
+    tuple of list and dict
+        Selected original statistics and their full or subset comparison report.
+
+    Raises
+    ------
+    OSError, ValueError
+        Hash, size, schema, scope, identifiers or original report are invalid.
+    """
+    if scope not in ("full358", "qualification", "illustration") or _digest(table) != checksum:
+        raise ValueError("Expected statistics identity or scope differs")
+    if scope != "illustration" and checksum != (
+        "3381bd7fb76d7b6f0118839114104a434d096aaa962b431e6e1ec1f4eac1830a"
+    ):
+        raise ValueError("Original statistics identity differs")
+    with gzip.open(table, "rb") as stream:
+        raw = stream.read(64 * 2**20 + 1)
+    if len(raw) > 64 * 2**20:
+        raise ValueError("Expected statistics exceed their limit")
+    data = _object(json.loads(raw))
+    if data["schema"] != "r23-matched-shot-statistics.v1":
+        raise ValueError("Expected statistics schema differs")
+    shots = cast(list[Shot], data["shots"])
+    indexed = {row["stem"]: row for row in shots}
+    if len(indexed) != len(shots) or not stems or len(set(stems)) != len(stems):
+        raise ValueError("Expected statistics repeat or omit identities")
+    selected = [indexed[stem] for stem in stems]
+    if scope == "full358":
+        root = ROOT / "experiments/d72_scored_map_physics"
+        path = root / "report_v1.json"
+        if _digest(path) != "47e8f5644a83d2717f8b5d82e0a1177fcfd7f68d1b3fb0263b84c60370aeb1d4":
+            raise ValueError("Original report identity differs")
+        if len(selected) != 358 or [row["stem"] for row in shots] != list(stems):
+            raise ValueError("Original full-report population differs")
+        return selected, _object(json.loads(path.read_text()))
+    return selected, summarise(selected, stems)
+
+
+def reference(
+    table: Path, checksum: str, scope: str, stems: Sequence[str]
+) -> tuple[list[Shot], dict[str, object]]:
+    """Read replay comparison inputs with controlled malformed-data exceptions.
+
+    Parameters
+    ----------
+    table : Path
+        Compressed original statistics or the declared illustration reference.
+    checksum : str
+        Independently supplied SHA256.
+    scope : str
+        Explicit full358, qualification or illustration scope.
+    stems : Sequence of str
+        Independently validated ordered shot identifiers.
+
+    Returns
+    -------
+    tuple of list and dict
+        Selected records and their correctly scoped expected report.
+
+    Raises
+    ------
+    OSError, ValueError
+        The inputs are unreadable, malformed or differ from their identities.
+    """
+    try:
+        return _reference(table, checksum, scope, stems)
+    except (
+        KeyError,
+        TypeError,
+        IndexError,
+        AttributeError,
+        EOFError,
+        zlib.error,
+        OverflowError,
+        RecursionError,
+    ):
+        raise ValueError("Invalid replay comparison statistics") from None
 
 
 def _manifest(path: Path, checksum: str, table: Path, report: Path) -> list[CohortShot]:
@@ -197,7 +312,7 @@ def verify(table: Path, manifest: Path, report: Path, manifest_sha256: str) -> d
         cohort = _manifest(manifest, manifest_sha256, table, report)
         shots = _shots(table, cohort)
         actual = summarise(shots, [case["stem"] for case in cohort])
-        differences = _compare(actual, _object(json.loads(report.read_text())))
+        differences = compare(actual, _object(json.loads(report.read_text())))
     except (
         KeyError,
         TypeError,
