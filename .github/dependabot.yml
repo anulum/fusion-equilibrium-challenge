@@ -25,4 +25,5 @@ updates:
       - dependency-name: bandit
       - dependency-name: pip-audit
       - dependency-name: pre-commit
+      - dependency-name: virtualenv
     open-pull-requests-limit: 5
